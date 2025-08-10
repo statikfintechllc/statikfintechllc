@@ -36,7 +36,7 @@
   </a>
 </div>
 <div align="center">
-  <img src="./assets/crimson-flow.svg?v=1" alt="Crimson Flow animated graph">
+  <img src="https://github.com/KDK-Grim/GremlinGPT-Boost/blob/master/docs/svg/crimson-flow.svg?raw=1" alt="Statik DK Smoke Activity">
 </div>
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=statikfintechllc&show_icons=true&count_private=true&include_all_commits=true&rank_icon=github&theme=transparent&hide_border=true&title_color=e11d48&icon_color=e11d48" height="165" alt="Stats">
