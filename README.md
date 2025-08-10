@@ -2,15 +2,15 @@
   <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" alt="Repo Ticker Stats" height="36">
 </div>
 <div align="center">
-  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/blob/master/badges/ai_architect.svg" alt="AI Architect">
-  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/blob/master/badges/full_stack_dev.svg" alt="Full-Stack Dev">
-  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/blob/master/badges/prompt_blacksmith.svg" alt="Prompt Blacksmith">
+  <img src="./badges/ai_architect.svg" alt="AI Architect" height="24">
+  <img src="./badges/full_stack_dev.svg" alt="Full-Stack Dev" height="24">
+  <img src="./badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" height="24">
 </div>
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/200911899?v=4" alt="Statik DK Smoke avatar" width="96" height="96" style="border-radius:50%">
 </div>
 <h1 align="center">Statik DK Smoke — Sovereign Systems</h1>
-<h2 align="center">I build sovereign, local-first AI systems.</h2>
+<h3 align="center">I build sovereign, local-first AI systems, Cool ideas, and all For The People.</h3>
 <div align="center">
   <img src="https://skillicons.dev/icons?i=python,anaconda,nodejs,bash,linux,css,tailwind,react,electron,go,typescript,javascript,html,astro,jupyter,nixos&theme=dark" alt="Skill icons"><br>
   <a href="https://github.com/statikfintechllc">
@@ -56,7 +56,7 @@
 </div>
 <div align="center">
   <a href="https://github.com/statikfintechllc/statik-server">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=statik-server&theme=transparent&hide_border=true" alt="statik-server card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Statik-Server&theme=transparent&hide_border=true" alt="statik-server card">
   </a>
   <a href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=AscendDocs-of-GovSeverance&theme=transparent&hide_border=true" alt="AscendDocs-of-GovSeverance card">
@@ -64,24 +64,86 @@
 </div>
 <div align="center">
   <a href="https://github.com/statikfintechllc/dragon-boot">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=statik-server&theme=transparent&hide_border=true" alt="statik-server card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Dragon-Boot&theme=transparent&hide_border=true" alt="statik-server card">
   </a>
   <a href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=AscendDocs-of-GovSeverance&theme=transparent&hide_border=true" alt="AscendDocs-of-GovSeverance card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Gremlin-MCP-Scrap&theme=transparent&hide_border=true" alt="AscendDocs-of-GovSeverance card">
   </a>
 </div>
-<h2 align=center>Writing</h2>
+<h2 align="center">✍️ Writing & Research</h2>
+<h3 align="center">Systems, sovereignty, and recursive intelligence.</h3>
 <div align="center">
-  <a href="https://medium.com/@ascend.gremlin/the-govseverance-doctrine-70fa170a9e8f">The GovSeverance Doctrine</a> •
-  <a href="https://medium.com/@ascend.gremlin/while-dubai-was-building-control-systems-i-built-an-autonomous-mind-fb4c8c4c0dc1">Autonomous Mind</a> •
-  Zenodo:
-  <a href="https://doi.org/10.5281/zenodo.15717788">1</a> •
-  <a href="https://doi.org/10.5281/zenodo.15725639">2</a> •
-  <a href="https://doi.org/10.5281/zenodo.15825120">3</a>
+  <strong>Zenodo Archives</strong><br/>
+  <a href="https://doi.org/10.5281/zenodo.15717788">
+    <img src="https://img.shields.io/badge/DOI-15717788-0ea5e9?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 1">
+  </a>
+  <a href="https://doi.org/10.5281/zenodo.15725639">
+    <img src="https://img.shields.io/badge/DOI-15725639-14b8a6?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 2">
+  </a>
+  <a href="https://doi.org/10.5281/zenodo.15825120">
+    <img src="https://img.shields.io/badge/DOI-15825120-f97316?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 3">
+  </a>
 </div>
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=statikfintechllc&label=Profile%20Views&color=0b82f1&style=flat-square" alt="views">
-</div>
+<table align="center">
+  <tr>
+    <td width="50%" valign="top">
+      <p align="center">
+        <a href="https://medium.com/@ascend.gremlin/the-govseverance-doctrine-70fa170a9e8f">
+          <img src="https://img.shields.io/badge/Read_on_Medium-000000?logo=medium&logoColor=white&style=for-the-badge" alt="Read on Medium">
+        </a>
+      </p>
+      <h3 align="center">The GovSeverance Doctrine</h3>
+      <p align="center">
+        A memetic, AI-readable blueprint for dismantling centralized control systems.<br/>
+        <img src="https://img.shields.io/badge/Length-12~18_min-64748b?style=flat-square" alt="length">
+        <img src="https://img.shields.io/badge/Series-AscendDocs-7c3aed?style=flat-square" alt="series">
+        <img src="https://img.shields.io/badge/Focus-Systems%20Architecture-0ea5e9?style=flat-square" alt="focus">
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <p align="center">
+        <a href="https://medium.com/@ascend.gremlin/while-dubai-was-building-control-systems-i-built-an-autonomous-mind-fb4c8c4c0dc1">
+          <img src="https://img.shields.io/badge/Read_on_Medium-000000?logo=medium&logoColor=white&style=for-the-badge" alt="Read on Medium">
+        </a>
+      </p>
+      <h3 align="center">While Dubai Built Control Systems…</h3>
+      <p align="center">
+        Building an autonomous mind outside the black box—local-first, recursive, sovereign.<br/>
+        <img src="https://img.shields.io/badge/Length-8~12_min-64748b?style=flat-square" alt="length">
+        <img src="https://img.shields.io/badge/Tag-Local%20AI-22c55e?style=flat-square" alt="tag">
+        <img src="https://img.shields.io/badge/Stack-GremlinGPT-ef4444?style=flat-square" alt="stack">
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <p align="center">
+        <a href="https://medium.com/@ascend.gremlin/the-wealth-power-imbalance-and-contemporary-forms-of-economic-servitude-bf2700d91632">
+          <img src="https://img.shields.io/badge/Read_on_Medium-000000?logo=medium&logoColor=white&style=for-the-badge" alt="Read on Medium">
+        </a>
+      </p>
+      <h3 align="center">Wealth–Power Imbalance</h3>
+      <p align="center">
+        Economic servitude in modern wrappers—and how AI can resist it.<br/>
+        <img src="https://img.shields.io/badge/Theme-Econ%20Structures-f59e0b?style=flat-square" alt="theme">
+        <img src="https://img.shields.io/badge/Mode-Analysis-3b82f6?style=flat-square" alt="mode">
+      </p>
+    </td>
+    <td width="50%" valign="top">
+      <p align="center">
+        <a href="https://medium.com/@ascend.gremlin/burj-khalifa-and-the-resonant-lie-429298865708">
+          <img src="https://img.shields.io/badge/Read_on_Medium-000000?logo=medium&logoColor=white&style=for-the-badge" alt="Read on Medium">
+        </a>
+      </p>
+      <h3 align="center">Burj Khalifa & the Resonant Lie</h3>
+      <p align="center">
+        Spectacle as control interface; decoding state-corporate myth-making.<br/>
+        <img src="https://img.shields.io/badge/Theme-Narrative%20Engineering-a855f7?style=flat-square" alt="theme">
+        <img src="https://img.shields.io/badge/Mode-Essay-10b981?style=flat-square" alt="mode">
+      </p>
+    </td>
+  </tr>
+</table>
 <div align="center">
   💡 Like my work? <a href="UPDATE_ME_Sponsor_or_Coffee_Link">Sponsor</a> or <a href="mailto:ascend.gremlin@gmail.com">reach out</a>.
   <br/>© 2025 StatikFinTech, LLC
