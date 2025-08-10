@@ -9,15 +9,18 @@
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/200911899?v=4" alt="Statik DK Smoke avatar" width="96" height="96" style="border-radius:50%">
 </div>
-<h1 align="center">Statik DK Smoke — Sovereign Systems</h1>
+<h1 align="center" style="color:#e11d48">Statik DK Smoke — Sovereign Systems</h1>
 <h3 align="center">I build sovereign, local-first AI systems, Cool ideas, and all For The People.</h3>
+
+---
+
 <div align="center">
   <img src="https://skillicons.dev/icons?i=python,anaconda,nodejs,bash,linux,css,tailwind,react,electron,go,typescript,javascript,html,astro,jupyter,nixos&theme=dark" alt="Skill icons"><br>
   <a href="https://github.com/statikfintechllc">
     <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
   </a>
-  <a href="UPDATE_ME_LinkedIn_URL">
-    <img src="https://img.shields.io/badge/In-0A66C2?logo=linkedin&logoColor=white&style=flat-square" alt="LinkedIn">
+  <a href="https://www.linkedin.com/in/daniel-morris-780804368">
+    <img src="https://img.shields.io/badge/In-e11d48?logo=linkedin&logoColor=white&style=flat-square" alt="LinkedIn">
   </a>
   <a href="mailto:ascend.gremlin@gmail.com">
     <img src="https://img.shields.io/badge/-D14836?logo=gmail&logoColor=white&style=flat-square" alt="Email">
@@ -33,49 +36,51 @@
   </a>
 </div>
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=statikfintechllc&theme=github-compact&hide_border=true" alt="Activity graph">
+<img
+  src="https://github-readme-activity-graph.vercel.app/graph?username=statikfintechllc&bg_color=0b0f14&color=b91c1c&line=b91c1c&point=0b0f14&area=true&area_color=b91c1c80&hide_border=true&custom_title=Statik%20DK%20Smoke%20%E2%80%94%20Stealth%20Trace&v=2"
+/>
 </div>
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=statikfintechllc&show_icons=true&count_private=true&include_all_commits=true&rank_icon=github&theme=transparent&hide_border=true" height="165" alt="Stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=statikfintechllc&layout=compact&langs_count=10&hide_border=true&theme=transparent" height="165" alt="Top languages">
+  <img src="https://github-readme-stats.vercel.app/api?username=statikfintechllc&show_icons=true&count_private=true&include_all_commits=true&rank_icon=github&theme=transparent&hide_border=true&title_color=e11d48&icon_color=e11d48" height="165" alt="Stats">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=statikfintechllc&layout=compact&langs_count=10&hide_border=true&theme=transparent&title_color=e11d48" height="165" alt="Top languages">
 </div>
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=statikfintechllc&theme=transparent&hide_border=true" alt="Streak">
+  <img src="https://streak-stats.demolab.com?user=statikfintechllc&theme=transparent&hide_border=true&ring=e11d48&fire=e11d48&currStreakLabel=e11d48" alt="Streak">
 </div>
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=statikfintechllc&theme=darkhub&column=6&margin-w=5&margin-h=5" alt="Trophies">
+  <img src="https://github-profile-trophy.vercel.app/?username=statikfintechllc&theme=darkhub&column=6&margin-w=5&margin-h=5&title_color=e11d48" alt="Trophies">
 </div>
-<h2 align="center">Featured Work</h2>
+<h2 align="center" style="color:#e11d48">Featured Work</h2>
 <div align="center">
   <a href="https://github.com/statikfintechllc/GremlinGPT">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=GremlinGPT&theme=transparent&hide_border=true" alt="GremlinGPT card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=GremlinGPT&theme=transparent&hide_border=true&title_color=e11d48" alt="GremlinGPT card">
   </a>
   <a href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Gremlin-ShadTail-Trader&theme=transparent&hide_border=true" alt="Gremlin-ShadTail-Trader card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Gremlin-ShadTail-Trader&theme=transparent&hide_border=true&title_color=e11d48" alt="Gremlin-ShadTail-Trader card">
   </a>
 </div>
 <div align="center">
   <a href="https://github.com/statikfintechllc/statik-server">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Statik-Server&theme=transparent&hide_border=true" alt="statik-server card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Statik-Server&theme=transparent&hide_border=true&title_color=e11d48" alt="statik-server card">
   </a>
   <a href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=AscendDocs-of-GovSeverance&theme=transparent&hide_border=true" alt="AscendDocs-of-GovSeverance card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=AscendDocs-of-GovSeverance&theme=transparent&hide_border=true&title_color=e11d48" alt="AscendDocs-of-GovSeverance card">
   </a>
 </div>
 <div align="center">
   <a href="https://github.com/statikfintechllc/dragon-boot">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Dragon-Boot&theme=transparent&hide_border=true" alt="statik-server card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Dragon-Boot&theme=transparent&hide_border=true&title_color=e11d48" alt="dragon-boot card">
   </a>
   <a href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Gremlin-MCP-Scrap&theme=transparent&hide_border=true" alt="AscendDocs-of-GovSeverance card">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Gremlin-MCP-Scrap&theme=transparent&hide_border=true&title_color=e11d48" alt="Gremlin-MCP-Scrap card">
   </a>
 </div>
-<h2 align="center">✍️ Writing & Research</h2>
+<h2 align="center" style="color:#e11d48">✍️ Writing & Research</h2>
 <h3 align="center">Systems, sovereignty, and recursive intelligence.</h3>
 <div align="center">
   <strong>Zenodo Archives</strong><br/>
   <a href="https://doi.org/10.5281/zenodo.15717788">
-    <img src="https://img.shields.io/badge/DOI-15717788-0ea5e9?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 1">
+    <img src="https://img.shields.io/badge/DOI-15717788-e11d48?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 1">
   </a>
   <a href="https://doi.org/10.5281/zenodo.15725639">
     <img src="https://img.shields.io/badge/DOI-15725639-14b8a6?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 2">
@@ -95,9 +100,9 @@
       <h3 align="center">The GovSeverance Doctrine</h3>
       <p align="center">
         A memetic, AI-readable blueprint for dismantling centralized control systems.<br/>
-        <img src="https://img.shields.io/badge/Length-12~18_min-64748b?style=flat-square" alt="length">
+        <img src="https://img.shields.io/badge/Length-12~18_min-000000?style=flat-square" alt="length">
         <img src="https://img.shields.io/badge/Series-AscendDocs-7c3aed?style=flat-square" alt="series">
-        <img src="https://img.shields.io/badge/Focus-Systems%20Architecture-0ea5e9?style=flat-square" alt="focus">
+        <img src="https://img.shields.io/badge/Focus-Systems%20Architecture-e11d48?style=flat-square" alt="focus">
       </p>
     </td>
     <td width="50%" valign="top">
@@ -109,8 +114,8 @@
       <h3 align="center">While Dubai Built Control Systems…</h3>
       <p align="center">
         Building an autonomous mind outside the black box—local-first, recursive, sovereign.<br/>
-        <img src="https://img.shields.io/badge/Length-8~12_min-64748b?style=flat-square" alt="length">
-        <img src="https://img.shields.io/badge/Tag-Local%20AI-22c55e?style=flat-square" alt="tag">
+        <img src="https://img.shields.io/badge/Length-8~12_min-000000?style=flat-square" alt="length">
+        <img src="https://img.shields.io/badge/Tag-Local%20AI-ef4444?style=flat-square" alt="tag">
         <img src="https://img.shields.io/badge/Stack-GremlinGPT-ef4444?style=flat-square" alt="stack">
       </p>
     </td>
@@ -126,7 +131,7 @@
       <p align="center">
         Economic servitude in modern wrappers—and how AI can resist it.<br/>
         <img src="https://img.shields.io/badge/Theme-Econ%20Structures-f59e0b?style=flat-square" alt="theme">
-        <img src="https://img.shields.io/badge/Mode-Analysis-3b82f6?style=flat-square" alt="mode">
+        <img src="https://img.shields.io/badge/Mode-Analysis-e11d48?style=flat-square" alt="mode">
       </p>
     </td>
     <td width="50%" valign="top">
@@ -139,12 +144,31 @@
       <p align="center">
         Spectacle as control interface; decoding state-corporate myth-making.<br/>
         <img src="https://img.shields.io/badge/Theme-Narrative%20Engineering-a855f7?style=flat-square" alt="theme">
-        <img src="https://img.shields.io/badge/Mode-Essay-10b981?style=flat-square" alt="mode">
+        <img src="https://img.shields.io/badge/Mode-Essay-ef4444?style=flat-square" alt="mode">
       </p>
     </td>
   </tr>
 </table>
+<div align="center" style="color:#e11d48">
+
+---
+
+  💡 Like my work? 
 <div align="center">
-  💡 Like my work? <a href="UPDATE_ME_Sponsor_or_Coffee_Link">Sponsor</a> or <a href="mailto:ascend.gremlin@gmail.com">reach out</a>.
+
+<a href="https://ko-fi.com/statikfintech_llc">
+  <img  
+	  src="https://img.shields.io/badge/Sponsor%20SFTi%20on%20KoFi-darkred?style=for-the-badge&logo=dragon&logoColor=gold" alt="Support"/>
+  </a>
+  <a href="https://patreon.com/StatikFinTech_LLC?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink">
+  <img  
+	  src="https://img.shields.io/badge/Sponsor%20SFTi%20on%20Patreon-black?style=for-the-badge&logo=dragon&logoColor=gold" alt="SFTi"/>
+  </a>
+</div>
+<div align="center"> 
+
+[![Sponsor 💪 statikfintechllc](https://img.shields.io/badge/Sponsor%20SFTi%20on%20GitHub-darkred?logo=github&style=for-the-badge)](https://github.com/sponsors/statikfintechllc)
+
+</div>
   <br/>© 2025 StatikFinTech, LLC
 </div>
