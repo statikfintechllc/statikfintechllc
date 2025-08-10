@@ -36,9 +36,7 @@
   </a>
 </div>
 <div align="center">
-<img
-  src="https://github-readme-activity-graph.vercel.app/graph?username=statikfintechllc&bg_color=0b0f14&color=b91c1c&line=b91c1c&point=0b0f14&area=true&area_color=b91c1c80&hide_border=true&custom_title=Statik%20DK%20Smoke%20%E2%80%94%20Stealth%20Trace&v=2"
-/>
+  <img src="./assets/crimson-flow.svg?v=1" alt="Crimson Flow animated graph">
 </div>
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=statikfintechllc&show_icons=true&count_private=true&include_all_commits=true&rank_icon=github&theme=transparent&hide_border=true&title_color=e11d48&icon_color=e11d48" height="165" alt="Stats">
