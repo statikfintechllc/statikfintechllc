@@ -167,6 +167,4 @@
 
 [![Sponsor 💪 statikfintechllc](https://img.shields.io/badge/Sponsor%20SFTi%20on%20GitHub-darkred?logo=github&style=for-the-badge)](https://github.com/sponsors/statikfintechllc)
 
-</div>
   <br/>© 2025 StatikFinTech, LLC
-</div>
