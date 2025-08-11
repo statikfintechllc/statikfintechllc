@@ -1,26 +1,38 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" alt="Repo Ticker Stats" height="36">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://skillicons.dev/icons?i=python,anaconda,nodejs,bash,linux,css,tailwind,react,electron,go,typescript,javascript,html,astro,jupyter,nixos&theme=dark" alt="Skill icons"><br>
+  </a>
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" alt="Repo Ticker Stats" height="36">
+  </a>
 </div>
 <div align="center">
-  <img src="./badges/ai_architect.svg" alt="AI Architect" height="24">
-  <img src="./badges/full_stack_dev.svg" alt="Full-Stack Dev" height="24">
-  <img src="./badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" height="24">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./badges/ai_architect.svg" alt="AI Architect" height="24">
+  </a>
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./badges/full_stack_dev.svg" alt="Full-Stack Dev" height="24">
+  </a>
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" height="24">
+  </a>	
 </div>
 <div align="center">
-  <img src="https://avatars.githubusercontent.com/u/200911899?v=4" alt="Statik DK Smoke avatar" width="96" height="96" style="border-radius:50%">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/v.svg/assets/pv-traffic.svg">
+  </a>
 </div>
-
 <div align="center">
-  <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/v.svg/assets/pv-count.svg">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://avatars.githubusercontent.com/u/200911899?v=4" alt="Statik DK Smoke avatar" width="96" height="96" style="border-radius:50%">
+  </a>
 </div>
-
 <h1 align="center" style="color:#e11d48">Statik DK Smoke — Sovereign Systems</h1>
 <h3 align="center">I build sovereign, local-first AI systems, Cool ideas, and all For The People.</h3>
 
 ---
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=python,anaconda,nodejs,bash,linux,css,tailwind,react,electron,go,typescript,javascript,html,astro,jupyter,nixos&theme=dark" alt="Skill icons"><br>
   <a href="https://github.com/statikfintechllc">
     <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
   </a>
@@ -44,14 +56,22 @@
   <img src="https://github.com/KDK-Grim/GremlinGPT-Boost/blob/master/docs/svg/crimson-flow.svg?raw=1" alt="Statik DK Smoke Activity">
 </div>
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=statikfintechllc&show_icons=true&count_private=true&include_all_commits=true&rank_icon=github&theme=transparent&hide_border=true&title_color=e11d48&icon_color=e11d48" height="165" alt="Stats">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=statikfintechllc&layout=compact&langs_count=10&hide_border=true&theme=transparent&title_color=e11d48" height="165" alt="Top languages">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://github-readme-stats.vercel.app/api?username=statikfintechllc&show_icons=true&count_private=true&include_all_commits=true&rank_icon=github&theme=transparent&hide_border=true&title_color=e11d48&icon_color=e11d48" height="165" alt="Stats">
+  </a>
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=statikfintechllc&layout=compact&langs_count=10&hide_border=true&theme=transparent&title_color=e11d48" height="165" alt="Top languages">
+  </a>
 </div>
 <div align="center">
-  <img src="https://streak-stats.demolab.com?user=statikfintechllc&theme=transparent&hide_border=true&ring=e11d48&fire=e11d48&currStreakLabel=e11d48" alt="Streak">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://streak-stats.demolab.com?user=statikfintechllc&theme=transparent&hide_border=true&ring=e11d48&fire=e11d48&currStreakLabel=e11d48" alt="Streak">
+  </a>
 </div>
 <div align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=statikfintechllc&theme=darkhub&column=6&margin-w=5&margin-h=5&title_color=e11d48" alt="Trophies">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://github-profile-trophy.vercel.app/?username=statikfintechllc&theme=darkhub&column=6&margin-w=5&margin-h=5&title_color=e11d48" alt="Trophies">
+  </a>
 </div>
 <h2 align="center" style="color:#e11d48">Featured Work</h2>
 <div align="center">
@@ -156,6 +176,28 @@
 
 ---
 
+### The Institute's GremlinGPT
+The World's first *RS-RACS* | *Recursive, Self-Referential Autonomous Cognitive System*
+
+</div> 
+
+<div align="center">
+
+  <a href="https://www.github.com/statikfintechllc/GremlinGPT">
+  <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/graph/traffic_graph.png" alt="Traffic Graph" />
+  </a>
+   <a href="https://github.com/statikfintechllc/WorkFlowRepo.git">
+  <img src="https://img.shields.io/badge/Click%20to%20Install-Graph%20Workflow-darkred?labelColor=black" alt="GremlinGPT Alpha"/>
+  </a>
+
+</div>
+  
+<div align="center">
+
+Reset: After 7:00pm CST on First 2 Clones
+
+---
+
   💡 Like my work? 
 <div align="center">
 
@@ -172,4 +214,4 @@
 
 [![Sponsor 💪 statikfintechllc](https://img.shields.io/badge/Sponsor%20SFTi%20on%20GitHub-darkred?logo=github&style=for-the-badge)](https://github.com/sponsors/statikfintechllc)
 
-  <br/>© 2025 StatikFinTech, LLC
+  <br/> [© 2025 StatikFinTech, LLC](https://statikfintechllc.github.io/Ascend-Institute/)
