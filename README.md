@@ -9,6 +9,11 @@
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/200911899?v=4" alt="Statik DK Smoke avatar" width="96" height="96" style="border-radius:50%">
 </div>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/v.svg/assets/pv-count.svg">
+</div>
+
 <h1 align="center" style="color:#e11d48">Statik DK Smoke — Sovereign Systems</h1>
 <h3 align="center">I build sovereign, local-first AI systems, Cool ideas, and all For The People.</h3>
 
