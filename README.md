@@ -82,10 +82,10 @@
 </div>
 
 <div align="center">
-  <img src="./docs/s.svg/streak.svg" alt="Streak" />
+  <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/s.svg/assets/streak.svg?raw=1" alt="Streak" />
 </div>
 <div align="center">
-  <img src="./docs/t.svg/trophies.svg" alt="Trophies" />
+  <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/t.svg/assets/trophies.svg?raw=1" alt="Trophies" />
 </div>
 
 <h2 align="center" style="color:#e11d48">Featured Work</h2>
