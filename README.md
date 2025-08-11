@@ -198,7 +198,7 @@ Reset: After 7:00pm CST on First 2 Clones
 
 ---
 
-  💡 Like my work? 
+### 💡 Like my work? 
 <div align="center">
 
 <a href="https://ko-fi.com/statikfintech_llc">
