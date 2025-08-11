@@ -1,9 +1,0 @@
-<!-- assets/pv-label.svg : left pill, black, “PROFILE VIEWS”, square right edge -->
-<svg xmlns="http://www.w3.org/2000/svg" width="170" height="28" role="img" aria-label="PROFILE VIEWS">
-  <rect x="0" y="0" width="170" height="28" rx="14" ry="14" fill="#000000"/>
-  <!-- square off the right edge so it butts clean with Komarev -->
-  <rect x="156" y="0" width="14" height="28" fill="#000000"/>
-  <text x="85" y="19" text-anchor="middle"
-        font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial"
-        font-size="11" letter-spacing="2" fill="#ffffff">PROFILE VIEWS</text>
-</svg>
