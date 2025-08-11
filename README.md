@@ -60,7 +60,7 @@
   </a>
 </div>
 <div align="center">
-  <img src="https://github.com/KDK-Grim/GremlinGPT-Boost/blob/master/docs/svg/crimson-flow.svg?raw=1" alt="Statik DK Smoke Activity">
+  <img src="https://github.com/KDK-Grim/GremlinGPT-Boost/blob/master/docs/svg/assets/crimson-flow.svg?raw=1" alt="Statik DK Smoke Activity">
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
