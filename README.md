@@ -1,9 +1,22 @@
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" alt="Repo Ticker Stats" height="36">
+  </a>
+</div>
+<div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://skillicons.dev/icons?i=python,anaconda,nodejs,bash,linux,css,tailwind,react,electron,go,typescript,javascript,html,astro,jupyter,nixos&theme=dark" alt="Skill icons"><br>
   </a>
+  <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/c.svg/assets/crimson-flow.svg?raw=1" alt="Statik DK Smoke Activity">
+</div>
+<div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" alt="Repo Ticker Stats" height="36">
+    <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/s.svg/assets/streak.svg?raw=1" alt="Streak" />
+  </a>
+</div>
+<div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
+	<img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/t.svg/assets/trophies.svg?raw=1" alt="Trophies" />
   </a>
 </div>
 <div align="center">
@@ -21,24 +34,12 @@
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/v.svg/assets/pv-traffic.svg">
   </a>
-</div>
+</div>  
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://avatars.githubusercontent.com/u/200911899?v=4" alt="Statik DK Smoke avatar" width="96" height="96" style="border-radius:50%">
   </a>
-</div>
-<h1 align="center" style="color:#e11d48">Statik DK Smoke | SFTi | Sovereign Systems</h1>
-<h3 align="center">I build sovereign, local-first AI systems, Cool ideas, and all For The People.</h3>
-<div align="center">
-  <a href="https://github.com/statikfintechllc">
-    <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
-  <a href="https://github.com/statikfintechllc">
-    <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
-  </a>
-</div>
-
----
-
+</div>	
 <div align="center">
   <a href="https://github.com/statikfintechllc">
     <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
@@ -59,9 +60,8 @@
     <img src="https://img.shields.io/badge/-000000?logo=medium&logoColor=white&style=flat-square" alt="Medium">
   </a>
 </div>
-<div align="center">
-  <img src="https://github.com/KDK-Grim/GremlinGPT-Boost/blob/master/docs/svg/assets/crimson-flow.svg?raw=1" alt="Statik DK Smoke Activity">
-</div>
+<h1 align="center" style="color:#e11d48">Statik DK Smoke | SFTi | Sovereign Systems</h1>
+<h3 align="center">I build sovereign, local-first AI systems, Cool ideas, and all For The People.</h3>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://github-readme-stats.vercel.app/api?username=statikfintechllc&show_icons=true&count_private=true&include_all_commits=true&rank_icon=github&theme=transparent&hide_border=true&title_color=e11d48&icon_color=e11d48" height="165" alt="Stats">
@@ -71,13 +71,10 @@
   </a>
 </div>
 <div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/s.svg/assets/streak.svg?raw=1" alt="Streak" />
-  </a>
-</div>
-<div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-	<img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/t.svg/assets/trophies.svg?raw=1" alt="Trophies" />
+  <a href="https://github.com/statikfintechllc">
+    <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
+  <a href="https://github.com/statikfintechllc">
+    <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
   </a>
 </div>
 <h2 align="center" style="color:#e11d48">Featured Work</h2>
