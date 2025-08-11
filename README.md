@@ -80,6 +80,14 @@
     <img src="https://github-profile-trophy.vercel.app/?username=statikfintechllc&theme=darkhub&column=6&margin-w=5&margin-h=5&title_color=e11d48" alt="Trophies">
   </a>
 </div>
+
+<div align="center">
+  <img src="./docs/s.svg/streak.svg" alt="Streak" />
+</div>
+<div align="center">
+  <img src="./docs/t.svg/trophies.svg" alt="Trophies" />
+</div>
+
 <h2 align="center" style="color:#e11d48">Featured Work</h2>
 <div align="center">
   <a href="https://github.com/statikfintechllc/GremlinGPT">
