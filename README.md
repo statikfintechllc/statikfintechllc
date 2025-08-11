@@ -72,22 +72,14 @@
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://streak-stats.demolab.com?user=statikfintechllc&theme=transparent&hide_border=true&ring=e11d48&fire=e11d48&currStreakLabel=e11d48" alt="Streak">
+    <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/s.svg/assets/streak.svg?raw=1" alt="Streak" />
   </a>
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://github-profile-trophy.vercel.app/?username=statikfintechllc&theme=darkhub&column=6&margin-w=5&margin-h=5&title_color=e11d48" alt="Trophies">
+	<img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/t.svg/assets/trophies.svg?raw=1" alt="Trophies" />
   </a>
 </div>
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/s.svg/assets/streak.svg?raw=1" alt="Streak" />
-</div>
-<div align="center">
-  <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/t.svg/assets/trophies.svg?raw=1" alt="Trophies" />
-</div>
-
 <h2 align="center" style="color:#e11d48">Featured Work</h2>
 <div align="center">
   <a href="https://github.com/statikfintechllc/GremlinGPT">
