@@ -195,7 +195,9 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
 }
 
 // ----- Card -----
-const card = (repo, x, slideId) => {
+// NOTE: 'beginSec' is an ABSOLUTE offset (e.g., 0, 6, 12) so the fade repeats
+// forever WITHOUT relying on repeatEvent (some renderers ignore it).
+const card = (repo, x, beginSec) => {
   const px = 20, pw = CW - 40;
   const py = 160, ph = 12;
 
@@ -281,17 +283,18 @@ const card = (repo, x, slideId) => {
       </rect>
     </g>
 
-    <!-- fade bound to this slide's transform -->
+    <!-- fade timed with this slide's absolute offset; loops on its own -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${slideId}.begin; ${slideId}.repeatEvent"
+             begin="${beginSec}s"
+             repeatCount="indefinite"
              fill="remove"/>
   </g>`;
 };
 
-// ------------- BUILD (unique name; no 'build' anywhere) -------------
+// ------------- BUILD -------------
 const buildRepoSvg = (repos) => {
   // 2 per page
   const pages = [];
@@ -303,14 +306,12 @@ const buildRepoSvg = (repos) => {
 
   let slides = "";
   pages.forEach((pg, i) => {
-    const slideId = `s${i}`;
-    const beginTime = (i * PAGE_SEC).toFixed(2); // 0s, 6s, 12s, ...
-
+    const beginTime = (i * PAGE_SEC).toFixed(2); // 0, 6, 12, ...
     slides += `
-    <g class="slide" transform="translate(${W} 0)" clip-path="url(#repo-frame)">
-      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0 + CW + G, slideId) : ""}
-      <animateTransform id="${slideId}" attributeName="transform" type="translate"
-        values="${W} 0; 0 0; 0 0; ${-W} 0"
+    <g class="slide" transform="translate(${W},0)" clip-path="url(#repo-frame)">
+      ${card(pg[0], x0, beginTime)}${pg[1] ? card(pg[1], x0 + CW + G, beginTime) : ""}
+      <animateTransform attributeName="transform" type="translate"
+        values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
@@ -346,4 +347,3 @@ const buildRepoSvg = (repos) => {
   await fs.writeFile(OUT, svg, "utf8");
   console.log("wrote", OUT);
 })();
-
