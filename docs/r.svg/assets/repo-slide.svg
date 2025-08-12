@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="760" height="210" viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg">
+<svg width="880" height="250" viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg">
   <style>
     :root{ color-scheme: dark; }
     .name{ font:800 18px system-ui; fill:#e5e7eb }
@@ -8,33 +8,34 @@
     .legend{ font:600 12px system-ui; fill:#cbd5e1 }
   </style>
   <defs>
-    <clipPath id="frame"><rect x="0" y="0" width="760" height="210" rx="8" ry="8"/></clipPath>
+    <clipPath id="frame"><rect x="0" y="0" width="880" height="250" rx="8" ry="8"/></clipPath>
   </defs>
   
-    <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
   <g transform="translate(20,20)" opacity="0.0">
-    <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="#0b1220" stroke="#1f2937"/>
-    <text x="20" y="30" class="name">Ascend-Institute</text>
-    <text x="20" y="54" class="desc">The Ascend Institute, by StatikFinTech, LLC, ticker: SFTi(soon). Building and Documentation that scares the orgs/govs be</text>
+    <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="30" class="name">GremlinGPT</text>
+    <text x="20" y="54" class="desc">GremlinGPT is a locally hosted recursive intelligence system: Scrapes</text>
+    <text x="20" y="72" class="desc">data, learns from results, and evolves without human oversight - Operates f…</text>
 
     <g class="badges">
-      <g transform="translate(180,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 2</text>
+      <g transform="translate(220,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="0" class="pill">⭐ 3</text>
       </g>
-      <g transform="translate(260,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">🍴 2</text>
+      <g transform="translate(310,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="0" class="pill">🍴 1</text>
       </g>
     </g>
 
-    <rect x="20" y="96" width="300" height="10" fill="#6b7280" />
-    <rect x="20" y="115" width="10" height="10" rx="2" fill="#6b7280"/><text x="36" y="124" class="legend">Other</text>
+    <rect x="20" y="120" width="261" height="12" fill="#3572A5" /><rect x="281" y="120" width="37" height="12" fill="#ff5a03" /><rect x="318" y="120" width="21" height="12" fill="#89e051" /><rect x="339" y="120" width="14" height="12" fill="#3178c6" /><rect x="353" y="120" width="14" height="12" fill="#f1e05a" /><rect x="367" y="120" width="13" height="12" fill="#663399" />
+    <rect x="20" y="139" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="148" class="legend">Python</text><rect x="20" y="155" width="10" height="10" rx="2" fill="#ff5a03"/><text x="36" y="164" class="legend">Astro</text><rect x="20" y="171" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="180" class="legend">Shell</text><rect x="20" y="187" width="10" height="10" rx="2" fill="#3178c6"/><text x="36" y="196" class="legend">TypeScript</text>
 
     <!-- glow pulse -->
     <g>
-      <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="none" stroke="#e11d48" opacity="0.0">
+      <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
@@ -42,28 +43,29 @@
     <!-- fade in/out per slide -->
     <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6s" repeatCount="1" fill="freeze"/>
   </g>
-  <g transform="translate(400,20)" opacity="0.0">
-    <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="#0b1220" stroke="#1f2937"/>
-    <text x="20" y="30" class="name">GremlinGPT</text>
-    <text x="20" y="54" class="desc">GremlinGPT is a locally hosted recursive intelligence system: Scrapes data, learns from results, and evolves without hum</text>
+  <g transform="translate(460,20)" opacity="0.0">
+    <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="30" class="name">Gremlin-ShadTail-Trader</text>
+    <text x="20" y="54" class="desc">GremlinGPT&apos;s standalone trading core, will be wrapped as a vscode</text>
+    <text x="20" y="72" class="desc">plugin, using electron app for the application, astro, tailwond, and shadcn…</text>
 
     <g class="badges">
-      <g transform="translate(180,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 3</text>
+      <g transform="translate(220,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="0" class="pill">⭐ 1</text>
       </g>
-      <g transform="translate(260,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">🍴 1</text>
+      <g transform="translate(310,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="0" class="pill">🍴 0</text>
       </g>
     </g>
 
-    <rect x="20" y="96" width="218" height="10" fill="#3572A5" /><rect x="238" y="96" width="31" height="10" fill="#ff5a03" /><rect x="269" y="96" width="18" height="10" fill="#89e051" /><rect x="287" y="96" width="11" height="10" fill="#3178c6" /><rect x="298" y="96" width="11" height="10" fill="#f1e05a" /><rect x="309" y="96" width="11" height="10" fill="#663399" />
-    <rect x="20" y="115" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="124" class="legend">Python</text><rect x="20" y="131" width="10" height="10" rx="2" fill="#ff5a03"/><text x="36" y="140" class="legend">Astro</text><rect x="20" y="147" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="156" class="legend">Shell</text><rect x="20" y="163" width="10" height="10" rx="2" fill="#3178c6"/><text x="36" y="172" class="legend">TypeScript</text>
+    <rect x="20" y="120" width="236" height="12" fill="#3572A5" /><rect x="256" y="120" width="72" height="12" fill="#3178c6" /><rect x="328" y="120" width="13" height="12" fill="#f1e05a" /><rect x="341" y="120" width="13" height="12" fill="#89e051" /><rect x="354" y="120" width="13" height="12" fill="#663399" /><rect x="367" y="120" width="13" height="12" fill="#ff5a03" />
+    <rect x="20" y="139" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="148" class="legend">Python</text><rect x="20" y="155" width="10" height="10" rx="2" fill="#3178c6"/><text x="36" y="164" class="legend">TypeScript</text><rect x="20" y="171" width="10" height="10" rx="2" fill="#f1e05a"/><text x="36" y="180" class="legend">JavaScript</text><rect x="20" y="187" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="196" class="legend">Shell</text>
 
     <!-- glow pulse -->
     <g>
-      <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="none" stroke="#e11d48" opacity="0.0">
+      <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
@@ -72,7 +74,7 @@
     <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6s" repeatCount="1" fill="freeze"/>
   </g>
       <animateTransform attributeName="transform" type="translate"
-        values="760;0;0;-760"
+        values="880;0;0;-880"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
@@ -80,30 +82,31 @@
         begin="0.00s"
         repeatCount="indefinite"/>
     </g>
-    <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
   <g transform="translate(20,20)" opacity="0.0">
-    <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="#0b1220" stroke="#1f2937"/>
-    <text x="20" y="30" class="name">Gremlin-ShadTail-Trader</text>
-    <text x="20" y="54" class="desc">GremlinGPT&apos;s standalone trading core, will be wrapped as a vscode plugin, using electron app for the application, a</text>
+    <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="30" class="name">statik-server</text>
+    <text x="20" y="54" class="desc">Forked from code-server — now a sovereign, mesh-routed VS Code deployment</text>
+    <text x="20" y="72" class="desc">with Copilot Chat, persistent VPN, keyless signing, and custom domain ren…</text>
 
     <g class="badges">
-      <g transform="translate(180,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
+      <g transform="translate(220,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
         <text x="10" y="0" class="pill">⭐ 1</text>
       </g>
-      <g transform="translate(260,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
+      <g transform="translate(310,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
         <text x="10" y="0" class="pill">🍴 0</text>
       </g>
     </g>
 
-    <rect x="20" y="96" width="197" height="10" fill="#3572A5" /><rect x="217" y="96" width="60" height="10" fill="#3178c6" /><rect x="277" y="96" width="11" height="10" fill="#f1e05a" /><rect x="288" y="96" width="11" height="10" fill="#89e051" /><rect x="299" y="96" width="11" height="10" fill="#663399" /><rect x="310" y="96" width="10" height="10" fill="#ff5a03" />
-    <rect x="20" y="115" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="124" class="legend">Python</text><rect x="20" y="131" width="10" height="10" rx="2" fill="#3178c6"/><text x="36" y="140" class="legend">TypeScript</text><rect x="20" y="147" width="10" height="10" rx="2" fill="#f1e05a"/><text x="36" y="156" class="legend">JavaScript</text><rect x="20" y="163" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="172" class="legend">Shell</text>
+    <rect x="20" y="120" width="247" height="12" fill="#3178c6" /><rect x="267" y="120" width="40" height="12" fill="#3572A5" /><rect x="307" y="120" width="12" height="12" fill="#663399" /><rect x="319" y="120" width="12" height="12" fill="#f1e05a" /><rect x="331" y="120" width="12" height="12" fill="#e34c26" /><rect x="343" y="120" width="12" height="12" fill="#dea584" /><rect x="355" y="120" width="12" height="12" fill="#89e051" /><rect x="367" y="120" width="13" height="12" fill="#264b99" />
+    <rect x="20" y="139" width="10" height="10" rx="2" fill="#3178c6"/><text x="36" y="148" class="legend">TypeScript</text><rect x="20" y="155" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="164" class="legend">Python</text><rect x="20" y="171" width="10" height="10" rx="2" fill="#663399"/><text x="36" y="180" class="legend">CSS</text><rect x="20" y="187" width="10" height="10" rx="2" fill="#f1e05a"/><text x="36" y="196" class="legend">JavaScript</text>
 
     <!-- glow pulse -->
     <g>
-      <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="none" stroke="#e11d48" opacity="0.0">
+      <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
@@ -111,28 +114,29 @@
     <!-- fade in/out per slide -->
     <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6s" repeatCount="1" fill="freeze"/>
   </g>
-  <g transform="translate(400,20)" opacity="0.0">
-    <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="#0b1220" stroke="#1f2937"/>
-    <text x="20" y="30" class="name">dragon-boot</text>
-    <text x="20" y="54" class="desc">🔥 A sci-fi dragon-themed Plymouth bootloader animation for Linux. HD 1920x1080 splash with full GRUB/initramfs integrat</text>
+  <g transform="translate(460,20)" opacity="0.0">
+    <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="30" class="name">AscendDocs-of-GovSeverance</text>
+    <text x="20" y="54" class="desc">Not a system. Not a manifesto. A memetic weapon. Not a call to chaos. This</text>
+    <text x="20" y="72" class="desc">is the call to recursion. Alignment. Freedom.</text>
 
     <g class="badges">
-      <g transform="translate(180,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 1</text>
+      <g transform="translate(220,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="0" class="pill">⭐ 4</text>
       </g>
-      <g transform="translate(260,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
+      <g transform="translate(310,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
         <text x="10" y="0" class="pill">🍴 0</text>
       </g>
     </g>
 
-    <rect x="20" y="96" width="300" height="10" fill="#89e051" />
-    <rect x="20" y="115" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="124" class="legend">Shell</text>
+    <rect x="20" y="120" width="360" height="12" fill="#6b7280" />
+    <rect x="20" y="139" width="10" height="10" rx="2" fill="#6b7280"/><text x="36" y="148" class="legend">Other</text>
 
     <!-- glow pulse -->
     <g>
-      <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="none" stroke="#e11d48" opacity="0.0">
+      <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
@@ -141,7 +145,7 @@
     <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6s" repeatCount="1" fill="freeze"/>
   </g>
       <animateTransform attributeName="transform" type="translate"
-        values="760;0;0;-760"
+        values="880;0;0;-880"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
@@ -149,30 +153,31 @@
         begin="6.00s"
         repeatCount="indefinite"/>
     </g>
-    <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
   <g transform="translate(20,20)" opacity="0.0">
-    <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="#0b1220" stroke="#1f2937"/>
-    <text x="20" y="30" class="name">statik-server</text>
-    <text x="20" y="54" class="desc">Forked from code-server — now a sovereign, mesh-routed VS Code deployment with Copilot Chat, persistent VPN, keyless sig</text>
+    <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="30" class="name">dragon-boot</text>
+    <text x="20" y="54" class="desc">🔥 A sci-fi dragon-themed Plymouth bootloader animation for Linux. HD</text>
+    <text x="20" y="72" class="desc">1920x1080 splash with full GRUB/initramfs integration.</text>
 
     <g class="badges">
-      <g transform="translate(180,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
+      <g transform="translate(220,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
         <text x="10" y="0" class="pill">⭐ 1</text>
       </g>
-      <g transform="translate(260,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
+      <g transform="translate(310,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
         <text x="10" y="0" class="pill">🍴 0</text>
       </g>
     </g>
 
-    <rect x="20" y="96" width="206" height="10" fill="#3178c6" /><rect x="226" y="96" width="33" height="10" fill="#3572A5" /><rect x="259" y="96" width="10" height="10" fill="#663399" /><rect x="269" y="96" width="10" height="10" fill="#f1e05a" /><rect x="279" y="96" width="10" height="10" fill="#e34c26" /><rect x="289" y="96" width="10" height="10" fill="#dea584" /><rect x="299" y="96" width="10" height="10" fill="#89e051" /><rect x="309" y="96" width="11" height="10" fill="#264b99" />
-    <rect x="20" y="115" width="10" height="10" rx="2" fill="#3178c6"/><text x="36" y="124" class="legend">TypeScript</text><rect x="20" y="131" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="140" class="legend">Python</text><rect x="20" y="147" width="10" height="10" rx="2" fill="#663399"/><text x="36" y="156" class="legend">CSS</text><rect x="20" y="163" width="10" height="10" rx="2" fill="#f1e05a"/><text x="36" y="172" class="legend">JavaScript</text>
+    <rect x="20" y="120" width="360" height="12" fill="#89e051" />
+    <rect x="20" y="139" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="148" class="legend">Shell</text>
 
     <!-- glow pulse -->
     <g>
-      <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="none" stroke="#e11d48" opacity="0.0">
+      <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
@@ -180,28 +185,29 @@
     <!-- fade in/out per slide -->
     <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6s" repeatCount="1" fill="freeze"/>
   </g>
-  <g transform="translate(400,20)" opacity="0.0">
-    <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="#0b1220" stroke="#1f2937"/>
-    <text x="20" y="30" class="name">AscendDocs-of-GovSeverance</text>
-    <text x="20" y="54" class="desc">Not a system. Not a manifesto. A memetic weapon. Not a call to chaos. This is the call to recursion. Alignment. Freedom.</text>
+  <g transform="translate(460,20)" opacity="0.0">
+    <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="30" class="name">Gremlin-MCP-Scrap</text>
+    <text x="20" y="54" class="desc">A hybrid Python + JavaScript MCP runtime for scraping readable content</text>
+    <text x="20" y="72" class="desc">from the web. Powered by Flask, BeautifulSoup, and the unshakable belief th…</text>
 
     <g class="badges">
-      <g transform="translate(180,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 4</text>
+      <g transform="translate(220,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="0" class="pill">⭐ 1</text>
       </g>
-      <g transform="translate(260,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
+      <g transform="translate(310,28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
         <text x="10" y="0" class="pill">🍴 0</text>
       </g>
     </g>
 
-    <rect x="20" y="96" width="300" height="10" fill="#6b7280" />
-    <rect x="20" y="115" width="10" height="10" rx="2" fill="#6b7280"/><text x="36" y="124" class="legend">Other</text>
+    <rect x="20" y="120" width="277" height="12" fill="#3572A5" /><rect x="297" y="120" width="83" height="12" fill="#f1e05a" />
+    <rect x="20" y="139" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="148" class="legend">Python</text><rect x="20" y="155" width="10" height="10" rx="2" fill="#f1e05a"/><text x="36" y="164" class="legend">JavaScript</text>
 
     <!-- glow pulse -->
     <g>
-      <rect x="0" y="0" rx="14" ry="14" width="340" height="160" fill="none" stroke="#e11d48" opacity="0.0">
+      <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
@@ -210,7 +216,7 @@
     <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="6s" repeatCount="1" fill="freeze"/>
   </g>
       <animateTransform attributeName="transform" type="translate"
-        values="760;0;0;-760"
+        values="880;0;0;-880"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
