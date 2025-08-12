@@ -165,8 +165,8 @@ const DESC  = (s) => {
 };
 
 const card = (repo, x) => {
-  // language bar layout
-  const px = 20, py = 120, pw = CW - 40, ph = 12;
+  // Move language bar to bottom for better balance
+  const px = 20, py = 160, pw = CW - 40, ph = 12;
   let acc = 0;
   const minw = 0.04; // 4% min width visibility
   const totalWeight = repo.segments.reduce((a,b)=>a+b.weight,0) || 1;
@@ -185,33 +185,44 @@ const card = (repo, x) => {
     return `<rect x="${xseg}" y="${py}" width="${i === norm.length-1 ? (px+pw - xseg) : wpx}" height="${ph}" fill="${s.color}" />`;
   }).join("");
 
+  // Position legends at the very bottom in a more compact layout
   const legends = segs.slice(0,4).map((s,i)=> {
-    const y = py + 28 + i*16;
-    return `<rect x="${px}" y="${y-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${px+16}" y="${y}" class="legend">${xmlEsc(s.name)}</text>`;
+    const x = px + (i % 2) * 190; // Two columns
+    const y = py + 20 + Math.floor(i / 2) * 14; // Two rows
+    return `<rect x="${x}" y="${y-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${x+16}" y="${y}" class="legend">${xmlEsc(s.name)}</text>`;
   }).join("");
 
-  // Handle description wrapping for longer text
+  // Improved description wrapping with better character limits
   const descText = DESC(repo.desc);
   const descLines = [];
-  if (descText.length > 75) {
-    // Split into two lines at word boundary
+  const maxCharsPerLine = 60; // Reduced for better fitting
+  const maxLines = 3; // Allow up to 3 lines
+  
+  if (descText.length > maxCharsPerLine) {
     const words = descText.split(' ');
-    let line1 = '', line2 = '';
-    let currentLength = 0;
+    let lines = [''];
+    let currentLine = 0;
     
     for (const word of words) {
-      if (currentLength + word.length + 1 <= 75 && line2 === '') {
-        line1 += (line1 ? ' ' : '') + word;
-        currentLength += word.length + 1;
+      const testLine = lines[currentLine] + (lines[currentLine] ? ' ' : '') + word;
+      
+      if (testLine.length <= maxCharsPerLine) {
+        lines[currentLine] = testLine;
+      } else if (currentLine < maxLines - 1) {
+        currentLine++;
+        lines[currentLine] = word;
       } else {
-        line2 += (line2 ? ' ' : '') + word;
+        // Truncate with ellipsis if we exceed max lines
+        lines[currentLine] = lines[currentLine].slice(0, maxCharsPerLine - 3) + '…';
+        break;
       }
     }
     
-    descLines.push(`<text x="20" y="54" class="desc">${line1}</text>`);
-    if (line2) {
-      descLines.push(`<text x="20" y="72" class="desc">${line2.slice(0, 75)}${line2.length > 75 ? '…' : ''}</text>`);
-    }
+    lines.forEach((line, i) => {
+      if (line.trim()) {
+        descLines.push(`<text x="20" y="${54 + i * 18}" class="desc">${line}</text>`);
+      }
+    });
   } else {
     descLines.push(`<text x="20" y="54" class="desc">${descText}</text>`);
   }
@@ -256,10 +267,12 @@ const build = (repos) => {
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
+  
+  // Calculate total cycle duration for proper looping
+  const totalDuration = pages.length * PAGE_SEC;
 
   let slides = "";
   pages.forEach((pg,i)=>{
-    const begin = (i * PAGE_SEC).toFixed(2);
     slides += `
     <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
       ${card(pg[0], x0)}${pg[1] ? card(pg[1], x0+CW+G) : ""}
@@ -269,8 +282,9 @@ const build = (repos) => {
         keySplines="${EASE}"
         calcMode="spline"
         dur="${PAGE_SEC}s"
-        begin="${begin}s"
-        repeatCount="indefinite"/>
+        begin="${(i * PAGE_SEC).toFixed(2)}s"
+        repeatCount="indefinite"
+        repeatDur="${totalDuration}s"/>
     </g>`;
   });
 
