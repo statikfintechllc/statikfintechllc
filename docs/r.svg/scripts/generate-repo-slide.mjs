@@ -19,11 +19,12 @@ const GH_TOKEN = process.env.PAT_GITHUB;
 const GH_USER  = process.env.GH_USER || "statikfintechllc";
 const REPOS_ENV = (process.env.REPOS || "").trim();
 const PAGE_SEC  = Number(process.env.REPO_PAGE_SEC || 6);
-const HOLD_FRAC = 0.55; // centered dwell portion
-const EASE = "0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"; // out,hold,in
+const HOLD_FRAC = 0.55;
+const EASE = "0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1";
 
 if (!GH_TOKEN) throw new Error("PAT_GITHUB env missing");
 
+// -------------------- GraphQL --------------------
 const gql = async (query, variables = {}, attempt = 1) => {
   const r = await fetch("https://api.github.com/graphql", {
     method: "POST",
@@ -158,7 +159,7 @@ const x0 = (W - (2 * CW + G)) / 2;
 const TITLE = (s) => xmlEsc(s);
 const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
 
-// ===== text wrapping that never spills =====
+// --------- text wrap (no distortion) ----------
 function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   let font = options.fontSize ?? 13;
   const minFont  = options.minFontSize ?? 9;
@@ -201,12 +202,12 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   return { lines, font: minFont, lineHeight };
 }
 
-// ----- Card -----
-const card = (repo, x, beginSpec, prime=false) => {
+// ----- Card (fade tied to its slide's anim id) -----
+const card = (repo, x, slideId) => {
   const px = 20, pw = CW - 40;
   const py = 160, ph = 12;
 
-  // Language segments with min width
+  // Language segments (min width)
   let acc = 0;
   const minw = 0.04;
   const totalWeight = repo.segments.reduce((a,b)=>a+b.weight,0) || 1;
@@ -247,21 +248,21 @@ const card = (repo, x, beginSpec, prime=false) => {
     titleLines.push(titleText);
   }
   const titleSvg = titleLines.map((line,i)=>
-    `<text x="${px}" y="${30 + i*20}" class="name" lengthAdjust="spacing" textLength="${pw}">${line}</text>`
+    `<text x="${px}" y="${30 + i*20}" class="name">${line}</text>`
   ).join("");
 
-  // Description block – fit inside box
+  // Description block – fit inside box; never stretch
   const descTop = titleLines.length > 1 ? 70 : 54;
-  const descBottom = 130; // badges at 135
+  const descBottom = 130; // badges start at 135
   const descHeight = Math.max(12, descBottom - descTop);
   const wrap = wrapTextToBox(DESC(repo.desc), pw, descHeight, { fontSize:13, minFontSize:9, linePad:2 });
 
   const descSvg = wrap.lines.map((line, i) =>
-    `<text x="${px}" y="${descTop + i * wrap.lineHeight}" style="font:400 ${wrap.font}px system-ui" class="desc" lengthAdjust="spacing" textLength="${pw}">${line}</text>`
+    `<text x="${px}" y="${descTop + i * wrap.lineHeight}" style="font:400 ${wrap.font}px system-ui" class="desc">${line}</text>`
   ).join("");
 
   return `
-  <g transform="translate(${x},20)" opacity="${prime ? '1.0' : '0.0'}">
+  <g transform="translate(${x},20)" opacity="0">
     <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
     ${titleSvg}
     ${descSvg}
@@ -281,19 +282,19 @@ const card = (repo, x, beginSpec, prime=false) => {
     ${bars}
     ${legends}
 
-    <!-- glow -->
+    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade, synced with master clock -->
+    <!-- fade tied to slide timeline -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${prime ? '0s; ' : ''}${beginSpec}"
+             begin="${slideId}.begin; ${slideId}.repeatEvent"
              fill="remove"/>
   </g>`;
 };
@@ -306,26 +307,23 @@ const build = (repos) => {
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
-  const totalDur = Math.max(1, pages.length) * PAGE_SEC;
 
   let slides = "";
   pages.forEach((pg,i)=>{
-    const isFirst = i === 0;
-    const startX = isFirst ? 0 : W;
-
-    const beginSpec = `master.begin+${(i*PAGE_SEC).toFixed(2)}s; master.repeatEvent+${(i*PAGE_SEC).toFixed(2)}s`;
+    const slideId = `s${i}`;
+    const beginTime = (i * PAGE_SEC).toFixed(2);
 
     slides += `
-    <g class="slide" transform="translate(${startX},0)" clip-path="url(#frame)">
-      ${card(pg[0], x0, beginSpec, isFirst)}${pg[1] ? card(pg[1], x0+CW+G, beginSpec, isFirst) : ""}
-      <animateTransform attributeName="transform" type="translate"
+    <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
+      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
+      <animateTransform id="${slideId}" attributeName="transform" type="translate"
         values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
         dur="${PAGE_SEC}s"
-        begin="${beginSpec}"
-        repeatCount="1"/>
+        begin="${beginTime}s"
+        repeatCount="indefinite"/>
     </g>`;
   });
 
@@ -334,19 +332,13 @@ const build = (repos) => {
   <style>
     :root{ color-scheme: dark; }
     .name{ font:800 18px system-ui; fill:#e5e7eb }
-    .desc{ fill:#9ca3af } /* size set inline for dynamic fit */
+    .desc{ fill:#9ca3af } /* desc size set inline for dynamic fit */
     .pill{ font:700 12px system-ui; fill:#e5e7eb }
     .legend{ font:600 12px system-ui; fill:#cbd5e1 }
   </style>
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
   </defs>
-
-  <!-- master clock to synchronize and loop all slides -->
-  <rect width="0" height="0" opacity="0">
-    <animate id="master" attributeName="x" from="0" to="0" dur="${Math.max(1,pages.length)*PAGE_SEC}s" repeatCount="indefinite"/>
-  </rect>
-
   ${slides}
 </svg>`;
   return svg;
