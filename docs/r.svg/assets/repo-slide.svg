@@ -8,16 +8,10 @@
     .legend{ font:600 12px system-ui; fill:#cbd5e1 }
   </style>
   <defs>
-    <clipPath id="frame"><rect x="0" y="0" width="880" height="250" rx="8" ry="8"/></clipPath>
+    <clipPath id="repo-frame"><rect x="0" y="0" width="880" height="250" rx="8" ry="8"/></clipPath>
   </defs>
-
-  <!-- Master clock: restarts whole sequence endlessly (like t.svg) -->
-  <rect width="0" height="0" opacity="0">
-    <animate id="master" attributeName="x" from="0" to="0" dur="18s" repeatCount="indefinite"/>
-  </rect>
-
   
-    <g transform="translate(880,0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(880 0)" clip-path="url(#repo-frame)">
       
   <g transform="translate(0,20)" opacity="0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -89,17 +83,16 @@
              begin="s0.begin; s0.repeatEvent"
              fill="remove"/>
   </g>
-      <!-- one-shot per cycle; restarted by master -->
       <animateTransform id="s0" attributeName="transform" type="translate"
-        values="880;0;0;-880"
+        values="880 0; 0 0; 0 0; -880 0"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="master.begin+0.00s; master.repeatEvent+0.00s"
-        repeatCount="1"/>
+        begin="0.00s"
+        repeatCount="indefinite"/>
     </g>
-    <g transform="translate(880,0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(880 0)" clip-path="url(#repo-frame)">
       
   <g transform="translate(0,20)" opacity="0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -171,17 +164,16 @@
              begin="s1.begin; s1.repeatEvent"
              fill="remove"/>
   </g>
-      <!-- one-shot per cycle; restarted by master -->
       <animateTransform id="s1" attributeName="transform" type="translate"
-        values="880;0;0;-880"
+        values="880 0; 0 0; 0 0; -880 0"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="master.begin+6.00s; master.repeatEvent+6.00s"
-        repeatCount="1"/>
+        begin="6.00s"
+        repeatCount="indefinite"/>
     </g>
-    <g transform="translate(880,0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(880 0)" clip-path="url(#repo-frame)">
       
   <g transform="translate(0,20)" opacity="0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -253,14 +245,13 @@
              begin="s2.begin; s2.repeatEvent"
              fill="remove"/>
   </g>
-      <!-- one-shot per cycle; restarted by master -->
       <animateTransform id="s2" attributeName="transform" type="translate"
-        values="880;0;0;-880"
+        values="880 0; 0 0; 0 0; -880 0"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="master.begin+12.00s; master.repeatEvent+12.00s"
-        repeatCount="1"/>
+        begin="12.00s"
+        repeatCount="indefinite"/>
     </g>
 </svg>
