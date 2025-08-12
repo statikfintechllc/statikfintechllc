@@ -81,30 +81,6 @@
 <div align="center">
   <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" />
 </div>
-<div align="center">
-  <a href="https://github.com/statikfintechllc/GremlinGPT">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=GremlinGPT&theme=transparent&hide_border=true&title_color=e11d48" alt="GremlinGPT card">
-  </a>
-  <a href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Gremlin-ShadTail-Trader&theme=transparent&hide_border=true&title_color=e11d48" alt="Gremlin-ShadTail-Trader card">
-  </a>
-</div>
-<div align="center">
-  <a href="https://github.com/statikfintechllc/statik-server">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Statik-Server&theme=transparent&hide_border=true&title_color=e11d48" alt="statik-server card">
-  </a>
-  <a href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=AscendDocs-of-GovSeverance&theme=transparent&hide_border=true&title_color=e11d48" alt="AscendDocs-of-GovSeverance card">
-  </a>
-</div>
-<div align="center">
-  <a href="https://github.com/statikfintechllc/dragon-boot">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Dragon-Boot&theme=transparent&hide_border=true&title_color=e11d48" alt="dragon-boot card">
-  </a>
-  <a href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=Gremlin-MCP-Scrap&theme=transparent&hide_border=true&title_color=e11d48" alt="Gremlin-MCP-Scrap card">
-  </a>
-</div>
 <h2 align="center" style="color:#e11d48">✍️ Writing & Research</h2>
 <h3 align="center">Systems, sovereignty, and recursive intelligence.</h3>
 <div align="center">
