@@ -1,8 +1,14 @@
 /**
  * Animated Repo Cards (2-up carousel, SMIL-only)
- * - Uses REPOS=owner/name,... or pinned (<=12) or top by stars
- * - Slides 2 at a time; loops all pages
- * - GitHub preview shows first page statically
+ * Data:
+ *   - If REPOS is set (comma list: "owner/name,owner/name,..."), use that
+ *   - else pinned items (top 6), else top by stargazers (non-archived)
+ * Shows:
+ *   - Repo name, short description
+ *   - Stars, forks
+ *   - Language bar (stacked by bytes) + legend
+ * Loop:
+ *   - Slides 2 at a time with enter/hold/exit easing
  */
 
 import fs from "node:fs/promises";
@@ -93,8 +99,6 @@ const xmlEsc = (s="") => s
   .replace(/"/g,"&quot;")
   .replace(/'/g,"&apos;");
 
-const norm = (s="") => s.replace(/\s+/g," ").trim();
-
 const takeRepos = async () => {
   if (REPOS_ENV) return parseEnvRepos(REPOS_ENV);
 
@@ -151,51 +155,82 @@ const fetchRepoDetails = async (lst) => {
 // ---------- Build SVG ----------
 const W = 880, H = 250, CW = 420, CH = 200, G = 40;
 const x0 = (W - (2 * CW + G)) / 2;
+const TITLE = (s) => xmlEsc(s);
+// No content truncation here; wrapping logic will fit it
+const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
 
-// simple width-based wrapper (approx; stable across renderers)
-const wrapByWidth = (text, maxPx, avgPx, maxLines) => {
-  const words = norm(text).split(/\s+/);
-  const out = [];
-  let line = "";
-  for (const w of words) {
-    const candidate = line ? line + " " + w : w;
-    if (candidate.length * avgPx <= maxPx) {
-      line = candidate;
-    } else {
-      if (line) out.push(line);
-      line = w;
-      if (out.length === maxLines - 1) break;
+// ===== text wrapping that never spills =====
+function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
+  const baseFont = options.fontSize || 13;      // starting font size
+  const minFont  = options.minFontSize || 11;   // do not go below
+  const linePad  = options.linePad || 3;        // pixels added to font size for line height
+  const avgChar  = options.avgChar || 0.58;     // ~em width for system-ui @ normal weight
+
+  const words = text.split(" ");
+  let font = baseFont;
+
+  while (font >= minFont) {
+    const lineHeight = font + linePad;
+    const maxLines = Math.max(1, Math.floor(boxHeightPx / lineHeight));
+    const charsPerLine = Math.max(8, Math.floor(boxWidthPx / (font * avgChar)));
+
+    const lines = [];
+    let cur = "";
+
+    for (const w of words) {
+      const candidate = cur ? (cur + " " + w) : w;
+      if (candidate.length <= charsPerLine) {
+        cur = candidate;
+      } else {
+        lines.push(cur);
+        cur = w;
+        if (lines.length === maxLines) break;
+      }
     }
-  }
-  if (out.length < maxLines && line) out.push(line);
-  const usedAll = out.join(" ").length === norm(text).length;
-  if (!usedAll && out.length) {
-    const last = out[out.length - 1];
-    const trimmed = last.replace(/…?$/,"");
-    // ensure ellipsis fits
-    const targetChars = Math.max(0, Math.floor((maxPx - 3*avgPx) / avgPx));
-    out[out.length - 1] = trimmed.length > targetChars ? trimmed.slice(0, targetChars) + "…" : trimmed + "…";
-  }
-  return out.map(xmlEsc);
-};
+    if (lines.length < maxLines && cur) lines.push(cur);
 
+    const allWordsFit = (lines.join(" ").split(" ").length >= words.length);
+
+    if (allWordsFit || font === minFont) {
+      // If we still overflow at minFont, clamp last line with ellipsis
+      if (!allWordsFit && lines.length) {
+        const lastIdx = lines.length - 1;
+        const need = words.length - lines.join(" ").split(" ").length;
+        if (need > 0) {
+          let last = lines[lastIdx];
+          if (last.length > 3) last = last.slice(0, Math.max(0, charsPerLine - 1)) + "…";
+          lines[lastIdx] = last;
+        }
+      }
+      return { lines, font, lineHeight, maxLines };
+    }
+    font -= 1; // try smaller font
+  }
+  return { lines: [text.slice(0, 40) + "…"], font: minFont, lineHeight: minFont + linePad, maxLines: 1 };
+}
+
+// slidePrime: true for slide 0 (static preview visible)
 const card = (repo, x, slideId, slidePrime=false) => {
-  const px = 20, py = 160, pw = CW - 40, ph = 12;
+  const px = 20, pw = CW - 40;
+
+  // Language bar baseline
+  const py = 160, ph = 12;
+
+  // Language segments with min width
   let acc = 0;
   const minw = 0.04;
   const totalWeight = repo.segments.reduce((a,b)=>a+b.weight,0) || 1;
   const segs = repo.segments.map(s => ({...s, weight: s.weight / totalWeight}));
-
   const hard = segs.map(s => Math.max(s.weight, minw));
   const hardSum = hard.reduce((a,b)=>a+b,0);
-  const normW = hard.map(v => v / hardSum);
+  const norm = hard.map(v => v / hardSum);
 
-  const bars = normW.map((w, i) => {
+  const bars = norm.map((w, i) => {
     const wpx = Math.round(w * pw);
     const xseg = px + acc;
     acc += wpx;
     const s = segs[i];
-    return `<rect x="${xseg}" y="${py}" width="${i === normW.length-1 ? (px+pw - xseg) : wpx}" height="${ph}" fill="${s.color}" />`;
+    return `<rect x="${xseg}" y="${py}" width="${i === norm.length-1 ? (px+pw - xseg) : wpx}" height="${ph}" fill="${s.color}" />`;
   }).join("");
 
   const legends = segs.slice(0,4).map((s,i)=> {
@@ -204,21 +239,42 @@ const card = (repo, x, slideId, slidePrime=false) => {
     return `<rect x="${lx}" y="${ly-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${lx+16}" y="${ly}" class="legend">${xmlEsc(s.name)}</text>`;
   }).join("");
 
-  // Title wrap (<=2 lines; ~9px/char @18px)
-  const titleLines = wrapByWidth(repo.name, pw, 9, 2)
-    .map((t,i)=>`<text x="20" y="${30 + i*20}" class="name">${t}</text>`);
+  // Title (≤2 lines)
+  const titleText = TITLE(repo.name);
+  const titleLines = [];
+  const maxTitleCharsPerLine = 40;
+  const maxTitleLines = 2;
+  if (titleText.length > maxTitleCharsPerLine) {
+    const words = titleText.split(/[\s-]+/);
+    let current = "";
+    for (const w of words) {
+      const t = current ? current + " " + w : w;
+      if (t.length <= maxTitleCharsPerLine) current = t;
+      else { titleLines.push(current); current = w; if (titleLines.length === maxTitleLines - 1) break; }
+    }
+    if (current && titleLines.length < maxTitleLines) titleLines.push(current.length > maxTitleCharsPerLine ? (current.slice(0, maxTitleCharsPerLine - 1) + "…") : current);
+  } else {
+    titleLines.push(titleText);
+  }
+  const titleSvg = titleLines.map((line,i)=>`<text x="${px}" y="${30 + i*20}" class="name">${line}</text>`).join("");
 
-  // Desc wrap (<=4 lines; ~6.8px/char @13px)
-  const descStartY = titleLines.length > 1 ? 70 : 54;
-  const descLines = wrapByWidth(repo.desc, pw, 6.8, 4)
-    .map((t,i)=>`<text x="20" y="${descStartY + i*16}" class="desc">${t}</text>`);
+  // Description block sizing (fits fully within box; no spill)
+  const descTop = titleLines.length > 1 ? 70 : 54;
+  const descBottom = 130; // must stay above badges (135) with small buffer
+  const descHeight = Math.max(14, descBottom - descTop);
+  const wrap = wrapTextToBox(DESC(repo.desc), pw, descHeight, { fontSize:13, minFontSize:11, linePad:3, avgChar:0.58 });
+
+  const descSvg = wrap.lines.map((line, i) =>
+    `<text x="${px}" y="${descTop + i * wrap.lineHeight}" style="font:400 ${wrap.font}px system-ui" class="desc">${line}</text>`
+  ).join("");
 
   return `
   <g transform="translate(${x},20)" opacity="${slidePrime ? '1.0' : '0.0'}">
     <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
-    ${titleLines.join('\n    ')}
-    ${descLines.join('\n    ')}
+    ${titleSvg}
+    ${descSvg}
 
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(${CW-180},0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -233,29 +289,32 @@ const card = (repo, x, slideId, slidePrime=false) => {
     ${bars}
     ${legends}
 
+    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- bind fades to this slide's transform animation events -->
+    <!-- fade tied to this slide's transform -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${slidePrime ? '0s; ' : ''}${slideId}-tx.beginEvent; ${slideId}-tx.repeatEvent"
+             begin="${slidePrime ? 'master.begin+0s; master.repeatEvent+0s; ' : ''}${slideId}-anim.begin; ${slideId}-anim.repeatEvent"
              fill="remove"/>
   </g>`;
 };
 
 const build = (repos) => {
+  // chunk 2 per page
   const pages = [];
   for (let i=0;i<repos.length;i+=2) pages.push(repos.slice(i,i+2));
 
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
+  const totalDur = Math.max(1, pages.length) * PAGE_SEC;
 
   let slides = "";
   pages.forEach((pg,i)=>{
@@ -266,14 +325,14 @@ const build = (repos) => {
     slides += `
     <g id="${slideId}" class="slide" transform="translate(${startX},0)" clip-path="url(#frame)">
       ${card(pg[0], x0, slideId, isFirst)}${pg[1] ? card(pg[1], x0+CW+G, slideId, isFirst) : ""}
-      <animateTransform id="${slideId}-tx" attributeName="transform" type="translate"
-        values="${W};0;0;${-W}"
+      <animateTransform id="${slideId}-anim" attributeName="transform" type="translate"
+        values="${W} 0; 0 0; 0 0; ${-W} 0"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
         dur="${PAGE_SEC}s"
-        begin="${(i * PAGE_SEC).toFixed(2)}s"
-        repeatCount="indefinite"/>
+        begin="master.begin+${(i * PAGE_SEC).toFixed(2)}s; master.repeatEvent+${(i * PAGE_SEC).toFixed(2)}s"
+        repeatCount="1"/>
     </g>`;
   });
 
@@ -281,14 +340,20 @@ const build = (repos) => {
 <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
   <style>
     :root{ color-scheme: dark; }
-    .name{ font:800 18px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#e5e7eb }
-    .desc{ font:400 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#9ca3af }
-    .pill{ font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#e5e7eb }
-    .legend{ font:600 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#cbd5e1 }
+    .name{ font:800 18px system-ui; fill:#e5e7eb }
+    .desc{ fill:#9ca3af } /* size set inline for dynamic fit */
+    .pill{ font:700 12px system-ui; fill:#e5e7eb }
+    .legend{ font:600 12px system-ui; fill:#cbd5e1 }
   </style>
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
   </defs>
+
+  <!-- master clock to synchronize all slides across cycles -->
+  <rect id="clock" width="0" height="0" opacity="0">
+    <animate id="master" attributeName="x" from="0" to="0" dur="${totalDur}s" repeatCount="indefinite"/>
+  </rect>
+
   ${slides}
 </svg>`;
   return svg;
