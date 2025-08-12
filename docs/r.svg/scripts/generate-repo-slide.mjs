@@ -156,18 +156,16 @@ const fetchRepoDetails = async (lst) => {
 const W = 880, H = 250, CW = 420, CH = 200, G = 40;
 const x0 = (W - (2 * CW + G)) / 2;
 const TITLE = (s) => xmlEsc(s);
-// No content truncation here; wrapping logic will fit it
 const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
 
 // ===== text wrapping that never spills =====
 function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
-  const baseFont = options.fontSize || 13;      // starting font size
-  const minFont  = options.minFontSize || 11;   // do not go below
-  const linePad  = options.linePad || 3;        // pixels added to font size for line height
-  const avgChar  = options.avgChar || 0.58;     // ~em width for system-ui @ normal weight
+  let font = options.fontSize ?? 13;
+  const minFont  = options.minFontSize ?? 9;     // allow tighter fit to avoid truncation
+  const linePad  = options.linePad ?? 2;
+  const avgChar  = options.avgChar ?? 0.58;
 
-  const words = text.split(" ");
-  let font = baseFont;
+  const words = text.split(" ").filter(Boolean);
 
   while (font >= minFont) {
     const lineHeight = font + linePad;
@@ -178,42 +176,39 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
     let cur = "";
 
     for (const w of words) {
-      const candidate = cur ? (cur + " " + w) : w;
-      if (candidate.length <= charsPerLine) {
-        cur = candidate;
-      } else {
-        lines.push(cur);
-        cur = w;
-        if (lines.length === maxLines) break;
-      }
+      const cand = cur ? cur + " " + w : w;
+      if (cand.length <= charsPerLine) cur = cand;
+      else { lines.push(cur); cur = w; if (lines.length === maxLines) break; }
     }
     if (lines.length < maxLines && cur) lines.push(cur);
 
-    const allWordsFit = (lines.join(" ").split(" ").length >= words.length);
-
-    if (allWordsFit || font === minFont) {
-      // If we still overflow at minFont, clamp last line with ellipsis
-      if (!allWordsFit && lines.length) {
-        const lastIdx = lines.length - 1;
-        const need = words.length - lines.join(" ").split(" ").length;
-        if (need > 0) {
-          let last = lines[lastIdx];
-          if (last.length > 3) last = last.slice(0, Math.max(0, charsPerLine - 1)) + "…";
-          lines[lastIdx] = last;
-        }
-      }
-      return { lines, font, lineHeight, maxLines };
+    // all words placed?
+    const placed = lines.join(" ").trim().split(/\s+/).filter(Boolean).length;
+    if (placed >= words.length) {
+      return { lines, font, lineHeight };
     }
-    font -= 1; // try smaller font
+    font -= 1; // try smaller
   }
-  return { lines: [text.slice(0, 40) + "…"], font: minFont, lineHeight: minFont + linePad, maxLines: 1 };
+  // As a last resort, squeeze the last line only.
+  const lineHeight = minFont + linePad;
+  const maxLines = Math.max(1, Math.floor(boxHeightPx / lineHeight));
+  const charsPerLine = Math.max(8, Math.floor(boxWidthPx / (minFont * 0.58)));
+  const lines = [];
+  let cur = "";
+  for (const w of words) {
+    const cand = cur ? cur + " " + w : w;
+    if (cand.length <= charsPerLine) cur = cand;
+    else { lines.push(cur); cur = w; if (lines.length === maxLines) break; }
+  }
+  if (lines.length < maxLines && cur) lines.push(cur);
+  return { lines, font: minFont, lineHeight };
 }
 
-// slidePrime: true for slide 0 (static preview visible)
+// slidePrime kept for optional static preview needs (unused by default)
 const card = (repo, x, slideId, slidePrime=false) => {
   const px = 20, pw = CW - 40;
 
-  // Language bar baseline
+  // Language bar
   const py = 160, ph = 12;
 
   // Language segments with min width
@@ -256,16 +251,18 @@ const card = (repo, x, slideId, slidePrime=false) => {
   } else {
     titleLines.push(titleText);
   }
-  const titleSvg = titleLines.map((line,i)=>`<text x="${px}" y="${30 + i*20}" class="name">${line}</text>`).join("");
+  const titleSvg = titleLines.map((line,i)=>
+    `<text x="${px}" y="${30 + i*20}" class="name" lengthAdjust="spacing" textLength="${pw}">${line}</text>`
+  ).join("");
 
-  // Description block sizing (fits fully within box; no spill)
+  // Description block – fit entire text inside the box; never spill horizontally.
   const descTop = titleLines.length > 1 ? 70 : 54;
-  const descBottom = 130; // must stay above badges (135) with small buffer
-  const descHeight = Math.max(14, descBottom - descTop);
-  const wrap = wrapTextToBox(DESC(repo.desc), pw, descHeight, { fontSize:13, minFontSize:11, linePad:3, avgChar:0.58 });
+  const descBottom = 130; // badges at 135
+  const descHeight = Math.max(12, descBottom - descTop);
+  const wrap = wrapTextToBox(DESC(repo.desc), pw, descHeight, { fontSize:13, minFontSize:9, linePad:2 });
 
   const descSvg = wrap.lines.map((line, i) =>
-    `<text x="${px}" y="${descTop + i * wrap.lineHeight}" style="font:400 ${wrap.font}px system-ui" class="desc">${line}</text>`
+    `<text x="${px}" y="${descTop + i * wrap.lineHeight}" style="font:400 ${wrap.font}px system-ui" class="desc" lengthAdjust="spacing" textLength="${pw}">${line}</text>`
   ).join("");
 
   return `
@@ -296,43 +293,41 @@ const card = (repo, x, slideId, slidePrime=false) => {
       </rect>
     </g>
 
-    <!-- fade tied to this slide's transform -->
+    <!-- fade tied to this slide's timeline -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${slidePrime ? 'master.begin+0s; master.repeatEvent+0s; ' : ''}${slideId}-anim.begin; ${slideId}-anim.repeatEvent"
+             begin="${slideId}-anim.begin; ${slideId}-anim.repeatEvent"
              fill="remove"/>
   </g>`;
 };
 
 const build = (repos) => {
-  // chunk 2 per page
+  // 2 per page
   const pages = [];
   for (let i=0;i<repos.length;i+=2) pages.push(repos.slice(i,i+2));
 
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
-  const totalDur = Math.max(1, pages.length) * PAGE_SEC;
 
   let slides = "";
   pages.forEach((pg,i)=>{
     const slideId = `s${i}`;
-    const isFirst = i === 0;
-    const startX = isFirst ? 0 : W;
+    const beginTime = (i * PAGE_SEC).toFixed(2);
 
     slides += `
-    <g id="${slideId}" class="slide" transform="translate(${startX},0)" clip-path="url(#frame)">
-      ${card(pg[0], x0, slideId, isFirst)}${pg[1] ? card(pg[1], x0+CW+G, slideId, isFirst) : ""}
+    <g id="${slideId}" class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
+      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
       <animateTransform id="${slideId}-anim" attributeName="transform" type="translate"
-        values="${W} 0; 0 0; 0 0; ${-W} 0"
+        values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
         dur="${PAGE_SEC}s"
-        begin="master.begin+${(i * PAGE_SEC).toFixed(2)}s; master.repeatEvent+${(i * PAGE_SEC).toFixed(2)}s"
-        repeatCount="1"/>
+        begin="${beginTime}s"
+        repeatCount="indefinite"/>
     </g>`;
   });
 
@@ -348,12 +343,6 @@ const build = (repos) => {
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
   </defs>
-
-  <!-- master clock to synchronize all slides across cycles -->
-  <rect id="clock" width="0" height="0" opacity="0">
-    <animate id="master" attributeName="x" from="0" to="0" dur="${totalDur}s" repeatCount="indefinite"/>
-  </rect>
-
   ${slides}
 </svg>`;
   return svg;
