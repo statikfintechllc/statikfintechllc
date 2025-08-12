@@ -1,0 +1,42 @@
+name: Build Crimson Flow
+
+on:
+  schedule:
+    - cron: "*/5 * * * *" # every 6 hours
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+          cd docs/c.svg
+          if [ -f package.json ]; then npm ci; fi
+
+      - name: Build crimson-flow.svg
+        env:
+          GH_TOKEN: ${{ secrets.PULL_STATIK_PAT }}
+          GITHUB_TOKEN: ${{ secrets.PULL_STATIK_PAT }}
+          USER_LOGIN: statikfintechllc
+        run: node docs/c.svg/scripts/generate-crimson-flow.mjs
+
+      - name: Update SVG
+        env:
+          GH_TOKEN: ${{ secrets.PULL_STATIK_PAT }}
+        run: |
+          git config --global user.name "gremlin-bot"
+          git config --global user.email "actions@github.com"
+          git add docs/c.svg/
+          git commit -m "Update SVG" || echo "No changes to commit"
+          git pull --rebase
+          git push

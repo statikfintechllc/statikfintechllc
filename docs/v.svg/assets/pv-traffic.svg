@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="228.5" height="28"
+     viewBox="0 0 228.5 28" role="img" aria-label="Profile traffic: 109">
+  <!-- Left (black) with rounded left corners -->
+  <path d="M14,0
+  L168.5,0
+  L168.5,28
+  L14,28
+  Q0,28 0,14
+  L0,14
+  Q0,0 14,0
+  Z" fill="#000000"/>
+  <!-- Right (dark red) with rounded right corners -->
+  <path d="M168.5,0
+  L214.5,0
+  Q228.5,0 228.5,14
+  L228.5,14
+  Q228.5,28 214.5,28
+  L168.5,28
+  Z" fill="#8B0000"/>
+
+  <!-- Left label -->
+  <text x="84.25" y="19" text-anchor="middle"
+        font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial"
+        font-size="14" font-weight="600" fill="#ffffff" letter-spacing="1.5">
+    PROFILE TRAFFIC
+  </text>
+
+  <!-- Right number -->
+  <text x="198.5" y="19" text-anchor="middle"
+        font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial"
+        font-size="14" font-weight="700" fill="#ffffff">
+    109
+  </text>
+</svg>

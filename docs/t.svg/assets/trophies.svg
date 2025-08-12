@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="760" height="150" viewBox="0 0 760 150" xmlns="http://www.w3.org/2000/svg" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
+  <style>
+    :root{ color-scheme: dark; }
+    .cardTitle{ font:700 16px system-ui; fill:#e5e7eb }
+    .cardValue{ font:800 22px system-ui; fill:#60a5fa }
+    .grade{ font:700 16px system-ui; fill:#e11d48 }
+    .cardDesc{ font:12px system-ui; fill:#9ca3af }
+  </style>
+  <defs>
+    <clipPath id="frame"><rect x="0" y="0" width="760" height="150" rx="8" ry="8"/></clipPath>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
+    
+  
+  <g filter="url(#glow)">
+    <rect x="54" y="4" width="312" height="132" rx="18" ry="18" fill="#0ea5e9" opacity="0.14">
+      <animate attributeName="opacity" values="0.10;0.20;0.10" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g transform="translate(60,10)">
+    <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="34" class="cardTitle">Commits</text>
+    <text x="20" y="70" class="cardValue">3,564 <tspan class="grade">[A]</tspan></text>
+    <text x="20" y="96" class="cardDesc">Commit contributions across all repos.</text>
+  </g>
+  
+  <g filter="url(#glow)">
+    <rect x="394" y="4" width="312" height="132" rx="18" ry="18" fill="#0ea5e9" opacity="0.14">
+      <animate attributeName="opacity" values="0.10;0.20;0.10" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g transform="translate(400,10)">
+    <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="34" class="cardTitle">Followers</text>
+    <text x="20" y="70" class="cardValue">77 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="96" class="cardDesc">People following this account.</text>
+  </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="760;0;0;-760"
+      keyTimes="0;0.1250;0.8750;1"
+      keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+      calcMode="spline"
+      dur="6s"
+      begin="0.00s;24.00s" repeatCount="1"/>
+  </g>
+  <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
+    
+  
+  <g filter="url(#glow)">
+    <rect x="54" y="4" width="312" height="132" rx="18" ry="18" fill="#0ea5e9" opacity="0.14">
+      <animate attributeName="opacity" values="0.10;0.20;0.10" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g transform="translate(60,10)">
+    <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="34" class="cardTitle">Stars Earned</text>
+    <text x="20" y="70" class="cardValue">29 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="96" class="cardDesc">Stargazers on owned repositories.</text>
+  </g>
+  
+  <g filter="url(#glow)">
+    <rect x="394" y="4" width="312" height="132" rx="18" ry="18" fill="#0ea5e9" opacity="0.14">
+      <animate attributeName="opacity" values="0.10;0.20;0.10" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g transform="translate(400,10)">
+    <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="34" class="cardTitle">Reviews</text>
+    <text x="20" y="70" class="cardValue">8 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="96" class="cardDesc">Pull request reviews submitted.</text>
+  </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="760;0;0;-760"
+      keyTimes="0;0.1250;0.8750;1"
+      keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+      calcMode="spline"
+      dur="6s"
+      begin="6.00s;30.00s" repeatCount="1"/>
+  </g>
+  <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
+    
+  
+  <g filter="url(#glow)">
+    <rect x="54" y="4" width="312" height="132" rx="18" ry="18" fill="#0ea5e9" opacity="0.14">
+      <animate attributeName="opacity" values="0.10;0.20;0.10" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g transform="translate(60,10)">
+    <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="34" class="cardTitle">Issues</text>
+    <text x="20" y="70" class="cardValue">10 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="96" class="cardDesc">Issues created.</text>
+  </g>
+  
+  <g filter="url(#glow)">
+    <rect x="394" y="4" width="312" height="132" rx="18" ry="18" fill="#0ea5e9" opacity="0.14">
+      <animate attributeName="opacity" values="0.10;0.20;0.10" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g transform="translate(400,10)">
+    <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="34" class="cardTitle">Repositories</text>
+    <text x="20" y="70" class="cardValue">12 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="96" class="cardDesc">Owned non-fork repositories.</text>
+  </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="760;0;0;-760"
+      keyTimes="0;0.1250;0.8750;1"
+      keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+      calcMode="spline"
+      dur="6s"
+      begin="12.00s;36.00s" repeatCount="1"/>
+  </g>
+  <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
+    
+  
+  <g filter="url(#glow)">
+    <rect x="54" y="4" width="312" height="132" rx="18" ry="18" fill="#0ea5e9" opacity="0.14">
+      <animate attributeName="opacity" values="0.10;0.20;0.10" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g transform="translate(60,10)">
+    <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="34" class="cardTitle">Pull Requests</text>
+    <text x="20" y="70" class="cardValue">5 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="96" class="cardDesc">Pull requests opened.</text>
+  </g>
+  
+  <g filter="url(#glow)">
+    <rect x="394" y="4" width="312" height="132" rx="18" ry="18" fill="#0ea5e9" opacity="0.14">
+      <animate attributeName="opacity" values="0.10;0.20;0.10" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <g transform="translate(400,10)">
+    <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
+    <text x="20" y="34" class="cardTitle">Total Activity</text>
+    <text x="20" y="70" class="cardValue">3,607 <tspan class="grade">[A]</tspan></text>
+    <text x="20" y="96" class="cardDesc">All recorded contributions.</text>
+  </g>
+    <animateTransform attributeName="transform" type="translate"
+      values="760;0;0;-760"
+      keyTimes="0;0.1250;0.8750;1"
+      keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+      calcMode="spline"
+      dur="6s"
+      begin="18.00s;42.00s" repeatCount="1"/>
+  </g>
+</svg>

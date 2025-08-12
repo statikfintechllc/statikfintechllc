@@ -1,0 +1,9 @@
+{
+  "name": "ggpt-boost-streak",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ./scripts/build-streak.mjs"
+  },
+  "dependencies": {}
+}
