@@ -11,9 +11,9 @@
     <clipPath id="frame"><rect x="0" y="0" width="880" height="250" rx="8" ry="8"/></clipPath>
   </defs>
   
-    <g id="s0" class="slide" transform="translate(880,0)" clip-path="url(#frame)">
+    <g id="s0" class="slide" transform="translate(0,0)" clip-path="url(#frame)">
       
-  <g transform="translate(0,20)" opacity="0.0">
+  <g transform="translate(0,20)" opacity="1.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">GremlinGPT</text>
     <text x="20" y="54" class="desc">GremlinGPT is a locally hosted recursive intelligence system:</text>
@@ -21,7 +21,7 @@
     <text x="20" y="86" class="desc">oversight - Operates fully offline with no cloud dependencies -</text>
     <text x="20" y="102" class="desc">Grows its own NLP engine using feedback and self-repair - Can…</text>
 
-    <!-- Stars and forks moved above language bar -->
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -43,15 +43,15 @@
       </rect>
     </g>
 
-    <!-- fade in/out per slide (bound to the slide timeline) -->
+    <!-- fade in/out per slide (bind to slide; prime at 0s for first slide) -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s0.begin; s0.repeatEvent"
+             begin="0s; s0.begin; s0.repeatEvent"
              fill="remove"/>
   </g>
-  <g transform="translate(460,20)" opacity="0.0">
+  <g transform="translate(460,20)" opacity="1.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">Gremlin-ShadTail-Trader</text>
     <text x="20" y="54" class="desc">GremlinGPT&apos;s standalone trading core, will be wrapped as a</text>
@@ -59,7 +59,7 @@
     <text x="20" y="86" class="desc">tailwond, and shadcn for the user interface, and Gremlins Trade</text>
     <text x="20" y="102" class="desc">Logic.</text>
 
-    <!-- Stars and forks moved above language bar -->
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -81,12 +81,12 @@
       </rect>
     </g>
 
-    <!-- fade in/out per slide (bound to the slide timeline) -->
+    <!-- fade in/out per slide (bind to slide; prime at 0s for first slide) -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s0.begin; s0.repeatEvent"
+             begin="0s; s0.begin; s0.repeatEvent"
              fill="remove"/>
   </g>
       <animateTransform attributeName="transform" type="translate"
@@ -107,7 +107,7 @@
     <text x="20" y="70" class="desc">deployment with Copilot Chat, persistent VPN, keyless signing,</text>
     <text x="20" y="86" class="desc">and custom domain rendering via statik-server.</text>
 
-    <!-- Stars and forks moved above language bar -->
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -129,7 +129,7 @@
       </rect>
     </g>
 
-    <!-- fade in/out per slide (bound to the slide timeline) -->
+    <!-- fade in/out per slide (bind to slide; prime at 0s for first slide) -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
@@ -143,7 +143,7 @@
     <text x="20" y="54" class="desc">Not a system. Not a manifesto. A memetic weapon. Not a call to</text>
     <text x="20" y="70" class="desc">chaos. This is the call to recursion. Alignment. Freedom.</text>
 
-    <!-- Stars and forks moved above language bar -->
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -165,7 +165,7 @@
       </rect>
     </g>
 
-    <!-- fade in/out per slide (bound to the slide timeline) -->
+    <!-- fade in/out per slide (bind to slide; prime at 0s for first slide) -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
@@ -190,7 +190,7 @@
     <text x="20" y="54" class="desc">🔥 A sci-fi dragon-themed Plymouth bootloader animation for</text>
     <text x="20" y="70" class="desc">Linux. HD 1920x1080 splash with full GRUB/initramfs integration.</text>
 
-    <!-- Stars and forks moved above language bar -->
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -212,7 +212,7 @@
       </rect>
     </g>
 
-    <!-- fade in/out per slide (bound to the slide timeline) -->
+    <!-- fade in/out per slide (bind to slide; prime at 0s for first slide) -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
@@ -228,7 +228,7 @@
     <text x="20" y="86" class="desc">unshakable belief that you can automate everything. Built for VS</text>
     <text x="20" y="102" class="desc">Code’s Model Context Protocol. Gremlin-approved.</text>
 
-    <!-- Stars and forks moved above language bar -->
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -250,7 +250,7 @@
       </rect>
     </g>
 
-    <!-- fade in/out per slide (bound to the slide timeline) -->
+    <!-- fade in/out per slide (bind to slide; prime at 0s for first slide) -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
