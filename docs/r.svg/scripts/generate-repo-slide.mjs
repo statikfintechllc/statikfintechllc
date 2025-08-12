@@ -161,11 +161,11 @@ const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
 // ===== text wrapping that never spills =====
 function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   let font = options.fontSize ?? 13;
-  const minFont  = options.minFontSize ?? 9;     // allow tighter fit to avoid truncation
+  const minFont  = options.minFontSize ?? 9;
   const linePad  = options.linePad ?? 2;
   const avgChar  = options.avgChar ?? 0.58;
 
-  const words = text.split(" ").filter(Boolean);
+  const words = text.split(/\s+/).filter(Boolean);
 
   while (font >= minFont) {
     const lineHeight = font + linePad;
@@ -182,14 +182,11 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
     }
     if (lines.length < maxLines && cur) lines.push(cur);
 
-    // all words placed?
     const placed = lines.join(" ").trim().split(/\s+/).filter(Boolean).length;
-    if (placed >= words.length) {
-      return { lines, font, lineHeight };
-    }
-    font -= 1; // try smaller
+    if (placed >= words.length) return { lines, font, lineHeight };
+    font -= 1;
   }
-  // As a last resort, squeeze the last line only.
+  // fallback
   const lineHeight = minFont + linePad;
   const maxLines = Math.max(1, Math.floor(boxHeightPx / lineHeight));
   const charsPerLine = Math.max(8, Math.floor(boxWidthPx / (minFont * 0.58)));
@@ -204,11 +201,9 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   return { lines, font: minFont, lineHeight };
 }
 
-// slidePrime kept for optional static preview needs (unused by default)
-const card = (repo, x, slideId, slidePrime=false) => {
+// ----- Card -----
+const card = (repo, x, beginSpec, prime=false) => {
   const px = 20, pw = CW - 40;
-
-  // Language bar
   const py = 160, ph = 12;
 
   // Language segments with min width
@@ -241,13 +236,13 @@ const card = (repo, x, slideId, slidePrime=false) => {
   const maxTitleLines = 2;
   if (titleText.length > maxTitleCharsPerLine) {
     const words = titleText.split(/[\s-]+/);
-    let current = "";
+    let cur = "";
     for (const w of words) {
-      const t = current ? current + " " + w : w;
-      if (t.length <= maxTitleCharsPerLine) current = t;
-      else { titleLines.push(current); current = w; if (titleLines.length === maxTitleLines - 1) break; }
+      const t = cur ? cur + " " + w : w;
+      if (t.length <= maxTitleCharsPerLine) cur = t;
+      else { titleLines.push(cur); cur = w; if (titleLines.length === maxTitleLines - 1) break; }
     }
-    if (current && titleLines.length < maxTitleLines) titleLines.push(current.length > maxTitleCharsPerLine ? (current.slice(0, maxTitleCharsPerLine - 1) + "…") : current);
+    if (cur && titleLines.length < maxTitleLines) titleLines.push(cur.length > maxTitleCharsPerLine ? (cur.slice(0, maxTitleCharsPerLine - 1) + "…") : cur);
   } else {
     titleLines.push(titleText);
   }
@@ -255,7 +250,7 @@ const card = (repo, x, slideId, slidePrime=false) => {
     `<text x="${px}" y="${30 + i*20}" class="name" lengthAdjust="spacing" textLength="${pw}">${line}</text>`
   ).join("");
 
-  // Description block – fit entire text inside the box; never spill horizontally.
+  // Description block – fit inside box
   const descTop = titleLines.length > 1 ? 70 : 54;
   const descBottom = 130; // badges at 135
   const descHeight = Math.max(12, descBottom - descTop);
@@ -266,7 +261,7 @@ const card = (repo, x, slideId, slidePrime=false) => {
   ).join("");
 
   return `
-  <g transform="translate(${x},20)" opacity="${slidePrime ? '1.0' : '0.0'}">
+  <g transform="translate(${x},20)" opacity="${prime ? '1.0' : '0.0'}">
     <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
     ${titleSvg}
     ${descSvg}
@@ -286,19 +281,19 @@ const card = (repo, x, slideId, slidePrime=false) => {
     ${bars}
     ${legends}
 
-    <!-- glow pulse -->
+    <!-- glow -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade tied to this slide's timeline -->
+    <!-- fade, synced with master clock -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${slideId}-anim.begin; ${slideId}-anim.repeatEvent"
+             begin="${prime ? '0s; ' : ''}${beginSpec}"
              fill="remove"/>
   </g>`;
 };
@@ -311,23 +306,26 @@ const build = (repos) => {
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
+  const totalDur = Math.max(1, pages.length) * PAGE_SEC;
 
   let slides = "";
   pages.forEach((pg,i)=>{
-    const slideId = `s${i}`;
-    const beginTime = (i * PAGE_SEC).toFixed(2);
+    const isFirst = i === 0;
+    const startX = isFirst ? 0 : W;
+
+    const beginSpec = `master.begin+${(i*PAGE_SEC).toFixed(2)}s; master.repeatEvent+${(i*PAGE_SEC).toFixed(2)}s`;
 
     slides += `
-    <g id="${slideId}" class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
-      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
-      <animateTransform id="${slideId}-anim" attributeName="transform" type="translate"
+    <g class="slide" transform="translate(${startX},0)" clip-path="url(#frame)">
+      ${card(pg[0], x0, beginSpec, isFirst)}${pg[1] ? card(pg[1], x0+CW+G, beginSpec, isFirst) : ""}
+      <animateTransform attributeName="transform" type="translate"
         values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
         dur="${PAGE_SEC}s"
-        begin="${beginTime}s"
-        repeatCount="indefinite"/>
+        begin="${beginSpec}"
+        repeatCount="1"/>
     </g>`;
   });
 
@@ -343,6 +341,12 @@ const build = (repos) => {
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
   </defs>
+
+  <!-- master clock to synchronize and loop all slides -->
+  <rect width="0" height="0" opacity="0">
+    <animate id="master" attributeName="x" from="0" to="0" dur="${Math.max(1,pages.length)*PAGE_SEC}s" repeatCount="indefinite"/>
+  </rect>
+
   ${slides}
 </svg>`;
   return svg;
