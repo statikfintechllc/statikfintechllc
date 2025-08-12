@@ -10,6 +10,12 @@
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="880" height="250" rx="8" ry="8"/></clipPath>
   </defs>
+
+  <!-- master clock: repeats the whole sequence endlessly -->
+  <rect width="0" height="0" opacity="0">
+    <animate id="master" attributeName="x" from="0" to="0" dur="18s" repeatCount="indefinite"/>
+  </rect>
+
   
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
@@ -89,8 +95,8 @@
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="0.00s"
-        repeatCount="indefinite"/>
+        begin="master.begin+0.00s; master.repeatEvent+0.00s"
+        repeatCount="1"/>
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
@@ -170,8 +176,8 @@
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="6.00s"
-        repeatCount="indefinite"/>
+        begin="master.begin+6.00s; master.repeatEvent+6.00s"
+        repeatCount="1"/>
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
@@ -251,7 +257,7 @@
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="12.00s"
-        repeatCount="indefinite"/>
+        begin="master.begin+12.00s; master.repeatEvent+12.00s"
+        repeatCount="1"/>
     </g>
 </svg>
