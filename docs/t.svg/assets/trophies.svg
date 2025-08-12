@@ -94,7 +94,7 @@
   <g transform="translate(60,10)">
     <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="34" class="cardTitle">Issues</text>
-    <text x="20" y="70" class="cardValue">11 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="70" class="cardValue">13 <tspan class="grade">[B]</tspan></text>
     <text x="20" y="96" class="cardDesc">Issues created.</text>
   </g>
   
@@ -140,7 +140,7 @@
   <g transform="translate(400,10)">
     <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="34" class="cardTitle">Total Activity</text>
-    <text x="20" y="70" class="cardValue">3,614 <tspan class="grade">[A]</tspan></text>
+    <text x="20" y="70" class="cardValue">3,616 <tspan class="grade">[A]</tspan></text>
     <text x="20" y="96" class="cardDesc">All recorded contributions.</text>
   </g>
     <animateTransform attributeName="transform" type="translate"
