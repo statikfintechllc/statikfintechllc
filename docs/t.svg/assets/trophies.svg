@@ -26,7 +26,7 @@
   <g transform="translate(60,10)">
     <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="34" class="cardTitle">Commits</text>
-    <text x="20" y="70" class="cardValue">3,570 <tspan class="grade">[A]</tspan></text>
+    <text x="20" y="70" class="cardValue">3,577 <tspan class="grade">[A]</tspan></text>
     <text x="20" y="96" class="cardDesc">Commit contributions across all repos.</text>
   </g>
   
@@ -47,7 +47,7 @@
       keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
       calcMode="spline"
       dur="6s"
-      begin="0.00s;24.00s" repeatCount="1"/>
+      begin="0.00s" repeatCount="indefinite"/>
   </g>
   <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
     
@@ -81,7 +81,7 @@
       keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
       calcMode="spline"
       dur="6s"
-      begin="6.00s;30.00s" repeatCount="1"/>
+      begin="6.00s" repeatCount="indefinite"/>
   </g>
   <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
     
@@ -94,7 +94,7 @@
   <g transform="translate(60,10)">
     <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="34" class="cardTitle">Issues</text>
-    <text x="20" y="70" class="cardValue">13 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="70" class="cardValue">14 <tspan class="grade">[B]</tspan></text>
     <text x="20" y="96" class="cardDesc">Issues created.</text>
   </g>
   
@@ -115,7 +115,7 @@
       keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
       calcMode="spline"
       dur="6s"
-      begin="12.00s;36.00s" repeatCount="1"/>
+      begin="12.00s" repeatCount="indefinite"/>
   </g>
   <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
     
@@ -140,7 +140,7 @@
   <g transform="translate(400,10)">
     <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="34" class="cardTitle">Total Activity</text>
-    <text x="20" y="70" class="cardValue">3,616 <tspan class="grade">[A]</tspan></text>
+    <text x="20" y="70" class="cardValue">3,624 <tspan class="grade">[A]</tspan></text>
     <text x="20" y="96" class="cardDesc">All recorded contributions.</text>
   </g>
     <animateTransform attributeName="transform" type="translate"
@@ -149,6 +149,6 @@
       keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
       calcMode="spline"
       dur="6s"
-      begin="18.00s;42.00s" repeatCount="1"/>
+      begin="18.00s" repeatCount="indefinite"/>
   </g>
 </svg>
