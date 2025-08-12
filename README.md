@@ -79,6 +79,9 @@
 </div>
 <h2 align="center" style="color:#e11d48">Featured Work</h2>
 <div align="center">
+  <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" />
+</div>
+<div align="center">
   <a href="https://github.com/statikfintechllc/GremlinGPT">
     <img src="https://github-readme-stats.vercel.app/api/pin/?username=statikfintechllc&repo=GremlinGPT&theme=transparent&hide_border=true&title_color=e11d48" alt="GremlinGPT card">
   </a>
