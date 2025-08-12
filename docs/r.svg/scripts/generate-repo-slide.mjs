@@ -1,14 +1,8 @@
 /**
  * Animated Repo Cards (2-up carousel, SMIL-only)
- * Data:
- *   - If REPOS is set (comma list: "owner/name,owner/name,..."), use that
- *   - else pinned items (top 6), else top by stargazers (non-archived)
- * Shows:
- *   - Repo name, short description
- *   - Stars, forks
- *   - Language bar (stacked by bytes) + legend
- * Loop:
- *   - Slides 2 at a time with enter/hold/exit easing
+ * - Uses REPOS=owner/name,... or pinned (<=12) or top by stars
+ * - Slides 2 at a time; loops all pages
+ * - GitHub preview shows first page statically
  */
 
 import fs from "node:fs/promises";
@@ -99,10 +93,11 @@ const xmlEsc = (s="") => s
   .replace(/"/g,"&quot;")
   .replace(/'/g,"&apos;");
 
+const norm = (s="") => s.replace(/\s+/g," ").trim();
+
 const takeRepos = async () => {
   if (REPOS_ENV) return parseEnvRepos(REPOS_ENV);
 
-  // try pinned
   const p = await gql(qPinned, { login: GH_USER });
   const pins = (p.user?.pinnedItems?.nodes || [])
     .filter(n => n && !n.isArchived)
@@ -114,7 +109,6 @@ const takeRepos = async () => {
 
   if (pins.length >= 2) return pins.slice(0, 12);
 
-  // fallback to top by stargazers
   const t = await gql(qTop, { login: GH_USER });
   const tops = (t.user?.repositories?.nodes || [])
     .filter(n => !n.isArchived)
@@ -135,13 +129,12 @@ const fetchRepoDetails = async (lst) => {
     if (!r) continue;
     const langs = r.languages?.edges || [];
     const total = r.languages?.totalSize || 0;
-    // build normalized segments (cap tiny ones to ensure visibility)
+
     const segs = langs.map(e => {
       const w = total ? e.size / total : 0;
       return { name: e.node.name, color: e.node.color || "#374151", weight: w };
     }).filter(s => s.weight > 0);
 
-    // ensure at least 1 segment exists
     if (segs.length === 0) segs.push({ name: r.primaryLanguage?.name || "Other", color: r.primaryLanguage?.color || "#6b7280", weight: 1 });
 
     out.push({
@@ -149,22 +142,43 @@ const fetchRepoDetails = async (lst) => {
       desc: r.description || "",
       stars: r.stargazerCount || 0,
       forks: r.forkCount || 0,
-      segments: segs.slice(0, 8) // cap legend size
+      segments: segs.slice(0, 8)
     });
   }
   return out;
 };
 
 // ---------- Build SVG ----------
-const W = 880, H = 250, CW = 420, CH = 200, G = 40; // widened cards
+const W = 880, H = 250, CW = 420, CH = 200, G = 40;
 const x0 = (W - (2 * CW + G)) / 2;
-const TITLE = (s) => xmlEsc(s);
-const DESC  = (s) => {
-  const clean = xmlEsc(s.replace(/\s+/g," ").trim());
-  return clean.length > 260 ? clean.slice(0, 257) + "…" : clean;
+
+// simple width-based wrapper (approx; stable across renderers)
+const wrapByWidth = (text, maxPx, avgPx, maxLines) => {
+  const words = norm(text).split(/\s+/);
+  const out = [];
+  let line = "";
+  for (const w of words) {
+    const candidate = line ? line + " " + w : w;
+    if (candidate.length * avgPx <= maxPx) {
+      line = candidate;
+    } else {
+      if (line) out.push(line);
+      line = w;
+      if (out.length === maxLines - 1) break;
+    }
+  }
+  if (out.length < maxLines && line) out.push(line);
+  const usedAll = out.join(" ").length === norm(text).length;
+  if (!usedAll && out.length) {
+    const last = out[out.length - 1];
+    const trimmed = last.replace(/…?$/,"");
+    // ensure ellipsis fits
+    const targetChars = Math.max(0, Math.floor((maxPx - 3*avgPx) / avgPx));
+    out[out.length - 1] = trimmed.length > targetChars ? trimmed.slice(0, targetChars) + "…" : trimmed + "…";
+  }
+  return out.map(xmlEsc);
 };
 
-// slidePrime: true for slide 0 (visible static preview + fade start at 0s)
 const card = (repo, x, slideId, slidePrime=false) => {
   const px = 20, py = 160, pw = CW - 40, ph = 12;
   let acc = 0;
@@ -174,80 +188,30 @@ const card = (repo, x, slideId, slidePrime=false) => {
 
   const hard = segs.map(s => Math.max(s.weight, minw));
   const hardSum = hard.reduce((a,b)=>a+b,0);
-  const norm = hard.map(v => v / hardSum);
+  const normW = hard.map(v => v / hardSum);
 
-  const bars = norm.map((w, i) => {
+  const bars = normW.map((w, i) => {
     const wpx = Math.round(w * pw);
     const xseg = px + acc;
     acc += wpx;
     const s = segs[i];
-    return `<rect x="${xseg}" y="${py}" width="${i === norm.length-1 ? (px+pw - xseg) : wpx}" height="${ph}" fill="${s.color}" />`;
+    return `<rect x="${xseg}" y="${py}" width="${i === normW.length-1 ? (px+pw - xseg) : wpx}" height="${ph}" fill="${s.color}" />`;
   }).join("");
 
   const legends = segs.slice(0,4).map((s,i)=> {
-    const x = px + (i % 2) * 190;
-    const y = py + 20 + Math.floor(i / 2) * 14;
-    return `<rect x="${x}" y="${y-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${x+16}" y="${y}" class="legend">${xmlEsc(s.name)}</text>`;
+    const lx = px + (i % 2) * 190;
+    const ly = py + 20 + Math.floor(i / 2) * 14;
+    return `<rect x="${lx}" y="${ly-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${lx+16}" y="${ly}" class="legend">${xmlEsc(s.name)}</text>`;
   }).join("");
 
-  // Title (wrap <=2 lines)
-  const titleText = TITLE(repo.name);
-  const titleLines = [];
-  const maxTitleCharsPerLine = 40;
-  const maxTitleLines = 2;
+  // Title wrap (<=2 lines; ~9px/char @18px)
+  const titleLines = wrapByWidth(repo.name, pw, 9, 2)
+    .map((t,i)=>`<text x="20" y="${30 + i*20}" class="name">${t}</text>`);
 
-  if (titleText.length > maxTitleCharsPerLine) {
-    const words = titleText.split(/[\s-]+/);
-    let lines = [''];
-    let currentLine = 0;
-    for (const word of words) {
-      const testLine = lines[currentLine] + (lines[currentLine] ? ' ' : '') + word;
-      if (testLine.length <= maxTitleCharsPerLine) {
-        lines[currentLine] = testLine;
-      } else if (currentLine < maxTitleLines - 1) {
-        currentLine++;
-        lines[currentLine] = word;
-      } else {
-        if (lines[currentLine].length + word.length + 4 > maxTitleCharsPerLine) {
-          lines[currentLine] = lines[currentLine].slice(0, maxTitleCharsPerLine - 3) + '…';
-        }
-        break;
-      }
-    }
-    lines.forEach((line, i) => line.trim() && titleLines.push(`<text x="20" y="${30 + i * 20}" class="name">${line}</text>`));
-  } else {
-    titleLines.push(`<text x="20" y="30" class="name">${titleText}</text>`);
-  }
-
-  // Description (wrap <=4 lines)
-  const descText = DESC(repo.desc);
-  const descLines = [];
-  const maxCharsPerLine = 65;
-  const maxLines = 4;
+  // Desc wrap (<=4 lines; ~6.8px/char @13px)
   const descStartY = titleLines.length > 1 ? 70 : 54;
-
-  if (descText.length > maxCharsPerLine) {
-    const words = descText.split(' ');
-    let lines = [''];
-    let currentLine = 0;
-    for (const word of words) {
-      const testLine = lines[currentLine] + (lines[currentLine] ? ' ' : '') + word;
-      if (testLine.length <= maxCharsPerLine) {
-        lines[currentLine] = testLine;
-      } else if (currentLine < maxLines - 1) {
-        currentLine++;
-        lines[currentLine] = word;
-      } else {
-        if (lines[currentLine].length + word.length + 4 > maxCharsPerLine) {
-          lines[currentLine] = lines[currentLine].slice(0, maxCharsPerLine - 3) + '…';
-        }
-        break;
-      }
-    }
-    lines.forEach((line, i) => line.trim() && descLines.push(`<text x="20" y="${descStartY + i * 16}" class="desc">${line}</text>`));
-  } else {
-    descLines.push(`<text x="20" y="${descStartY}" class="desc">${descText}</text>`);
-  }
+  const descLines = wrapByWidth(repo.desc, pw, 6.8, 4)
+    .map((t,i)=>`<text x="20" y="${descStartY + i*16}" class="desc">${t}</text>`);
 
   return `
   <g transform="translate(${x},20)" opacity="${slidePrime ? '1.0' : '0.0'}">
@@ -255,7 +219,6 @@ const card = (repo, x, slideId, slidePrime=false) => {
     ${titleLines.join('\n    ')}
     ${descLines.join('\n    ')}
 
-    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(${CW-180},0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -270,25 +233,23 @@ const card = (repo, x, slideId, slidePrime=false) => {
     ${bars}
     ${legends}
 
-    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade in/out per slide (bind to slide; prime at 0s for first slide) -->
+    <!-- bind fades to this slide's transform animation events -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${slidePrime ? '0s; ' : ''}${slideId}.begin; ${slideId}.repeatEvent"
+             begin="${slidePrime ? '0s; ' : ''}${slideId}-tx.beginEvent; ${slideId}-tx.repeatEvent"
              fill="remove"/>
   </g>`;
 };
 
 const build = (repos) => {
-  // chunk 2 per page
   const pages = [];
   for (let i=0;i<repos.length;i+=2) pages.push(repos.slice(i,i+2));
 
@@ -300,14 +261,12 @@ const build = (repos) => {
   pages.forEach((pg,i)=>{
     const slideId = `s${i}`;
     const isFirst = i === 0;
-    const startX = isFirst ? 0 : W;                 // visible frame for first slide
-    const left  = card(pg[0], x0, slideId, isFirst);
-    const right = pg[1] ? card(pg[1], x0+CW+G, slideId, isFirst) : "";
+    const startX = isFirst ? 0 : W;
 
     slides += `
     <g id="${slideId}" class="slide" transform="translate(${startX},0)" clip-path="url(#frame)">
-      ${left}${right}
-      <animateTransform attributeName="transform" type="translate"
+      ${card(pg[0], x0, slideId, isFirst)}${pg[1] ? card(pg[1], x0+CW+G, slideId, isFirst) : ""}
+      <animateTransform id="${slideId}-tx" attributeName="transform" type="translate"
         values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
@@ -322,10 +281,10 @@ const build = (repos) => {
 <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
   <style>
     :root{ color-scheme: dark; }
-    .name{ font:800 18px system-ui; fill:#e5e7eb }
-    .desc{ font:400 13px system-ui; fill:#9ca3af }
-    .pill{ font:700 12px system-ui; fill:#e5e7eb }
-    .legend{ font:600 12px system-ui; fill:#cbd5e1 }
+    .name{ font:800 18px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#e5e7eb }
+    .desc{ font:400 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#9ca3af }
+    .pill{ font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#e5e7eb }
+    .legend{ font:600 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#cbd5e1 }
   </style>
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
