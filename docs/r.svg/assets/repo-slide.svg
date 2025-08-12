@@ -10,10 +10,16 @@
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="880" height="250" rx="8" ry="8"/></clipPath>
   </defs>
+
+  <!-- master clock to synchronize and loop all slides -->
+  <rect width="0" height="0" opacity="0">
+    <animate id="master" attributeName="x" from="0" to="0" dur="18s" repeatCount="indefinite"/>
+  </rect>
+
   
-    <g id="s0" class="slide" transform="translate(880,0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(0,0)" clip-path="url(#frame)">
       
-  <g transform="translate(0,20)" opacity="0.0">
+  <g transform="translate(0,20)" opacity="1.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name" lengthAdjust="spacing" textLength="380">GremlinGPT</text>
     <text x="20" y="54" style="font:400 10px system-ui" class="desc" lengthAdjust="spacing" textLength="380">GremlinGPT is a locally hosted recursive intelligence system:</text><text x="20" y="66" style="font:400 10px system-ui" class="desc" lengthAdjust="spacing" textLength="380">Scrapes data, learns from results, and evolves without human</text><text x="20" y="78" style="font:400 10px system-ui" class="desc" lengthAdjust="spacing" textLength="380">oversight - Operates fully offline with no cloud dependencies -</text><text x="20" y="90" style="font:400 10px system-ui" class="desc" lengthAdjust="spacing" textLength="380">Grows its own NLP engine using feedback and self-repair - Can</text><text x="20" y="102" style="font:400 10px system-ui" class="desc" lengthAdjust="spacing" textLength="380">plan, refactor, and upgrade its own code. This repo mirrors</text><text x="20" y="114" style="font:400 10px system-ui" class="desc" lengthAdjust="spacing" textLength="380">statik-servers GremlinGPT.</text>
@@ -33,22 +39,22 @@
     <rect x="20" y="160" width="276" height="12" fill="#3572A5" /><rect x="296" y="160" width="39" height="12" fill="#ff5a03" /><rect x="335" y="160" width="22" height="12" fill="#89e051" /><rect x="357" y="160" width="14" height="12" fill="#3178c6" /><rect x="371" y="160" width="14" height="12" fill="#f1e05a" /><rect x="385" y="160" width="15" height="12" fill="#663399" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#ff5a03"/><text x="226" y="180" class="legend">Astro</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="194" class="legend">Shell</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#3178c6"/><text x="226" y="194" class="legend">TypeScript</text>
 
-    <!-- glow pulse -->
+    <!-- glow -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade tied to this slide's timeline -->
+    <!-- fade, synced with master clock -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s0-anim.begin; s0-anim.repeatEvent"
+             begin="0s; master.begin+0.00s; master.repeatEvent+0.00s"
              fill="remove"/>
   </g>
-  <g transform="translate(460,20)" opacity="0.0">
+  <g transform="translate(460,20)" opacity="1.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name" lengthAdjust="spacing" textLength="380">Gremlin-ShadTail-Trader</text>
     <text x="20" y="54" style="font:400 13px system-ui" class="desc" lengthAdjust="spacing" textLength="380">GremlinGPT&apos;s standalone trading core, will be</text><text x="20" y="69" style="font:400 13px system-ui" class="desc" lengthAdjust="spacing" textLength="380">wrapped as a vscode plugin, using electron app for</text><text x="20" y="84" style="font:400 13px system-ui" class="desc" lengthAdjust="spacing" textLength="380">the application, astro, tailwond, and shadcn for</text><text x="20" y="99" style="font:400 13px system-ui" class="desc" lengthAdjust="spacing" textLength="380">the user interface, and Gremlins Trade Logic.</text>
@@ -68,31 +74,31 @@
     <rect x="20" y="160" width="249" height="12" fill="#3572A5" /><rect x="269" y="160" width="76" height="12" fill="#3178c6" /><rect x="345" y="160" width="14" height="12" fill="#f1e05a" /><rect x="359" y="160" width="14" height="12" fill="#89e051" /><rect x="373" y="160" width="14" height="12" fill="#663399" /><rect x="387" y="160" width="13" height="12" fill="#ff5a03" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#3178c6"/><text x="226" y="180" class="legend">TypeScript</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#f1e05a"/><text x="36" y="194" class="legend">JavaScript</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#89e051"/><text x="226" y="194" class="legend">Shell</text>
 
-    <!-- glow pulse -->
+    <!-- glow -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade tied to this slide's timeline -->
+    <!-- fade, synced with master clock -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s0-anim.begin; s0-anim.repeatEvent"
+             begin="0s; master.begin+0.00s; master.repeatEvent+0.00s"
              fill="remove"/>
   </g>
-      <animateTransform id="s0-anim" attributeName="transform" type="translate"
+      <animateTransform attributeName="transform" type="translate"
         values="880;0;0;-880"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="0.00s"
-        repeatCount="indefinite"/>
+        begin="master.begin+0.00s; master.repeatEvent+0.00s"
+        repeatCount="1"/>
     </g>
-    <g id="s1" class="slide" transform="translate(880,0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
   <g transform="translate(0,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -114,19 +120,19 @@
     <rect x="20" y="160" width="261" height="12" fill="#3178c6" /><rect x="281" y="160" width="42" height="12" fill="#3572A5" /><rect x="323" y="160" width="13" height="12" fill="#663399" /><rect x="336" y="160" width="13" height="12" fill="#f1e05a" /><rect x="349" y="160" width="13" height="12" fill="#e34c26" /><rect x="362" y="160" width="13" height="12" fill="#dea584" /><rect x="375" y="160" width="13" height="12" fill="#89e051" /><rect x="388" y="160" width="12" height="12" fill="#264b99" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3178c6"/><text x="36" y="180" class="legend">TypeScript</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="226" y="180" class="legend">Python</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#663399"/><text x="36" y="194" class="legend">CSS</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#f1e05a"/><text x="226" y="194" class="legend">JavaScript</text>
 
-    <!-- glow pulse -->
+    <!-- glow -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade tied to this slide's timeline -->
+    <!-- fade, synced with master clock -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s1-anim.begin; s1-anim.repeatEvent"
+             begin="master.begin+6.00s; master.repeatEvent+6.00s"
              fill="remove"/>
   </g>
   <g transform="translate(460,20)" opacity="0.0">
@@ -149,31 +155,31 @@
     <rect x="20" y="160" width="380" height="12" fill="#6b7280" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#6b7280"/><text x="36" y="180" class="legend">Other</text>
 
-    <!-- glow pulse -->
+    <!-- glow -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade tied to this slide's timeline -->
+    <!-- fade, synced with master clock -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s1-anim.begin; s1-anim.repeatEvent"
+             begin="master.begin+6.00s; master.repeatEvent+6.00s"
              fill="remove"/>
   </g>
-      <animateTransform id="s1-anim" attributeName="transform" type="translate"
+      <animateTransform attributeName="transform" type="translate"
         values="880;0;0;-880"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="6.00s"
-        repeatCount="indefinite"/>
+        begin="master.begin+6.00s; master.repeatEvent+6.00s"
+        repeatCount="1"/>
     </g>
-    <g id="s2" class="slide" transform="translate(880,0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
   <g transform="translate(0,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -195,19 +201,19 @@
     <rect x="20" y="160" width="380" height="12" fill="#89e051" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="180" class="legend">Shell</text>
 
-    <!-- glow pulse -->
+    <!-- glow -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade tied to this slide's timeline -->
+    <!-- fade, synced with master clock -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s2-anim.begin; s2-anim.repeatEvent"
+             begin="master.begin+12.00s; master.repeatEvent+12.00s"
              fill="remove"/>
   </g>
   <g transform="translate(460,20)" opacity="0.0">
@@ -230,28 +236,28 @@
     <rect x="20" y="160" width="292" height="12" fill="#3572A5" /><rect x="312" y="160" width="88" height="12" fill="#f1e05a" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#f1e05a"/><text x="226" y="180" class="legend">JavaScript</text>
 
-    <!-- glow pulse -->
+    <!-- glow -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade tied to this slide's timeline -->
+    <!-- fade, synced with master clock -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s2-anim.begin; s2-anim.repeatEvent"
+             begin="master.begin+12.00s; master.repeatEvent+12.00s"
              fill="remove"/>
   </g>
-      <animateTransform id="s2-anim" attributeName="transform" type="translate"
+      <animateTransform attributeName="transform" type="translate"
         values="880;0;0;-880"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="12.00s"
-        repeatCount="indefinite"/>
+        begin="master.begin+12.00s; master.repeatEvent+12.00s"
+        repeatCount="1"/>
     </g>
 </svg>
