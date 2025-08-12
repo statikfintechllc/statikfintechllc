@@ -1,6 +1,6 @@
 <!-- badges/prompt_blacksmith.svg -->
-<svg xmlns="http://www.w3.org/2000/svg" width="172" height="24" viewBox="0 0 172 24" role="img" aria-label="Prompt Blacksmith">
-  <rect width="172" height="24" fill="#000"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="158" height="24" viewBox="0 0 158 24" role="img" aria-label="Prompt Blacksmith">
+  <rect width="158" height="24" fill="#000"/>
   <circle cx="12" cy="12" r="6.5" fill="none" stroke="#FF2B2B" stroke-width="2"/>
   <text x="26" y="12" fill="#FFD700" font-size="12" font-weight="600"
         font-family="Inter,Segoe UI,DejaVu Sans,Verdana,Arial,Helvetica,system-ui,sans-serif"
