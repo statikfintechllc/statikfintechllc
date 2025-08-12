@@ -156,15 +156,15 @@ const fetchRepoDetails = async (lst) => {
 };
 
 // ---------- Build SVG ----------
-const W = 880, H = 250, CW = 400, CH = 200, G = 40;
+const W = 880, H = 250, CW = 420, CH = 200, G = 40; // widened cards
 const x0 = (W - (2 * CW + G)) / 2;
-const TITLE = (s) => xmlEsc(s); // Allow full title, will be wrapped in card function
+const TITLE = (s) => xmlEsc(s);
 const DESC  = (s) => {
   const clean = xmlEsc(s.replace(/\s+/g," ").trim());
-  return clean.length > 260 ? clean.slice(0, 257) + "…" : clean; // Increased from 150 to 260
+  return clean.length > 260 ? clean.slice(0, 257) + "…" : clean;
 };
 
-const card = (repo, x) => {
+const card = (repo, x, slideId) => {
   // Move language bar to bottom for better balance
   const px = 20, py = 160, pw = CW - 40, ph = 12;
   let acc = 0;
@@ -195,31 +195,30 @@ const card = (repo, x) => {
   // Title wrapping with up to 2 lines
   const titleText = TITLE(repo.name);
   const titleLines = [];
-  const maxTitleCharsPerLine = 40; // Adjusted for better wrapping
+  const maxTitleCharsPerLine = 40;
   const maxTitleLines = 2;
-  
+
   if (titleText.length > maxTitleCharsPerLine) {
-    const words = titleText.split(/[\s-]+/); // Split on spaces and hyphens
+    const words = titleText.split(/[\s-]+/);
     let lines = [''];
     let currentLine = 0;
-    
+
     for (const word of words) {
       const testLine = lines[currentLine] + (lines[currentLine] ? ' ' : '') + word;
-      
+
       if (testLine.length <= maxTitleCharsPerLine) {
         lines[currentLine] = testLine;
       } else if (currentLine < maxTitleLines - 1) {
         currentLine++;
         lines[currentLine] = word;
       } else {
-        // If we can't fit remaining words, truncate current line
         if (lines[currentLine].length + word.length + 4 > maxTitleCharsPerLine) {
           lines[currentLine] = lines[currentLine].slice(0, maxTitleCharsPerLine - 3) + '…';
         }
         break;
       }
     }
-    
+
     lines.forEach((line, i) => {
       if (line.trim()) {
         titleLines.push(`<text x="20" y="${30 + i * 20}" class="name">${line}</text>`);
@@ -232,32 +231,31 @@ const card = (repo, x) => {
   // Improved description wrapping with more space
   const descText = DESC(repo.desc);
   const descLines = [];
-  const maxCharsPerLine = 65; // Increased character limit
-  const maxLines = 4; // Allow up to 4 lines
-  const descStartY = titleLines.length > 1 ? 70 : 54; // Adjust start based on title lines
-  
+  const maxCharsPerLine = 65;
+  const maxLines = 4;
+  const descStartY = titleLines.length > 1 ? 70 : 54;
+
   if (descText.length > maxCharsPerLine) {
     const words = descText.split(' ');
     let lines = [''];
     let currentLine = 0;
-    
+
     for (const word of words) {
       const testLine = lines[currentLine] + (lines[currentLine] ? ' ' : '') + word;
-      
+
       if (testLine.length <= maxCharsPerLine) {
         lines[currentLine] = testLine;
       } else if (currentLine < maxLines - 1) {
         currentLine++;
         lines[currentLine] = word;
       } else {
-        // Truncate with ellipsis if we exceed max lines
         if (lines[currentLine].length + word.length + 4 > maxCharsPerLine) {
           lines[currentLine] = lines[currentLine].slice(0, maxCharsPerLine - 3) + '…';
         }
         break;
       }
     }
-    
+
     lines.forEach((line, i) => {
       if (line.trim()) {
         descLines.push(`<text x="20" y="${descStartY + i * 16}" class="desc">${line}</text>`);
@@ -295,8 +293,13 @@ const card = (repo, x) => {
       </rect>
     </g>
 
-    <!-- fade in/out per slide -->
-    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="${PAGE_SEC}s" repeatCount="1" fill="freeze"/>
+    <!-- fade in/out per slide (bound to the slide timeline) -->
+    <animate attributeName="opacity"
+             values="0;1;1;0"
+             keyTimes="0;0.1;0.9;1"
+             dur="${PAGE_SEC}s"
+             begin="${slideId}.begin; ${slideId}.repeatEvent"
+             fill="remove"/>
   </g>`;
 };
 
@@ -308,12 +311,13 @@ const build = (repos) => {
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
-  
+
   let slides = "";
   pages.forEach((pg,i)=>{
+    const slideId = `s${i}`;
     slides += `
-    <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
-      ${card(pg[0], x0)}${pg[1] ? card(pg[1], x0+CW+G) : ""}
+    <g id="${slideId}" class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
+      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
       <animateTransform attributeName="transform" type="translate"
         values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
