@@ -28,7 +28,7 @@
   </a>
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="./badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" height="24">
-  </a>	
+  </a>
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
