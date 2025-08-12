@@ -1,14 +1,6 @@
 /**
  * Animated Repo Cards (2-up carousel, SMIL-only)
- * Data:
- *   - If REPOS is set (comma list: "owner/name,owner/name,..."), use that
- *   - else pinned items (top 6), else top by stargazers (non-archived)
- * Shows:
- *   - Repo name, short description
- *   - Stars, forks
- *   - Language bar (stacked by bytes) + legend
- * Loop:
- *   - Slides 2 at a time with enter/hold/exit easing
+ * Loop: all slides run, then the whole sequence restarts forever (master clock)
  */
 
 import fs from "node:fs/promises";
@@ -159,7 +151,7 @@ const x0 = (W - (2 * CW + G)) / 2;
 const TITLE = (s) => xmlEsc(s);
 const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
 
-// --------- text wrap (no distortion) ----------
+// --------- text wrap ----------
 function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   let font = options.fontSize ?? 13;
   const minFont  = options.minFontSize ?? 9;
@@ -202,8 +194,8 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   return { lines, font: minFont, lineHeight };
 }
 
-// ----- Card (fade tied to its slide's anim id) -----
-const card = (repo, x, slideId) => {
+// ----- Card -----
+const card = (repo, x, slideAnimId) => {
   const px = 20, pw = CW - 40;
   const py = 160, ph = 12;
 
@@ -251,7 +243,7 @@ const card = (repo, x, slideId) => {
     `<text x="${px}" y="${30 + i*20}" class="name">${line}</text>`
   ).join("");
 
-  // Description block – fit inside box; never stretch
+  // Description block – fit inside box
   const descTop = titleLines.length > 1 ? 70 : 54;
   const descBottom = 130; // badges start at 135
   const descHeight = Math.max(12, descBottom - descTop);
@@ -289,12 +281,12 @@ const card = (repo, x, slideId) => {
       </rect>
     </g>
 
-    <!-- fade tied to slide timeline -->
+    <!-- fade bound to this slide's transform -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${slideId}.begin; ${slideId}.repeatEvent"
+             begin="${slideAnimId}.begin; ${slideAnimId}.repeatEvent"
              fill="remove"/>
   </g>`;
 };
@@ -311,13 +303,14 @@ const build = (repos) => {
 
   let slides = "";
   pages.forEach((pg,i)=>{
-    const slideId = `s${i}`;
+    const slideAnimId = `slide-${i}`;
     const offset = (i * PAGE_SEC).toFixed(2);
 
     slides += `
-    <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
-      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
-      <animateTransform id="${slideId}" attributeName="transform" type="translate"
+    <g transform="translate(${W},0)" clip-path="url(#frame)">
+      ${card(pg[0], x0, slideAnimId)}${pg[1] ? card(pg[1], x0+CW+G, slideAnimId) : ""}
+      <!-- one-shot per cycle, restarted by master -->
+      <animateTransform id="${slideAnimId}" attributeName="transform" type="translate"
         values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
@@ -333,7 +326,7 @@ const build = (repos) => {
   <style>
     :root{ color-scheme: dark; }
     .name{ font:800 18px system-ui; fill:#e5e7eb }
-    .desc{ fill:#9ca3af } /* desc size set inline for dynamic fit */
+    .desc{ fill:#9ca3af } /* desc font-size set inline for wrap */
     .pill{ font:700 12px system-ui; fill:#e5e7eb }
     .legend{ font:600 12px system-ui; fill:#cbd5e1 }
   </style>
@@ -341,7 +334,7 @@ const build = (repos) => {
     <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
   </defs>
 
-  <!-- master clock: repeats the whole sequence endlessly -->
+  <!-- Master clock: restarts whole sequence endlessly -->
   <rect width="0" height="0" opacity="0">
     <animate id="master" attributeName="x" from="0" to="0" dur="${totalDur}s" repeatCount="indefinite"/>
   </rect>
