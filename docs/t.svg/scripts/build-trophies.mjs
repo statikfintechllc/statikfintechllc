@@ -129,13 +129,11 @@ const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
 const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
 const singleKeyTimes = `0;${enterK};${exitK};1`;
 
-// Build slides. IMPORTANT: each slide animates ONCE per full cycle (repeatCount=1)
-// and restarts only after the entire carousel duration using multiple begin times.
+// Build slides. Each slide animates continuously with indefinite repeat
 const totalDuration = pages.length * PAGE_SEC;
 let slides = "";
 pages.forEach((pg, i) => {
-  const beginBase = (i * PAGE_SEC).toFixed(2);
-  const beginRepeat = (i * PAGE_SEC + totalDuration).toFixed(2);
+  const beginTime = (i * PAGE_SEC).toFixed(2);
   slides += `
   <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
     ${card(pg[0], x0)}${pg[1] ? card(pg[1], x0 + CW + G) : ""}
@@ -145,7 +143,7 @@ pages.forEach((pg, i) => {
       keySplines="${EASE}"
       calcMode="spline"
       dur="${PAGE_SEC}s"
-      begin="${beginBase}s;${beginRepeat}s" repeatCount="1"/>
+      begin="${beginTime}s" repeatCount="indefinite"/>
   </g>`;
 });
 
