@@ -164,15 +164,14 @@ const DESC  = (s) => {
   return clean.length > 260 ? clean.slice(0, 257) + "…" : clean;
 };
 
-const card = (repo, x, slideId) => {
-  // Move language bar to bottom for better balance
+// slidePrime: true for slide 0 (visible static preview + fade start at 0s)
+const card = (repo, x, slideId, slidePrime=false) => {
   const px = 20, py = 160, pw = CW - 40, ph = 12;
   let acc = 0;
-  const minw = 0.04; // 4% min width visibility
+  const minw = 0.04;
   const totalWeight = repo.segments.reduce((a,b)=>a+b.weight,0) || 1;
   const segs = repo.segments.map(s => ({...s, weight: s.weight / totalWeight}));
 
-  // distribute min widths then renormalize leftover
   const hard = segs.map(s => Math.max(s.weight, minw));
   const hardSum = hard.reduce((a,b)=>a+b,0);
   const norm = hard.map(v => v / hardSum);
@@ -185,14 +184,13 @@ const card = (repo, x, slideId) => {
     return `<rect x="${xseg}" y="${py}" width="${i === norm.length-1 ? (px+pw - xseg) : wpx}" height="${ph}" fill="${s.color}" />`;
   }).join("");
 
-  // Position legends at the very bottom in a more compact layout
   const legends = segs.slice(0,4).map((s,i)=> {
-    const x = px + (i % 2) * 190; // Two columns
-    const y = py + 20 + Math.floor(i / 2) * 14; // Two rows
+    const x = px + (i % 2) * 190;
+    const y = py + 20 + Math.floor(i / 2) * 14;
     return `<rect x="${x}" y="${y-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${x+16}" y="${y}" class="legend">${xmlEsc(s.name)}</text>`;
   }).join("");
 
-  // Title wrapping with up to 2 lines
+  // Title (wrap <=2 lines)
   const titleText = TITLE(repo.name);
   const titleLines = [];
   const maxTitleCharsPerLine = 40;
@@ -202,10 +200,8 @@ const card = (repo, x, slideId) => {
     const words = titleText.split(/[\s-]+/);
     let lines = [''];
     let currentLine = 0;
-
     for (const word of words) {
       const testLine = lines[currentLine] + (lines[currentLine] ? ' ' : '') + word;
-
       if (testLine.length <= maxTitleCharsPerLine) {
         lines[currentLine] = testLine;
       } else if (currentLine < maxTitleLines - 1) {
@@ -218,17 +214,12 @@ const card = (repo, x, slideId) => {
         break;
       }
     }
-
-    lines.forEach((line, i) => {
-      if (line.trim()) {
-        titleLines.push(`<text x="20" y="${30 + i * 20}" class="name">${line}</text>`);
-      }
-    });
+    lines.forEach((line, i) => line.trim() && titleLines.push(`<text x="20" y="${30 + i * 20}" class="name">${line}</text>`));
   } else {
     titleLines.push(`<text x="20" y="30" class="name">${titleText}</text>`);
   }
 
-  // Improved description wrapping with more space
+  // Description (wrap <=4 lines)
   const descText = DESC(repo.desc);
   const descLines = [];
   const maxCharsPerLine = 65;
@@ -239,10 +230,8 @@ const card = (repo, x, slideId) => {
     const words = descText.split(' ');
     let lines = [''];
     let currentLine = 0;
-
     for (const word of words) {
       const testLine = lines[currentLine] + (lines[currentLine] ? ' ' : '') + word;
-
       if (testLine.length <= maxCharsPerLine) {
         lines[currentLine] = testLine;
       } else if (currentLine < maxLines - 1) {
@@ -255,23 +244,18 @@ const card = (repo, x, slideId) => {
         break;
       }
     }
-
-    lines.forEach((line, i) => {
-      if (line.trim()) {
-        descLines.push(`<text x="20" y="${descStartY + i * 16}" class="desc">${line}</text>`);
-      }
-    });
+    lines.forEach((line, i) => line.trim() && descLines.push(`<text x="20" y="${descStartY + i * 16}" class="desc">${line}</text>`));
   } else {
     descLines.push(`<text x="20" y="${descStartY}" class="desc">${descText}</text>`);
   }
 
   return `
-  <g transform="translate(${x},20)" opacity="0.0">
+  <g transform="translate(${x},20)" opacity="${slidePrime ? '1.0' : '0.0'}">
     <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
     ${titleLines.join('\n    ')}
     ${descLines.join('\n    ')}
 
-    <!-- Stars and forks moved above language bar -->
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(${CW-180},0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -293,12 +277,12 @@ const card = (repo, x, slideId) => {
       </rect>
     </g>
 
-    <!-- fade in/out per slide (bound to the slide timeline) -->
+    <!-- fade in/out per slide (bind to slide; prime at 0s for first slide) -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${slideId}.begin; ${slideId}.repeatEvent"
+             begin="${slidePrime ? '0s; ' : ''}${slideId}.begin; ${slideId}.repeatEvent"
              fill="remove"/>
   </g>`;
 };
@@ -315,9 +299,14 @@ const build = (repos) => {
   let slides = "";
   pages.forEach((pg,i)=>{
     const slideId = `s${i}`;
+    const isFirst = i === 0;
+    const startX = isFirst ? 0 : W;                 // visible frame for first slide
+    const left  = card(pg[0], x0, slideId, isFirst);
+    const right = pg[1] ? card(pg[1], x0+CW+G, slideId, isFirst) : "";
+
     slides += `
-    <g id="${slideId}" class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
-      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
+    <g id="${slideId}" class="slide" transform="translate(${startX},0)" clip-path="url(#frame)">
+      ${left}${right}
       <animateTransform attributeName="transform" type="translate"
         values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
