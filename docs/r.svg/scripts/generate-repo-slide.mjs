@@ -1,6 +1,6 @@
 /**
  * Animated Repo Cards (2-up carousel, SMIL-only)
- * Slides run in sequence and the sequence repeats forever (trophies-style).
+ * Slides run in sequence and the sequence repeats forever (master-clock style).
  */
 
 import fs from "node:fs/promises";
@@ -148,10 +148,8 @@ const fetchRepoDetails = async (lst) => {
 // ---------- Build SVG ----------
 const W = 880, H = 250, CW = 420, CH = 200, G = 40;
 const x0 = (W - (2 * CW + G)) / 2;
-const TITLE = (s) => xmlEsc(s);
-const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
 
-// --------- text wrap (no distortion) ----------
+// --------- text wrap ----------
 function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   let font = options.fontSize ?? 13;
   const minFont  = options.minFontSize ?? 9;
@@ -194,9 +192,7 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   return { lines, font: minFont, lineHeight };
 }
 
-// ----- Card -----
-// NOTE: 'beginSec' is an ABSOLUTE offset (e.g., 0, 6, 12) so the fade repeats
-// forever WITHOUT relying on repeatEvent (some renderers ignore it).
+// ----- Card (fade tied to master clock offsets) -----
 const card = (repo, x, beginSec) => {
   const px = 20, pw = CW - 40;
   const py = 160, ph = 12;
@@ -225,10 +221,9 @@ const card = (repo, x, beginSec) => {
   }).join("");
 
   // Title (≤2 lines)
-  const titleText = TITLE(repo.name);
+  const titleText = xmlEsc(repo.name);
   const titleLines = [];
-  const maxTitleCharsPerLine = 40;
-  const maxTitleLines = 2;
+  const maxTitleCharsPerLine = 40, maxTitleLines = 2;
   if (titleText.length > maxTitleCharsPerLine) {
     const words = titleText.split(/[\s-]+/);
     let cur = "";
@@ -247,14 +242,15 @@ const card = (repo, x, beginSec) => {
 
   // Description block – fit inside box
   const descTop = titleLines.length > 1 ? 70 : 54;
-  const descBottom = 130; // badges start at 135
+  const descBottom = 130;
   const descHeight = Math.max(12, descBottom - descTop);
-  const wrap = wrapTextToBox(DESC(repo.desc), pw, descHeight, { fontSize:13, minFontSize:9, linePad:2 });
+  const wrap = wrapTextToBox(xmlEsc((repo.desc || "").replace(/\s+/g," ").trim()), pw, descHeight, { fontSize:13, minFontSize:9, linePad:2 });
 
   const descSvg = wrap.lines.map((line, i) =>
     `<text x="${px}" y="${descTop + i * wrap.lineHeight}" style="font:400 ${wrap.font}px system-ui" class="desc">${line}</text>`
   ).join("");
 
+  // fade: single run per master cycle, restarted by master.repeatEvent
   return `
   <g transform="translate(${x},20)" opacity="0">
     <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
@@ -276,20 +272,20 @@ const card = (repo, x, beginSec) => {
     ${bars}
     ${legends}
 
-    <!-- glow pulse -->
+    <!-- glow pulse (independent loop) -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- fade timed with this slide's absolute offset; loops on its own -->
+    <!-- one-shot fade per cycle -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${beginSec}s"
-             repeatCount="indefinite"
+             begin="master.begin+${beginSec}s; master.repeatEvent+${beginSec}s"
+             repeatCount="1"
              fill="remove"/>
   </g>`;
 };
@@ -303,21 +299,31 @@ const buildRepoSvg = (repos) => {
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
+  const totalDur = Math.max(1, pages.length) * PAGE_SEC;
 
   let slides = "";
+
+  // Master clock drives the whole sequence forever
+  const master = `
+  <rect width="0" height="0" opacity="0">
+    <animate id="master" attributeName="x" from="0" to="0" dur="${totalDur}s" repeatCount="indefinite"/>
+  </rect>`;
+
   pages.forEach((pg, i) => {
     const beginTime = (i * PAGE_SEC).toFixed(2); // 0, 6, 12, ...
     slides += `
     <g class="slide" transform="translate(${W},0)" clip-path="url(#repo-frame)">
       ${card(pg[0], x0, beginTime)}${pg[1] ? card(pg[1], x0 + CW + G, beginTime) : ""}
+      <!-- run once per master cycle at its slot -->
       <animateTransform attributeName="transform" type="translate"
         values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
         dur="${PAGE_SEC}s"
-        begin="${beginTime}s"
-        repeatCount="indefinite"/>
+        begin="master.begin+${beginTime}s; master.repeatEvent+${beginTime}s"
+        repeatCount="1"
+        fill="remove"/>
     </g>`;
   });
 
@@ -333,6 +339,7 @@ const buildRepoSvg = (repos) => {
   <defs>
     <clipPath id="repo-frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
   </defs>
+  ${master}
   ${slides}
 </svg>`;
   return svg;
