@@ -158,10 +158,10 @@ const fetchRepoDetails = async (lst) => {
 // ---------- Build SVG ----------
 const W = 880, H = 250, CW = 400, CH = 200, G = 40;
 const x0 = (W - (2 * CW + G)) / 2;
-const TITLE = (s) => xmlEsc(s.length > 45 ? s.slice(0,42) + "…" : s);
+const TITLE = (s) => xmlEsc(s); // Allow full title, will be wrapped in card function
 const DESC  = (s) => {
   const clean = xmlEsc(s.replace(/\s+/g," ").trim());
-  return clean.length > 150 ? clean.slice(0, 147) + "…" : clean;
+  return clean.length > 260 ? clean.slice(0, 257) + "…" : clean; // Increased from 150 to 260
 };
 
 const card = (repo, x) => {
@@ -192,11 +192,49 @@ const card = (repo, x) => {
     return `<rect x="${x}" y="${y-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${x+16}" y="${y}" class="legend">${xmlEsc(s.name)}</text>`;
   }).join("");
 
-  // Improved description wrapping with better character limits
+  // Title wrapping with up to 2 lines
+  const titleText = TITLE(repo.name);
+  const titleLines = [];
+  const maxTitleCharsPerLine = 40; // Adjusted for better wrapping
+  const maxTitleLines = 2;
+  
+  if (titleText.length > maxTitleCharsPerLine) {
+    const words = titleText.split(/[\s-]+/); // Split on spaces and hyphens
+    let lines = [''];
+    let currentLine = 0;
+    
+    for (const word of words) {
+      const testLine = lines[currentLine] + (lines[currentLine] ? ' ' : '') + word;
+      
+      if (testLine.length <= maxTitleCharsPerLine) {
+        lines[currentLine] = testLine;
+      } else if (currentLine < maxTitleLines - 1) {
+        currentLine++;
+        lines[currentLine] = word;
+      } else {
+        // If we can't fit remaining words, truncate current line
+        if (lines[currentLine].length + word.length + 4 > maxTitleCharsPerLine) {
+          lines[currentLine] = lines[currentLine].slice(0, maxTitleCharsPerLine - 3) + '…';
+        }
+        break;
+      }
+    }
+    
+    lines.forEach((line, i) => {
+      if (line.trim()) {
+        titleLines.push(`<text x="20" y="${30 + i * 20}" class="name">${line}</text>`);
+      }
+    });
+  } else {
+    titleLines.push(`<text x="20" y="30" class="name">${titleText}</text>`);
+  }
+
+  // Improved description wrapping with more space
   const descText = DESC(repo.desc);
   const descLines = [];
-  const maxCharsPerLine = 60; // Reduced for better fitting
-  const maxLines = 3; // Allow up to 3 lines
+  const maxCharsPerLine = 65; // Increased character limit
+  const maxLines = 4; // Allow up to 4 lines
+  const descStartY = titleLines.length > 1 ? 70 : 54; // Adjust start based on title lines
   
   if (descText.length > maxCharsPerLine) {
     const words = descText.split(' ');
@@ -213,34 +251,37 @@ const card = (repo, x) => {
         lines[currentLine] = word;
       } else {
         // Truncate with ellipsis if we exceed max lines
-        lines[currentLine] = lines[currentLine].slice(0, maxCharsPerLine - 3) + '…';
+        if (lines[currentLine].length + word.length + 4 > maxCharsPerLine) {
+          lines[currentLine] = lines[currentLine].slice(0, maxCharsPerLine - 3) + '…';
+        }
         break;
       }
     }
     
     lines.forEach((line, i) => {
       if (line.trim()) {
-        descLines.push(`<text x="20" y="${54 + i * 18}" class="desc">${line}</text>`);
+        descLines.push(`<text x="20" y="${descStartY + i * 16}" class="desc">${line}</text>`);
       }
     });
   } else {
-    descLines.push(`<text x="20" y="54" class="desc">${descText}</text>`);
+    descLines.push(`<text x="20" y="${descStartY}" class="desc">${descText}</text>`);
   }
 
   return `
   <g transform="translate(${x},20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
-    <text x="20" y="30" class="name">${TITLE(repo.name)}</text>
+    ${titleLines.join('\n    ')}
     ${descLines.join('\n    ')}
 
-    <g class="badges">
-      <g transform="translate(${CW-180},28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ ${repo.stars.toLocaleString()}</text>
+    <!-- Stars and forks moved above language bar -->
+    <g class="badges" transform="translate(0,135)">
+      <g transform="translate(${CW-180},0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">⭐ ${repo.stars.toLocaleString()}</text>
       </g>
-      <g transform="translate(${CW-90},28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">🍴 ${repo.forks.toLocaleString()}</text>
+      <g transform="translate(${CW-90},0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">🍴 ${repo.forks.toLocaleString()}</text>
       </g>
     </g>
 
@@ -268,9 +309,6 @@ const build = (repos) => {
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
   
-  // Calculate total cycle duration for proper looping
-  const totalDuration = pages.length * PAGE_SEC;
-
   let slides = "";
   pages.forEach((pg,i)=>{
     slides += `
@@ -283,8 +321,7 @@ const build = (repos) => {
         calcMode="spline"
         dur="${PAGE_SEC}s"
         begin="${(i * PAGE_SEC).toFixed(2)}s"
-        repeatCount="indefinite"
-        repeatDur="${totalDuration}s"/>
+        repeatCount="indefinite"/>
     </g>`;
   });
 
