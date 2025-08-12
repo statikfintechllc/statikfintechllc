@@ -195,23 +195,9 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
 }
 
 // ----- Card -----
-const card = (repo, x, slideId, slideIndex, totalSlides, totalDuration = PAGE_SEC) => {
+const card = (repo, x, slideId) => {
   const px = 20, pw = CW - 40;
   const py = 160, ph = 12;
-
-  // Calculate opacity keyTimes for sequential slides
-  // Each slide should only be visible during its portion of the total cycle
-  const slideShare = 1 / totalSlides; // Each slide gets 1/N of total time
-  const fadePercent = 0.05; // 5% of slide time for fade in/out
-  
-  const startTime = 0;
-  const fadeInEnd = fadePercent;
-  const fadeOutStart = 1 - fadePercent;
-  const endTime = slideShare;
-  
-  // Convert to string with 4 decimal places
-  const opacityKeyTimes = `0;${fadeInEnd.toFixed(4)};${fadeOutStart.toFixed(4)};${endTime.toFixed(4)};1`;
-  const opacityValues = "0;1;1;0;0";
 
   // Language segments (min width)
   let acc = 0;
@@ -297,15 +283,15 @@ const card = (repo, x, slideId, slideIndex, totalSlides, totalDuration = PAGE_SE
 
     <!-- fade bound to this slide's transform -->
     <animate attributeName="opacity"
-             values="${opacityValues}"
-             keyTimes="${opacityKeyTimes}"
-             dur="${totalDuration}s"
+             values="0;1;1;0"
+             keyTimes="0;0.1;0.9;1"
+             dur="${PAGE_SEC}s"
              begin="${slideId}.begin; ${slideId}.repeatEvent"
              fill="remove"/>
   </g>`;
 };
 
-// ------------- BUILD (renamed to avoid duplicate-id errors) -------------
+// ------------- BUILD (unique name; no 'build' anywhere) -------------
 const buildRepoSvg = (repos) => {
   // 2 per page
   const pages = [];
@@ -315,23 +301,20 @@ const buildRepoSvg = (repos) => {
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
 
-  // Total cycle duration for smooth sequential loop
-  const totalDuration = pages.length * PAGE_SEC;
-
   let slides = "";
   pages.forEach((pg,i)=>{
     const slideId = `s${i}`;
-    const beginTime = (i * PAGE_SEC).toFixed(2); // staggered starts like trophies
+    const beginTime = (i * PAGE_SEC).toFixed(2); // 0s, 6s, 12s, ...
 
     slides += `
     <g class="slide" transform="translate(${W} 0)" clip-path="url(#repo-frame)">
-      ${card(pg[0], x0, slideId, i, pages.length, totalDuration)}${pg[1] ? card(pg[1], x0+CW+G, slideId, i, pages.length, totalDuration) : ""}
+      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
       <animateTransform id="${slideId}" attributeName="transform" type="translate"
         values="${W} 0; 0 0; 0 0; ${-W} 0"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
-        dur="${totalDuration}s"
+        dur="${PAGE_SEC}s"
         begin="${beginTime}s"
         repeatCount="indefinite"/>
     </g>`;
