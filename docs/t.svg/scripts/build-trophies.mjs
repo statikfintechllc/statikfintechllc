@@ -142,7 +142,7 @@ pages.forEach((pg, i) => {
       keyTimes="${singleKeyTimes}"
       keySplines="${EASE}"
       calcMode="spline"
-      dur="${totalDuration}s"
+      dur="${PAGE_SEC}s"
       begin="${beginTime}s" repeatCount="indefinite"/>
   </g>`;
 });
