@@ -11,7 +11,7 @@
     <clipPath id="repo-frame"><rect x="0" y="0" width="880" height="250" rx="8" ry="8"/></clipPath>
   </defs>
   
-    <g class="slide" transform="translate(880 0)" clip-path="url(#repo-frame)">
+    <g class="slide" transform="translate(880,0)" clip-path="url(#repo-frame)">
       
   <g transform="translate(0,20)" opacity="0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -40,12 +40,13 @@
       </rect>
     </g>
 
-    <!-- fade bound to this slide's transform -->
+    <!-- fade timed with this slide's absolute offset; loops on its own -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s0.begin; s0.repeatEvent"
+             begin="0.00s"
+             repeatCount="indefinite"
              fill="remove"/>
   </g>
   <g transform="translate(460,20)" opacity="0">
@@ -75,16 +76,17 @@
       </rect>
     </g>
 
-    <!-- fade bound to this slide's transform -->
+    <!-- fade timed with this slide's absolute offset; loops on its own -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s0.begin; s0.repeatEvent"
+             begin="0.00s"
+             repeatCount="indefinite"
              fill="remove"/>
   </g>
-      <animateTransform id="s0" attributeName="transform" type="translate"
-        values="880 0; 0 0; 0 0; -880 0"
+      <animateTransform attributeName="transform" type="translate"
+        values="880;0;0;-880"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
@@ -92,7 +94,7 @@
         begin="0.00s"
         repeatCount="indefinite"/>
     </g>
-    <g class="slide" transform="translate(880 0)" clip-path="url(#repo-frame)">
+    <g class="slide" transform="translate(880,0)" clip-path="url(#repo-frame)">
       
   <g transform="translate(0,20)" opacity="0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -121,12 +123,13 @@
       </rect>
     </g>
 
-    <!-- fade bound to this slide's transform -->
+    <!-- fade timed with this slide's absolute offset; loops on its own -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s1.begin; s1.repeatEvent"
+             begin="6.00s"
+             repeatCount="indefinite"
              fill="remove"/>
   </g>
   <g transform="translate(460,20)" opacity="0">
@@ -156,16 +159,17 @@
       </rect>
     </g>
 
-    <!-- fade bound to this slide's transform -->
+    <!-- fade timed with this slide's absolute offset; loops on its own -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s1.begin; s1.repeatEvent"
+             begin="6.00s"
+             repeatCount="indefinite"
              fill="remove"/>
   </g>
-      <animateTransform id="s1" attributeName="transform" type="translate"
-        values="880 0; 0 0; 0 0; -880 0"
+      <animateTransform attributeName="transform" type="translate"
+        values="880;0;0;-880"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
@@ -173,7 +177,7 @@
         begin="6.00s"
         repeatCount="indefinite"/>
     </g>
-    <g class="slide" transform="translate(880 0)" clip-path="url(#repo-frame)">
+    <g class="slide" transform="translate(880,0)" clip-path="url(#repo-frame)">
       
   <g transform="translate(0,20)" opacity="0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -202,12 +206,13 @@
       </rect>
     </g>
 
-    <!-- fade bound to this slide's transform -->
+    <!-- fade timed with this slide's absolute offset; loops on its own -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s2.begin; s2.repeatEvent"
+             begin="12.00s"
+             repeatCount="indefinite"
              fill="remove"/>
   </g>
   <g transform="translate(460,20)" opacity="0">
@@ -237,16 +242,17 @@
       </rect>
     </g>
 
-    <!-- fade bound to this slide's transform -->
+    <!-- fade timed with this slide's absolute offset; loops on its own -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s2.begin; s2.repeatEvent"
+             begin="12.00s"
+             repeatCount="indefinite"
              fill="remove"/>
   </g>
-      <animateTransform id="s2" attributeName="transform" type="translate"
-        values="880 0; 0 0; 0 0; -880 0"
+      <animateTransform attributeName="transform" type="translate"
+        values="880;0;0;-880"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
