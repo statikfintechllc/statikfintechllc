@@ -26,8 +26,8 @@ jobs:
         env:
           PAT_GITHUB: ${{ secrets.PAT_GITHUB }}
           GH_USER: statikfintechllc
-          # Optional: specify exact repos (owner/name). If omitted: pinned, else top by stars.
-          # REPOS: "statikfintechllc/GremlinGPT,statikfintechllc/Gremlin-ShadTail-Trader,statikfintechllc/Statik-Server,statikfintechllc/AscendDocs-of-GovSeverance,statikfintechllc/Dragon-Boot,statikfintechllc/Gremlin-MCP-Scrap"
+          # Specify exact repos (owner/name) for the repo slide
+          REPOS: "statikfintechllc/GremlinGPT,statikfintechllc/Gremlin-ShadTail-Trader,statikfintechllc/statik-server,statikfintechllc/AscendDocs-of-GovSeverance,statikfintechllc/dragon-boot,statikfintechllc/Gremlin-MCP-Scrap"
           REPO_PAGE_SEC: "6"
         working-directory: docs/r.svg
         run: node scripts/generate-repo-slide.mjs

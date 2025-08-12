@@ -156,14 +156,17 @@ const fetchRepoDetails = async (lst) => {
 };
 
 // ---------- Build SVG ----------
-const W = 760, H = 210, CW = 340, CH = 160, G = 40;
+const W = 880, H = 250, CW = 400, CH = 200, G = 40;
 const x0 = (W - (2 * CW + G)) / 2;
-const TITLE = (s) => xmlEsc(s.length > 38 ? s.slice(0,35) + "…" : s);
-const DESC  = (s) => xmlEsc(s.replace(/\s+/g," ").trim()).slice(0, 120);
+const TITLE = (s) => xmlEsc(s.length > 45 ? s.slice(0,42) + "…" : s);
+const DESC  = (s) => {
+  const clean = xmlEsc(s.replace(/\s+/g," ").trim());
+  return clean.length > 150 ? clean.slice(0, 147) + "…" : clean;
+};
 
 const card = (repo, x) => {
   // language bar layout
-  const px = 20, py = 96, pw = CW - 40, ph = 10;
+  const px = 20, py = 120, pw = CW - 40, ph = 12;
   let acc = 0;
   const minw = 0.04; // 4% min width visibility
   const totalWeight = repo.segments.reduce((a,b)=>a+b.weight,0) || 1;
@@ -187,19 +190,45 @@ const card = (repo, x) => {
     return `<rect x="${px}" y="${y-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${px+16}" y="${y}" class="legend">${xmlEsc(s.name)}</text>`;
   }).join("");
 
+  // Handle description wrapping for longer text
+  const descText = DESC(repo.desc);
+  const descLines = [];
+  if (descText.length > 75) {
+    // Split into two lines at word boundary
+    const words = descText.split(' ');
+    let line1 = '', line2 = '';
+    let currentLength = 0;
+    
+    for (const word of words) {
+      if (currentLength + word.length + 1 <= 75 && line2 === '') {
+        line1 += (line1 ? ' ' : '') + word;
+        currentLength += word.length + 1;
+      } else {
+        line2 += (line2 ? ' ' : '') + word;
+      }
+    }
+    
+    descLines.push(`<text x="20" y="54" class="desc">${line1}</text>`);
+    if (line2) {
+      descLines.push(`<text x="20" y="72" class="desc">${line2.slice(0, 75)}${line2.length > 75 ? '…' : ''}</text>`);
+    }
+  } else {
+    descLines.push(`<text x="20" y="54" class="desc">${descText}</text>`);
+  }
+
   return `
   <g transform="translate(${x},20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">${TITLE(repo.name)}</text>
-    <text x="20" y="54" class="desc">${DESC(repo.desc)}</text>
+    ${descLines.join('\n    ')}
 
     <g class="badges">
-      <g transform="translate(${CW-160},28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
+      <g transform="translate(${CW-180},28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
         <text x="10" y="0" class="pill">⭐ ${repo.stars.toLocaleString()}</text>
       </g>
-      <g transform="translate(${CW-80},28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="68" height="24" fill="#111827" stroke="#1f2937"/>
+      <g transform="translate(${CW-90},28)">
+        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
         <text x="10" y="0" class="pill">🍴 ${repo.forks.toLocaleString()}</text>
       </g>
     </g>
