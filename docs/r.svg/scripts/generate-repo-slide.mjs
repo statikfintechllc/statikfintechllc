@@ -1,6 +1,6 @@
 /**
  * Animated Repo Cards (2-up carousel, SMIL-only)
- * Slides run in sequence and the sequence repeats forever (master-clock style).
+ * Slides run in sequence and the sequence repeats forever (trophies-style).
  */
 
 import fs from "node:fs/promises";
@@ -125,7 +125,7 @@ const fetchRepoDetails = async (lst) => {
     const r = d.repository;
     if (!r) continue;
     const langs = r.languages?.edges || [];
-    const total = r.languages?.totalSize || 0;
+       const total = r.languages?.totalSize || 0;
 
     const segs = langs.map(e => {
       const w = total ? e.size / total : 0;
@@ -148,6 +148,8 @@ const fetchRepoDetails = async (lst) => {
 // ---------- Build SVG ----------
 const W = 880, H = 250, CW = 420, CH = 200, G = 40;
 const x0 = (W - (2 * CW + G)) / 2;
+const TITLE = (s) => xmlEsc(s);
+const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
 
 // --------- text wrap ----------
 function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
@@ -192,8 +194,8 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   return { lines, font: minFont, lineHeight };
 }
 
-// ----- Card (fade tied to master clock offsets) -----
-const card = (repo, x, beginSec) => {
+// ----- Card (no slide-bound fades) -----
+const card = (repo, x) => {
   const px = 20, pw = CW - 40;
   const py = 160, ph = 12;
 
@@ -221,9 +223,10 @@ const card = (repo, x, beginSec) => {
   }).join("");
 
   // Title (≤2 lines)
-  const titleText = xmlEsc(repo.name);
+  const titleText = TITLE(repo.name);
   const titleLines = [];
-  const maxTitleCharsPerLine = 40, maxTitleLines = 2;
+  const maxTitleCharsPerLine = 40;
+  const maxTitleLines = 2;
   if (titleText.length > maxTitleCharsPerLine) {
     const words = titleText.split(/[\s-]+/);
     let cur = "";
@@ -242,17 +245,16 @@ const card = (repo, x, beginSec) => {
 
   // Description block – fit inside box
   const descTop = titleLines.length > 1 ? 70 : 54;
-  const descBottom = 130;
-  const descHeight = Math.max(12, descBottom - descTop);
-  const wrap = wrapTextToBox(xmlEsc((repo.desc || "").replace(/\s+/g," ").trim()), pw, descHeight, { fontSize:13, minFontSize:9, linePad:2 });
+  const descBottom = 130; // badges start at 135
+  const descHeight = Math.max(12, Math.floor(descBottom - descTop));
+  const wrap = wrapTextToBox(DESC(repo.desc), pw, descHeight, { fontSize:13, minFontSize:9, linePad:2 });
 
   const descSvg = wrap.lines.map((line, i) =>
     `<text x="${px}" y="${descTop + i * wrap.lineHeight}" style="font:400 ${wrap.font}px system-ui" class="desc">${line}</text>`
   ).join("");
 
-  // fade: single run per master cycle, restarted by master.repeatEvent
   return `
-  <g transform="translate(${x},20)" opacity="0">
+  <g transform="translate(${x},20)">
     <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
     ${titleSvg}
     ${descSvg}
@@ -272,74 +274,56 @@ const card = (repo, x, beginSec) => {
     ${bars}
     ${legends}
 
-    <!-- glow pulse (independent loop) -->
+    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
-
-    <!-- one-shot fade per cycle -->
-    <animate attributeName="opacity"
-             values="0;1;1;0"
-             keyTimes="0;0.1;0.9;1"
-             dur="${PAGE_SEC}s"
-             begin="master.begin+${beginSec}s; master.repeatEvent+${beginSec}s"
-             repeatCount="1"
-             fill="remove"/>
   </g>`;
 };
 
-// ------------- BUILD -------------
+// ------------- BUILD (trophies-style loop) -------------
 const buildRepoSvg = (repos) => {
   // 2 per page
   const pages = [];
   for (let i = 0; i < repos.length; i += 2) pages.push(repos.slice(i, i + 2));
 
+  // keyTimes exactly like trophies
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
-  const keyTimes = `0;${enterK};${exitK};1`;
-  const totalDur = Math.max(1, pages.length) * PAGE_SEC;
+  const singleKeyTimes = `0;${enterK};${exitK};1`;
 
   let slides = "";
-
-  // Master clock drives the whole sequence forever
-  const master = `
-  <rect width="0" height="0" opacity="0">
-    <animate id="master" attributeName="x" from="0" to="0" dur="${totalDur}s" repeatCount="indefinite"/>
-  </rect>`;
-
   pages.forEach((pg, i) => {
-    const beginTime = (i * PAGE_SEC).toFixed(2); // 0, 6, 12, ...
+    const beginTime = (i * PAGE_SEC).toFixed(2); // absolute stagger
     slides += `
-    <g class="slide" transform="translate(${W},0)" clip-path="url(#repo-frame)">
-      ${card(pg[0], x0, beginTime)}${pg[1] ? card(pg[1], x0 + CW + G, beginTime) : ""}
-      <!-- run once per master cycle at its slot -->
+    <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
+      ${card(pg[0], x0)}${pg[1] ? card(pg[1], x0 + CW + G) : ""}
+      <!-- trophies-style: absolute staggered begin + repeatCount='indefinite' -->
       <animateTransform attributeName="transform" type="translate"
         values="${W};0;0;${-W}"
-        keyTimes="${keyTimes}"
+        keyTimes="${singleKeyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
         dur="${PAGE_SEC}s"
-        begin="master.begin+${beginTime}s; master.repeatEvent+${beginTime}s"
-        repeatCount="1"
-        fill="remove"/>
+        begin="${beginTime}s"
+        repeatCount="indefinite"/>
     </g>`;
   });
 
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
   <style>
     :root{ color-scheme: dark; }
     .name{ font:800 18px system-ui; fill:#e5e7eb }
-    .desc{ fill:#9ca3af } /* desc font-size set inline for wrap */
+    .desc{ fill:#9ca3af }
     .pill{ font:700 12px system-ui; fill:#e5e7eb }
     .legend{ font:600 12px system-ui; fill:#cbd5e1 }
   </style>
   <defs>
-    <clipPath id="repo-frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
+    <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
   </defs>
-  ${master}
   ${slides}
 </svg>`;
   return svg;
