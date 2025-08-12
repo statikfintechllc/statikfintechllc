@@ -16,18 +16,20 @@
   <g transform="translate(20,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">GremlinGPT</text>
-    <text x="20" y="54" class="desc">GremlinGPT is a locally hosted recursive intelligence</text>
-    <text x="20" y="72" class="desc">system: Scrapes data, learns from results, and evolves</text>
-    <text x="20" y="90" class="desc">without human oversight - Operates ful…</text>
+    <text x="20" y="54" class="desc">GremlinGPT is a locally hosted recursive intelligence system:</text>
+    <text x="20" y="70" class="desc">Scrapes data, learns from results, and evolves without human</text>
+    <text x="20" y="86" class="desc">oversight - Operates fully offline with no cloud dependencies -</text>
+    <text x="20" y="102" class="desc">Grows its own NLP engine using feedback and self-repair - Can…</text>
 
-    <g class="badges">
-      <g transform="translate(220,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 3</text>
+    <!-- Stars and forks moved above language bar -->
+    <g class="badges" transform="translate(0,135)">
+      <g transform="translate(220,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">⭐ 3</text>
       </g>
-      <g transform="translate(310,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">🍴 1</text>
+      <g transform="translate(310,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">🍴 1</text>
       </g>
     </g>
 
@@ -47,18 +49,20 @@
   <g transform="translate(460,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">Gremlin-ShadTail-Trader</text>
-    <text x="20" y="54" class="desc">GremlinGPT&apos;s standalone trading core, will be wrapped</text>
-    <text x="20" y="72" class="desc">as a vscode plugin, using electron app for the application,</text>
-    <text x="20" y="90" class="desc">astro, tailwond, and shadcn …</text>
+    <text x="20" y="54" class="desc">GremlinGPT&apos;s standalone trading core, will be wrapped as a</text>
+    <text x="20" y="70" class="desc">vscode plugin, using electron app for the application, astro,</text>
+    <text x="20" y="86" class="desc">tailwond, and shadcn for the user interface, and Gremlins Trade</text>
+    <text x="20" y="102" class="desc">Logic.</text>
 
-    <g class="badges">
-      <g transform="translate(220,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 1</text>
+    <!-- Stars and forks moved above language bar -->
+    <g class="badges" transform="translate(0,135)">
+      <g transform="translate(220,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">⭐ 1</text>
       </g>
-      <g transform="translate(310,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">🍴 0</text>
+      <g transform="translate(310,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">🍴 0</text>
       </g>
     </g>
 
@@ -82,26 +86,26 @@
         calcMode="spline"
         dur="6s"
         begin="0.00s"
-        repeatCount="indefinite"
-        repeatDur="18s"/>
+        repeatCount="indefinite"/>
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
   <g transform="translate(20,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">statik-server</text>
-    <text x="20" y="54" class="desc">Forked from code-server — now a sovereign, mesh-routed VS</text>
-    <text x="20" y="72" class="desc">Code deployment with Copilot Chat, persistent VPN, keyless</text>
-    <text x="20" y="90" class="desc">signing, and custom domain ren…</text>
+    <text x="20" y="54" class="desc">Forked from code-server — now a sovereign, mesh-routed VS Code</text>
+    <text x="20" y="70" class="desc">deployment with Copilot Chat, persistent VPN, keyless signing,</text>
+    <text x="20" y="86" class="desc">and custom domain rendering via statik-server.</text>
 
-    <g class="badges">
-      <g transform="translate(220,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 1</text>
+    <!-- Stars and forks moved above language bar -->
+    <g class="badges" transform="translate(0,135)">
+      <g transform="translate(220,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">⭐ 1</text>
       </g>
-      <g transform="translate(310,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">🍴 0</text>
+      <g transform="translate(310,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">🍴 0</text>
       </g>
     </g>
 
@@ -121,17 +125,18 @@
   <g transform="translate(460,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">AscendDocs-of-GovSeverance</text>
-    <text x="20" y="54" class="desc">Not a system. Not a manifesto. A memetic weapon. Not a call</text>
-    <text x="20" y="72" class="desc">to chaos. This is the call to recursion. Alignment. Freedom.</text>
+    <text x="20" y="54" class="desc">Not a system. Not a manifesto. A memetic weapon. Not a call to</text>
+    <text x="20" y="70" class="desc">chaos. This is the call to recursion. Alignment. Freedom.</text>
 
-    <g class="badges">
-      <g transform="translate(220,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 4</text>
+    <!-- Stars and forks moved above language bar -->
+    <g class="badges" transform="translate(0,135)">
+      <g transform="translate(220,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">⭐ 4</text>
       </g>
-      <g transform="translate(310,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">🍴 0</text>
+      <g transform="translate(310,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">🍴 0</text>
       </g>
     </g>
 
@@ -155,8 +160,7 @@
         calcMode="spline"
         dur="6s"
         begin="6.00s"
-        repeatCount="indefinite"
-        repeatDur="18s"/>
+        repeatCount="indefinite"/>
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
@@ -164,17 +168,17 @@
     <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">dragon-boot</text>
     <text x="20" y="54" class="desc">🔥 A sci-fi dragon-themed Plymouth bootloader animation for</text>
-    <text x="20" y="72" class="desc">Linux. HD 1920x1080 splash with full GRUB/initramfs</text>
-    <text x="20" y="90" class="desc">integration.</text>
+    <text x="20" y="70" class="desc">Linux. HD 1920x1080 splash with full GRUB/initramfs integration.</text>
 
-    <g class="badges">
-      <g transform="translate(220,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 1</text>
+    <!-- Stars and forks moved above language bar -->
+    <g class="badges" transform="translate(0,135)">
+      <g transform="translate(220,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">⭐ 1</text>
       </g>
-      <g transform="translate(310,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">🍴 0</text>
+      <g transform="translate(310,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">🍴 0</text>
       </g>
     </g>
 
@@ -194,18 +198,20 @@
   <g transform="translate(460,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="400" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">Gremlin-MCP-Scrap</text>
-    <text x="20" y="54" class="desc">A hybrid Python + JavaScript MCP runtime for scraping</text>
-    <text x="20" y="72" class="desc">readable content from the web. Powered by Flask,</text>
-    <text x="20" y="90" class="desc">BeautifulSoup, and the unshakable belief tha…</text>
+    <text x="20" y="54" class="desc">A hybrid Python + JavaScript MCP runtime for scraping readable</text>
+    <text x="20" y="70" class="desc">content from the web. Powered by Flask, BeautifulSoup, and the</text>
+    <text x="20" y="86" class="desc">unshakable belief that you can automate everything. Built for VS</text>
+    <text x="20" y="102" class="desc">Code’s Model Context Protocol. Gremlin-approved.</text>
 
-    <g class="badges">
-      <g transform="translate(220,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">⭐ 1</text>
+    <!-- Stars and forks moved above language bar -->
+    <g class="badges" transform="translate(0,135)">
+      <g transform="translate(220,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">⭐ 1</text>
       </g>
-      <g transform="translate(310,28)">
-        <rect x="0" y="-16" rx="10" ry="10" width="78" height="24" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="0" class="pill">🍴 0</text>
+      <g transform="translate(310,0)">
+        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+        <text x="10" y="2" class="pill">🍴 0</text>
       </g>
     </g>
 
@@ -229,7 +235,6 @@
         calcMode="spline"
         dur="6s"
         begin="12.00s"
-        repeatCount="indefinite"
-        repeatDur="18s"/>
+        repeatCount="indefinite"/>
     </g>
 </svg>
