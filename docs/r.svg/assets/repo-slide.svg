@@ -2,25 +2,29 @@
 <svg width="880" height="250" viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg">
   <style>
     :root{ color-scheme: dark; }
-    .name{ font:800 18px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#e5e7eb }
-    .desc{ font:400 13px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#9ca3af }
-    .pill{ font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#e5e7eb }
-    .legend{ font:600 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif; fill:#cbd5e1 }
+    .name{ font:800 18px system-ui; fill:#e5e7eb }
+    .desc{ fill:#9ca3af } /* size set inline for dynamic fit */
+    .pill{ font:700 12px system-ui; fill:#e5e7eb }
+    .legend{ font:600 12px system-ui; fill:#cbd5e1 }
   </style>
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="880" height="250" rx="8" ry="8"/></clipPath>
   </defs>
+
+  <!-- master clock to synchronize all slides across cycles -->
+  <rect id="clock" width="0" height="0" opacity="0">
+    <animate id="master" attributeName="x" from="0" to="0" dur="18s" repeatCount="indefinite"/>
+  </rect>
+
   
     <g id="s0" class="slide" transform="translate(0,0)" clip-path="url(#frame)">
       
   <g transform="translate(0,20)" opacity="1.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">GremlinGPT</text>
-    <text x="20" y="54" class="desc">GremlinGPT is a locally hosted recursive intelligence</text>
-    <text x="20" y="70" class="desc">system: Scrapes data, learns from results, and evolves</text>
-    <text x="20" y="86" class="desc">without human oversight - Operates fully offline with</text>
-    <text x="20" y="102" class="desc">no…</text>
+    <text x="20" y="54" style="font:400 11px system-ui" class="desc">GremlinGPT is a locally hosted recursive intelligence</text><text x="20" y="68" style="font:400 11px system-ui" class="desc">system: Scrapes data, learns from results, and evolves</text><text x="20" y="82" style="font:400 11px system-ui" class="desc">without human oversight - Operates fully offline with no</text><text x="20" y="96" style="font:400 11px system-ui" class="desc">cloud dependencies - Grows its own NLP engine using</text><text x="20" y="110" style="font:400 11px system-ui" class="desc">feedback and self-repair - Can plan, refactor, and upgrade…</text>
 
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -35,28 +39,27 @@
     <rect x="20" y="160" width="276" height="12" fill="#3572A5" /><rect x="296" y="160" width="39" height="12" fill="#ff5a03" /><rect x="335" y="160" width="22" height="12" fill="#89e051" /><rect x="357" y="160" width="14" height="12" fill="#3178c6" /><rect x="371" y="160" width="14" height="12" fill="#f1e05a" /><rect x="385" y="160" width="15" height="12" fill="#663399" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#ff5a03"/><text x="226" y="180" class="legend">Astro</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="194" class="legend">Shell</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#3178c6"/><text x="226" y="194" class="legend">TypeScript</text>
 
+    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- bind fades to this slide's transform animation events -->
+    <!-- fade tied to this slide's transform -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="0s; s0-tx.beginEvent; s0-tx.repeatEvent"
+             begin="master.begin+0s; master.repeatEvent+0s; s0-anim.begin; s0-anim.repeatEvent"
              fill="remove"/>
   </g>
   <g transform="translate(460,20)" opacity="1.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">Gremlin-ShadTail-Trader</text>
-    <text x="20" y="54" class="desc">GremlinGPT&apos;s standalone trading core, will be wrapped</text>
-    <text x="20" y="70" class="desc">as a vscode plugin, using electron app for the</text>
-    <text x="20" y="86" class="desc">application, astro, tailwond, and shadcn for the user</text>
-    <text x="20" y="102" class="desc">interface,…</text>
+    <text x="20" y="54" style="font:400 13px system-ui" class="desc">GremlinGPT&apos;s standalone trading core, will be</text><text x="20" y="70" style="font:400 13px system-ui" class="desc">wrapped as a vscode plugin, using electron app for</text><text x="20" y="86" style="font:400 13px system-ui" class="desc">the application, astro, tailwond, and shadcn for</text><text x="20" y="102" style="font:400 13px system-ui" class="desc">the user interface, and Gremlins Trade Logic.</text>
 
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -71,39 +74,38 @@
     <rect x="20" y="160" width="249" height="12" fill="#3572A5" /><rect x="269" y="160" width="76" height="12" fill="#3178c6" /><rect x="345" y="160" width="14" height="12" fill="#f1e05a" /><rect x="359" y="160" width="14" height="12" fill="#89e051" /><rect x="373" y="160" width="14" height="12" fill="#663399" /><rect x="387" y="160" width="13" height="12" fill="#ff5a03" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#3178c6"/><text x="226" y="180" class="legend">TypeScript</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#f1e05a"/><text x="36" y="194" class="legend">JavaScript</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#89e051"/><text x="226" y="194" class="legend">Shell</text>
 
+    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- bind fades to this slide's transform animation events -->
+    <!-- fade tied to this slide's transform -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="0s; s0-tx.beginEvent; s0-tx.repeatEvent"
+             begin="master.begin+0s; master.repeatEvent+0s; s0-anim.begin; s0-anim.repeatEvent"
              fill="remove"/>
   </g>
-      <animateTransform id="s0-tx" attributeName="transform" type="translate"
-        values="880;0;0;-880"
+      <animateTransform id="s0-anim" attributeName="transform" type="translate"
+        values="880 0; 0 0; 0 0; -880 0"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="0.00s"
-        repeatCount="indefinite"/>
+        begin="master.begin+0.00s; master.repeatEvent+0.00s"
+        repeatCount="1"/>
     </g>
     <g id="s1" class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
   <g transform="translate(0,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">statik-server</text>
-    <text x="20" y="54" class="desc">Forked from code-server — now a sovereign, mesh-routed</text>
-    <text x="20" y="70" class="desc">VS Code deployment with Copilot Chat, persistent VPN,</text>
-    <text x="20" y="86" class="desc">keyless signing, and custom domain rendering via</text>
-    <text x="20" y="102" class="desc">statik-server.</text>
+    <text x="20" y="54" style="font:400 13px system-ui" class="desc">Forked from code-server — now a sovereign,</text><text x="20" y="70" style="font:400 13px system-ui" class="desc">mesh-routed VS Code deployment with Copilot Chat,</text><text x="20" y="86" style="font:400 13px system-ui" class="desc">persistent VPN, keyless signing, and custom domain</text><text x="20" y="102" style="font:400 13px system-ui" class="desc">rendering via statik-server.</text>
 
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -118,27 +120,27 @@
     <rect x="20" y="160" width="261" height="12" fill="#3178c6" /><rect x="281" y="160" width="42" height="12" fill="#3572A5" /><rect x="323" y="160" width="13" height="12" fill="#663399" /><rect x="336" y="160" width="13" height="12" fill="#f1e05a" /><rect x="349" y="160" width="13" height="12" fill="#e34c26" /><rect x="362" y="160" width="13" height="12" fill="#dea584" /><rect x="375" y="160" width="13" height="12" fill="#89e051" /><rect x="388" y="160" width="12" height="12" fill="#264b99" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3178c6"/><text x="36" y="180" class="legend">TypeScript</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="226" y="180" class="legend">Python</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#663399"/><text x="36" y="194" class="legend">CSS</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#f1e05a"/><text x="226" y="194" class="legend">JavaScript</text>
 
+    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- bind fades to this slide's transform animation events -->
+    <!-- fade tied to this slide's transform -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s1-tx.beginEvent; s1-tx.repeatEvent"
+             begin="s1-anim.begin; s1-anim.repeatEvent"
              fill="remove"/>
   </g>
   <g transform="translate(460,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">AscendDocs-of-GovSeverance</text>
-    <text x="20" y="54" class="desc">Not a system. Not a manifesto. A memetic weapon. Not a</text>
-    <text x="20" y="70" class="desc">call to chaos. This is the call to recursion.</text>
-    <text x="20" y="86" class="desc">Alignment. Freedom.</text>
+    <text x="20" y="54" style="font:400 13px system-ui" class="desc">Not a system. Not a manifesto. A memetic weapon.</text><text x="20" y="70" style="font:400 13px system-ui" class="desc">Not a call to chaos. This is the call to</text><text x="20" y="86" style="font:400 13px system-ui" class="desc">recursion. Alignment. Freedom.</text>
 
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -153,38 +155,38 @@
     <rect x="20" y="160" width="380" height="12" fill="#6b7280" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#6b7280"/><text x="36" y="180" class="legend">Other</text>
 
+    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- bind fades to this slide's transform animation events -->
+    <!-- fade tied to this slide's transform -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s1-tx.beginEvent; s1-tx.repeatEvent"
+             begin="s1-anim.begin; s1-anim.repeatEvent"
              fill="remove"/>
   </g>
-      <animateTransform id="s1-tx" attributeName="transform" type="translate"
-        values="880;0;0;-880"
+      <animateTransform id="s1-anim" attributeName="transform" type="translate"
+        values="880 0; 0 0; 0 0; -880 0"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="6.00s"
-        repeatCount="indefinite"/>
+        begin="master.begin+6.00s; master.repeatEvent+6.00s"
+        repeatCount="1"/>
     </g>
     <g id="s2" class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
   <g transform="translate(0,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">dragon-boot</text>
-    <text x="20" y="54" class="desc">🔥 A sci-fi dragon-themed Plymouth bootloader animation</text>
-    <text x="20" y="70" class="desc">for Linux. HD 1920x1080 splash with full GRUB/initramfs</text>
-    <text x="20" y="86" class="desc">integration.</text>
+    <text x="20" y="54" style="font:400 13px system-ui" class="desc">🔥 A sci-fi dragon-themed Plymouth bootloader</text><text x="20" y="70" style="font:400 13px system-ui" class="desc">animation for Linux. HD 1920x1080 splash with full</text><text x="20" y="86" style="font:400 13px system-ui" class="desc">GRUB/initramfs integration.</text>
 
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -199,28 +201,27 @@
     <rect x="20" y="160" width="380" height="12" fill="#89e051" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="180" class="legend">Shell</text>
 
+    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- bind fades to this slide's transform animation events -->
+    <!-- fade tied to this slide's transform -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s2-tx.beginEvent; s2-tx.repeatEvent"
+             begin="s2-anim.begin; s2-anim.repeatEvent"
              fill="remove"/>
   </g>
   <g transform="translate(460,20)" opacity="0.0">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="30" class="name">Gremlin-MCP-Scrap</text>
-    <text x="20" y="54" class="desc">A hybrid Python + JavaScript MCP runtime for scraping</text>
-    <text x="20" y="70" class="desc">readable content from the web. Powered by Flask,</text>
-    <text x="20" y="86" class="desc">BeautifulSoup, and the unshakable belief that you can</text>
-    <text x="20" y="102" class="desc">automate…</text>
+    <text x="20" y="54" style="font:400 12px system-ui" class="desc">A hybrid Python + JavaScript MCP runtime for scraping</text><text x="20" y="69" style="font:400 12px system-ui" class="desc">readable content from the web. Powered by Flask,</text><text x="20" y="84" style="font:400 12px system-ui" class="desc">BeautifulSoup, and the unshakable belief that you can</text><text x="20" y="99" style="font:400 12px system-ui" class="desc">automate everything. Built for VS Code’s Model Context</text><text x="20" y="114" style="font:400 12px system-ui" class="desc">Protocol. Gremlin-approved.</text>
 
+    <!-- Stars and forks -->
     <g class="badges" transform="translate(0,135)">
       <g transform="translate(240,0)">
         <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -235,27 +236,28 @@
     <rect x="20" y="160" width="292" height="12" fill="#3572A5" /><rect x="312" y="160" width="88" height="12" fill="#f1e05a" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#f1e05a"/><text x="226" y="180" class="legend">JavaScript</text>
 
+    <!-- glow pulse -->
     <g>
       <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
         <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
       </rect>
     </g>
 
-    <!-- bind fades to this slide's transform animation events -->
+    <!-- fade tied to this slide's transform -->
     <animate attributeName="opacity"
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="6s"
-             begin="s2-tx.beginEvent; s2-tx.repeatEvent"
+             begin="s2-anim.begin; s2-anim.repeatEvent"
              fill="remove"/>
   </g>
-      <animateTransform id="s2-tx" attributeName="transform" type="translate"
-        values="880;0;0;-880"
+      <animateTransform id="s2-anim" attributeName="transform" type="translate"
+        values="880 0; 0 0; 0 0; -880 0"
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
         dur="6s"
-        begin="12.00s"
-        repeatCount="indefinite"/>
+        begin="master.begin+12.00s; master.repeatEvent+12.00s"
+        repeatCount="1"/>
     </g>
 </svg>
