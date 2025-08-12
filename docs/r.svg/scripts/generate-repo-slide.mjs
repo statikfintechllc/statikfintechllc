@@ -291,7 +291,7 @@ const card = (repo, x, slideId) => {
   </g>`;
 };
 
-const build = (repos) => {
+const BuildRepoSvg = (repos) => {
   // 2 per page
   const pages = [];
   for (let i=0;i<repos.length;i+=2) pages.push(repos.slice(i,i+2));
@@ -345,3 +345,4 @@ const build = (repos) => {
   await fs.writeFile(OUT, svg, "utf8");
   console.log("wrote", OUT);
 })();
+
