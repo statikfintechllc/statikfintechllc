@@ -291,6 +291,7 @@ const card = (repo, x, slideId) => {
   </g>`;
 };
 
+
 // ------------- BUILD (renamed to avoid duplicate-id errors) -------------
 const buildRepoSvg = (repos) => {
   // 2 per page
@@ -321,6 +322,35 @@ const buildRepoSvg = (repos) => {
         begin="${beginTime}s"
         repeatCount="indefinite"/>
     </g>`;
+
+// ------------- BUILD (unique name; no 'build' anywhere) -------------
+const buildRepoSvg = (repos) => {
+  // 2 per page
+  const pages = [];
+  for (let i=0;i<repos.length;i+=2) pages.push(repos.slice(i,i+2));
+
+  const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
+  const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
+  const keyTimes = `0;${enterK};${exitK};1`;
+
+  let slides = "";
+  pages.forEach((pg,i)=>{
+    const slideId = `s${i}`;
+    const beginTime = (i * PAGE_SEC).toFixed(2); // 0s, 6s, 12s, ...
+
+    slides += `
+    <g class="slide" transform="translate(${W} 0)" clip-path="url(#repo-frame)">
+      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
+      <animateTransform id="${slideId}" attributeName="transform" type="translate"
+        values="${W} 0; 0 0; 0 0; ${-W} 0"
+        keyTimes="${keyTimes}"
+        keySplines="${EASE}"
+        calcMode="spline"
+        dur="${PAGE_SEC}s"
+        begin="${beginTime}s"
+        repeatCount="indefinite"/>
+    </g>`;
+
   });
 
   const svg = `<?xml version="1.0" encoding="UTF-8"?>

@@ -42,9 +42,9 @@
 
     <!-- fade bound to this slide's transform -->
     <animate attributeName="opacity"
-             values="0;1;1;0"
-             keyTimes="0;0.1;0.9;1"
-             dur="6s"
+             values="0;1;1;0;0"
+             keyTimes="0;0.0500;0.9500;0.3333;1"
+             dur="18s"
              begin="s0.begin; s0.repeatEvent"
              fill="remove"/>
   </g>
@@ -77,9 +77,9 @@
 
     <!-- fade bound to this slide's transform -->
     <animate attributeName="opacity"
-             values="0;1;1;0"
-             keyTimes="0;0.1;0.9;1"
-             dur="6s"
+             values="0;1;1;0;0"
+             keyTimes="0;0.0500;0.9500;0.3333;1"
+             dur="18s"
              begin="s0.begin; s0.repeatEvent"
              fill="remove"/>
   </g>
@@ -88,7 +88,7 @@
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
-        dur="6s"
+        dur="18s"
         begin="0.00s"
         repeatCount="indefinite"/>
     </g>
@@ -123,9 +123,9 @@
 
     <!-- fade bound to this slide's transform -->
     <animate attributeName="opacity"
-             values="0;1;1;0"
-             keyTimes="0;0.1;0.9;1"
-             dur="6s"
+             values="0;1;1;0;0"
+             keyTimes="0;0.0500;0.9500;0.3333;1"
+             dur="18s"
              begin="s1.begin; s1.repeatEvent"
              fill="remove"/>
   </g>
@@ -158,9 +158,9 @@
 
     <!-- fade bound to this slide's transform -->
     <animate attributeName="opacity"
-             values="0;1;1;0"
-             keyTimes="0;0.1;0.9;1"
-             dur="6s"
+             values="0;1;1;0;0"
+             keyTimes="0;0.0500;0.9500;0.3333;1"
+             dur="18s"
              begin="s1.begin; s1.repeatEvent"
              fill="remove"/>
   </g>
@@ -169,7 +169,7 @@
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
-        dur="6s"
+        dur="18s"
         begin="6.00s"
         repeatCount="indefinite"/>
     </g>
@@ -204,9 +204,9 @@
 
     <!-- fade bound to this slide's transform -->
     <animate attributeName="opacity"
-             values="0;1;1;0"
-             keyTimes="0;0.1;0.9;1"
-             dur="6s"
+             values="0;1;1;0;0"
+             keyTimes="0;0.0500;0.9500;0.3333;1"
+             dur="18s"
              begin="s2.begin; s2.repeatEvent"
              fill="remove"/>
   </g>
@@ -239,9 +239,9 @@
 
     <!-- fade bound to this slide's transform -->
     <animate attributeName="opacity"
-             values="0;1;1;0"
-             keyTimes="0;0.1;0.9;1"
-             dur="6s"
+             values="0;1;1;0;0"
+             keyTimes="0;0.0500;0.9500;0.3333;1"
+             dur="18s"
              begin="s2.begin; s2.repeatEvent"
              fill="remove"/>
   </g>
@@ -250,7 +250,7 @@
         keyTimes="0;0.2250;0.7750;1"
         keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
         calcMode="spline"
-        dur="6s"
+        dur="18s"
         begin="12.00s"
         repeatCount="indefinite"/>
     </g>
