@@ -1,6 +1,6 @@
 /**
  * Animated Repo Cards (2-up carousel, SMIL-only)
- * Slides run in sequence and the sequence repeats forever.
+ * Loop: run all slides in sequence, then restart the whole sequence forever (master clock).
  */
 
 import fs from "node:fs/promises";
@@ -195,7 +195,7 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
 }
 
 // ----- Card -----
-const card = (repo, x, slideId) => {
+const card = (repo, x, slideAnimId) => {
   const px = 20, pw = CW - 40;
   const py = 160, ph = 12;
 
@@ -286,7 +286,7 @@ const card = (repo, x, slideId) => {
              values="0;1;1;0"
              keyTimes="0;0.1;0.9;1"
              dur="${PAGE_SEC}s"
-             begin="${slideId}.begin; ${slideId}.repeatEvent"
+             begin="${slideAnimId}.begin; ${slideAnimId}.repeatEvent"
              fill="remove"/>
   </g>`;
 };
@@ -299,23 +299,25 @@ const build = (repos) => {
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const keyTimes = `0;${enterK};${exitK};1`;
+  const totalDur = Math.max(1, pages.length) * PAGE_SEC;
 
   let slides = "";
   pages.forEach((pg,i)=>{
-    const slideId = `s${i}`;
-    const beginTime = (i * PAGE_SEC).toFixed(2); // staggered start
+    const slideAnimId = `s${i}`;
+    const offset = (i * PAGE_SEC).toFixed(2);
 
     slides += `
-    <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
-      ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
-      <animateTransform id="${slideId}" attributeName="transform" type="translate"
+    <g transform="translate(${W},0)" clip-path="url(#frame)">
+      ${card(pg[0], x0, slideAnimId)}${pg[1] ? card(pg[1], x0+CW+G, slideAnimId) : ""}
+      <!-- one-shot per cycle; restarted by master -->
+      <animateTransform id="${slideAnimId}" attributeName="transform" type="translate"
         values="${W};0;0;${-W}"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
         dur="${PAGE_SEC}s"
-        begin="${beginTime}s"
-        repeatCount="indefinite"/>
+        begin="master.begin+${offset}s; master.repeatEvent+${offset}s"
+        repeatCount="1"/>
     </g>`;
   });
 
@@ -331,6 +333,12 @@ const build = (repos) => {
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
   </defs>
+
+  <!-- Master clock: restarts whole sequence endlessly (like t.svg) -->
+  <rect width="0" height="0" opacity="0">
+    <animate id="master" attributeName="x" from="0" to="0" dur="${totalDur}s" repeatCount="indefinite"/>
+  </rect>
+
   ${slides}
 </svg>`;
   return svg;
