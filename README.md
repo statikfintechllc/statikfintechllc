@@ -41,6 +41,10 @@
   </a>
 </div>	
 <div align="center">
+  <img src="https://raw.githubusercontent.com/statikfintechllc/master/badges/fire.svg?raw=1"
+    alt="Ring of Fire animation" />
+</div>
+<div align="center">
   <a href="https://github.com/statikfintechllc">
     <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
   </a>
