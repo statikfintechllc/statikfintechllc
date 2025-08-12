@@ -7,16 +7,16 @@
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://skillicons.dev/icons?i=python,anaconda,nodejs,bash,linux,css,tailwind,react,electron,go,typescript,javascript,html,astro,jupyter,nixos&theme=dark" alt="Skill icons"><br>
   </a>
-  <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/c.svg/assets/crimson-flow.svg?raw=1" alt="Statik DK Smoke Activity">
+  <img src="./docs/c.svg/assets/crimson-flow.svg" alt="Statik DK Smoke Activity">
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/s.svg/assets/streak.svg?raw=1" alt="Streak" />
+    <img src="./docs/s.svg/assets/streak.svg" alt="Streak" />
   </a>
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-	<img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/t.svg/assets/trophies.svg?raw=1" alt="Trophies" />
+	<img src="./docs/t.svg/assets/trophies.svg" alt="Trophies" />
   </a>
 </div>
 <div align="center">
@@ -32,7 +32,7 @@
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://raw.githubusercontent.com/KDK-Grim/GremlinGPT-Boost/master/docs/v.svg/assets/pv-traffic.svg">
+    <img src="./docs/v.svg/assets/pv-traffic.svg">
   </a>
 </div>  
 <div align="center">

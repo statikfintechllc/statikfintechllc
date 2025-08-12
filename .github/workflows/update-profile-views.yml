@@ -25,7 +25,7 @@ jobs:
       
       - run: cd docs/v.svg && node scripts/build-pv.mjs
         env:
-          GH_TOKEN: ${{ secrets.PULL_STATIK_PAT }}
+          GH_TOKEN: ${{ secrets.PAT_GITHUB }}
           
       - name: Commit updated v.svg
         run: |
