@@ -1,6 +1,6 @@
 /**
  * Animated Repo Cards (2-up carousel, SMIL-only)
- * All 3 slides loop continuously (same scheme as trophies script).
+ * Slides run in sequence and the sequence repeats forever (trophies-style).
  */
 
 import fs from "node:fs/promises";
@@ -151,7 +151,7 @@ const x0 = (W - (2 * CW + G)) / 2;
 const TITLE = (s) => xmlEsc(s);
 const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
 
-// --------- text wrap ----------
+// --------- text wrap (no distortion) ----------
 function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   let font = options.fontSize ?? 13;
   const minFont  = options.minFontSize ?? 9;
@@ -291,7 +291,8 @@ const card = (repo, x, slideId) => {
   </g>`;
 };
 
-const BuildRepoSvg = (repos) => {
+// ------------- BUILD (renamed to avoid duplicate-id errors) -------------
+const buildRepoSvg = (repos) => {
   // 2 per page
   const pages = [];
   for (let i=0;i<repos.length;i+=2) pages.push(repos.slice(i,i+2));
@@ -303,13 +304,13 @@ const BuildRepoSvg = (repos) => {
   let slides = "";
   pages.forEach((pg,i)=>{
     const slideId = `s${i}`;
-    const beginTime = (i * PAGE_SEC).toFixed(2); // stagger starts like trophies
+    const beginTime = (i * PAGE_SEC).toFixed(2); // staggered starts like trophies
 
     slides += `
-    <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
+    <g class="slide" transform="translate(${W} 0)" clip-path="url(#repo-frame)">
       ${card(pg[0], x0, slideId)}${pg[1] ? card(pg[1], x0+CW+G, slideId) : ""}
       <animateTransform id="${slideId}" attributeName="transform" type="translate"
-        values="${W};0;0;${-W}"
+        values="${W} 0; 0 0; 0 0; ${-W} 0"
         keyTimes="${keyTimes}"
         keySplines="${EASE}"
         calcMode="spline"
@@ -329,7 +330,7 @@ const BuildRepoSvg = (repos) => {
     .legend{ font:600 12px system-ui; fill:#cbd5e1 }
   </style>
   <defs>
-    <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
+    <clipPath id="repo-frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
   </defs>
   ${slides}
 </svg>`;
@@ -340,9 +341,8 @@ const BuildRepoSvg = (repos) => {
   const list = await takeRepos();
   if (!list.length) throw new Error("No repositories selected");
   const details = await fetchRepoDetails(list.slice(0, 12));
-  const svg = build(details);
+  const svg = buildRepoSvg(details);
   await fs.mkdir(path.dirname(OUT), { recursive: true });
   await fs.writeFile(OUT, svg, "utf8");
   console.log("wrote", OUT);
 })();
-
