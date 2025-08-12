@@ -1,0 +1,9 @@
+{
+  "name": "ggpt-boost-repos",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ./scripts/generate-repo-slide.mjs"
+  },
+  "dependencies": {}
+}
