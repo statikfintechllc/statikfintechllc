@@ -145,11 +145,50 @@ const fetchRepoDetails = async (lst) => {
   return out;
 };
 
-// ---------- Build SVG ----------
-const W = 880, H = 250, CW = 420, CH = 200, G = 40;
-const x0 = (W - (2 * CW + G)) / 2;
-const TITLE = (s) => xmlEsc(s);
-const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
+// ---------- Build SVG (indefinite per-slide; sequence repeats forever) ----------
+const build = (repos) => {
+  // 2 per page
+  const pages = [];
+  for (let i = 0; i < repos.length; i += 2) pages.push(repos.slice(i, i + 2));
+
+  const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
+  const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
+  const keyTimes = `0;${enterK};${exitK};1`;
+
+  let slides = "";
+  pages.forEach((pg, i) => {
+    const beginTime = (i * PAGE_SEC).toFixed(2); // stagger start times like t.svg
+    slides += `
+    <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
+      ${card(pg[0], x0, `s${i}`)}${pg[1] ? card(pg[1], x0 + CW + G, `s${i}`) : ""}
+      <animateTransform attributeName="transform" type="translate"
+        values="${W};0;0;${-W}"
+        keyTimes="${keyTimes}"
+        keySplines="${EASE}"
+        calcMode="spline"
+        dur="${PAGE_SEC}s"
+        begin="${beginTime}s"
+        repeatCount="indefinite"/>
+    </g>`;
+  });
+
+  const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    :root{ color-scheme: dark; }
+    .name{ font:800 18px system-ui; fill:#e5e7eb }
+    .desc{ fill:#9ca3af } /* desc font-size set inline for wrap */
+    .pill{ font:700 12px system-ui; fill:#e5e7eb }
+    .legend{ font:600 12px system-ui; fill:#cbd5e1 }
+  </style>
+  <defs>
+    <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
+  </defs>
+
+  ${slides}
+</svg>`;
+  return svg;
+};
 
 // --------- text wrap ----------
 function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
@@ -353,3 +392,4 @@ const build = (repos) => {
   await fs.writeFile(OUT, svg, "utf8");
   console.log("wrote", OUT);
 })();
+
