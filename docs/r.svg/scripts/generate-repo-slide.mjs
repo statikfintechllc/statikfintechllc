@@ -182,8 +182,8 @@ const card = (repo, x) => {
     return `<rect x="${xseg}" y="${py}" width="${i === norm.length-1 ? (px+pw - xseg) : wpx}" height="${ph}" fill="${s.color}" />`;
   }).join("");
 
-  const legends = segs.slice(0,4).map((s,i)=> {
-    const y = py + 28 + i*16;
+  const legends = segs.slice(0,3).map((s,i)=> {
+    const y = py + 24 + i*14;
     return `<rect x="${px}" y="${y-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${px+16}" y="${y}" class="legend">${xmlEsc(s.name)}</text>`;
   }).join("");
 
