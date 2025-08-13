@@ -20,6 +20,9 @@
   </a>
 </div>
 <div align="center">
+  <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" />
+</div>
+<div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="./badges/ai_architect.svg" alt="AI Architect" height="24">
   </a>
@@ -76,10 +79,6 @@
   <a href="https://github.com/statikfintechllc">
     <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
   </a>
-</div>
-<h2 align="center" style="color:#e11d48">Featured Work</h2>
-<div align="center">
-  <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" />
 </div>
 <div align="center" 
 	
