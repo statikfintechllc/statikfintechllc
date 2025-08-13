@@ -26,7 +26,7 @@
   <g transform="translate(60,10)">
     <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="34" class="cardTitle">Commits</text>
-    <text x="20" y="70" class="cardValue">3,594 <tspan class="grade">[A]</tspan></text>
+    <text x="20" y="70" class="cardValue">3,627 <tspan class="grade">[A]</tspan></text>
     <text x="20" y="96" class="cardDesc">Commit contributions across all repos.</text>
   </g>
   
@@ -42,12 +42,13 @@
     <text x="20" y="96" class="cardDesc">People following this account.</text>
   </g>
     <animateTransform attributeName="transform" type="translate"
-      values="760;0;0;-760"
-      keyTimes="0;0.1250;0.8750;1"
-      keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+      values="760;760;0;0;-760;-760"
+      keyTimes="0;0.0000;0.0313;0.2188;0.2500;1"
+      keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
       calcMode="spline"
-      dur="6s"
-      begin="0.00s" repeatCount="indefinite"/>
+      dur="24s"
+      begin="0s"
+      repeatCount="indefinite"/>
   </g>
   <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
     
@@ -76,12 +77,13 @@
     <text x="20" y="96" class="cardDesc">Pull request reviews submitted.</text>
   </g>
     <animateTransform attributeName="transform" type="translate"
-      values="760;0;0;-760"
-      keyTimes="0;0.1250;0.8750;1"
-      keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+      values="760;760;0;0;-760;-760"
+      keyTimes="0;0.2500;0.2813;0.4688;0.5000;1"
+      keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
       calcMode="spline"
-      dur="6s"
-      begin="6.00s" repeatCount="indefinite"/>
+      dur="24s"
+      begin="0s"
+      repeatCount="indefinite"/>
   </g>
   <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
     
@@ -94,7 +96,7 @@
   <g transform="translate(60,10)">
     <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="34" class="cardTitle">Issues</text>
-    <text x="20" y="70" class="cardValue">17 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="70" class="cardValue">18 <tspan class="grade">[B]</tspan></text>
     <text x="20" y="96" class="cardDesc">Issues created.</text>
   </g>
   
@@ -110,12 +112,13 @@
     <text x="20" y="96" class="cardDesc">Owned non-fork repositories.</text>
   </g>
     <animateTransform attributeName="transform" type="translate"
-      values="760;0;0;-760"
-      keyTimes="0;0.1250;0.8750;1"
-      keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+      values="760;760;0;0;-760;-760"
+      keyTimes="0;0.5000;0.5313;0.7188;0.7500;1"
+      keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
       calcMode="spline"
-      dur="6s"
-      begin="12.00s" repeatCount="indefinite"/>
+      dur="24s"
+      begin="0s"
+      repeatCount="indefinite"/>
   </g>
   <g class="slide" transform="translate(760,0)" clip-path="url(#frame)">
     
@@ -140,15 +143,16 @@
   <g transform="translate(400,10)">
     <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="34" class="cardTitle">Total Activity</text>
-    <text x="20" y="70" class="cardValue">3,644 <tspan class="grade">[A]</tspan></text>
+    <text x="20" y="70" class="cardValue">3,678 <tspan class="grade">[A]</tspan></text>
     <text x="20" y="96" class="cardDesc">All recorded contributions.</text>
   </g>
     <animateTransform attributeName="transform" type="translate"
-      values="760;0;0;-760"
-      keyTimes="0;0.1250;0.8750;1"
-      keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+      values="760;760;0;0;-760;-760"
+      keyTimes="0;0.7500;0.7813;0.9688;1.0000;1"
+      keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
       calcMode="spline"
-      dur="6s"
-      begin="18.00s" repeatCount="indefinite"/>
+      dur="24s"
+      begin="0s"
+      repeatCount="indefinite"/>
   </g>
 </svg>
