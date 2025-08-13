@@ -1,6 +1,7 @@
 /**
  * Animated Repo Cards (2-up carousel, SMIL-only)
  * Slides run in sequence and the sequence repeats forever (correct global loop).
+ * Now each card links to its repo.
  */
 
 import fs from "node:fs/promises";
@@ -248,7 +249,7 @@ const card = (repo, x) => {
 
   // Description block – fit inside box
   const descTop = titleLines.length > 1 ? 70 : 54;
-  const descBottom = 130; // badges start at 135
+  const descBottom = 130;
   const descHeight = Math.max(12, Math.floor(descBottom - descTop));
   const wrap = wrapTextToBox(DESC(repo.desc), pw, descHeight, { fontSize:13, minFontSize:9, linePad:2 });
 
@@ -257,56 +258,48 @@ const card = (repo, x) => {
   ).join("");
 
   return `
-  <g transform="translate(${x},20)">
-    <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
-    ${titleSvg}
-    ${descSvg}
-
-    <!-- Stars and forks -->
-    <g class="badges" transform="translate(0,135)">
-      <g transform="translate(${CW-180},0)">
-        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="2" class="pill">⭐ ${repo.stars.toLocaleString()}</text>
+  <a xlink:href="https://github.com/${repo.full}" target="_blank">
+    <g transform="translate(${x},20)">
+      <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="#0b1220" stroke="#1f2937"/>
+      ${titleSvg}
+      ${descSvg}
+      <!-- Stars and forks -->
+      <g class="badges" transform="translate(0,135)">
+        <g transform="translate(${CW-180},0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <text x="10" y="2" class="pill">⭐ ${repo.stars.toLocaleString()}</text>
+        </g>
+        <g transform="translate(${CW-90},0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <text x="10" y="2" class="pill">🍴 ${repo.forks.toLocaleString()}</text>
+        </g>
       </g>
-      <g transform="translate(${CW-90},0)">
-        <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-        <text x="10" y="2" class="pill">🍴 ${repo.forks.toLocaleString()}</text>
-      </g>
+      ${bars}
+      ${legends}
     </g>
-
-    ${bars}
-    ${legends}
-  </g>`;
+  </a>`;
 };
 
 // ------------- BUILD (global-cycle loop; no master clock) -------------
 const buildRepoSvg = (repos) => {
-  // 2 per page
   const pages = [];
   for (let i = 0; i < repos.length; i += 2) pages.push(repos.slice(i, i + 2));
   const N = Math.max(1, pages.length);
   const totalDur = N * PAGE_SEC;
 
-  // within-page timing (enter/hold/exit fractions)
   const enterK = ((1 - HOLD_FRAC) / 2);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2);
 
   let slides = "";
   pages.forEach((pg, i) => {
-    // Map this slide’s window [i*PAGE_SEC, (i+1)*PAGE_SEC] to global keyTimes
     const t0 = (i * PAGE_SEC) / totalDur;
     const t1 = ((i + 1) * PAGE_SEC) / totalDur;
 
     const kin =  t0 + (enterK * PAGE_SEC) / totalDur;
     const khold = t0 + (exitK  * PAGE_SEC) / totalDur;
 
-    // 6 keyTimes segments: pre-wait | enter | hold | exit | post-wait
     const keyTimes = `0;${t0.toFixed(4)};${kin.toFixed(4)};${khold.toFixed(4)};${t1.toFixed(4)};1`;
-
-    // Values: off-right until t0, then 0 during window, off-left after, loop
     const values = `${W};${W};0;0;${-W};${-W}`;
-
-    // Splines for 5 intervals: pre-wait (linear), enter (ease-in), hold (ease), exit (ease-out), post-wait (linear)
     const keySplines = `${LINEAR}; ${EASE_IN}; ${EASE_HOLD}; ${EASE_OUT}; ${LINEAR}`;
 
     slides += `
@@ -324,13 +317,15 @@ const buildRepoSvg = (repos) => {
   });
 
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
-<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
+<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
   <style>
     :root{ color-scheme: dark; }
     .name{ font:800 18px system-ui; fill:#e5e7eb }
     .desc{ fill:#9ca3af }
     .pill{ font:700 12px system-ui; fill:#e5e7eb }
     .legend{ font:600 12px system-ui; fill:#cbd5e1 }
+    a:hover .name, a:hover .desc { text-decoration: underline; }
   </style>
   <defs>
     <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
