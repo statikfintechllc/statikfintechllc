@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="980" height="430" viewBox="0 0 980 430" xmlns="http://www.w3.org/2000/svg">
+<svg width="980" 
+     height="430" 
+     viewBox="0 0 980 430" 
+     xmlns="http://www.w3.org/2000/svg">
 
   <!-- ============ THEME & FILTERS (reuse across elements) ============ -->
   <defs>
@@ -79,33 +82,25 @@
   </g>
 
   <!-- drifting sparks -->
-  <g>
-    <!-- create 16 drifting particles -->
-    <!-- they loop upward with slight x jitter -->
-    <!-- each is purposefully offset in time -->
-    <!-- to avoid synchronous motion -->
-    <g opacity="0.85">
-      <!-- repeated via manual instances for GitHub safety -->
-      <!-- you can add/remove to taste -->
-      <circle cx="120" cy="360" r="2.5" fill="url(#gSpark)" filter="url(#fGlowSoft)">
-        <animate attributeName="cy" values="360;40" dur="9s" repeatCount="indefinite"/>
-        <animate attributeName="cx" values="120;115;125;120" dur="6s" repeatCount="indefinite"/>
-        <animate attributeName="r"  values="2.5;1.2;2.5" dur="4s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="6s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="860" cy="360" r="2.5" fill="url(#gSpark)" filter="url(#fGlowSoft)">
-        <animate attributeName="cy" values="360;40" dur="8s" begin="1s" repeatCount="indefinite"/>
-        <animate attributeName="cx" values="860;855;865;860" dur="5.5s" repeatCount="indefinite"/>
-        <animate attributeName="r"  values="2.5;1.1;2.5" dur="3.6s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="5.2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="490" cy="380" r="2" fill="url(#gSpark)" filter="url(#fGlowSoft)">
-        <animate attributeName="cy" values="380;60" dur="10s" begin=".8s" repeatCount="indefinite"/>
-        <animate attributeName="cx" values="490;485;495;490" dur="6.5s" repeatCount="indefinite"/>
-        <animate attributeName="r"  values="2;1;2" dur="4.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="6.2s" repeatCount="indefinite"/>
-      </circle>
-    </g>
+  <g opacity="0.85">
+    <circle cx="120" cy="360" r="2.5" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="360;40" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="120;115;125;120" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="r"  values="2.5;1.2;2.5" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="860" cy="360" r="2.5" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="360;40" dur="8s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="860;855;865;860" dur="5.5s" repeatCount="indefinite"/>
+      <animate attributeName="r"  values="2.5;1.1;2.5" dur="3.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="5.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="490" cy="380" r="2" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="380;60" dur="10s" begin=".8s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="490;485;495;490" dur="6.5s" repeatCount="indefinite"/>
+      <animate attributeName="r"  values="2;1;2" dur="4.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="6.2s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
   <!-- ============ TITLE BLOCK ============ -->
@@ -131,60 +126,53 @@
 
   <!-- ============ BADGE ROW 1 (Ask / Gremlin / Help) ============ -->
   <g transform="translate(490,124)" text-anchor="middle" font-family="system-ui">
-    <!-- badge (reusable shape) -->
-    <!-- Ask -->
-    <a xlink:href="https://www.gmail.com" target="_blank">
-      <g transform="translate(-170,0)" filter="url(#fGlowStrong)">
-        <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="url(#gBadgeDark)" stroke="#0f172a"/>
-        <text x="0" y="6" fill="#f8fafc" font-weight="800">ASK</text>
-        <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.5" opacity="0.8">
-          <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="5s" repeatCount="indefinite"/>
-        </rect>
-      </g>
-    </a>
-    <!-- Gremlin -->
-    <a xlink:href="mailto:ascend.gremlin@gmail.com">
-      <g transform="translate(0,0)" filter="url(#fGlowStrong)">
-        <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
-        <text x="0" y="6" fill="#ffd15a" font-weight="800">GREMLIN</text>
-        <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.9">
-          <animate attributeName="stroke-dasharray" values="0 620;160 620;0 620" dur="5.2s" begin=".4s" repeatCount="indefinite"/>
-        </rect>
-      </g>
-    </a>
-    <!-- Help -->
-    <a xlink:href="mailto:ascend.help@gmail.com">
-      <g transform="translate(180,0)" filter="url(#fGlowStrong)">
-        <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
-        <text x="0" y="6" fill="#ffd15a" font-weight="800">HELP</text>
-        <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.5" opacity="0.85">
-          <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="5s" begin=".8s" repeatCount="indefinite"/>
-        </rect>
-      </g>
-    </a>
+    <!-- Ask (data-href: https://www.gmail.com) -->
+    <g transform="translate(-170,0)" filter="url(#fGlowStrong)" data-href="https://www.gmail.com">
+      <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="url(#gBadgeDark)" stroke="#0f172a"/>
+      <text x="0" y="6" fill="#f8fafc" font-weight="800">ASK</text>
+      <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.5" opacity="0.8">
+        <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="5s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- Gremlin (data-href: mailto:ascend.gremlin@gmail.com) -->
+    <g transform="translate(0,0)" filter="url(#fGlowStrong)" data-href="mailto:ascend.gremlin@gmail.com">
+      <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
+      <text x="0" y="6" fill="#ffd15a" font-weight="800">GREMLIN</text>
+      <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.9">
+        <animate attributeName="stroke-dasharray" values="0 620;160 620;0 620" dur="5.2s" begin=".4s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- Help (data-href: mailto:ascend.help@gmail.com) -->
+    <g transform="translate(180,0)" filter="url(#fGlowStrong)" data-href="mailto:ascend.help@gmail.com">
+      <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
+      <text x="0" y="6" fill="#ffd15a" font-weight="800">HELP</text>
+      <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.5" opacity="0.85">
+        <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="5s" begin=".8s" repeatCount="indefinite"/>
+      </rect>
+    </g>
   </g>
 
   <!-- ============ BADGE ROW 2 (Text Us + Number) ============ -->
   <g transform="translate(490,170)" text-anchor="middle" font-family="system-ui">
-    <a xlink:href="sms:+17854436288">
-      <g transform="translate(-125,0)" filter="url(#fGlowStrong)">
-        <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="url(#gBadgeDark)" stroke="#0f172a"/>
-        <text x="0" y="6" fill="#f8fafc" font-weight="800">TEXT&nbsp;US</text>
-        <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.8">
-          <animate attributeName="stroke-dasharray" values="0 620;160 620;0 620" dur="5.2s" repeatCount="indefinite"/>
-        </rect>
-      </g>
-    </a>
+    <!-- Text Us (data-href: sms:+17854436288) -->
+    <g transform="translate(-125,0)" filter="url(#fGlowStrong)" data-href="sms:+17854436288">
+      <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="url(#gBadgeDark)" stroke="#0f172a"/>
+      <text x="0" y="6" fill="#f8fafc" font-weight="800">TEXT&nbsp;US</text>
+      <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.8">
+        <animate attributeName="stroke-dasharray" values="0 620;160 620;0 620" dur="5.2s" repeatCount="indefinite"/>
+      </rect>
+    </g>
 
-    <a xlink:href="sms:+17854436288">
-      <g transform="translate(165,0)" filter="url(#fGlowStrong)">
-        <rect x="-160" y="-16" rx="10" ry="10" width="320" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
-        <text x="0" y="6" fill="#ffd15a" font-weight="800">+1&nbsp;785&nbsp;443&nbsp;6288</text>
-        <rect x="-160" y="-16" rx="10" ry="10" width="320" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.9">
-          <animate attributeName="stroke-dasharray" values="0 920;220 920;0 920" dur="6s" begin=".4s" repeatCount="indefinite"/>
-        </rect>
-      </g>
-    </a>
+    <!-- Phone number (data-href: sms:+17854436288) -->
+    <g transform="translate(165,0)" filter="url(#fGlowStrong)" data-href="sms:+17854436288">
+      <rect x="-160" y="-16" rx="10" ry="10" width="320" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
+      <text x="0" y="6" fill="#ffd15a" font-weight="800">+1&nbsp;785&nbsp;443&nbsp;6288</text>
+      <rect x="-160" y="-16" rx="10" ry="10" width="320" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.9">
+        <animate attributeName="stroke-dasharray" values="0 920;220 920;0 920" dur="6s" begin=".4s" repeatCount="indefinite"/>
+      </rect>
+    </g>
   </g>
 
   <!-- ============ WARNING CALLOUT ============ -->
