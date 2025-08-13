@@ -194,7 +194,7 @@
     </g>
   </g>
 
-    <!-- =================== FIRE BASELINE (FULL-WIDTH & MORE REAL) =================== -->
+  <!-- =================== FIRE BASELINE (FULL-WIDTH & MORE REAL) =================== -->
   <g transform="translate(0,408)">
     <!-- ember rail (full 980px) -->
     <rect x="0" y="-2" width="980" height="2" fill="url(#gNeon)" opacity="0.7" filter="url(#fGlowSoft)">
@@ -277,7 +277,7 @@
 
     <!-- smoke: heavy + light veils (full width) -->
     <g opacity="0.42" filter="url(#fWobble)">
-      <path d="M0,-88 C190,-120 380,-78 570,-106 C760,-134 950,-86 980,-110 L980,-160 L0,-160 Z" fill="url(#gSmoke)">
+      <path d="M0,-88 C190,-120 380,-78 570,-106 C760,-134 950,-86 980,-110 L980,-160 L0,-160 Z" fill="url(#gSmokeDark)">
         <animate attributeName="d"
           values="
             M0,-88 C190,-120 380,-78 570,-106 C760,-134 950,-86 980,-110 L980,-160 L0,-160 Z;
@@ -287,7 +287,7 @@
       </path>
     </g>
     <g opacity="0.25" filter="url(#fWobble)">
-      <path d="M0,-70 C180,-90 360,-52 540,-80 C720,-108 900,-60 980,-82 L980,-120 L0,-120 Z" fill="url(#gSmoke)">
+      <path d="M0,-70 C180,-90 360,-52 540,-80 C720,-108 900,-60 980,-82 L980,-120 L0,-120 Z" fill="url(#gSmokeLight)">
         <animate attributeName="d"
           values="
             M0,-70 C180,-90 360,-52 540,-80 C720,-108 900,-60 980,-82 L980,-120 L0,-120 Z;
@@ -296,4 +296,6 @@
           dur="6s" repeatCount="indefinite"/>
       </path>
     </g>
-  </g>
+  </g>  <!-- end FIRE BASELINE group -->
+
+</svg>
