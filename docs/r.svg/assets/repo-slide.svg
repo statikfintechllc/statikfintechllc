@@ -32,13 +32,6 @@
 
     <rect x="20" y="160" width="276" height="12" fill="#3572A5" /><rect x="296" y="160" width="39" height="12" fill="#ff5a03" /><rect x="335" y="160" width="22" height="12" fill="#89e051" /><rect x="357" y="160" width="14" height="12" fill="#3178c6" /><rect x="371" y="160" width="14" height="12" fill="#f1e05a" /><rect x="385" y="160" width="15" height="12" fill="#663399" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#ff5a03"/><text x="226" y="180" class="legend">Astro</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="194" class="legend">Shell</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#3178c6"/><text x="226" y="194" class="legend">TypeScript</text>
-
-    <!-- glow pulse -->
-    <g>
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
-        <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
-      </rect>
-    </g>
   </g>
   <g transform="translate(460,20)">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -59,22 +52,14 @@
 
     <rect x="20" y="160" width="249" height="12" fill="#3572A5" /><rect x="269" y="160" width="76" height="12" fill="#3178c6" /><rect x="345" y="160" width="14" height="12" fill="#f1e05a" /><rect x="359" y="160" width="14" height="12" fill="#89e051" /><rect x="373" y="160" width="14" height="12" fill="#663399" /><rect x="387" y="160" width="13" height="12" fill="#ff5a03" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#3178c6"/><text x="226" y="180" class="legend">TypeScript</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#f1e05a"/><text x="36" y="194" class="legend">JavaScript</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#89e051"/><text x="226" y="194" class="legend">Shell</text>
-
-    <!-- glow pulse -->
-    <g>
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
-        <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
-      </rect>
-    </g>
   </g>
-      <!-- trophies-style: absolute staggered begin + repeatCount='indefinite' -->
       <animateTransform attributeName="transform" type="translate"
-        values="880;0;0;-880"
-        keyTimes="0;0.2250;0.7750;1"
-        keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+        values="880;880;0;0;-880;-880"
+        keyTimes="0;0.0000;0.0750;0.2583;0.3333;1"
+        keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
         calcMode="spline"
-        dur="6s"
-        begin="0.00s"
+        dur="18s"
+        begin="0s"
         repeatCount="indefinite"/>
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
@@ -98,13 +83,6 @@
 
     <rect x="20" y="160" width="261" height="12" fill="#3178c6" /><rect x="281" y="160" width="42" height="12" fill="#3572A5" /><rect x="323" y="160" width="13" height="12" fill="#663399" /><rect x="336" y="160" width="13" height="12" fill="#f1e05a" /><rect x="349" y="160" width="13" height="12" fill="#e34c26" /><rect x="362" y="160" width="13" height="12" fill="#dea584" /><rect x="375" y="160" width="13" height="12" fill="#89e051" /><rect x="388" y="160" width="12" height="12" fill="#264b99" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3178c6"/><text x="36" y="180" class="legend">TypeScript</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="226" y="180" class="legend">Python</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#663399"/><text x="36" y="194" class="legend">CSS</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#f1e05a"/><text x="226" y="194" class="legend">JavaScript</text>
-
-    <!-- glow pulse -->
-    <g>
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
-        <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
-      </rect>
-    </g>
   </g>
   <g transform="translate(460,20)">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -125,22 +103,14 @@
 
     <rect x="20" y="160" width="380" height="12" fill="#6b7280" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#6b7280"/><text x="36" y="180" class="legend">Other</text>
-
-    <!-- glow pulse -->
-    <g>
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
-        <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
-      </rect>
-    </g>
   </g>
-      <!-- trophies-style: absolute staggered begin + repeatCount='indefinite' -->
       <animateTransform attributeName="transform" type="translate"
-        values="880;0;0;-880"
-        keyTimes="0;0.2250;0.7750;1"
-        keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+        values="880;880;0;0;-880;-880"
+        keyTimes="0;0.3333;0.4083;0.5917;0.6667;1"
+        keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
         calcMode="spline"
-        dur="6s"
-        begin="6.00s"
+        dur="18s"
+        begin="0s"
         repeatCount="indefinite"/>
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
@@ -164,13 +134,6 @@
 
     <rect x="20" y="160" width="380" height="12" fill="#89e051" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#89e051"/><text x="36" y="180" class="legend">Shell</text>
-
-    <!-- glow pulse -->
-    <g>
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
-        <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
-      </rect>
-    </g>
   </g>
   <g transform="translate(460,20)">
     <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
@@ -191,22 +154,14 @@
 
     <rect x="20" y="160" width="292" height="12" fill="#3572A5" /><rect x="312" y="160" width="88" height="12" fill="#f1e05a" />
     <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#f1e05a"/><text x="226" y="180" class="legend">JavaScript</text>
-
-    <!-- glow pulse -->
-    <g>
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="none" stroke="#e11d48" opacity="0.0">
-        <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
-      </rect>
-    </g>
   </g>
-      <!-- trophies-style: absolute staggered begin + repeatCount='indefinite' -->
       <animateTransform attributeName="transform" type="translate"
-        values="880;0;0;-880"
-        keyTimes="0;0.2250;0.7750;1"
-        keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"
+        values="880;880;0;0;-880;-880"
+        keyTimes="0;0.6667;0.7417;0.9250;1.0000;1"
+        keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
         calcMode="spline"
-        dur="6s"
-        begin="12.00s"
+        dur="18s"
+        begin="0s"
         repeatCount="indefinite"/>
     </g>
 </svg>
