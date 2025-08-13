@@ -37,9 +37,7 @@
     <filter id="fGlowStrong" x="-90%" y="-90%" width="280%" height="280%">
       <feGaussianBlur stdDeviation="10" result="b1"/>
       <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
-      <feMerge>
-        <feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
     <!-- Sparks -->
@@ -64,7 +62,7 @@
       <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
-    <!-- Heat wobble + smoke -->
+    <!-- Heat wobble + smoke / general displacement -->
     <filter id="fWobble" x="-150%" y="-150%" width="400%" height="400%">
       <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7" result="n">
         <animate attributeName="baseFrequency" values="0.7;1.1;0.8;0.9;0.7" dur="2.2s" repeatCount="indefinite"/>
@@ -80,6 +78,25 @@
       <stop offset="0%"  stop-color="#000000" stop-opacity="0"/>
       <stop offset="100%" stop-color="#a6b0c0" stop-opacity="0.35"/>
     </linearGradient>
+
+    <!-- NEW: jagged serration mask for the fire top edge -->
+    <filter id="fSerrate" x="-50%" y="-200%" width="200%" height="500%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.25" numOctaves="3" seed="33" result="t">
+        <animate attributeName="seed" values="33;34;35;36;33" dur="2.2s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feColorMatrix in="t" type="luminanceToAlpha" result="a"/>
+      <feComposite in="SourceGraphic" in2="a" operator="out"/>
+    </filter>
+
+    <!-- NEW: mask object combining soft curve + serration -->
+    <mask id="mSerratedTop">
+      <!-- base white fills entire width -->
+      <rect x="0" y="-120" width="980" height="140" fill="#fff"/>
+      <!-- subtract noisy bite along top -->
+      <g filter="url(#fSerrate)">
+        <rect x="0" y="-140" width="980" height="60" fill="#000"/>
+      </g>
+    </mask>
   </defs>
 
   <!-- =================== BACKDROP =================== -->
@@ -120,16 +137,14 @@
     </circle>
   </g>
 
-  <!-- =================== TITLE =================== -->
+  <!-- =================== TITLE (unchanged) =================== -->
   <g transform="translate(490,66)" text-anchor="middle">
     <text x="0" y="0" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-weight="900" font-size="30"
           fill="#ffd15a" filter="url(#fGlowStrong)">The Ascend Institute</text>
     <text x="0" y="20" font-family="system-ui" font-size="12" fill="#ffd15a" opacity="0.9">🔱 Presented by: StatikFinTech, LLC 🔱</text>
-
     <line x1="-230" x2="230" y1="28" y2="28" stroke="url(#gNeon)" stroke-width="2" opacity="0.9" filter="url(#fGlowSoft)">
       <animate attributeName="stroke-dasharray" values="0 460;460 0;0 460" dur="4.2s" repeatCount="indefinite"/>
     </line>
-
     <text x="0" y="50" font-family="system-ui" font-size="12" fill="#a0a7b6" opacity="0.9">
       Operating as an Unincorporated Sovereign R&amp;D Trust (legal formation pending)
     </text>
@@ -138,7 +153,7 @@
     </text>
   </g>
 
-  <!-- =================== TIP CALLOUT =================== -->
+  <!-- =================== TIP CALLOUT (unchanged) =================== -->
   <g transform="translate(490,150)" text-anchor="middle" font-family="system-ui">
     <g filter="url(#fGlowSoft)">
       <rect x="-420" y="0" width="840" height="98" rx="12" fill="url(#gCard)" stroke="#232939"/>
@@ -158,7 +173,7 @@
     </g>
   </g>
 
-  <!-- =================== WARNING CALLOUT =================== -->
+  <!-- =================== WARNING CALLOUT (unchanged) =================== -->
   <g transform="translate(490,268)" text-anchor="middle" font-family="system-ui">
     <g filter="url(#fGlowSoft)">
       <rect x="-420" y="0" width="840" height="84" rx="12" fill="url(#gWarn)" stroke="#5b3d00"/>
@@ -179,88 +194,90 @@
     </g>
   </g>
 
-  <!-- =================== FIRE BASELINE =================== -->
+  <!-- =================== FIRE BASELINE (FULL-WIDTH & MORE REAL) =================== -->
   <g transform="translate(0,408)">
-    <!-- ember bar -->
-    <rect x="40" y="-2" width="900" height="2" fill="url(#gNeon)" opacity="0.6" filter="url(#fGlowSoft)">
-      <animate attributeName="width" values="0;900;0" dur="7s" repeatCount="indefinite"/>
+    <!-- glowing ember rail across the full width -->
+    <rect x="0" y="-2" width="980" height="2" fill="url(#gNeon)" opacity="0.65" filter="url(#fGlowSoft)">
+      <animate attributeName="width" values="0;980;0" dur="7s" repeatCount="indefinite"/>
     </rect>
 
-    <!-- layered flames -->
-    <g transform="translate(40,0)" filter="url(#fWobble)">
-      <!-- back band -->
+    <!-- Flames (left-to-right coverage = 980px) -->
+    <g filter="url(#fWobble)">
+      <!-- Back band (taller, dimmer) -->
       <g opacity="0.55" filter="url(#fFireGlow)">
-        <path id="flameA" d="M0,0
-            c20,-6 40,-16 60,0  c20,16 40,-12 60,0  c20,12 40,-22 60,0
-            c20,22 40,-10 60,0   c20,10 40,-20 60,0   c20,18 40,-12 60,0
-            c20,14 40,-18 60,0   c20,20 40,-10 60,0   c20,12 40,-22 60,0
-            c20,16 40,-14 60,0   c20,18 40,-12 60,0   c20,14 40,-18 60,0
-            L900,0 L0,0 Z" fill="url(#gFlame)">
-          <animate attributeName="d" dur="1.9s" repeatCount="indefinite"
-            values="
-              M0,0 c20,-10 40,-20 60,0 c20,18 40,-12 60,0 c20,10 40,-24 60,0 c20,24 40,-12 60,0 c20,12 40,-22 60,0 c20,20 40,-14 60,0 c20,14 40,-20 60,0 c20,22 40,-12 60,0 c20,12 40,-24 60,0 c20,18 40,-14 60,0 c20,18 40,-12 60,0 c20,14 40,-18 60,0 L900,0 L0,0 Z;
-              M0,0 c20,-8  40,-22 60,0 c20,16 40,-10 60,0 c20,12 40,-20 60,0 c20,22 40,-14 60,0 c20,14 40,-20 60,0 c20,18 40,-12 60,0 c20,12 40,-22 60,0 c20,20 40,-10 60,0 c20,10 40,-26 60,0 c20,20 40,-12 60,0 c20,16 40,-16 60,0 c20,16 40,-12 60,0 L900,0 L0,0 Z"/>
-        </path>
+        <path id="flA" d="M0,0
+          c22,-8 44,-18 66,0 c22,18 44,-12 66,0 c22,12 44,-22 66,0
+          c22,22 44,-10 66,0 c22,10 44,-20 66,0 c22,18 44,-12 66,0
+          c22,14 44,-18 66,0 c22,20 44,-10 66,0 c22,12 44,-22 66,0
+          c22,16 44,-14 66,0 c22,18 44,-12 66,0 c22,14 44,-18 66,0
+          L980,0 L0,0 Z" fill="url(#gFlame)"/>
+        <animate attributeName="d" dur="1.9s" repeatCount="indefinite"
+          values="
+            M0,0 c22,-10 44,-20 66,0 c22,18 44,-12 66,0 c22,10 44,-24 66,0 c22,24 44,-12 66,0 c22,12 44,-22 66,0 c22,20 44,-14 66,0 c22,14 44,-20 66,0 c22,22 44,-12 66,0 c22,12 44,-24 66,0 c22,18 44,-14 66,0 c22,18 44,-12 66,0 c22,14 44,-18 66,0 L980,0 L0,0 Z;
+            M0,0 c22,-8  44,-22 66,0 c22,16 44,-10 66,0 c22,12 44,-20 66,0 c22,22 44,-14 66,0 c22,14 44,-20 66,0 c22,18 44,-12 66,0 c22,12 44,-22 66,0 c22,20 44,-10 66,0 c22,10 44,-26 66,0 c22,20 44,-12 66,0 c22,16 44,-16 66,0 c22,16 44,-12 66,0 L980,0 L0,0 Z"/>
       </g>
 
-      <!-- mid band -->
-      <g opacity="0.8" filter="url(#fFireGlow)">
-        <path id="flameB" d="M0,0
-            c20,-6 40,-14 60,0  c20,14 40,-10 60,0  c20,10 40,-18 60,0
-            c20,18 40,-10 60,0   c20,10 40,-18 60,0   c20,16 40,-10 60,0
-            c20,12 40,-16 60,0   c20,16 40,-10 60,0   c20,10 40,-18 60,0
-            c20,12 40,-14 60,0   c20,14 40,-10 60,0   c20,12 40,-16 60,0
-            L900,0 L0,0 Z" fill="url(#gFlame)">
-          <animate attributeName="d" dur="1.4s" repeatCount="indefinite"
-            values="
-              M0,0 c20,-8 40,-16 60,0 c20,16 40,-10 60,0 c20,10 40,-20 60,0 c20,18 40,-10 60,0 c20,10 40,-18 60,0 c20,16 40,-10 60,0 c20,12 40,-16 60,0 c20,18 40,-10 60,0 c20,10 40,-20 60,0 c20,12 40,-14 60,0 c20,16 40,-10 60,0 c20,12 40,-16 60,0 L900,0 L0,0 Z;
-              M0,0 c20,-7 40,-18 60,0 c20,14 40,-8  60,0 c20,12 40,-18 60,0 c20,16 40,-12 60,0 c20,12 40,-16 60,0 c20,14 40,-12 60,0 c20,10 40,-18 60,0 c20,16 40,-12 60,0 c20,12 40,-18 60,0 c20,10 40,-16 60,0 c20,14 40,-12 60,0 c20,10 40,-18 60,0 L900,0 L0,0 Z"/>
-        </path>
+      <!-- Mid band (brighter) -->
+      <g opacity="0.82" filter="url(#fFireGlow)">
+        <path id="flB" d="M0,0
+          c22,-7 44,-15 66,0 c22,15 44,-11 66,0 c22,11 44,-19 66,0
+          c22,19 44,-11 66,0 c22,11 44,-19 66,0 c22,16 44,-11 66,0
+          c22,12 44,-16 66,0 c22,16 44,-11 66,0 c22,11 44,-19 66,0
+          c22,12 44,-15 66,0 c22,15 44,-11 66,0 c22,12 44,-16 66,0
+          L980,0 L0,0 Z" fill="url(#gFlame)"/>
+        <animate attributeName="d" dur="1.35s" repeatCount="indefinite"
+          values="
+            M0,0 c22,-8 44,-16 66,0 c22,16 44,-10 66,0 c22,10 44,-20 66,0 c22,18 44,-10 66,0 c22,10 44,-18 66,0 c22,16 44,-10 66,0 c22,12 44,-16 66,0 c22,18 44,-10 66,0 c22,10 44,-20 66,0 c22,12 44,-14 66,0 c22,16 44,-10 66,0 c22,12 44,-16 66,0 L980,0 L0,0 Z;
+            M0,0 c22,-7 44,-18 66,0 c22,14 44,-8  66,0 c22,12 44,-18 66,0 c22,16 44,-12 66,0 c22,12 44,-16 66,0 c22,14 44,-12 66,0 c22,10 44,-18 66,0 c22,16 44,-12 66,0 c22,12 44,-18 66,0 c22,10 44,-16 66,0 c22,14 44,-12 66,0 c22,10 44,-18 66,0 L980,0 L0,0 Z"/>
       </g>
 
-      <!-- front serrated tongues -->
-      <g opacity="0.95">
-        <path id="flameC" d="M0,0
-            c15,-6 30,-14 45,0  c15,12 30,-10 45,0  c15,10 30,-16 45,0
-            c15,16 30,-10 45,0  c15,10 30,-16 45,0  c15,14 30,-10 45,0
-            c15,12 30,-14 45,0  c15,14 30,-10 45,0  c15,10 30,-16 45,0
-            c15,12 30,-14 45,0  c15,14 30,-10 45,0  c15,12 30,-14 45,0
-            L900,0 L0,0 Z" fill="url(#gFlame)" filter="url(#fFireGlow)">
-          <animate attributeName="d" dur="1.0s" repeatCount="indefinite"
-            values="
-              M0,0 c15,-8 30,-16 45,0 c15,14 30,-10 45,0 c15,10 30,-18 45,0 c15,16 30,-10 45,0 c15,10 30,-16 45,0 c15,14 30,-10 45,0 c15,12 30,-14 45,0 c15,14 30,-10 45,0 c15,10 30,-16 45,0 c15,12 30,-14 45,0 c15,14 30,-10 45,0 c15,12 30,-14 45,0 L900,0 L0,0 Z;
-              M0,0 c15,-6 30,-18 45,0 c15,12 30,-8  45,0 c15,12 30,-16 45,0 c15,14 30,-12 45,0 c15,12 30,-14 45,0 c15,12 30,-12 45,0 c15,10 30,-16 45,0 c15,12 30,-12 45,0 c15,12 30,-16 45,0 c15,10 30,-14 45,0 c15,12 30,-12 45,0 c15,10 30,-16 45,0 L900,0 L0,0 Z"/>
-        </path>
+      <!-- Front serrated tongues (masked jagged edge) -->
+      <g opacity="0.98" mask="url(#mSerratedTop)">
+        <path id="flC" d="M0,0
+          c16,-7 32,-15 48,0 c16,13 32,-9 48,0 c16,10 32,-16 48,0
+          c16,16 32,-10 48,0 c16,10 32,-16 48,0 c16,14 32,-10 48,0
+          c16,12 32,-14 48,0 c16,14 32,-10 48,0 c16,10 32,-16 48,0
+          c16,12 32,-14 48,0 c16,14 32,-10 48,0 c16,12 32,-14 48,0
+          L980,0 L0,0 Z" fill="url(#gFlame)" filter="url(#fFireGlow)"/>
+        <animate attributeName="d" dur="1.02s" repeatCount="indefinite"
+          values="
+            M0,0 c16,-8 32,-16 48,0 c16,14 32,-10 48,0 c16,10 32,-18 48,0 c16,16 32,-10 48,0 c16,10 32,-16 48,0 c16,14 32,-10 48,0 c16,12 32,-14 48,0 c16,14 32,-10 48,0 c16,10 32,-16 48,0 c16,12 32,-14 48,0 c16,14 32,-10 48,0 c16,12 32,-14 48,0 L980,0 L0,0 Z;
+            M0,0 c16,-6 32,-18 48,0 c16,12 32,-8  48,0 c16,12 32,-16 48,0 c16,14 32,-12 48,0 c16,12 32,-14 48,0 c16,12 32,-12 48,0 c16,10 32,-16 48,0 c16,12 32,-12 48,0 c16,12 32,-16 48,0 c16,10 32,-14 48,0 c16,12 32,-12 48,0 c16,10 32,-16 48,0 L980,0 L0,0 Z"/>
       </g>
     </g>
 
-    <!-- stray embers -->
-    <g transform="translate(40,0)">
+    <!-- Stray embers (more of them, distributed) -->
+    <g>
       <circle cx="120" cy="-6" r="1.6" fill="#ff7a00" opacity="0" filter="url(#fFireGlow)">
         <animate attributeName="opacity" values="0;1;0" dur="1.6s" repeatCount="indefinite"/>
         <animate attributeName="cy" values="-6;-38;-70" dur="1.6s" repeatCount="indefinite"/>
         <animate attributeName="cx" values="120;116;124;120" dur="1.6s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="680" cy="-6" r="1.8" fill="#ffb300" opacity="0" filter="url(#fFireGlow)">
-        <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin=".3s" repeatCount="indefinite"/>
-        <animate attributeName="cy" values="-6;-40;-76" dur="1.8s" begin=".3s" repeatCount="indefinite"/>
-        <animate attributeName="cx" values="680;676;684;680" dur="1.8s" begin=".3s" repeatCount="indefinite"/>
+      <circle cx="340" cy="-6" r="1.5" fill="#ff9a00" opacity="0" filter="url(#fFireGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.7s" begin=".2s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="-6;-36;-66" dur="1.7s" begin=".2s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="340;336;344;340" dur="1.7s" begin=".2s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="420" cy="-6" r="1.4" fill="#ffd15a" opacity="0" filter="url(#fFireGlow)">
+      <circle cx="560" cy="-6" r="1.8" fill="#ffb300" opacity="0" filter="url(#fFireGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin=".35s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="-6;-40;-76" dur="1.8s" begin=".35s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="560;556;564;560" dur="1.8s" begin=".35s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="780" cy="-6" r="1.4" fill="#ffd15a" opacity="0" filter="url(#fFireGlow)">
         <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin=".6s" repeatCount="indefinite"/>
         <animate attributeName="cy" values="-6;-34;-62" dur="1.5s" begin=".6s" repeatCount="indefinite"/>
-        <animate attributeName="cx" values="420;417;423;420" dur="1.5s" begin=".6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="780;777;783;780" dur="1.5s" begin=".6s" repeatCount="indefinite"/>
       </circle>
     </g>
 
-    <!-- heat smoke veil -->
-    <g transform="translate(40,0)" opacity="0.35" filter="url(#fWobble)">
-      <path d="M0,-80 C150,-100 300,-60 450,-90 C600,-120 750,-70 900,-95 L900,-140 L0,-140 Z" fill="url(#gSmoke)">
+    <!-- Heat smoke veil (full width) -->
+    <g opacity="0.35" filter="url(#fWobble)">
+      <path d="M0,-78 C180,-100 360,-62 540,-92 C720,-122 900,-72 980,-96 L980,-140 L0,-140 Z" fill="url(#gSmoke)">
         <animate attributeName="d"
           values="
-            M0,-80 C150,-100 300,-60 450,-90 C600,-120 750,-70 900,-95 L900,-140 L0,-140 Z;
-            M0,-86 C150,-110 300,-66 450,-100 C600,-126 750,-80 900,-102 L900,-140 L0,-140 Z;
-            M0,-80 C150,-100 300,-60 450,-90 C600,-120 750,-70 900,-95 L900,-140 L0,-140 Z"
+            M0,-78 C180,-100 360,-62 540,-92 C720,-122 900,-72 980,-96 L980,-140 L0,-140 Z;
+            M0,-86 C180,-110 360,-70 540,-104 C720,-130 900,-84 980,-108 L980,-140 L0,-140 Z;
+            M0,-78 C180,-100 360,-62 540,-92 C720,-122 900,-72 980,-96 L980,-140 L0,-140 Z"
           dur="6s" repeatCount="indefinite"/>
       </path>
     </g>
