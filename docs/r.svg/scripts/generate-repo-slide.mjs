@@ -289,7 +289,7 @@ const buildRepoSvg = (repos) => {
   const pages = [];
   for (let i = 0; i < repos.length; i += 2) pages.push(repos.slice(i, i + 2));
 
-  // keyTimes exactly like trophies
+  // trophies keyTimes
   const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
   const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
   const singleKeyTimes = `0;${enterK};${exitK};1`;
@@ -338,3 +338,4 @@ const buildRepoSvg = (repos) => {
   await fs.writeFile(OUT, svg, "utf8");
   console.log("wrote", OUT);
 })();
+
