@@ -80,6 +80,9 @@
     <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
   </a>
 </div>
+
+---
+
 <div align="center" 
 	
 **✍️ Writing & Research**  
