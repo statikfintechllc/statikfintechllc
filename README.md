@@ -83,10 +83,10 @@
 </div>
 <div align="center" 
 	
-**✍️ Writing & Research**
+**✍️ Writing & Research**  
 *Systems, sovereignty, and recursive intelligence*
 
-The Zenodo Archives
+**The Zenodo Archives**<br>
   <a  href="https://doi.org/10.5281/zenodo.15717788">
     <img src="https://img.shields.io/badge/DOI-15717788-e11d48?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 1">
   </a>
