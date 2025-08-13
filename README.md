@@ -79,7 +79,7 @@
 </div>
 <h2 align="center" style="color:#e11d48">Featured Work</h2>
 <div align="center">
-  <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" />
+  <object type="image/svg+xml" data="./assets/repo-slide.svg"></object>
 </div>
 <h2 align="center" style="color:#e11d48">✍️ Writing & Research</h2>
 <h3 align="center">Systems, sovereignty, and recursive intelligence.</h3>
