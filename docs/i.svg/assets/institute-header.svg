@@ -92,14 +92,16 @@
   </g>
 </mask>
 
-<!-- Clip back to the canvas after overscan -->
-<clipPath id="clipCanvas">
-  <rect x="0" y="248" width="980" height="200"/>
-</clipPath>
-    
-  <!-- =================== BACKDROP =================== -->
-  <rect x="0" y="0" width="980" height="430" fill="url(#gPanel)"/>
+  <!-- Clip back to the canvas after overscan -->
+  <clipPath id="clipCanvas">
+    <rect x="0" y="248" width="980" height="200"/>
+  </clipPath>
 
+</defs>  <!-- << CLOSE DEFS HERE -->
+
+<!-- =================== BACKDROP =================== -->
+<rect x="0" y="0" width="980" height="430" fill="url(#gPanel)"/>
+  
   <!-- Corner filaments (unchanged) -->
   <g opacity="0.5" filter="url(#fGlowSoft)">
     <path d="M16,26 q70,38 146,0 q60,-30 152,18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
@@ -295,3 +297,4 @@
 </g> <!-- end FIRE BASELINE group -->
 
 </svg>
+
