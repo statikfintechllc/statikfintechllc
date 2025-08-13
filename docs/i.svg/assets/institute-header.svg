@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="980" height="430" viewBox="0 0 980 430" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ============ THEME & FILTERS (reuse across elements) ============ -->
+  <defs>
+    <!-- panel gradient -->
+    <linearGradient id="gPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#0a0f18"/>
+      <stop offset="100%" stop-color="#0b1220"/>
+    </linearGradient>
+
+    <!-- neon line -->
+    <linearGradient id="gNeon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#ffd15a"/>
+      <stop offset="50%" stop-color="#ff3168"/>
+      <stop offset="100%" stop-color="#ffd15a"/>
+    </linearGradient>
+
+    <!-- soft outer glow -->
+    <filter id="fGlowSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b1"/>
+      <feMerge>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- strong glow (for headings / badges) -->
+    <filter id="fGlowStrong" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="9" result="b1"/>
+      <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
+      <feMerge>
+        <feMergeNode in="b1"/>
+        <feMergeNode in="b2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- tiny spark particles -->
+    <radialGradient id="gSpark" r="1">
+      <stop offset="0%" stop-color="#ffd15a" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#ff3168" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- badge bg -->
+    <linearGradient id="gBadgeDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#131a27"/>
+    </linearGradient>
+    <linearGradient id="gBadgeRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#3a0a0a"/>
+      <stop offset="100%" stop-color="#4a0d0f"/>
+    </linearGradient>
+
+    <!-- warning background -->
+    <linearGradient id="gWarn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#3f2e00"/>
+      <stop offset="100%" stop-color="#2b1d00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============ BACKDROP ============ -->
+  <rect x="0" y="0" width="980" height="430" fill="url(#gPanel)"/>
+
+  <!-- corner filaments -->
+  <g opacity="0.55" filter="url(#fGlowSoft)">
+    <path d="M10,20 q80,40 150,0 q60,-30 150,20" fill="none" stroke="url(#gNeon)" stroke-width="1.5">
+      <animate attributeName="stroke-dasharray" values="0 600;120 600;0 600" dur="6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M970,20 q-80,40 -150,0 q-60,-30 -150,20" fill="none" stroke="url(#gNeon)" stroke-width="1.5">
+      <animate attributeName="stroke-dasharray" values="0 600;120 600;0 600" dur="6s" begin="1s" repeatCount="indefinite"/>
+    </path>
+    <path d="M10,410 q80,-40 150,0 q60,30 150,-20" fill="none" stroke="url(#gNeon)" stroke-width="1.5">
+      <animate attributeName="stroke-dasharray" values="0 600;120 600;0 600" dur="6s" begin="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M970,410 q-80,-40 -150,0 q-60,30 -150,-20" fill="none" stroke="url(#gNeon)" stroke-width="1.5">
+      <animate attributeName="stroke-dasharray" values="0 600;120 600;0 600" dur="6s" begin="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- drifting sparks -->
+  <g>
+    <!-- create 16 drifting particles -->
+    <!-- they loop upward with slight x jitter -->
+    <!-- each is purposefully offset in time -->
+    <!-- to avoid synchronous motion -->
+    <g opacity="0.85">
+      <!-- repeated via manual instances for GitHub safety -->
+      <!-- you can add/remove to taste -->
+      <circle cx="120" cy="360" r="2.5" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+        <animate attributeName="cy" values="360;40" dur="9s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="120;115;125;120" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="r"  values="2.5;1.2;2.5" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="860" cy="360" r="2.5" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+        <animate attributeName="cy" values="360;40" dur="8s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="860;855;865;860" dur="5.5s" repeatCount="indefinite"/>
+        <animate attributeName="r"  values="2.5;1.1;2.5" dur="3.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="5.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="490" cy="380" r="2" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+        <animate attributeName="cy" values="380;60" dur="10s" begin=".8s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="490;485;495;490" dur="6.5s" repeatCount="indefinite"/>
+        <animate attributeName="r"  values="2;1;2" dur="4.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="6.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- ============ TITLE BLOCK ============ -->
+  <g transform="translate(490,64)" text-anchor="middle">
+    <text x="0" y="0" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-weight="800" font-size="28"
+          fill="#ffd15a" filter="url(#fGlowSoft)">The Ascend Institute</text>
+    <!-- animated underline -->
+    <line x1="-220" x2="220" y1="10" y2="10" stroke="url(#gNeon)" stroke-width="2" opacity="0.85" filter="url(#fGlowSoft)">
+      <animate attributeName="stroke-dasharray" values="0 440;440 0;0 440" dur="4s" repeatCount="indefinite"/>
+    </line>
+
+    <text x="0" y="36" font-family="system-ui" font-size="13" fill="#e6e6e6" opacity="0.9">
+      <tspan>🔱 Presented by: StatikFinTech, LLC 🔱</tspan>
+    </text>
+    <text x="0" y="56" font-family="system-ui" font-size="12" fill="#9ca3af" opacity="0.9">
+      <tspan>Operating as an Unincorporated Sovereign R&amp;D Trust (legal formation pending)</tspan>
+    </text>
+    <text x="0" y="78" font-family="system-ui" font-weight="700" font-size="14"
+          fill="#ff3168" filter="url(#fGlowSoft)">
+      Mission: Autonomous Sovereignty &amp; Human Financial Liberation
+    </text>
+  </g>
+
+  <!-- ============ BADGE ROW 1 (Ask / Gremlin / Help) ============ -->
+  <g transform="translate(490,124)" text-anchor="middle" font-family="system-ui">
+    <!-- badge (reusable shape) -->
+    <!-- Ask -->
+    <a xlink:href="https://www.gmail.com" target="_blank">
+      <g transform="translate(-170,0)" filter="url(#fGlowStrong)">
+        <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="url(#gBadgeDark)" stroke="#0f172a"/>
+        <text x="0" y="6" fill="#f8fafc" font-weight="800">ASK</text>
+        <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.5" opacity="0.8">
+          <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="5s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </a>
+    <!-- Gremlin -->
+    <a xlink:href="mailto:ascend.gremlin@gmail.com">
+      <g transform="translate(0,0)" filter="url(#fGlowStrong)">
+        <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
+        <text x="0" y="6" fill="#ffd15a" font-weight="800">GREMLIN</text>
+        <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.9">
+          <animate attributeName="stroke-dasharray" values="0 620;160 620;0 620" dur="5.2s" begin=".4s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </a>
+    <!-- Help -->
+    <a xlink:href="mailto:ascend.help@gmail.com">
+      <g transform="translate(180,0)" filter="url(#fGlowStrong)">
+        <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
+        <text x="0" y="6" fill="#ffd15a" font-weight="800">HELP</text>
+        <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.5" opacity="0.85">
+          <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="5s" begin=".8s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </a>
+  </g>
+
+  <!-- ============ BADGE ROW 2 (Text Us + Number) ============ -->
+  <g transform="translate(490,170)" text-anchor="middle" font-family="system-ui">
+    <a xlink:href="sms:+17854436288">
+      <g transform="translate(-125,0)" filter="url(#fGlowStrong)">
+        <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="url(#gBadgeDark)" stroke="#0f172a"/>
+        <text x="0" y="6" fill="#f8fafc" font-weight="800">TEXT&nbsp;US</text>
+        <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.8">
+          <animate attributeName="stroke-dasharray" values="0 620;160 620;0 620" dur="5.2s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </a>
+
+    <a xlink:href="sms:+17854436288">
+      <g transform="translate(165,0)" filter="url(#fGlowStrong)">
+        <rect x="-160" y="-16" rx="10" ry="10" width="320" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
+        <text x="0" y="6" fill="#ffd15a" font-weight="800">+1&nbsp;785&nbsp;443&nbsp;6288</text>
+        <rect x="-160" y="-16" rx="10" ry="10" width="320" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.9">
+          <animate attributeName="stroke-dasharray" values="0 920;220 920;0 920" dur="6s" begin=".4s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+    </a>
+  </g>
+
+  <!-- ============ WARNING CALLOUT ============ -->
+  <g transform="translate(490,236)" text-anchor="middle" font-family="system-ui">
+    <g filter="url(#fGlowSoft)">
+      <rect x="-420" y="0" width="840" height="84" rx="10" fill="url(#gWarn)" stroke="#5b3d00"/>
+      <g transform="translate(-395,18)">
+        <circle r="6" fill="#ffd15a" filter="url(#fGlowSoft)"/>
+        <polygon points="-6,0 6,0 0,10" fill="#ffd15a" transform="translate(0,0)">
+          <animateTransform attributeName="transform" type="translate" values="0,0;0,2;0,0" dur="1.4s" repeatCount="indefinite"/>
+        </polygon>
+      </g>
+      <text x="0" y="22" fill="#ffd15a" font-weight="800">Warning</text>
+      <text x="0" y="44" fill="#e5e7eb" font-size="12" opacity="0.95">
+        “Your qualifications are impressive…”
+        — Coder Hiring Team (2025 Rejection Letter)
+      </text>
+      <text x="0" y="64" fill="#e5e7eb" font-size="12" opacity="0.95">
+        This isn’t rejection. It’s proof they don’t know how to build what comes next.
+        Still building what they can’t classify. — StatikFinTech, LLC
+      </text>
+    </g>
+  </g>
+
+  <!-- ============ LOOPING ACCENT BAR ============ -->
+  <g transform="translate(0,330)" opacity="0.9">
+    <rect x="40" y="0" width="900" height="2" fill="url(#gNeon)" filter="url(#fGlowSoft)">
+      <animate attributeName="width" values="0;900;0" dur="7s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+</svg>
