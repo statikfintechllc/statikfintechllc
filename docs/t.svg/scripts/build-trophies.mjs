@@ -14,7 +14,12 @@ const USER = process.env.GH_USER || "statikfintechllc";
 // tuning (seconds)
 const PAGE_SEC = Number(process.env.TROPHIES_PAGE_SEC || 6);  // seconds each page is visible
 const HOLD_FRAC = 0.75;                                       // fraction of page time holding centered
-const EASE = "0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1"; // ease-out, hold, ease-in
+
+// keySpline presets
+const EASE_IN   = "0.25 0.1 0.25 1";
+const EASE_HOLD = "0.25 0.1 0.25 1";
+const EASE_OUT  = "0.42 0 0.58 1";
+const LINEAR    = "0 0 1 1";
 
 if (!GH_TOKEN) throw new Error("PAT_GITHUB env missing");
 
@@ -124,30 +129,57 @@ const card = (t, x) => `
     <text x="20" y="96" class="cardDesc">${t.desc}</text>
   </g>`;
 
-// keyTimes for a single page (enter -> hold -> exit)
-const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
-const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
-const singleKeyTimes = `0;${enterK};${exitK};1`;
+// -------- Global-cycle animation (fixes “last slide only” repeat) --------
+const N = Math.max(1, pages.length);
+const totalDur = N * PAGE_SEC;           // full cycle duration (s)
+const enterK = (1 - HOLD_FRAC) / 2;      // in-window fractions (same as before, but numeric)
+const exitK  = 1 - (1 - HOLD_FRAC) / 2;
 
-// Build slides. Each slide animates continuously with indefinite repeat
-const totalDuration = pages.length * PAGE_SEC;
 let slides = "";
 pages.forEach((pg, i) => {
-  const beginTime = (i * PAGE_SEC).toFixed(2);
+  // window for this slide: [i*PAGE_SEC, (i+1)*PAGE_SEC] in the global cycle
+  const t0 = (i * PAGE_SEC) / totalDur;          // start of this slide's window (0..1)
+  const t1 = ((i + 1) * PAGE_SEC) / totalDur;    // end of window
+  const kin   = t0 + (enterK * PAGE_SEC) / totalDur;   // end of enter
+  const khold = t0 + (exitK  * PAGE_SEC) / totalDur;   // end of hold
+
+  // 6 segments: pre-wait | enter | hold | exit | post-wait
+  const keyTimes = `0;${t0.toFixed(4)};${kin.toFixed(4)};${khold.toFixed(4)};${t1.toFixed(4)};1`;
+  const values   = `${W};${W};0;0;${-W};${-W}`;
+  const keySplines = `${LINEAR}; ${EASE_IN}; ${EASE_HOLD}; ${EASE_OUT}; ${LINEAR}`;
+
   slides += `
   <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
     ${card(pg[0], x0)}${pg[1] ? card(pg[1], x0 + CW + G) : ""}
     <animateTransform attributeName="transform" type="translate"
-      values="${W};0;0;${-W}"
-      keyTimes="${singleKeyTimes}"
-      keySplines="${EASE}"
+      values="${values}"
+      keyTimes="${keyTimes}"
+      keySplines="${keySplines}"
       calcMode="spline"
-      dur="${PAGE_SEC}s"
-      begin="${beginTime}s" repeatCount="indefinite"/>
+      dur="${totalDur}s"
+      begin="0s"
+      repeatCount="indefinite"/>
   </g>`;
 });
 
-const svg = `<?xml version="1.0" encoding="UTF-8"?>\n<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">\n  <style>\n    :root{ color-scheme: dark; }\n    .cardTitle{ font:700 16px system-ui; fill:#e5e7eb }\n    .cardValue{ font:800 22px system-ui; fill:#60a5fa }\n    .grade{ font:700 16px system-ui; fill:#e11d48 }\n    .cardDesc{ font:12px system-ui; fill:#9ca3af }\n  </style>\n  <defs>\n    <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>\n    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">\n      <feGaussianBlur stdDeviation="6" result="b"/>\n      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>\n    </filter>\n  </defs>\n  ${slides}\n</svg>`;
+const svg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
+  <style>
+    :root{ color-scheme: dark; }
+    .cardTitle{ font:700 16px system-ui; fill:#e5e7eb }
+    .cardValue{ font:800 22px system-ui; fill:#60a5fa }
+    .grade{ font:700 16px system-ui; fill:#e11d48 }
+    .cardDesc{ font:12px system-ui; fill:#9ca3af }
+  </style>
+  <defs>
+    <clipPath id="frame"><rect x="0" y="0" width="${W}" height="${H}" rx="8" ry="8"/></clipPath>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  ${slides}
+</svg>`;
 
 await fs.mkdir(path.dirname(OUT), { recursive: true });
 await fs.writeFile(OUT, svg, "utf8");
