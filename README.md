@@ -81,11 +81,13 @@
 <div align="center">
   <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" />
 </div>
-<h2 align="center" style="color:#e11d48">✍️ Writing & Research</h2>
-<h3 align="center">Systems, sovereignty, and recursive intelligence.</h3>
-<div align="center">
-  <strong>Zenodo Archives</strong><br/>
-  <a href="https://doi.org/10.5281/zenodo.15717788">
+<div align="center" 
+	
+**✍️ Writing & Research**
+*Systems, sovereignty, and recursive intelligence*
+
+The Zenodo Archives
+  <a  href="https://doi.org/10.5281/zenodo.15717788">
     <img src="https://img.shields.io/badge/DOI-15717788-e11d48?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 1">
   </a>
   <a href="https://doi.org/10.5281/zenodo.15725639">
