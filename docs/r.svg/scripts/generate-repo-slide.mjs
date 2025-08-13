@@ -1,6 +1,6 @@
 /**
  * Animated Repo Cards (2-up carousel, SMIL-only)
- * Slides run in sequence and the sequence repeats forever (trophies-style).
+ * Slides run in sequence and the sequence repeats forever (correct global loop).
  */
 
 import fs from "node:fs/promises";
@@ -12,7 +12,10 @@ const GH_USER  = process.env.GH_USER || "statikfintechllc";
 const REPOS_ENV = (process.env.REPOS || "").trim();
 const PAGE_SEC  = Number(process.env.REPO_PAGE_SEC || 6);
 const HOLD_FRAC = 0.55;
-const EASE = "0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1";
+const EASE_IN   = "0.25 0.1 0.25 1";
+const EASE_HOLD = "0.25 0.1 0.25 1";
+const EASE_OUT  = "0.42 0 0.58 1";
+const LINEAR    = "0 0 1 1";
 
 if (!GH_TOKEN) throw new Error("PAT_GITHUB env missing");
 
@@ -125,7 +128,7 @@ const fetchRepoDetails = async (lst) => {
     const r = d.repository;
     if (!r) continue;
     const langs = r.languages?.edges || [];
-       const total = r.languages?.totalSize || 0;
+    const total = r.languages?.totalSize || 0;
 
     const segs = langs.map(e => {
       const w = total ? e.size / total : 0;
@@ -194,7 +197,7 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
   return { lines, font: minFont, lineHeight };
 }
 
-// ----- Card (no slide-bound fades) -----
+// ----- Card -----
 const card = (repo, x) => {
   const px = 20, pw = CW - 40;
   const py = 160, ph = 12;
@@ -273,41 +276,49 @@ const card = (repo, x) => {
 
     ${bars}
     ${legends}
-
-    <!-- glow pulse -->
-    <g>
-      <rect x="0" y="0" rx="14" ry="14" width="${CW}" height="${CH}" fill="none" stroke="#e11d48" opacity="0.0">
-        <animate attributeName="opacity" values="0;0.35;0" dur="2.8s" repeatCount="indefinite"/>
-      </rect>
-    </g>
   </g>`;
 };
 
-// ------------- BUILD (trophies-style loop) -------------
+// ------------- BUILD (global-cycle loop; no master clock) -------------
 const buildRepoSvg = (repos) => {
   // 2 per page
   const pages = [];
   for (let i = 0; i < repos.length; i += 2) pages.push(repos.slice(i, i + 2));
+  const N = Math.max(1, pages.length);
+  const totalDur = N * PAGE_SEC;
 
-  // trophies keyTimes
-  const enterK = ((1 - HOLD_FRAC) / 2).toFixed(4);
-  const exitK  = (1 - (1 - HOLD_FRAC) / 2).toFixed(4);
-  const singleKeyTimes = `0;${enterK};${exitK};1`;
+  // within-page timing (enter/hold/exit fractions)
+  const enterK = ((1 - HOLD_FRAC) / 2);
+  const exitK  = (1 - (1 - HOLD_FRAC) / 2);
 
   let slides = "";
   pages.forEach((pg, i) => {
-    const beginTime = (i * PAGE_SEC).toFixed(2); // absolute stagger
+    // Map this slide’s window [i*PAGE_SEC, (i+1)*PAGE_SEC] to global keyTimes
+    const t0 = (i * PAGE_SEC) / totalDur;
+    const t1 = ((i + 1) * PAGE_SEC) / totalDur;
+
+    const kin =  t0 + (enterK * PAGE_SEC) / totalDur;
+    const khold = t0 + (exitK  * PAGE_SEC) / totalDur;
+
+    // 6 keyTimes segments: pre-wait | enter | hold | exit | post-wait
+    const keyTimes = `0;${t0.toFixed(4)};${kin.toFixed(4)};${khold.toFixed(4)};${t1.toFixed(4)};1`;
+
+    // Values: off-right until t0, then 0 during window, off-left after, loop
+    const values = `${W};${W};0;0;${-W};${-W}`;
+
+    // Splines for 5 intervals: pre-wait (linear), enter (ease-in), hold (ease), exit (ease-out), post-wait (linear)
+    const keySplines = `${LINEAR}; ${EASE_IN}; ${EASE_HOLD}; ${EASE_OUT}; ${LINEAR}`;
+
     slides += `
     <g class="slide" transform="translate(${W},0)" clip-path="url(#frame)">
       ${card(pg[0], x0)}${pg[1] ? card(pg[1], x0 + CW + G) : ""}
-      <!-- trophies-style: absolute staggered begin + repeatCount='indefinite' -->
       <animateTransform attributeName="transform" type="translate"
-        values="${W};0;0;${-W}"
-        keyTimes="${singleKeyTimes}"
-        keySplines="${EASE}"
+        values="${values}"
+        keyTimes="${keyTimes}"
+        keySplines="${keySplines}"
         calcMode="spline"
-        dur="${PAGE_SEC}s"
-        begin="${beginTime}s"
+        dur="${totalDur}s"
+        begin="0s"
         repeatCount="indefinite"/>
     </g>`;
   });
@@ -338,4 +349,3 @@ const buildRepoSvg = (repos) => {
   await fs.writeFile(OUT, svg, "utf8");
   console.log("wrote", OUT);
 })();
-
