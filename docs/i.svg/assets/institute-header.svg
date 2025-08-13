@@ -1,204 +1,270 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="980" height="430" viewBox="0 0 980 430" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- ============ THEME & FILTERS (reuse across elements) ============ -->
+  <!-- =================== THEME =================== -->
   <defs>
-    <!-- panel gradient -->
+    <!-- Background -->
     <linearGradient id="gPanel" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#0a0f18"/>
-      <stop offset="100%" stop-color="#0b1220"/>
+      <stop offset="0%"  stop-color="#06080c"/>
+      <stop offset="100%" stop-color="#0a0f18"/>
     </linearGradient>
 
-    <!-- neon line -->
+    <!-- Gold/Crimson accent -->
     <linearGradient id="gNeon" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%"  stop-color="#ffd15a"/>
-      <stop offset="50%" stop-color="#ff3168"/>
+      <stop offset="45%" stop-color="#ff3168"/>
       <stop offset="100%" stop-color="#ffd15a"/>
     </linearGradient>
 
-    <!-- soft outer glow -->
-    <filter id="fGlowSoft" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="4" result="b1"/>
-      <feMerge>
-        <feMergeNode in="b1"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <!-- Dark card -->
+    <linearGradient id="gCard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#0f121a"/>
+      <stop offset="100%" stop-color="#131a27"/>
+    </linearGradient>
+
+    <!-- Warning card -->
+    <linearGradient id="gWarn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#3f2e00"/>
+      <stop offset="100%" stop-color="#2b1d00"/>
+    </linearGradient>
+
+    <!-- Glows -->
+    <filter id="fGlowSoft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b1"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
-    <!-- strong glow (for headings / badges) -->
-    <filter id="fGlowStrong" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="9" result="b1"/>
+    <filter id="fGlowStrong" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur stdDeviation="10" result="b1"/>
       <feGaussianBlur stdDeviation="3" in="SourceGraphic" result="b2"/>
       <feMerge>
-        <feMergeNode in="b1"/>
-        <feMergeNode in="b2"/>
-        <feMergeNode in="SourceGraphic"/>
+        <feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
 
-    <!-- tiny spark particles -->
+    <!-- Sparks -->
     <radialGradient id="gSpark" r="1">
       <stop offset="0%" stop-color="#ffd15a" stop-opacity="1"/>
       <stop offset="100%" stop-color="#ff3168" stop-opacity="0"/>
     </radialGradient>
 
-    <!-- badge bg -->
-    <linearGradient id="gBadgeDark" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#0d1117"/>
-      <stop offset="100%" stop-color="#131a27"/>
-    </linearGradient>
-    <linearGradient id="gBadgeRed" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%"  stop-color="#3a0a0a"/>
-      <stop offset="100%" stop-color="#4a0d0f"/>
+    <!-- Flame gradient (hot core to smoke) -->
+    <linearGradient id="gFlame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%"   stop-color="#200000"/>
+      <stop offset="25%"  stop-color="#7a0c00"/>
+      <stop offset="55%"  stop-color="#ff5a00"/>
+      <stop offset="78%"  stop-color="#ffb300"/>
+      <stop offset="100%" stop-color="#fff2a6"/>
     </linearGradient>
 
-    <!-- warning background -->
-    <linearGradient id="gWarn" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"  stop-color="#3f2e00"/>
-      <stop offset="100%" stop-color="#2b1d00"/>
+    <!-- Flame glow -->
+    <filter id="fFireGlow" x="-120%" y="-180%" width="340%" height="400%">
+      <feGaussianBlur stdDeviation="6" result="b1"/>
+      <feGaussianBlur stdDeviation="14" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Heat wobble + smoke -->
+    <filter id="fWobble" x="-150%" y="-150%" width="400%" height="400%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7" result="n">
+        <animate attributeName="baseFrequency" values="0.7;1.1;0.8;0.9;0.7" dur="2.2s" repeatCount="indefinite"/>
+        <animate attributeName="seed" values="7;9;11;13;7" dur="5s" repeatCount="indefinite"/>
+      </feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7">
+        <animate attributeName="scale" values="4;10;6;9;4" dur="1.6s" repeatCount="indefinite"/>
+      </feDisplacementMap>
+    </filter>
+
+    <!-- Smoke gradient -->
+    <linearGradient id="gSmoke" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%"  stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#a6b0c0" stop-opacity="0.35"/>
     </linearGradient>
   </defs>
 
-  <!-- ============ BACKDROP ============ -->
+  <!-- =================== BACKDROP =================== -->
   <rect x="0" y="0" width="980" height="430" fill="url(#gPanel)"/>
 
-  <!-- corner filaments -->
-  <g opacity="0.55" filter="url(#fGlowSoft)">
-    <path d="M10,20 q80,40 150,0 q60,-30 150,20" fill="none" stroke="url(#gNeon)" stroke-width="1.5">
-      <animate attributeName="stroke-dasharray" values="0 600;120 600;0 600" dur="6s" repeatCount="indefinite"/>
+  <!-- faint corner strokes -->
+  <g opacity="0.5" filter="url(#fGlowSoft)">
+    <path d="M16,26 q70,38 146,0 q60,-30 152,18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
+      <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" repeatCount="indefinite"/>
     </path>
-    <path d="M970,20 q-80,40 -150,0 q-60,-30 -150,20" fill="none" stroke="url(#gNeon)" stroke-width="1.5">
-      <animate attributeName="stroke-dasharray" values="0 600;120 600;0 600" dur="6s" begin="1s" repeatCount="indefinite"/>
+    <path d="M964,26 q-70,38 -146,0 q-60,-30 -152,18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
+      <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" begin="1s" repeatCount="indefinite"/>
     </path>
-    <path d="M10,410 q80,-40 150,0 q60,30 150,-20" fill="none" stroke="url(#gNeon)" stroke-width="1.5">
-      <animate attributeName="stroke-dasharray" values="0 600;120 600;0 600" dur="6s" begin="2s" repeatCount="indefinite"/>
+    <path d="M16,404 q70,-38 146,0 q60,30 152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
+      <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" begin="2s" repeatCount="indefinite"/>
     </path>
-    <path d="M970,410 q-80,-40 -150,0 q-60,30 -150,-20" fill="none" stroke="url(#gNeon)" stroke-width="1.5">
-      <animate attributeName="stroke-dasharray" values="0 600;120 600;0 600" dur="6s" begin="3s" repeatCount="indefinite"/>
+    <path d="M964,404 q-70,-38 -146,0 q-60,30 -152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
+      <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" begin="3s" repeatCount="indefinite"/>
     </path>
   </g>
 
   <!-- drifting sparks -->
-  <g opacity="0.85">
-    <circle cx="120" cy="360" r="2.5" fill="url(#gSpark)" filter="url(#fGlowSoft)">
-      <animate attributeName="cy" values="360;40" dur="9s" repeatCount="indefinite"/>
-      <animate attributeName="cx" values="120;115;125;120" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="r"  values="2.5;1.2;2.5" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="6s" repeatCount="indefinite"/>
+  <g opacity="0.9">
+    <circle cx="140" cy="360" r="2.3" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="360;40" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="140;135;145;140" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.4;0.9;0" dur="7s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="860" cy="360" r="2.5" fill="url(#gSpark)" filter="url(#fGlowSoft)">
-      <animate attributeName="cy" values="360;40" dur="8s" begin="1s" repeatCount="indefinite"/>
-      <animate attributeName="cx" values="860;855;865;860" dur="5.5s" repeatCount="indefinite"/>
-      <animate attributeName="r"  values="2.5;1.1;2.5" dur="3.6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="5.2s" repeatCount="indefinite"/>
+    <circle cx="820" cy="370" r="2.6" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="370;60" dur="9s" begin=".9s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="820;815;825;820" dur="5.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.3;0.8;0" dur="6s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="490" cy="380" r="2" fill="url(#gSpark)" filter="url(#fGlowSoft)">
-      <animate attributeName="cy" values="380;60" dur="10s" begin=".8s" repeatCount="indefinite"/>
-      <animate attributeName="cx" values="490;485;495;490" dur="6.5s" repeatCount="indefinite"/>
-      <animate attributeName="r"  values="2;1;2" dur="4.5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.0;1;0.2;0.8;0.0" dur="6.2s" repeatCount="indefinite"/>
+    <circle cx="500" cy="382" r="2.0" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="382;70" dur="11s" begin=".6s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="500;494;506;500" dur="6.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.2;0.9;0" dur="7.2s" repeatCount="indefinite"/>
     </circle>
   </g>
 
-  <!-- ============ TITLE BLOCK ============ -->
-  <g transform="translate(490,64)" text-anchor="middle">
-    <text x="0" y="0" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-weight="800" font-size="28"
-          fill="#ffd15a" filter="url(#fGlowSoft)">The Ascend Institute</text>
-    <!-- animated underline -->
-    <line x1="-220" x2="220" y1="10" y2="10" stroke="url(#gNeon)" stroke-width="2" opacity="0.85" filter="url(#fGlowSoft)">
-      <animate attributeName="stroke-dasharray" values="0 440;440 0;0 440" dur="4s" repeatCount="indefinite"/>
+  <!-- =================== TITLE =================== -->
+  <g transform="translate(490,66)" text-anchor="middle">
+    <text x="0" y="0" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-weight="900" font-size="30"
+          fill="#ffd15a" filter="url(#fGlowStrong)">The Ascend Institute</text>
+    <text x="0" y="20" font-family="system-ui" font-size="12" fill="#ffd15a" opacity="0.9">🔱 Presented by: StatikFinTech, LLC 🔱</text>
+
+    <line x1="-230" x2="230" y1="28" y2="28" stroke="url(#gNeon)" stroke-width="2" opacity="0.9" filter="url(#fGlowSoft)">
+      <animate attributeName="stroke-dasharray" values="0 460;460 0;0 460" dur="4.2s" repeatCount="indefinite"/>
     </line>
 
-    <text x="0" y="36" font-family="system-ui" font-size="13" fill="#e6e6e6" opacity="0.9">
-      <tspan>🔱 Presented by: StatikFinTech, LLC 🔱</tspan>
+    <text x="0" y="50" font-family="system-ui" font-size="12" fill="#a0a7b6" opacity="0.9">
+      Operating as an Unincorporated Sovereign R&amp;D Trust (legal formation pending)
     </text>
-    <text x="0" y="56" font-family="system-ui" font-size="12" fill="#9ca3af" opacity="0.9">
-      <tspan>Operating as an Unincorporated Sovereign R&amp;D Trust (legal formation pending)</tspan>
-    </text>
-    <text x="0" y="78" font-family="system-ui" font-weight="700" font-size="14"
-          fill="#ff3168" filter="url(#fGlowSoft)">
+    <text x="0" y="70" font-family="system-ui" font-weight="700" font-size="14" fill="#ff3168" filter="url(#fGlowSoft)">
       Mission: Autonomous Sovereignty &amp; Human Financial Liberation
     </text>
   </g>
 
-  <!-- ============ BADGE ROW 1 (Ask / Gremlin / Help) ============ -->
-  <g transform="translate(490,124)" text-anchor="middle" font-family="system-ui">
-    <!-- Ask -->
-    <g transform="translate(-170,0)" filter="url(#fGlowStrong)">
-      <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="url(#gBadgeDark)" stroke="#0f172a"/>
-      <text x="0" y="6" fill="#f8fafc" font-weight="800">ASK</text>
-      <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.5" opacity="0.8">
-        <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="5s" repeatCount="indefinite"/>
-      </rect>
-    </g>
-
-    <!-- Gremlin -->
-    <g transform="translate(0,0)" filter="url(#fGlowStrong)">
-      <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
-      <text x="0" y="6" fill="#ffd15a" font-weight="800">GREMLIN</text>
-      <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.9">
-        <animate attributeName="stroke-dasharray" values="0 620;160 620;0 620" dur="5.2s" begin=".4s" repeatCount="indefinite"/>
-      </rect>
-    </g>
-
-    <!-- Help -->
-    <g transform="translate(180,0)" filter="url(#fGlowStrong)">
-      <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
-      <text x="0" y="6" fill="#ffd15a" font-weight="800">HELP</text>
-      <rect x="-90" y="-16" rx="10" ry="10" width="180" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.5" opacity="0.85">
-        <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="5s" begin=".8s" repeatCount="indefinite"/>
-      </rect>
-    </g>
-  </g>
-
-  <!-- ============ BADGE ROW 2 (Text Us + Number) ============ -->
-  <g transform="translate(490,170)" text-anchor="middle" font-family="system-ui">
-    <!-- Text Us -->
-    <g transform="translate(-125,0)" filter="url(#fGlowStrong)">
-      <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="url(#gBadgeDark)" stroke="#0f172a"/>
-      <text x="0" y="6" fill="#f8fafc" font-weight="800">TEXT&#160;US</text>
-      <rect x="-110" y="-16" rx="10" ry="10" width="220" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.8">
-        <animate attributeName="stroke-dasharray" values="0 620;160 620;0 620" dur="5.2s" repeatCount="indefinite"/>
-      </rect>
-    </g>
-
-    <!-- Phone number -->
-    <g transform="translate(165,0)" filter="url(#fGlowStrong)">
-      <rect x="-160" y="-16" rx="10" ry="10" width="320" height="32" fill="url(#gBadgeRed)" stroke="#1a0a0b"/>
-      <text x="0" y="6" fill="#ffd15a" font-weight="800">+1&#160;785&#160;443&#160;6288</text>
-      <rect x="-160" y="-16" rx="10" ry="10" width="320" height="32" fill="none" stroke="url(#gNeon)" stroke-width="1.6" opacity="0.9">
-        <animate attributeName="stroke-dasharray" values="0 920;220 920;0 920" dur="6s" begin=".4s" repeatCount="indefinite"/>
-      </rect>
-    </g>
-  </g>
-
-  <!-- ============ WARNING CALLOUT ============ -->
-  <g transform="translate(490,236)" text-anchor="middle" font-family="system-ui">
+  <!-- =================== TIP CALLOUT =================== -->
+  <g transform="translate(490,150)" text-anchor="middle" font-family="system-ui">
     <g filter="url(#fGlowSoft)">
-      <rect x="-420" y="0" width="840" height="84" rx="10" fill="url(#gWarn)" stroke="#5b3d00"/>
+      <rect x="-420" y="0" width="840" height="98" rx="12" fill="url(#gCard)" stroke="#232939"/>
+      <text x="0" y="22" fill="#ffd15a" font-weight="800">Tip</text>
+      <text x="0" y="42" fill="#e5e7eb" font-size="12" opacity="0.95">
+        This Institute is not traditional. It is a mutation, a divergence, a system awakening.
+      </text>
+      <text x="0" y="58" fill="#e5e7eb" font-size="12" opacity="0.95">
+        It will not stay small. It will not stay still. This repo may recursively alter how you think about code,
+      </text>
+      <text x="0" y="74" fill="#e5e7eb" font-size="12" opacity="0.95">
+        autonomy, and yourself. To end Wall Street&apos;s reign on capital, to bring power back to the people.
+      </text>
+      <text x="0" y="90" fill="#ffd15a" font-size="12" font-weight="700" opacity="0.95">
+        To Autonomous Sovereignty and Human Financial Liberation
+      </text>
+    </g>
+  </g>
+
+  <!-- =================== WARNING CALLOUT =================== -->
+  <g transform="translate(490,268)" text-anchor="middle" font-family="system-ui">
+    <g filter="url(#fGlowSoft)">
+      <rect x="-420" y="0" width="840" height="84" rx="12" fill="url(#gWarn)" stroke="#5b3d00"/>
       <g transform="translate(-395,18)">
         <circle r="6" fill="#ffd15a" filter="url(#fGlowSoft)"/>
-        <polygon points="-6,0 6,0 0,10" fill="#ffd15a" transform="translate(0,0)">
+        <polygon points="-6,0 6,0 0,10" fill="#ffd15a">
           <animateTransform attributeName="transform" type="translate" values="0,0;0,2;0,0" dur="1.4s" repeatCount="indefinite"/>
         </polygon>
       </g>
       <text x="0" y="22" fill="#ffd15a" font-weight="800">Warning</text>
       <text x="0" y="44" fill="#e5e7eb" font-size="12" opacity="0.95">
-        “Your qualifications are impressive…”
-        — Coder Hiring Team (2025 Rejection Letter)
+        “Your qualifications are impressive… ” — Coder Hiring Team (2025 Rejection Letter)
       </text>
       <text x="0" y="64" fill="#e5e7eb" font-size="12" opacity="0.95">
-        This isn’t rejection. It’s proof they don’t know how to build what comes next.
-        Still building what they can’t classify. — StatikFinTech, LLC
+        This is not rejection. It is proof they do not know how to build what comes next.
+        Still building what they cannot classify. — StatikFinTech, LLC
       </text>
     </g>
   </g>
 
-  <!-- ============ LOOPING ACCENT BAR ============ -->
-  <g transform="translate(0,330)" opacity="0.9">
-    <rect x="40" y="0" width="900" height="2" fill="url(#gNeon)" filter="url(#fGlowSoft)">
+  <!-- =================== FIRE BASELINE =================== -->
+  <!-- serrated tongues + glow + wobble + embers + smoke -->
+  <g transform="translate(0,408)">
+    <!-- ember bar -->
+    <rect x="40" y="-2" width="900" height="2" fill="url(#gNeon)" opacity="0.6" filter="url(#fGlowSoft)">
       <animate attributeName="width" values="0;900;0" dur="7s" repeatCount="indefinite"/>
     </rect>
+
+    <!-- layered flames (3 bands with different speeds/shapes) -->
+    <g transform="translate(40,0)" filter="url(#fWobble)">
+      <!-- back band (dimmer, taller) -->
+      <g opacity="0.55" filter="url(#fFireGlow)">
+        <path id="flameA" d="M0,0
+            c20,-6 40,-16 60,0  c20,16 40,-12 60,0  c20,12 40,-22 60,0
+            c20,22 40,-10 60,0   c20,10 40,-20 60,0   c20,18 40,-12 60,0
+            c20,14 40,-18 60,0   c20,20 40,-10 60,0   c20,12 40,-22 60,0
+            c20,16 40,-14 60,0   c20,18 40,-12 60,0   c20,14 40,-18 60,0
+            L900,0 L0,0 Z" fill="url(#gFlame)"/>
+        <animate xlink:href="#flameA" attributeName="d"
+          values="
+            M0,0 c20,-10 40,-20 60,0 c20,18 40,-12 60,0 c20,10 40,-24 60,0 c20,24 40,-12 60,0 c20,12 40,-22 60,0 c20,20 40,-14 60,0 c20,14 40,-20 60,0 c20,22 40,-12 60,0 c20,12 40,-24 60,0 c20,18 40,-14 60,0 c20,18 40,-12 60,0 c20,14 40,-18 60,0 L900,0 L0,0 Z;
+            M0,0 c20,-8  40,-22 60,0 c20,16 40,-10 60,0 c20,12 40,-20 60,0 c20,22 40,-14 60,0 c20,14 40,-20 60,0 c20,18 40,-12 60,0 c20,12 40,-22 60,0 c20,20 40,-10 60,0 c20,10 40,-26 60,0 c20,20 40,-12 60,0 c20,16 40,-16 60,0 c20,16 40,-12 60,0 L900,0 L0,0 Z"
+          dur="1.9s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- mid band (brighter, medium) -->
+      <g opacity="0.8" filter="url(#fFireGlow)">
+        <path id="flameB" d="M0,0
+            c20,-6 40,-14 60,0  c20,14 40,-10 60,0  c20,10 40,-18 60,0
+            c20,18 40,-10 60,0   c20,10 40,-18 60,0   c20,16 40,-10 60,0
+            c20,12 40,-16 60,0   c20,16 40,-10 60,0   c20,10 40,-18 60,0
+            c20,12 40,-14 60,0   c20,14 40,-10 60,0   c20,12 40,-16 60,0
+            L900,0 L0,0 Z" fill="url(#gFlame)"/>
+        <animate xlink:href="#flameB" attributeName="d"
+          values="
+            M0,0 c20,-8 40,-16 60,0 c20,16 40,-10 60,0 c20,10 40,-20 60,0 c20,18 40,-10 60,0 c20,10 40,-18 60,0 c20,16 40,-10 60,0 c20,12 40,-16 60,0 c20,18 40,-10 60,0 c20,10 40,-20 60,0 c20,12 40,-14 60,0 c20,16 40,-10 60,0 c20,12 40,-16 60,0 L900,0 L0,0 Z;
+            M0,0 c20,-7 40,-18 60,0 c20,14 40,-8  60,0 c20,12 40,-18 60,0 c20,16 40,-12 60,0 c20,12 40,-16 60,0 c20,14 40,-12 60,0 c20,10 40,-18 60,0 c20,16 40,-12 60,0 c20,12 40,-18 60,0 c20,10 40,-16 60,0 c20,14 40,-12 60,0 c20,10 40,-18 60,0 L900,0 L0,0 Z"
+          dur="1.4s" repeatCount="indefinite"/>
+      </g>
+
+      <!-- front serrated sparks (thin tongues) -->
+      <g opacity="0.95">
+        <path id="flameC" d="M0,0
+            c15,-6 30,-14 45,0  c15,12 30,-10 45,0  c15,10 30,-16 45,0
+            c15,16 30,-10 45,0  c15,10 30,-16 45,0  c15,14 30,-10 45,0
+            c15,12 30,-14 45,0  c15,14 30,-10 45,0  c15,10 30,-16 45,0
+            c15,12 30,-14 45,0  c15,14 30,-10 45,0  c15,12 30,-14 45,0
+            L900,0 L0,0 Z" fill="url(#gFlame)" filter="url(#fFireGlow)"/>
+        <animate xlink:href="#flameC" attributeName="d"
+          values="
+            M0,0 c15,-8 30,-16 45,0 c15,14 30,-10 45,0 c15,10 30,-18 45,0 c15,16 30,-10 45,0 c15,10 30,-16 45,0 c15,14 30,-10 45,0 c15,12 30,-14 45,0 c15,14 30,-10 45,0 c15,10 30,-16 45,0 c15,12 30,-14 45,0 c15,14 30,-10 45,0 c15,12 30,-14 45,0 L900,0 L0,0 Z;
+            M0,0 c15,-6 30,-18 45,0 c15,12 30,-8  45,0 c15,12 30,-16 45,0 c15,14 30,-12 45,0 c15,12 30,-14 45,0 c15,12 30,-12 45,0 c15,10 30,-16 45,0 c15,12 30,-12 45,0 c15,12 30,-16 45,0 c15,10 30,-14 45,0 c15,12 30,-12 45,0 c15,10 30,-16 45,0 L900,0 L0,0 Z"
+          dur="1.0s" repeatCount="indefinite"/>
+      </g>
+    </g>
+
+    <!-- stray embers -->
+    <g transform="translate(40,0)">
+      <circle cx="120" cy="-6" r="1.6" fill="#ff7a00" opacity="0" filter="url(#fFireGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="-6;-38;-70" dur="1.6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="120;116;124;120" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="680" cy="-6" r="1.8" fill="#ffb300" opacity="0" filter="url(#fFireGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin=".3s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="-6;-40;-76" dur="1.8s" begin=".3s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="680;676;684;680" dur="1.8s" begin=".3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="420" cy="-6" r="1.4" fill="#ffd15a" opacity="0" filter="url(#fFireGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin=".6s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="-6;-34;-62" dur="1.5s" begin=".6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="420;417;423;420" dur="1.5s" begin=".6s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- heat smoke veil -->
+    <g transform="translate(40,0)" opacity="0.35" filter="url(#fWobble)">
+      <path d="M0,-80 C150,-100 300,-60 450,-90 C600,-120 750,-70 900,-95 L900,-140 L0,-140 Z" fill="url(#gSmoke)">
+        <animate attributeName="d"
+          values="
+            M0,-80 C150,-100 300,-60 450,-90 C600,-120 750,-70 900,-95 L900,-140 L0,-140 Z;
+            M0,-86 C150,-110 300,-66 450,-100 C600,-126 750,-80 900,-102 L900,-140 L0,-140 Z;
+            M0,-80 C150,-100 300,-60 450,-90 C600,-120 750,-70 900,-95 L900,-140 L0,-140 Z"
+          dur="6s" repeatCount="indefinite"/>
+      </path>
+    </g>
   </g>
 
 </svg>
