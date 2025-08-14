@@ -10,7 +10,7 @@
   <text x="30" y="50" class="title">Statik DK Smoke's GitHub Stats</text>
 
   <g class="stat-box" transform="translate(30, 80)">
-    <text y="0">⭐ Total Stars: 33</text>
+    <text y="0">⭐ Total Stars: 35</text>
     <text y="25">⏱ Commits: 3.5k</text>
     <text y="50">🔀 PRs: 5</text>
     <text y="75">❗ Issues: 2</text>
