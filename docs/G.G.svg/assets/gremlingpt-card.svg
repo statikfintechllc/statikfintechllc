@@ -2,27 +2,38 @@
   <style>
     .title { font: bold 16px sans-serif; fill: #ff4775; }
     .desc  { font: 13px sans-serif; fill: #8abecf; }
-    .meta  { font: 12px monospace; fill: #8abecf; }
+    .meta  { font: 12px sans-serif; fill: #8abecf; }
+    .label { font: 12px sans-serif; fill: #8abecf; dominant-baseline: middle; }
   </style>
 
   <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
 
-  <text x="20" y="30" class="title">📘 GremlinGPT</text>
-  <text x="20" y="50" class="desc">GremlinGPT is a locally hosted recursive intelligence system:  Scrapes data, learns from results, and evolves without human oversight   - Operates fully offline with no cloud dependencies   - Grows its own NLP engine using feedback and self-repair   - Can plan, refactor, and upgrade its own code. This repo mirrors statik-servers GremlinGPT.</text>
+  <text x="48" y="30" class="title">GremlinGPT</text>
+  <text x="48" y="50" class="desc">GremlinGPT is a locally hosted recursive intelligence system:  Scrapes data, ...</text>
 
-  <g transform="translate(20, 100)">
-    <circle r="6" fill="#3572A5" />
-    <text x="15" y="5" class="meta">Python</text>
-    <text x="120" y="5" class="meta">⭐ 4</text>
-    <text x="180" y="5" class="meta">🍴 1</text>
-  </g>
+  <!-- 📘 Repo icon -->
+  <rect x="20" y="14" width="20" height="20" rx="3" fill="#2176d2"/>
+  <path d="M23 17h10v10H23z" fill="#fff"/>
 
-  <g transform="translate(20, 80)">
-    <rect x="0" y="75" width="76.88%" height="6" fill="#3572A5" />
-<rect x="100" y="75" width="10.80%" height="6" fill="#ccc" />
-<rect x="200" y="75" width="6.27%" height="6" fill="#ccc" />
-<rect x="300" y="75" width="3.18%" height="6" fill="#3178c6" />
-<rect x="400" y="75" width="2.21%" height="6" fill="#f1e05a" />
-<rect x="500" y="75" width="0.66%" height="6" fill="#ccc" />
+  <!-- Lang dot -->
+  <circle cx="48" cy="105" r="6" fill="#3572A5"/>
+  <text x="60" y="105" class="label">Python</text>
+
+  <!-- Star icon -->
+  <g transform="translate(160, 99)"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#8abecf" viewBox="0 0 24 24"><path d="M12 17.27l6.18 3.73-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></g>
+  <text x="180" y="105" class="label">4</text>
+
+  <!-- Fork icon -->
+  <g transform="translate(220, 99)"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#8abecf" viewBox="0 0 24 24"><path d="M6 3a3 3 0 0 0 0 6c.2 0 .39-.03.57-.07A3.007 3.007 0 0 0 9 11v2a3 3 0 0 0 3 3v3.09a3.001 3.001 0 1 0 2 0V16a3 3 0 0 0 3-3v-2a3.007 3.007 0 0 0 2.43-2.07c.18.04.37.07.57.07a3 3 0 1 0-3-3c0 .34.06.66.17.97A3.007 3.007 0 0 0 15 11v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2a3.007 3.007 0 0 0-2.17-2.9A3.001 3.001 0 0 0 6 3z"/></svg></g>
+  <text x="240" y="105" class="label">1</text>
+
+  <!-- Language bar -->
+  <g transform="translate(20, 0)">
+    <rect x="0" y="94" width="338.29284782164365" height="6" fill="#3572A5" />
+<rect x="338.29284782164365" y="94" width="47.53297800418219" height="6" fill="#ccc" />
+<rect x="385.82582582582586" y="94" width="27.603535875787184" height="6" fill="#ccc" />
+<rect x="413.42936170161306" y="94" width="13.971522872046432" height="6" fill="#3178c6" />
+<rect x="427.4008845736595" y="94" width="9.702638603162162" height="6" fill="#f1e05a" />
+<rect x="437.1035231768216" y="94" width="2.8964768231783937" height="6" fill="#ccc" />
   </g>
 </svg>
