@@ -2,12 +2,12 @@
 
 import { mkdir, writeFile } from "fs/promises";
 
-const base = "docs/M.M.svg";
+const base = "docs/G.M.svg";
 const files = [
-  `${base}/assets/mobile-mirror-card.svg`,
-  `${base}/scripts/generate-mobile-mirror.mjs`,
+  `${base}/assets/gremlin-mcp-scrap-card.svg`,
+  `${base}/scripts/generate-gremlin-mcp-scrap.mjs`,
   `${base}/package.json`,
-  `.github/workflows/update-mobile-mirror-card.yml`
+  `.github/workflows/update-gremlin-mcp-scrap-card.yml`
 ];
 
 const dirs = [
@@ -19,5 +19,5 @@ const dirs = [
 (async () => {
   for (const dir of dirs) await mkdir(dir, { recursive: true });
   for (const file of files) await writeFile(file, "");
-  console.log("✅ M.M.svg structure ready");
+  console.log("✅ G.M.svg structure ready");
 })();
