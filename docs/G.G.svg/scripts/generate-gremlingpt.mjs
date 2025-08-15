@@ -85,16 +85,16 @@ async function main() {
   <text x="64" y="180" class="meta">${repo.language}</text>
 
   <!-- Star Icon + Count (ALIGNED) -->
-  <g transform="translate(140, 173)">
-    <svg viewBox="0 0 24 24" width="14" height="14">${starIcon}</svg>
-  </g>
-  <text x="160" y="180" class="meta">${repo.stargazers_count}</text>
+<g transform="translate(140, 172)">
+  <svg viewBox="0 0 24 24" width="16" height="16">${starIcon}</svg>
+</g>
+<text x="162" y="180" class="meta">${repo.stargazers_count}</text>
 
-  <!-- Fork Icon + Count (ALIGNED) -->
-  <g transform="translate(200, 173)">
-    <svg viewBox="0 0 24 24" width="14" height="14">${forkIcon}</svg>
-  </g>
-  <text x="220" y="180" class="meta">${repo.forks_count}</text>
+<!-- Fork Icon + Count (ALIGNED) -->
+<g transform="translate(200, 173)">
+  <svg viewBox="0 0 24 24" width="16" height="16">${forkIcon}</svg>
+</g>
+<text x="222" y="180" class="meta">${repo.forks_count}</text>
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
@@ -111,3 +111,4 @@ main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
 });
+
