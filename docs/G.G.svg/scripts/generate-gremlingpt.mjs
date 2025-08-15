@@ -34,8 +34,7 @@ const langColor = {
 // ⬡ GitHub-style HOLLOW STAR (SVG ⌀)
 const starIcon = `
 <path fill="none" stroke="#8abecf" stroke-width="2"
-  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
-`;
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>`;
 
 // 🍴 GitHub-style Fork
 const forkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7fd" viewBox="0 0 16 16">
@@ -110,6 +109,7 @@ main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
 });
+
 
 
 
