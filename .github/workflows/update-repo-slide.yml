@@ -2,7 +2,7 @@ name: Update Repo Slide
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 jobs:
@@ -40,3 +40,4 @@ jobs:
           git diff --cached --quiet || git commit -m "chore(repos): refresh animated repo slide"
           git pull --rebase
           git push
+
