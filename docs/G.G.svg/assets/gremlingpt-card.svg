@@ -1,7 +1,6 @@
-<svg width="480" height="130" viewBox="0 0 480 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="480" height="140" viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg">
   <style>
     .title { font: 600 16px sans-serif; fill: #ff4775; }
-    .desc  { font: 13px sans-serif; fill: #8abecf; }
     .meta  { font: 12px sans-serif; fill: #8abecf; dominant-baseline: middle; }
   </style>
 
@@ -14,10 +13,15 @@
   <!-- Title -->
   <text x="48" y="31" class="title">GremlinGPT</text>
 
-  <!-- Description -->
-  <text x="48" y="54" class="desc">GremlinGPT is a locally hosted recursive intelligence system:  Scrapes data, learns fro...</text>
+  <!-- Description (Wrapped) -->
+  <foreignObject x="48" y="38" width="410" height="40">
+    <div xmlns="http://www.w3.org/1999/xhtml"
+         style="color:#8abecf;font:13px sans-serif;line-height:1.3;white-space:normal;overflow:hidden;">
+      GremlinGPT is a locally hosted recursive intelligence system:  Scrapes data, learns from results, and evolves without human oversight   - Operates fully offline with no cloud dependencies   - Grows its own NLP engine using feedback and self-repair   - Can plan, refactor, and upgrade its own code. This repo mirrors statik-servers GremlinGPT.
+    </div>
+  </foreignObject>
 
-  <!-- Language + Stars + Forks Row -->
+  <!-- Lang + Meta -->
   <circle cx="48" cy="95" r="6" fill="#3572A5"/>
   <text x="64" y="95" class="meta">Python</text>
 
@@ -31,13 +35,13 @@
   </g>
   <text x="220" y="95" class="meta">1</text>
 
-  <!-- Language bar -->
+  <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="110" width="338.29284782164365" height="6" fill="#3572A5" />
-<rect x="338.29284782164365" y="110" width="47.53297800418219" height="6" fill="#ccc" />
-<rect x="385.82582582582586" y="110" width="27.603535875787184" height="6" fill="#89e051" />
-<rect x="413.42936170161306" y="110" width="13.971522872046432" height="6" fill="#3178c6" />
-<rect x="427.4008845736595" y="110" width="9.702638603162162" height="6" fill="#f1e05a" />
-<rect x="437.1035231768216" y="110" width="2.8964768231783937" height="6" fill="#563d7c" />
+    <rect x="0" y="112" width="338.29284782164365" height="6" fill="#3572A5" />
+<rect x="338.29284782164365" y="112" width="47.53297800418219" height="6" fill="#ccc" />
+<rect x="385.82582582582586" y="112" width="27.603535875787184" height="6" fill="#89e051" />
+<rect x="413.42936170161306" y="112" width="13.971522872046432" height="6" fill="#3178c6" />
+<rect x="427.4008845736595" y="112" width="9.702638603162162" height="6" fill="#f1e05a" />
+<rect x="437.1035231768216" y="112" width="2.8964768231783937" height="6" fill="#563d7c" />
   </g>
 </svg>
