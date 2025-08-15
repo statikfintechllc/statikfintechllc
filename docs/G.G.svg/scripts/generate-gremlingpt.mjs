@@ -38,10 +38,8 @@ const starIcon = `
 `;
 
 // 🍴 GitHub-style Fork
-const forkIcon = `
-<path fill="#8abecf" fill-rule="evenodd" clip-rule="evenodd"
-  d="M5 3.75a1.75 1.75 0 1 1 1.5 1.73v.77c0 .58.23 1.13.65 1.54l1.56 1.56c.3.3.48.7.48 1.13v.18a1.75 1.75 0 1 1-1.5 0v-.18a.25.25 0 0 0-.07-.18L6.56 8.27A3.25 3.25 0 0 1 5 5.98v-.5A1.75 1.75 0 0 1 5 3.75ZM6.25 11.5a.75.75 0 1 0 1.5 0 .75.75 0 0 0-1.5 0ZM6.25 4.5a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
-`;
+const forkIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#7fd" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M5 3.25a.75.75 0 0 0-1.5 0v1.293a1.75 1.75..."/>`;
 
 async function main() {
   const repo = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}`);
@@ -112,5 +110,6 @@ main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
 });
+
 
 
