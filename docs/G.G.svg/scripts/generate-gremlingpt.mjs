@@ -44,6 +44,7 @@ const forkIcon = `
 
 async function main() {
   const repo = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}`);
+  const user = await fetchGitHub(`https://api.github.com/users/${USER}`);
   const langs = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}/languages`);
   const total = Object.values(langs).reduce((a, b) => a + b, 0);
 
@@ -58,6 +59,11 @@ async function main() {
 
   const svg = `
 <svg width="480" height="230" viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="avatar-clip">
+      <rect x="20" y="16" width="20" height="20" rx="4"/>
+    </clipPath>
+  </defs>
   <style>
     .title { font: 600 16px sans-serif; fill: #ff4775; }
     .meta  { font: 12px sans-serif; fill: #8abecf; dominant-baseline: middle; }
@@ -65,9 +71,8 @@ async function main() {
 
   <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
 
-  <!-- Repo Icon -->
-  <rect x="20" y="16" width="20" height="20" rx="4" fill="#2f81f7"/>
-  <path d="M24 20h12v12H24z" fill="#fff"/>
+  <!-- User Avatar -->
+  <image x="20" y="16" width="20" height="20" href="${user.avatar_url}" clip-path="url(#avatar-clip)"/>
 
   <!-- Title -->
   <text x="48" y="31" class="title">${repo.name}</text>
@@ -85,16 +90,16 @@ async function main() {
   <text x="64" y="180" class="meta">${repo.language}</text>
 
   <!-- Star Icon + Count (ALIGNED) -->
-<g transform="translate(140, 172)">
-  <svg viewBox="0 0 24 24" width="16" height="16">${starIcon}</svg>
-</g>
-<text x="162" y="180" class="meta">${repo.stargazers_count}</text>
+  <g transform="translate(140, 172)">
+    <svg viewBox="0 0 24 24" width="16" height="16">${starIcon}</svg>
+  </g>
+  <text x="162" y="180" class="meta">${repo.stargazers_count}</text>
 
-<!-- Fork Icon + Count (ALIGNED) -->
-<g transform="translate(200, 173)">
-  <svg viewBox="0 0 24 24" width="16" height="16">${forkIcon}</svg>
-</g>
-<text x="222" y="180" class="meta">${repo.forks_count}</text>
+  <!-- Fork Icon + Count (ALIGNED) -->
+  <g transform="translate(200, 173)">
+    <svg viewBox="0 0 24 24" width="16" height="16">${forkIcon}</svg>
+  </g>
+  <text x="222" y="180" class="meta">${repo.forks_count}</text>
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
@@ -111,4 +116,3 @@ main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
 });
-
