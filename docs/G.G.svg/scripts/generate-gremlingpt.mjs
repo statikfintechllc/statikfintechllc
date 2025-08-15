@@ -39,7 +39,7 @@ const starIcon = `
 
 // 🍴 GitHub-style Fork
 const forkIcon = `
-<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#8abecf" viewBox="0 0 48 48"><path 
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#8abecf" viewBox="0 0 12 12"><path 
   d="M6 3a3 3 0 0 0 0 6c.2 0 .39-.03.57-.07A3.007 3.007 0 0 0 9 11v2a3 3 0 0 0 3 3v3.09a3.001 3.001 0 1 0 2 0V16a3 3 0 0 0 3-3v-2a3.007 3.007 0 0 0 2.43-2.07c.18.04.37.07.57.07a3 3 0 1 0-3-3c0 .34.06.66.17.97A3.007 3.007 0 0 0 15 11v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2a3.007 3.007 0 0 0-2.17-2.9A3.001 3.001 0 0 0 6 3z"/></svg>`;
 
 async function main() {
@@ -111,6 +111,7 @@ main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
 });
+
 
 
 
