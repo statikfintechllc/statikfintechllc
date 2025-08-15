@@ -31,8 +31,8 @@ const langColor = {
   CSS: "#563d7c",
 };
 
-const staricon = `<path fill="#8abecf" d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.402 8.172L12 18.896l-7.336 3.863 1.402-8.172L.132 9.211l8.2-1.193z"/>`;
-const forkicon = `<path fill="#8abecf" d="M5 3a3 3 0 1 1 2.83 2H11v2.18a3.001 3.001 0 0 1-1 5.82v3.09a3 3 0 1 1-2 0v-3.09a3.001 3.001 0 0 1-1-5.82V5H4.17A3 3 0 0 1 5 3z"/>`;
+const starIcon = `<path fill="#8abecf" d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.402 8.172L12 18.896l-7.336 3.863 1.402-8.172L.132 9.211l8.2-1.193z"/>`;
+const forkIcon = `<path fill="#8abecf" d="M5 3a3 3 0 1 1 2.83 2H11v2.18a3.001 3.001 0 0 1-1 5.82v3.09a3 3 0 1 1-2 0v-3.09a3.001 3.001 0 0 1-1-5.82V5H4.17A3 3 0 0 1 5 3z"/>`;
 
 async function main() {
   const repo = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}`);
@@ -101,6 +101,7 @@ main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
 });
+
 
 
 
