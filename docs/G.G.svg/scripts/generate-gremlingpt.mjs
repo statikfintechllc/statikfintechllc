@@ -38,9 +38,9 @@ const starIcon = `
 
 // 🍴 GitHub-style Fork
 const forkIcon = `
-<path fill="#7fd" fill-rule="evenodd" clip-rule="evenodd"
-  d="M5 3.25a.75.75 0 0 0-1.5 0v1.3c0 .69.418 1.28 1 1.53v.27a2.25 2.25 0 0 0 1.5 2.13v.65a1.75 1.75 0 0 0-1 1.58v1.29a.75.75 0 0 0 1.5 0v-1.29a.25.25 0 0 1 .25-.25h2.5a.25.25 0 0 1 .25.25v1.29a.75.75 0 0 0 1.5 0v-1.29a1.75 1.75 0 0 0-1-1.58v-.65a2.25 2.25 0 0 0 1.5-2.13v-.27a1.75 1.75 0 0 0 1-1.53v-1.3a.75.75 0 0 0-1.5 0v1.3a.25.25 0 0 1-.25.25h-2.5a.25.25 0 0 1-.25-.25v-1.3z"
-  stroke="#7fd" stroke-width="0.25"/>`;
+<path fill="none" stroke="#8abecf" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+  d="M5 3.25a.75.75 0 0 0-1.5 0v1.3c0 .69.42 1.28 1 1.53v.27a2.25 2.25 0 0 0 1.5 2.13v.65a1.75 1.75 0 0 0-1 1.58v1.29a.75.75 0 0 0 1.5 0v-1.29a.25.25 0 0 1 .25-.25h2.5a.25.25 0 0 1 .25.25v1.29a.75.75 0 0 0 1.5 0v-1.29a1.75 1.75 0 0 0-1-1.58v-.65a2.25 2.25 0 0 0 1.5-2.13v-.27a1.75 1.75 0 0 0 1-1.53v-1.3a.75.75 0 0 0-1.5 0v1.3a.25.25 0 0 1-.25.25h-2.5a.25.25 0 0 1-.25-.25v-1.3z"/>
+`;
 
 async function main() {
   const repo = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}`);
@@ -111,6 +111,7 @@ main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
 });
+
 
 
 
