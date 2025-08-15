@@ -31,8 +31,17 @@ const langColor = {
   CSS: "#563d7c",
 };
 
-const starIcon = `<path fill="#8abecf" d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.402 8.172L12 18.896l-7.336 3.863 1.402-8.172L.132 9.211l8.2-1.193z"/>`;
-const forkIcon = `<path fill="#8abecf" d="M5 3a3 3 0 1 1 2.83 2H11v2.18a3.001 3.001 0 0 1-1 5.82v3.09a3 3 0 1 1-2 0v-3.09a3.001 3.001 0 0 1-1-5.82V5H4.17A3 3 0 0 1 5 3z"/>`;
+// ⬡ GitHub-style HOLLOW STAR (SVG ⌀)
+const starIcon = `
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+`;
+
+// 🍴 GitHub-style Fork
+const forkIcon = `
+<path fill="#8abecf"
+  d="M5 3.09C4.41 3.55 4 4.24 4 5a2 2 0 0 0 1 1.73V8c0 .66.26 1.26.68 1.7a5.07 5.07 0 0 0 1.57 1.06c-.13.31-.2.65-.2 1 0 .75.3 1.43.8 1.93a2.74 2.74 0 0 0 2.4.76A3 3 0 0 0 12 14v-2.09c0-.5-.14-.98-.4-1.39a3.98 3.98 0 0 0-1.6-1.36A3 3 0 0 0 10 8V6.73A2 2 0 0 0 11 5a2 2 0 1 0-3.86-1.07A2 2 0 0 0 5 3.09z"/>
+`;
 
 async function main() {
   const repo = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}`);
@@ -43,13 +52,13 @@ async function main() {
   const langBar = Object.entries(langs).map(([lang, bytes]) => {
     const w = (bytes / total) * 440;
     const color = langColor[lang] || "#ccc";
-    const rect = `<rect x="${x}" y="190" width="${w}" height="6" fill="${color}" />`;
+    const rect = `<rect x="${x}" y="195" width="${w}" height="6" fill="${color}" />`;
     x += w;
     return rect;
   }).join("\n");
 
   const svg = `
-<svg width="480" height="220" viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+<svg width="480" height="230" viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg">
   <style>
     .title { font: 600 16px sans-serif; fill: #ff4775; }
     .meta  { font: 12px sans-serif; fill: #8abecf; dominant-baseline: middle; }
@@ -64,27 +73,29 @@ async function main() {
   <!-- Title -->
   <text x="48" y="31" class="title">${repo.name}</text>
 
-  <!-- Description (Wrapped, Max 2 lines) -->
-  <foreignObject x="48" y="38" width="410" height="60">
+  <!-- Description -->
+  <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
-         style="color:#8abecf;font:13px sans-serif;line-height:1.3;white-space:normal;overflow:hidden;">
+         style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
       ${repo.description}
     </div>
   </foreignObject>
 
-  <!-- Bottom Row: Lang, Stars, Forks -->
-  <circle cx="48" cy="175" r="6" fill="${langColor[repo.language] || "#ccc"}"/>
-  <text x="64" y="175" class="meta">${repo.language}</text>
+  <!-- Language Dot + Label -->
+  <circle cx="48" cy="180" r="6" fill="${langColor[repo.language] || "#ccc"}"/>
+  <text x="64" y="180" class="meta">${repo.language}</text>
 
-  <g transform="translate(140, 168)">
+  <!-- Star Icon + Count -->
+  <g transform="translate(140, 170)">
     <svg viewBox="0 0 24 24" width="14" height="14">${starIcon}</svg>
   </g>
-  <text x="160" y="175" class="meta">${repo.stargazers_count}</text>
+  <text x="160" y="180" class="meta">${repo.stargazers_count}</text>
 
-  <g transform="translate(200, 168)">
+  <!-- Fork Icon + Count -->
+  <g transform="translate(200, 170)">
     <svg viewBox="0 0 24 24" width="14" height="14">${forkIcon}</svg>
   </g>
-  <text x="220" y="175" class="meta">${repo.forks_count}</text>
+  <text x="220" y="180" class="meta">${repo.forks_count}</text>
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
