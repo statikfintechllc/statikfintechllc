@@ -43,13 +43,13 @@ async function main() {
   const langBar = Object.entries(langs).map(([lang, bytes]) => {
     const w = (bytes / total) * 440;
     const color = langColor[lang] || "#ccc";
-    const rect = `<rect x="${x}" y="112" width="${w}" height="6" fill="${color}" />`;
+    const rect = `<rect x="${x}" y="125" width="${w}" height="6" fill="${color}" />`;
     x += w;
     return rect;
   }).join("\n");
 
   const svg = `
-<svg width="480" height="175" viewBox="0 0 480 175" xmlns="http://www.w3.org/2000/svg">
+<svg width="480" height="180" viewBox="0 0 480 180" xmlns="http://www.w3.org/2000/svg">
   <style>
     .title { font: 600 16px sans-serif; fill: #ff4775; }
     .meta  { font: 12px sans-serif; fill: #8abecf; dominant-baseline: middle; }
@@ -65,7 +65,7 @@ async function main() {
   <text x="48" y="31" class="title">${repo.name}</text>
 
   <!-- Description (Wrapped) -->
-  <foreignObject x="48" y="38" width="410" height="40">
+  <foreignObject x="48" y="38" width="410" height="45">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.3;white-space:normal;overflow:hidden;">
       ${repo.description}
@@ -73,18 +73,18 @@ async function main() {
   </foreignObject>
 
   <!-- Lang + Meta -->
-  <circle cx="48" cy="95" r="6" fill="${langColor[repo.language] || "#ccc"}"/>
-  <text x="64" y="95" class="meta">${repo.language}</text>
+  <circle cx="48" cy="105" r="6" fill="${langColor[repo.language] || "#ccc"}"/>
+  <text x="64" y="105" class="meta">${repo.language}</text>
 
-  <g transform="translate(140, 88)">
+  <g transform="translate(140, 98)">
     <svg viewBox="0 0 24 24" width="14" height="14">${starIcon}</svg>
   </g>
-  <text x="160" y="95" class="meta">${repo.stargazers_count}</text>
+  <text x="160" y="105" class="meta">${repo.stargazers_count}</text>
 
-  <g transform="translate(200, 88)">
+  <g transform="translate(200, 98)">
     <svg viewBox="0 0 24 24" width="14" height="14">${forkIcon}</svg>
   </g>
-  <text x="220" y="95" class="meta">${repo.forks_count}</text>
+  <text x="220" y="105" class="meta">${repo.forks_count}</text>
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
@@ -101,8 +101,3 @@ main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
 });
-
-
-
-
-
