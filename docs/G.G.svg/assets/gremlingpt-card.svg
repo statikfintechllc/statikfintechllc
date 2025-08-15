@@ -1,0 +1,28 @@
+<svg width="480" height="140" viewBox="0 0 480 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 16px sans-serif; fill: #ff4775; }
+    .desc  { font: 13px sans-serif; fill: #8abecf; }
+    .meta  { font: 12px monospace; fill: #8abecf; }
+  </style>
+
+  <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
+
+  <text x="20" y="30" class="title">📘 GremlinGPT</text>
+  <text x="20" y="50" class="desc">GremlinGPT is a locally hosted recursive intelligence system:  Scrapes data, learns from results, and evolves without human oversight   - Operates fully offline with no cloud dependencies   - Grows its own NLP engine using feedback and self-repair   - Can plan, refactor, and upgrade its own code. This repo mirrors statik-servers GremlinGPT.</text>
+
+  <g transform="translate(20, 100)">
+    <circle r="6" fill="#3572A5" />
+    <text x="15" y="5" class="meta">Python</text>
+    <text x="120" y="5" class="meta">⭐ 4</text>
+    <text x="180" y="5" class="meta">🍴 1</text>
+  </g>
+
+  <g transform="translate(20, 80)">
+    <rect x="0" y="75" width="76.88%" height="6" fill="#3572A5" />
+<rect x="100" y="75" width="10.80%" height="6" fill="#ccc" />
+<rect x="200" y="75" width="6.27%" height="6" fill="#ccc" />
+<rect x="300" y="75" width="3.18%" height="6" fill="#3178c6" />
+<rect x="400" y="75" width="2.21%" height="6" fill="#f1e05a" />
+<rect x="500" y="75" width="0.66%" height="6" fill="#ccc" />
+  </g>
+</svg>
