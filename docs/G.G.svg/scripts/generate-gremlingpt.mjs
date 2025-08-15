@@ -31,8 +31,10 @@ const langColor = {
   CSS: "#563d7c",
 };
 
-const forkIcon = `<path fill="#8abecf" d="M5 3a3 3 0 1 1 2.83 2H11v2.18a3.001 3.001 0 0 1-1 5.82v3.09a3 3 0 1 1-2 0v-3.09a3.001 3.001 0 0 1-1-5.82V5H4.17A3 3 0 0 1 5 3z"/>`;
-const starIcon = `<path fill="#8abecf" d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.402 8.172L12 18.896l-7.336 3.863 1.402-8.172L.132 9.211l8.2-1.193z"/>`;
+const GITHUB_ICONS = {
+  star: `<path fill="#8abecf" d="M12 .587l3.668 7.431 8.2 1.193-5.934 5.787 1.402 8.172L12 18.896l-7.336 3.863 1.402-8.172L.132 9.211l8.2-1.193z"/>`,
+  fork: `<path fill="#8abecf" d="M5 3a3 3 0 1 1 2.83 2H11v2.18a3.001 3.001 0 0 1-1 5.82v3.09a3 3 0 1 1-2 0v-3.09a3.001 3.001 0 0 1-1-5.82V5H4.17A3 3 0 0 1 5 3z"/>`
+};
 
 async function main() {
   const repo = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}`);
@@ -49,7 +51,7 @@ async function main() {
   }).join("\n");
 
   const svg = `
-<svg width="480" height="140" viewBox="0 0 480 140" xmlns="http://www.w3.org/2000/svg">
+<svg width="480" height="175" viewBox="0 0 480 175" xmlns="http://www.w3.org/2000/svg">
   <style>
     .title { font: 600 16px sans-serif; fill: #ff4775; }
     .meta  { font: 12px sans-serif; fill: #8abecf; dominant-baseline: middle; }
@@ -101,3 +103,4 @@ main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
 });
+
