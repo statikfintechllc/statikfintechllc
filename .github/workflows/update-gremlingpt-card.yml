@@ -2,7 +2,7 @@ name: Update GremlinGPT Card
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */12 * * *"
   workflow_dispatch:
 
 jobs:
@@ -36,3 +36,4 @@ jobs:
           git commit -m "chore(G.G.svg): update GremlinGPT repo badge"
           git pull --rebase
           git push
+
