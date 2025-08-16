@@ -210,7 +210,7 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
 // ----- Card -----
 const card = (repo, x) => {
   const px = 20, pw = CW - 40;
-  const py = 160, ph = 12;
+  const py = 170, ph = 12;
 
   // Language segments (min width)
   let acc = 0;
