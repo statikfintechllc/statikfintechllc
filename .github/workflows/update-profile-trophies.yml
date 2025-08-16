@@ -2,7 +2,7 @@ name: Update Profile Trophies Badge
 
 on:
   schedule:
-    - cron: "0 */48 * * *"
+    - cron: "0 0 */2 * *"
   workflow_dispatch:
 
 jobs:

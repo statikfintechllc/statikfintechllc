@@ -2,7 +2,7 @@ name: Update GitHub Profile Badge
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */23 * * *"
   workflow_dispatch:
 
 jobs:

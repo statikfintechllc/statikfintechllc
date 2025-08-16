@@ -1,9 +1,0 @@
-{
-  "name": "crimson-flow",
-  "private": true,
-  "type": "module",
-  "engines": { "node": ">=20" },
-  "scripts": {
-    "build:flow": "node scripts/generate-crimson-flow.mjs"
-  }
-}
