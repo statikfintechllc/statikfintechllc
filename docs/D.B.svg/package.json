@@ -1,0 +1,9 @@
+{
+  "name": "dragon-boot-card",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build:card": "node scripts/generate-dragon-boot.mjs"
+  }
+}

@@ -83,6 +83,84 @@
 
 ---
 
+<div align="center">
+
+<!-- Repository Cards Table -->
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/Ascend-Institute">
+        <img src="./docs/A.I.svg/assets/ascend-institute-card.svg" alt="Ascend-Institute" width="240"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance">
+        <img src="./docs/A.D.svg/assets/ascenddocs-of-govseverance-card.svg" alt="AscendDocs-of-GovSeverance" width="240"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/AscendNet">
+        <img src="./docs/A.N.svg/assets/ascendnet-card.svg" alt="AscendNet" width="240"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/dragon-boot">
+        <img src="./docs/D.B.svg/assets/dragon-boot-card.svg" alt="dragon-boot" width="240"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/GodCore">
+        <img src="./docs/G.C.svg/assets/godcore-card.svg" alt="GodCore" width="240"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/GremlinGPT">
+        <img src="./docs/G.G.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" width="240"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap">
+        <img src="./docs/G.M.svg/assets/gremlin-mcp-scrap-card.svg" alt="Gremlin-MCP-Scrap" width="240"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader">
+        <img src="./docs/G.S.svg/assets/gremlin-shadtail-trader-card.svg" alt="Gremlin-ShadTail-Trader" width="240"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/Mobile-Mirror">
+        <img src="./docs/M.M.svg/assets/mobile-mirror-card.svg" alt="Mobile-Mirror" width="240"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/statik-server">
+        <img src="./docs/S.S.svg/assets/statik-server-card.svg" alt="statik-server" width="240"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc">
+        <img src="./docs/S.F.svg/assets/statikfintechllc-card.svg" alt="statikfintechllc" width="240"/>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/statikfintechllc/WorkFlowRepo-Mirror">
+        <img src="./docs/W.M.svg/assets/workflowrepo-mirror-card.svg" alt="WorkFlowRepo-Mirror" width="240"/>
+      </a>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+---
+
 <div align="center" 
 	
 **✍️ Writing & Research**  
@@ -160,6 +238,7 @@
   </tr>
 </table>
 <div align="center" style="color:#e11d48">
+</div>
 
 ---
 

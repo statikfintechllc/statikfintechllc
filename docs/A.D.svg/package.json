@@ -1,0 +1,9 @@
+{
+  "name": "ascenddocs-of-govseverance-card",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build:card": "node scripts/generate-ascenddocs-of-govseverance.mjs"
+  }
+}
