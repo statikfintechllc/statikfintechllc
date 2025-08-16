@@ -159,7 +159,7 @@ const fetchRepoDetails = async (lst) => {
 };
 
 // ---------- Build SVG ----------
-const W = 880, H = 250, CW = 420, CH = 200, G = 40;
+const W = 880, H = 280, CW = 420, CH = 230, G = 40;
 const x0 = (W - (2 * CW + G)) / 2;
 const TITLE = (s) => xmlEsc(s);
 const DESC  = (s) => xmlEsc((s || "").replace(/\s+/g," ").trim());
@@ -210,7 +210,7 @@ function wrapTextToBox(text, boxWidthPx, boxHeightPx, options = {}) {
 // ----- Card -----
 const card = (repo, x) => {
   const px = 20, pw = CW - 40;
-  const py = 170, ph = 12;
+  const py = 165, ph = 12;
 
   // Language segments (min width)
   let acc = 0;
@@ -231,7 +231,7 @@ const card = (repo, x) => {
 
   const legends = segs.slice(0,4).map((s,i)=> {
     const lx = px + (i % 2) * 190;
-    const ly = py + 25 + Math.floor(i / 2) * 12;
+    const ly = py + 20 + Math.floor(i / 2) * 12;
     return `<rect x="${lx}" y="${ly-8}" width="8" height="8" rx="2" fill="${s.color}"/><text x="${lx+12}" y="${ly}" class="legend">${xmlEsc(s.name)}</text>`;
   }).join("");
 
