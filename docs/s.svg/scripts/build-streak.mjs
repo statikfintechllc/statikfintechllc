@@ -123,32 +123,44 @@ const TITLE_Y = 34, NUM_Y = 102, SUB_Y = 126;
 const LEFT_FRAMES = sample.length;
 const LEFT_DUR = +(LEFT_FRAMES * 0.08).toFixed(2);
 const mkLeft = sample.map((p, i) => {
-  const keyTimes = [], values = [];
-  for (let k = 0; k <= LEFT_FRAMES; k++) {
-    keyTimes.push((k / LEFT_FRAMES).toFixed(6));
-    values.push((k === i || k === i + 1) ? 1 : 0);
+  // build keyTimes and values so only frame i is visible
+  const keyTimes = [];
+  const values = [];
+  for (let k = 0; k < LEFT_FRAMES; k++) {
+    keyTimes.push((k / (LEFT_FRAMES - 1)).toFixed(6));
+    values.push(k === i ? 1 : 0);
+  }
+  // if it's the final frame, hold visible at end
+  if (i === LEFT_FRAMES - 1) {
+    keyTimes.push("1");
+    values.push(1);
   }
   return `
   <g>
     <text x="${L_X}" y="${NUM_Y}" class="leftLabel" text-anchor="middle">${p.total.toLocaleString()}</text>
     <text x="${L_X}" y="${SUB_Y}" class="leftSub"   text-anchor="middle">${p.date}</text>
-    <animate attributeName="opacity" values="${values.join(";")}" keyTimes="${keyTimes.join(";")}" dur="${LEFT_DUR}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="${values.join(";")}" keyTimes="${keyTimes.join(";")}" dur="${LEFT_DUR}s" fill="freeze"/>
   </g>`;
 }).join("");
 
 const RIGHT_FRAMES = Math.max(1, top.length);
 const RIGHT_DUR = +(RIGHT_FRAMES * 2.4).toFixed(2);
 const mkRight = top.map((s, i) => {
-  const keyTimes = [], values = [];
-  for (let k = 0; k <= RIGHT_FRAMES; k++) {
-    keyTimes.push((k / RIGHT_FRAMES).toFixed(6));
-    values.push((k === i || k === i + 1) ? 1 : 0);
+  const keyTimes = [];
+  const values = [];
+  for (let k = 0; k < RIGHT_FRAMES; k++) {
+    keyTimes.push((k / (RIGHT_FRAMES - 1)).toFixed(6));
+    values.push(k === i ? 1 : 0);
+  }
+  if (i === RIGHT_FRAMES - 1) {
+    keyTimes.push("1");
+    values.push(1);
   }
   return `
   <g>
     <text x="${R_X}" y="${NUM_Y}" class="rightLabel" text-anchor="middle">${s.len} days</text>
     <text x="${R_X}" y="${SUB_Y}" class="rightSub"   text-anchor="middle">${s.start} → ${s.end}</text>
-    <animate attributeName="opacity" values="${values.join(";")}" keyTimes="${keyTimes.join(";")}" dur="${RIGHT_DUR}s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="${values.join(";")}" keyTimes="${keyTimes.join(";")}" dur="${RIGHT_DUR}s" fill="freeze"/>
   </g>`;
 }).join("");
 
