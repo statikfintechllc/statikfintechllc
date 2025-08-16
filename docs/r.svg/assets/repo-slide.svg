@@ -24,11 +24,22 @@
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(240,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">⭐ 4</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">4</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">🍴 1</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">1</text>
         </g>
       </g>
       <rect x="20" y="160" width="276" height="12" fill="#3572A5" /><rect x="296" y="160" width="39" height="12" fill="#ff5a03" /><rect x="335" y="160" width="22" height="12" fill="#89e051" /><rect x="357" y="160" width="14" height="12" fill="#3178c6" /><rect x="371" y="160" width="14" height="12" fill="#f1e05a" /><rect x="385" y="160" width="15" height="12" fill="#663399" />
@@ -44,11 +55,22 @@
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(240,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">⭐ 1</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">1</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">🍴 0</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
       <rect x="20" y="160" width="248" height="12" fill="#3572A5" /><rect x="268" y="160" width="77" height="12" fill="#3178c6" /><rect x="345" y="160" width="14" height="12" fill="#f1e05a" /><rect x="359" y="160" width="14" height="12" fill="#89e051" /><rect x="373" y="160" width="14" height="12" fill="#663399" /><rect x="387" y="160" width="13" height="12" fill="#ff5a03" />
@@ -75,11 +97,22 @@
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(240,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">⭐ 1</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">1</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">🍴 0</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
       <rect x="20" y="160" width="261" height="12" fill="#3178c6" /><rect x="281" y="160" width="42" height="12" fill="#3572A5" /><rect x="323" y="160" width="13" height="12" fill="#663399" /><rect x="336" y="160" width="13" height="12" fill="#f1e05a" /><rect x="349" y="160" width="13" height="12" fill="#e34c26" /><rect x="362" y="160" width="13" height="12" fill="#dea584" /><rect x="375" y="160" width="13" height="12" fill="#89e051" /><rect x="388" y="160" width="12" height="12" fill="#264b99" />
@@ -95,11 +128,22 @@
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(240,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">⭐ 4</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">4</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">🍴 0</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
       <rect x="20" y="160" width="380" height="12" fill="#6b7280" />
@@ -126,11 +170,22 @@
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(240,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">⭐ 1</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">1</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">🍴 0</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
       <rect x="20" y="160" width="380" height="12" fill="#89e051" />
@@ -146,11 +201,22 @@
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(240,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">⭐ 1</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">1</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <text x="10" y="2" class="pill">🍴 0</text>
+          <g transform="translate(8, -6)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
       <rect x="20" y="160" width="292" height="12" fill="#3572A5" /><rect x="312" y="160" width="88" height="12" fill="#f1e05a" />
