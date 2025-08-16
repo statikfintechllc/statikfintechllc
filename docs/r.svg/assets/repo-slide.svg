@@ -51,7 +51,7 @@
           <text x="10" y="2" class="pill">🍴 0</text>
         </g>
       </g>
-      <rect x="20" y="160" width="249" height="12" fill="#3572A5" /><rect x="269" y="160" width="76" height="12" fill="#3178c6" /><rect x="345" y="160" width="14" height="12" fill="#f1e05a" /><rect x="359" y="160" width="14" height="12" fill="#89e051" /><rect x="373" y="160" width="14" height="12" fill="#663399" /><rect x="387" y="160" width="13" height="12" fill="#ff5a03" />
+      <rect x="20" y="160" width="248" height="12" fill="#3572A5" /><rect x="268" y="160" width="77" height="12" fill="#3178c6" /><rect x="345" y="160" width="14" height="12" fill="#f1e05a" /><rect x="359" y="160" width="14" height="12" fill="#89e051" /><rect x="373" y="160" width="14" height="12" fill="#663399" /><rect x="387" y="160" width="13" height="12" fill="#ff5a03" />
       <rect x="20" y="171" width="10" height="10" rx="2" fill="#3572A5"/><text x="36" y="180" class="legend">Python</text><rect x="210" y="171" width="10" height="10" rx="2" fill="#3178c6"/><text x="226" y="180" class="legend">TypeScript</text><rect x="20" y="185" width="10" height="10" rx="2" fill="#f1e05a"/><text x="36" y="194" class="legend">JavaScript</text><rect x="210" y="185" width="10" height="10" rx="2" fill="#89e051"/><text x="226" y="194" class="legend">Shell</text>
     </g>
   </a>
