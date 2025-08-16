@@ -1,8 +1,14 @@
-<svg width="480" height="230" viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg">
+<svg width="480" height="230" viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
-    <clipPath id="avatar-clip">
+    <clipPath id="avatar-clip-dragon-boot">
       <rect x="20" y="16" width="20" height="20" rx="4"/>
     </clipPath>
+    <!-- Embedded avatar pattern as fallback -->
+    <pattern id="avatar-pattern-dragon-boot" x="20" y="16" width="20" height="20" patternUnits="userSpaceOnUse">
+      <image x="0" y="0" width="20" height="20" 
+             href="https://avatars.githubusercontent.com/u/200911899?v=4"
+             preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
   </defs>
   <style>
     .title { font: 600 16px sans-serif; fill: #ff4775; }
@@ -11,8 +17,14 @@
 
   <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
 
-  <!-- User Avatar -->
-  <image x="20" y="16" width="20" height="20" href="https://avatars.githubusercontent.com/u/200911899?v=4" clip-path="url(#avatar-clip)"/>
+  <!-- User Avatar with fallback -->
+  <rect x="20" y="16" width="20" height="20" rx="4" fill="url(#avatar-pattern-dragon-boot)"/>
+  
+  <!-- Alternative: Direct image with xlink namespace -->
+  <image x="20" y="16" width="20" height="20" 
+         xlink:href="https://avatars.githubusercontent.com/u/200911899?v=4" 
+         clip-path="url(#avatar-clip-dragon-boot)"
+         preserveAspectRatio="xMidYMid slice"/>
 
   <!-- Title -->
   <text x="48" y="31" class="title">dragon-boot</text>
