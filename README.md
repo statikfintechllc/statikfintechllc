@@ -5,7 +5,7 @@
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://skillicons.dev/icons?i=python,anaconda,nodejs,bash,linux,css,tailwind,react,electron,go,typescript,javascript,ruby,html,astro,jupyter,nixos&theme=dark" alt="Skill icons"><br>
+<img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/i.svg/assets/institute-header.svg" alt="Institute Header"/>
   </a>
   <img src="./docs/c.svg/assets/crimson-flow.svg" alt="Statik DK Smoke Activity">
 </div>
