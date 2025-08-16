@@ -276,14 +276,14 @@ const card = (repo, x) => {
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(${CW-180},0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <g transform="translate(8, -6)">
+          <g transform="translate(8, -8)">
             <svg viewBox="0 0 24 24" width="16" height="16">${starIcon}</svg>
           </g>
           <text x="26" y="2" class="pill">${repo.stars.toLocaleString()}</text>
         </g>
         <g transform="translate(${CW-90},0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <g transform="translate(4, -11)">
+          <g transform="translate(4, -9)">
             <svg viewBox="0 0 24 24" width="18" height="18">${forkIcon}</svg>
           </g>
           <text x="26" y="2" class="pill">${repo.forks.toLocaleString()}</text>
