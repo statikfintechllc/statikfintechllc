@@ -97,7 +97,8 @@ const xmlEsc = (s="") => s
   .replace(/'/g,"&apos;");
 
 const starIcon = `
-<path fill="#8abecf" d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 `;
 
 const forkIcon = `
