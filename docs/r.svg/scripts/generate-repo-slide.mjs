@@ -231,8 +231,8 @@ const card = (repo, x) => {
 
   const legends = segs.slice(0,4).map((s,i)=> {
     const lx = px + (i % 2) * 190;
-    const ly = py + 20 + Math.floor(i / 2) * 14;
-    return `<rect x="${lx}" y="${ly-9}" width="10" height="10" rx="2" fill="${s.color}"/><text x="${lx+16}" y="${ly}" class="legend">${xmlEsc(s.name)}</text>`;
+    const ly = py + 15 + Math.floor(i / 2) * 12;
+    return `<rect x="${lx}" y="${ly-8}" width="8" height="8" rx="2" fill="${s.color}"/><text x="${lx+12}" y="${ly}" class="legend">${xmlEsc(s.name)}</text>`;
   }).join("");
 
   // Title (≤2 lines)
