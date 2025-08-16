@@ -146,21 +146,16 @@ const mkLeft = sample.map((p, i) => {
 const RIGHT_FRAMES = Math.max(1, top.length);
 const RIGHT_DUR = +(RIGHT_FRAMES * 2.4).toFixed(2);
 const mkRight = top.map((s, i) => {
-  const keyTimes = [];
-  const values = [];
-  for (let k = 0; k < RIGHT_FRAMES; k++) {
-    keyTimes.push((k / (RIGHT_FRAMES - 1)).toFixed(6));
-    values.push(k === i ? 1 : 0);
-  }
-  if (i === RIGHT_FRAMES - 1) {
-    keyTimes.push("1");
-    values.push(1);
+  const keyTimes = [], values = [];
+  for (let k = 0; k <= RIGHT_FRAMES; k++) {
+    keyTimes.push((k / RIGHT_FRAMES).toFixed(6));
+    values.push((k === i || k === i + 1) ? 1 : 0);
   }
   return `
   <g>
     <text x="${R_X}" y="${NUM_Y}" class="rightLabel" text-anchor="middle">${s.len} days</text>
     <text x="${R_X}" y="${SUB_Y}" class="rightSub"   text-anchor="middle">${s.start} → ${s.end}</text>
-    <animate attributeName="opacity" values="${values.join(";")}" keyTimes="${keyTimes.join(";")}" dur="${RIGHT_DUR}s" fill="freeze"/>
+    <animate attributeName="opacity" values="${values.join(";")}" keyTimes="${keyTimes.join(";")}" dur="${RIGHT_DUR}s" repeatCount="indefinite"/>
   </g>`;
 }).join("");
 
