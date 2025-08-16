@@ -97,8 +97,7 @@ const xmlEsc = (s="") => s
   .replace(/'/g,"&apos;");
 
 const starIcon = `
-<path fill="none" stroke="#8abecf" stroke-width="2"
-  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+<path fill="#8abecf" d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 `;
 
 const forkIcon = `
@@ -276,14 +275,14 @@ const card = (repo, x) => {
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(${CW-180},0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <g transform="translate(8, -8)">
+          <g transform="translate(6, -10)">
             <svg viewBox="0 0 24 24" width="16" height="16">${starIcon}</svg>
           </g>
           <text x="26" y="2" class="pill">${repo.stars.toLocaleString()}</text>
         </g>
         <g transform="translate(${CW-90},0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <g transform="translate(8, -8)">
+          <g transform="translate(6, -10)">
             <svg viewBox="0 0 24 24" width="16" height="16">${forkIcon}</svg>
           </g>
           <text x="26" y="2" class="pill">${repo.forks.toLocaleString()}</text>
