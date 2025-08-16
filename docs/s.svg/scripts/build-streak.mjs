@@ -121,25 +121,47 @@ const TITLE_Y = 34, NUM_Y = 102, SUB_Y = 126;
 
 // ---------------- Carousels ----------------
 const LEFT_FRAMES = sample.length;
-const LEFT_DUR = +(LEFT_FRAMES * 0.08).toFixed(2);
+const FLOW_DUR = +(LEFT_FRAMES * 0.08).toFixed(2);   // flow speed
+const HOLD = 3.0;                                    // seconds to hold start + end
+const LEFT_DUR = +(FLOW_DUR + HOLD * 2).toFixed(2);  // total cycle duration
+
 const mkLeft = sample.map((p, i) => {
-  // build keyTimes and values so only frame i is visible
   const keyTimes = [];
   const values = [];
+
+  // Build timeline in 3 zones: hold-start, flow, hold-end
   for (let k = 0; k < LEFT_FRAMES; k++) {
-    keyTimes.push((k / (LEFT_FRAMES - 1)).toFixed(6));
-    values.push(k === i ? 1 : 0);
+    let t;
+    if (k === 0) {
+      // first commit: start at 0, hold until HOLD / LEFT_DUR
+      keyTimes.push((0).toFixed(6));
+      values.push(i === 0 ? 1 : 0);
+      keyTimes.push((HOLD / LEFT_DUR).toFixed(6));
+      values.push(i === 0 ? 1 : 0);
+    }
+
+    // flow portion: scale position into (HOLD..HOLD+FLOW_DUR)
+    const flowT = HOLD + (k / (LEFT_FRAMES - 1)) * FLOW_DUR;
+    t = (flowT / LEFT_DUR).toFixed(6);
+    keyTimes.push(t);
+    values.push(i === k ? 1 : 0);
+
+    if (k === LEFT_FRAMES - 1) {
+      // last commit: hold through end
+      keyTimes.push("1");
+      values.push(i === LEFT_FRAMES - 1 ? 1 : 0);
+    }
   }
-  // if it's the final frame, hold visible at end
-  if (i === LEFT_FRAMES - 1) {
-    keyTimes.push("1");
-    values.push(1);
-  }
+
   return `
   <g>
     <text x="${L_X}" y="${NUM_Y}" class="leftLabel" text-anchor="middle">${p.total.toLocaleString()}</text>
     <text x="${L_X}" y="${SUB_Y}" class="leftSub"   text-anchor="middle">${p.date}</text>
-    <animate attributeName="opacity" values="${values.join(";")}" keyTimes="${keyTimes.join(";")}" dur="${LEFT_DUR}s" fill="freeze"/>
+    <animate attributeName="opacity"
+             values="${values.join(";")}"
+             keyTimes="${keyTimes.join(";")}"
+             dur="${LEFT_DUR}s"
+             repeatCount="indefinite"/>
   </g>`;
 }).join("");
 
