@@ -2,7 +2,7 @@
 import fs from 'fs';
 
 const out = new URL('../assets/ascend-institute-card.svg', import.meta.url);
-const content = `import fs from "fs/promises";
+const content = `import fs from "fs/promises"`;
 import https from "https";
 import path from "path";
 
