@@ -68,7 +68,7 @@ async function main() {
   </style>
 
   <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
-  <image x="20" y="16" width="20" height="20" href="${user.avatar_url}" clip-path="url(#avatar-clip)"/>
+  <image x="20" y="16" width="20" height="20" href="https://avatars.githubusercontent.com/u/200911899?v=4" clip-path="url(#avatar-clip)"/>
   <text x="48" y="31" class="title">${repo.name}</text>
 
   <foreignObject x="48" y="40" width="400" height="120">
