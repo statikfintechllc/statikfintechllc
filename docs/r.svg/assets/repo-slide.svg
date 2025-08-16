@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="880" height="250" viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg"
+<svg width="880" height="280" viewBox="0 0 880 280" xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
   <style>
     :root{ color-scheme: dark; }
@@ -10,14 +10,14 @@
     a:hover .name, a:hover .desc { text-decoration: underline; }
   </style>
   <defs>
-    <clipPath id="frame"><rect x="0" y="0" width="880" height="250" rx="8" ry="8"/></clipPath>
+    <clipPath id="frame"><rect x="0" y="0" width="880" height="280" rx="8" ry="8"/></clipPath>
   </defs>
   
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
   <a xlink:href="https://github.com/statikfintechllc/GremlinGPT" target="_blank">
     <g transform="translate(0,20)">
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">GremlinGPT</text>
       <text x="20" y="54" style="font:400 10px system-ui" class="desc">GremlinGPT is a locally hosted recursive intelligence system:</text><text x="20" y="66" style="font:400 10px system-ui" class="desc">Scrapes data, learns from results, and evolves without human</text><text x="20" y="78" style="font:400 10px system-ui" class="desc">oversight - Operates fully offline with no cloud dependencies -</text><text x="20" y="90" style="font:400 10px system-ui" class="desc">Grows its own NLP engine using feedback and self-repair - Can</text><text x="20" y="102" style="font:400 10px system-ui" class="desc">plan, refactor, and upgrade its own code. This repo mirrors</text><text x="20" y="114" style="font:400 10px system-ui" class="desc">statik-servers GremlinGPT.</text>
       <!-- Stars and forks -->
@@ -42,13 +42,13 @@
           <text x="26" y="2" class="pill">1</text>
         </g>
       </g>
-      <rect x="20" y="170" width="276" height="12" fill="#3572A5" /><rect x="296" y="170" width="39" height="12" fill="#ff5a03" /><rect x="335" y="170" width="22" height="12" fill="#89e051" /><rect x="357" y="170" width="14" height="12" fill="#3178c6" /><rect x="371" y="170" width="14" height="12" fill="#f1e05a" /><rect x="385" y="170" width="15" height="12" fill="#663399" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#ff5a03"/><text x="222" y="195" class="legend">Astro</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="207" class="legend">Shell</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="207" class="legend">TypeScript</text>
+      <rect x="20" y="165" width="276" height="12" fill="#3572A5" /><rect x="296" y="165" width="39" height="12" fill="#ff5a03" /><rect x="335" y="165" width="22" height="12" fill="#89e051" /><rect x="357" y="165" width="14" height="12" fill="#3178c6" /><rect x="371" y="165" width="14" height="12" fill="#f1e05a" /><rect x="385" y="165" width="15" height="12" fill="#663399" />
+      <rect x="20" y="177" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="185" class="legend">Python</text><rect x="210" y="177" width="8" height="8" rx="2" fill="#ff5a03"/><text x="222" y="185" class="legend">Astro</text><rect x="20" y="189" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="197" class="legend">Shell</text><rect x="210" y="189" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="197" class="legend">TypeScript</text>
     </g>
   </a>
   <a xlink:href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader" target="_blank">
     <g transform="translate(460,20)">
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">Gremlin-ShadTail-Trader</text>
       <text x="20" y="54" style="font:400 13px system-ui" class="desc">GremlinGPT&apos;s standalone trading core, will be</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">wrapped as a vscode plugin, using electron app for</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">the application, astro, tailwond, and shadcn for</text><text x="20" y="99" style="font:400 13px system-ui" class="desc">the user interface, and Gremlins Trade Logic.</text>
       <!-- Stars and forks -->
@@ -73,8 +73,8 @@
           <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
-      <rect x="20" y="170" width="248" height="12" fill="#3572A5" /><rect x="268" y="170" width="77" height="12" fill="#3178c6" /><rect x="345" y="170" width="14" height="12" fill="#f1e05a" /><rect x="359" y="170" width="14" height="12" fill="#89e051" /><rect x="373" y="170" width="14" height="12" fill="#663399" /><rect x="387" y="170" width="13" height="12" fill="#ff5a03" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="195" class="legend">TypeScript</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="207" class="legend">JavaScript</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="222" y="207" class="legend">Shell</text>
+      <rect x="20" y="165" width="248" height="12" fill="#3572A5" /><rect x="268" y="165" width="77" height="12" fill="#3178c6" /><rect x="345" y="165" width="14" height="12" fill="#f1e05a" /><rect x="359" y="165" width="14" height="12" fill="#89e051" /><rect x="373" y="165" width="14" height="12" fill="#663399" /><rect x="387" y="165" width="13" height="12" fill="#ff5a03" />
+      <rect x="20" y="177" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="185" class="legend">Python</text><rect x="210" y="177" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="185" class="legend">TypeScript</text><rect x="20" y="189" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="197" class="legend">JavaScript</text><rect x="210" y="189" width="8" height="8" rx="2" fill="#89e051"/><text x="222" y="197" class="legend">Shell</text>
     </g>
   </a>
       <animateTransform attributeName="transform" type="translate"
@@ -90,7 +90,7 @@
       
   <a xlink:href="https://github.com/statikfintechllc/statik-server" target="_blank">
     <g transform="translate(0,20)">
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">statik-server</text>
       <text x="20" y="54" style="font:400 13px system-ui" class="desc">Forked from code-server — now a sovereign,</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">mesh-routed VS Code deployment with Copilot Chat,</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">persistent VPN, keyless signing, and custom domain</text><text x="20" y="99" style="font:400 13px system-ui" class="desc">rendering via statik-server.</text>
       <!-- Stars and forks -->
@@ -115,13 +115,13 @@
           <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
-      <rect x="20" y="170" width="261" height="12" fill="#3178c6" /><rect x="281" y="170" width="42" height="12" fill="#3572A5" /><rect x="323" y="170" width="13" height="12" fill="#663399" /><rect x="336" y="170" width="13" height="12" fill="#f1e05a" /><rect x="349" y="170" width="13" height="12" fill="#e34c26" /><rect x="362" y="170" width="13" height="12" fill="#dea584" /><rect x="375" y="170" width="13" height="12" fill="#89e051" /><rect x="388" y="170" width="12" height="12" fill="#264b99" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3178c6"/><text x="32" y="195" class="legend">TypeScript</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="222" y="195" class="legend">Python</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="207" class="legend">CSS</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="207" class="legend">JavaScript</text>
+      <rect x="20" y="165" width="261" height="12" fill="#3178c6" /><rect x="281" y="165" width="42" height="12" fill="#3572A5" /><rect x="323" y="165" width="13" height="12" fill="#663399" /><rect x="336" y="165" width="13" height="12" fill="#f1e05a" /><rect x="349" y="165" width="13" height="12" fill="#e34c26" /><rect x="362" y="165" width="13" height="12" fill="#dea584" /><rect x="375" y="165" width="13" height="12" fill="#89e051" /><rect x="388" y="165" width="12" height="12" fill="#264b99" />
+      <rect x="20" y="177" width="8" height="8" rx="2" fill="#3178c6"/><text x="32" y="185" class="legend">TypeScript</text><rect x="210" y="177" width="8" height="8" rx="2" fill="#3572A5"/><text x="222" y="185" class="legend">Python</text><rect x="20" y="189" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="197" class="legend">CSS</text><rect x="210" y="189" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="197" class="legend">JavaScript</text>
     </g>
   </a>
   <a xlink:href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance" target="_blank">
     <g transform="translate(460,20)">
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">AscendDocs-of-GovSeverance</text>
       <text x="20" y="54" style="font:400 13px system-ui" class="desc">Not a system. Not a manifesto. A memetic weapon.</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">Not a call to chaos. This is the call to</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">recursion. Alignment. Freedom.</text>
       <!-- Stars and forks -->
@@ -146,8 +146,8 @@
           <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
-      <rect x="20" y="170" width="380" height="12" fill="#6b7280" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#6b7280"/><text x="32" y="195" class="legend">Other</text>
+      <rect x="20" y="165" width="380" height="12" fill="#6b7280" />
+      <rect x="20" y="177" width="8" height="8" rx="2" fill="#6b7280"/><text x="32" y="185" class="legend">Other</text>
     </g>
   </a>
       <animateTransform attributeName="transform" type="translate"
@@ -163,7 +163,7 @@
       
   <a xlink:href="https://github.com/statikfintechllc/dragon-boot" target="_blank">
     <g transform="translate(0,20)">
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">dragon-boot</text>
       <text x="20" y="54" style="font:400 13px system-ui" class="desc">🔥 A sci-fi dragon-themed Plymouth bootloader</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">animation for Linux. HD 1920x1080 splash with full</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">GRUB/initramfs integration.</text>
       <!-- Stars and forks -->
@@ -188,13 +188,13 @@
           <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
-      <rect x="20" y="170" width="380" height="12" fill="#89e051" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="195" class="legend">Shell</text>
+      <rect x="20" y="165" width="380" height="12" fill="#89e051" />
+      <rect x="20" y="177" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="185" class="legend">Shell</text>
     </g>
   </a>
   <a xlink:href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap" target="_blank">
     <g transform="translate(460,20)">
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="200" fill="#0b1220" stroke="#1f2937"/>
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">Gremlin-MCP-Scrap</text>
       <text x="20" y="54" style="font:400 13px system-ui" class="desc">A hybrid Python + JavaScript MCP runtime for</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">scraping readable content from the web. Powered by</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">Flask, BeautifulSoup, and the unshakable belief</text><text x="20" y="99" style="font:400 13px system-ui" class="desc">that you can automate everything. Built for VS</text><text x="20" y="114" style="font:400 13px system-ui" class="desc">Code’s Model Context Protocol. Gremlin-approved.</text>
       <!-- Stars and forks -->
@@ -219,8 +219,8 @@
           <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
-      <rect x="20" y="170" width="292" height="12" fill="#3572A5" /><rect x="312" y="170" width="88" height="12" fill="#f1e05a" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="195" class="legend">JavaScript</text>
+      <rect x="20" y="165" width="292" height="12" fill="#3572A5" /><rect x="312" y="165" width="88" height="12" fill="#f1e05a" />
+      <rect x="20" y="177" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="185" class="legend">Python</text><rect x="210" y="177" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="185" class="legend">JavaScript</text>
     </g>
   </a>
       <animateTransform attributeName="transform" type="translate"
