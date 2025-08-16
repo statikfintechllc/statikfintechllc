@@ -43,7 +43,7 @@
         </g>
       </g>
       <rect x="20" y="165" width="276" height="12" fill="#3572A5" /><rect x="296" y="165" width="39" height="12" fill="#ff5a03" /><rect x="335" y="165" width="22" height="12" fill="#89e051" /><rect x="357" y="165" width="14" height="12" fill="#3178c6" /><rect x="371" y="165" width="14" height="12" fill="#f1e05a" /><rect x="385" y="165" width="15" height="12" fill="#663399" />
-      <rect x="20" y="177" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="185" class="legend">Python</text><rect x="210" y="177" width="8" height="8" rx="2" fill="#ff5a03"/><text x="222" y="185" class="legend">Astro</text><rect x="20" y="189" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="197" class="legend">Shell</text><rect x="210" y="189" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="197" class="legend">TypeScript</text>
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#ff5a03"/><text x="222" y="195" class="legend">Astro</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="207" class="legend">Shell</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="207" class="legend">TypeScript</text>
     </g>
   </a>
   <a xlink:href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader" target="_blank">
@@ -74,7 +74,7 @@
         </g>
       </g>
       <rect x="20" y="165" width="248" height="12" fill="#3572A5" /><rect x="268" y="165" width="77" height="12" fill="#3178c6" /><rect x="345" y="165" width="14" height="12" fill="#f1e05a" /><rect x="359" y="165" width="14" height="12" fill="#89e051" /><rect x="373" y="165" width="14" height="12" fill="#663399" /><rect x="387" y="165" width="13" height="12" fill="#ff5a03" />
-      <rect x="20" y="177" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="185" class="legend">Python</text><rect x="210" y="177" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="185" class="legend">TypeScript</text><rect x="20" y="189" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="197" class="legend">JavaScript</text><rect x="210" y="189" width="8" height="8" rx="2" fill="#89e051"/><text x="222" y="197" class="legend">Shell</text>
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="195" class="legend">TypeScript</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="207" class="legend">JavaScript</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="222" y="207" class="legend">Shell</text>
     </g>
   </a>
       <animateTransform attributeName="transform" type="translate"
@@ -116,7 +116,7 @@
         </g>
       </g>
       <rect x="20" y="165" width="261" height="12" fill="#3178c6" /><rect x="281" y="165" width="42" height="12" fill="#3572A5" /><rect x="323" y="165" width="13" height="12" fill="#663399" /><rect x="336" y="165" width="13" height="12" fill="#f1e05a" /><rect x="349" y="165" width="13" height="12" fill="#e34c26" /><rect x="362" y="165" width="13" height="12" fill="#dea584" /><rect x="375" y="165" width="13" height="12" fill="#89e051" /><rect x="388" y="165" width="12" height="12" fill="#264b99" />
-      <rect x="20" y="177" width="8" height="8" rx="2" fill="#3178c6"/><text x="32" y="185" class="legend">TypeScript</text><rect x="210" y="177" width="8" height="8" rx="2" fill="#3572A5"/><text x="222" y="185" class="legend">Python</text><rect x="20" y="189" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="197" class="legend">CSS</text><rect x="210" y="189" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="197" class="legend">JavaScript</text>
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3178c6"/><text x="32" y="195" class="legend">TypeScript</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="222" y="195" class="legend">Python</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="207" class="legend">CSS</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="207" class="legend">JavaScript</text>
     </g>
   </a>
   <a xlink:href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance" target="_blank">
@@ -147,7 +147,7 @@
         </g>
       </g>
       <rect x="20" y="165" width="380" height="12" fill="#6b7280" />
-      <rect x="20" y="177" width="8" height="8" rx="2" fill="#6b7280"/><text x="32" y="185" class="legend">Other</text>
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#6b7280"/><text x="32" y="195" class="legend">Other</text>
     </g>
   </a>
       <animateTransform attributeName="transform" type="translate"
@@ -189,7 +189,7 @@
         </g>
       </g>
       <rect x="20" y="165" width="380" height="12" fill="#89e051" />
-      <rect x="20" y="177" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="185" class="legend">Shell</text>
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="195" class="legend">Shell</text>
     </g>
   </a>
   <a xlink:href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap" target="_blank">
@@ -220,7 +220,7 @@
         </g>
       </g>
       <rect x="20" y="165" width="292" height="12" fill="#3572A5" /><rect x="312" y="165" width="88" height="12" fill="#f1e05a" />
-      <rect x="20" y="177" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="185" class="legend">Python</text><rect x="210" y="177" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="185" class="legend">JavaScript</text>
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="195" class="legend">JavaScript</text>
     </g>
   </a>
       <animateTransform attributeName="transform" type="translate"
