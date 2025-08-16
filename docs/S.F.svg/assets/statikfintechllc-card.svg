@@ -38,8 +38,8 @@
   </foreignObject>
 
   <!-- Language Dot + Label -->
-  <circle cx="48" cy="180" r="6" fill="#ccc"/>
-  <text x="64" y="180" class="meta">N/A</text>
+  <circle cx="48" cy="180" r="6" fill="#f1e05a"/>
+  <text x="64" y="180" class="meta">JavaScript</text>
 
   <!-- Star Icon + Count (ALIGNED) -->
   <g transform="translate(140, 172)">
@@ -60,6 +60,6 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    
+    <rect x="0" y="195" width="440" height="6" fill="#f1e05a" />
   </g>
 </svg>
