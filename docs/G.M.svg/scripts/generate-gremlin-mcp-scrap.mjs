@@ -123,25 +123,6 @@ async function main() {
 </svg>
 `.trim();
 
-  <!-- Star Icon + Count (ALIGNED) -->
-  <g transform="translate(140, 172)">
-    <svg viewBox="0 0 24 24" width="16" height="16">${starIcon}</svg>
-  </g>
-  <text x="162" y="180" class="meta">${repo.stargazers_count}</text>
-
-  <!-- Fork Icon + Count (ALIGNED) -->
-  <g transform="translate(200, 173)">
-    <svg viewBox="0 0 24 24" width="16" height="16">${forkIcon}</svg>
-  </g>
-  <text x="222" y="180" class="meta">${repo.forks_count}</text>
-
-  <!-- Language Usage Bar -->
-  <g transform="translate(20, 0)">
-    ${langBar}
-  </g>
-</svg>
-`.trim();
-
   await fs.mkdir(path.dirname(OUTPUT), { recursive: true });
   await fs.writeFile(OUTPUT, svg);
 }
