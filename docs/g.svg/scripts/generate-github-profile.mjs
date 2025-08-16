@@ -25,6 +25,15 @@ const LANG_COLORS = {
   Java: "#b07219"
 };
 
+// GitHub SVG Icons
+const icons = {
+  star: `<path fill="none" stroke="#8b949e" stroke-width="1.5" d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>`,
+  commit: `<circle cx="12" cy="12" r="3" fill="none" stroke="#8b949e" stroke-width="1.5"/><path fill="none" stroke="#8b949e" stroke-width="1.5" d="M12 1v6m0 6v6"/>`,
+  pr: `<path fill="none" stroke="#8b949e" stroke-width="1.5" d="M7 7h10m-10 10h10M17 4l3 3-3 3M7 14l-3 3 3 3"/>`,
+  issue: `<circle cx="12" cy="12" r="10" fill="none" stroke="#8b949e" stroke-width="1.5"/><line x1="12" y1="8" x2="12" y2="12" stroke="#8b949e" stroke-width="1.5"/><line x1="12" y1="16" x2="12.01" y2="16" stroke="#8b949e" stroke-width="1.5"/>`,
+  calendar: `<rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="#8b949e" stroke-width="1.5"/><line x1="16" y1="2" x2="16" y2="6" stroke="#8b949e" stroke-width="1.5"/><line x1="8" y1="2" x2="8" y2="6" stroke="#8b949e" stroke-width="1.5"/><line x1="3" y1="10" x2="21" y2="10" stroke="#8b949e" stroke-width="1.5"/>`
+};
+
 // --- GitHub API request ---
 async function fetchJSON(url) {
   return new Promise((resolve, reject) => {
@@ -92,7 +101,7 @@ const svg = `
       .lang-percent { fill: #8b949e; font: 400 12px 'Segoe UI', system-ui; }
     </style>
     <pattern id="avatarPattern" patternUnits="objectBoundingBox" width="100%" height="100%">
-      <image href="https://avatars.githubusercontent.com/u/200911899?v=4" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+      <image href="${user.avatar_url}" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
     </pattern>
   </defs>
   
@@ -105,38 +114,34 @@ const svg = `
   <!-- Stats List -->
   <g transform="translate(32, 65)">
     <g>
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Total Stars Earned:</text>
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24">${icons.star}</svg>
+      <text x="20" y="6" class="stat-label">Total Stars Earned:</text>
       <text x="200" y="6" class="stat-value">${stats.stars}</text>
     </g>
     <g transform="translate(0, 22)">
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Total Commits:</text>
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24">${icons.commit}</svg>
+      <text x="20" y="6" class="stat-label">Total Commits:</text>
       <text x="200" y="6" class="stat-value">${stats.commits}</text>
     </g>
     <g transform="translate(0, 44)">
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Total PRs:</text>
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24">${icons.pr}</svg>
+      <text x="20" y="6" class="stat-label">Total PRs:</text>
       <text x="200" y="6" class="stat-value">${stats.prs}</text>
     </g>
     <g transform="translate(0, 66)">
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Total Issues:</text>
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24">${icons.issue}</svg>
+      <text x="20" y="6" class="stat-label">Total Issues:</text>
       <text x="200" y="6" class="stat-value">${stats.issues}</text>
     </g>
     <g transform="translate(0, 88)">
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Contributed to (last year):</text>
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24">${icons.calendar}</svg>
+      <text x="20" y="6" class="stat-label">Contributed to (last year):</text>
       <text x="200" y="6" class="stat-value">${stats.contributions}</text>
     </g>
   </g>
   
-  <!-- Right Section: Languages and Avatar -->
-  <g transform="translate(420, 40)">
-    <!-- Avatar Circle -->
-    <circle cx="350" cy="80" r="45" fill="#30363d" stroke="#e11d48" stroke-width="3"/>
-    <circle cx="350" cy="80" r="42" fill="url(#avatarPattern)"/>
-    
+  <!-- Right Section: Languages -->
+  <g transform="translate(530, 40)">
     <!-- Languages Header -->
     <text x="0" y="0" class="header">Most Used Languages</text>
     
@@ -146,6 +151,12 @@ const svg = `
       <circle cx="6" cy="2" r="4" fill="${lang.color}"/>
       <text x="16" y="6" class="lang-label">${lang.lang} ${lang.percent}%</text>
     </g>`).join('')}
+  </g>
+  
+  <!-- Avatar Circle - CENTER -->
+  <g transform="translate(375, 70)">
+    <circle cx="35" cy="35" r="40" fill="#30363d" stroke="#e11d48" stroke-width="3"/>
+    <circle cx="35" cy="35" r="37" fill="url(#avatarPattern)"/>
   </g>
 </svg>`.trim();
 
