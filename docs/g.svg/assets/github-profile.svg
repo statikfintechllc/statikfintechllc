@@ -1,33 +1,94 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="400" viewBox="0 0 900 400">
-  <style>
-    text { font-family: sans-serif; fill: #fff }
-    .label { font-weight: bold; fill: #ff4081 }
-    .lang-box { font-size: 13px }
-    .stat-box { font-size: 14px }
-    .title { font-size: 22px; fill: #f36; font-weight: 600 }
-  </style>
-  <rect width="100%" height="100%" fill="#111" rx="20"/>
-  <text x="30" y="50" class="title">Statik DK Smoke's GitHub Stats</text>
-
-  <g class="stat-box" transform="translate(30, 80)">
-    <text y="0">⭐ Total Stars: 35</text>
-    <text y="25">⏱ Commits: 3.5k</text>
-    <text y="50">🔀 PRs: 5</text>
-    <text y="75">❗ Issues: 2</text>
-    <text y="100">📆 Last Year: 6</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="845" height="200" viewBox="0 0 845 200">
+  <defs>
+    <style>
+      .header { fill: #e11d48; font: 600 18px 'Segoe UI', system-ui; }
+      .stat-label { fill: #8b949e; font: 400 14px 'Segoe UI', system-ui; }
+      .stat-value { fill: #f0f6fc; font: 600 14px 'Segoe UI', system-ui; }
+      .lang-label { fill: #f0f6fc; font: 400 12px 'Segoe UI', system-ui; }
+      .lang-percent { fill: #8b949e; font: 400 12px 'Segoe UI', system-ui; }
+    </style>
+    <pattern id="avatarPattern" patternUnits="objectBoundingBox" width="100%" height="100%">
+      <image href="https://avatars.githubusercontent.com/u/200911899?v=4" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="845" height="200" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  
+  <!-- Left Section: Stats -->
+  <text x="32" y="40" class="header">Statik DK Smoke's GitHub Stats</text>
+  
+  <!-- Stats List -->
+  <g transform="translate(32, 65)">
+    <g>
+      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
+      <text x="16" y="6" class="stat-label">Total Stars Earned:</text>
+      <text x="200" y="6" class="stat-value">35</text>
+    </g>
+    <g transform="translate(0, 22)">
+      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
+      <text x="16" y="6" class="stat-label">Total Commits:</text>
+      <text x="200" y="6" class="stat-value">3.6k</text>
+    </g>
+    <g transform="translate(0, 44)">
+      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
+      <text x="16" y="6" class="stat-label">Total PRs:</text>
+      <text x="200" y="6" class="stat-value">5</text>
+    </g>
+    <g transform="translate(0, 66)">
+      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
+      <text x="16" y="6" class="stat-label">Total Issues:</text>
+      <text x="200" y="6" class="stat-value">2</text>
+    </g>
+    <g transform="translate(0, 88)">
+      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
+      <text x="16" y="6" class="stat-label">Contributed to (last year):</text>
+      <text x="200" y="6" class="stat-value">6</text>
+    </g>
   </g>
-
-  <g class="lang-box" transform="translate(500, 80)">
-    <text class="label">Most Used Languages:</text>
-    <text y="40">• TypeScript: 74.73%</text>
-<text y="60">• Python: 15.09%</text>
-<text y="80">• Go: 2.68%</text>
-<text y="100">• JavaScript: 1.26%</text>
-<text y="120">• CSS: 1.26%</text>
-<text y="140">• HTML: 1.14%</text>
-<text y="160">• Jupyter Notebook: 0.99%</text>
-<text y="180">• Shell: 0.75%</text>
-<text y="200">• Rust: 0.52%</text>
-<text y="220">• Inno Setup: 0.32%</text>
+  
+  <!-- Right Section: Languages and Avatar -->
+  <g transform="translate(420, 40)">
+    <!-- Avatar Circle -->
+    <circle cx="350" cy="80" r="45" fill="#30363d" stroke="#e11d48" stroke-width="3"/>
+    <circle cx="350" cy="80" r="42" fill="url(#avatarPattern)"/>
+    
+    <!-- Languages Header -->
+    <text x="0" y="0" class="header">Most Used Languages</text>
+    
+    <!-- Language List with Bars -->
+    
+    <g transform="translate(0, 25)">
+      <circle cx="6" cy="2" r="4" fill="#2b7489"/>
+      <text x="16" y="6" class="lang-label">TypeScript 74.7%</text>
+    </g>
+    <g transform="translate(0, 41)">
+      <circle cx="6" cy="2" r="4" fill="#3572A5"/>
+      <text x="16" y="6" class="lang-label">Python 15.1%</text>
+    </g>
+    <g transform="translate(0, 57)">
+      <circle cx="6" cy="2" r="4" fill="#00ADD8"/>
+      <text x="16" y="6" class="lang-label">Go 2.7%</text>
+    </g>
+    <g transform="translate(0, 73)">
+      <circle cx="6" cy="2" r="4" fill="#f1e05a"/>
+      <text x="16" y="6" class="lang-label">JavaScript 1.3%</text>
+    </g>
+    <g transform="translate(0, 89)">
+      <circle cx="6" cy="2" r="4" fill="#563d7c"/>
+      <text x="16" y="6" class="lang-label">CSS 1.3%</text>
+    </g>
+    <g transform="translate(0, 105)">
+      <circle cx="6" cy="2" r="4" fill="#e34c26"/>
+      <text x="16" y="6" class="lang-label">HTML 1.1%</text>
+    </g>
+    <g transform="translate(0, 121)">
+      <circle cx="6" cy="2" r="4" fill="#DA5B0B"/>
+      <text x="16" y="6" class="lang-label">Jupyter Notebook 1.0%</text>
+    </g>
+    <g transform="translate(0, 137)">
+      <circle cx="6" cy="2" r="4" fill="#89e051"/>
+      <text x="16" y="6" class="lang-label">Shell 0.8%</text>
+    </g>
   </g>
 </svg>
