@@ -80,12 +80,7 @@
     <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
   </a>
 </div>
-
----
-
 <div align="center">
-
-<!-- Repository Cards Table -->
 <table align="center">
   <tr>
     <td align="center">
@@ -238,9 +233,6 @@
   </tr>
 </table>
 <div align="center" style="color:#e11d48">
-</div>
-
----
 
 ### The Institute's GremlinGPT
 The World's first *RS-RACS* | *Recursive, Self-Referential Autonomous Cognitive System*
