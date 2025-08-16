@@ -59,8 +59,7 @@ async function main() {
     const rect = `<rect x="${x}" y="195" width="${w}" height="6" fill="${color}" />`;
     x += w;
     return rect;
-  }).join("
-");
+  }).join("\n");
 
   const svg = `
 <svg width="480" height="230" viewBox="0 0 480 230" xmlns="http://www.w3.org/2000/svg">
