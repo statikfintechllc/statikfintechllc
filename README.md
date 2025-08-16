@@ -63,6 +63,11 @@
     <img src="https://img.shields.io/badge/-000000?logo=medium&logoColor=white&style=flat-square" alt="Medium">
   </a>
 </div>
+<div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./badges/statik.title.svg">
+  </a>
+</div>
 <h1 align="center" style="color:#e11d48">Statik DK Smoke | SFTi | Sovereign Systems</h1>
 <h3 align="center">I build sovereign, local-first AI systems, Cool ideas, and all For The People.</h3>
 <div align="center">
