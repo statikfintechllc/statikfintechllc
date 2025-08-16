@@ -1,4 +1,4 @@
-name: Update WorkFlowRepo-Mirror Card
+name: Update AscendDocs of GovSeverance Card
 
 on:
   schedule:
@@ -19,20 +19,20 @@ jobs:
           node-version: 22
 
       - name: Install deps
-        working-directory: docs/W.M.svg
+        working-directory: docs/A.D.svg
         run: npm ci --ignore-scripts --no-audit --no-fund
 
-      - name: Build WorkFlowRepo-Mirror SVG
+      - name: Build AscendDocs of GovSeverance SVG
         env:
           PAT_GITHUB: ${{ secrets.PAT_GITHUB }}
-        working-directory: docs/W.M.svg
-        run: node scripts/generate-workflowrepo-mirror.mjs
+        working-directory: docs/A.D.svg
+        run: node scripts/generate-ascenddocs-of-govseverance.mjs
 
       - name: Commit and push
         run: |
           git config --global user.name "gremlin-bot"
           git config --global user.email "actions@github.com"
           git add .
-          git commit -m "chore(W.M.svg): update WorkFlowRepo-Mirror repo badge"
+          git commit -m "chore(A.D.svg): update AscendDocs of GovSeverance repo badge"
           git pull --rebase
           git push

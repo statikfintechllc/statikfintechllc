@@ -2,7 +2,7 @@ name: Update Mobile Mirror Card
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */23 * * *"
   workflow_dispatch:
 
 jobs:
