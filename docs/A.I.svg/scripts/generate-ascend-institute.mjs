@@ -1,8 +1,5 @@
 #!/usr/bin/env node
-import fs from 'fs';
-
-const out = new URL('../assets/ascend-institute-card.svg', import.meta.url);
-const content = `import fs from "fs/promises"`;
+import fs from "fs/promises";
 import https from "https";
 import path from "path";
 
@@ -35,13 +32,11 @@ const langColor = {
   CSS: "#563d7c",
 };
 
-// ⬡ GitHub-style HOLLOW STAR (SVG ⌀)
 const starIcon = `
 <path fill="none" stroke="#8abecf" stroke-width="2"
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 `;
 
-// 🍴 GitHub-style Fork (FIXED)
 const forkIcon = `
 <path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
 `;
@@ -74,14 +69,9 @@ async function main() {
   </style>
 
   <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
-
-  <!-- User Avatar -->
   <image x="20" y="16" width="20" height="20" href="${user.avatar_url}" clip-path="url(#avatar-clip)"/>
-
-  <!-- Title -->
   <text x="48" y="31" class="title">${repo.name}</text>
 
-  <!-- Description -->
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
@@ -89,23 +79,19 @@ async function main() {
     </div>
   </foreignObject>
 
-  <!-- Language Dot + Label -->
   <circle cx="48" cy="180" r="6" fill="${langColor[repo.language] || "#ccc"}"/>
   <text x="64" y="180" class="meta">${repo.language}</text>
 
-  <!-- Star Icon + Count (ALIGNED) -->
   <g transform="translate(140, 172)">
     <svg viewBox="0 0 24 24" width="16" height="16">${starIcon}</svg>
   </g>
   <text x="162" y="180" class="meta">${repo.stargazers_count}</text>
 
-  <!-- Fork Icon + Count (ALIGNED) -->
   <g transform="translate(200, 173)">
     <svg viewBox="0 0 24 24" width="16" height="16">${forkIcon}</svg>
   </g>
   <text x="222" y="180" class="meta">${repo.forks_count}</text>
 
-  <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
     ${langBar}
   </g>
@@ -114,13 +100,10 @@ async function main() {
 
   await fs.mkdir(path.dirname(OUTPUT), { recursive: true });
   await fs.writeFile(OUTPUT, svg);
+  console.log("✅ ascend-institute-card.svg generated");
 }
 
 main().catch(err => {
   console.error("SVG generation failed:", err);
   process.exit(1);
-});`;
-
-fs.mkdirSync(new URL('../assets/', import.meta.url), { recursive: true });
-fs.writeFileSync(out, content);
-console.log('Generated:', out.pathname);
+});
