@@ -1,11 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="845" height="200" viewBox="0 0 845 200">
   <defs>
     <style>
-      .header { fill: #e11d48; font: 600 18px 'Segoe UI', system-ui; }
-      .stat-label { fill: #8b949e; font: 400 14px 'Segoe UI', system-ui; }
-      .stat-value { fill: #f0f6fc; font: 600 14px 'Segoe UI', system-ui; }
-      .lang-label { fill: #f0f6fc; font: 400 12px 'Segoe UI', system-ui; }
-      .lang-percent { fill: #8b949e; font: 400 12px 'Segoe UI', system-ui; }
+      .header { fill: #e11d48; font: 600 18px 'Segoe UI', Ubuntu, system-ui; }
+      .stat-label { fill: #8b949e; font: 400 14px 'Segoe UI', Ubuntu, system-ui; }
+      .stat-value { fill: #f0f6fc; font: 600 14px 'Segoe UI', Ubuntu, system-ui; }
+      .lang-label { fill: #f0f6fc; font: 400 12px 'Segoe UI', Ubuntu, system-ui; }
     </style>
     <pattern id="avatarPattern" patternUnits="objectBoundingBox" width="100%" height="100%">
       <image href="https://avatars.githubusercontent.com/u/200911899?v=4" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>
@@ -16,79 +15,89 @@
   <rect width="845" height="200" rx="6" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
   
   <!-- Left Section: Stats -->
-  <text x="32" y="40" class="header">Statik DK Smoke's GitHub Stats</text>
+  <text x="32" y="35" class="header">Statik DK Smoke's GitHub Stats</text>
   
   <!-- Stats List -->
-  <g transform="translate(32, 65)">
+  <g transform="translate(32, 60)">
     <g>
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Total Stars Earned:</text>
-      <text x="200" y="6" class="stat-value">35</text>
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="#8b949e" stroke-width="1.5" d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/></svg>
+      <text x="22" y="6" class="stat-label">Total Stars Earned:</text>
+      <text x="180" y="6" class="stat-value">35</text>
     </g>
-    <g transform="translate(0, 22)">
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Total Commits:</text>
-      <text x="200" y="6" class="stat-value">3.6k</text>
+    <g transform="translate(0, 25)">
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="#8b949e" stroke-width="1.5"/><path fill="none" stroke="#8b949e" stroke-width="1.5" d="M12 1v6m0 6v6"/></svg>
+      <text x="22" y="6" class="stat-label">Total Commits:</text>
+      <text x="180" y="6" class="stat-value">3.6k</text>
     </g>
-    <g transform="translate(0, 44)">
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Total PRs:</text>
-      <text x="200" y="6" class="stat-value">5</text>
+    <g transform="translate(0, 50)">
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24"><path fill="none" stroke="#8b949e" stroke-width="1.5" d="M7 7h10m-10 10h10M17 4l3 3-3 3M7 14l-3 3 3 3"/></svg>
+      <text x="22" y="6" class="stat-label">Total PRs:</text>
+      <text x="180" y="6" class="stat-value">5</text>
     </g>
-    <g transform="translate(0, 66)">
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Total Issues:</text>
-      <text x="200" y="6" class="stat-value">2</text>
+    <g transform="translate(0, 75)">
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="#8b949e" stroke-width="1.5"/><line x1="12" y1="8" x2="12" y2="12" stroke="#8b949e" stroke-width="1.5"/><line x1="12" y1="16" x2="12.01" y2="16" stroke="#8b949e" stroke-width="1.5"/></svg>
+      <text x="22" y="6" class="stat-label">Total Issues:</text>
+      <text x="180" y="6" class="stat-value">18</text>
     </g>
-    <g transform="translate(0, 88)">
-      <circle cx="6" cy="2" r="3" fill="#e11d48"/>
-      <text x="16" y="6" class="stat-label">Contributed to (last year):</text>
-      <text x="200" y="6" class="stat-value">6</text>
+    <g transform="translate(0, 100)">
+      <svg x="0" y="-8" width="16" height="16" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="#8b949e" stroke-width="1.5"/><line x1="16" y1="2" x2="16" y2="6" stroke="#8b949e" stroke-width="1.5"/><line x1="8" y1="2" x2="8" y2="6" stroke="#8b949e" stroke-width="1.5"/><line x1="3" y1="10" x2="21" y2="10" stroke="#8b949e" stroke-width="1.5"/></svg>
+      <text x="22" y="6" class="stat-label">Contributed to (last year):</text>
+      <text x="180" y="6" class="stat-value">6</text>
     </g>
   </g>
   
-  <!-- Right Section: Languages and Avatar -->
-  <g transform="translate(420, 40)">
-    <!-- Avatar Circle -->
-    <circle cx="350" cy="80" r="45" fill="#30363d" stroke="#e11d48" stroke-width="3"/>
-    <circle cx="350" cy="80" r="42" fill="url(#avatarPattern)"/>
-    
+  <!-- CENTER AVATAR -->
+  <g transform="translate(375, 60)">
+    <circle cx="35" cy="35" r="45" fill="#30363d" stroke="#e11d48" stroke-width="3"/>
+    <circle cx="35" cy="35" r="42" fill="url(#avatarPattern)"/>
+  </g>
+  
+  <!-- Right Section: Languages -->
+  <g transform="translate(530, 35)">
     <!-- Languages Header -->
     <text x="0" y="0" class="header">Most Used Languages</text>
     
-    <!-- Language List with Bars -->
+    <!-- Language List -->
     
     <g transform="translate(0, 25)">
-      <circle cx="6" cy="2" r="4" fill="#2b7489"/>
-      <text x="16" y="6" class="lang-label">TypeScript 74.7%</text>
+      <circle cx="6" cy="2" r="5" fill="#3572A5"/>
+      <text x="18" y="6" class="lang-label">Python 36.61%</text>
     </g>
     <g transform="translate(0, 41)">
-      <circle cx="6" cy="2" r="4" fill="#3572A5"/>
-      <text x="16" y="6" class="lang-label">Python 15.1%</text>
+      <circle cx="6" cy="2" r="5" fill="#00ADD8"/>
+      <text x="18" y="6" class="lang-label">Go 31.64%</text>
     </g>
     <g transform="translate(0, 57)">
-      <circle cx="6" cy="2" r="4" fill="#00ADD8"/>
-      <text x="16" y="6" class="lang-label">Go 2.7%</text>
+      <circle cx="6" cy="2" r="5" fill="#DA5B0B"/>
+      <text x="18" y="6" class="lang-label">Jupyter Notebook 11.64%</text>
     </g>
     <g transform="translate(0, 73)">
-      <circle cx="6" cy="2" r="4" fill="#f1e05a"/>
-      <text x="16" y="6" class="lang-label">JavaScript 1.3%</text>
+      <circle cx="6" cy="2" r="5" fill="#2b7489"/>
+      <text x="18" y="6" class="lang-label">TypeScript 8.41%</text>
     </g>
     <g transform="translate(0, 89)">
-      <circle cx="6" cy="2" r="4" fill="#563d7c"/>
-      <text x="16" y="6" class="lang-label">CSS 1.3%</text>
+      <circle cx="6" cy="2" r="5" fill="#89e051"/>
+      <text x="18" y="6" class="lang-label">Shell 4.92%</text>
     </g>
     <g transform="translate(0, 105)">
-      <circle cx="6" cy="2" r="4" fill="#e34c26"/>
-      <text x="16" y="6" class="lang-label">HTML 1.1%</text>
+      <circle cx="6" cy="2" r="5" fill="#f1e05a"/>
+      <text x="18" y="6" class="lang-label">JavaScript 2.76%</text>
     </g>
     <g transform="translate(0, 121)">
-      <circle cx="6" cy="2" r="4" fill="#DA5B0B"/>
-      <text x="16" y="6" class="lang-label">Jupyter Notebook 1.0%</text>
+      <circle cx="6" cy="2" r="5" fill="#e34c26"/>
+      <text x="18" y="6" class="lang-label">HTML 1.63%</text>
     </g>
     <g transform="translate(0, 137)">
-      <circle cx="6" cy="2" r="4" fill="#89e051"/>
-      <text x="16" y="6" class="lang-label">Shell 0.8%</text>
+      <circle cx="6" cy="2" r="5" fill="#ff5a03"/>
+      <text x="18" y="6" class="lang-label">Astro 1.13%</text>
+    </g>
+    <g transform="translate(0, 153)">
+      <circle cx="6" cy="2" r="5" fill="#563d7c"/>
+      <text x="18" y="6" class="lang-label">CSS 1.08%</text>
+    </g>
+    <g transform="translate(0, 169)">
+      <circle cx="6" cy="2" r="5" fill="#7e7eff"/>
+      <text x="18" y="6" class="lang-label">Nix 0.18%</text>
     </g>
   </g>
 </svg>
