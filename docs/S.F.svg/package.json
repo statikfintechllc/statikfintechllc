@@ -1,9 +1,0 @@
-{
-  "name": "statikfintechllc-card",
-  "private": true,
-  "type": "module",
-  "engines": { "node": ">=20" },
-  "scripts": {
-    "build:card": "node scripts/generate-statikfintechllc.mjs"
-  }
-}
