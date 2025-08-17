@@ -84,7 +84,7 @@
   </a>
 
   <a href="https://github.com/statikfintechllc/statikfintechllc">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.F.svg/assets/statikfintechllc-card.svg" alt="statikfintechllc" width="400"/>
+    <img src="https://raw.githubusercontent.com/statikfintechllc/KDK-Grim/master/docs/S.F.svg/assets/statikfintechllc-card.svg" alt="statikfintechllc" width="400"/>
   </a>
 
   <a href="https://github.com/statikfintechllc/WorkFlowRepo-Mirror">
