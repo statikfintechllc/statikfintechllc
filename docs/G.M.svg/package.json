@@ -1,11 +1,9 @@
 {
   "name": "gremlin-mcp-scrap-card",
-  "version": "1.0.0",
+  "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=20"
-  },
+  "engines": { "node": ">=20" },
   "scripts": {
-    "build": "node scripts/generate-gremlin-mcp-scrap.mjs"
+    "build:card": "node scripts/generate-gremlin-mcp-scrap.mjs"
   }
 }

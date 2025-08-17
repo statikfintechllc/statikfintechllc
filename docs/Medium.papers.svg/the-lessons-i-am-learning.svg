@@ -11,7 +11,7 @@
       <stop offset="100%" stop-color="#ff3168" stop-opacity="0"/>
     </radialGradient>
     
-    <!-- Glow filters -->
+    <!-- Glow filters for sparks only -->
     <filter id="glow6" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
       <feMerge>
@@ -19,14 +19,29 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
+
+    <!-- Glowing animated border -->
+    <linearGradient id="borderGrad6" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff5a00">
+        <animate attributeName="stop-color" values="#ff5a00;#ffd15a;#ff3168;#ff5a00" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ffd15a">
+        <animate attributeName="stop-color" values="#ffd15a;#ff3168;#ff5a00;#ffd15a" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Subtle background wave pattern -->
+    <pattern id="wavePattern6" patternUnits="userSpaceOnUse" width="40" height="40">
+      <path d="M 0 20 Q 10 0, 20 20 T 40 20 V 40 H 0 Z" fill="#111"/>
+    </pattern>
   </defs>
   
-  <!-- Background -->
-  <rect x="0" y="0" width="700" height="140" rx="8" fill="#000000"/>
+  <!-- Background with glowing border -->
+  <rect x="0" y="0" width="700" height="140" rx="8" fill="url(#wavePattern6)"
+        stroke="url(#borderGrad6)" stroke-width="2"/>
   
   <!-- Animated sparks and embers -->
   <g opacity="0.6">
-    <!-- Floating sparks -->
     <circle fill="url(#sparkGrad6)" cx="200" cy="30" r="2" filter="url(#glow6)">
       <animate attributeName="cx" values="150;250;350;450;550;650" dur="8s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="30;35;25;40;20;35" dur="8s" repeatCount="indefinite"/>
@@ -45,7 +60,6 @@
       <animate attributeName="opacity" values="0;0.9;0.5;0.7;0.2;0" dur="12s" begin="4s" repeatCount="indefinite"/>
     </circle>
     
-    <!-- More embers -->
     <circle fill="url(#emberGrad6)" cx="500" cy="50" r="1" filter="url(#glow6)">
       <animate attributeName="cx" values="400;500;600;700;800" dur="9s" begin="1s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="50;45;55;40;50" dur="9s" begin="1s" repeatCount="indefinite"/>
@@ -58,7 +72,6 @@
       <animate attributeName="opacity" values="0;0.8;0.6;0" dur="11s" begin="3s" repeatCount="indefinite"/>
     </circle>
     
-    <!-- Additional micro-sparks for extra drama -->
     <circle fill="url(#sparkGrad6)" cx="250" cy="100" r="1" filter="url(#glow6)">
       <animate attributeName="cx" values="200;300;400;500;600" dur="7s" begin="0.5s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="100;95;105;90;110" dur="7s" begin="0.5s" repeatCount="indefinite"/>
@@ -72,33 +85,26 @@
     </circle>
   </g>
   
-  <!-- Medium Logo Container -->
+  <!-- Medium Logo (just the circle + M, no box) -->
   <g transform="translate(5,5)">
-    <rect x="0" y="0" width="130" height="130" rx="6" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
-    
-    <!-- Medium 'M' Logo -->
     <circle cx="65" cy="65" r="35" fill="#ffffff"/>
     <text x="65" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#000000">M</text>
   </g>
   
-  <!-- Text Content -->
+  <!-- Text Content (no glow filter applied to text) -->
   <g transform="translate(140,5)">
-    <!-- Title -->
     <text x="277.5" y="25" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" 
-          fill="#ffffff" filter="url(#glow6)">The Lessons I Am Learning</text>
+          fill="#ffffff">The Lessons I Am Learning</text>
     
-    <!-- Presented by -->
     <text x="277.5" y="50" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500"
-          fill="#ffd15a" filter="url(#glow6)">Presented by: 🔱 StatikFinTech, LLC 🔱</text>
+          fill="#ffd15a">Presented by: 🔱 StatikFinTech, LLC 🔱</text>
     
-    <!-- Description -->
     <text x="277.5" y="75" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="12" 
           fill="#e6e6e6" opacity="0.9">Personal insights from building autonomous AI systems.</text>
     
-    <!-- URL -->
     <text x="277.5" y="100" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="10" 
           fill="#8abecf" opacity="0.7">https://medium.com/@ascend.gremlin/the-lessons-i-am-learning-b33dfe1df0b8</text>
