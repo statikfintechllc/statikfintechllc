@@ -94,17 +94,109 @@ function createSVGCard(article, index) {
   const textStartX = mediumLogoWidth + (padding * 2);
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="700" height="140" viewBox="0 0 700 140">
+  <defs>
+    <!-- Gradients for sparks and embers -->
+    <radialGradient id="sparkGrad${index}" r="1">
+      <stop offset="0%" stop-color="#ffd15a" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ff3168" stop-opacity="0"/>
+    </radialGradient>
+    
+    <radialGradient id="emberGrad${index}" r="1">
+      <stop offset="0%" stop-color="#ff5a00" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff3168" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Glow filters -->
+    <filter id="glow${index}" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
   <rect x="0" y="0" width="700" height="140" rx="8" fill="#000000"/>
+  
+  <!-- Animated sparks and embers -->
+  <g opacity="0.6">
+    <!-- Floating sparks -->
+    <circle fill="url(#sparkGrad${index})" cx="200" cy="30" r="2" filter="url(#glow${index})">
+      <animate attributeName="cx" values="150;250;350;450;550;650" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="30;35;25;40;20;35" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.6;0.9;0.4;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle fill="url(#emberGrad${index})" cx="300" cy="70" r="1.5" filter="url(#glow${index})">
+      <animate attributeName="cx" values="200;300;400;500;600;700" dur="10s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="70;65;75;60;80;70" dur="10s" begin="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0.5;0.8;0.3;0" dur="10s" begin="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle fill="url(#sparkGrad${index})" cx="400" cy="110" r="2.5" filter="url(#glow${index})">
+      <animate attributeName="cx" values="300;400;500;600;700;800" dur="12s" begin="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="110;105;115;100;120;110" dur="12s" begin="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.5;0.7;0.2;0" dur="12s" begin="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- More embers -->
+    <circle fill="url(#emberGrad${index})" cx="500" cy="50" r="1" filter="url(#glow${index})">
+      <animate attributeName="cx" values="400;500;600;700;800" dur="9s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="50;45;55;40;50" dur="9s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0.8;0.4;0" dur="9s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle fill="url(#sparkGrad${index})" cx="600" cy="90" r="2" filter="url(#glow${index})">
+      <animate attributeName="cx" values="500;600;700;800" dur="11s" begin="3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="90;85;95;90" dur="11s" begin="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.6;0" dur="11s" begin="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Additional micro-sparks for extra drama -->
+    <circle fill="url(#sparkGrad${index})" cx="250" cy="100" r="1" filter="url(#glow${index})">
+      <animate attributeName="cx" values="200;300;400;500;600" dur="7s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="100;95;105;90;110" dur="7s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0.8;0.3;0" dur="7s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle fill="url(#emberGrad${index})" cx="350" cy="25" r="1.2" filter="url(#glow${index})">
+      <animate attributeName="cx" values="300;400;500;600;700" dur="9.5s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;20;30;15;25" dur="9.5s" begin="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0.4;0.9;0" dur="9.5s" begin="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Medium Logo Container -->
   <g transform="translate(${padding},${padding})">
     <rect x="0" y="0" width="${mediumLogoWidth}" height="130" rx="6" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    
+    <!-- Medium 'M' Logo -->
     <circle cx="65" cy="65" r="35" fill="#ffffff"/>
     <text x="65" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#000000">M</text>
   </g>
+  
+  <!-- Text Content -->
   <g transform="translate(${textStartX},${padding})">
-    <text x="${remainingWidth/2}" y="25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">${article.title}</text>
-    <text x="${remainingWidth/2}" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffd15a">Presented by: 🔱 StatikFinTech, LLC 🔱</text>
-    <text x="${remainingWidth/2}" y="75" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#e6e6e6" opacity="0.9">${article.description}</text>
-    <text x="${remainingWidth/2}" y="100" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#8abecf" opacity="0.7">${article.url}</text>
+    <!-- Title -->
+    <text x="${remainingWidth/2}" y="25" text-anchor="middle" 
+          font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" 
+          fill="#ffffff" filter="url(#glow${index})">${article.title}</text>
+    
+    <!-- Presented by -->
+    <text x="${remainingWidth/2}" y="50" text-anchor="middle" 
+          font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500"
+          fill="#ffd15a" filter="url(#glow${index})">Presented by: 🔱 StatikFinTech, LLC 🔱</text>
+    
+    <!-- Description -->
+    <text x="${remainingWidth/2}" y="75" text-anchor="middle" 
+          font-family="Inter, Arial, sans-serif" font-size="12" 
+          fill="#e6e6e6" opacity="0.9">${article.description}</text>
+    
+    <!-- URL -->
+    <text x="${remainingWidth/2}" y="100" text-anchor="middle" 
+          font-family="Inter, Arial, sans-serif" font-size="10" 
+          fill="#8abecf" opacity="0.7">${article.url}</text>
   </g>
 </svg>`;
 
@@ -115,5 +207,8 @@ function createSVGCard(article, index) {
 articles.forEach((article, i) => {
   const { svg, fileName } = createSVGCard(article, i);
   writeFileSync(join(outputDir, fileName), svg, "utf8");
-  console.log(`✅ Wrote ${fileName}`);
+  console.log(`✅ Wrote ${fileName} with sparks and embers`);
 });
+
+console.log(`\n🔥 Generated ${articles.length} Medium article cards with animated sparks!`);
+console.log(`📁 Output directory: ${outputDir}`);
