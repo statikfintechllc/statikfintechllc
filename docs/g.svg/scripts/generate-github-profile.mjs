@@ -5,8 +5,20 @@ import { dirname, resolve } from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT = resolve(__dirname, "../assets/github-profile.svg");
 
-function generateGitHubProfileSVG() {
-  const avatarUrl = 'https://avatars.githubusercontent.com/u/179090350?v=4';
+async function fetchAvatarAsBase64() {
+  try {
+    const response = await fetch('https://avatars.githubusercontent.com/u/179090350?v=4');
+    const buffer = await response.arrayBuffer();
+    const base64 = Buffer.from(buffer).toString('base64');
+    return `data:image/png;base64,${base64}`;
+  } catch (error) {
+    console.log('Failed to fetch avatar, using fallback');
+    return 'https://avatars.githubusercontent.com/u/179090350?v=4';
+  }
+}
+
+async function generateGitHubProfileSVG() {
+  const avatarUrl = await fetchAvatarAsBase64();
   
   return `<svg viewBox="0 0 823 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -97,7 +109,7 @@ function generateGitHubProfileSVG() {
         <circle cx="40" cy="50" r="38"/>
       </clipPath>
     </defs>
-    <image href="${avatarUrl}" x="2" y="12" width="76" height="76" clip-path="url(#avatar-clip)"/>
+    <image href="${avatarUrl}" x="2" y="12" width="76" height="76" clip-path="url(#avatar-clip)" preserveAspectRatio="xMidYMid slice"/>
   </g>
 
   <!-- Right Section: Languages -->
@@ -184,9 +196,9 @@ function generateGitHubProfileSVG() {
 }
 
 (async () => {
-  const svg = generateGitHubProfileSVG();
+  const svg = await generateGitHubProfileSVG();
   console.log('Generated SVG length:', svg.length);
   await fs.writeFile(OUTPUT, svg);
-  console.log("✅ GitHub profile SVG generated exactly matching screenshot!");
+  console.log("✅ GitHub profile SVG generated with embedded base64 avatar!");
   console.log('Output file:', OUTPUT);
 })();
