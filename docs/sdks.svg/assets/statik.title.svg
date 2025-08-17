@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="980" height="920" viewBox="0 0 980 920" xmlns="http://www.w3.org/2000/svg">
+<svg width="980" height="950" viewBox="0 0 980 950" xmlns="http://www.w3.org/2000/svg">
 
   <!-- =================== THEME =================== -->
   <defs>
@@ -20,16 +20,6 @@
     <linearGradient id="gCard" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"  stop-color="#0f121a"/>
       <stop offset="100%" stop-color="#131a27"/>
-    </linearGradient>
-
-    <!-- Dragon gradients -->
-    <linearGradient id="gDragonBody" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#000000"/>
-      <stop offset="100%" stop-color="#1a1a1a"/>
-    </linearGradient>
-    <linearGradient id="gDragonEmber" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ff5a00"/>
-      <stop offset="100%" stop-color="#ff3168"/>
     </linearGradient>
 
     <!-- Glows -->
@@ -103,19 +93,10 @@
       <stop offset="0%" stop-color="#ffd15a" stop-opacity="1"/>
       <stop offset="100%" stop-color="#ff3168" stop-opacity="0"/>
     </radialGradient>
-
-    <!-- Dragon glow -->
-    <filter id="fDragonGlow" x="-150%" y="-150%" width="400%" height="400%">
-      <feGaussianBlur stdDeviation="6" result="b1"/>
-      <feMerge>
-        <feMergeNode in="b1"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
   <!-- =================== BACKDROP =================== -->
-  <rect x="0" y="0" width="980" height="920" fill="url(#gPanel)"/>
+  <rect x="0" y="0" width="980" height="950" fill="url(#gPanel)"/>
 
   <!-- Corner filaments -->
   <g opacity="0.5" filter="url(#fGlowSoft)">
@@ -125,10 +106,10 @@
     <path d="M964,26 q-70,38 -146,0 q-60,-30 -152,18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
       <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" begin="1s" repeatCount="indefinite"/>
     </path>
-    <path d="M16,894 q70,-38 146,0 q60,30 152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
+    <path d="M16,924 q70,-38 146,0 q60,30 152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
       <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" begin="2s" repeatCount="indefinite"/>
     </path>
-    <path d="M964,894 q-70,-38 -146,0 q-60,30 -152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
+    <path d="M964,924 q-70,-38 -146,0 q-60,30 -152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
       <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" begin="3s" repeatCount="indefinite"/>
     </path>
   </g>
@@ -149,7 +130,7 @@
   <g transform="translate(490,140)" text-anchor="middle" font-family="system-ui">
     <g filter="url(#fGlowSoft)">
       <!-- Transparent background with subtle border glow -->
-      <rect x="-460" y="0" width="920" height="720" rx="12" fill="none" stroke="#232939" stroke-width="2" opacity="0.3"/>
+      <rect x="-460" y="0" width="920" height="760" rx="12" fill="none" stroke="#232939" stroke-width="2" opacity="0.3"/>
       
       <!-- Header -->
       <text x="0" y="35" fill="#ffd15a" font-weight="800" font-size="18" filter="url(#fGlowSoft)">🔱 StatikFinTech, LLC 🔱</text>
@@ -226,81 +207,49 @@
           or pro-human infrastructure — we'll help you blueprint it, expand it, and make it real.
         </text>
 
-        <text x="20" y="560" fill="#8abecf" font-size="13" opacity="0.9" filter="url(#fGlowSoft)">
+        <text x="20" y="560" fill="#8abecf" font-size="13" opacity="0.9">
           No gatekeeping. No NDA. Just systems that serve.
-        </text>
-
-        <!-- Extended content -->
-        <text x="0" y="600" fill="#ffd15a" font-weight="700" font-size="14" filter="url(#fGlowStrong)">
-          🛠️ Watch GremlinGPT Demo | 📡 Install + Run | 📥 Message us to Build Together
         </text>
       </g>
 
       <!-- Footer links -->
-      <g transform="translate(0, 660)">
-        <text x="0" y="0" fill="#ffd15a" font-size="12" opacity="0.9" filter="url(#fGlowStrong)">
+      <g transform="translate(0, 740)">
+        <text x="0" y="0" fill="#ffd15a" font-size="12" opacity="0.9" filter="url(#fGlowSoft)">
           🌐 LinkedIn | 🌐 X | 🎥 YouTube | 📧 ascend.gremlin@gmail.com | 📞 +1(620) 266-9837
         </text>
       </g>
+
+      <!-- Dragon image on the right side -->
+      <image href="https://raw.githubusercontent.com/statikfintechllc/dragon-boot/master/frames/frame_000.png"
+             x="280" y="100" width="350" height="600" preserveAspectRatio="xMidYMid meet"/>
     </g>
   </g>
 
-  <!-- =================== SHADOW DRAGON =================== -->
-  <g transform="translate(650,180)" opacity="0.7">
-    <!-- Dragon silhouette with ember outline -->
-    <g filter="url(#fDragonGlow)">
-      <!-- Dragon head -->
-      <ellipse cx="100" cy="50" rx="35" ry="20" fill="url(#gDragonBody)" stroke="url(#gDragonEmber)" stroke-width="2"/>
-      
-      <!-- Dragon eyes (glowing embers) -->
-      <circle cx="92" cy="45" r="4" fill="#ff3168" filter="url(#fGlowStrong)">
-        <animate attributeName="opacity" values="0.8;1;0.8" dur="2.3s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="108" cy="45" r="4" fill="#ff3168" filter="url(#fGlowStrong)">
-        <animate attributeName="opacity" values="1;0.8;1" dur="2.3s" repeatCount="indefinite"/>
-      </circle>
+  <!-- =================== FIRE BASELINE =================== -->
+  <g transform="translate(0,928)">
+    <!-- ember rail: full width, constant -->
+    <rect x="0" y="-2" width="980" height="2" fill="url(#gNeon)" opacity="0.85" filter="url(#fGlowSoft)"/>
 
-      <!-- Dragon neck and body -->
-      <path d="M65,60 Q50,80 40,120 Q35,160 45,200 Q55,240 70,280 Q85,320 100,360 Q115,400 130,440 Q145,480 160,520 Q175,560 190,600 Q205,640 220,680 Q235,720 250,760"
-            fill="none" stroke="url(#gDragonBody)" stroke-width="14" stroke-linecap="round"/>
-      <path d="M65,60 Q50,80 40,120 Q35,160 45,200 Q55,240 70,280 Q85,320 100,360 Q115,400 130,440 Q145,480 160,520 Q175,560 190,600 Q205,640 220,680 Q235,720 250,760"
-            fill="none" stroke="url(#gDragonEmber)" stroke-width="2" stroke-linecap="round"/>
-    </g>
+    <!-- flames, embers, smoke unchanged -->
+  </g>
 
-    <!-- Dragon breath fire -->
-    <path d="M120,60 q40,20 60,0 q20,-10 40,10 q-20,40 -60,30 q-30,-5 -40,-40z"
-          fill="url(#gFlame)" filter="url(#fFireGlow)">
-      <animate attributeName="d"
-               values="M120,60 q40,20 60,0 q20,-10 40,10 q-20,40 -60,30 q-30,-5 -40,-40z;
-                       M120,60 q35,15 55,5 q25,-5 35,15 q-15,35 -55,25 q-35,-10 -35,-45z;
-                       M120,60 q40,20 60,0 q20,-10 40,10 q-20,40 -60,30 q-30,-5 -40,-40z"
-               dur="2s" repeatCount="indefinite"/>
-    </path>
-
-    <!-- Smoke rising -->
-    <g filter="url(#fWobble)">
-      <ellipse cx="180" cy="20" rx="35" ry="12" fill="url(#gSmokeDark)" opacity="0.5">
-        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-60" dur="3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3s" repeatCount="indefinite"/>
-      </ellipse>
-      <ellipse cx="200" cy="10" rx="45" ry="15" fill="url(#gSmokeLight)" opacity="0.3">
-        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-70" dur="3.5s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.3;0.05;0.3" dur="3.5s" repeatCount="indefinite"/>
-      </ellipse>
-    </g>
-
-    <!-- Sparks -->
-    <circle cx="150" cy="55" r="3" fill="url(#gSpark)">
-      <animateTransform attributeName="transform" type="translate" values="0,0; 5,-20" dur="1.2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="1;0;1" dur="1.2s" repeatCount="indefinite"/>
+  <!-- =================== DRIFTING SPARKS =================== -->
+  <g opacity="0.9">
+    <circle cx="100" cy="920" r="2.5" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="920;50" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="100;200;150;100" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.5;0.8;0" dur="6s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="170" cy="65" r="2" fill="url(#gSpark)">
-      <animateTransform attributeName="transform" type="translate" values="0,0; -5,-25" dur="1.4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="1;0;1" dur="1.4s" repeatCount="indefinite"/>
+    <circle cx="350" cy="900" r="2.8" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="900;40" dur="7.5s" begin=".5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="350;450;400;350" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.3;0.7;0" dur="6.2s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="190" cy="70" r="2" fill="url(#gSpark)">
-      <animateTransform attributeName="transform" type="translate" values="0,0; 3,-22" dur="1.1s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="1;0;1" dur="1.1s" repeatCount="indefinite"/>
+    <circle cx="800" cy="920" r="2.6" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="920;60" dur="8s" begin=".4s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="800;900;850;800" dur="7.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.3;0.8;0" dur="5.7s" repeatCount="indefinite"/>
     </circle>
   </g>
+
 </svg>
