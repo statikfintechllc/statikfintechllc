@@ -68,8 +68,6 @@
     <img src="./docs/sdks.svg/assets/statik.title.svg">
   </a>
 </div>
-<h1 align="center" style="color:#e11d48">Statik DK Smoke | SFTi | Sovereign Systems</h1>
-<h3 align="center">I build sovereign, local-first AI systems, Cool ideas, and all For The People.</h3>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://github-readme-stats.vercel.app/api?username=statikfintechllc&show_icons=true&count_private=true&include_all_commits=true&rank_icon=github&theme=transparent&hide_border=true&title_color=e11d48&icon_color=e11d48" height="165" alt="Stats">
