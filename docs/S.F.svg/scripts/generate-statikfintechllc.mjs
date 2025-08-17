@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import fs from "fs/promises";
 import https from "https";
 import path from "path";
@@ -19,6 +18,7 @@ async function fetchAvatarAsBase64() {
     return 'https://avatars.githubusercontent.com/u/200911899?v=4';
   }
 }
+
 
 function fetchGitHub(url) {
   return new Promise((resolve, reject) => {
@@ -139,7 +139,6 @@ async function main() {
 
   await fs.mkdir(path.dirname(OUTPUT), { recursive: true });
   await fs.writeFile(OUTPUT, svg);
-  console.log("✅ statikfintechllc-card.svg generated");
 }
 
 main().catch(err => {
