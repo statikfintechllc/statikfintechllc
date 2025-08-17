@@ -1,0 +1,21 @@
+<!-- burj-khalifa.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="140" viewBox="0 0 700 140">
+  <style>
+    .bg{fill:#000} .title{fill:#fff;font-family:Inter,Arial;font-size:16px;font-weight:700}
+    .presented{fill:#cfcfcf;font-family:Inter,Arial;font-size:12px} .desc{fill:#e6e6e6;font-family:Inter,Arial;font-size:12px}
+    .spark{fill:#ff6b6b;opacity:0.14}
+  </style>
+  <rect class="bg" x="0" y="0" width="700" height="140" rx="6"/>
+  <!-- sparks -->
+  <circle class="spark" cx="320" cy="22" r="2"><animate attributeName="cx" values="280;320;360" dur="7s" repeatCount="indefinite"/></circle>
+  <g transform="translate(5,5)">
+    <rect x="0" y="0" width="130" height="130" rx="4" fill="#070707"/>
+    <circle cx="65" cy="65" r="32" fill="#fff"/>
+    <text x="65" y="72" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#000">M</text>
+  </g>
+  <g transform="translate(140,5)">
+    <text class="title" x="277.5" y="18" text-anchor="middle">Burj Khalifa and the Resonant Lie</text>
+    <text class="presented" x="277.5" y="38" text-anchor="middle">Presented by: 🔱 StatikFinTech, LLC 🔱</text>
+    <text class="desc" x="277.5" y="58" text-anchor="middle">Explores symbolism and control behind iconic architecture.</text>
+  </g>
+</svg>
