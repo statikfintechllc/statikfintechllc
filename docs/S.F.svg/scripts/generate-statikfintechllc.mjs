@@ -4,8 +4,8 @@ import path from "path";
 
 const OUTPUT = path.resolve("assets/statikfintechllc-card.svg");
 const USER = "statikfintechllc";
-const TOKEN = process.env.PAT_GITHUB;
 const REPO = "statikfintechllc";
+const TOKEN = process.env.PAT_GITHUB;
 
 async function fetchAvatarAsBase64() {
   try {
@@ -21,14 +21,16 @@ async function fetchAvatarAsBase64() {
 
 function fetchGitHub(url) {
   return new Promise((resolve, reject) => {
-    console.log(`Making request to: ${url}`);
-    https.get(url, {
-      headers: {
-        "User-Agent": "BadgeBot",
-        Authorization: `Bearer ${TOKEN}`,
-      },
-    }, (res) => {
-      console.log(`Response status: ${res.statusCode}`);
+    const headers = {
+      "User-Agent": "BadgeBot",
+    };
+    
+    // Only add Authorization header if TOKEN exists
+    if (TOKEN) {
+      headers.Authorization = `Bearer ${TOKEN}`;
+    }
+    
+    https.get(url, { headers }, (res) => {
       let data = "";
       res.on("data", chunk => (data += chunk));
       res.on("end", () => {
@@ -69,21 +71,10 @@ const forkIcon = `
 `;
 
 async function main() {
-  console.log(`Fetching repo: ${USER}/${REPO}`);
   const repo = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}`);
-  console.log("Repo response:", repo);
-  
-  console.log(`Fetching user: ${USER}`);
   const user = await fetchGitHub(`https://api.github.com/users/${USER}`);
-  console.log("User response:", user);
-  
-  console.log(`Fetching languages for: ${USER}/${REPO}`);
   const langs = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}/languages`);
-  console.log("Languages response:", langs);
-  
-  console.log("Fetching avatar...");
   const avatarUrl = await fetchAvatarAsBase64();
-  console.log("Avatar URL:", avatarUrl.substring(0, 50) + "...");
   const total = Object.values(langs).reduce((a, b) => a + b, 0) || 1; // Prevent division by zero
 
   let x = 0;
@@ -163,6 +154,7 @@ async function main() {
 
   await fs.mkdir(path.dirname(OUTPUT), { recursive: true });
   await fs.writeFile(OUTPUT, svg);
+  console.log("✅ statikfintechllc-card.svg generated");
 }
 
 main().catch(err => {
