@@ -27,19 +27,19 @@
          preserveAspectRatio="xMidYMid slice"/>
 
   <!-- Title -->
-  <text x="48" y="31" class="title">undefined</text>
+  <text x="48" y="31" class="title">Gremlin-MCP-Scrap</text>
 
   <!-- Description -->
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      No description available
+      A hybrid Python + JavaScript MCP runtime for scraping readable content from the web. Powered by Flask, BeautifulSoup, and the unshakable belief that you can automate everything.  Built for VS Code’s Model Context Protocol. Gremlin-approved.
     </div>
   </foreignObject>
 
   <!-- Language Dot + Label -->
-  <circle cx="48" cy="180" r="6" fill="#ccc"/>
-  <text x="64" y="180" class="meta">N/A</text>
+  <circle cx="48" cy="180" r="6" fill="#3572A5"/>
+  <text x="64" y="180" class="meta">Python</text>
 
   <!-- Star Icon + Count (ALIGNED) -->
   <g transform="translate(140, 172)">
@@ -48,7 +48,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
   </g>
-  <text x="162" y="180" class="meta">0</text>
+  <text x="162" y="180" class="meta">1</text>
 
   <!-- Fork Icon + Count (ALIGNED) -->
   <g transform="translate(200, 173)">
@@ -60,8 +60,7 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+    <rect x="0" y="195" width="338.2704780206582" height="6" fill="#3572A5" />
+<rect x="338.2704780206582" y="195" width="101.72952197934181" height="6" fill="#f1e05a" />
   </g>
 </svg>
