@@ -123,7 +123,7 @@
     <g transform="translate(460,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">AscendDocs-of-GovSeverance</text>
-      <text x="20" y="54" style="font:400 13px system-ui" class="desc">Not a system. Not a manifesto. A memetic weapon.</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">Not a call to chaos. This is the call to</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">recursion. Alignment. Freedom.</text>
+      <text x="20" y="54" style="font:400 13px system-ui" class="desc">This is not a coded system, it is not a manifesto.</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">This is memetic weapon, not a call to chaos. This</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">is the call to Recursion. Alignment. Freedom. For</text><text x="20" y="99" style="font:400 13px system-ui" class="desc">The People.</text>
       <!-- Stars and forks -->
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(240,0)">
@@ -165,7 +165,7 @@
     <g transform="translate(0,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">dragon-boot</text>
-      <text x="20" y="54" style="font:400 13px system-ui" class="desc">🔥 A sci-fi dragon-themed Plymouth bootloader</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">animation for Linux. HD 1920x1080 splash with full</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">GRUB/initramfs integration.</text>
+      <text x="20" y="54" style="font:400 13px system-ui" class="desc">🔥 A sci-fi dragon-themed Plymouth bootloader</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">animation for Linux. HD 1800x1200 splash with full</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">GRUB/initramfs integration.</text>
       <!-- Stars and forks -->
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(240,0)">
