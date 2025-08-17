@@ -16,7 +16,7 @@
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      Remote code, build, and ops on your home computer — from your phone — with zero cloud or port-forwarding.
+      Remote code, build, and ops on your home computer — from your phone — with zero cloud or port-forwarding. Use statik-server to have access to CoPilot Chat
     </div>
   </foreignObject>
 
