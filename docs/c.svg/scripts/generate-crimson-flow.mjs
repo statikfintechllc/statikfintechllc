@@ -142,7 +142,7 @@ const LABEL    = "#ea384c";
 
 const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <!-- build:${BUILD_TAG} user:${USER} points:${pts.length} yMax:${yMax} -->
-<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Crimson Flow Graph">
+<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Contribution's Graph">
   <defs>
     <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0a0d12"/><stop offset="100%" stop-color="#070a0d"/>
@@ -186,7 +186,7 @@ const svg = `<?xml version="1.0" encoding="UTF-8"?>
   <!-- Title -->
   <text x="${W/2}" y="40" text-anchor="middle"
         font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial"
-        font-size="22" fill="${LABEL}" opacity=".95">Statik DK Smoke’s Crimson Flow</text>
+        font-size="22" fill="${LABEL}" opacity=".95">Statik DK Smoke’s Contribution's</text>
 
   <!-- Area under curve -->
   <path d="${areaPath}" fill="${RED_SOFT}" opacity=".13">
