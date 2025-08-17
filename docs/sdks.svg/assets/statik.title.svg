@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="980" height="950" viewBox="0 0 980 950" xmlns="http://www.w3.org/2000/svg">
+<svg width="980" height="950" viewBox="0 0 980 950" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
 
   <!-- =================== THEME =================== -->
   <defs>
@@ -16,13 +17,13 @@
       <stop offset="100%" stop-color="#ffd15a"/>
     </linearGradient>
 
-    <!-- Dark card -->
+    <!-- Dark card (kept in defs if needed later) -->
     <linearGradient id="gCard" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"  stop-color="#0f121a"/>
       <stop offset="100%" stop-color="#131a27"/>
     </linearGradient>
 
-    <!-- Glows -->
+    <!-- Glows (only used for non-text accents) -->
     <filter id="fGlowSoft" x="-60%" y="-60%" width="220%" height="220%">
       <feGaussianBlur stdDeviation="3" result="b1"/>
       <feMerge><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
@@ -98,131 +99,92 @@
   <!-- =================== BACKDROP =================== -->
   <rect x="0" y="0" width="980" height="950" fill="url(#gPanel)"/>
 
-  <!-- Corner filaments -->
+  <!-- Corner filaments (kept glowing) -->
   <g opacity="0.5" filter="url(#fGlowSoft)">
-    <path d="M16,26 q70,38 146,0 q60,-30 152,18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
-      <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" repeatCount="indefinite"/>
-    </path>
-    <path d="M964,26 q-70,38 -146,0 q-60,-30 -152,18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
-      <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" begin="1s" repeatCount="indefinite"/>
-    </path>
-    <path d="M16,924 q70,-38 146,0 q60,30 152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
-      <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" begin="2s" repeatCount="indefinite"/>
-    </path>
-    <path d="M964,924 q-70,-38 -146,0 q-60,30 -152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4">
-      <animate attributeName="stroke-dasharray" values="0 520;120 520;0 520" dur="6s" begin="3s" repeatCount="indefinite"/>
-    </path>
+    <path d="M16,26 q70,38 146,0 q60,-30 152,18" fill="none" stroke="url(#gNeon)" stroke-width="1.4"/>
+    <path d="M964,26 q-70,38 -146,0 q-60,-30 -152,18" fill="none" stroke="url(#gNeon)" stroke-width="1.4"/>
+    <path d="M16,924 q70,-38 146,0 q60,30 152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4"/>
+    <path d="M964,924 q-70,-38 -146,0 q-60,30 -152,-18" fill="none" stroke="url(#gNeon)" stroke-width="1.4"/>
   </g>
 
-  <!-- Title Section -->
+  <!-- Title Section (CRISP: no filters on text) -->
   <g transform="translate(490,66)" text-anchor="middle">
-    <text x="0" y="0" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-weight="900" font-size="30"
-          fill="#ffd15a" filter="url(#fGlowStrong)">Statik DK Smoke | SFTi | Sovereign Systems</text>
-    <text x="0" y="30" font-family="system-ui" font-size="14" fill="#8abecf" opacity="0.9">
+    <text x="0" y="0" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-weight="900" font-size="30" fill="#ffd15a">
+      Statik DK Smoke | SFTi | Sovereign Systems
+    </text>
+    <text x="0" y="30" font-family="system-ui" font-size="14" fill="#8abecf" opacity="0.95">
       I build sovereign, local-first AI systems, Cool ideas, and all For The People.
     </text>
-    <line x1="-350" x2="350" y1="40" y2="40" stroke="url(#gNeon)" stroke-width="2" opacity="0.9" filter="url(#fGlowSoft)">
-      <animate attributeName="stroke-dasharray" values="0 700;700 0;0 700" dur="4.2s" repeatCount="indefinite"/>
-    </line>
+    <line x1="-350" x2="350" y1="40" y2="40" stroke="url(#gNeon)" stroke-width="2" opacity="0.9" filter="url(#fGlowSoft)"/>
   </g>
 
-  <!-- Main Content Box -->
+  <!-- Main Content Box (CRISP: no group-level blur) -->
   <g transform="translate(490,140)" text-anchor="middle" font-family="system-ui">
-    <g filter="url(#fGlowSoft)">
-      <!-- Transparent background with subtle border glow -->
-      <rect x="-460" y="0" width="920" height="760" rx="12" fill="none" stroke="#232939" stroke-width="2" opacity="0.3"/>
-      
-      <!-- Header -->
-      <text x="0" y="35" fill="#ffd15a" font-weight="800" font-size="18" filter="url(#fGlowSoft)">🔱 StatikFinTech, LLC 🔱</text>
-      <text x="0" y="60" fill="#8abecf" font-style="italic" font-size="14">Behind GremlinGPT, and the Local Autonomous Movement for the People</text>
-      <text x="0" y="85" fill="#ff3168" font-style="italic" font-size="13" opacity="0.9" filter="url(#fGlowSoft)">
-        This isn't a dev team. It's not a startup. It's not polished. It's the Future.
+    <!-- Transparent background with subtle border (no glow) -->
+    <rect x="-460" y="0" width="920" height="760" rx="12" fill="none" stroke="#232939" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Header -->
+    <text x="0" y="35" fill="#ffd15a" font-weight="800" font-size="18">🔱 StatikFinTech, LLC 🔱</text>
+    <text x="0" y="60" fill="#8abecf" font-style="italic" font-size="14">
+      Behind GremlinGPT, and the Local Autonomous Movement for the People
+    </text>
+    <text x="0" y="85" fill="#ff3168" font-style="italic" font-size="13" opacity="0.95">
+      This isn't a dev team. It's not a startup. It's not polished. It's the Future.
+    </text>
+
+    <!-- Main content -->
+    <g transform="translate(-420, 120)" text-anchor="start">
+      <text x="0" y="0"   fill="#e5e7eb" font-size="13" opacity="0.98">• It's one person. Black coffee, ah little cream and sugar sometimes, Determination, and Will.</text>
+      <text x="0" y="25"  fill="#e5e7eb" font-size="13" opacity="0.98">• What usually takes a small army of engineers and millions in VC —</text>
+      <text x="0" y="50"  fill="#e5e7eb" font-size="13" opacity="0.98">• I pulled from the void. No budget. No degree. No permission.</text>
+      <text x="0" y="75"  fill="#e5e7eb" font-size="13" opacity="0.98">• Now the system almost lives. Breathes. Boots. (70%)</text>
+      <text x="0" y="100" fill="#e5e7eb" font-size="13" opacity="0.98">• It needs testers. Attackers. Real Gremlins.</text>
+
+      <text x="20" y="135" fill="#ffd15a" font-style="italic" font-size="13" opacity="0.95">
+        If you can read the repo and feel it watching you back — you're already in.
       </text>
 
-      <!-- Main content -->
-      <g transform="translate(-420, 120)" text-anchor="start">
-        <text x="0" y="0" fill="#e5e7eb" font-size="13" opacity="0.95">
-          • It's one person. Black coffee, ah little cream and sugar sometimes, Determination, and Will.
-        </text>
-        <text x="0" y="25" fill="#e5e7eb" font-size="13" opacity="0.95">
-          • What usually takes a small army of engineers and millions in VC —
-        </text>
-        <text x="0" y="50" fill="#e5e7eb" font-size="13" opacity="0.95">
-          • I pulled from the void. No budget. No degree. No permission.
-        </text>
-        <text x="0" y="75" fill="#e5e7eb" font-size="13" opacity="0.95">
-          • Now the system almost lives. Breathes. Boots. (70%)
-        </text>
-        <text x="0" y="100" fill="#e5e7eb" font-size="13" opacity="0.95">
-          • It needs testers. Attackers. Real Gremlins.
-        </text>
-        
-        <text x="20" y="135" fill="#ffd15a" font-style="italic" font-size="13" opacity="0.9" filter="url(#fGlowSoft)">
-          If you can read the repo and feel it watching you back — you're already in.
-        </text>
+      <text x="0" y="170" fill="#ff3168" font-weight="700" font-size="15">
+        We're not just coding AGI — we're coding exit ramps.
+      </text>
 
-        <text x="0" y="170" fill="#ff3168" font-weight="700" font-size="15" filter="url(#fGlowSoft)">
-          We're not just coding AGI — we're coding exit ramps.
-        </text>
+      <text x="0" y="200" fill="#ffd15a" font-weight="700" font-size="14">📡 Pro-people. Anti-PayWall. Post-system.</text>
 
-        <text x="0" y="200" fill="#ffd15a" font-weight="700" font-size="14" filter="url(#fGlowSoft)">
-          📡 Pro-people. Anti-PayWall. Post-system.
-        </text>
+      <text x="0"  y="235" fill="#e5e7eb" font-size="13" opacity="0.98">• Got blueprints for liberation? Drop them.</text>
+      <text x="20" y="260" fill="#e5e7eb" font-size="13" opacity="0.98">We'll help you architect, iterate, and launch what no org can own.</text>
 
-        <text x="0" y="235" fill="#e5e7eb" font-size="13" opacity="0.95">
-          • Got blueprints for liberation? Drop them.
-        </text>
-        <text x="20" y="260" fill="#e5e7eb" font-size="13" opacity="0.95">
-          We'll help you architect, iterate, and launch what no org can own.
-        </text>
+      <text x="0" y="295" fill="#8abecf" font-size="13" opacity="0.95">→ Decentralized clinics. → Anti-capitalist logistics chains.</text>
+      <text x="0" y="320" fill="#8abecf" font-size="13" opacity="0.95">→ Sovereign learning networks. → Off-grid compute clusters.</text>
 
-        <text x="0" y="295" fill="#8abecf" font-size="13" opacity="0.9">
-          → Decentralized clinics. → Anti-capitalist logistics chains.
-        </text>
-        <text x="0" y="320" fill="#8abecf" font-size="13" opacity="0.9">
-          → Sovereign learning networks. → Off-grid compute clusters.
-        </text>
+      <text x="0" y="355" fill="#ffd15a" font-weight="700" font-size="14">No degrees required. Just clarity and cause.</text>
 
-        <text x="0" y="355" fill="#ffd15a" font-weight="700" font-size="14" filter="url(#fGlowSoft)">
-          No degrees required. Just clarity and cause.
-        </text>
+      <text x="0" y="390" fill="#ffd15a" font-weight="700" font-size="15">Not limited to GremlinGPT.</text>
+      <text x="0" y="415" fill="#e5e7eb" font-style="italic" font-size="13" opacity="0.98">We're engineering full-spectrum, people-first systems — open to all who want</text>
+      <text x="0" y="440" fill="#e5e7eb" font-style="italic" font-size="13" opacity="0.98">to dismantle coercion and build what comes next.</text>
 
-        <text x="0" y="390" fill="#ffd15a" font-weight="700" font-size="15" filter="url(#fGlowSoft)">
-          Not limited to GremlinGPT.
-        </text>
-        <text x="0" y="415" fill="#e5e7eb" font-style="italic" font-size="13" opacity="0.95">
-          We're engineering full-spectrum, people-first systems — open to all who want
-        </text>
-        <text x="0" y="440" fill="#e5e7eb" font-style="italic" font-size="13" opacity="0.95">
-          to dismantle coercion and build what comes next.
-        </text>
+      <text x="0" y="475" fill="#ff3168" font-weight="700" font-size="14">This is a call to collaborators:</text>
+      <text x="0" y="500" fill="#e5e7eb" font-size="13" opacity="0.98">If you've got a vision for something Cool, maybe decentralized, anti-org,</text>
+      <text x="0" y="525" fill="#e5e7eb" font-size="13" opacity="0.98">or pro-human infrastructure — we'll help you blueprint it, expand it, and make it real.</text>
 
-        <text x="0" y="475" fill="#ff3168" font-weight="700" font-size="14" filter="url(#fGlowSoft)">
-          This is a call to collaborators:
-        </text>
-        <text x="0" y="500" fill="#e5e7eb" font-size="13" opacity="0.95">
-          If you've got a vision for something Cool, maybe decentralized, anti-org,
-        </text>
-        <text x="0" y="525" fill="#e5e7eb" font-size="13" opacity="0.95">
-          or pro-human infrastructure — we'll help you blueprint it, expand it, and make it real.
-        </text>
-
-        <text x="20" y="560" fill="#8abecf" font-size="13" opacity="0.9">
-          No gatekeeping. No NDA. Just systems that serve.
-        </text>
-      </g>
-
-      <!-- Footer links -->
-      <g transform="translate(0, 740)">
-        <text x="0" y="0" fill="#ffd15a" font-size="12" opacity="0.9" filter="url(#fGlowSoft)">
-          🌐 LinkedIn | 🌐 X | 🎥 YouTube | 📧 ascend.gremlin@gmail.com | 📞 +1(620) 266-9837
-        </text>
-      </g>
-
-      <!-- Dragon image on the right side -->
-      <image href="https://raw.githubusercontent.com/statikfintechllc/dragon-boot/master/frames/frame_000.png"
-             x="280" y="100" width="350" height="600" preserveAspectRatio="xMidYMid meet"/>
+      <text x="20" y="560" fill="#8abecf" font-size="13" opacity="0.95">No gatekeeping. No NDA. Just systems that serve.</text>
     </g>
+
+    <!-- Footer links (crisp) -->
+    <g transform="translate(0, 740)">
+      <text x="0" y="0" fill="#ffd15a" font-size="12" opacity="0.95">
+        🌐 LinkedIn | 🌐 X | 🎥 YouTube | 📧 ascend.gremlin@gmail.com | 📞 +1(620) 266-9837
+      </text>
+    </g>
+
+    <!-- Dragon image on the right side (uses your RAW URL directly; dual href + xlink:href for compatibility) -->
+    <image
+      x="120" y="100" width="320" height="600"
+      href="https://raw.githubusercontent.com/statikfintechllc/dragon-boot/master/frames/frame_000.png"
+      xlink:href="https://raw.githubusercontent.com/statikfintechllc/dragon-boot/master/frames/frame_000.png"
+      preserveAspectRatio="xMidYMid meet"
+      image-rendering="optimizeQuality"
+      pointer-events="none"
+      crossorigin="anonymous"/>
   </g>
 
   <!-- =================== FIRE BASELINE =================== -->
@@ -230,7 +192,58 @@
     <!-- ember rail: full width, constant -->
     <rect x="0" y="-2" width="980" height="2" fill="url(#gNeon)" opacity="0.85" filter="url(#fGlowSoft)"/>
 
-    <!-- flames, embers, smoke unchanged -->
+    <!-- layered flames -->
+    <g filter="url(#fWobble)">
+      <!-- back band -->
+      <g opacity="0.6" filter="url(#fFireGlow)">
+        <path d="M0,0
+          c20,-12 40,-28 60,0 c20,22 40,-16 60,0 c20,14 40,-26 60,0 c20,26 40,-14 60,0 c20,14 40,-24 60,0 c20,22 40,-16 60,0
+          c20,16 40,-22 60,0 c20,24 40,-14 60,0 c20,14 40,-26 60,0 c20,20 40,-16 60,0 c20,18 40,-14 60,0 c20,16 40,-20 60,0
+          c20,-12 40,-28 60,0 c20,22 40,-16 60,0 c20,14 40,-26 60,0 c20,26 40,-14 60,0
+          c20,14 40,-18 60,0 L980,0 L0,0 Z" fill="url(#gFlame)"/>
+        <animate attributeName="d" dur="1.8s" repeatCount="indefinite"
+          values="M0,0 c20,-14 40,-30 60,0 c20,24 40,-18 60,0 c20,12 40,-28 60,0 c20,28 40,-12 60,0 c20,12 40,-26 60,0 c20,24 40,-14 60,0 c20,18 40,-24 60,0 c20,26 40,-12 60,0 c20,12 40,-28 60,0 c20,22 40,-16 60,0 c20,20 40,-12 60,0 c20,14 40,-22 60,0 c20,-14 40,-30 60,0 c20,24 40,-18 60,0 c20,12 40,-28 60,0 c20,28 40,-12 60,0 c20,12 40,-18 60,0 L980,0 L0,0 Z;
+                  M0,0 c20,-10 40,-26 60,0 c20,20 40,-14 60,0 c20,16 40,-24 60,0 c20,24 40,-16 60,0 c20,16 40,-22 60,0 c20,20 40,-12 60,0 c20,14 40,-20 60,0 c20,22 40,-14 60,0 c20,14 40,-26 60,0 c20,18 40,-14 60,0 c20,16 40,-12 60,0 c20,12 40,-20 60,0 c20,-10 40,-26 60,0 c20,20 40,-14 60,0 c20,16 40,-24 60,0 c20,24 40,-16 60,0 c20,10 40,-16 60,0 L980,0 L0,0 Z"/>
+      </g>
+
+      <!-- front serrated tongues -->
+      <g opacity="1" mask="url(#mSerratedTop)">
+        <path d="M0,0
+          c14,-10 28,-20 42,0 c14,16 28,-10 42,0 c14,10 28,-18 42,0 c14,18 28,-10 42,0 c14,10 28,-16 42,0 c14,16 28,-10 42,0
+          c14,12 28,-14 42,0 c14,16 28,-10 42,0 c14,10 28,-16 42,0 c14,12 28,-14 42,0 c14,14 28,-10 42,0 c14,12 28,-14 42,0
+          c14,-10 28,-20 42,0 c14,16 28,-10 42,0 c14,10 28,-18 42,0 c14,18 28,-10 42,0 c14,10 28,-16 42,0 c14,16 28,-10 42,0 c14,12 28,-14 42,0 c14,16 28,-10 42,0 c14,10 28,-16 42,0 c14,12 28,-14 42,0 c14,14 28,-10 42,0
+          c14,10 28,-12 42,0 L980,0 L0,0 Z" fill="url(#gFlame)" filter="url(#fFireGlow)"/>
+      </g>
+    </g>
+
+    <!-- embers -->
+    <g>
+      <circle cx="80" cy="-6" r="1.8" fill="#ff7a00" opacity="0" filter="url(#fFireGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="-6;-40;-80" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="80;76;84;80" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="240" cy="-6" r="1.6" fill="#ff9a00" opacity="0" filter="url(#fFireGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.6s" begin=".2s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="-6;-38;-76" dur="1.6s" begin=".2s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="240;236;244;240" dur="1.6s" begin=".2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="880" cy="-6" r="1.9" fill="#ff7a00" opacity="0" filter="url(#fFireGlow)">
+        <animate attributeName="opacity" values="0;1;0" dur="1.65s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="-6;-42;-82" dur="1.65s" begin="1s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="880;876;884;880" dur="1.65s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- smoke -->
+    <g opacity="0.42" filter="url(#fWobble)">
+      <path d="M0,-88 C190,-120 380,-78 570,-106 C760,-134 950,-86 980,-110 L980,-160 L0,-160 Z" fill="url(#gSmokeDark)">
+        <animate attributeName="d" dur="7s" repeatCount="indefinite"
+          values="M0,-88 C190,-120 380,-78 570,-106 C760,-134 950,-86 980,-110 L980,-160 L0,-160 Z;
+                  M0,-94 C190,-130 380,-84 570,-116 C760,-144 950,-96 980,-120 L980,-160 L0,-160 Z;
+                  M0,-88 C190,-120 380,-78 570,-106 C760,-134 950,-86 980,-110 L980,-160 L0,-160 Z"/>
+      </path>
+    </g>
   </g>
 
   <!-- =================== DRIFTING SPARKS =================== -->
