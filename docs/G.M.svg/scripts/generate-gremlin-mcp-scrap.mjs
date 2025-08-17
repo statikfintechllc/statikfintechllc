@@ -7,6 +7,19 @@ const USER = "statikfintechllc";
 const REPO = "gremlin-mcp-scrap";
 const TOKEN = process.env.PAT_GITHUB;
 
+async function fetchAvatarAsBase64() {
+  try {
+    const response = await fetch('https://avatars.githubusercontent.com/u/200911899?v=4');
+    const buffer = await response.arrayBuffer();
+    const base64 = Buffer.from(buffer).toString('base64');
+    return `data:image/png;base64,${base64}`;
+  } catch (error) {
+    console.log('Failed to fetch avatar, using fallback');
+    return 'https://avatars.githubusercontent.com/u/200911899?v=4';
+  }
+}
+
+
 function fetchGitHub(url) {
   return new Promise((resolve, reject) => {
     https.get(url, {
@@ -46,6 +59,7 @@ async function main() {
   const repo = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}`);
   const user = await fetchGitHub(`https://api.github.com/users/${USER}`);
   const langs = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}/languages`);
+  const avatarUrl = await fetchAvatarAsBase64();
   const total = Object.values(langs).reduce((a, b) => a + b, 0) || 1; // Prevent division by zero
 
   let x = 0;
@@ -69,7 +83,7 @@ async function main() {
     <!-- Embedded avatar pattern as fallback -->
     <pattern id="avatar-pattern-${uniqueId}" x="20" y="16" width="20" height="20" patternUnits="userSpaceOnUse">
       <image x="0" y="0" width="20" height="20" 
-             href="https://avatars.githubusercontent.com/u/200911899?v=4"
+             href="${avatarUrl}"
              preserveAspectRatio="xMidYMid slice"/>
     </pattern>
   </defs>
@@ -85,7 +99,7 @@ async function main() {
   
   <!-- Alternative: Direct image with xlink namespace -->
   <image x="20" y="16" width="20" height="20" 
-         xlink:href="https://avatars.githubusercontent.com/u/200911899?v=4" 
+         xlink:href="${avatarUrl}" 
          clip-path="url(#avatar-clip-${uniqueId})"
          preserveAspectRatio="xMidYMid slice"/>
 
