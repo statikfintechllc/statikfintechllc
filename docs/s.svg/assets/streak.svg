@@ -1489,7 +1489,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,838</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,870</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-08-17</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1"
@@ -2377,7 +2377,7 @@
 
   <!-- Center number with heavy glow -->
   <g transform="translate(380,110)">
-    <text class="centerNum" text-anchor="middle" dy="10" filter="url(#fGlow)">8</text>
+    <text class="centerNum" text-anchor="middle" dy="10" filter="url(#fGlow)">9</text>
   </g>
 
   <text x="610" y="34" class="title" text-anchor="middle">Longest Streaks</text>
