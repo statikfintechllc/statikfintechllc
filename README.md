@@ -242,6 +242,8 @@ Reset: After 7:00pm CST on First 2 Clones
 
   <br/> [© 2025 StatikFinTech, LLC](https://statikfintechllc.github.io/Ascend-Institute/)
 
+<!--
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=statikfintechllc&color=8b0000&style=flat-square" alt="Profile Views">
 </div>
+-->
