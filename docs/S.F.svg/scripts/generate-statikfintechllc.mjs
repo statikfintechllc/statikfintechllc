@@ -4,7 +4,7 @@ import path from "path";
 
 const OUTPUT = path.resolve("assets/statikfintechllc-card.svg");
 const USER = "statikfintechllc";
-const REPO = "AscendDocs-of-GovSeverance";
+const REPO = "statikfintechllc";
 const TOKEN = process.env.PAT_GITHUB;
 
 async function fetchAvatarAsBase64() {
