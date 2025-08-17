@@ -5,6 +5,11 @@
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./docs/sdks.svg/assets/statik.title.svg">
+  </a>
+</div>
+<div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://skillicons.dev/icons?i=python,bash,linux,css,tailwind,react,anaconda,nodejs,electron,go,typescript,javascript,html,astro,nix&theme=dark" alt="Skill icons"><br>
   </a>
   <img src="./docs/c.svg/assets/crimson-flow.svg" alt="Statik DK Smoke Activity">
@@ -21,11 +26,6 @@
 </div>
 <div align="center">
   <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" />
-</div>
-<div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/sdks.svg/assets/statik.title.svg">
-  </a>
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
