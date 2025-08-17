@@ -29,6 +29,9 @@
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="./docs/sdks.svg/assets/statik.title.svg">
+  </a><br>
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./docs/g.svg/assets/github-profile.svg">
   </a>
 </div>
 <div align="center">
@@ -45,33 +48,10 @@
   </a>
 </div>
 <div align="center">
-  <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" />
-</div>
-<div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./badges/ai_architect.svg" alt="AI Architect" height="24">
-  </a>
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./badges/full_stack_dev.svg" alt="Full-Stack Dev" height="24">
-  </a>
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" height="24">
+    <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" /><br>
   </a>
 </div>
-<div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/v.svg/assets/pv-traffic.svg">
-  </a><br>
-  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
-    <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
-  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
-    <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
-  </a>
-</div>  
-<div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/g.svg/assets/github-profile.svg">
-  </a>
 <!-- Flexbox Grid -->
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
   <a href="https://github.com/statikfintechllc/GremlinGPT">
@@ -123,11 +103,29 @@
   </a>
 </div>
 </div>
+<div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./badges/ai_architect.svg" alt="AI Architect" height="24">
+  </a>
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./badges/full_stack_dev.svg" alt="Full-Stack Dev" height="24">
+  </a>
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" height="24">
+  </a>
+</div>
+<div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./docs/v.svg/assets/pv-traffic.svg">
+  </a><br>
+  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
+    <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
+  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
+    <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
+  </a>
 
 ---
 
-<div align="center" 
-	
 **✍️ Writing & Research**  
 *Systems, sovereignty, and recursive intelligence*
 
