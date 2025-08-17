@@ -27,19 +27,19 @@
          preserveAspectRatio="xMidYMid slice"/>
 
   <!-- Title -->
-  <text x="48" y="31" class="title">undefined</text>
+  <text x="48" y="31" class="title">GodCore</text>
 
   <!-- Description -->
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      No description available
+      All-in-one local AI stack for Mistral-13B and Llama.cpp, with one-step CUDA wheel install, OpenAI-compatible API, and modern web dashboard. Switch between local and cloud chat, run on your own GPU, and deploy instantly—no API keys or paywalls. Designed for easy install, custom builds, and fast remote access. Enjoy!
     </div>
   </foreignObject>
 
   <!-- Language Dot + Label -->
-  <circle cx="48" cy="180" r="6" fill="#ccc"/>
-  <text x="64" y="180" class="meta">N/A</text>
+  <circle cx="48" cy="180" r="6" fill="#3572A5"/>
+  <text x="64" y="180" class="meta">Python</text>
 
   <!-- Star Icon + Count (ALIGNED) -->
   <g transform="translate(140, 172)">
@@ -48,7 +48,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
   </g>
-  <text x="162" y="180" class="meta">0</text>
+  <text x="162" y="180" class="meta">4</text>
 
   <!-- Fork Icon + Count (ALIGNED) -->
   <g transform="translate(200, 173)">
@@ -60,8 +60,14 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+    <rect x="0" y="195" width="242.46146047077048" height="6" fill="#3572A5" />
+<rect x="242.46146047077048" y="195" width="173.95869272849612" height="6" fill="#ccc" />
+<rect x="416.42015319926657" y="195" width="7.484402006748638" height="6" fill="#f1e05a" />
+<rect x="423.9045552060152" y="195" width="6.855963173477701" height="6" fill="#89e051" />
+<rect x="430.76051837949285" y="195" width="3.5453782164216876" height="6" fill="#563d7c" />
+<rect x="434.30589659591453" y="195" width="2.4719327837592435" height="6" fill="#ccc" />
+<rect x="436.7778293796738" y="195" width="1.4626886329546014" height="6" fill="#ccc" />
+<rect x="438.2405180126284" y="195" width="0.8955161657993936" height="6" fill="#ccc" />
+<rect x="439.1360341784278" y="195" width="0.863965821572131" height="6" fill="#ccc" />
   </g>
 </svg>
