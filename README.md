@@ -54,6 +54,7 @@
 </div>
 <!-- Flexbox Grid -->
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+<div align="center"
   <a href="https://github.com/statikfintechllc/GremlinGPT">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.G.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" width="340"/>
   </a>
