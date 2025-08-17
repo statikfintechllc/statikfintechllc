@@ -88,7 +88,7 @@
   </a>
 
   <a href="https://github.com/statikfintechllc/Ascend-Institute">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechl/master/docs/A.I.svg/assets/ascend-institute-card.svg" alt="Ascend-Institute" width="400">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/A.I.svg/assets/ascend-institute-card.svg" alt="Ascend-Institute" width="400">
   </a>
 
   <a href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance">
