@@ -7,13 +7,13 @@ const OUTPUT = resolve(__dirname, "../assets/github-profile.svg");
 
 async function fetchAvatarAsBase64() {
   try {
-    const response = await fetch('https://avatars.githubusercontent.com/u/179090350?v=4');
+    const response = await fetch('https://avatars.githubusercontent.com/u/200911899?v=4');
     const buffer = await response.arrayBuffer();
     const base64 = Buffer.from(buffer).toString('base64');
     return `data:image/png;base64,${base64}`;
   } catch (error) {
     console.log('Failed to fetch avatar, using fallback');
-    return 'https://avatars.githubusercontent.com/u/179090350?v=4';
+    return 'https://avatars.githubusercontent.com/u/200911899?v=4';
   }
 }
 
@@ -167,27 +167,27 @@ async function generateGitHubProfileSVG() {
     </g>
 
     <!-- Column 2 -->
-    <g transform="translate(150, 0)">
+    <g transform="translate(180, 0)">
       <circle cx="5" cy="5" r="4" fill="#F1E05A"/>
       <text x="15" y="9" class="lang-name">JavaScript 2.76%</text>
     </g>
     
-    <g transform="translate(150, 20)">
+    <g transform="translate(180, 20)">
       <circle cx="5" cy="5" r="4" fill="#E34C26"/>
       <text x="15" y="9" class="lang-name">HTML 1.63%</text>
     </g>
     
-    <g transform="translate(150, 40)">
+    <g transform="translate(180, 40)">
       <circle cx="5" cy="5" r="4" fill="#FF5D01"/>
       <text x="15" y="9" class="lang-name">Astro 1.13%</text>
     </g>
     
-    <g transform="translate(150, 60)">
+    <g transform="translate(180, 60)">
       <circle cx="5" cy="5" r="4" fill="#563D7C"/>
       <text x="15" y="9" class="lang-name">CSS 1.08%</text>
     </g>
     
-    <g transform="translate(150, 80)">
+    <g transform="translate(180, 80)">
       <circle cx="5" cy="5" r="4" fill="#8e44ad"/>
       <text x="15" y="9" class="lang-name">Nix 0.18%</text>
     </g>
