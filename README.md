@@ -65,7 +65,7 @@
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./badges/statik.title.svg">
+    <img src="./docs/sdks.svg/assets/statik.title.svg">
   </a>
 </div>
 <h1 align="center" style="color:#e11d48">Statik DK Smoke | SFTi | Sovereign Systems</h1>
