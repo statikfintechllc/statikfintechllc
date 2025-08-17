@@ -70,10 +70,7 @@
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://github-readme-stats.vercel.app/api?username=statikfintechllc&show_icons=true&count_private=true&include_all_commits=true&rank_icon=github&theme=transparent&hide_border=true&title_color=e11d48&icon_color=e11d48" height="165" alt="Stats">
-  </a>
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=statikfintechllc&layout=compact&langs_count=10&hide_border=true&theme=transparent&title_color=e11d48" height="165" alt="Top languages">
+    <img src="./docs/g.svg/assets/github-profile.svg">
   </a>
 </div>
 <div align="center">
