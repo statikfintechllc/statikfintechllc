@@ -24,6 +24,23 @@
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./docs/sdks.svg/assets/statik.title.svg">
+  </a>
+</div>
+<div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="./docs/g.svg/assets/github-profile.svg">
+  </a>
+</div>
+<div align="center">
+  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
+    <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
+  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
+    <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
+  </a>
+</div>
+<div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
     <img src="./badges/ai_architect.svg" alt="AI Architect" height="24">
   </a>
   <a href="https://github.com/sponsors/statikfintechllc">
@@ -38,11 +55,6 @@
     <img src="./docs/v.svg/assets/pv-traffic.svg">
   </a>
 </div>  
-<div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://avatars.githubusercontent.com/u/200911899?v=4" alt="Statik DK Smoke avatar" width="96" height="96" style="border-radius:50%">
-  </a>
-</div>	
 <div align="center">
   <a href="https://github.com/statikfintechllc">
     <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
@@ -61,23 +73,6 @@
   </a>
   <a href="https://medium.com/@ascend.gremlin">
     <img src="https://img.shields.io/badge/-000000?logo=medium&logoColor=white&style=flat-square" alt="Medium">
-  </a>
-</div>
-<div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/sdks.svg/assets/statik.title.svg">
-  </a>
-</div>
-<div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/g.svg/assets/github-profile.svg">
-  </a>
-</div>
-<div align="center">
-  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
-    <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
-  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
-    <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
   </a>
 </div>
 <div align="center">
