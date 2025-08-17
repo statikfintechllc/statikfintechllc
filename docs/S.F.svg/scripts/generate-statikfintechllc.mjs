@@ -56,9 +56,10 @@ const forkIcon = `
 
 async function main() {
   const repo = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}`);
+  const user = await fetchGitHub(`https://api.github.com/users/${USER}`);
   const langs = await fetchGitHub(`https://api.github.com/repos/${USER}/${REPO}/languages`);
   const avatarUrl = await fetchAvatarAsBase64();
-  const total = Object.values(langs).reduce((a, b) => a + b, 0) || 1;
+  const total = Object.values(langs).reduce((a, b) => a + b, 0) || 1; // Prevent division by zero
 
   let x = 0;
   const langBar = Object.entries(langs).map(([lang, bytes]) => {
@@ -69,6 +70,7 @@ async function main() {
     return rect;
   }).join("\n");
 
+  // Generate unique ID for this SVG to avoid conflicts
   const uniqueId = `${REPO.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
   
   const svg = `
@@ -77,8 +79,11 @@ async function main() {
     <clipPath id="avatar-clip-${uniqueId}">
       <rect x="20" y="16" width="20" height="20" rx="4"/>
     </clipPath>
+    <!-- Embedded avatar pattern as fallback -->
     <pattern id="avatar-pattern-${uniqueId}" x="20" y="16" width="20" height="20" patternUnits="userSpaceOnUse">
-      <image x="0" y="0" width="20" height="20" href="${avatarUrl}" preserveAspectRatio="xMidYMid slice"/>
+      <image x="0" y="0" width="20" height="20" 
+             href="${avatarUrl}"
+             preserveAspectRatio="xMidYMid slice"/>
     </pattern>
   </defs>
   <style>
@@ -88,9 +93,14 @@ async function main() {
 
   <rect width="100%" height="100%" rx="10" fill="#0d1117"/>
 
-  <!-- User Avatar -->
+  <!-- User Avatar with fallback -->
   <rect x="20" y="16" width="20" height="20" rx="4" fill="url(#avatar-pattern-${uniqueId})"/>
-  <image x="20" y="16" width="20" height="20" xlink:href="${avatarUrl}" clip-path="url(#avatar-clip-${uniqueId})" preserveAspectRatio="xMidYMid slice"/>
+  
+  <!-- Alternative: Direct image with xlink namespace -->
+  <image x="20" y="16" width="20" height="20" 
+         xlink:href="${avatarUrl}" 
+         clip-path="url(#avatar-clip-${uniqueId})"
+         preserveAspectRatio="xMidYMid slice"/>
 
   <!-- Title -->
   <text x="48" y="31" class="title">${repo.name}</text>
@@ -107,13 +117,13 @@ async function main() {
   <circle cx="48" cy="180" r="6" fill="${langColor[repo.language] || "#ccc"}"/>
   <text x="64" y="180" class="meta">${repo.language || 'N/A'}</text>
 
-  <!-- Star Icon + Count -->
+  <!-- Star Icon + Count (ALIGNED) -->
   <g transform="translate(140, 172)">
     <svg viewBox="0 0 24 24" width="16" height="16">${starIcon}</svg>
   </g>
   <text x="162" y="180" class="meta">${repo.stargazers_count || 0}</text>
 
-  <!-- Fork Icon + Count -->
+  <!-- Fork Icon + Count (ALIGNED) -->
   <g transform="translate(200, 173)">
     <svg viewBox="0 0 24 24" width="16" height="16">${forkIcon}</svg>
   </g>
