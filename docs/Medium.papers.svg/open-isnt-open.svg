@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="140" viewBox="0 0 700 140">
+  <rect x="0" y="0" width="700" height="140" rx="8" fill="#000000"/>
+  <g transform="translate(5,5)">
+    <rect x="0" y="0" width="130" height="130" rx="6" fill="#0a0a0a" stroke="#333" stroke-width="1"/>
+    <circle cx="65" cy="65" r="35" fill="#ffffff"/>
+    <text x="65" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#000000">M</text>
+  </g>
+  <g transform="translate(140,5)">
+    <text x="277.5" y="25" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff">Open Isn't Open</text>
+    <text x="277.5" y="50" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#ffd15a">Presented by: 🔱 StatikFinTech, LLC 🔱</text>
+    <text x="277.5" y="75" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12" fill="#e6e6e6" opacity="0.9">Examining the illusion of open source in corporate AI.</text>
+    <text x="277.5" y="100" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="10" fill="#8abecf" opacity="0.7">https://medium.com/@ascend.gremlin/open-isnt-open-2f4aaf98c19e</text>
+  </g>
+</svg>
