@@ -33,7 +33,7 @@
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      Account ReadMe
+      Custom SVG files ran via github workflows or using `node <path to file>` using terminal, 10-18 second Workflow runs, ~300 minutes a month(GitHub). Affordable workflows that look Great.
     </div>
   </foreignObject>
 
