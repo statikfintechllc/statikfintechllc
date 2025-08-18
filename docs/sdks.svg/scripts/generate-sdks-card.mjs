@@ -8,7 +8,7 @@ const OUTPUT = resolve(__dirname, "../assets/statik.title.svg");
 
 async function fetchDragonImageAsBase64() {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/statikfintechllc/dragon-boot/master/frames/frame_000.png');
+    const response = await fetch('https://raw.githubusercontent.com/statikfintechllc/dragon-boot/master/Images/dragon.gif');
     const buffer = await response.arrayBuffer();
     const base64 = Buffer.from(buffer).toString('base64');
     return `data:image/png;base64,${base64}`;
