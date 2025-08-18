@@ -295,4 +295,36 @@
       <animate attributeName="cx" values="200;300;250;200" dur="6.5s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;1;0.4;0.9;0" dur="5.5s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="350" cy="380" r="2.8" fill
+    <circle cx="350" cy="380" r="2.8" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="380;40" dur="7.5s" begin=".5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="350;450;400;350" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.3;0.7;0" dur="6.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="395" r="2.0" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="395;70" dur="8.5s" begin=".2s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="500;600;550;500" dur="7.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.5;0.8;0" dur="5.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="385" r="2.4" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="385;50" dur="7s" begin=".7s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="650;750;700;650" dur="6.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.4;0.9;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="800" cy="400" r="2.6" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="400;60" dur="8s" begin=".4s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="800;900;850;800" dur="7.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.3;0.8;0" dur="5.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="900" cy="390" r="2.3" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="390;40" dur="9s" begin=".6s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="900;800;850;900" dur="6.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.5;0.7;0" dur="6.3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="395" r="2.1" fill="url(#gSpark)" filter="url(#fGlowSoft)">
+      <animate attributeName="cy" values="395;50" dur="7.8s" begin=".8s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="300;200;250;300" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0.4;0.9;0" dur="5.9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+</svg>
