@@ -1,0 +1,68 @@
+<svg width="500" height="60" viewBox="0 0 500 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Reset schedule gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+    
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f3460">
+        <animate attributeName="stop-color" values="#0f3460;#e94560;#f39c12;#0f3460" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#e94560">
+        <animate attributeName="stop-color" values="#e94560;#f39c12;#0f3460;#e94560" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Clock pattern -->
+    <pattern id="clockPattern" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <g transform="translate(7,7)">
+        <circle cx="8" cy="8" r="6" stroke="#0f3460" stroke-width="1" fill="none" opacity="0.2"/>
+        <line x1="8" y1="8" x2="8" y2="4" stroke="#e94560" stroke-width="1" opacity="0.3"/>
+        <line x1="8" y1="8" x2="11" y2="8" stroke="#f39c12" stroke-width="1" opacity="0.3"/>
+      </g>
+    </pattern>
+
+    <!-- Glow effects -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background with animated border -->
+  <rect x="0" y="0" width="500" height="60" rx="10" fill="url(#bgGrad)"
+        stroke="url(#borderGrad)" stroke-width="2"/>
+  
+  <!-- Clock pattern overlay -->
+  <rect x="0" y="0" width="500" height="60" fill="url(#clockPattern)" opacity="0.1"/>
+  
+  <!-- Floating time indicators -->
+  <g opacity="0.6">
+    <circle fill="#0f3460" cx="40" cy="15" r="1" filter="url(#glow)">
+      <animate attributeName="cx" values="40;120;200;280;360;440" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="15;20;10;25;5;20" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.6;0.9;0.4;0" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle fill="#e94560" cx="80" cy="45" r="0.8" filter="url(#glow)">
+      <animate attributeName="cx" values="80;160;240;320;400;480" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="45;40;50;35;55;40" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0.8;0.5;0.7;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Main text -->
+  <text x="250" y="38" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="600" letter-spacing="0.5px">
+    <tspan>⏰ Reset: After 7:00pm CST on First 2 Clones</tspan>
+  </text>
+  
+  <!-- Subtle glow effect on text -->
+  <text x="250" y="38" text-anchor="middle" fill="#e94560" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="600" letter-spacing="0.5px" opacity="0.2" filter="url(#glow)">
+    <tspan>⏰ Reset: After 7:00pm CST on First 2 Clones</tspan>
+  </text>
+</svg>

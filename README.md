@@ -210,8 +210,7 @@
 </div> 
 <div align="center">
 
-### The Institute's GremlinGPT
-**The World's first *RS***-***RACS*** | **Recursive, Self-Referential Autonomous Cognitive System**
+<img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/G.I.badge.svg" alt="The Institute's GremlinGPT" />
 
   <a href="https://www.github.com/statikfintechllc/GremlinGPT">
   <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/graph/traffic_graph.png" alt="Traffic Graph" />
@@ -224,11 +223,15 @@
   
 <div align="center">
 
-Reset: After 7:00pm CST on First 2 Clones
+<img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/R.S.badge.svg" alt="Reset Schedule" />
+
+</div>
 
 ---
 
-### 💡 Like my work? 
+<div align="center">
+<img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/L.W.badge.svg" alt="Like my work?" />
+</div>
 <div align="center">
 
 <a href="https://ko-fi.com/statikfintech_llc">
@@ -245,6 +248,8 @@ Reset: After 7:00pm CST on First 2 Clones
 [![Sponsor 💪 statikfintechllc](https://img.shields.io/badge/Sponsor%20SFTi%20on%20GitHub-darkred?logo=github&style=for-the-badge)](https://github.com/sponsors/statikfintechllc)
 
   <br/> [© 2025 StatikFinTech, LLC](https://statikfintechllc.github.io/Ascend-Institute/)
+
+</div>
 
 <!--
 <div align="center">

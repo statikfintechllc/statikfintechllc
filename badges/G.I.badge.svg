@@ -1,0 +1,80 @@
+<svg width="700" height="120" viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- GremlinGPT-style gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b35">
+        <animate attributeName="stop-color" values="#ff6b35;#ffd700;#ff1744;#ff6b35" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ffd700">
+        <animate attributeName="stop-color" values="#ffd700;#ff1744;#ff6b35;#ffd700" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Gremlin pattern -->
+    <pattern id="gremlinPattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <g transform="translate(15,15)">
+        <circle cx="10" cy="10" r="8" fill="#ff6b35" opacity="0.1"/>
+        <text x="10" y="14" text-anchor="middle" fill="#ffd700" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" opacity="0.3">G</text>
+      </g>
+    </pattern>
+
+    <!-- Glow effects -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background with animated border -->
+  <rect x="0" y="0" width="700" height="120" rx="15" fill="url(#bgGrad)"
+        stroke="url(#borderGrad)" stroke-width="3"/>
+  
+  <!-- Gremlin pattern overlay -->
+  <rect x="0" y="0" width="700" height="120" fill="url(#gremlinPattern)" opacity="0.1"/>
+  
+  <!-- Floating sparks -->
+  <g opacity="0.8">
+    <circle fill="#ff6b35" cx="60" cy="25" r="2" filter="url(#glow)">
+      <animate attributeName="cx" values="60;160;260;360;460;560;660" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;30;20;35;15;30;25" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.6;0.9;0.4;0.7;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle fill="#ffd700" cx="120" cy="95" r="1.5" filter="url(#glow)">
+      <animate attributeName="cx" values="120;220;320;420;520;620;720" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="95;90;100;85;105;90;95" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0.8;0.5;0.7;0.9;0" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle fill="#ff1744" cx="180" cy="60" r="1.8" filter="url(#glow)">
+      <animate attributeName="cx" values="180;280;380;480;580;680;780" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="60;65;55;70;50;65;60" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0.5;0.8;0.6;0.4;0" dur="13s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Main title -->
+  <text x="350" y="45" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="32" font-weight="700" letter-spacing="1px">
+    <tspan>🧠 The Institute's GremlinGPT</tspan>
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="350" y="75" text-anchor="middle" fill="#cccccc" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="500" letter-spacing="0.5px">
+    <tspan>The World's first </tspan>
+    <tspan fill="#ff6b35" font-weight="700">RS-RACS</tspan>
+    <tspan> | Recursive, Self-Referential Autonomous Cognitive System</tspan>
+  </text>
+  
+  <!-- Glow effect on main text -->
+  <text x="350" y="45" text-anchor="middle" fill="#ff6b35" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="32" font-weight="700" letter-spacing="1px" opacity="0.2" filter="url(#glow)">
+    <tspan>🧠 The Institute's GremlinGPT</tspan>
+  </text>
+</svg>
