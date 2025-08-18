@@ -53,7 +53,7 @@
   </a>
 </div>
 <div align="center">
-  <h3> GitHub Repositories</h3>
+  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/G.H.badge.svg" alt="GitHub Repositories" />
 </div>
 <!-- Flexbox Grid -->
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
@@ -102,7 +102,7 @@
 
 <!-- Zenodo Research Papers Flexbox Grid -->
 <div align="center">
-  <h3>🎓 Academic Research Publications</h3>
+  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/Z.P.badge.svg" alt="Academic Research Publications" />
 </div>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
 <div align="center">
@@ -122,7 +122,7 @@
 
 <!-- Medium Articles Flexbox Grid -->
 <div align="center">
-  <h3>✍️ Medium Publications</h3>
+  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/M.P.badge.svg" alt="Medium Publications" />
 </div>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
 <div align="center">

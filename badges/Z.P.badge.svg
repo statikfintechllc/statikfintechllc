@@ -1,0 +1,73 @@
+<svg width="600" height="80" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Academic/Zenodo blue gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6">
+        <animate attributeName="stop-color" values="#3b82f6;#60a5fa;#1d4ed8;#3b82f6" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#60a5fa">
+        <animate attributeName="stop-color" values="#60a5fa;#1d4ed8;#3b82f6;#60a5fa" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Zenodo 'Z' pattern -->
+    <pattern id="zenodoPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <g transform="translate(12,12)">
+        <circle cx="8" cy="8" r="8" fill="#3b82f6" opacity="0.2"/>
+        <text x="8" y="12" text-anchor="middle" fill="#60a5fa" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="bold" opacity="0.4">Z</text>
+      </g>
+    </pattern>
+
+    <!-- Academic sparkle effects -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background with animated border -->
+  <rect x="0" y="0" width="600" height="80" rx="12" fill="url(#bgGrad)"
+        stroke="url(#borderGrad)" stroke-width="2"/>
+  
+  <!-- Zenodo pattern overlay -->
+  <rect x="0" y="0" width="600" height="80" fill="url(#zenodoPattern)" opacity="0.1"/>
+  
+  <!-- Floating academic sparkles -->
+  <g opacity="0.7">
+    <circle fill="#3b82f6" cx="50" cy="20" r="1.5" filter="url(#glow)">
+      <animate attributeName="cx" values="50;150;250;350;450;550" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="20;25;15;30;10;25" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.6;0.9;0.4;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle fill="#60a5fa" cx="100" cy="60" r="1" filter="url(#glow)">
+      <animate attributeName="cx" values="100;200;300;400;500;600" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="60;55;65;50;70;55" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0.8;0.5;0.7;0" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle fill="#1d4ed8" cx="150" cy="40" r="1.2" filter="url(#glow)">
+      <animate attributeName="cx" values="150;250;350;450;550;650" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="40;45;35;50;30;45" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0.5;0.8;0.6;0" dur="13s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Main title -->
+  <text x="300" y="45" text-anchor="middle" fill="#f1f5f9" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="600" letter-spacing="0.5px">
+    <tspan>🎓 Academic Research Publications</tspan>
+  </text>
+  
+  <!-- Subtle glow effect on text -->
+  <text x="300" y="45" text-anchor="middle" fill="#3b82f6" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="600" letter-spacing="0.5px" opacity="0.3" filter="url(#glow)">
+    <tspan>🎓 Academic Research Publications</tspan>
+  </text>
+</svg>
