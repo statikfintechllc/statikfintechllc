@@ -28,28 +28,28 @@
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/sdks.svg/assets/statik.title.svg">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/sdks.svg/assets/statik.title.svg">
   </a><br>
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/g.svg/assets/github-profile.svg">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/g.svg/assets/github-profile.svg">
   </a>
 </div>
 <div align="center">
-  <img src="./docs/c.svg/assets/crimson-flow.svg" alt="Statik DK Smoke Activity">
+  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/c.svg/assets/crimson-flow.svg" alt="Statik DK Smoke Activity">
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/s.svg/assets/streak.svg" alt="Streak" />
-  </a>
-</div>
-<div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-	<img src="./docs/t.svg/assets/trophies.svg" alt="Trophies" />
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/s.svg/assets/streak.svg" alt="Streak" />
   </a>
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" /><br>
+	<img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/t.svg/assets/trophies.svg" alt="Trophies" />
+  </a>
+</div>
+<div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" /><br>
   </a>
 </div>
 <div align="center">
@@ -189,18 +189,18 @@
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./badges/ai_architect.svg" alt="AI Architect" height="24">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/ai_architect.svg" alt="AI Architect" height="24">
   </a>
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./badges/full_stack_dev.svg" alt="Full-Stack Dev" height="24">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/full_stack_dev.svg" alt="Full-Stack Dev" height="24">
   </a>
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" height="24">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" height="24">
   </a>
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="./docs/v.svg/assets/pv-traffic.svg">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/v.svg/assets/pv-traffic.svg">
   </a><br>
   <a href="https://statikfintechllc.github.io/Ascend-Institute/">
     <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
