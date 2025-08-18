@@ -107,7 +107,7 @@
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
 <div align="center">
   <a href="https://doi.org/10.5281/zenodo.15717788">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/recursive-autonomous-cognitive-ai-systems.svg" alt="Recursive Autonomous Cognitive Systems" width="400"/>
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/docs/Zenodo.papers.svg/rise-of-recursive-autonomous-cognitive-ai-systems.svg" alt="Recursive Autonomous Cognitive Systems" width="400"/>
   </a>
 
   <a href="https://doi.org/10.5281/zenodo.15725639">
