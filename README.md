@@ -96,6 +96,94 @@
   </a>
 </div>
 </div>
+
+<!-- Zenodo Research Papers Flexbox Grid -->
+<div align="center">
+  <h3>🎓 Academic Research Publications</h3>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+<div align="center">
+  <a href="https://doi.org/10.5281/zenodo.15717788">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/recursive-autonomous-cognitive-systems-a-framework-for-selfmodifying-ai.svg" alt="Recursive Autonomous Cognitive Systems" width="400"/>
+  </a>
+
+  <a href="https://doi.org/10.5281/zenodo.15725639">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/economic-sovereignty-through-decentralized-ai-infrastructure.svg" alt="Economic Sovereignty Through Decentralized AI" width="400"/>
+  </a>
+
+  <a href="https://doi.org/10.5281/zenodo.15825120">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/the-gremlingpt-architecture-localfirst-recursive-intelligence.svg" alt="GremlinGPT Architecture" width="400"/>
+  </a>
+</div>
+</div>
+
+<!-- Medium Articles Flexbox Grid -->
+<div align="center">
+  <h3>✍️ Medium Publications</h3>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+<div align="center">
+  <a href="https://medium.com/@ascend.gremlin/the-govseverance-doctrine-70fa170a9e8f">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/the-govseverance-doctrine.svg" alt="The GovSeverance Doctrine" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/burj-khalifa-and-the-resonant-lie-429298865708">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/burj-khalifa-and-the-resonant-lie.svg" alt="Burj Khalifa and the Resonant Lie" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/the-wealth-power-imbalance-and-contemporary-forms-of-economic-servitude-bf2c2700d91632">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/the-wealth-power-imbalance-and-economic-servitude.svg" alt="The Wealth Power Imbalance" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/while-dubai-was-building-control-systems-i-built-an-autonomous-mind-fb4c8c4c0dc1">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/while-dubai-built-control-i-built-an-autonomous-mind.svg" alt="While Dubai Built Control" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/self-forking-ai-and-the-mechanic-from-kansas-73d98685fda9">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/selfforking-ai-and-the-mechanic-from-kansas.svg" alt="Self-Forking AI" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/the-disappearance-of-the-openai-mcp-repo-a5419347be0b">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/the-disappearance-of-the-openai-mcp-repo.svg" alt="The Disappearance of OpenAI MCP Repo" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/the-lessons-i-am-learning-b33dfe1df0b8">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/the-lessons-i-am-learning.svg" alt="The Lessons I Am Learning" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/designing-gremlingpt-8521fbdedcf8">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/designing-gremlingpt.svg" alt="Designing GremlinGPT" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/building-an-autonomous-ai-driven-ide-pipeline-f7c9faffbd2e">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/building-an-autonomous-aidriven-ide-pipeline.svg" alt="Building an Autonomous AI-Driven IDE Pipeline" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/gremlingpts-structural-extraction-c945b74971d3">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/gremlingpts-structural-extraction.svg" alt="GremlinGPT's Structural Extraction" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/open-isnt-open-2f4aaf98c19e">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/open-isnt-open.svg" alt="Open Isn't Open" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/the-pivot-that-broke-product-market-fit-e82dd8e9d868">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/the-pivot-that-broke-productmarket-fit.svg" alt="The Pivot That Broke Product-Market Fit" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/its-not-the-ai-but-the-system-3db4b0e142c5">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/its-not-the-ai-but-the-system.svg" alt="It's Not the AI, But the System" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/breaking-the-loop-b8013cdedb0e">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/breaking-the-loop.svg" alt="Breaking the Loop" width="400"/>
+  </a>
+
+  <a href="https://medium.com/@ascend.gremlin/capital-capture-a2a885ce3885">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/capital-capture.svg" alt="Capital Capture" width="400"/>
+  </a>
+</div>
+</div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="./badges/ai_architect.svg" alt="AI Architect" height="24">
@@ -118,82 +206,6 @@
   </a>
 
 ---
-
-**✍️ Writing & Research**  
-*Systems, sovereignty, and recursive intelligence*
-
-**The Zenodo Archives**<br>
-  <a  href="https://doi.org/10.5281/zenodo.15717788">
-    <img src="https://img.shields.io/badge/DOI-15717788-e11d48?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 1">
-  </a>
-  <a href="https://doi.org/10.5281/zenodo.15725639">
-    <img src="https://img.shields.io/badge/DOI-15725639-14b8a6?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 2">
-  </a>
-  <a href="https://doi.org/10.5281/zenodo.15825120">
-    <img src="https://img.shields.io/badge/DOI-15825120-f97316?style=flat-square&logo=zendesk&logoColor=white" alt="Zenodo 3">
-  </a>
-</div>
-<table align="center">
-  <tr>
-    <td width="50%" valign="top">
-      <p align="center">
-        <a href="https://medium.com/@ascend.gremlin/the-govseverance-doctrine-70fa170a9e8f">
-          <img src="https://img.shields.io/badge/Read_on_Medium-000000?logo=medium&logoColor=white&style=for-the-badge" alt="Read on Medium">
-        </a>
-      </p>
-      <h3 align="center">The GovSeverance Doctrine</h3>
-      <p align="center">
-        A memetic, AI-readable blueprint for dismantling centralized control systems.<br/>
-        <img src="https://img.shields.io/badge/Length-12~18_min-000000?style=flat-square" alt="length">
-        <img src="https://img.shields.io/badge/Series-AscendDocs-7c3aed?style=flat-square" alt="series">
-        <img src="https://img.shields.io/badge/Focus-Systems%20Architecture-e11d48?style=flat-square" alt="focus">
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <p align="center">
-        <a href="https://medium.com/@ascend.gremlin/while-dubai-was-building-control-systems-i-built-an-autonomous-mind-fb4c8c4c0dc1">
-          <img src="https://img.shields.io/badge/Read_on_Medium-000000?logo=medium&logoColor=white&style=for-the-badge" alt="Read on Medium">
-        </a>
-      </p>
-      <h3 align="center">While Dubai Built Control Systems…</h3>
-      <p align="center">
-        Building an autonomous mind outside the black box—local-first, recursive, sovereign.<br/>
-        <img src="https://img.shields.io/badge/Length-8~12_min-000000?style=flat-square" alt="length">
-        <img src="https://img.shields.io/badge/Tag-Local%20AI-ef4444?style=flat-square" alt="tag">
-        <img src="https://img.shields.io/badge/Stack-GremlinGPT-ef4444?style=flat-square" alt="stack">
-      </p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <p align="center">
-        <a href="https://medium.com/@ascend.gremlin/the-wealth-power-imbalance-and-contemporary-forms-of-economic-servitude-bf2700d91632">
-          <img src="https://img.shields.io/badge/Read_on_Medium-000000?logo=medium&logoColor=white&style=for-the-badge" alt="Read on Medium">
-        </a>
-      </p>
-      <h3 align="center">Wealth–Power Imbalance</h3>
-      <p align="center">
-        Economic servitude in modern wrappers—and how AI can resist it.<br/>
-        <img src="https://img.shields.io/badge/Theme-Econ%20Structures-f59e0b?style=flat-square" alt="theme">
-        <img src="https://img.shields.io/badge/Mode-Analysis-e11d48?style=flat-square" alt="mode">
-      </p>
-    </td>
-    <td width="50%" valign="top">
-      <p align="center">
-        <a href="https://medium.com/@ascend.gremlin/burj-khalifa-and-the-resonant-lie-429298865708">
-          <img src="https://img.shields.io/badge/Read_on_Medium-000000?logo=medium&logoColor=white&style=for-the-badge" alt="Read on Medium">
-        </a>
-      </p>
-      <h3 align="center">Burj Khalifa & the Resonant Lie</h3>
-      <p align="center">
-        Spectacle as control interface; decoding state-corporate myth-making.<br/>
-        <img src="https://img.shields.io/badge/Theme-Narrative%20Engineering-a855f7?style=flat-square" alt="theme">
-        <img src="https://img.shields.io/badge/Mode-Essay-ef4444?style=flat-square" alt="mode">
-      </p>
-    </td>
-  </tr>
-</table>
-<div align="center" style="color:#e11d48">
 
 ### The Institute's GremlinGPT
 The World's first *RS-RACS* | *Recursive, Self-Referential Autonomous Cognitive System*
