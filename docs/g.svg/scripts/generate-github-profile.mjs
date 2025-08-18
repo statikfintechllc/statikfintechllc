@@ -64,24 +64,41 @@ async function fetchGitHubData() {
     // Calculate language statistics
     const languageStats = {};
     let totalBytes = 0;
+    let totalIssues = 0;
+    let totalPullRequests = 0;
 
-    for (const repo of repos) {
-      if (repo.fork) continue; // Skip forked repos
-      
+    for (const repo of repos.filter(r => !r.fork)) {
       try {
+        // Fetch languages
         const langResponse = await fetch(repo.languages_url, { headers });
-        const languages = await langResponse.json();
-        
-        for (const [lang, bytes] of Object.entries(languages)) {
-          languageStats[lang] = (languageStats[lang] || 0) + bytes;
-          totalBytes += bytes;
+        if (langResponse.ok) {
+          const languages = await langResponse.json();
+          for (const [lang, bytes] of Object.entries(languages)) {
+            languageStats[lang] = (languageStats[lang] || 0) + bytes;
+            totalBytes += bytes;
+          }
+        } else {
+          console.log(`Failed to fetch languages for ${repo.name}`);
         }
+
+        // Fetch issues
+        const issuesResponse = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/issues?state=all`, { headers });
+        if (issuesResponse.ok) {
+          const issues = await issuesResponse.json();
+          totalIssues += issues.length;
+        }
+
+        // Fetch pull requests
+        const pullsResponse = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repo.name}/pulls?state=all`, { headers });
+        if (pullsResponse.ok) {
+          const pulls = await pullsResponse.json();
+          totalPullRequests += pulls.length;
+        }
+
       } catch (error) {
         console.log(`Failed to fetch languages for ${repo.name}`);
       }
-    }
-
-    // Convert to percentages and sort
+    }    // Convert to percentages and sort
     const languagePercentages = Object.entries(languageStats)
       .map(([lang, bytes]) => ({
         name: lang,
@@ -97,7 +114,9 @@ async function fetchGitHubData() {
       stats: {
         totalRepos: repos.length,
         totalStars: repos.reduce((sum, repo) => sum + repo.stargazers_count, 0),
-        totalForks: repos.reduce((sum, repo) => sum + repo.forks_count, 0)
+        totalForks: repos.reduce((sum, repo) => sum + repo.forks_count, 0),
+        totalIssues,
+        totalPullRequests
       }
     };
   } catch (error) {
@@ -229,7 +248,7 @@ async function generateGitHubProfileSVG() {
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Issues:</text>
-      <text x="200" y="5" class="stat-value">${data.user.issues || 0}</text>
+      <text x="200" y="5" class="stat-value">${data.stats.totalIssues || 0}</text>
     </g>
     
     <g transform="translate(0, 110)">
@@ -242,7 +261,7 @@ async function generateGitHubProfileSVG() {
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">PR's:</text>
-      <text x="200" y="5" class="stat-value">${data.user.pullrequests || 0}</text>
+      <text x="200" y="5" class="stat-value">${data.stats.totalPullRequests || 0}</text>
     </g>
   </g>
 

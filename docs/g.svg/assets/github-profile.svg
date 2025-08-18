@@ -59,8 +59,8 @@
           <path d="M12 16h.01"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Followers:</text>
-      <text x="200" y="5" class="stat-value">76</text>
+      <text x="30" y="5" class="stat-label">Issues:</text>
+      <text x="200" y="5" class="stat-value">45</text>
     </g>
     
     <g transform="translate(0, 110)">
@@ -72,8 +72,8 @@
           <path d="M3 10h18"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Following:</text>
-      <text x="200" y="5" class="stat-value">70</text>
+      <text x="30" y="5" class="stat-label">PR's:</text>
+      <text x="200" y="5" class="stat-value">28</text>
     </g>
   </g>
 
@@ -96,17 +96,17 @@
   <!-- Language progress bar -->
   <g transform="translate(505, 45)">
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
-  <!-- Python 36.34% -->
+  <!-- Python 36.30% -->
   <rect x="0" y="0" width="105" height="8" fill="#3572A5" rx="4"/>
-  <!-- Go 31.49% -->
+  <!-- Go 31.46% -->
   <rect x="105" y="0" width="91" height="8" fill="#00ADD8"/>
-  <!-- Jupyter Notebook 11.58% -->
+  <!-- Jupyter Notebook 11.57% -->
   <rect x="196" y="0" width="34" height="8" fill="#DA5B0B"/>
-  <!-- TypeScript 8.38% -->
+  <!-- TypeScript 8.37% -->
   <rect x="230" y="0" width="24" height="8" fill="#3178c6"/>
   <!-- Shell 4.93% -->
   <rect x="254" y="0" width="14" height="8" fill="#89e051"/>
-  <!-- JavaScript 2.77% -->
+  <!-- JavaScript 2.87% -->
   <rect x="268" y="0" width="8" height="8" fill="#f1e05a"/>
   <!-- HTML 1.62% -->
   <rect x="276" y="0" width="5" height="8" fill="#e34c26"/>
@@ -122,22 +122,22 @@
   <g transform="translate(505, 70)">
     <g transform="translate(0, 0)">
       <circle cx="5" cy="5" r="4" fill="#3572A5"/>
-      <text x="15" y="9" class="lang-name">Python 36.34%</text>
+      <text x="15" y="9" class="lang-name">Python 36.30%</text>
     </g>
     
     <g transform="translate(0, 20)">
       <circle cx="5" cy="5" r="4" fill="#00ADD8"/>
-      <text x="15" y="9" class="lang-name">Go 31.49%</text>
+      <text x="15" y="9" class="lang-name">Go 31.46%</text>
     </g>
     
     <g transform="translate(0, 40)">
       <circle cx="5" cy="5" r="4" fill="#DA5B0B"/>
-      <text x="15" y="9" class="lang-name">Jupyter Notebook 11.58%</text>
+      <text x="15" y="9" class="lang-name">Jupyter Notebook 11.57%</text>
     </g>
     
     <g transform="translate(0, 60)">
       <circle cx="5" cy="5" r="4" fill="#3178c6"/>
-      <text x="15" y="9" class="lang-name">TypeScript 8.38%</text>
+      <text x="15" y="9" class="lang-name">TypeScript 8.37%</text>
     </g>
     
     <g transform="translate(0, 80)">
@@ -147,7 +147,7 @@
     
     <g transform="translate(180, 0)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 2.77%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 2.87%</text>
     </g>
     
     <g transform="translate(180, 20)">
