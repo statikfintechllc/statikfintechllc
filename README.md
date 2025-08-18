@@ -7,6 +7,16 @@
   </a>
 </div>
 <div align="center">
+  <a href="https://github.com/sponsors/statikfintechllc">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/v.svg/assets/pv-traffic.svg">
+  </a>
+  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
+    <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
+  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
+    <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
+  </a>
+</div> 
+<div align="center">
   <a href="https://github.com/statikfintechllc">
     <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
   </a>
@@ -199,32 +209,16 @@
   </a>
 </div>
 <div align="center">
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/v.svg/assets/pv-traffic.svg">
-  </a><br>
-  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
-    <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
-  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
-    <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
-  </a>
-</div> 
-<div align="center">
-
 <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/G.I.badge.svg" alt="The Institute's GremlinGPT" />
-
   <a href="https://www.github.com/statikfintechllc/GremlinGPT">
   <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/graph/traffic_graph.png" alt="Traffic Graph" />
   </a>
    <a href="https://github.com/statikfintechllc/WorkFlowRepo.git">
   <img src="https://img.shields.io/badge/Click%20to%20Install-Graph%20Workflow-darkred?labelColor=black" alt="GremlinGPT Alpha"/>
   </a>
-
 </div>
-  
 <div align="center">
-
 <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/R.S.badge.svg" alt="Reset Schedule" />
-
 </div>
 
 ---
