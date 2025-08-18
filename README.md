@@ -207,15 +207,11 @@
   <a href="https://statikfintechllc.github.io/Ascend-Institute/">
     <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
   </a>
-
----
+</div> 
+<div align="center">
 
 ### The Institute's GremlinGPT
-The World's first *RS-RACS* | *Recursive, Self-Referential Autonomous Cognitive System*
-
-</div> 
-
-<div align="center">
+**The World's first *RS***-***RACS*** | **Recursive, Self-Referential Autonomous Cognitive System**
 
   <a href="https://www.github.com/statikfintechllc/GremlinGPT">
   <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/graph/traffic_graph.png" alt="Traffic Graph" />
