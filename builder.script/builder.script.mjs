@@ -7,7 +7,7 @@ mkdirSync(outputDir, { recursive: true });
 
 const articles = [
   {
-    title: "Recursive & Autonomous Cognitive AI Systems",
+    title: "Rise of Recursive Autonomous Cognitive AI Systems",
     url: "https://doi.org/10.5281/zenodo.15717788",
     description: "Technical specification for recursive, self-referential autonomous cognitive systems architecture."
   },
