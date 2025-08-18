@@ -228,8 +228,8 @@ async function generateGitHubProfileSVG() {
           <path d="M12 16h.01"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Followers:</text>
-      <text x="200" y="5" class="stat-value">${data.user.followers || 0}</text>
+      <text x="30" y="5" class="stat-label">Issues:</text>
+      <text x="200" y="5" class="stat-value">${data.user.issues || 0}</text>
     </g>
     
     <g transform="translate(0, 110)">
@@ -241,8 +241,8 @@ async function generateGitHubProfileSVG() {
           <path d="M3 10h18"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Following:</text>
-      <text x="200" y="5" class="stat-value">${data.user.following || 0}</text>
+      <text x="30" y="5" class="stat-label">PR's:</text>
+      <text x="200" y="5" class="stat-value">${data.user.pullrequests || 0}</text>
     </g>
   </g>
 
