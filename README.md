@@ -52,6 +52,9 @@
     <img src="./docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" /><br>
   </a>
 </div>
+<div align="center">
+  <h3> GitHub Repositories</h3>
+</div>
 <!-- Flexbox Grid -->
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
 <div align="center"
