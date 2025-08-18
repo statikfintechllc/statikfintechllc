@@ -107,15 +107,15 @@
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
 <div align="center">
   <a href="https://doi.org/10.5281/zenodo.15717788">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/recursive-autonomous-cognitive-systems-a-framework-for-selfmodifying-ai.svg" alt="Recursive Autonomous Cognitive Systems" width="400"/>
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/recursive-autonomous-cognitive-ai-systems.svg" alt="Recursive Autonomous Cognitive Systems" width="400"/>
   </a>
 
   <a href="https://doi.org/10.5281/zenodo.15725639">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/economic-sovereignty-through-decentralized-ai-infrastructure.svg" alt="Economic Sovereignty Through Decentralized AI" width="400"/>
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/economic-sovereignty-through-decentralized-ai.svg" alt="Economic Sovereignty Through Decentralized AI" width="400"/>
   </a>
 
   <a href="https://doi.org/10.5281/zenodo.15825120">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/the-gremlingpt-architecture-localfirst-recursive-intelligence.svg" alt="GremlinGPT Architecture" width="400"/>
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Zenodo.papers.svg/the-gremlingpt-architecture-localized-recursive-ai.svg" alt="GremlinGPT Architecture" width="400"/>
   </a>
 </div>
 </div>

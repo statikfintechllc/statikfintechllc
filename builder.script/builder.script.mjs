@@ -7,17 +7,17 @@ mkdirSync(outputDir, { recursive: true });
 
 const articles = [
   {
-    title: "Recursive Autonomous Cognitive Systems",
+    title: "Recursive & Autonomous Cognitive AI Systems",
     url: "https://doi.org/10.5281/zenodo.15717788",
     description: "Technical specification for recursive, self-referential autonomous cognitive systems architecture."
   },
   {
-    title: "Economic Sovereignty",
+    title: "Economic Sovereignty through Decentralized AI",
     url: "https://doi.org/10.5281/zenodo.15725639", 
     description: "Analysis of decentralized AI systems as tools for economic independence and sovereignty."
   },
   {
-    title: "The GremlinGPT Architecture",
+    title: "The GremlinGPT Architecture: Localized Recursive AI",
     url: "https://doi.org/10.5281/zenodo.15825120",
     description: "Comprehensive technical documentation of the GremlinGPT recursive AI architecture."
   }
