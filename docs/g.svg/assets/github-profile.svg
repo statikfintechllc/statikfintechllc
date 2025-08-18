@@ -24,7 +24,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Total Stars Earned:</text>
-      <text x="200" y="5" class="stat-value">35</text>
+      <text x="200" y="5" class="stat-value">36</text>
     </g>
     
     <g transform="translate(0, 35)">
@@ -34,8 +34,8 @@
           <path d="M12 1v6m0 6v6"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Total Commits:</text>
-      <text x="200" y="5" class="stat-value">3.6k</text>
+      <text x="30" y="5" class="stat-label">Public Repositories:</text>
+      <text x="200" y="5" class="stat-value">13</text>
     </g>
     
     <g transform="translate(0, 60)">
@@ -47,8 +47,8 @@
           <path d="M6 9v9"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Total PRs:</text>
-      <text x="200" y="5" class="stat-value">5</text>
+      <text x="30" y="5" class="stat-label">Total Forks:</text>
+      <text x="200" y="5" class="stat-value">6</text>
     </g>
     
     <g transform="translate(0, 85)">
@@ -59,8 +59,8 @@
           <path d="M12 16h.01"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Total Issues:</text>
-      <text x="200" y="5" class="stat-value">18</text>
+      <text x="30" y="5" class="stat-label">Followers:</text>
+      <text x="200" y="5" class="stat-value">76</text>
     </g>
     
     <g transform="translate(0, 110)">
@@ -72,8 +72,8 @@
           <path d="M3 10h18"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Contributed to (last year):</text>
-      <text x="200" y="5" class="stat-value">6</text>
+      <text x="30" y="5" class="stat-label">Following:</text>
+      <text x="200" y="5" class="stat-value">70</text>
     </g>
   </g>
 
@@ -96,78 +96,79 @@
   <!-- Language progress bar -->
   <g transform="translate(505, 45)">
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
-    <!-- Python 36.61% -->
-    <rect x="0" y="0" width="106" height="8" fill="#3572A5" rx="4"/>
-    <!-- Go 31.64% -->
-    <rect x="106" y="0" width="92" height="8" fill="#00ADD8"/>
-    <!-- Jupyter 11.64% -->
-    <rect x="198" y="0" width="34" height="8" fill="#DA5B0B"/>
-    <!-- TypeScript 8.41% -->
-    <rect x="232" y="0" width="24" height="8" fill="#3178C6"/>
-    <!-- Shell 4.92% -->
-    <rect x="256" y="0" width="14" height="8" fill="#89E051"/>
-    <!-- JavaScript 2.76% -->
-    <rect x="270" y="0" width="8" height="8" fill="#F1E05A"/>
-    <!-- HTML 1.63% -->
-    <rect x="278" y="0" width="5" height="8" fill="#E34C26"/>
-    <!-- Astro 1.13% -->
-    <rect x="283" y="0" width="3" height="8" fill="#FF5D01"/>
-    <!-- CSS 1.08% -->
-    <rect x="286" y="0" width="4" height="8" fill="#563D7C" rx="4"/>
+  <!-- Python 36.34% -->
+  <rect x="0" y="0" width="105" height="8" fill="#3572A5" rx="4"/>
+  <!-- Go 31.49% -->
+  <rect x="105" y="0" width="91" height="8" fill="#00ADD8"/>
+  <!-- Jupyter Notebook 11.58% -->
+  <rect x="196" y="0" width="34" height="8" fill="#DA5B0B"/>
+  <!-- TypeScript 8.38% -->
+  <rect x="230" y="0" width="24" height="8" fill="#3178c6"/>
+  <!-- Shell 4.93% -->
+  <rect x="254" y="0" width="14" height="8" fill="#89e051"/>
+  <!-- JavaScript 2.77% -->
+  <rect x="268" y="0" width="8" height="8" fill="#f1e05a"/>
+  <!-- HTML 1.62% -->
+  <rect x="276" y="0" width="5" height="8" fill="#e34c26"/>
+  <!-- Astro 1.13% -->
+  <rect x="281" y="0" width="3" height="8" fill="#ff5d01"/>
+  <!-- CSS 1.07% -->
+  <rect x="284" y="0" width="3" height="8" fill="#563d7c"/>
+  <!-- Nix 0.18% -->
+  <rect x="287" y="0" width="1" height="8" fill="#7e7eff"/>
   </g>
 
   <!-- Language dots and labels -->
   <g transform="translate(505, 70)">
-    <!-- Column 1 -->
     <g transform="translate(0, 0)">
       <circle cx="5" cy="5" r="4" fill="#3572A5"/>
-      <text x="15" y="9" class="lang-name">Python 36.61%</text>
+      <text x="15" y="9" class="lang-name">Python 36.34%</text>
     </g>
     
     <g transform="translate(0, 20)">
       <circle cx="5" cy="5" r="4" fill="#00ADD8"/>
-      <text x="15" y="9" class="lang-name">Go 31.64%</text>
+      <text x="15" y="9" class="lang-name">Go 31.49%</text>
     </g>
     
     <g transform="translate(0, 40)">
       <circle cx="5" cy="5" r="4" fill="#DA5B0B"/>
-      <text x="15" y="9" class="lang-name">Jupyter Notebook 11.64%</text>
+      <text x="15" y="9" class="lang-name">Jupyter Notebook 11.58%</text>
     </g>
     
     <g transform="translate(0, 60)">
-      <circle cx="5" cy="5" r="4" fill="#3178C6"/>
-      <text x="15" y="9" class="lang-name">TypeScript 8.41%</text>
+      <circle cx="5" cy="5" r="4" fill="#3178c6"/>
+      <text x="15" y="9" class="lang-name">TypeScript 8.38%</text>
     </g>
     
     <g transform="translate(0, 80)">
-      <circle cx="5" cy="5" r="4" fill="#89E051"/>
-      <text x="15" y="9" class="lang-name">Shell 4.92%</text>
+      <circle cx="5" cy="5" r="4" fill="#89e051"/>
+      <text x="15" y="9" class="lang-name">Shell 4.93%</text>
     </g>
-
-    <!-- Column 2 -->
+    
     <g transform="translate(180, 0)">
-      <circle cx="5" cy="5" r="4" fill="#F1E05A"/>
-      <text x="15" y="9" class="lang-name">JavaScript 2.76%</text>
+      <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
+      <text x="15" y="9" class="lang-name">JavaScript 2.77%</text>
     </g>
     
     <g transform="translate(180, 20)">
-      <circle cx="5" cy="5" r="4" fill="#E34C26"/>
-      <text x="15" y="9" class="lang-name">HTML 1.63%</text>
+      <circle cx="5" cy="5" r="4" fill="#e34c26"/>
+      <text x="15" y="9" class="lang-name">HTML 1.62%</text>
     </g>
     
     <g transform="translate(180, 40)">
-      <circle cx="5" cy="5" r="4" fill="#FF5D01"/>
+      <circle cx="5" cy="5" r="4" fill="#ff5d01"/>
       <text x="15" y="9" class="lang-name">Astro 1.13%</text>
     </g>
     
     <g transform="translate(180, 60)">
-      <circle cx="5" cy="5" r="4" fill="#563D7C"/>
-      <text x="15" y="9" class="lang-name">CSS 1.08%</text>
+      <circle cx="5" cy="5" r="4" fill="#563d7c"/>
+      <text x="15" y="9" class="lang-name">CSS 1.07%</text>
     </g>
     
     <g transform="translate(180, 80)">
-      <circle cx="5" cy="5" r="4" fill="#8e44ad"/>
+      <circle cx="5" cy="5" r="4" fill="#7e7eff"/>
       <text x="15" y="9" class="lang-name">Nix 0.18%</text>
     </g>
+    
   </g>
 </svg>

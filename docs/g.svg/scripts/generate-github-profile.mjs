@@ -5,21 +5,168 @@ import { dirname, resolve } from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUTPUT = resolve(__dirname, "../assets/github-profile.svg");
 
-async function fetchAvatarAsBase64() {
+// GitHub API configuration
+const GITHUB_USERNAME = "statikfintechllc";
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Optional: for higher rate limits
+
+// Official GitHub language colors
+const GITHUB_LANG_COLORS = {
+  "TypeScript": "#3178c6",
+  "Python": "#3572A5", 
+  "Go": "#00ADD8",
+  "JavaScript": "#f1e05a",
+  "CSS": "#563d7c",
+  "HTML": "#e34c26",
+  "Jupyter Notebook": "#DA5B0B",
+  "Shell": "#89e051",
+  "Rust": "#dea584",
+  "Java": "#b07219",
+  "C++": "#f34b7d",
+  "C": "#555555",
+  "PHP": "#4F5D95",
+  "Ruby": "#701516",
+  "Swift": "#fa7343",
+  "Kotlin": "#A97BFF",
+  "Dart": "#00B4AB",
+  "C#": "#239120",
+  "Scala": "#c22d40",
+  "Haskell": "#5e5086",
+  "Lua": "#000080",
+  "R": "#198CE7",
+  "MATLAB": "#e16737",
+  "Perl": "#0298c3",
+  "Objective-C": "#438eff",
+  "Vue": "#41b883",
+  "Astro": "#ff5d01",
+  "Svelte": "#ff3e00",
+  "Nix": "#7e7eff"
+};
+
+async function fetchGitHubData() {
+  const headers = {
+    'Accept': 'application/vnd.github.v3+json',
+    'User-Agent': 'GitHub-Profile-Generator'
+  };
+  
+  if (GITHUB_TOKEN) {
+    headers['Authorization'] = `token ${GITHUB_TOKEN}`;
+  }
+
   try {
-    const response = await fetch('https://avatars.githubusercontent.com/u/200911899?v=4');
+    // Fetch user data
+    const userResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`, { headers });
+    const userData = await userResponse.json();
+
+    // Fetch repositories
+    const reposResponse = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`, { headers });
+    const repos = await reposResponse.json();
+
+    // Calculate language statistics
+    const languageStats = {};
+    let totalBytes = 0;
+
+    for (const repo of repos) {
+      if (repo.fork) continue; // Skip forked repos
+      
+      try {
+        const langResponse = await fetch(repo.languages_url, { headers });
+        const languages = await langResponse.json();
+        
+        for (const [lang, bytes] of Object.entries(languages)) {
+          languageStats[lang] = (languageStats[lang] || 0) + bytes;
+          totalBytes += bytes;
+        }
+      } catch (error) {
+        console.log(`Failed to fetch languages for ${repo.name}`);
+      }
+    }
+
+    // Convert to percentages and sort
+    const languagePercentages = Object.entries(languageStats)
+      .map(([lang, bytes]) => ({
+        name: lang,
+        percentage: (bytes / totalBytes) * 100,
+        color: GITHUB_LANG_COLORS[lang] || '#858585' // Default color for unknown languages
+      }))
+      .sort((a, b) => b.percentage - a.percentage)
+      .slice(0, 10); // Top 10 languages
+
+    return {
+      user: userData,
+      languages: languagePercentages,
+      stats: {
+        totalRepos: repos.length,
+        totalStars: repos.reduce((sum, repo) => sum + repo.stargazers_count, 0),
+        totalForks: repos.reduce((sum, repo) => sum + repo.forks_count, 0)
+      }
+    };
+  } catch (error) {
+    console.error('Failed to fetch GitHub data:', error);
+    // Return fallback data
+    return {
+      user: { login: GITHUB_USERNAME, public_repos: 0 },
+      languages: [],
+      stats: { totalRepos: 0, totalStars: 0, totalForks: 0 }
+    };
+  }
+}
+
+async function fetchAvatarAsBase64(avatarUrl) {
+  try {
+    const response = await fetch(avatarUrl);
     const buffer = await response.arrayBuffer();
     const base64 = Buffer.from(buffer).toString('base64');
     return `data:image/png;base64,${base64}`;
   } catch (error) {
     console.log('Failed to fetch avatar, using fallback');
-    return 'https://avatars.githubusercontent.com/u/200911899?v=4';
+    return avatarUrl;
   }
 }
 
-async function generateGitHubProfileSVG() {
-  const avatarUrl = await fetchAvatarAsBase64();
+function generateLanguageBar(languages, width = 290) {
+  let currentX = 0;
+  let segments = '';
   
+  for (const lang of languages) {
+    const segmentWidth = Math.max(1, Math.round((lang.percentage / 100) * width));
+    if (currentX + segmentWidth > width) break;
+    
+    segments += `  <!-- ${lang.name} ${lang.percentage.toFixed(2)}% -->\n`;
+    segments += `  <rect x="${currentX}" y="0" width="${segmentWidth}" height="8" fill="${lang.color}"${currentX === 0 ? ' rx="4"' : ''}${currentX + segmentWidth >= width ? ' rx="4"' : ''}/>\n`;
+    currentX += segmentWidth;
+  }
+  
+  return segments;
+}
+
+function generateLanguageDots(languages) {
+  let dots = '';
+  const itemsPerColumn = 5;
+  
+  languages.slice(0, 10).forEach((lang, index) => {
+    const column = Math.floor(index / itemsPerColumn);
+    const row = index % itemsPerColumn;
+    const x = column * 180;
+    const y = row * 20;
+    
+    dots += `    <g transform="translate(${x}, ${y})">\n`;
+    dots += `      <circle cx="5" cy="5" r="4" fill="${lang.color}"/>\n`;
+    dots += `      <text x="15" y="9" class="lang-name">${lang.name} ${lang.percentage.toFixed(2)}%</text>\n`;
+    dots += `    </g>\n    \n`;
+  });
+  
+  return dots;
+}
+
+async function generateGitHubProfileSVG() {
+  console.log('Fetching GitHub data...');
+  const data = await fetchGitHubData();
+  console.log(`Found ${data.languages.length} languages`);
+  
+  const avatarUrl = await fetchAvatarAsBase64(data.user.avatar_url || `https://avatars.githubusercontent.com/u/200911899?v=4`);
+  
+  const languageBar = generateLanguageBar(data.languages);
+  const languageDots = generateLanguageDots(data.languages);
   return `<svg viewBox="0 0 823 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
@@ -46,7 +193,7 @@ async function generateGitHubProfileSVG() {
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Total Stars Earned:</text>
-      <text x="200" y="5" class="stat-value">35</text>
+      <text x="200" y="5" class="stat-value">${data.stats.totalStars}</text>
     </g>
     
     <g transform="translate(0, 35)">
@@ -56,8 +203,8 @@ async function generateGitHubProfileSVG() {
           <path d="M12 1v6m0 6v6"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Total Commits:</text>
-      <text x="200" y="5" class="stat-value">3.6k</text>
+      <text x="30" y="5" class="stat-label">Public Repositories:</text>
+      <text x="200" y="5" class="stat-value">${data.user.public_repos || 0}</text>
     </g>
     
     <g transform="translate(0, 60)">
@@ -69,8 +216,8 @@ async function generateGitHubProfileSVG() {
           <path d="M6 9v9"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Total PRs:</text>
-      <text x="200" y="5" class="stat-value">5</text>
+      <text x="30" y="5" class="stat-label">Total Forks:</text>
+      <text x="200" y="5" class="stat-value">${data.stats.totalForks}</text>
     </g>
     
     <g transform="translate(0, 85)">
@@ -81,8 +228,8 @@ async function generateGitHubProfileSVG() {
           <path d="M12 16h.01"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Total Issues:</text>
-      <text x="200" y="5" class="stat-value">18</text>
+      <text x="30" y="5" class="stat-label">Followers:</text>
+      <text x="200" y="5" class="stat-value">${data.user.followers || 0}</text>
     </g>
     
     <g transform="translate(0, 110)">
@@ -94,8 +241,8 @@ async function generateGitHubProfileSVG() {
           <path d="M3 10h18"/>
         </g>
       </svg>
-      <text x="30" y="5" class="stat-label">Contributed to (last year):</text>
-      <text x="200" y="5" class="stat-value">6</text>
+      <text x="30" y="5" class="stat-label">Following:</text>
+      <text x="200" y="5" class="stat-value">${data.user.following || 0}</text>
     </g>
   </g>
 
@@ -118,80 +265,11 @@ async function generateGitHubProfileSVG() {
   <!-- Language progress bar -->
   <g transform="translate(505, 45)">
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
-    <!-- Python 36.61% -->
-    <rect x="0" y="0" width="106" height="8" fill="#3572A5" rx="4"/>
-    <!-- Go 31.64% -->
-    <rect x="106" y="0" width="92" height="8" fill="#00ADD8"/>
-    <!-- Jupyter 11.64% -->
-    <rect x="198" y="0" width="34" height="8" fill="#DA5B0B"/>
-    <!-- TypeScript 8.41% -->
-    <rect x="232" y="0" width="24" height="8" fill="#3178C6"/>
-    <!-- Shell 4.92% -->
-    <rect x="256" y="0" width="14" height="8" fill="#89E051"/>
-    <!-- JavaScript 2.76% -->
-    <rect x="270" y="0" width="8" height="8" fill="#F1E05A"/>
-    <!-- HTML 1.63% -->
-    <rect x="278" y="0" width="5" height="8" fill="#E34C26"/>
-    <!-- Astro 1.13% -->
-    <rect x="283" y="0" width="3" height="8" fill="#FF5D01"/>
-    <!-- CSS 1.08% -->
-    <rect x="286" y="0" width="4" height="8" fill="#563D7C" rx="4"/>
-  </g>
+${languageBar}  </g>
 
   <!-- Language dots and labels -->
   <g transform="translate(505, 70)">
-    <!-- Column 1 -->
-    <g transform="translate(0, 0)">
-      <circle cx="5" cy="5" r="4" fill="#3572A5"/>
-      <text x="15" y="9" class="lang-name">Python 36.61%</text>
-    </g>
-    
-    <g transform="translate(0, 20)">
-      <circle cx="5" cy="5" r="4" fill="#00ADD8"/>
-      <text x="15" y="9" class="lang-name">Go 31.64%</text>
-    </g>
-    
-    <g transform="translate(0, 40)">
-      <circle cx="5" cy="5" r="4" fill="#DA5B0B"/>
-      <text x="15" y="9" class="lang-name">Jupyter Notebook 11.64%</text>
-    </g>
-    
-    <g transform="translate(0, 60)">
-      <circle cx="5" cy="5" r="4" fill="#3178C6"/>
-      <text x="15" y="9" class="lang-name">TypeScript 8.41%</text>
-    </g>
-    
-    <g transform="translate(0, 80)">
-      <circle cx="5" cy="5" r="4" fill="#89E051"/>
-      <text x="15" y="9" class="lang-name">Shell 4.92%</text>
-    </g>
-
-    <!-- Column 2 -->
-    <g transform="translate(180, 0)">
-      <circle cx="5" cy="5" r="4" fill="#F1E05A"/>
-      <text x="15" y="9" class="lang-name">JavaScript 2.76%</text>
-    </g>
-    
-    <g transform="translate(180, 20)">
-      <circle cx="5" cy="5" r="4" fill="#E34C26"/>
-      <text x="15" y="9" class="lang-name">HTML 1.63%</text>
-    </g>
-    
-    <g transform="translate(180, 40)">
-      <circle cx="5" cy="5" r="4" fill="#FF5D01"/>
-      <text x="15" y="9" class="lang-name">Astro 1.13%</text>
-    </g>
-    
-    <g transform="translate(180, 60)">
-      <circle cx="5" cy="5" r="4" fill="#563D7C"/>
-      <text x="15" y="9" class="lang-name">CSS 1.08%</text>
-    </g>
-    
-    <g transform="translate(180, 80)">
-      <circle cx="5" cy="5" r="4" fill="#8e44ad"/>
-      <text x="15" y="9" class="lang-name">Nix 0.18%</text>
-    </g>
-  </g>
+${languageDots}  </g>
 </svg>`;
 }
 

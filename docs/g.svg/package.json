@@ -4,6 +4,9 @@
   "type": "module",
   "engines": { "node": ">=20" },
   "scripts": {
-    "build:flow": "node scripts/generate-github-profile.mjs"
+    "build": "node scripts/generate-github-profile.mjs"
+  },
+  "dependencies": {
+    "gh-lang-colors": "^1.0.0"
   }
 }
