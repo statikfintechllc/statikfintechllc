@@ -6,38 +6,202 @@ This is the main GitHub profile repository for **statikfintechllc** (Statik DK S
 
 ## Repository Structure
 
-```
+```txt
 .
-├── README.md                    # Main profile page with dynamic content
-├── badges/                      # Custom SVG badges
-│   ├── ai_architect.svg
-│   ├── full_stack_dev.svg
-│   └── prompt_blacksmith.svg
-├── docs/                        # SVG generation workspace
-│   ├── README.md               # Documentation for SVG animations
-│   ├── c.svg/                  # Crimson Flow (GitHub activity charts)
-│   │   ├── assets/
-│   │   ├── package.json
-│   │   └── scripts/generate-crimson-flow.mjs
-│   ├── s.svg/                  # Streak statistics
-│   │   ├── assets/
-│   │   ├── package.json
-│   │   └── scripts/build-streak.mjs
-│   ├── t.svg/                  # Trophies/achievements
-│   │   ├── assets/
-│   │   ├── package.json
-│   │   └── scripts/build-trophies.mjs
-│   └── v.svg/                  # Profile view traffic
-│       ├── assets/
-│       ├── package.json
-│       └── scripts/build-pv.mjs
-└── .github/
-    ├── workflows/              # Automated SVG generation
-    │   ├── update-crimson-flow.yml
-    │   ├── update-profile-streak.yml
-    │   ├── update-profile-trophies.yml
-    │   └── update-profile-views.yml
-    └── FUNDING.yml             # Sponsorship configuration
+├── README.md
+├── badges
+│   ├── G.H.badge.svg
+│   ├── G.I.badge.svg
+│   ├── L.W.badge.svg
+│   ├── M.P.badge.svg
+│   ├── R.S.badge.svg
+│   ├── README.md
+│   ├── Z.P.badge.svg
+│   ├── ai_architect.svg
+│   ├── full_stack_dev.svg
+│   ├── g.h.svg
+│   ├── prompt_blacksmith.svg
+│   └── statik.title.svg
+├── builder.script
+│   ├── README.md
+│   └── builder.script.mjs
+└── docs
+    ├── A.D.svg
+    │   ├── README.md
+    │   ├── assets
+    │   │   └── ascenddocs-of-govseverance-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-ascenddocs-of-govseverance.mjs
+    ├── A.I.svg
+    │   ├── README.md
+    │   ├── assets
+    │   │   └── ascend-institute-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-ascend-institute.mjs
+    ├── A.N.svg
+    │   ├── README.md
+    │   ├── assets
+    │   │   └── ascendnet-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-ascendnet.mjs
+    ├── D.B.svg
+    │   ├── README.md
+    │   ├── assets
+    │   │   └── dragon-boot-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-dragon-boot.mjs
+    ├── G.C.svg
+    │   ├── README.md
+    │   ├── assets
+    │   │   └── godcore-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-godcore.mjs
+    ├── G.G.svg
+    │   ├── README.md
+    │   ├── assets
+    │   │   └── gremlingpt-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-gremlingpt.mjs
+    ├── G.M.svg
+    │   ├── README.md
+    │   ├── assets
+    │   │   └── gremlin-mcp-scrap-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-gremlin-mcp-scrap.mjs
+    ├── G.S.svg
+    │   ├── assets
+    │   │   └── gremlin-shadtail-trader-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-gremlin-shadtail-trader.mjs
+    ├── M.M.svg
+    │   ├── assets
+    │   │   └── mobile-mirror-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-mobile-mirror.mjs
+    ├── Medium.papers.svg
+    │   ├── README.md
+    │   ├── breaking-the-loop.svg
+    │   ├── building-an-autonomous-aidriven-ide-pipeline.svg
+    │   ├── burj-khalifa-and-the-resonant-lie.svg
+    │   ├── capital-capture.svg
+    │   ├── designing-gremlingpt.svg
+    │   ├── gremlingpts-structural-extraction.svg
+    │   ├── its-not-the-ai-but-the-system.svg
+    │   ├── open-isnt-open.svg
+    │   ├── selfforking-ai-and-the-mechanic-from-kansas.svg
+    │   ├── the-disappearance-of-the-openai-mcp-repo.svg
+    │   ├── the-govseverance-doctrine.svg
+    │   ├── the-lessons-i-am-learning.svg
+    │   ├── the-pivot-that-broke-productmarket-fit.svg
+    │   ├── the-wealth-power-imbalance-and-economic-servitude.svg
+    │   └── while-dubai-built-control-i-built-an-autonomous-mind.svg
+    ├── README.md
+    ├── S.S.svg
+    │   ├── assets
+    │   │   └── statik-server-card.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-statik-server.mjs
+    ├── Zenodo.papers.svg
+    │   ├── README.md
+    │   ├── economic-sovereignty-through-decentralized-ai.svg
+    │   ├── rise-of-recursive-autonomous-cognitive-ai-systems.svg
+    │   └── the-gremlingpt-architecture-localized-recursive-ai.svg
+    ├── c.svg
+    │   ├── assets
+    │   │   └── crimson-flow.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-crimson-flow.mjs
+    ├── g.svg
+    │   ├── assets
+    │   │   └── github-profile.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-github-profile.mjs
+    ├── i.svg
+    │   ├── README.md
+    │   └── assets
+    │       └── institute-header.svg
+    ├── r.svg
+    │   ├── assets
+    │   │   └── repo-slide.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── generate-repo-slide.mjs
+    ├── s.svg
+    │   ├── assets
+    │   │   └── streak.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── build-streak.mjs
+    ├── sdks.svg
+    │   ├── README.md
+    │   ├── assets
+    │   │   └── statik.title.svg
+    │   └── scripts
+    │       └── generate-sdks-card.mjs
+    ├── t.svg
+    │   ├── assets
+    │   │   └── trophies.svg
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   └── scripts
+    │       └── build-trophies.mjs
+    └── v.svg
+        ├── assets
+        │   └── pv-traffic.svg
+        ├── package-lock.json
+        ├── package.json
+        └── scripts
+            └── build-pv.mjs
+
+58 directories, 112 files
+.github
+├── FUNDING.yml
+├── copilot-instructions.md
+└── workflows
+    ├── update-ascend-institute-card.yml
+    ├── update-ascenddocs-of-govseverance-card.yml
+    ├── update-ascendnet-card.yml
+    ├── update-crimson-flow.yml
+    ├── update-dragon-boot-card.yml
+    ├── update-github-profile.yml
+    ├── update-godcore-card.yml
+    ├── update-gremlin-mcp-scrap-card.yml
+    ├── update-gremlin-shadtail-trader-card.yml
+    ├── update-gremlingpt-card.yml
+    ├── update-mobile-mirror-card.yml
+    ├── update-profile-streak.yml
+    ├── update-profile-trophies.yml
+    ├── update-profile-views.yml
+    ├── update-repo-slide.yml
+    └── update-statik-server-card.yml
+
+1 directory, 18 files
 ```
 
 ## Core Components
