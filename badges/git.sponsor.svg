@@ -1,0 +1,80 @@
+<svg width="600" height="80" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sponsor SFTi on GitHub</title>
+  <desc id="desc">Animated dark themed GitHub sponsor badge with spark particles</desc>
+  <defs>
+    <linearGradient id="bgGradGH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="borderGradGH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <!-- Cycle GitHub accent blues, pink/red, & subtle emerald for variety -->
+      <stop offset="0%" stop-color="#30363d">
+        <animate attributeName="stop-color" values="#30363d;#58a6ff;#f85149;#3fb950;#30363d" dur="8s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#58a6ff">
+        <animate attributeName="stop-color" values="#58a6ff;#f85149;#3fb950;#30363d;#58a6ff" dur="8s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Octocat pattern (minimal) -->
+    <pattern id="ghPattern" width="46" height="46" patternUnits="userSpaceOnUse">
+      <g transform="translate(11 9) scale(.95)">
+        <path d="M8 0A8 8 0 0 0 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.53-.17.53-.38 0-.2-.01-.82-.01-1.49-1.99.37-2.63-.49-2.8-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.09.58 1.24.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.66 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.13.46.53.38A8.01 8 0 0 0 16 8a8 8 0 0 0-8-8Z" fill="#58a6ff" opacity=".22"/>
+      </g>
+    </pattern>
+
+    <filter id="glowGH" x="-150%" y="-150%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.1" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="textGradGH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="40%" stop-color="#f85149"/>
+      <stop offset="70%" stop-color="#3fb950"/>
+      <stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="600" height="80" rx="14" fill="url(#bgGradGH)" stroke="url(#borderGradGH)" stroke-width="2.5"/>
+  <rect x="0" y="0" width="600" height="80" fill="url(#ghPattern)" opacity="0.12"/>
+
+  <radialGradient id="vignetteGH" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.07"/>
+    <stop offset="100%" stop-color="#0d1117" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="600" height="80" rx="14" fill="url(#vignetteGH)"/>
+
+  <!-- Sparks -->
+  <g filter="url(#glowGH)">
+    <circle r="2.1" fill="#58a6ff">
+      <animate attributeName="cx" values="40;160;300;440;560;40" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="18;12;24;14;26;18" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.8;0.45;0.85;0.3;0" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.5" fill="#f85149">
+      <animate attributeName="cx" values="120;260;400;520;120" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="60;54;66;52;60" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.65;0.35;0.7;0.25;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.4" fill="#3fb950">
+      <animate attributeName="cx" values="200;260;320;380;440;500;560;200" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="42;34;48;30;46;38;42;42" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0.3;0.7;0.4;0.2;0" dur="14s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.1" fill="#ffffff">
+      <animate attributeName="cx" values="300;360;420;480;540;300" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="30;24;36;22;34;30" dur="16s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.5;0.25;0.55;0.2;0" dur="16s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Text -->
+  <g style="font-family:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="2.5">
+    <text x="300" y="46" fill="#f0f6fc">SPONSOR SFTI ON GITHUB</text>
+    <text x="300" y="46" fill="url(#textGradGH)" opacity="0.4" filter="url(#glowGH)">SPONSOR SFTI ON GITHUB</text>
+  </g>
+</svg>

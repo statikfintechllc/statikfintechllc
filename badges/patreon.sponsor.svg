@@ -1,0 +1,74 @@
+<svg width="600" height="80" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sponsor SFTi on Patreon</title>
+  <desc id="desc">Animated dark themed Patreon sponsor badge with sparks</desc>
+  <defs>
+    <linearGradient id="bgGradPatreon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="borderGradPatreon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#30363d">
+        <animate attributeName="stop-color" values="#30363d;#ff424d;#ff8d1a;#30363d" dur="6.5s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ff424d">
+        <animate attributeName="stop-color" values="#ff424d;#ff8d1a;#30363d;#ff424d" dur="6.5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Patreon simplified monogram pattern -->
+    <pattern id="patreonPattern" width="44" height="44" patternUnits="userSpaceOnUse">
+      <g transform="translate(12 8)">
+        <circle cx="12" cy="14" r="9" fill="#ff424d" opacity=".25"/>
+        <rect x="0" y="5" width="5" height="18" rx="2.5" fill="#ff8d1a" opacity=".35"/>
+      </g>
+    </pattern>
+
+    <filter id="glowPatreon" x="-150%" y="-150%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <linearGradient id="textGradPatreon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff424d"/>
+      <stop offset="50%" stop-color="#ff8d1a"/>
+      <stop offset="100%" stop-color="#ff424d"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="600" height="80" rx="14" fill="url(#bgGradPatreon)" stroke="url(#borderGradPatreon)" stroke-width="2.5"/>
+  <rect x="0" y="0" width="600" height="80" fill="url(#patreonPattern)" opacity="0.10"/>
+
+  <radialGradient id="vignettePatreon" cx="50%" cy="50%" r="74%">
+    <stop offset="0%" stop-color="#ff424d" stop-opacity="0.07"/>
+    <stop offset="70%" stop-color="#0d1117" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="600" height="80" rx="14" fill="url(#vignettePatreon)"/>
+
+  <!-- Sparks -->
+  <g filter="url(#glowPatreon)">
+    <circle r="2.4" fill="#ff424d">
+      <animate attributeName="cx" values="70;190;310;430;550;70" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="20;14;24;16;26;20" dur="12s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.85;0.45;0.9;0.3;0" dur="12s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.5" fill="#ff8d1a">
+      <animate attributeName="cx" values="140;260;380;500;140" dur="8.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="60;54;66;52;60" dur="8.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0.3;0.7;0.2;0" dur="8.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.2" fill="#ffffff">
+      <animate attributeName="cx" values="220;300;360;420;480;540;220" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="42;34;48;32;46;38;42" dur="14s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.55;0.25;0.6;0.3;0" dur="14s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Text -->
+  <g style="font-family:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="2.5">
+    <text x="300" y="46" fill="#f0f6fc">SPONSOR SFTI ON PATREON</text>
+    <text x="300" y="46" fill="url(#textGradPatreon)" opacity="0.4" filter="url(#glowPatreon)">SPONSOR SFTI ON PATREON</text>
+  </g>
+</svg>

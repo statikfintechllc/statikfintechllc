@@ -1,0 +1,82 @@
+<svg width="600" height="80" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sponsor SFTi on Ko‑Fi</title>
+  <desc id="desc">Animated dark themed badge with floating sparks inviting users to sponsor SFTi on Ko-Fi</desc>
+  <defs>
+    <!-- Core theme gradients -->
+    <linearGradient id="bgGradKofi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <!-- Animated border cycling brand + accent -->
+    <linearGradient id="borderGradKofi" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#30363d">
+        <animate attributeName="stop-color" values="#30363d;#29abe0;#ff5e5b;#30363d" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#29abe0">
+        <animate attributeName="stop-color" values="#29abe0;#ff5e5b;#30363d;#29abe0" dur="7s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Ko-Fi pattern (stylized cup + heart) -->
+    <pattern id="kofiPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <g transform="translate(8 9) scale(0.9)">
+        <path d="M18 2H6a4 4 0 0 0-4 4v9c0 5 4 9 9 9 6.6 0 11-4.5 11-11V6a4 4 0 0 0-4-4Z" fill="#29abe0" opacity=".14"/>
+        <path d="M19 6c1.9-1.9 5.1-.6 5.2 2.1.1 2.3-1.6 3.9-3.2 5.1-1.1.8-1.9 1.3-2 1.3-.1 0-.9-.5-2-1.3C14.4 12 12.7 10.4 12.8 8.1c.1-2.7 3.3-4 5.2-2.1Z" fill="#ff5e5b" opacity=".35"/>
+      </g>
+    </pattern>
+
+    <!-- Glow filter -->
+    <filter id="glowKofi" x="-150%" y="-150%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Text glow gradient for subtle overlay -->
+    <linearGradient id="textGradKofi" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#29abe0"/>
+      <stop offset="50%" stop-color="#ff5e5b"/>
+      <stop offset="100%" stop-color="#29abe0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Panel -->
+  <rect x="0" y="0" width="600" height="80" rx="14" fill="url(#bgGradKofi)" stroke="url(#borderGradKofi)" stroke-width="2.5"/>
+
+  <!-- Pattern overlay -->
+  <rect x="0" y="0" width="600" height="80" fill="url(#kofiPattern)" opacity="0.12"/>
+
+  <!-- Central subtle vignette -->
+  <radialGradient id="vignetteKofi" cx="50%" cy="50%" r="75%">
+    <stop offset="0%" stop-color="#29abe0" stop-opacity="0.08"/>
+    <stop offset="70%" stop-color="#0d1117" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="600" height="80" rx="14" fill="url(#vignetteKofi)"/>
+
+  <!-- Floating sparks -->
+  <g filter="url(#glowKofi)">
+    <circle r="2.2" fill="#29abe0">
+      <animate attributeName="cx" values="40;160;320;480;560;40" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="18;10;22;14;26;18" dur="11s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.9;0.5;0.8;0.3;0" dur="11s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.6" fill="#ff5e5b">
+      <animate attributeName="cx" values="120;300;420;540;120" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="62;56;68;54;62" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.7;0.4;0.8;0.2;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="1.4" fill="#ffffff">
+      <animate attributeName="cx" values="200;260;340;400;480;560;200" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="38;30;46;28;42;36;38" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.6;0.3;0.7;0.4;0" dur="13s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Text -->
+  <g style="font-family:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="2.5">
+    <text x="300" y="46" fill="#f0f6fc">SPONSOR SFTI ON KO-FI</text>
+    <text x="300" y="46" fill="url(#textGradKofi)" opacity="0.35" filter="url(#glowKofi)">SPONSOR SFTI ON KO-FI</text>
+  </g>
+</svg>
