@@ -229,15 +229,14 @@
   </a>
 </div>
 <div align="center">
-
+<a href="https://github.com/sponsors/statikfintechllc">
+  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/git.sponsor.svg">
+</a><br>
 <a href="https://ko-fi.com/statikfintech_llc">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/kofi.sponsor.svg">
 </a><br>
 <a href="https://patreon.com/StatikFinTech_LLC">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/patreon.sponsor.svg">
-</a><br>
-<a href="https://github.com/sponsors/statikfintechllc">
-  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/git.sponsor.svg">
 </a><br>
 <a href="https://cash.app/$statikmoney8">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/cashapp.sponsor.svg">
@@ -254,15 +253,12 @@
 <a href="#">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/chime.sponsor.svg">
 </a>
-
 </div>
 <div align="center"> 
 
-
-  <br/> [© 2025 StatikFinTech, LLC](https://statikfintechllc.github.io/Ascend-Institute/)
+  <br/> [© 2025 StatikFinTech, LLC](https://statikfintechllc.github.io/GremlinGPT/master/blob/LICENSE.md)
 
 </div>
-
 <!--
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=statikfintechllc&color=8b0000&style=flat-square" alt="Profile Views">
