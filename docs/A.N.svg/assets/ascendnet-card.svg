@@ -27,19 +27,19 @@
          preserveAspectRatio="xMidYMid slice"/>
 
   <!-- Title -->
-  <text x="48" y="31" class="title">AscendNet</text>
+  <text x="48" y="31" class="title">undefined</text>
 
   <!-- Description -->
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      A P2P network where users: Share, trade, and sell AI prompts and prompt chains, Pool and rent distributed compute for inference/training, All transactions happen P2P, with a built-in 3% fee
+      No description available
     </div>
   </foreignObject>
 
   <!-- Language Dot + Label -->
   <circle cx="48" cy="180" r="6" fill="#ccc"/>
-  <text x="64" y="180" class="meta">Go</text>
+  <text x="64" y="180" class="meta">N/A</text>
 
   <!-- Star Icon + Count (ALIGNED) -->
   <g transform="translate(140, 172)">
@@ -48,7 +48,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
   </g>
-  <text x="162" y="180" class="meta">7</text>
+  <text x="162" y="180" class="meta">0</text>
 
   <!-- Fork Icon + Count (ALIGNED) -->
   <g transform="translate(200, 173)">
@@ -60,19 +60,8 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="158.79929090875865" height="6" fill="#ccc" />
-<rect x="158.79929090875865" y="195" width="125.64104856656446" height="6" fill="#3572A5" />
-<rect x="284.4403394753231" y="195" width="58.66109965374867" height="6" fill="#ccc" />
-<rect x="343.1014391290718" y="195" width="41.7438133757326" height="6" fill="#3178c6" />
-<rect x="384.8452525048044" y="195" width="21.312133698281958" height="6" fill="#89e051" />
-<rect x="406.1573862030864" y="195" width="14.357573738319466" height="6" fill="#f1e05a" />
-<rect x="420.51495994140583" y="195" width="9.5080869297502" height="6" fill="#ccc" />
-<rect x="430.02304687115605" y="195" width="6.006559515726108" height="6" fill="#563d7c" />
-<rect x="436.02960638688216" y="195" width="0.9794231393735423" height="6" fill="#ccc" />
-<rect x="437.0090295262557" y="195" width="0.833567400921931" height="6" fill="#ccc" />
-<rect x="437.8425969271776" y="195" width="0.8012787259975286" height="6" fill="#ccc" />
-<rect x="438.64387565317514" y="195" width="0.7698560308603706" height="6" fill="#ccc" />
-<rect x="439.4137316840355" y="195" width="0.35307233039940505" height="6" fill="#ccc" />
-<rect x="439.7668040144349" y="195" width="0.23319598556512913" height="6" fill="#ccc" />
+    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
+<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
   </g>
 </svg>
