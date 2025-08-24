@@ -1,72 +1,82 @@
-<svg width="400" height="60" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Support/like gradients -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2d1b69"/>
-      <stop offset="100%" stop-color="#11998e"/>
+    <!-- Background gradient matching statik.title.svg -->
+    <linearGradient id="gPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#06080c"/>
+      <stop offset="100%" stop-color="#0a0f18"/>
     </linearGradient>
     
-    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38ef7d">
-        <animate attributeName="stop-color" values="#38ef7d;#667eea;#764ba2;#38ef7d" dur="6s" repeatCount="indefinite"/>
-      </stop>
-      <stop offset="100%" stop-color="#667eea">
-        <animate attributeName="stop-color" values="#667eea;#764ba2;#38ef7d;#667eea" dur="6s" repeatCount="indefinite"/>
-      </stop>
+    <!-- Gold/Crimson accent matching statik.title.svg -->
+    <linearGradient id="gNeon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd15a"/>
+      <stop offset="45%" stop-color="#ff3168"/>
+      <stop offset="100%" stop-color="#ffd15a"/>
     </linearGradient>
 
-    <!-- Heart pattern -->
-    <pattern id="heartPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-      <g transform="translate(15,15)">
-        <path d="M5 8.5c0-2.2 1.8-4 4-4 1.1 0 2.1.4 2.8 1.2.7-.8 1.7-1.2 2.8-1.2 2.2 0 4 1.8 4 4 0 4-5.5 8-5.5 8s-5.5-4-5.5-8z" fill="#38ef7d" opacity="0.15"/>
-      </g>
-    </pattern>
+    <!-- Glows matching statik.title.svg -->
+    <filter id="fGlowSoft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b1"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
 
-    <!-- Glow effects -->
-    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="fFireGlow" x="-120%" y="-180%" width="340%" height="400%">
+      <feGaussianBlur stdDeviation="6" result="b1"/>
+      <feGaussianBlur stdDeviation="14" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
   
-  <!-- Background with animated border -->
-  <rect x="0" y="0" width="400" height="60" rx="10" fill="url(#bgGrad)"
-        stroke="url(#borderGrad)" stroke-width="2"/>
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="120" rx="12" fill="url(#gPanel)"/>
   
-  <!-- Heart pattern overlay -->
-  <rect x="0" y="0" width="400" height="60" fill="url(#heartPattern)" opacity="0.1"/>
-  
-  <!-- Floating hearts -->
-  <g opacity="0.7">
-    <circle fill="#38ef7d" cx="30" cy="15" r="1.2" filter="url(#glow)">
-      <animate attributeName="cx" values="30;100;170;240;310;380" dur="7s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="15;20;10;25;5;20" dur="7s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.8;0.6;0.9;0.4;0" dur="7s" repeatCount="indefinite"/>
-    </circle>
-    
-    <circle fill="#667eea" cx="60" cy="45" r="1" filter="url(#glow)">
-      <animate attributeName="cx" values="60;130;200;270;340;410" dur="9s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="45;40;50;35;55;40" dur="9s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.6;0.8;0.5;0.7;0" dur="9s" repeatCount="indefinite"/>
-    </circle>
-    
-    <circle fill="#764ba2" cx="90" cy="30" r="0.8" filter="url(#glow)">
-      <animate attributeName="cx" values="90;160;230;300;370;440" dur="11s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="30;35;25;40;20;35" dur="11s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0;0.7;0.5;0.8;0.6;0" dur="11s" repeatCount="indefinite"/>
-    </circle>
+  <!-- Border -->
+  <rect x="2" y="2" width="796" height="116" rx="10" fill="none" stroke="#232939" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Title Section (CRISP: no filters on text) -->
+  <g transform="translate(400,45)" text-anchor="middle">
+    <text x="0" y="0" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-weight="900" font-size="28" fill="#ffd15a">
+      Like my Work?
+    </text>
+    <text x="0" y="22" font-family="system-ui" font-size="11" fill="#8abecf" opacity="0.95">
+      Support these projects if you find them valueable and want to support their continued development,
+    </text>
+    <text x="0" y="36" font-family="system-ui" font-size="11" fill="#8abecf" opacity="0.95">
+      consider sponsoring or contributing.
+    </text>
+    <line x1="-350" x2="350" y1="50" y2="50" stroke="url(#gNeon)" stroke-width="2" opacity="0.9" filter="url(#fGlowSoft)"/>
   </g>
 
-  <!-- Main text -->
-  <text x="200" y="38" text-anchor="middle" fill="#ffffff" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="600" letter-spacing="0.5px">
-    <tspan>💡 Like my work?</tspan>
-  </text>
-  
-  <!-- Subtle glow effect on text -->
-  <text x="200" y="38" text-anchor="middle" fill="#38ef7d" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="600" letter-spacing="0.5px" opacity="0.3" filter="url(#glow)">
-    <tspan>💡 Like my work?</tspan>
-  </text>
+  <!-- Floating sparks/embers (matching statik.title.svg exactly) -->
+  <g>
+    <circle cx="120" cy="25" r="1.8" fill="#ff7a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;-15;-55" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="120;116;124;120" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="25" r="1.6" fill="#ff9a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.6s" begin=".2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;-13;-51" dur="1.6s" begin=".2s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="280;276;284;280" dur="1.6s" begin=".2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="25" r="1.9" fill="#ff7a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.65s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;-17;-57" dur="1.65s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="520;516;524;520" dur="1.65s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="680" cy="25" r="1.7" fill="#ff8a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.4s" begin=".8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;-12;-48" dur="1.4s" begin=".8s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="680;677;683;680" dur="1.4s" begin=".8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="80" r="1.5" fill="#ff6a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin=".5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="80;40;0" dur="1.8s" begin=".5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="60;57;63;60" dur="1.8s" begin=".5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="740" cy="80" r="1.4" fill="#ff5a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.7s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="80;42;4" dur="1.7s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="740;737;743;740" dur="1.7s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
 </svg>

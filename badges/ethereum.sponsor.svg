@@ -1,0 +1,89 @@
+<svg width="600" height="80" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sponsor SFTi on Ethereum</title>
+  <desc id="desc">Animated dark themed badge with floating sparks inviting users to sponsor SFTi with Ethereum</desc>
+  <defs>
+    <!-- Core theme gradients -->
+    <linearGradient id="bgGradEthereum" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <!-- Animated border cycling brand + accent -->
+    <linearGradient id="borderGradEthereum" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#30363d">
+        <animate attributeName="stop-color" values="#30363d;#627eea;#ff0000;#30363d" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#627eea">
+        <animate attributeName="stop-color" values="#627eea;#ff0000;#30363d;#627eea" dur="7s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Text gradient -->
+    <linearGradient id="textGradEthereum" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#627eea"/>
+      <stop offset="100%" stop-color="#ff0000"/>
+    </linearGradient>
+
+    <!-- Ethereum logo pattern -->
+    <pattern id="ethereumPattern" width="44" height="44" patternUnits="userSpaceOnUse">
+      <g transform="translate(10 6)">
+        <!-- Ethereum diamond symbol -->
+        <path d="M12 4L6 14l6 4 6-4L12 4z" fill="#627eea" opacity=".35"/>
+        <path d="M12 4v6l6 4-6-10z" fill="#627eea" opacity=".6"/>
+        <path d="M12 10v6l6-4-6-2z" fill="#627eea" opacity=".25"/>
+        <path d="M6 14l6 4v-6l-6 2z" fill="#627eea" opacity=".25"/>
+        <path d="M6 14l6-4V4l-6 10z" fill="#627eea" opacity=".6"/>
+      </g>
+    </pattern>
+
+    <!-- Floating sparks animation -->
+    <g id="sparksEthereum">
+      <circle r="1" fill="#627eea" opacity="0.8">
+        <animate attributeName="cy" values="80;-10" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="50;80" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="1.5" fill="#ff0000" opacity="0.6">
+        <animate attributeName="cy" values="80;-10" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="cx" values="100;150" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+      <circle r="1" fill="#627eea" opacity="0.7">
+        <animate attributeName="cy" values="80;-10" dur="7s" repeatCount="indefinite" begin="4s"/>
+        <animate attributeName="cx" values="200;250" dur="7s" repeatCount="indefinite" begin="4s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite" begin="4s"/>
+      </circle>
+    </g>
+
+    <filter id="glowEthereum" x="-150%" y="-150%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="600" height="80" rx="10" fill="url(#bgGradEthereum)" stroke="url(#borderGradEthereum)" stroke-width="2"/>
+
+  <!-- Pattern overlay -->
+  <rect width="600" height="80" rx="10" fill="url(#ethereumPattern)" opacity="0.4"/>
+
+  <!-- Floating sparks background effect -->
+  <use href="#sparksEthereum" x="50" y="0"/>
+  <use href="#sparksEthereum" x="150" y="0"/>
+  <use href="#sparksEthereum" x="250" y="0"/>
+  <use href="#sparksEthereum" x="350" y="0"/>
+  <use href="#sparksEthereum" x="450" y="0"/>
+
+  <!-- Text content with proper styling -->
+  <g style="font-family:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="2.5">
+    <text x="300" y="46" fill="#f0f6fc">Sponsor SFTi on Ethereum</text>
+    <text x="300" y="46" fill="url(#textGradEthereum)" opacity="0.35" filter="url(#glowEthereum)">Sponsor SFTi on Ethereum</text>
+  </g>
+
+  <!-- Hover effect -->
+  <rect width="600" height="80" rx="10" fill="transparent" stroke="transparent" stroke-width="2">
+    <animate attributeName="stroke" values="transparent;#627eea;transparent" dur="3s" repeatCount="indefinite"/>
+  </rect>
+</svg>

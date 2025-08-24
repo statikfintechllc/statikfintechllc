@@ -1,0 +1,86 @@
+<svg width="600" height="80" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sponsor SFTi on Bitcoin</title>
+  <desc id="desc">Animated dark themed badge with floating sparks inviting users to sponsor SFTi with Bitcoin</desc>
+  <defs>
+    <!-- Core theme gradients -->
+    <linearGradient id="bgGradBitcoin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <!-- Animated border cycling brand + accent -->
+    <linearGradient id="borderGradBitcoin" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#30363d">
+        <animate attributeName="stop-color" values="#30363d;#f7931a;#ff0000;#30363d" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#f7931a">
+        <animate attributeName="stop-color" values="#f7931a;#ff0000;#30363d;#f7931a" dur="7s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Text gradient -->
+    <linearGradient id="textGradBitcoin" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f7931a"/>
+      <stop offset="100%" stop-color="#ff0000"/>
+    </linearGradient>
+
+    <!-- Bitcoin logo pattern -->
+    <pattern id="bitcoinPattern" width="44" height="44" patternUnits="userSpaceOnUse">
+      <g transform="translate(8 8)">
+        <!-- Bitcoin B symbol -->
+        <circle cx="14" cy="14" r="12" fill="#f7931a" opacity=".25"/>
+        <path d="M10 6v4h2c1 0 2-1 2-2s-1-2-2-2h-2z M10 10v4h3c1 0 2-1 2-2s-1-2-2-2h-3z M8 4h1v2h4c2 0 4 2 4 4 0 1-1 2-1 3 1 1 1 2 1 3 0 2-2 4-4 4H9v2H8v-2H7v-2h1V6H7V4h1z M17 4v2h1v2h-1v8h1v2h-1v2h-1v-2h-1v2h-1v-2h-1v2h-1v-2H9V6h1V4h1v2h1V4h1v2h1V4h1v2h1V4z" fill="#f7931a" opacity=".8"/>
+      </g>
+    </pattern>
+
+    <!-- Floating sparks animation -->
+    <g id="sparksBitcoin">
+      <circle r="1" fill="#f7931a" opacity="0.8">
+        <animate attributeName="cy" values="80;-10" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="50;80" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="1.5" fill="#ff0000" opacity="0.6">
+        <animate attributeName="cy" values="80;-10" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="cx" values="100;150" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+      <circle r="1" fill="#f7931a" opacity="0.7">
+        <animate attributeName="cy" values="80;-10" dur="7s" repeatCount="indefinite" begin="4s"/>
+        <animate attributeName="cx" values="200;250" dur="7s" repeatCount="indefinite" begin="4s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite" begin="4s"/>
+      </circle>
+    </g>
+
+    <filter id="glowBitcoin" x="-150%" y="-150%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="600" height="80" rx="10" fill="url(#bgGradBitcoin)" stroke="url(#borderGradBitcoin)" stroke-width="2"/>
+
+  <!-- Pattern overlay -->
+  <rect width="600" height="80" rx="10" fill="url(#bitcoinPattern)" opacity="0.4"/>
+
+  <!-- Floating sparks background effect -->
+  <use href="#sparksBitcoin" x="50" y="0"/>
+  <use href="#sparksBitcoin" x="150" y="0"/>
+  <use href="#sparksBitcoin" x="250" y="0"/>
+  <use href="#sparksBitcoin" x="350" y="0"/>
+  <use href="#sparksBitcoin" x="450" y="0"/>
+
+  <!-- Text content with proper styling -->
+  <g style="font-family:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="2.5">
+    <text x="300" y="46" fill="#f0f6fc">Sponsor SFTi on Bitcoin</text>
+    <text x="300" y="46" fill="url(#textGradBitcoin)" opacity="0.35" filter="url(#glowBitcoin)">Sponsor SFTi on Bitcoin</text>
+  </g>
+
+  <!-- Hover effect -->
+  <rect width="600" height="80" rx="10" fill="transparent" stroke="transparent" stroke-width="2">
+    <animate attributeName="stroke" values="transparent;#f7931a;transparent" dur="3s" repeatCount="indefinite"/>
+  </rect>
+</svg>
