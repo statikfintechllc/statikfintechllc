@@ -76,7 +76,7 @@
 
   <!-- Text -->
   <g style="font-family:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="2.5">
-    <text x="300" y="46" fill="#f0f6fc">SPONSOR SFTI ON KO-FI</text>
-    <text x="300" y="46" fill="url(#textGradKofi)" opacity="0.35" filter="url(#glowKofi)">SPONSOR SFTI ON KO-FI</text>
+    <text x="300" y="46" fill="#f0f6fc">Sponsor SFTi on Ko-Fi</text>
+    <text x="300" y="46" fill="url(#textGradKofi)" opacity="0.35" filter="url(#glowKofi)">Sponsor SFTi on Ko-Fi</text>
   </g>
 </svg>

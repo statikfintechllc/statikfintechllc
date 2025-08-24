@@ -68,7 +68,7 @@
 
   <!-- Text -->
   <g style="font-family:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="2.5">
-    <text x="300" y="46" fill="#f0f6fc">SPONSOR SFTI ON PATREON</text>
-    <text x="300" y="46" fill="url(#textGradPatreon)" opacity="0.4" filter="url(#glowPatreon)">SPONSOR SFTI ON PATREON</text>
+    <text x="300" y="46" fill="#f0f6fc">Sponsor SFTi on Patreon</text>
+    <text x="300" y="46" fill="url(#textGradPatreon)" opacity="0.4" filter="url(#glowPatreon)">Sponsor SFTi on Patreon</text>
   </g>
 </svg>
