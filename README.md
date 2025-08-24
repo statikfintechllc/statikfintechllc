@@ -256,7 +256,7 @@
 </div>
 <div align="center"> 
 
-  <br/> [© 2025 StatikFinTech, LLC](https://statikfintechllc.github.io/GremlinGPT/master/blob/LICENSE.md)
+  <br/> [© 2025 StatikFinTech, LLC](https://www.github.com/statikfintechllc/GremlinGPT/master/blob/LICENSE.md)
 
 </div>
 <!--
