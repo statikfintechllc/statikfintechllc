@@ -119,7 +119,7 @@
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#3178c6"/><text x="32" y="195" class="legend">TypeScript</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="222" y="195" class="legend">Python</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="207" class="legend">CSS</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="207" class="legend">JavaScript</text>
     </g>
   </a>
-  <a xlink:href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance" target="_blank">
+  <a xlink:href="https://github.com/StatikFinTech-LLC/AscendDocs-of-GovSeverance" target="_blank">
     <g transform="translate(460,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">AscendDocs-of-GovSeverance</text>
@@ -161,7 +161,7 @@
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
-  <a xlink:href="https://github.com/statikfintechllc/dragon-boot" target="_blank">
+  <a xlink:href="https://github.com/StatikFinTech-LLC/dragon-boot" target="_blank">
     <g transform="translate(0,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">dragon-boot</text>
