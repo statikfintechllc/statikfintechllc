@@ -15,7 +15,7 @@
   
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
-  <a xlink:href="https://github.com/statikfintechllc/GremlinGPT" target="_blank">
+  <a xlink:href="https://github.com/StatikFinTech-LLC/GremlinGPT" target="_blank">
     <g transform="translate(0,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">GremlinGPT</text>
@@ -46,7 +46,7 @@
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#ff5a03"/><text x="222" y="195" class="legend">Astro</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="207" class="legend">Shell</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="207" class="legend">TypeScript</text>
     </g>
   </a>
-  <a xlink:href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader" target="_blank">
+  <a xlink:href="https://github.com/StatikFinTech-LLC/Gremlin-ShadTail-Trader" target="_blank">
     <g transform="translate(460,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">Gremlin-ShadTail-Trader</text>
@@ -88,7 +88,7 @@
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
-  <a xlink:href="https://github.com/statikfintechllc/statik-server" target="_blank">
+  <a xlink:href="https://github.com/StatikFinTech-LLC/statik-server" target="_blank">
     <g transform="translate(0,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">statik-server</text>
@@ -192,7 +192,7 @@
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="195" class="legend">Shell</text>
     </g>
   </a>
-  <a xlink:href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap" target="_blank">
+  <a xlink:href="https://github.com/StatikFinTech-LLC/Gremlin-MCP-Scrap" target="_blank">
     <g transform="translate(460,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">Gremlin-MCP-Scrap</text>
