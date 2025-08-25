@@ -27,19 +27,19 @@
          preserveAspectRatio="xMidYMid slice"/>
 
   <!-- Title -->
-  <text x="48" y="31" class="title">undefined</text>
+  <text x="48" y="31" class="title">AscendNet</text>
 
   <!-- Description -->
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      No description available
+      A P2P network where users: Share, trade, and sell AI prompts and prompt chains, Pool and rent distributed compute for inference/training, All transactions happen P2P, with a built-in 3% fee
     </div>
   </foreignObject>
 
   <!-- Language Dot + Label -->
-  <circle cx="48" cy="180" r="6" fill="#ccc"/>
-  <text x="64" y="180" class="meta">N/A</text>
+  <circle cx="48" cy="180" r="6" fill="#3178c6"/>
+  <text x="64" y="180" class="meta">TypeScript</text>
 
   <!-- Star Icon + Count (ALIGNED) -->
   <g transform="translate(140, 172)">
@@ -48,7 +48,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
   </g>
-  <text x="162" y="180" class="meta">0</text>
+  <text x="162" y="180" class="meta">7</text>
 
   <!-- Fork Icon + Count (ALIGNED) -->
   <g transform="translate(200, 173)">
@@ -60,8 +60,56 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+    <rect x="0" y="195" width="350.03288079808414" height="6" fill="#3178c6" />
+<rect x="350.03288079808414" y="195" width="60.46302481977421" height="6" fill="#3572A5" />
+<rect x="410.49590561785834" y="195" width="5.690830095724764" height="6" fill="#563d7c" />
+<rect x="416.1867357135831" y="195" width="4.985257788999832" height="6" fill="#f1e05a" />
+<rect x="421.17199350258295" y="195" width="4.9093710920430835" height="6" fill="#ccc" />
+<rect x="426.08136459462605" y="195" width="2.402228631982825" height="6" fill="#ccc" />
+<rect x="428.4835932266089" y="195" width="2.382107833278193" height="6" fill="#ccc" />
+<rect x="430.8657010598871" y="195" width="1.8747434338123798" height="6" fill="#89e051" />
+<rect x="432.7404444936995" y="195" width="1.5298627625250942" height="6" fill="#ccc" />
+<rect x="434.2703072562246" y="195" width="1.0958742848399177" height="6" fill="#ccc" />
+<rect x="435.3661815410645" y="195" width="1.0549456839867957" height="6" fill="#ccc" />
+<rect x="436.4211272250513" y="195" width="1.0318495178490539" height="6" fill="#ccc" />
+<rect x="437.4529767429004" y="195" width="1.0027877894326356" height="6" fill="#ccc" />
+<rect x="438.45576453233303" y="195" width="0.5234027172738536" height="6" fill="#ccc" />
+<rect x="438.9791672496069" y="195" width="0.44147632097614153" height="6" fill="#ccc" />
+<rect x="439.4206435705831" y="195" width="0.11332591341157318" height="6" fill="#ccc" />
+<rect x="439.53396948399467" y="195" width="0.08861850178679868" height="6" fill="#ccc" />
+<rect x="439.6225879857815" y="195" width="0.05977424208642182" height="6" fill="#ccc" />
+<rect x="439.6823622278679" y="195" width="0.043780406515753635" height="6" fill="#ccc" />
+<rect x="439.7261426343836" y="195" width="0.03330236837922195" height="6" fill="#ccc" />
+<rect x="439.75944500276285" y="195" width="0.029803099039285894" height="6" fill="#ccc" />
+<rect x="439.7892481018021" y="195" width="0.023041798958731482" height="6" fill="#ccc" />
+<rect x="439.81228990076085" y="195" width="0.022290543394225433" height="6" fill="#ccc" />
+<rect x="439.83458044415505" y="195" width="0.01941402537749834" height="6" fill="#ccc" />
+<rect x="439.85399446953255" y="195" width="0.018563920396609916" height="6" fill="#ccc" />
+<rect x="439.87255838992917" y="195" width="0.017960938956677434" height="6" fill="#ccc" />
+<rect x="439.89051932888583" y="195" width="0.010705391794211152" height="6" fill="#ccc" />
+<rect x="439.90122472068003" y="195" width="0.009499428914346185" height="6" fill="#ccc" />
+<rect x="439.9107241495944" y="195" width="0.008417027804959183" height="6" fill="#ccc" />
+<rect x="439.91914117739935" y="195" width="0.007917838252228191" height="6" fill="#ccc" />
+<rect x="439.9270590156516" y="195" width="0.0068552070261176665" height="6" fill="#ccc" />
+<rect x="439.9339142226777" y="195" width="0.0068552070261176665" height="6" fill="#ccc" />
+<rect x="439.9407694297038" y="195" width="0.005960619807857179" height="6" fill="#ccc" />
+<rect x="439.94673004951164" y="195" width="0.00525878895154232" height="6" fill="#ccc" />
+<rect x="439.9519888384632" y="195" width="0.005085802472873165" height="6" fill="#ccc" />
+<rect x="439.95707464093607" y="195" width="0.004932585877480485" height="6" fill="#ccc" />
+<rect x="439.96200722681357" y="195" width="0.004645922569971599" height="6" fill="#ccc" />
+<rect x="439.96665314938355" y="195" width="0.004413626441473018" height="6" fill="#ccc" />
+<rect x="439.971066775825" y="195" width="0.004270294787718575" height="6" fill="#ccc" />
+<rect x="439.97533707061274" y="195" width="0.0037612202933493474" height="6" fill="#ccc" />
+<rect x="439.9790982909061" y="195" width="0.003232375915703644" height="6" fill="#ccc" />
+<rect x="439.98233066682184" y="195" width="0.0031335264993212694" height="6" fill="#ccc" />
+<rect x="439.98546419332115" y="195" width="0.0029605400206521144" height="6" fill="#ccc" />
+<rect x="439.9884247333418" y="195" width="0.002916057783280046" height="6" fill="#ccc" />
+<rect x="439.9913407911251" y="195" width="0.0017891744365209773" height="6" fill="#ccc" />
+<rect x="439.9931299655616" y="195" width="0.0016310153703091783" height="6" fill="#ccc" />
+<rect x="439.9947609809319" y="195" width="0.001601360545394466" height="6" fill="#ccc" />
+<rect x="439.9963623414773" y="195" width="0.001403661712629717" height="6" fill="#ccc" />
+<rect x="439.99776600318995" y="195" width="0.0012455026464179178" height="6" fill="#ccc" />
+<rect x="439.9990115058364" y="195" width="0.0009094146307178448" height="6" fill="#ccc" />
+<rect x="439.9999209204671" y="195" width="0.00007907953310589956" height="6" fill="#ccc" />
   </g>
 </svg>
