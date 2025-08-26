@@ -259,6 +259,7 @@
   <br/> [© 2025 StatikFinTech, LLC](https://www.github.com/statikfintechllc/GremlinGPT/blob/master/LICENSE.md)
 
 </div>
+
 <!--
 <div align="center">
   <img src="https://komarev.com/ghpvc/?username=statikfintechllc&color=8b0000&style=flat-square" alt="Profile Views">
