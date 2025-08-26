@@ -15,7 +15,7 @@
   
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
-  <a xlink:href="https://github.com/StatikFinTech-LLC/GremlinGPT" target="_blank">
+  <a xlink:href="https://github.com/statikfintechllc/GremlinGPT" target="_blank">
     <g transform="translate(0,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">GremlinGPT</text>
@@ -39,14 +39,14 @@
 <path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">1</text>
+          <text x="26" y="2" class="pill">2</text>
         </g>
       </g>
       <rect x="20" y="165" width="276" height="12" fill="#3572A5" /><rect x="296" y="165" width="39" height="12" fill="#ff5a03" /><rect x="335" y="165" width="22" height="12" fill="#89e051" /><rect x="357" y="165" width="14" height="12" fill="#3178c6" /><rect x="371" y="165" width="14" height="12" fill="#f1e05a" /><rect x="385" y="165" width="15" height="12" fill="#663399" />
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#ff5a03"/><text x="222" y="195" class="legend">Astro</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="207" class="legend">Shell</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="207" class="legend">TypeScript</text>
     </g>
   </a>
-  <a xlink:href="https://github.com/StatikFinTech-LLC/Gremlin-ShadTail-Trader" target="_blank">
+  <a xlink:href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader" target="_blank">
     <g transform="translate(460,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">Gremlin-ShadTail-Trader</text>
@@ -70,7 +70,7 @@
 <path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">0</text>
+          <text x="26" y="2" class="pill">1</text>
         </g>
       </g>
       <rect x="20" y="165" width="248" height="12" fill="#3572A5" /><rect x="268" y="165" width="77" height="12" fill="#3178c6" /><rect x="345" y="165" width="14" height="12" fill="#f1e05a" /><rect x="359" y="165" width="14" height="12" fill="#89e051" /><rect x="373" y="165" width="14" height="12" fill="#663399" /><rect x="387" y="165" width="13" height="12" fill="#ff5a03" />
@@ -88,7 +88,7 @@
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
-  <a xlink:href="https://github.com/StatikFinTech-LLC/statik-server" target="_blank">
+  <a xlink:href="https://github.com/statikfintechllc/statik-server" target="_blank">
     <g transform="translate(0,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">statik-server</text>
@@ -112,14 +112,14 @@
 <path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">0</text>
+          <text x="26" y="2" class="pill">1</text>
         </g>
       </g>
       <rect x="20" y="165" width="261" height="12" fill="#3178c6" /><rect x="281" y="165" width="42" height="12" fill="#3572A5" /><rect x="323" y="165" width="13" height="12" fill="#663399" /><rect x="336" y="165" width="13" height="12" fill="#f1e05a" /><rect x="349" y="165" width="13" height="12" fill="#e34c26" /><rect x="362" y="165" width="13" height="12" fill="#dea584" /><rect x="375" y="165" width="13" height="12" fill="#89e051" /><rect x="388" y="165" width="12" height="12" fill="#264b99" />
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#3178c6"/><text x="32" y="195" class="legend">TypeScript</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="222" y="195" class="legend">Python</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="207" class="legend">CSS</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="207" class="legend">JavaScript</text>
     </g>
   </a>
-  <a xlink:href="https://github.com/StatikFinTech-LLC/AscendDocs-of-GovSeverance" target="_blank">
+  <a xlink:href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance" target="_blank">
     <g transform="translate(460,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">AscendDocs-of-GovSeverance</text>
@@ -143,7 +143,7 @@
 <path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">0</text>
+          <text x="26" y="2" class="pill">1</text>
         </g>
       </g>
       <rect x="20" y="165" width="380" height="12" fill="#f1e05a" />
@@ -161,7 +161,7 @@
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
-  <a xlink:href="https://github.com/StatikFinTech-LLC/dragon-boot" target="_blank">
+  <a xlink:href="https://github.com/statikfintechllc/dragon-boot" target="_blank">
     <g transform="translate(0,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">dragon-boot</text>
@@ -185,14 +185,14 @@
 <path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">0</text>
+          <text x="26" y="2" class="pill">1</text>
         </g>
       </g>
       <rect x="20" y="165" width="380" height="12" fill="#89e051" />
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="195" class="legend">Shell</text>
     </g>
   </a>
-  <a xlink:href="https://github.com/StatikFinTech-LLC/Gremlin-MCP-Scrap" target="_blank">
+  <a xlink:href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap" target="_blank">
     <g transform="translate(460,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">Gremlin-MCP-Scrap</text>
@@ -216,7 +216,7 @@
 <path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">0</text>
+          <text x="26" y="2" class="pill">1</text>
         </g>
       </g>
       <rect x="20" y="165" width="292" height="12" fill="#3572A5" /><rect x="312" y="165" width="88" height="12" fill="#f1e05a" />
