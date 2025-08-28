@@ -72,24 +72,12 @@
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.G.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" width="400"/>
   </a>
 
-  <a href="https://github.com/statikfintechllc/dragon-boot">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/D.B.svg/assets/dragon-boot-card.svg" alt="dragon-boot" width="400"/>
-  </a>
-
   <a href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.S.svg/assets/gremlin-shadtail-trader-card.svg" alt="Gremlin-ShadTail-Trader" width="400"/>
   </a>
 
   <a href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.M.svg/assets/gremlin-mcp-scrap-card.svg" alt="Gremlin-MCP-Scrap" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/Mobile-Mirror">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/M.M.svg/assets/mobile-mirror-card.svg" alt="Mobile-Mirror" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/GodCore">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.C.svg/assets/godcore-card.svg" alt="GodCore" width="400"/>
   </a>
 
   <a href="https://github.com/statikfintechllc/statik-server">
@@ -104,10 +92,21 @@
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/A.I.svg/assets/ascend-institute-card.svg" alt="Ascend-Institute" width="400">
   </a>
 
+  <a href="https://github.com/statikfintechllc/GodCore">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.C.svg/assets/godcore-card.svg" alt="GodCore" width="400"/>
+  </a>
+
+  <a href="https://github.com/statikfintechllc/Mobile-Mirror">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/M.M.svg/assets/mobile-mirror-card.svg" alt="Mobile-Mirror" width="400"/>
+  </a>
+
   <a href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/A.D.svg/assets/ascenddocs-of-govseverance-card.svg" alt="AscendDocs-of-GovSeverance" width="400"/>
   </a>
-</div>
+
+  <a href="https://github.com/statikfintechllc/dragon-boot">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/D.B.svg/assets/dragon-boot-card.svg" alt="dragon-boot" width="400"/>
+  </a>
 </div>
 
 <!-- Zenodo Research Papers Flexbox Grid -->
