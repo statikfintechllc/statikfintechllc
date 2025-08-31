@@ -55,18 +55,12 @@ Professional achievement and skill badges:
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" />
 </div>
 
-### StatikFinTech Title
-<div align="center">
-  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/statik.title.svg" alt="StatikFinTech Title" />
-</div>
-
 ## 🔗 Navigation
 
 - 🏠 [Main Repository](../README.md)
 - 📁 [Documentation Hub](../docs/README.md)
-- 🛠️ [Builder Scripts](../builder.script/)
-- 📊 [Repository Cards](../docs/G.G.svg/) - GremlinGPT
-- 📊 [Repository Cards](../docs/D.B.svg/) - Dragon Boot
+- 🛠️ [Builder Script](../builder.script/)
+- 📊 [Repository Cards](../docs/)
 - 📄 [Academic Papers](../docs/Zenodo.papers.svg/)
 - ✍️ [Medium Articles](../docs/Medium.papers.svg/)
 
