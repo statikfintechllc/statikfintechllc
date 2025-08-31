@@ -251,9 +251,27 @@
 **See Our [Open Funding Proposal](https://github.com/statikfintechllc/Ascend-Institute/blob/master/About%20Us/OPEN_FUNDING_PROPOSAL.md)**
 
 <div align="center">
-	
+
   <br/> [© 2025 StatikFinTech, LLC](https://www.github.com/statikfintechllc/GremlinGPT/blob/master/LICENSE.md)
 
+  <a href="https://github.com/statikfintechllc">
+    <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
+  </a>
+  <a href="https://www.linkedin.com/in/daniel-morris-780804368">
+    <img src="https://img.shields.io/badge/In-e11d48?logo=linkedin&logoColor=white&style=flat-square" alt="LinkedIn">
+  </a>
+  <a href="mailto:ascend.gremlin@gmail.com">
+    <img src="https://img.shields.io/badge/-D14836?logo=gmail&logoColor=white&style=flat-square" alt="Email">
+  </a>
+  <a href="https://www.youtube.com/@Gremlins_Forge">
+    <img src="https://img.shields.io/badge/-FF0000?logo=youtube&logoColor=white&style=flat-square" alt="YouTube">
+  </a>
+  <a href="https://x.com/GremlinsForge">
+    <img src="https://img.shields.io/badge/-000000?logo=x&logoColor=white&style=flat-square" alt="X">
+  </a>
+  <a href="https://medium.com/@ascend.gremlin">
+    <img src="https://img.shields.io/badge/-000000?logo=medium&logoColor=white&style=flat-square" alt="Medium">
+  </a>  
 </div>
 
 <!--
