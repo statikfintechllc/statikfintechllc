@@ -1489,7 +1489,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,103</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,123</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-09-01</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1"
@@ -2377,7 +2377,7 @@
 
   <!-- Center number with heavy glow -->
   <g transform="translate(380,110)">
-    <text class="centerNum" text-anchor="middle" dy="10" filter="url(#fGlow)">10</text>
+    <text class="centerNum" text-anchor="middle" dy="10" filter="url(#fGlow)">11</text>
   </g>
 
   <text x="610" y="34" class="title" text-anchor="middle">Longest Streaks</text>
@@ -2393,8 +2393,8 @@
     <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.000000;0.333333;0.666667;1.000000" dur="7.2s" repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="610" y="102" class="rightLabel" text-anchor="middle">10 days</text>
-    <text x="610" y="126" class="rightSub"   text-anchor="middle">2025-08-09 → 2025-08-18</text>
+    <text x="610" y="102" class="rightLabel" text-anchor="middle">11 days</text>
+    <text x="610" y="126" class="rightSub"   text-anchor="middle">2025-08-22 → 2025-09-01</text>
     <animate attributeName="opacity" values="0;0;1;1" keyTimes="0.000000;0.333333;0.666667;1.000000" dur="7.2s" repeatCount="indefinite"/>
   </g>
 </svg>
