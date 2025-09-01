@@ -42,7 +42,7 @@
           <text x="26" y="2" class="pill">2</text>
         </g>
       </g>
-      <rect x="20" y="165" width="276" height="12" fill="#3572A5" /><rect x="296" y="165" width="39" height="12" fill="#ff5a03" /><rect x="335" y="165" width="22" height="12" fill="#89e051" /><rect x="357" y="165" width="14" height="12" fill="#3178c6" /><rect x="371" y="165" width="14" height="12" fill="#f1e05a" /><rect x="385" y="165" width="15" height="12" fill="#663399" />
+      <rect x="20" y="165" width="276" height="12" fill="#3572A5" /><rect x="296" y="165" width="41" height="12" fill="#ff5a03" /><rect x="337" y="165" width="21" height="12" fill="#89e051" /><rect x="358" y="165" width="14" height="12" fill="#3178c6" /><rect x="372" y="165" width="14" height="12" fill="#f1e05a" /><rect x="386" y="165" width="14" height="12" fill="#663399" />
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#ff5a03"/><text x="222" y="195" class="legend">Astro</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="207" class="legend">Shell</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="207" class="legend">TypeScript</text>
     </g>
   </a>
