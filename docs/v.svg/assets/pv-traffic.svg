@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="228.5" height="28"
-     viewBox="0 0 228.5 28" role="img" aria-label="Profile traffic: 707">
+     viewBox="0 0 228.5 28" role="img" aria-label="Profile traffic: 708">
   <!-- Left (black) with rounded left corners -->
   <path d="M14,0
   L168.5,0
@@ -30,6 +30,6 @@
   <text x="198.5" y="19" text-anchor="middle"
         font-family="ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial"
         font-size="14" font-weight="700" fill="#ffffff">
-    707
+    708
   </text>
 </svg>
