@@ -64,6 +64,14 @@
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.S.svg/assets/statik-server-card.svg" alt="statik-server" width="400"/>
   </a>
 
+  <a href="https://github.com/statikfintechllc/IB-G.Scanner">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/IB.G.svg/assets/ib-g-scanner-card.svg" alt="IB-G.Scanner" width="400"/>
+  </a>
+
+  <a href="https://github.com/statikfintechllc/Pilot-Server">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/P.S.svg/assets/pilot-server-card.svg" alt="Pilot-Server" width="400"/>
+  </a>
+
   <a href="https://github.com/statikfintechllc/AscendNet">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/A.N.svg/assets/ascendnet-card.svg" alt="AscendNet" width="400"/>
   </a>
