@@ -7,6 +7,5 @@
     "build": "node scripts/generate-github-profile.mjs"
   },
   "dependencies": {
-    "gh-lang-colors": "^1.0.0"
   }
 }
