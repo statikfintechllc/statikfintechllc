@@ -165,7 +165,8 @@ function generateLanguageDots(languages) {
   languages.slice(0, 10).forEach((lang, index) => {
     const column = Math.floor(index / itemsPerColumn);
     const row = index % itemsPerColumn;
-    const x = column * 180;
+    // Move second column (column === 1) 2 points to the left
+    const x = column === 1 ? column * 180 - 2 : column * 180;
     const y = row * 20;
     
     dots += `    <g transform="translate(${x}, ${y})">\n`;
