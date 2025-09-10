@@ -26,6 +26,7 @@ jobs:
       - name: Build GitHub Profile SVG
         env:
           GH_TOKEN: ${{ secrets.PAT_GITHUB }}
+          GITHUB_TOKEN: ${{ secrets.PAT_GITHUB }}
         working-directory: docs/g.svg
         run: node scripts/generate-github-profile.mjs
 
