@@ -145,27 +145,27 @@
       <text x="15" y="9" class="lang-name">HTML 1.07%</text>
     </g>
     
-    <g transform="translate(172, 0)">
+    <g transform="translate(164, 0)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
       <text x="15" y="9" class="lang-name">JavaScript 1.04%</text>
     </g>
     
-    <g transform="translate(172, 20)">
+    <g transform="translate(164, 20)">
       <circle cx="5" cy="5" r="4" fill="#dea584"/>
       <text x="15" y="9" class="lang-name">Rust 0.53%</text>
     </g>
     
-    <g transform="translate(172, 40)">
+    <g transform="translate(164, 40)">
       <circle cx="5" cy="5" r="4" fill="#DA5B0B"/>
       <text x="15" y="9" class="lang-name">Jupyter Notebook 0.51%</text>
     </g>
     
-    <g transform="translate(172, 60)">
+    <g transform="translate(164, 60)">
       <circle cx="5" cy="5" r="4" fill="#89e051"/>
       <text x="15" y="9" class="lang-name">Shell 0.48%</text>
     </g>
     
-    <g transform="translate(172, 80)">
+    <g transform="translate(164, 80)">
       <circle cx="5" cy="5" r="4" fill="#858585"/>
       <text x="15" y="9" class="lang-name">Smarty 0.24%</text>
     </g>
