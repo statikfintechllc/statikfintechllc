@@ -216,6 +216,18 @@
 
 ---
 
+ **Want to See you're own ideas built, or to sponsor hardware directly? Reach Out to:**
+- **Email:** [ascend.gremlin@gmail.com](mailto:ascend.gremlin@gmail.com) | [ascend.help@gmail.com](mailto:ascend.help@gmail.com)
+- **Call Us:** [+1 (620) 266-9837](sms:+16202669837)  
+- **Text Us:** [+1 (785) 443-6288](sms:+17854436288)  
+- **DM:**  
+  - a) [LinkedIn: StatikFinTech, LLC](https://www.linkedin.com/in/statikfintech-llc-780804368/)
+  - b) [X: @GremlinsForge](https://twitter.com/GremlinsForge)  
+
+**See Our [Open Funding Proposal](https://github.com/statikfintechllc/Ascend-Institute/blob/master/About%20Us/OPEN_FUNDING_PROPOSAL.md)**
+
+---
+
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/L.W.badge.svg" alt="Like my work?" />
@@ -247,17 +259,6 @@
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/chime.sponsor.svg">
 </a>
 </div>
-
- **Want to See you're own ideas built, or to sponsor hardware directly? Reach Out to:**
-- **Email:** [ascend.gremlin@gmail.com](mailto:ascend.gremlin@gmail.com) | [ascend.help@gmail.com](mailto:ascend.help@gmail.com)
-- **Call Us:** [+1 (620) 266-9837](sms:+16202669837)  
-- **Text Us:** [+1 (785) 443-6288](sms:+17854436288)  
-- **DM:**  
-  - a) [LinkedIn: StatikFinTech, LLC](https://www.linkedin.com/in/statikfintech-llc-780804368/)
-  - b) [X: @GremlinsForge](https://twitter.com/GremlinsForge)  
-
-**See Our [Open Funding Proposal](https://github.com/statikfintechllc/Ascend-Institute/blob/master/About%20Us/OPEN_FUNDING_PROPOSAL.md)**
-
 <div align="center">
 
   <br/> [© 2025 StatikFinTech, LLC](https://www.github.com/statikfintechllc/GremlinGPT/blob/master/LICENSE.md)
