@@ -52,6 +52,14 @@
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.G.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" width="400"/>
   </a>
 
+  <a href="https://github.com/statikfintechllc/IB-G.Scanner">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/IB.G.svg/assets/ib-g-scanner-card.svg" alt="IB-G.Scanner" width="400"/>
+  </a>
+
+  <a href="https://github.com/statikfintechllc/Pilot-Server">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/P.S.svg/assets/pilot-server-card.svg" alt="Pilot-Server" width="400"/>
+  </a>
+  
   <a href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.S.svg/assets/gremlin-shadtail-trader-card.svg" alt="Gremlin-ShadTail-Trader" width="400"/>
   </a>
@@ -62,14 +70,6 @@
 
   <a href="https://github.com/statikfintechllc/statik-server">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.S.svg/assets/statik-server-card.svg" alt="statik-server" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/IB-G.Scanner">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/IB.G.svg/assets/ib-g-scanner-card.svg" alt="IB-G.Scanner" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/Pilot-Server">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/P.S.svg/assets/pilot-server-card.svg" alt="Pilot-Server" width="400"/>
   </a>
 
   <a href="https://github.com/statikfintechllc/AscendNet">
