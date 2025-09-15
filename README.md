@@ -1,7 +1,7 @@
 <div align="center">
-  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
+  <a href="https://sfti-ai.org/">
     <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
-  <a href="https://statikfintechllc.github.io/Ascend-Institute/">
+  <a href="https://sfti-ai.org">
     <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
   </a><br>
 </div> 
@@ -20,7 +20,7 @@
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/v.svg/assets/pv-traffic.svg">
   </a>
-  <a href="https://github.com/sponsors/statikfintechllc">
+  <a href="https://github.com/statikfintechllc">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/g.svg/assets/github-profile.svg">
   </a>
 </div>
