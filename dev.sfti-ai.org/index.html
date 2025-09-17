@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFTi Dev - PWA Hub</title>
+    <link rel="stylesheet" href="dev-styles.css">
+    <link rel="stylesheet" href="styles/dev.tailwind.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg">
+    <meta property="og:title" content="SFTi Dev - PWA Hub">
+    <meta property="og:description" content="Progressive Web Applications by StatikFinTech LLC">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dev.sfti-ai.org">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SFTi Dev</span>
+                <span class="logo-subtitle">PWA Hub</span>
+            </div>
+            <div class="nav-links">
+                <a href="https://www.sfti-ai.org" class="nav-link external">Home</a>
+                <a href="https://www.sfti-ai.org#institute" class="nav-link external">Institute</a>
+                <a href="https://www.sfti-ai.org#projects" class="nav-link external">Projects</a>
+                <a href="https://www.sfti-ai.org#research" class="nav-link external">Research</a>
+                <a href="#pwas" class="nav-link">PWAs</a>
+                <a href="#status" class="nav-link">Status</a>
+                <a href="https://server.sfti-ai.org" class="nav-link external">Server</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Progressive Web Applications</h1>
+            <p class="hero-subtitle">Launch and manage SFTi's autonomous tools and trading systems</p>
+            <div class="status-indicator">
+                <span class="status-dot active"></span>
+                <span class="status-text">All systems operational</span>
+            </div>
+        </div>
+        <div class="terminal-bg">
+            <div class="terminal-line">$ initializing PWA hub...</div>
+            <div class="terminal-line">$ connecting to trading systems...</div>
+            <div class="terminal-line">$ all services online</div>
+            <div class="terminal-cursor">_</div>
+        </div>
+    </section>
+
+    <!-- PWA Grid -->
+    <section id="pwas" class="pwa-section">
+        <div class="container">
+            <h2 class="section-title">Available Applications</h2>
+            <div class="pwa-grid">
+                <!-- IB-G.Scanner -->
+                <div class="pwa-card" data-app="ib-g-scanner">
+                    <div class="pwa-header">
+                        <div class="pwa-icon">
+                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/IB.G.svg/assets/ib-g-scanner-card.svg" alt="IB-G.Scanner" loading="lazy">
+                        </div>
+                        <div class="pwa-status">
+                            <span class="status-dot active"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                    <div class="pwa-content">
+                        <h3>IB-G.Scanner</h3>
+                        <p class="pwa-description">Advanced market scanning and analysis tool for Interactive Brokers. Real-time market data, pattern recognition, and automated alerts.</p>
+                        <div class="pwa-features">
+                            <span class="feature-tag">Real-time Data</span>
+                            <span class="feature-tag">Pattern Recognition</span>
+                            <span class="feature-tag">Automated Alerts</span>
+                        </div>
+                        <div class="pwa-actions">
+                            <button class="btn btn-primary" onclick="launchPWA('ib-g-scanner')">Launch Application</button>
+                            <button class="btn btn-secondary" onclick="showAppDetails('ib-g-scanner')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pilot-Server -->
+                <div class="pwa-card" data-app="pilot-server">
+                    <div class="pwa-header">
+                        <div class="pwa-icon">
+                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/P.S.svg/assets/pilot-server-card.svg" alt="Pilot-Server" loading="lazy">
+                        </div>
+                        <div class="pwa-status">
+                            <span class="status-dot active"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                    <div class="pwa-content">
+                        <h3>Pilot-Server</h3>
+                        <p class="pwa-description">Autonomous server management and deployment system. Automated scaling, monitoring, and maintenance for cloud infrastructure.</p>
+                        <div class="pwa-features">
+                            <span class="feature-tag">Auto Scaling</span>
+                            <span class="feature-tag">Monitoring</span>
+                            <span class="feature-tag">Deployment</span>
+                        </div>
+                        <div class="pwa-actions">
+                            <button class="btn btn-primary" onclick="launchPWA('pilot-server')">Launch Application</button>
+                            <button class="btn btn-secondary" onclick="showAppDetails('pilot-server')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GremlinGPT (Coming Soon) -->
+                <div class="pwa-card coming-soon" data-app="gremlingpt">
+                    <div class="pwa-header">
+                        <div class="pwa-icon">
+                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.G.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" loading="lazy">
+                        </div>
+                        <div class="pwa-status">
+                            <span class="status-dot developing"></span>
+                            <span>In Development</span>
+                        </div>
+                    </div>
+                    <div class="pwa-content">
+                        <h3>GremlinGPT</h3>
+                        <p class="pwa-description">Recursive autonomous AI system with self-evolution capabilities. The next generation of AI assistance with local processing.</p>
+                        <div class="pwa-features">
+                            <span class="feature-tag">Recursive AI</span>
+                            <span class="feature-tag">Self-Evolution</span>
+                            <span class="feature-tag">Local Processing</span>
+                        </div>
+                        <div class="pwa-actions">
+                            <button class="btn btn-disabled" disabled>Coming Soon</button>
+                            <button class="btn btn-secondary" onclick="showAppDetails('gremlingpt')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gremlin-ShadTail-Trader -->
+                <div class="pwa-card" data-app="gremlin-shadtail">
+                    <div class="pwa-header">
+                        <div class="pwa-icon">
+                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.S.svg/assets/gremlin-shadtail-trader-card.svg" alt="Gremlin-ShadTail-Trader" loading="lazy">
+                        </div>
+                        <div class="pwa-status">
+                            <span class="status-dot active"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                    <div class="pwa-content">
+                        <h3>Gremlin-ShadTail-Trader</h3>
+                        <p class="pwa-description">Autonomous trading system with AI-driven decision making. Advanced algorithms for risk management and profit optimization.</p>
+                        <div class="pwa-features">
+                            <span class="feature-tag">AI Trading</span>
+                            <span class="feature-tag">Risk Management</span>
+                            <span class="feature-tag">Profit Optimization</span>
+                        </div>
+                        <div class="pwa-actions">
+                            <button class="btn btn-primary" onclick="launchPWA('gremlin-shadtail')">Launch Application</button>
+                            <button class="btn btn-secondary" onclick="showAppDetails('gremlin-shadtail')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Status Section -->
+    <section id="status" class="status-section">
+        <div class="container">
+            <h2 class="section-title">System Status</h2>
+            <div class="status-grid">
+                <div class="status-card">
+                    <div class="status-header">
+                        <h3>Server Infrastructure</h3>
+                        <span class="status-dot active"></span>
+                    </div>
+                    <div class="status-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Uptime</span>
+                            <span class="metric-value">99.9%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Response Time</span>
+                            <span class="metric-value">45ms</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">CPU Usage</span>
+                            <span class="metric-value">32%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <div class="status-header">
+                        <h3>Trading Systems</h3>
+                        <span class="status-dot active"></span>
+                    </div>
+                    <div class="status-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Active Strategies</span>
+                            <span class="metric-value">7</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Market Connection</span>
+                            <span class="metric-value">Stable</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Last Update</span>
+                            <span class="metric-value">2s ago</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="status-card">
+                    <div class="status-header">
+                        <h3>AI Systems</h3>
+                        <span class="status-dot developing"></span>
+                    </div>
+                    <div class="status-metrics">
+                        <div class="metric">
+                            <span class="metric-label">GremlinGPT</span>
+                            <span class="metric-value">Dev Mode</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Training Progress</span>
+                            <span class="metric-value">78%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Model Accuracy</span>
+                            <span class="metric-value">94.2%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Details Modal -->
+    <div id="app-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="app-details"></div>
+        </div>
+    </div>
+
+    <!-- PWA Launch Modal -->
+    <div id="launch-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="launch-content">
+                <div class="launch-icon">🚀</div>
+                <h3>Launching Application...</h3>
+                <p>Please wait while we initialize your session.</p>
+                <div class="loading-bar">
+                    <div class="loading-progress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/mobile-navigation.js"></script>
+    <script src="dev-script.js"></script>
+</body>
+</html>

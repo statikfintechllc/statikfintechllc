@@ -1,0 +1,133 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-filesystem",
+        "./src"
+      ],
+      "env": {
+        "MCP_ROOT_PATH": "."
+      }
+    },
+    "git": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-git",
+        "--repository",
+        "."
+      ]
+    },
+    "npm": {
+      "command": "npx", 
+      "args": [
+        "@modelcontextprotocol/server-npm",
+        "--package-file",
+        "./package.json"
+      ]
+    },
+    "web-search": {
+      "command": "npx",
+      "args": [
+        "@modelcontextprotocol/server-web-search"
+      ],
+      "env": {
+        "SEARCH_ENGINE": "google"
+      }
+    }
+  },
+  "mcpSettings": {
+    "timeout": 10000,
+    "retryAttempts": 3,
+    "maxConcurrentRequests": 5
+  },
+  "taskingSystem": {
+    "templates": {
+      "feature": {
+        "phases": [
+          "analysis",
+          "planning", 
+          "implementation",
+          "testing",
+          "documentation"
+        ],
+        "checkpoints": [
+          "requirements_understood",
+          "design_approved",
+          "code_implemented", 
+          "tests_passing",
+          "documentation_updated"
+        ]
+      },
+      "bugfix": {
+        "phases": [
+          "reproduction",
+          "root_cause_analysis",
+          "fix_implementation", 
+          "testing",
+          "verification"
+        ],
+        "checkpoints": [
+          "bug_reproduced",
+          "cause_identified",
+          "fix_implemented",
+          "tests_added",
+          "regression_tested"
+        ]
+      },
+      "refactor": {
+        "phases": [
+          "analysis",
+          "planning",
+          "incremental_changes",
+          "testing",
+          "cleanup"
+        ],
+        "checkpoints": [
+          "scope_defined",
+          "approach_planned",
+          "changes_implemented",
+          "behavior_preserved", 
+          "code_cleaned"
+        ]
+      }
+    },
+    "qualityGates": {
+      "typescript": {
+        "noErrors": true,
+        "strictMode": true
+      },
+      "linting": {
+        "maxWarnings": 5,
+        "maxErrors": 0
+      },
+      "testing": {
+        "minCoverage": 80,
+        "allTestsPass": true
+      },
+      "build": {
+        "successfulBuild": true,
+        "maxBundleSize": "2MB"
+      }
+    }
+  },
+  "developmentWorkflows": {
+    "preCommit": [
+      "npm run lint",
+      "npm run build",
+      "git add ."
+    ],
+    "featureDevelopment": [
+      "create feature branch",
+      "implement with tests",
+      "run quality checks", 
+      "create pull request"
+    ],
+    "bugfix": [
+      "reproduce issue",
+      "create test case",
+      "implement fix",
+      "verify resolution"
+    ]
+  }
+}

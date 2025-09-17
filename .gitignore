@@ -1,0 +1,90 @@
+# System and server files
+.well-known/
+nc_assets/
+.htaccess
+.bash_history 
+.bash_logout
+.bash_profile 
+.bashrc 
+.lastlogin 
+.ftpquota 
+.gemrc 
+.imunify_patch_id 
+.last.inodes 
+.myimunify_id 
+.spbldr_localStorage
+# cPanel system files
+.cpanel/ 
+.cagefs/ 
+.caldav/ 
+.cl.selector/ 
+.nc_plugin/ 
+.softaculous/ 
+.system-php/ 
+.spamassassin/ 
+.spamassassinenable 
+.spamassassinboxenable
+# SSH keys and config (keep these private!)
+.ssh/ 
+*.key 
+*.pem
+# SSL certificates and keys
+ssl/keys/ 
+ssl/certs/ 
+ssl/*.db ssl/*.cache
+# Mail directories and files
+mail/ 
+.htpasswds
+# System directories
+etc/ 
+logs/ 
+tmp/ 
+lscache/
+# Server-specific hidden files
+.trash/ 
+.*_localStorage
+# Permission denied directories
+**/.nc_plugin/
+# Database files
+*.db 
+*.db.cache
+# Email account files
+*@*_org
+# System PHP configurations
+**/.system-php/
+# File permissions cache
+.ftpquota 
+*.quota
+# Server logs
+*.log 
+logs/
+# Temporary files
+*.tmp 
+*.temp
+# Cache files
+*.cache 
+**/cache/
+# OS generated files
+.DS_Store 
+.DS_Store? 
+._* 
+.Spotlight-V100 
+.Trashes ehthumbs.db Thumbs.db
+# IDE files
+.vscode/ 
+.idea/ *.swp *.swo *~
+# Node modules if you use them
+node_modules/
+
+# Development artifacts
+dist/
+.vite/
+.env.local
+.env.development.local
+*.tsbuildinfo
+
+# Keep these important directories/files for 
+your website:
+# public_html/ dev.sfti-ai.org/ 
+# server.sfti-ai.org/ www/
+# Any custom PHP/HTML/CSS/JS files you created

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFTi Server - Secure Access</title>
+    <link rel="stylesheet" href="server-styles.css">
+    <link rel="stylesheet" href="styles/server.tailwind.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg">
+    <meta property="og:title" content="SFTi Server - Secure Access">
+    <meta property="og:description" content="Secure server access for StatikFinTech LLC infrastructure">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://server.sfti-ai.org">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="matrix-bg" id="matrix"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SFTi Server</span>
+                <span class="logo-subtitle">Secure Access Portal</span>
+            </div>
+            <div class="nav-links">
+                <a href="https://www.sfti-ai.org" class="nav-link external">Home</a>
+                <a href="https://www.sfti-ai.org#institute" class="nav-link external">Institute</a>
+                <a href="https://www.sfti-ai.org#projects" class="nav-link external">Projects</a>
+                <a href="https://www.sfti-ai.org#research" class="nav-link external">Research</a>
+                <a href="https://dev.sfti-ai.org" class="nav-link external">PWAs</a>
+                <a href="#documentation" class="nav-link">Docs</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Login Section -->
+        <section id="login-section" class="login-section">
+            <div class="login-container">
+                <div class="login-header">
+                    <div class="lock-icon">🔒</div>
+                    <h1>Secure Access Required</h1>
+                    <p>This server contains restricted resources and requires authentication</p>
+                </div>
+                
+                <div class="login-form-container">
+                    <form id="login-form" class="login-form">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" required autocomplete="username">
+                            <span class="input-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required autocomplete="current-password">
+                            <span class="input-border"></span>
+                            <button type="button" class="password-toggle" onclick="togglePassword()">👁️</button>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="mfa-code">2FA Code (Optional)</label>
+                            <input type="text" id="mfa-code" name="mfa-code" placeholder="000000" maxlength="6" pattern="[0-9]{6}">
+                            <span class="input-border"></span>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="remember-me">
+                                <span class="checkmark"></span>
+                                Remember me for 30 days
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="login-btn">
+                            <span class="btn-text">Access Server</span>
+                            <span class="btn-loader" style="display: none;">
+                                <div class="spinner"></div>
+                            </span>
+                        </button>
+                    </form>
+                    
+                    <div class="login-footer">
+                        <a href="#forgot-password" class="forgot-link">Forgot password?</a>
+                        <span class="separator">|</span>
+                        <a href="#request-access" class="request-link">Request access</a>
+                    </div>
+                </div>
+                
+                <div class="security-notice">
+                    <div class="notice-icon">⚠️</div>
+                    <div class="notice-content">
+                        <h4>Security Notice</h4>
+                        <p>All access attempts are logged and monitored. Unauthorized access is prohibited and may result in legal action.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Section (Hidden by default) -->
+        <section id="dashboard-section" class="dashboard-section" style="display: none;">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <h1>Server Dashboard</h1>
+                    <div class="user-info">
+                        <span class="user-name" id="user-name">Welcome, User</span>
+                        <button class="logout-btn" onclick="logout()">Logout</button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-grid">
+                    <!-- System Status -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>System Status</h3>
+                            <span class="status-indicator online">Online</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="metric">
+                                <span class="metric-label">Uptime</span>
+                                <span class="metric-value">99.98%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">CPU Usage</span>
+                                <span class="metric-value" id="cpu-usage">23%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Memory Usage</span>
+                                <span class="metric-value" id="memory-usage">45%</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Disk Usage</span>
+                                <span class="metric-value">67%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Active Services -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Active Services</h3>
+                            <span class="service-count">7 Running</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-list">
+                                <div class="service-item">
+                                    <span class="service-name">GremlinGPT Core</span>
+                                    <span class="service-status running">Running</span>
+                                </div>
+                                <div class="service-item">
+                                    <span class="service-name">Trading Engine</span>
+                                    <span class="service-status running">Running</span>
+                                </div>
+                                <div class="service-item">
+                                    <span class="service-name">Data Pipeline</span>
+                                    <span class="service-status running">Running</span>
+                                </div>
+                                <div class="service-item">
+                                    <span class="service-name">API Gateway</span>
+                                    <span class="service-status running">Running</span>
+                                </div>
+                                <div class="service-item">
+                                    <span class="service-name">Monitoring</span>
+                                    <span class="service-status warning">Warning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Logs -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Security Logs</h3>
+                            <button class="refresh-btn" onclick="refreshLogs()">🔄</button>
+                        </div>
+                        <div class="card-content">
+                            <div class="log-container" id="security-logs">
+                                <div class="log-entry">
+                                    <span class="log-time">14:23:15</span>
+                                    <span class="log-level info">INFO</span>
+                                    <span class="log-message">Successful login from 192.168.1.100</span>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="log-time">14:20:33</span>
+                                    <span class="log-level success">SUCCESS</span>
+                                    <span class="log-message">2FA verification completed</span>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="log-time">14:15:47</span>
+                                    <span class="log-level warning">WARN</span>
+                                    <span class="log-message">Failed login attempt from 203.0.113.42</span>
+                                </div>
+                                <div class="log-entry">
+                                    <span class="log-time">14:10:22</span>
+                                    <span class="log-level info">INFO</span>
+                                    <span class="log-message">System backup completed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Quick Actions</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="action-buttons">
+                                <button class="action-btn" onclick="performAction('restart-services')">
+                                    🔄 Restart Services
+                                </button>
+                                <button class="action-btn" onclick="performAction('backup-system')">
+                                    💾 Backup System
+                                </button>
+                                <button class="action-btn" onclick="performAction('update-system')">
+                                    ⬆️ Update System
+                                </button>
+                                <button class="action-btn danger" onclick="performAction('emergency-shutdown')">
+                                    🚨 Emergency Shutdown
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Access Request Modal -->
+    <div id="access-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Request Server Access</h2>
+                <p>Fill out this form to request access to the SFTi server infrastructure</p>
+            </div>
+            <form id="access-form" class="access-form">
+                <div class="form-group">
+                    <label for="req-name">Full Name</label>
+                    <input type="text" id="req-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="req-email">Email Address</label>
+                    <input type="email" id="req-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="req-company">Company/Organization</label>
+                    <input type="text" id="req-company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="req-reason">Reason for Access</label>
+                    <textarea id="req-reason" name="reason" rows="4" required placeholder="Please explain why you need access to the server..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="req-duration">Expected Duration</label>
+                    <select id="req-duration" name="duration" required>
+                        <option value="">Select duration</option>
+                        <option value="temporary">Temporary (1-7 days)</option>
+                        <option value="short-term">Short-term (1-4 weeks)</option>
+                        <option value="long-term">Long-term (1-6 months)</option>
+                        <option value="permanent">Permanent</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dist/mobile-navigation.js"></script>
+    <script src="dist/mobile-navigation.js"></script>
+    <script src="server-script.js"></script>
+</body>
+</html>
