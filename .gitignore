@@ -1,7 +1,5 @@
 # System and server files
 .well-known/
-nc_assets/
-.htaccess
 .bash_history 
 .bash_logout
 .bash_profile 

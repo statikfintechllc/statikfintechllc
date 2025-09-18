@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^(www.)?sfti-ai.org$
+RewriteCond %{REQUEST_URI} !^/www.sfti-ai.org/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /www.sfti-ai.org/$1 [L]

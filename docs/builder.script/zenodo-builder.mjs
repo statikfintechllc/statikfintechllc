@@ -1,18 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="700" height="140" viewBox="0 0 700 140">
+// build-zenodo-cards.mjs
+import { writeFileSync, mkdirSync } from "fs";
+import { join } from "path";
+
+const outputDir = "../Zenodo.papers.svg/";
+mkdirSync(outputDir, { recursive: true });
+
+const articles = [
+  {
+    title: "Rise of Recursive Autonomous Cognitive AI Systems",
+    url: "https://doi.org/10.5281/zenodo.15717788",
+    description: "Exploring the foundations of self-evolving AI architectures"
+  },
+  {
+    title: "Economic Sovereignty Through Decentralized AI",
+    url: "https://doi.org/10.5281/zenodo.15725639",
+    description: "Financial independence through autonomous systems"
+  },
+  {
+    title: "Gen X Never Failed, The Governing Hierarchy",
+    url: "https://doi.org/10.5281/zenodo.15825120",
+    description: "Analyzing the impact of generational shifts on leadership"
+  }
+];
+
+function createSVGCard(article, index) {
+  const fileName = article.title.toLowerCase()
+    .replace(/[^a-z0-9\s]/g, "")
+    .replace(/\s+/g, "-") + ".svg";
+
+  const zenodoLogoWidth = 130;
+  const padding = 5;
+  const remainingWidth = 700 - zenodoLogoWidth - (padding * 3);
+  const textStartX = zenodoLogoWidth + (padding * 2);
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="700" height="140" viewBox="0 0 700 140">
   <defs>
     <!-- Gradients for sparks and embers -->
-    <radialGradient id="sparkGrad2" r="1">
+    <radialGradient id="sparkGrad${index}" r="1">
       <stop offset="0%" stop-color="#ffd15a" stop-opacity="0.8"/>
       <stop offset="100%" stop-color="#ff3168" stop-opacity="0"/>
     </radialGradient>
     
-    <radialGradient id="emberGrad2" r="1">
+    <radialGradient id="emberGrad${index}" r="1">
       <stop offset="0%" stop-color="#ff5a00" stop-opacity="0.9"/>
       <stop offset="100%" stop-color="#ff3168" stop-opacity="0"/>
     </radialGradient>
     
     <!-- Glow filters for sparks only -->
-    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+    <filter id="glow${index}" x="-50%" y="-50%" width="200%" height="200%">
       <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
@@ -21,7 +56,7 @@
     </filter>
 
     <!-- Glowing animated border -->
-    <linearGradient id="borderGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="borderGrad${index}" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#ff5a00">
         <animate attributeName="stop-color" values="#ff5a00;#ffd15a;#ff3168;#ff5a00" dur="6s" repeatCount="indefinite"/>
       </stop>
@@ -31,54 +66,54 @@
     </linearGradient>
 
     <!-- Subtle background wave pattern -->
-    <pattern id="wavePattern2" patternUnits="userSpaceOnUse" width="40" height="40">
+    <pattern id="wavePattern${index}" patternUnits="userSpaceOnUse" width="40" height="40">
       <path d="M 0 20 Q 10 0, 20 20 T 40 20 V 40 H 0 Z" fill="#111"/>
     </pattern>
   </defs>
   
   <!-- Background with glowing border -->
-  <rect x="0" y="0" width="700" height="140" rx="8" fill="url(#wavePattern2)"
-        stroke="url(#borderGrad2)" stroke-width="2"/>
+  <rect x="0" y="0" width="700" height="140" rx="8" fill="url(#wavePattern${index})"
+        stroke="url(#borderGrad${index})" stroke-width="2"/>
   
   <!-- Animated sparks and embers -->
   <g opacity="0.6">
-    <circle fill="url(#sparkGrad2)" cx="200" cy="30" r="2" filter="url(#glow2)">
+    <circle fill="url(#sparkGrad${index})" cx="200" cy="30" r="2" filter="url(#glow${index})">
       <animate attributeName="cx" values="150;250;350;450;550;650" dur="8s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="30;35;25;40;20;35" dur="8s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.8;0.6;0.9;0.4;0" dur="8s" repeatCount="indefinite"/>
     </circle>
     
-    <circle fill="url(#emberGrad2)" cx="300" cy="70" r="1.5" filter="url(#glow2)">
+    <circle fill="url(#emberGrad${index})" cx="300" cy="70" r="1.5" filter="url(#glow${index})">
       <animate attributeName="cx" values="200;300;400;500;600;700" dur="10s" begin="2s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="70;65;75;60;80;70" dur="10s" begin="2s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.7;0.5;0.8;0.3;0" dur="10s" begin="2s" repeatCount="indefinite"/>
     </circle>
     
-    <circle fill="url(#sparkGrad2)" cx="400" cy="110" r="2.5" filter="url(#glow2)">
+    <circle fill="url(#sparkGrad${index})" cx="400" cy="110" r="2.5" filter="url(#glow${index})">
       <animate attributeName="cx" values="300;400;500;600;700;800" dur="12s" begin="4s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="110;105;115;100;120;110" dur="12s" begin="4s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.9;0.5;0.7;0.2;0" dur="12s" begin="4s" repeatCount="indefinite"/>
     </circle>
     
-    <circle fill="url(#emberGrad2)" cx="500" cy="50" r="1" filter="url(#glow2)">
+    <circle fill="url(#emberGrad${index})" cx="500" cy="50" r="1" filter="url(#glow${index})">
       <animate attributeName="cx" values="400;500;600;700;800" dur="9s" begin="1s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="50;45;55;40;50" dur="9s" begin="1s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.6;0.8;0.4;0" dur="9s" begin="1s" repeatCount="indefinite"/>
     </circle>
     
-    <circle fill="url(#sparkGrad2)" cx="600" cy="90" r="2" filter="url(#glow2)">
+    <circle fill="url(#sparkGrad${index})" cx="600" cy="90" r="2" filter="url(#glow${index})">
       <animate attributeName="cx" values="500;600;700;800" dur="11s" begin="3s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="90;85;95;90" dur="11s" begin="3s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.8;0.6;0" dur="11s" begin="3s" repeatCount="indefinite"/>
     </circle>
     
-    <circle fill="url(#sparkGrad2)" cx="250" cy="100" r="1" filter="url(#glow2)">
+    <circle fill="url(#sparkGrad${index})" cx="250" cy="100" r="1" filter="url(#glow${index})">
       <animate attributeName="cx" values="200;300;400;500;600" dur="7s" begin="0.5s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="100;95;105;90;110" dur="7s" begin="0.5s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.5;0.8;0.3;0" dur="7s" begin="0.5s" repeatCount="indefinite"/>
     </circle>
     
-    <circle fill="url(#emberGrad2)" cx="350" cy="25" r="1.2" filter="url(#glow2)">
+    <circle fill="url(#emberGrad${index})" cx="350" cy="25" r="1.2" filter="url(#glow${index})">
       <animate attributeName="cx" values="300;400;500;600;700" dur="9.5s" begin="1.5s" repeatCount="indefinite"/>
       <animate attributeName="cy" values="25;20;30;15;25" dur="9.5s" begin="1.5s" repeatCount="indefinite"/>
       <animate attributeName="opacity" values="0;0.7;0.4;0.9;0" dur="9.5s" begin="1.5s" repeatCount="indefinite"/>
@@ -86,7 +121,7 @@
   </g>
   
   <!-- Zenodo Logo (modern Z icon with academic styling) -->
-  <g transform="translate(5,5)">
+  <g transform="translate(${padding},${padding})">
     <!-- Background circle with academic blue -->
     <circle cx="65" cy="65" r="35" fill="#0077be"/>
     <!-- Zenodo Z letter -->
@@ -99,21 +134,34 @@
   </g>
   
   <!-- Text Content (no glow filter applied to text) -->
-  <g transform="translate(140,5)">
-    <text x="277.5" y="25" text-anchor="middle" 
+  <g transform="translate(${textStartX},${padding})">
+    <text x="${remainingWidth/2}" y="25" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" 
-          fill="#ffffff">Gen X Never Failed, The Governing Hierarchy</text>
+          fill="#ffffff">${article.title}</text>
     
-    <text x="277.5" y="50" text-anchor="middle" 
+    <text x="${remainingWidth/2}" y="50" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500"
           fill="#0077be">🎓 Academic Research Publication 🎓</text>
     
-    <text x="277.5" y="75" text-anchor="middle" 
+    <text x="${remainingWidth/2}" y="75" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="12" 
-          fill="#e6e6e6" opacity="0.9">Analyzing the impact of generational shifts on leadership</text>
+          fill="#e6e6e6" opacity="0.9">${article.description}</text>
     
-    <text x="277.5" y="100" text-anchor="middle" 
+    <text x="${remainingWidth/2}" y="100" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="10" 
-          fill="#8abecf" opacity="0.7">https://doi.org/10.5281/zenodo.15825120</text>
+          fill="#8abecf" opacity="0.7">${article.url}</text>
   </g>
-</svg>
+</svg>`;
+
+  return { svg, fileName };
+}
+
+// Write all SVGs
+articles.forEach((article, i) => {
+  const { svg, fileName } = createSVGCard(article, i);
+  writeFileSync(join(outputDir, fileName), svg, "utf8");
+  console.log(`✅ Wrote ${fileName} with sparks and embers`);
+});
+
+console.log(`\n🎓 Generated ${articles.length} Zenodo research paper cards with animated sparks!`);
+console.log(`📁 Output directory: ${outputDir}`);

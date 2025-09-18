@@ -4,40 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SFTi Server - Secure Access</title>
-    <link rel="stylesheet" href="server-styles.css">
+    <link rel="stylesheet" href="styles/server-styles.css">
     <link rel="stylesheet" href="styles/server.tailwind.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg">
     <meta property="og:title" content="SFTi Server - Secure Access">
     <meta property="og:description" content="Secure server access for StatikFinTech LLC infrastructure">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://server.sfti-ai.org">
 </head>
-<body>
+<body class="pt-12">
     <!-- Background Animation -->
     <div class="matrix-bg" id="matrix"></div>
     
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">SFTi Server</span>
-                <span class="logo-subtitle">Secure Access Portal</span>
-            </div>
-            <div class="nav-links">
-                <a href="https://www.sfti-ai.org" class="nav-link external">Home</a>
-                <a href="https://www.sfti-ai.org#institute" class="nav-link external">Institute</a>
-                <a href="https://www.sfti-ai.org#projects" class="nav-link external">Projects</a>
-                <a href="https://www.sfti-ai.org#research" class="nav-link external">Research</a>
-                <a href="https://dev.sfti-ai.org" class="nav-link external">PWAs</a>
-                <a href="#documentation" class="nav-link">Docs</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -273,8 +254,45 @@
         </div>
     </div>
 
+    <!-- Footer Container -->
+    <footer class="bg-black border-t border-red-500/30 mt-auto py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm mb-2 font-mono">© 2025 StatikFinTech, LLC - Secure Server Portal</p>
+            <div class="flex justify-center space-x-4 text-xs">
+                <span class="text-green-400">SECURE: ACTIVE</span>
+                <span class="text-amber-400">ENTERPRISE GRADE</span>
+            </div>
+        </div>
+    </footer>
+
     <script src="dist/mobile-navigation.js"></script>
     <script src="dist/mobile-navigation.js"></script>
-    <script src="server-script.js"></script>
+    <script src="server-script.js">    </script>
+
+    <!-- SFTi Component System - Simplified -->
+    <script>
+        // Simple navbar implementation until components are fixed
+        document.addEventListener('DOMContentLoaded', function() {
+            const navContainer = document.getElementById('navbar-container');
+            if (navContainer) {
+                navContainer.innerHTML = `
+                    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/98 backdrop-blur-sm border-b border-red-500/30 h-12">
+                        <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
+                            <div class="flex flex-col leading-none">
+                                <span class="text-red-400 font-bold text-lg leading-tight font-mono">SFTi Server</span>
+                                <span class="text-amber-400 text-xs leading-tight">Secure Portal</span>
+                            </div>
+                            <div class="hidden md:flex items-center space-x-6">
+                                <a href="https://www.sfti-ai.org" class="text-white hover:text-amber-400 transition-colors text-sm font-mono">Home</a>
+                                <a href="#dashboard" class="text-white hover:text-amber-400 transition-colors text-sm font-mono">Dashboard</a>
+                                <a href="#admin" class="text-white hover:text-amber-400 transition-colors text-sm font-mono">Admin</a>
+                                <a href="https://dev.sfti-ai.org" class="text-white hover:text-amber-400 transition-colors text-sm font-mono">Dev Hub</a>
+                            </div>
+                        </div>
+                    </nav>
+                `;
+            }
+        });
+    </script>
 </body>
 </html>

@@ -85,13 +85,13 @@
     </circle>
   </g>
   
-  <!-- Zenodo Logo (modern Z icon with academic styling) -->
+  <!-- Medium Logo (modern M icon with publishing styling) -->
   <g transform="translate(5,5)">
-    <!-- Background circle with academic blue -->
-    <circle cx="65" cy="65" r="35" fill="#0077be"/>
-    <!-- Zenodo Z letter -->
-    <text x="65" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#ffffff">Z</text>
-    <!-- Small academic dots for scholarly appearance -->
+    <!-- Background circle with Medium green -->
+    <circle cx="65" cy="65" r="35" fill="#00ab6c"/>
+    <!-- Medium M letter -->
+    <text x="65" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#ffffff">M</text>
+    <!-- Small publishing dots for editorial appearance -->
     <circle cx="50" cy="45" r="2" fill="#ffffff" opacity="0.6"/>
     <circle cx="80" cy="45" r="2" fill="#ffffff" opacity="0.6"/>
     <circle cx="50" cy="85" r="2" fill="#ffffff" opacity="0.6"/>
@@ -102,18 +102,18 @@
   <g transform="translate(140,5)">
     <text x="277.5" y="25" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" 
-          fill="#ffffff">Gen X Never Failed, The Governing Hierarchy</text>
+          fill="#ffffff">The Journey to SNHU</text>
     
     <text x="277.5" y="50" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500"
-          fill="#0077be">🎓 Academic Research Publication 🎓</text>
+          fill="#00ab6c">📝 Medium Article Publication 📝</text>
     
     <text x="277.5" y="75" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="12" 
-          fill="#e6e6e6" opacity="0.9">Analyzing the impact of generational shifts on leadership</text>
+          fill="#e6e6e6" opacity="0.9">From No Credentials to Heard by Credentials.</text>
     
     <text x="277.5" y="100" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="10" 
-          fill="#8abecf" opacity="0.7">https://doi.org/10.5281/zenodo.15825120</text>
+          fill="#7dd3af" opacity="0.7">https://medium.com/@ascend.gremlin/the-journey-to-snhu-e91c4aa11080</text>
   </g>
 </svg>

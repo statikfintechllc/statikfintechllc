@@ -4,38 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SFTi Dev - PWA Hub</title>
-    <link rel="stylesheet" href="dev-styles.css">
+    <link rel="stylesheet" href="styles/dev-styles.css">
     <link rel="stylesheet" href="styles/dev.tailwind.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg">
     <meta property="og:title" content="SFTi Dev - PWA Hub">
     <meta property="og:description" content="Progressive Web Applications by StatikFinTech LLC">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dev.sfti-ai.org">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-text">SFTi Dev</span>
-                <span class="logo-subtitle">PWA Hub</span>
-            </div>
-            <div class="nav-links">
-                <a href="https://www.sfti-ai.org" class="nav-link external">Home</a>
-                <a href="https://www.sfti-ai.org#institute" class="nav-link external">Institute</a>
-                <a href="https://www.sfti-ai.org#projects" class="nav-link external">Projects</a>
-                <a href="https://www.sfti-ai.org#research" class="nav-link external">Research</a>
-                <a href="#pwas" class="nav-link">PWAs</a>
-                <a href="#status" class="nav-link">Status</a>
-                <a href="https://server.sfti-ai.org" class="nav-link external">Server</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<body class="pt-12">
+    <!-- Navbar Container -->
+    <div id="navbar-container"></div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -261,7 +241,44 @@
         </div>
     </div>
 
+    <!-- Footer Container -->
+    <footer class="bg-black border-t border-blue-500/20 mt-auto py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm mb-2 font-mono">© 2025 StatikFinTech, LLC - PWA Development Hub</p>
+            <div class="flex justify-center space-x-4 text-xs">
+                <span class="text-green-400">DEV: ONLINE</span>
+                <span class="text-blue-400">BUILD: STABLE</span>
+            </div>
+        </div>
+    </footer>
+
     <script src="dist/mobile-navigation.js"></script>
-    <script src="dev-script.js"></script>
+    <script src="dev-script.js">    </script>
+
+    <!-- SFTi Component System - Simplified -->
+    <script>
+        // Simple navbar implementation until components are fixed
+        document.addEventListener('DOMContentLoaded', function() {
+            const navContainer = document.getElementById('navbar-container');
+            if (navContainer) {
+                navContainer.innerHTML = `
+                    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-blue-500/20 h-12">
+                        <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
+                            <div class="flex flex-col leading-none">
+                                <span class="text-blue-400 font-bold text-lg leading-tight font-mono">SFTi Dev</span>
+                                <span class="text-green-400 text-xs leading-tight">PWA Hub</span>
+                            </div>
+                            <div class="hidden md:flex items-center space-x-6">
+                                <a href="https://www.sfti-ai.org" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">Home</a>
+                                <a href="#pwas" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">PWAs</a>
+                                <a href="#status" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">Status</a>
+                                <a href="https://server.sfti-ai.org" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">Server</a>
+                            </div>
+                        </div>
+                    </nav>
+                `;
+            }
+        });
+    </script>
 </body>
 </html>

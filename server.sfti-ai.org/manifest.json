@@ -1,0 +1,52 @@
+{
+  "name": "SFTi Server Management",
+  "short_name": "SFTi Server",
+  "description": "Server management and monitoring for SFTi infrastructure",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#0000FF",
+  "background_color": "#000011",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["utilities", "productivity", "business"],
+  "icons": [
+    {
+      "src": "/badges/prompt_blacksmith.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/badges/ai_architect.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Server Status",
+      "short_name": "Status",
+      "description": "Check server status and monitoring",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/badges/prompt_blacksmith.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://www.sfti-ai.org"
+    },
+    {
+      "platform": "web",
+      "url": "https://dev.sfti-ai.org"
+    }
+  ]
+}
