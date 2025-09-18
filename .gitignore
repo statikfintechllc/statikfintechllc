@@ -1,4 +1,8 @@
 # System and server files
+/dom.sym.link.gen
+/index.html
+/styles
+/script.js
 .well-known/
 .bash_history 
 .bash_logout
