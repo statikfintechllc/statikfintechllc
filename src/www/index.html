@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFTi - StatikFinTech LLC | AI-Driven Autonomous Systems</title>
+    <meta name="description" content="StatikFinTech LLC - Advanced AI research, autonomous systems, and cutting-edge financial technology solutions.">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/badges/statik.title.svg" as="image">
+    <link rel="preload" href="/docs/g.svg/assets/github-profile.svg" as="image">
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#e11d48">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SFTi">
+    
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="SFTi - StatikFinTech LLC">
+    <meta property="og:description" content="AI-Driven Autonomous Systems and Financial Technology">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sfti-ai.org">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind config
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d48',
+                        secondary: '#f59e0b',
+                        accent: '#10b981'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-sm border-b border-gray-800 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <img src="/badges/statik.title.svg" alt="SFTi Logo" class="h-8 w-auto">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#institute" class="hover:text-primary transition-colors">Institute</a>
+                        <a href="#projects" class="hover:text-primary transition-colors">Projects</a>
+                        <a href="#research" class="hover:text-primary transition-colors">Research</a>
+                        <a href="https://dev.sfti-ai.org" class="hover:text-primary transition-colors">PWAs</a>
+                        <a href="https://server.sfti-ai.org" class="hover:text-primary transition-colors">Portal</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-400 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center px-4">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                StatikFinTech LLC
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                AI-Driven Autonomous Systems & Sovereign Technology Solutions
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <img src="/badges/ai_architect.svg" alt="AI Architect" class="h-8">
+                <img src="/badges/full_stack_dev.svg" alt="Full Stack Developer" class="h-8">
+                <img src="/badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" class="h-8">
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#projects" class="bg-primary hover:bg-primary/80 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                    Explore Projects
+                </a>
+                <a href="https://dev.sfti-ai.org" class="border border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                    Access PWAs
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institute Section -->
+    <section id="institute" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <img src="/docs/i.svg/assets/institute-header.svg" alt="Institute Header" class="mx-auto mb-8 max-h-64">
+                <h2 class="text-4xl font-bold mb-4">The Ascend Institute</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    A research division focused on autonomous AI systems, economic sovereignty, and decentralized technology solutions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Research & Publications</h2>
+            <div id="research-papers" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Research papers will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-20 px-4 bg-gray-800/50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Development Statistics</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <img src="/docs/s.svg/assets/streak.svg" alt="GitHub Streak" class="mx-auto mb-4 rounded-lg">
+                    <h3 class="font-semibold">Contribution Streak</h3>
+                </div>
+                <div class="text-center">
+                    <img src="/docs/t.svg/assets/trophies.svg" alt="GitHub Trophies" class="mx-auto mb-4 rounded-lg">
+                    <h3 class="font-semibold">Achievements</h3>
+                </div>
+                <div class="text-center">
+                    <img src="/docs/r.svg/assets/repo-slide.svg" alt="Repository Stats" class="mx-auto mb-4 rounded-lg">
+                    <h3 class="font-semibold">Repository Activity</h3>
+                </div>
+                <div class="text-center">
+                    <img src="/docs/v.svg/assets/pv-traffic.svg" alt="Profile Views" class="mx-auto mb-4 rounded-lg">
+                    <h3 class="font-semibold">Profile Traffic</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="/badges/statik.title.svg" alt="SFTi Logo" class="h-8 mb-4">
+                    <p class="text-gray-400">AI-Driven Autonomous Systems & Sovereign Technology Solutions</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Domains</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://www.sfti-ai.org" class="hover:text-white">Main Site</a></li>
+                        <li><a href="https://dev.sfti-ai.org" class="hover:text-white">PWA Hub</a></li>
+                        <li><a href="https://server.sfti-ai.org" class="hover:text-white">Secure Portal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Research</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#research" class="hover:text-white">Publications</a></li>
+                        <li><a href="#institute" class="hover:text-white">Ascend Institute</a></li>
+                        <li><a href="#projects" class="hover:text-white">Projects</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4">Connect</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://github.com/statikfintechllc" class="hover:text-white">GitHub</a></li>
+                        <li><a href="https://medium.com/@statikdk" class="hover:text-white">Medium</a></li>
+                        <li><a href="https://zenodo.org/communities/sfti" class="hover:text-white">Zenodo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 StatikFinTech LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/www/main.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

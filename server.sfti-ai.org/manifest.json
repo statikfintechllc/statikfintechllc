@@ -1,24 +1,32 @@
 {
-  "name": "SFTi Server Management",
-  "short_name": "SFTi Server",
-  "description": "Server management and monitoring for SFTi infrastructure",
+  "name": "SFTi Web Templates - StatikFinTech LLC",
+  "short_name": "SFTi Templates",
+  "description": "Progressive Web Application for SFTi Web Templates - Advanced AI and fintech solutions",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#0000FF",
-  "background_color": "#000011",
+  "theme_color": "#FF0000",
+  "background_color": "#000000",
   "scope": "/",
   "lang": "en-US",
-  "categories": ["utilities", "productivity", "business"],
+  "categories": ["business", "finance", "technology", "productivity"],
+  "screenshots": [
+    {
+      "src": "/docs/i.svg/assets/institute-header.svg",
+      "sizes": "800x400",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
+    }
+  ],
   "icons": [
     {
-      "src": "/badges/prompt_blacksmith.svg",
+      "src": "/badges/statik.title.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "/badges/ai_architect.svg",
+      "src": "/badges/ai_architect.svg", 
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
@@ -26,10 +34,36 @@
   ],
   "shortcuts": [
     {
-      "name": "Server Status",
-      "short_name": "Status",
-      "description": "Check server status and monitoring",
-      "url": "/",
+      "name": "Institute",
+      "short_name": "Institute",
+      "description": "Access The Ascend Institute",
+      "url": "/#institute",
+      "icons": [
+        {
+          "src": "/docs/i.svg/assets/institute-header.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View Featured Projects",
+      "url": "/#projects",
+      "icons": [
+        {
+          "src": "/badges/full_stack_dev.svg",
+          "sizes": "192x192", 
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Research",
+      "short_name": "Research",
+      "description": "Browse Research Papers",
+      "url": "/#research",
       "icons": [
         {
           "src": "/badges/prompt_blacksmith.svg",
@@ -42,11 +76,11 @@
   "related_applications": [
     {
       "platform": "web",
-      "url": "https://www.sfti-ai.org"
+      "url": "https://dev.sfti-ai.org"
     },
     {
-      "platform": "web",
-      "url": "https://dev.sfti-ai.org"
+      "platform": "web", 
+      "url": "https://server.sfti-ai.org"
     }
   ]
 }

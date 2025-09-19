@@ -1,0 +1,60 @@
+{
+  "name": "sfti-unified-architecture",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Unified Full-Stack Website Architecture for StatikFinTech LLC Multi-Domain Infrastructure",
+  "private": true,
+  "workspaces": [
+    "src/www",
+    "src/dev", 
+    "src/server",
+    "dev.sfti-ai.org/IB-G.Scanner",
+    "dev.sfti-ai.org/Pilot-Server"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=src/www",
+    "dev:www": "npm run dev --workspace=src/www",
+    "dev:dev": "npm run dev --workspace=src/dev",
+    "dev:server": "npm run dev --workspace=src/server",
+    "dev:all": "concurrently \"npm run dev:www\" \"npm run dev:dev\" \"npm run dev:server\"",
+    "build": "bash build/build.sh",
+    "build:www": "npm run build --workspace=src/www",
+    "build:dev": "npm run build --workspace=src/dev",
+    "build:server": "npm run build --workspace=src/server",
+    "build:pwas": "npm run build --workspace=dev.sfti-ai.org/IB-G.Scanner && npm run build --workspace=dev.sfti-ai.org/Pilot-Server",
+    "install:all": "npm install && npm install --workspaces",
+    "preview": "npm run preview --workspace=src/www",
+    "preview:all": "concurrently \"npm run preview --workspace=src/www\" \"npm run preview --workspace=src/dev\" \"npm run preview --workspace=src/server\"",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "@vitejs/plugin-react": "^4.1.1",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "compression": "^1.7.4"
+  },
+  "keywords": [
+    "monorepo",
+    "full-stack",
+    "react",
+    "typescript",
+    "vite",
+    "tailwindcss",
+    "shadcn-ui",
+    "pwa",
+    "express"
+  ],
+  "author": "StatikFinTech LLC",
+  "license": "MIT"
+}

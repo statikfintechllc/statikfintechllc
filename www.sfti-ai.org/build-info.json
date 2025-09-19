@@ -1,0 +1,15 @@
+{
+    "buildTime": "2025-09-19T05:24:33Z",
+    "version": "1.0.0",
+    "domains": {
+        "www": "www.sfti-ai.org",
+        "dev": "dev.sfti-ai.org", 
+        "server": "server.sfti-ai.org"
+    },
+    "features": {
+        "pwa": true,
+        "serviceWorker": true,
+        "tailwindcss": true,
+        "monorepo": true
+    }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@sfti/server",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Authentication and backend server for server.sfti-ai.org",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "build": "echo 'Server build complete'",
+    "start": "node server.js",
+    "preview": "npm start",
+    "lint": "eslint . --ext js,ts --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "compression": "^1.7.4",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.5",
+    "eslint": "^8.53.0",
+    "nodemon": "^3.0.1"
+  }
+}

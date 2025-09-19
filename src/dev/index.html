@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFTi Dev - PWA Hub</title>
+    <meta name="description" content="Development hub for SFTi Progressive Web Applications">
+    
+    <!-- PWA Configuration -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#e11d48">
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e11d48',
+                        secondary: '#f59e0b',
+                        accent: '#10b981'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="max-w-4xl w-full text-center">
+            <h1 class="text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                SFTi Dev Hub
+            </h1>
+            <p class="text-xl text-gray-300 mb-12">
+                Progressive Web Application Development Environment
+            </p>
+            
+            <!-- PWA Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-gray-800 rounded-lg p-8 hover:bg-gray-750 transition-colors">
+                    <h3 class="text-2xl font-semibold mb-4">IB-G Scanner</h3>
+                    <p class="text-gray-400 mb-6">Advanced trading scanner PWA with real-time market analysis</p>
+                    <a href="/IB-G.Scanner/" class="bg-primary hover:bg-primary/80 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-block">
+                        Launch Scanner
+                    </a>
+                </div>
+                
+                <div class="bg-gray-800 rounded-lg p-8 hover:bg-gray-750 transition-colors">
+                    <h3 class="text-2xl font-semibold mb-4">Pilot Server</h3>
+                    <p class="text-gray-400 mb-6">Multi-model AI chat interface with GitHub integration</p>
+                    <a href="/Pilot-Server/" class="bg-primary hover:bg-primary/80 text-white px-6 py-3 rounded-lg font-medium transition-colors inline-block">
+                        Launch Pilot
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://www.sfti-ai.org" class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    Main Site
+                </a>
+                <a href="https://server.sfti-ai.org" class="border border-secondary text-secondary hover:bg-secondary hover:text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    Server Portal
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

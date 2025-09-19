@@ -1,0 +1,9 @@
+{
+  "name": "ggpt-boost-trophies",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ./scripts/build-trophies.mjs"
+  },
+  "dependencies": {}
+}
