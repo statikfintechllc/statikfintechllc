@@ -1,10 +1,29 @@
-/* Server site build - imports your server-styles.css */
-@import url("../../server.sfti-ai.org/server-styles.css");
-
-/* Only Tailwind utilities */
+/* SFTi Server Domain Styles */
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
-/* Mobile nav card using your existing variables */
+/* CSS Variables for secure/professional look */
+:root {
+  --primary-color: #e11d48;
+  --secondary-color: #f59e0b;
+  --accent-color: #10b981;
+  --security-color: #6366f1; /* Indigo for security elements */
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --success-color: #10b981;
+  --bg-dark: #1e293b;
+  --bg-darker: #0f172a;
+  --text-light: #f8fafc;
+  --text-gray: #cbd5e1;
+  --glass-bg: rgba(30, 41, 59, 0.95);
+  --glass-border: rgba(100, 116, 139, 0.3);
+  --radius: 6px;
+  --transition: all 0.2s ease-in-out;
+  --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+/* Mobile nav card using existing variables */
 .mobile-nav-card {
   position: fixed;
   top: 70px;
@@ -48,4 +67,22 @@
 .mobile-nav-link:hover {
   color: var(--primary-color);
   background: rgba(255, 0, 128, 0.05);
+}
+
+/* Professional server styling */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+  color: var(--text-light);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Authentication form styling */
+.auth-form {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px);
+  border-radius: calc(var(--radius) * 2);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
 }

@@ -1,10 +1,31 @@
-/* Main site build - imports your styles.css */
-@import url("../../styles.css");
-
-/* Only Tailwind utilities */
+/* SFTi Main Site Styles */
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
-/* Mobile nav card using your existing variables */
+/* CSS Variables for theme consistency */
+:root {
+  --primary-color: #e11d48;
+  --secondary-color: #f59e0b;
+  --accent-color: #10b981;
+  --bg-dark: #111827;
+  --bg-darker: #0f172a;
+  --text-light: #f9fafb;
+  --text-gray: #9ca3af;
+  --glass-bg: rgba(31, 41, 55, 0.8);
+  --glass-border: rgba(75, 85, 99, 0.3);
+  --radius: 8px;
+  --transition: all 0.2s ease-in-out;
+}
+
+/* Base styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* Mobile nav card using existing variables */
 .mobile-nav-card {
   position: fixed;
   top: 70px;
@@ -48,4 +69,34 @@
 .mobile-nav-link:hover {
   color: var(--secondary-color);
   background: rgba(255, 215, 0, 0.05);
+}
+
+/* Glass morphism effects */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card hover effects */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

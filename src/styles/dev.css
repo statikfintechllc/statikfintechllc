@@ -1,10 +1,26 @@
-/* Dev site build - imports your dev-styles.css */
-@import url("../../dev.sfti-ai.org/dev-styles.css");
-
-/* Only Tailwind utilities */
+/* SFTi Dev Domain Styles */
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
 
-/* Mobile nav card using your existing variables */
+/* CSS Variables optimized for dev environment */
+:root {
+  --primary-color: #e11d48;
+  --secondary-color: #f59e0b;
+  --accent-color: #10b981;
+  --dev-accent: #06b6d4; /* Cyan for dev environment */
+  --bg-dark: #0f172a;
+  --bg-darker: #020617;
+  --text-light: #f1f5f9;
+  --text-gray: #94a3b8;
+  --glass-bg: rgba(15, 23, 42, 0.9);
+  --glass-border: rgba(71, 85, 105, 0.3);
+  --radius: 8px;
+  --transition: all 0.2s ease-in-out;
+  --shadow-glow: 0 0 30px rgba(6, 182, 212, 0.3);
+}
+
+/* Mobile nav card using existing variables */
 .mobile-nav-card {
   position: fixed;
   top: 70px;
@@ -48,4 +64,27 @@
 .mobile-nav-link:hover {
   color: var(--primary-color);
   background: rgba(0, 255, 136, 0.05);
+}
+
+/* Developer-specific styling */
+body {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+/* PWA Card styles */
+.pwa-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  border-radius: calc(var(--radius) * 1.5);
+  transition: all 0.3s ease;
+}
+
+.pwa-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--dev-accent);
 }
