@@ -3,6 +3,11 @@
 ```txt
 SFTi-Website/
 │
+├── LICENSE.md
+├── README.md
+├── manifest.json
+├── sw.js
+│
 ├── About Us
 │   ├── CODE_OF_CONDUCT.md
 │   ├── CONTRIBUTING.md
@@ -18,14 +23,14 @@ SFTi-Website/
 │   ├── Resume.pdf
 │   ├── SECURITY.md
 │   └── WHY_GREMLINGPT.md
+│
 ├── Documentation
 │   ├── COMPONENT_SYSTEM.md
 │   ├── HIDDEN_CONFIGURATIONS.md
 │   ├── QUICK_REFERENCE.md
 │   ├── SFTi.Web.README.md
 │   └── STRUCTURE.md
-├── LICENSE.md
-├── README.md
+│
 ├── badges
 │   ├── G.H.badge.svg
 │   ├── G.I.badge.svg
@@ -47,6 +52,7 @@ SFTi-Website/
 │   ├── paypal.sponsor.svg
 │   ├── prompt_blacksmith.svg
 │   └── purdue.banner.svg
+│
 ├── build
 │   ├── DEVELOPMENT.md
 │   ├── build.sh
@@ -60,6 +66,7 @@ SFTi-Website/
 │   ├── setup.cfg
 │   ├── tailwind.config.js
 │   └── vite.config.ts
+│
 ├── dev.sfti-ai.org
 │   ├── IB-G.Scanner
 │   │   ├── Documentation
@@ -303,9 +310,12 @@ SFTi-Website/
 │   │   ├── dev-styles.css
 │   │   └── dev.tailwind.css
 │   └── sw.js
+│
 ├── develop.site.launch
+│   ├── README.md
 │   ├── setup-dev.sh
 │   └── static-server.js
+│
 ├── docs
 │   ├── A.D.svg
 │   │   ├── README.md
@@ -484,7 +494,7 @@ SFTi-Website/
 │       ├── package.json
 │       └── scripts
 │           └── build-pv.mjs
-├── manifest.json
+│
 ├── server.sfti-ai.org
 │   ├── index.html
 │   ├── manifest.json
@@ -493,6 +503,7 @@ SFTi-Website/
 │   │   ├── server-styles.css
 │   │   └── server.tailwind.css
 │   └── sw.js
+│
 ├── src
 │   ├── components
 │   │   ├── dev.c
@@ -530,7 +541,7 @@ SFTi-Website/
 │       ├── globals.css
 │       ├── main.css
 │       └── server.css
-├── sw.js
+│
 └── www.sfti-ai.org
     ├── index.html
     ├── script.js
@@ -541,5 +552,4 @@ SFTi-Website/
         └── styles.css
 
 110 directories, 426 files
-```
 ```
