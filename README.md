@@ -217,7 +217,7 @@
 ---
 
  **Want to See you're own ideas built, or to sponsor hardware directly? Reach Out to:**
-- **Email:** [ascend.gremlin@gmail.com](mailto:ascend.gremlin@gmail.com) | [ascend.help@gmail.com](mailto:ascend.help@gmail.com)
+- **Email:** [daniel@sfti-ai.org](mailto:daniel@sfti-ai.org) | [sfti.help@org](mailto:sfti.help@org)
 - **Call Us:** [+1 (620) 266-9837](sms:+16202669837)  
 - **Text Us:** [+1 (785) 443-6288](sms:+17854436288)  
 - **DM:**  
