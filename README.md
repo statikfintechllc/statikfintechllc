@@ -217,7 +217,14 @@
 ---
 
  **Want to See you're own ideas built, or to sponsor hardware directly? Reach Out to:**
-- **Email:** [daniel@sfti-ai.org](mailto:daniel@sfti-ai.org) | [sfti.help@org](mailto:sfti.help@org)
+- **Email:**
+
+<div align="center">
+	
+[daniel@sfti-ai.org](mailto:daniel@sfti-ai.org) | [sfti.help@org](mailto:sfti.help@org)
+
+</div>
+
 - **Call Us:** [+1 (620) 266-9837](sms:+16202669837)  
 - **Text Us:** [+1 (785) 443-6288](sms:+17854436288)  
 - **DM:**  
