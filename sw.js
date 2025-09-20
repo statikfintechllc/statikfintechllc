@@ -1,33 +1,124 @@
-// SFTi Web Templates Service Worker
-const CACHE_NAME = 'sfti-templates-v1.0.0';
-const STATIC_CACHE = 'sfti-static-v1.0.0';
-const DYNAMIC_CACHE = 'sfti-dynamic-v1.0.0';
+// SFTi Web Templates Service Worker - Comprehensive Multi-Domain Support
+const CACHE_NAME = 'sfti-templates-v2.0.0';
+const STATIC_CACHE = 'sfti-static-v2.0.0';
+const DYNAMIC_CACHE = 'sfti-dynamic-v2.0.0';
 
-// Assets to cache on install
+// Comprehensive assets to cache on install - all domains and assets
 const STATIC_ASSETS = [
+  // Root domain assets
   '/',
   '/index.html',
-  '/styles.css',
-  '/script.js',
+  '/manifest.json',
+  
+  // Main website (www.sfti-ai.org)
+  '/www.sfti-ai.org/',
+  '/www.sfti-ai.org/index.html',
+  '/www.sfti-ai.org/script.js',
+  '/www.sfti-ai.org/styles/styles.css',
+  '/www.sfti-ai.org/styles/main.tailwind.css',
+  '/www.sfti-ai.org/styles/custom.css',
+  
+  // Development hub (dev.sfti-ai.org)
+  '/dev.sfti-ai.org/',
+  '/dev.sfti-ai.org/index.html',
+  '/dev.sfti-ai.org/dev-script.js',
+  '/dev.sfti-ai.org/styles/dev-styles.css',
+  
+  // Server portal (server.sfti-ai.org)
+  '/server.sfti-ai.org/',
+  '/server.sfti-ai.org/index.html',
+  '/server.sfti-ai.org/server-script.js',
+  
+  // Static badges and assets
   '/badges/statik.title.svg',
   '/badges/ai_architect.svg',
   '/badges/full_stack_dev.svg',
   '/badges/prompt_blacksmith.svg',
+  '/badges/G.H.badge.svg',
+  '/badges/G.I.badge.svg',
+  '/badges/L.W.badge.svg',
+  '/badges/M.P.badge.svg',
+  '/badges/R.S.badge.svg',
+  '/badges/Z.P.badge.svg',
+  
+  // Public assets
+  '/src/public/web.pwa.icon.png',
+  '/src/public/dragon.png',
+  '/src/public/web.contact.bkg.png',
+  '/src/public/web.projects.bkg.png',
+  
+  // Component system
+  '/src/components/sfti-component-system.js',
+  '/src/components/global.c/card.js',
+  '/src/components/global.c/svg-card.js',
+  
+  // Dynamic SVG content from docs/
   '/docs/i.svg/assets/institute-header.svg',
   '/docs/g.svg/assets/github-profile.svg',
   '/docs/s.svg/assets/streak.svg',
   '/docs/t.svg/assets/trophies.svg',
   '/docs/r.svg/assets/repo-slide.svg',
-  '/docs/c.svg/assets/crimson-flow.svg'
+  '/docs/c.svg/assets/crimson-flow.svg',
+  
+  // Project SVGs
+  '/docs/IB.G.svg/assets/ib-g-scanner-card.svg',
+  '/docs/P.S.svg/assets/pilot-server-card.svg',
+  '/docs/G.G.svg/assets/gremlingpt-card.svg',
+  '/docs/G.S.svg/assets/gremlin-shadtail-trader-card.svg',
+  '/docs/A.N.svg/assets/ascendnet-card.svg',
+  '/docs/S.S.svg/assets/statik-server-card.svg',
+  '/docs/A.I.svg/assets/ascend-institute-card.svg',
+  '/docs/A.D.svg/assets/ascenddocs-of-govseverance-card.svg',
+  '/docs/D.B.svg/assets/dragon-boot-card.svg',
+  '/docs/G.C.svg/assets/godcore-card.svg',
+  '/docs/G.M.svg/assets/gremlin-mcp-scrap-card.svg',
+  '/docs/M.M.svg/assets/mobile-mirror-card.svg'
 ];
 
-// Network-first resources (always try network first)
+// Network-first resources (always try network first) - Live SVGs and dynamic content
 const NETWORK_FIRST = [
+  // Live GitHub stats
   '/docs/g.svg/assets/github-profile.svg',
   '/docs/s.svg/assets/streak.svg', 
   '/docs/t.svg/assets/trophies.svg',
   '/docs/r.svg/assets/repo-slide.svg',
-  '/docs/c.svg/assets/crimson-flow.svg'
+  '/docs/c.svg/assets/crimson-flow.svg',
+  
+  // Research papers (may get updated)
+  '/docs/Zenodo.papers.svg/',
+  '/docs/Medium.papers.svg/',
+  
+  // API endpoints
+  '/api/',
+  
+  // External dependencies (CDN)
+  'https://cdn.tailwindcss.com',
+  'https://skillicons.dev/'
+];
+
+// Cache-first resources - Static content that rarely changes
+const CACHE_FIRST = [
+  // Static badges and icons
+  '/badges/',
+  '/src/public/',
+  
+  // Project assets
+  '/docs/A.I.svg/assets/',
+  '/docs/A.D.svg/assets/',
+  '/docs/A.N.svg/assets/',
+  '/docs/D.B.svg/assets/',
+  '/docs/G.C.svg/assets/',
+  '/docs/G.G.svg/assets/',
+  '/docs/G.M.svg/assets/',
+  '/docs/G.S.svg/assets/',
+  '/docs/IB.G.svg/assets/',
+  '/docs/M.M.svg/assets/',
+  '/docs/P.S.svg/assets/',
+  '/docs/S.S.svg/assets/',
+  
+  // Component files
+  '/src/components/',
+  '/src/styles/'
 ];
 
 // Install event - cache static assets

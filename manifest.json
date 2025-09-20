@@ -1,73 +1,162 @@
 {
-  "name": "SFTi Web Templates - StatikFinTech LLC",
-  "short_name": "SFTi Templates",
-  "description": "Progressive Web Application for SFTi Web Templates - Advanced AI and fintech solutions",
+  "name": "SFTi Web Platform - StatikFinTech LLC",
+  "short_name": "SFTi Platform",
+  "description": "Comprehensive web platform featuring AI tools, trading systems, research papers, and autonomous applications by StatikFinTech LLC",
   "start_url": "/",
   "display": "standalone",
-  "orientation": "portrait-primary",
+  "orientation": "any",
   "theme_color": "#FF0000",
   "background_color": "#000000",
   "scope": "/",
   "lang": "en-US",
-  "categories": ["business", "finance", "technology", "productivity"],
+  "categories": ["business", "finance", "technology", "productivity", "education"],
   "screenshots": [
     {
       "src": "/docs/i.svg/assets/institute-header.svg",
-      "sizes": "800x400",
+      "sizes": "1280x720",
       "type": "image/svg+xml",
-      "form_factor": "wide"
+      "form_factor": "wide",
+      "label": "The Ascend Institute - Research and Documentation Hub"
+    },
+    {
+      "src": "/src/public/web.pwa.icon.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "SFTi Mobile Interface"
     }
   ],
   "icons": [
     {
-      "src": "/badges/statik.title.svg",
+      "src": "/src/public/web.pwa.icon.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/web.pwa.icon.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/web.pwa.icon.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/web.pwa.icon.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/web.pwa.icon.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/web.pwa.icon.png",
       "sizes": "192x192",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/badges/ai_architect.svg", 
+      "src": "/src/public/web.pwa.icon.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/web.pwa.icon.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/badges/statik.title.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "shortcuts": [
     {
-      "name": "Institute",
-      "short_name": "Institute",
-      "description": "Access The Ascend Institute",
-      "url": "/#institute",
+      "name": "Main Website",
+      "short_name": "Main",
+      "description": "Visit the main SFTi website with projects and research",
+      "url": "/www.sfti-ai.org/",
       "icons": [
         {
-          "src": "/docs/i.svg/assets/institute-header.svg",
-          "sizes": "192x192",
+          "src": "/badges/statik.title.svg",
+          "sizes": "any",
           "type": "image/svg+xml"
         }
       ]
     },
     {
-      "name": "Projects",
-      "short_name": "Projects",
-      "description": "View Featured Projects",
-      "url": "/#projects",
+      "name": "Development Hub",
+      "short_name": "Dev",
+      "description": "Access PWA applications and development tools",
+      "url": "/dev.sfti-ai.org/",
       "icons": [
         {
           "src": "/badges/full_stack_dev.svg",
-          "sizes": "192x192", 
+          "sizes": "any",
           "type": "image/svg+xml"
         }
       ]
     },
     {
-      "name": "Research",
+      "name": "IB-G.Scanner",
+      "short_name": "Scanner",
+      "description": "Launch the stock market scanning application",
+      "url": "/dev.sfti-ai.org/IB-G.Scanner/",
+      "icons": [
+        {
+          "src": "/docs/IB.G.svg/assets/ib-g-scanner-card.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Pilot-Server",
+      "short_name": "Pilot",
+      "description": "Access the autonomous server management system",
+      "url": "/dev.sfti-ai.org/Pilot-Server/",
+      "icons": [
+        {
+          "src": "/docs/P.S.svg/assets/pilot-server-card.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Server Portal",
+      "short_name": "Portal",
+      "description": "Access the secure server portal for account management",
+      "url": "/server.sfti-ai.org/",
+      "icons": [
+        {
+          "src": "/badges/ai_architect.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Research Papers",
       "short_name": "Research",
-      "description": "Browse Research Papers",
-      "url": "/#research",
+      "description": "Browse academic papers and Medium articles",
+      "url": "/www.sfti-ai.org/#research",
       "icons": [
         {
           "src": "/badges/prompt_blacksmith.svg",
-          "sizes": "192x192",
+          "sizes": "any",
           "type": "image/svg+xml"
         }
       ]
@@ -76,11 +165,32 @@
   "related_applications": [
     {
       "platform": "web",
-      "url": "https://dev.sfti-ai.org"
+      "url": "https://www.sfti-ai.org",
+      "id": "www.sfti-ai.org"
+    },
+    {
+      "platform": "web",
+      "url": "https://dev.sfti-ai.org",
+      "id": "dev.sfti-ai.org"
     },
     {
       "platform": "web", 
-      "url": "https://server.sfti-ai.org"
+      "url": "https://server.sfti-ai.org",
+      "id": "server.sfti-ai.org"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 480
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "protocol_handlers": [
+    {
+      "protocol": "web+sfti",
+      "url": "/?protocol=%s"
     }
   ]
 }

@@ -8,12 +8,15 @@ const __dirname = fileURLToPath(new URL('.', import.meta.url))
 export default defineConfig({
   plugins: [react()],
   root: '.', // Use root directory
-  publicDir: 'public_html', // Point to public assets
+  publicDir: 'src/public', // Point to public assets
   build: {
     outDir: 'dist',
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'), // Use existing HTML file
+        main: resolve(__dirname, 'index.html'),
+        www: resolve(__dirname, 'www.sfti-ai.org/index.html'),
+        dev: resolve(__dirname, 'dev.sfti-ai.org/index.html'),
+        server: resolve(__dirname, 'server.sfti-ai.org/index.html'),
       },
     },
   },
