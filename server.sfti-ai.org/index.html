@@ -276,21 +276,81 @@
             const navContainer = document.getElementById('navbar-container');
             if (navContainer) {
                 navContainer.innerHTML = `
+                    <style>
+                        /* Custom mobile navigation styles */
+                        .mobile-menu-hidden { display: none; }
+                        .desktop-nav { display: none; }
+                        .mobile-menu-btn { display: block; }
+                        
+                        @media (min-width: 768px) {
+                            .desktop-nav { display: flex; }
+                            .mobile-menu-btn { display: none; }
+                            .mobile-menu-hidden { display: none !important; }
+                        }
+                    </style>
                     <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/98 backdrop-blur-sm border-b border-red-500/30 h-12">
                         <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
                             <div class="flex flex-col leading-none">
                                 <span class="text-red-400 font-bold text-lg leading-tight font-mono">SFTi Server</span>
                                 <span class="text-amber-400 text-xs leading-tight">Secure Portal</span>
                             </div>
-                            <div class="hidden md:flex items-center space-x-6">
+                            
+                            <!-- Desktop Navigation -->
+                            <div class="desktop-nav items-center space-x-6">
                                 <a href="https://www.sfti-ai.org" class="text-white hover:text-amber-400 transition-colors text-sm font-mono">Home</a>
                                 <a href="#dashboard" class="text-white hover:text-amber-400 transition-colors text-sm font-mono">Dashboard</a>
                                 <a href="#admin" class="text-white hover:text-amber-400 transition-colors text-sm font-mono">Admin</a>
                                 <a href="https://dev.sfti-ai.org" class="text-white hover:text-amber-400 transition-colors text-sm font-mono">Dev Hub</a>
                             </div>
+                            
+                            <!-- Mobile Menu Button -->
+                            <button id="mobile-menu-button" class="mobile-menu-btn text-white hover:text-amber-400 focus:outline-none">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Mobile Navigation Menu -->
+                        <div id="mobile-menu" class="mobile-menu-hidden bg-gray-900/98 backdrop-blur-sm border-b border-red-500/30">
+                            <div class="px-4 py-3 space-y-2">
+                                <a href="https://www.sfti-ai.org" class="block text-white hover:text-amber-400 transition-colors text-sm font-mono py-2">Home</a>
+                                <a href="#dashboard" class="block text-white hover:text-amber-400 transition-colors text-sm font-mono py-2">Dashboard</a>
+                                <a href="#admin" class="block text-white hover:text-amber-400 transition-colors text-sm font-mono py-2">Admin</a>
+                                <a href="https://dev.sfti-ai.org" class="block text-white hover:text-amber-400 transition-colors text-sm font-mono py-2">Dev Hub</a>
+                            </div>
                         </div>
                     </nav>
                 `;
+                
+                // Mobile menu toggle functionality
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                const mobileMenu = document.getElementById('mobile-menu');
+                
+                if (mobileMenuButton && mobileMenu) {
+                    mobileMenuButton.addEventListener('click', function() {
+                        if (mobileMenu.classList.contains('mobile-menu-hidden')) {
+                            mobileMenu.classList.remove('mobile-menu-hidden');
+                        } else {
+                            mobileMenu.classList.add('mobile-menu-hidden');
+                        }
+                    });
+                    
+                    // Close mobile menu when clicking on links
+                    const mobileLinks = mobileMenu.querySelectorAll('a');
+                    mobileLinks.forEach(link => {
+                        link.addEventListener('click', function() {
+                            mobileMenu.classList.add('mobile-menu-hidden');
+                        });
+                    });
+                    
+                    // Close mobile menu when clicking outside
+                    document.addEventListener('click', function(event) {
+                        if (!navContainer.contains(event.target)) {
+                            mobileMenu.classList.add('mobile-menu-hidden');
+                        }
+                    });
+                }
             }
         });
     </script>
