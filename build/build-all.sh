@@ -184,16 +184,12 @@ copy_assets() {
         log_info "Documentation SVGs copied"
     fi
     
-    # Copy src/public assets
-    if [ -d "$PROJECT_ROOT/src/public" ]; then
-        mkdir -p "$BUILD_DIR/src/public"
-        cp -r "$PROJECT_ROOT/src/public/"* "$BUILD_DIR/src/public/"
-        log_info "Public assets copied"
+    # Copy src directory (includes manifest, service worker, public assets, components)
+    if [ -d "$PROJECT_ROOT/src" ]; then
+        mkdir -p "$BUILD_DIR/src"
+        cp -r "$PROJECT_ROOT/src/"* "$BUILD_DIR/src/"
+        log_info "Source directory copied (manifest, service worker, public assets, components)"
     fi
-    
-    # Copy manifest and service worker
-    cp "$PROJECT_ROOT/manifest.json" "$BUILD_DIR/" 2>/dev/null || log_warning "manifest.json not found"
-    cp "$PROJECT_ROOT/sw.js" "$BUILD_DIR/" 2>/dev/null || log_warning "sw.js not found"
     
     log_success "Static assets copied"
 }
@@ -228,8 +224,8 @@ validate_build() {
         "$BUILD_DIR/www.sfti-ai.org/index.html"
         "$BUILD_DIR/dev.sfti-ai.org/index.html"
         "$BUILD_DIR/server.sfti-ai.org/index.html"
-        "$BUILD_DIR/manifest.json"
-        "$BUILD_DIR/sw.js"
+        "$BUILD_DIR/src/manifest.json"
+        "$BUILD_DIR/src/sw.js"
     )
     
     for file in "${required_files[@]}"; do
@@ -289,8 +285,8 @@ Assets:
 - Badges: $([ -d "$BUILD_DIR/badges" ] && echo "✓" || echo "✗")
 - SVG Docs: $([ -d "$BUILD_DIR/docs" ] && echo "✓" || echo "✗")
 - Public Assets: $([ -d "$BUILD_DIR/src/public" ] && echo "✓" || echo "✗")
-- Service Worker: $([ -f "$BUILD_DIR/sw.js" ] && echo "✓" || echo "✗")
-- Manifest: $([ -f "$BUILD_DIR/manifest.json" ] && echo "✓" || echo "✗")
+- Service Worker: $([ -f "$BUILD_DIR/src/sw.js" ] && echo "✓" || echo "✗")
+- Manifest: $([ -f "$BUILD_DIR/src/manifest.json" ] && echo "✓" || echo "✗")
 EOF
 
     log_success "Build report generated: $report_file"

@@ -8,7 +8,7 @@ const STATIC_ASSETS = [
   // Root domain assets
   '/',
   '/index.html',
-  '/manifest.json',
+  '/src/manifest.json',
   
   // Main website (www.sfti-ai.org)
   '/www.sfti-ai.org/',
