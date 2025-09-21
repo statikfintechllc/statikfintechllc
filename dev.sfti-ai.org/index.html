@@ -212,6 +212,18 @@
             const navContainer = document.getElementById('navbar-container');
             if (navContainer) {
                 navContainer.innerHTML = `
+                    <style>
+                        /* Custom mobile navigation styles */
+                        .mobile-menu-hidden { display: none; }
+                        .desktop-nav { display: none; }
+                        .mobile-menu-btn { display: block; }
+                        
+                        @media (min-width: 768px) {
+                            .desktop-nav { display: flex; }
+                            .mobile-menu-btn { display: none; }
+                            .mobile-menu-hidden { display: none !important; }
+                        }
+                    </style>
                     <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-blue-500/20 h-12">
                         <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
                             <div class="flex flex-col leading-none">
@@ -220,7 +232,7 @@
                             </div>
                             
                             <!-- Desktop Navigation -->
-                            <div class="hidden md:flex items-center space-x-6">
+                            <div class="desktop-nav items-center space-x-6">
                                 <a href="https://www.sfti-ai.org" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">Home</a>
                                 <a href="#pwas" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">PWAs</a>
                                 <a href="#status" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">Status</a>
@@ -228,7 +240,7 @@
                             </div>
                             
                             <!-- Mobile Menu Button -->
-                            <button id="mobile-menu-button" class="md:hidden text-white hover:text-blue-400 focus:outline-none">
+                            <button id="mobile-menu-button" class="mobile-menu-btn text-white hover:text-blue-400 focus:outline-none">
                                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                                 </svg>
@@ -236,7 +248,7 @@
                         </div>
                         
                         <!-- Mobile Navigation Menu -->
-                        <div id="mobile-menu" class="hidden md:hidden bg-black/95 backdrop-blur-sm border-b border-blue-500/20">
+                        <div id="mobile-menu" class="mobile-menu-hidden bg-black/95 backdrop-blur-sm border-b border-blue-500/20">
                             <div class="px-4 py-3 space-y-2">
                                 <a href="https://www.sfti-ai.org" class="block text-white hover:text-blue-400 transition-colors text-sm font-mono py-2">Home</a>
                                 <a href="#pwas" class="block text-white hover:text-blue-400 transition-colors text-sm font-mono py-2">PWAs</a>
@@ -253,21 +265,25 @@
                 
                 if (mobileMenuButton && mobileMenu) {
                     mobileMenuButton.addEventListener('click', function() {
-                        mobileMenu.classList.toggle('hidden');
+                        if (mobileMenu.classList.contains('mobile-menu-hidden')) {
+                            mobileMenu.classList.remove('mobile-menu-hidden');
+                        } else {
+                            mobileMenu.classList.add('mobile-menu-hidden');
+                        }
                     });
                     
                     // Close mobile menu when clicking on links
                     const mobileLinks = mobileMenu.querySelectorAll('a');
                     mobileLinks.forEach(link => {
                         link.addEventListener('click', function() {
-                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.add('mobile-menu-hidden');
                         });
                     });
                     
                     // Close mobile menu when clicking outside
                     document.addEventListener('click', function(event) {
                         if (!navContainer.contains(event.target)) {
-                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.add('mobile-menu-hidden');
                         }
                     });
                 }
