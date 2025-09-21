@@ -662,12 +662,12 @@
                     <style>
                         /* Custom mobile navigation styles */
                         .mobile-menu-hidden { display: none; }
-                        .desktop-nav { display: none; }
-                        .mobile-menu-btn { display: block; }
+                        .desktop-nav { display: none !important; }
+                        .mobile-menu-btn { display: block !important; }
                         
                         @media (min-width: 768px) {
-                            .desktop-nav { display: flex; }
-                            .mobile-menu-btn { display: none; }
+                            .desktop-nav { display: flex !important; }
+                            .mobile-menu-btn { display: none !important; }
                             .mobile-menu-hidden { display: none !important; }
                         }
                     </style>
