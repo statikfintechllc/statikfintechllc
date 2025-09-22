@@ -15,11 +15,6 @@ This directory contains the comprehensive company documentation, legal informati
 - **[FOUNDER_LOG.md](./FOUNDER_LOG.md)**: Development journey and milestone documentation
 - **[WHY_GREMLINGPT.md](./WHY_GREMLINGPT.md)**: The philosophy behind autonomous AI development
 
-### **🚀 Technical Vision**
-- **[GREMLINGPT_AUTONOMY_REPORT.md](./GREMLINGPT_AUTONOMY_REPORT.md)**: Technical report on autonomous AI systems
-- **[GREMLINGPT-v1.0.3_PATCH_PLAN.md](./GREMLINGPT-v1.0.3_PATCH_PLAN.md)**: Development roadmap and technical planning
-- **[Final_Leg_v1.0.3.md](./Final_Leg_v1.0.3.md)**: Project completion documentation
-
 ### **💼 Business & Professional**
 - **[Resume.pdf](./Resume.pdf)**: Professional credentials and experience
 - **[Cover_Letter.docx](./Cover_Letter.docx)**: Professional introduction and capabilities
