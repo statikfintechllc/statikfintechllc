@@ -282,38 +282,167 @@ This repository features a sophisticated automation system that generates dynami
 
 ```mermaid
 graph TD
-  %% User Domains
-  A1([User Browser @ www.sfti-ai.org]):::domain -->|HTTPS: Web/App| B1[Web Server]
-  A2([User Browser @ dev.sfti-ai.org - PWA Hub]):::domain -->|HTTPS: Web/App| B1
-  A3([User Browser @ server.sfti-ai.org - Portal]):::domain -->|HTTPS: Web/App| B1
+    %% GitHub Actions Workflows
+    subgraph "🔄 GitHub Actions Automation"
+        A1[update-profile-streak.yml<br/>⏰ */23 hours] --> S1[s.svg/scripts/build-streak.mjs]
+        A2[update-profile-trophies.yml<br/>⏰ */12 hours] --> T1[t.svg/scripts/build-trophies.mjs]
+        A3[update-profile-views.yml<br/>⏰ */6 hours] --> V1[v.svg/scripts/build-pv.mjs]
+        A4[update-crimson-flow.yml<br/>⏰ */12 hours] --> C1[c.svg/scripts/generate-crimson-flow.mjs]
+        A5[update-github-profile.yml<br/>⏰ */8 hours] --> G1[g.svg/scripts/generate-github-profile.mjs]
+        A6[update-repo-slide.yml<br/>⏰ */12 hours] --> R1[r.svg/scripts/generate-repo-slide.mjs]
+        A7[update-build-dates.yml<br/>⏰ */24 hours] --> B1[builder.script/builder.script.mjs]
+    end
 
-  %% Web Server and Routing
-  B1 -->|Static Content + API Proxy| C1[Frontend Build - React + Vite + Tailwind]
-  C1 -->|API Calls - REST/WebSocket| D1[Backend Service - Node/Express]
-  D1 -->|ORM/SQL| E1[(PostgreSQL/Database on Server)]
+    %% Git Stats Generators
+    subgraph "📊 Git Stats SVG Generators"
+        S1 --> S2[assets/streak.svg<br/>🔥 Contribution Streak]
+        T1 --> T2[assets/trophies.svg<br/>🏆 Achievement Badges]
+        V1 --> V2[assets/pv-traffic.svg<br/>👁️ Profile Views]
+        C1 --> C2[assets/crimson-flow.svg<br/>📈 Activity Graph]
+        G1 --> G2[assets/github-profile.svg<br/>👤 Complete Profile]
+    end
 
-  %% PWAs
-  C1 -->|PWA Manifest + Service Worker| F1[PWA Runtime]
-  F1 -->|Push Notifications<br/>Offline Cache| A2
+    %% Repo Stats Generators
+    subgraph "📁 Repository Stats Generators"
+        R1 --> R2[assets/repo-slide.svg<br/>🎠 Repository Carousel]
+    end
 
-  %% PWA Apps (Examples from repo)
-  subgraph Dev Hub PWAs
-    G1[IB-G.Scanner - Trading Scanner]
-    G2[Pilot-Server - AI Server Management]
-  end
-  F1 --> G1
-  F1 --> G2
+    %% Publication Automation
+    subgraph "📚 Publication Card Automation"
+        B1 --> B2[Medium.papers.svg/<br/>✍️ Blog Article Cards]
+        B1 --> B3[Zenodo.papers.svg/<br/>🎓 Research Paper Cards]
+    end
 
-  %% Authentication & Secure Portal
-  A3 -->|Login/Auth| H1[Auth Logic - server.sfti-ai.org]
-  H1 --> D1
+    %% Project Showcase Workflows
+    subgraph "🛠️ Project Showcase Automation"
+        P1[update-gremlingpt-card.yml] --> P1S[G.G.svg/scripts/]
+        P2[update-dragon-boot-card.yml] --> P2S[D.B.svg/scripts/]
+        P3[update-godcore-card.yml] --> P3S[G.C.svg/scripts/]
+        P4[update-statik-server-card.yml] --> P4S[S.S.svg/scripts/]
+        P5[update-ib-g-scanner-card.yml] --> P5S[IB.G.svg/scripts/]
+        P6[update-pilot-server-card.yml] --> P6S[P.S.svg/scripts/]
+        P7[update-gremlin-mcp-scrap-card.yml] --> P7S[G.M.svg/scripts/]
+        P8[update-gremlin-shadtail-trader-card.yml] --> P8S[G.S.svg/scripts/]
+        P9[update-mobile-mirror-card.yml] --> P9S[M.M.svg/scripts/]
+        P10[update-ascend-institute-card.yml] --> P10S[A.I.svg/scripts/]
+        P11[update-ascendnet-card.yml] --> P11S[A.N.svg/scripts/]
+        P12[update-ascenddocs-of-govseverance-card.yml] --> P12S[A.D.svg/scripts/]
+    end
 
-  %% Data Flow
-  G1 -->|API / WS| D1
-  G2 -->|API / WS| D1
+    %% Project Card Outputs
+    subgraph "🎨 Project Showcase Cards"
+        P1S --> P1O[G.G.svg/assets/gremlingpt-card.svg]
+        P2S --> P2O[D.B.svg/assets/dragon-boot-card.svg]
+        P3S --> P3O[G.C.svg/assets/godcore-card.svg]
+        P4S --> P4O[S.S.svg/assets/statik-server-card.svg]
+        P5S --> P5O[IB.G.svg/assets/ib-g-scanner-card.svg]
+        P6S --> P6O[P.S.svg/assets/pilot-server-card.svg]
+        P7S --> P7O[G.M.svg/assets/gremlin-mcp-scrap-card.svg]
+        P8S --> P8O[G.S.svg/assets/gremlin-shadtail-trader-card.svg]
+        P9S --> P9O[M.M.svg/assets/mobile-mirror-card.svg]
+        P10S --> P10O[A.I.svg/assets/ascend-institute-card.svg]
+        P11S --> P11O[A.N.svg/assets/ascendnet-card.svg]
+        P12S --> P12O[A.D.svg/assets/ascenddocs-of-govseverance-card.svg]
+    end
 
-  %% Legend
-  classDef domain fill:#d1e9ff,stroke:#333,stroke-width:2px,color:#111;
+    %% GitHub API Integration
+    subgraph "🔗 GitHub API & Data Sources"
+        API1[GitHub GraphQL API<br/>🔑 PAT_GITHUB token]
+        API2[Repository Statistics]
+        API3[User Contribution Data]
+        API4[Profile Analytics]
+        API5[Language Statistics]
+        API6[Star/Fork Counts]
+    end
+
+    %% Badges & Static Assets
+    subgraph "🎯 Badge System & Static Assets"
+        BADGE1[badges/G.H.badge.svg<br/>📂 GitHub Header]
+        BADGE2[badges/G.I.badge.svg<br/>🤖 GremlinGPT Header]
+        BADGE3[badges/M.P.badge.svg<br/>📝 Medium Publications]
+        BADGE4[badges/Z.P.badge.svg<br/>🎓 Zenodo Papers]
+        BADGE5[badges/ai_architect.svg<br/>👨‍💻 Professional Role]
+        BADGE6[badges/sponsor badges<br/>💰 Funding Links]
+        STATIC1[i.svg/institute-header.svg<br/>🏛️ Institute Graphics]
+    end
+
+    %% Data Flow from API
+    API1 --> S1
+    API1 --> T1
+    API1 --> V1
+    API1 --> C1
+    API1 --> G1
+    API1 --> R1
+    API2 --> R1
+    API3 --> S1
+    API3 --> T1
+    API3 --> C1
+    API4 --> V1
+    API5 --> P1S
+    API5 --> P2S
+    API5 --> P3S
+    API5 --> P4S
+    API5 --> P5S
+    API5 --> P6S
+    API5 --> P7S
+    API5 --> P8S
+    API5 --> P9S
+    API5 --> P10S
+    API5 --> P11S
+    API5 --> P12S
+    API6 --> R1
+
+    %% Output Integration to Main Profile
+    subgraph "🌟 Profile Integration & Display"
+        MAIN[README.md<br/>📋 Main Profile Display]
+        SITES[Website Integration<br/>🌐 www.sfti-ai.org]
+        CARDS[Dynamic Cards Display<br/>🎴 Showcase Grid]
+    end
+
+    %% Final Integration
+    S2 --> MAIN
+    T2 --> MAIN
+    V2 --> MAIN
+    C2 --> MAIN
+    G2 --> MAIN
+    R2 --> MAIN
+    B2 --> MAIN
+    B3 --> MAIN
+    P1O --> CARDS
+    P2O --> CARDS
+    P3O --> CARDS
+    P4O --> CARDS
+    P5O --> CARDS
+    P6O --> CARDS
+    P7O --> CARDS
+    P8O --> CARDS
+    P9O --> CARDS
+    P10O --> CARDS
+    P11O --> CARDS
+    P12O --> CARDS
+    BADGE1 --> MAIN
+    BADGE2 --> MAIN
+    BADGE3 --> MAIN
+    BADGE4 --> MAIN
+    BADGE5 --> MAIN
+    BADGE6 --> MAIN
+    STATIC1 --> MAIN
+    CARDS --> SITES
+
+    %% Styling
+    classDef workflow fill:#e1f5fe,stroke:#01579b,stroke-width:2px
+    classDef generator fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
+    classDef output fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
+    classDef api fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    classDef badge fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    classDef integration fill:#f1f8e9,stroke:#33691e,stroke-width:2px
+
+    class A1,A2,A3,A4,A5,A6,A7,P1,P2,P3,P4,P5,P6,P7,P8,P9,P10,P11,P12 workflow
+    class S1,T1,V1,C1,G1,R1,B1,P1S,P2S,P3S,P4S,P5S,P6S,P7S,P8S,P9S,P10S,P11S,P12S generator
+    class S2,T2,V2,C2,G2,R2,B2,B3,P1O,P2O,P3O,P4O,P5O,P6O,P7O,P8O,P9O,P10O,P11O,P12O output
+    class API1,API2,API3,API4,API5,API6 api
+    class BADGE1,BADGE2,BADGE3,BADGE4,BADGE5,BADGE6,STATIC1 badge
+    class MAIN,SITES,CARDS integration
 ```
 
 ## 🔧 Key Technical Components
