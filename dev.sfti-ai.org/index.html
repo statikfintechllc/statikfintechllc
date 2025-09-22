@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="styles/dev-styles.css">
     <link rel="stylesheet" href="styles/dev.tailwind.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg">
+    
+    <!-- SFTi Component System -->
+    <script src="../src/components/sfti-component-system.js"></script>
+    <script src="../src/components/global.c/navbar.js"></script>
+    <script src="../src/components/global.c/ticker.js"></script>
+    <script src="../src/components/dev.c/navbar.js"></script>
+    <script src="../src/components/dev.c/footer.js"></script>
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <meta property="og:title" content="SFTi Dev - PWA Hub">
     <meta property="og:description" content="Progressive Web Applications by StatikFinTech LLC">
     <meta property="og:type" content="website">
@@ -50,23 +58,32 @@
                         <div class="pwa-icon">
                             <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/IB.G.svg/assets/ib-g-scanner-card.svg" alt="IB-G.Scanner" loading="lazy">
                         </div>
-                        <div class="pwa-status">
-                            <span class="status-dot active"></span>
-                            <span>Final-Beta</span>
+                        <div class="pwa-info">
+                            <h3 class="pwa-title">IB-G.Scanner</h3>
+                            <p class="pwa-description">Advanced market scanning and analysis tool</p>
+                            <div class="pwa-status">
+                                <span class="status-dot active"></span>
+                                <span class="status-text">Online</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="pwa-content">
-                        <h3>IB-G.Scanner</h3>
-                        <p class="pwa-description">Advanced market scanning and analysis tool for Interactive Brokers. Real-time market data, pattern recognition, and automated alerts.</p>
-                        <div class="pwa-features">
-                            <span class="feature-tag">Real-time Data</span>
-                            <span class="feature-tag">Pattern Recognition</span>
-                            <span class="feature-tag">Automated Alerts</span>
+                    <div class="pwa-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Response Time</span>
+                            <span class="metric-value">45ms</span>
                         </div>
-                        <div class="pwa-actions">
-                            <button class="btn btn-primary" onclick="launchPWA('ib-g-scanner')">Launch Application</button>
-                            <button class="btn btn-secondary" onclick="showAppDetails('ib-g-scanner')">View Details</button>
+                        <div class="metric">
+                            <span class="metric-label">Uptime</span>
+                            <span class="metric-value">99.8%</span>
                         </div>
+                        <div class="metric">
+                            <span class="metric-label">Last Deploy</span>
+                            <span class="metric-value">2h ago</span>
+                        </div>
+                    </div>
+                    <div class="pwa-actions">
+                        <button class="btn btn-primary" onclick="launchPWA('ib-g-scanner')">Launch</button>
+                        <button class="btn btn-secondary" onclick="showAppDetails('ib-g-scanner')">Details</button>
                     </div>
                 </div>
 
@@ -74,130 +91,184 @@
                 <div class="pwa-card" data-app="pilot-server">
                     <div class="pwa-header">
                         <div class="pwa-icon">
-                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/P.S.svg/assets/pilot-server-card.svg" alt="Pilot-Server" loading="lazy">
+                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/PilotServer.svg/assets/pilot-server-card.svg" alt="Pilot-Server" loading="lazy">
                         </div>
-                        <div class="pwa-status">
-                            <span class="status-dot active"></span>
-                            <span>Final-Beta</span>
+                        <div class="pwa-info">
+                            <h3 class="pwa-title">Pilot-Server</h3>
+                            <p class="pwa-description">Autonomous server management system</p>
+                            <div class="pwa-status">
+                                <span class="status-dot active"></span>
+                                <span class="status-text">Online</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="pwa-content">
-                        <h3>Pilot-Server</h3>
-                        <p class="pwa-description">Autonomous server management and deployment system. Automated scaling, monitoring, and maintenance for cloud infrastructure.</p>
-                        <div class="pwa-features">
-                            <span class="feature-tag">Auto Scaling</span>
-                            <span class="feature-tag">Monitoring</span>
-                            <span class="feature-tag">Deployment</span>
+                    <div class="pwa-metrics">
+                        <div class="metric">
+                            <span class="metric-label">CPU Usage</span>
+                            <span class="metric-value">34%</span>
                         </div>
-                        <div class="pwa-actions">
-                            <button class="btn btn-primary" onclick="launchPWA('pilot-server')">Launch Application</button>
-                            <button class="btn btn-secondary" onclick="showAppDetails('pilot-server')">View Details</button>
+                        <div class="metric">
+                            <span class="metric-label">Memory</span>
+                            <span class="metric-value">2.1GB</span>
                         </div>
+                        <div class="metric">
+                            <span class="metric-label">Active Users</span>
+                            <span class="metric-value">12</span>
+                        </div>
+                    </div>
+                    <div class="pwa-actions">
+                        <button class="btn btn-primary" onclick="launchPWA('pilot-server')">Launch</button>
+                        <button class="btn btn-secondary" onclick="showAppDetails('pilot-server')">Details</button>
                     </div>
                 </div>
 
+                <!-- GremlinGPT -->
+                <div class="pwa-card" data-app="gremlingpt">
+                    <div class="pwa-header">
+                        <div class="pwa-icon">
+                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/GremlinGPT.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" loading="lazy">
+                        </div>
+                        <div class="pwa-info">
+                            <h3 class="pwa-title">GremlinGPT</h3>
+                            <p class="pwa-description">Recursive autonomous AI system</p>
+                            <div class="pwa-status">
+                                <span class="status-dot developing"></span>
+                                <span class="status-text">In Development</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pwa-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Training Progress</span>
+                            <span class="metric-value">87%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Model Size</span>
+                            <span class="metric-value">2.3GB</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Last Update</span>
+                            <span class="metric-value">1d ago</span>
+                        </div>
+                    </div>
+                    <div class="pwa-actions">
+                        <button class="btn btn-disabled" disabled>Coming Soon</button>
+                        <button class="btn btn-secondary" onclick="showAppDetails('gremlingpt')">Details</button>
+                    </div>
+                </div>
 
+                <!-- Gremlin-ShadTail-Trader -->
+                <div class="pwa-card" data-app="gremlin-shadtail">
+                    <div class="pwa-header">
+                        <div class="pwa-icon">
+                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Gremlin-ShadTail-Trader.svg/assets/gremlin-shadtail-trader-card.svg" alt="Gremlin-ShadTail-Trader" loading="lazy">
+                        </div>
+                        <div class="pwa-info">
+                            <h3 class="pwa-title">ShadTail-Trader</h3>
+                            <p class="pwa-description">AI-driven autonomous trading system</p>
+                            <div class="pwa-status">
+                                <span class="status-dot active"></span>
+                                <span class="status-text">Trading</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pwa-metrics">
+                        <div class="metric">
+                            <span class="metric-label">P&L Today</span>
+                            <span class="metric-value">+$2,847</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Win Rate</span>
+                            <span class="metric-value">74%</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Active Positions</span>
+                            <span class="metric-value">8</span>
+                        </div>
+                    </div>
+                    <div class="pwa-actions">
+                        <button class="btn btn-primary" onclick="launchPWA('gremlin-shadtail')">Launch</button>
+                        <button class="btn btn-secondary" onclick="showAppDetails('gremlin-shadtail')">Details</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Status Section -->
+    <!-- System Status -->
     <section id="status" class="status-section">
         <div class="container">
             <h2 class="section-title">System Status</h2>
             <div class="status-grid">
                 <div class="status-card">
-                    <div class="status-header">
-                        <h3>Server Infrastructure</h3>
-                        <span class="status-dot active"></span>
-                    </div>
-                    <div class="status-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Uptime</span>
-                            <span class="metric-value">99.9%</span>
+                    <h3 class="status-title">Infrastructure</h3>
+                    <div class="status-items">
+                        <div class="status-item">
+                            <span class="status-dot active"></span>
+                            <span>Cloud Servers</span>
+                            <span class="status-value">99.9%</span>
                         </div>
-                        <div class="metric">
-                            <span class="metric-label">Response Time</span>
-                            <span class="metric-value">45ms</span>
+                        <div class="status-item">
+                            <span class="status-dot active"></span>
+                            <span>Database</span>
+                            <span class="status-value">Online</span>
                         </div>
-                        <div class="metric">
-                            <span class="metric-label">CPU Usage</span>
-                            <span class="metric-value">32%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="status-card">
-                    <div class="status-header">
-                        <h3>Trading Systems</h3>
-                        <span class="status-dot active"></span>
-                    </div>
-                    <div class="status-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Active Strategies</span>
-                            <span class="metric-value">7</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Market Connection</span>
-                            <span class="metric-value">Stable</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Last Update</span>
-                            <span class="metric-value">2s ago</span>
+                        <div class="status-item">
+                            <span class="status-dot active"></span>
+                            <span>API Gateway</span>
+                            <span class="status-value">Healthy</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="status-card">
-                    <div class="status-header">
-                        <h3>AI Systems</h3>
-                        <span class="status-dot developing"></span>
+                    <h3 class="status-title">Trading Systems</h3>
+                    <div class="status-items">
+                        <div class="status-item">
+                            <span class="status-dot active"></span>
+                            <span>Market Data</span>
+                            <span class="status-value">Live</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot active"></span>
+                            <span>Order Management</span>
+                            <span class="status-value">Active</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot warning"></span>
+                            <span>Risk Engine</span>
+                            <span class="status-value">Monitoring</span>
+                        </div>
                     </div>
-                    <div class="status-metrics">
-                        <div class="metric">
-                            <span class="metric-label">GremlinGPT</span>
-                            <span class="metric-value">Dev Mode</span>
+                </div>
+
+                <div class="status-card">
+                    <h3 class="status-title">AI Systems</h3>
+                    <div class="status-items">
+                        <div class="status-item">
+                            <span class="status-dot active"></span>
+                            <span>Model Training</span>
+                            <span class="status-value">Running</span>
                         </div>
-                        <div class="metric">
-                            <span class="metric-label">Training Progress</span>
-                            <span class="metric-value">78%</span>
+                        <div class="status-item">
+                            <span class="status-dot developing"></span>
+                            <span>GremlinGPT</span>
+                            <span class="status-value">Development</span>
                         </div>
-                        <div class="metric">
-                            <span class="metric-label">Model Accuracy</span>
-                            <span class="metric-value">94.2%</span>
+                        <div class="status-item">
+                            <span class="status-dot active"></span>
+                            <span>Pattern Recognition</span>
+                            <span class="status-value">Active</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-</main>
-    <!-- App Details Modal -->
-    <div id="app-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="app-details"></div>
-        </div>
-    </div>
 
-    <!-- PWA Launch Modal -->
-    <div id="launch-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="launch-content">
-                <div class="launch-icon">🚀</div>
-                <h3>Launching Application...</h3>
-                <p>Please wait while we initialize your session.</p>
-                <div class="loading-bar">
-                    <div class="loading-progress"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer Container -->
-    <footer class="bg-black border-t border-blue-500/20 mt-auto py-6">
-        <div class="max-w-7xl mx-auto px-4 text-center">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
             <p class="text-gray-400 text-sm mb-2 font-mono">© 2025 StatikFinTech, LLC - PWA Development Hub</p>
             <div class="flex justify-center space-x-4 text-xs">
                 <span class="text-green-400">DEV: ONLINE</span>
@@ -205,114 +276,58 @@
             </div>
         </div>
     </footer>
-    <!-- SFTi Component System - Simplified -->
+
+    <!-- Launch Modal -->
+    <div id="launch-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Launching Application</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="launch-progress">
+                    <div class="loading-spinner"></div>
+                    <p>Initializing PWA...</p>
+                    <div class="loading-bar">
+                        <div class="loading-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Details Modal -->
+    <div id="app-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Application Details</h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body" id="app-details">
+                <!-- Dynamically populated -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="dist/mobile-navigation.js"></script>
+    <script src="dev-script.js">    </script>
+
+    <!-- SFTi Component System Initialization -->
     <script>
-        // Simple navbar implementation with mobile hamburger menu
         document.addEventListener('DOMContentLoaded', function() {
-            const navContainer = document.getElementById('navbar-container');
-            if (navContainer) {
-                navContainer.innerHTML = `
-                    <style>
-                        /* Custom mobile navigation styles */
-                        .mobile-menu-hidden { display: none; }
-                        .desktop-nav { display: none !important; }
-                        .mobile-menu-btn { display: block !important; }
-                        
-                        @media (min-width: 768px) {
-                            .desktop-nav { display: flex !important; }
-                            .mobile-menu-btn { display: none !important; }
-                            .mobile-menu-hidden { display: none !important; }
-                        }
-                    </style>
-                    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-blue-500/20 h-12">
-                        <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
-                            <div class="flex flex-col leading-none">
-                                <span class="text-blue-400 font-bold text-lg leading-tight font-mono">SFTi Dev</span>
-                                <span class="text-green-400 text-xs leading-tight">PWA Hub</span>
-                            </div>
-                            
-                            <!-- Desktop Navigation -->
-                            <div class="desktop-nav items-center space-x-6">
-                                <a href="https://www.sfti-ai.org" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">Home</a>
-                                <a href="#pwas" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">PWAs</a>
-                                <a href="#status" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">Status</a>
-                                <a href="https://server.sfti-ai.org" class="text-white hover:text-blue-400 transition-colors text-sm font-mono">Server</a>
-                            </div>
-                            
-                            <!-- Mobile Menu Button -->
-                            <button id="mobile-menu-button" class="mobile-menu-btn text-white hover:text-blue-400 focus:outline-none">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        
-                        <!-- Mobile Navigation Menu -->
-                        <div id="mobile-menu" class="mobile-menu-hidden bg-black/95 backdrop-blur-sm border-b border-blue-500/20">
-                            <div class="px-4 py-3 space-y-2">
-                                <a href="https://www.sfti-ai.org" class="block text-white hover:text-blue-400 transition-colors text-sm font-mono py-2">Home</a>
-                                <a href="#pwas" class="block text-white hover:text-blue-400 transition-colors text-sm font-mono py-2">PWAs</a>
-                                <a href="#status" class="block text-white hover:text-blue-400 transition-colors text-sm font-mono py-2">Status</a>
-                                <a href="https://server.sfti-ai.org" class="block text-white hover:text-blue-400 transition-colors text-sm font-mono py-2">Server</a>
-                            </div>
-                        </div>
-                    </nav>
-                `;
-                
-                // Mobile menu toggle functionality
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenu = document.getElementById('mobile-menu');
-                
-                if (mobileMenuButton && mobileMenu) {
-                    mobileMenuButton.addEventListener('click', function() {
-                        if (mobileMenu.classList.contains('mobile-menu-hidden')) {
-                            mobileMenu.classList.remove('mobile-menu-hidden');
-                        } else {
-                            mobileMenu.classList.add('mobile-menu-hidden');
-                        }
-                    });
-                    
-                    // Close mobile menu when clicking on links
-                    const mobileLinks = mobileMenu.querySelectorAll('a');
-                    mobileLinks.forEach(link => {
-                        link.addEventListener('click', function() {
-                            mobileMenu.classList.add('mobile-menu-hidden');
-                        });
-                    });
-                    
-                    // Close mobile menu when clicking outside
-                    document.addEventListener('click', function(event) {
-                        if (!navContainer.contains(event.target)) {
-                            mobileMenu.classList.add('mobile-menu-hidden');
-                        }
-                    });
-                }
-            }
-        });
-    </script>
-    <!-- SFTi Component System -->
-    <script>
-        // Simplified ticker implementation for immediate functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('ticker-container');
-            if (container) {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'sfti-ticker-wrapper';
-                
-                const image = document.createElement('img');
-                image.src = 'https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif';
-                image.alt = 'Repo Ticker Stats';
-                image.className = 'sfti-ticker-image';
-                
-                image.onerror = function() {
-                    console.warn('Ticker: Failed to load ticker image');
-                    wrapper.style.display = 'none';
-                };
-                
-                wrapper.appendChild(image);
-                container.appendChild(wrapper);
-                console.log('Ticker initialized successfully');
-            }
+            console.log('SFTi Dev Component System: Initializing...');
+            
+            // Initialize Dev Navbar
+            const devNavbar = new DevNavbar({
+                containerId: 'navbar-container'
+            });
+            
+            // Initialize Global Ticker for Dev Domain
+            const devTicker = new SFTiTicker('dev');
+            devTicker.render('#ticker-container');
+            
+            console.log('SFTi Dev Component System: Initialized successfully');
         });
     </script>
 </body>

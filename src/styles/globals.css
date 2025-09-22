@@ -1,6 +1,3 @@
-/* Import your existing stylesheets */
-@import url("../../public_html/styles.css");
-
 /* Only add Tailwind utilities - NO overrides */
 @tailwind utilities;
 

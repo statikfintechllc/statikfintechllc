@@ -1,5 +1,5 @@
-/* Dev site build - imports your dev-styles.css */
-@import url("../../dev.sfti-ai.org/dev-styles.css");
+/* Main site build - imports your styles.css */
+@import url("../../styles.css");
 
 /* Only Tailwind utilities */
 @tailwind utilities;
@@ -22,7 +22,7 @@
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
-  box-shadow: var(--shadow-glow);
+  box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
 }
 
 .mobile-nav-card.active {
@@ -46,6 +46,6 @@
 }
 
 .mobile-nav-link:hover {
-  color: var(--primary-color);
-  background: rgba(0, 255, 136, 0.05);
+  color: var(--secondary-color);
+  background: rgba(255, 215, 0, 0.05);
 }

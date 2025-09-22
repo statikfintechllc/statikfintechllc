@@ -1,284 +1,190 @@
 /**
- * Dev Domain Navbar Component
- * ===========================
- * 
- * Development hub navbar with PWA and developer tools focus.
- * Extends global navbar with dev-specific styling and navigation.
- * 
- * Features:
- * - Developer-focused navigation
- * - PWA status indicators
- * - Development tools access
- * - Technical documentation links
+ * DevNavbar (Domain: dev.sfti-ai.org)
+ * ----------------------------------
+ * Tailwind-based component that extends the base SFTiNavbar while supplying
+ * domain‑specific styling, desktop + mobile layouts, and developer/status
+ * indicators. No external index.html or stylesheet edits required.
+ *
+ * Requirements implemented:
+ *  - Desktop: logo (blue/green), subtitle, horizontal nav items, dev/status pills, no ticker
+ *  - Mobile: compact header (logo + hamburger) + slide-over menu + inline repo stats row
+ *  - Ticker GIF remains separate (rendered by existing SFTiTicker into #ticker-container)
+ *  - Pure Tailwind utility classes – component is self‑contained
  */
 
+// Ensure base class exists
+if (typeof window !== 'undefined' && !window.SFTiNavbar) {
+  console.warn('[DevNavbar] Base SFTiNavbar missing – ensure global.c/navbar.js is loaded first.');
+}
+
 class DevNavbar extends SFTiNavbar {
-    constructor(config = {}) {
-        const devConfig = {
-            domain: 'dev',
-            logoText: 'SFTi Dev',
-            logoSubtitle: 'PWA Hub',
-            items: [
-                { title: 'Home', href: 'https://www.sfti-ai.org', external: true, description: 'Main website' },
-                { title: 'Institute', href: 'https://www.sfti-ai.org#institute', external: true, description: 'Research division' },
-                { title: 'Projects', href: 'https://www.sfti-ai.org#projects', external: true, description: 'Featured projects' },
-                { title: 'Research', href: 'https://www.sfti-ai.org#research', external: true, description: 'Publications' },
-                { title: 'PWAs', href: '#pwas', description: 'Progressive Web Applications' },
-                { title: 'Status', href: '#status', description: 'System status and monitoring' },
-                { title: 'Server', href: 'https://server.sfti-ai.org', external: true, description: 'Secure access portal' }
-            ],
-            tools: {
-                github: { href: 'https://github.com/statikfintechllc', icon: '🐙' },
-                docs: { href: '#documentation', icon: '📚' },
-                api: { href: '#api', icon: '🔌' }
-            },
-            status: {
-                indicators: true,
-                realtime: true
-            },
-            ...config
-        };
-        
-        super(devConfig);
-        this.initDevFeatures();
-    }
+  constructor(config = {}) {
+    super({
+      containerId: 'navbar-container',
+      logoText: 'SFTi Dev',
+      logoSubtitle: 'PWA Hub',
+      items: [
+        { title: 'Home', href: 'https://www.sfti-ai.org', external: true, description: 'Main site' },
+        { title: 'Institute', href: 'https://www.sfti-ai.org#institute', external: true, description: 'Research division' },
+        { title: 'Projects', href: 'https://www.sfti-ai.org#projects', external: true, description: 'Featured projects' },
+        { title: 'Research', href: 'https://www.sfti-ai.org#research', external: true, description: 'Publications' },
+        { title: 'PWAs', href: '#pwas', description: 'Application grid' },
+        { title: 'Status', href: '#status', description: 'System status' },
+        { title: 'Server', href: 'https://server.sfti-ai.org', external: true, description: 'Secure portal' }
+      ],
+      ...config
+    });
+  }
 
-    initDevFeatures() {
-        this.setupStatusMonitoring();
-        this.setupDevTools();
-    }
+  // Active link detection (hash + pathname support)
+  isActive(href) {
+    if (!href || href.startsWith('http')) return false;
+    const loc = window.location;
+    return loc.hash === href || (href.startsWith('#') && loc.hash === href) || (href !== '#' && loc.pathname.endsWith(href.replace('#','')));
+  }
 
-    getTemplate() {
-        return `
-            <nav class="sfti-navbar sfti-dev-navbar fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-blue-500/20 h-12">
-                <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
-                    <!-- Dev Logo with Status -->
-                    <div class="flex items-center space-x-4">
-                        <div class="flex flex-col leading-none group cursor-pointer" onclick="window.location.href='#home'">
-                            <span class="text-blue-400 font-bold text-lg leading-tight transition-all duration-300 group-hover:text-blue-300 group-hover:scale-105">
-                                ${this.config.logoText}
-                            </span>
-                            <span class="text-green-400 text-xs leading-tight transition-all duration-300 group-hover:text-green-300">
-                                ${this.config.logoSubtitle}
-                            </span>
-                        </div>
-                        
-                        <!-- Dev Status Indicators -->
-                        <div class="hidden lg:flex items-center space-x-3">
-                            <div class="flex items-center space-x-1">
-                                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                                <span class="text-green-400 text-xs font-mono">DEV</span>
-                            </div>
-                            <div class="w-px h-4 bg-white/20"></div>
-                            <div class="flex items-center space-x-1">
-                                <span class="text-blue-400 text-xs font-mono" id="build-status">BUILD: OK</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Desktop Navigation with Dev Tools -->
-                    <div class="hidden md:flex items-center space-x-6">
-                        ${this.renderDevNavItems()}
-                        
-                        <!-- Dev Tools -->
-                        <div class="flex items-center space-x-2 ml-4 pl-4 border-l border-white/20">
-                            ${this.renderDevTools()}
-                        </div>
-                    </div>
-
-                    <!-- Mobile Menu Button -->
-                    <button 
-                        id="mobile-menu-toggle" 
-                        class="md:hidden p-2 h-8 w-8 flex items-center justify-center hover:bg-blue-500/20 rounded transition-colors"
-                        aria-label="Toggle mobile menu"
-                        aria-expanded="false"
-                    >
-                        ${this.getMobileMenuIcon()}
-                    </button>
-                </div>
-
-                <!-- Dev Mobile Menu -->
-                ${this.getDevMobileMenu()}
-            </nav>
-        `;
-    }
-
-    renderDevNavItems() {
-        return this.config.items.map(item => `
-            <div class="relative group">
-                <a 
-                    href="${item.href}" 
-                    class="text-white hover:text-green-400 transition-all duration-300 text-sm font-medium font-mono ${this.isActiveLink(item.href) ? 'text-green-400' : ''}"
-                    ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
-                    title="${item.description || item.title}"
-                >
-                    ${item.title}
-                    ${item.external ? '<span class="ml-1 text-xs text-gray-400">↗</span>' : ''}
-                </a>
-                
-                <!-- Dev Tooltip -->
-                <div class="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-3 py-2 bg-gray-900/95 text-green-400 text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap border border-green-400/20">
-                    ${item.description || item.title}
-                    <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-b-4 border-transparent border-b-gray-900/95"></div>
-                </div>
+  getTemplate() {
+    return `
+      <nav class="sfti-dev-navbar fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur supports-[backdrop-filter]:backdrop-blur border-b border-blue-500/20 h-12 font-sans">
+        <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
+          <!-- Logo + Status (desktop) -->
+          <div class="flex items-center space-x-6 h-full">
+            <div class="flex flex-col leading-none cursor-pointer select-none" onclick="location.href='#home'">
+              <span class="text-blue-400 font-bold text-lg leading-tight tracking-tight">${this.config.logoText}</span>
+              <span class="text-green-400 text-xs leading-tight">${this.config.logoSubtitle}</span>
             </div>
-        `).join('');
-    }
-
-    renderDevTools() {
-        if (!this.config.tools) return '';
-        
-        return Object.entries(this.config.tools).map(([key, tool]) => `
-            <a 
-                href="${tool.href}" 
-                class="p-2 text-white hover:text-blue-400 hover:bg-blue-500/20 rounded transition-all duration-200"
-                title="${key.charAt(0).toUpperCase() + key.slice(1)}"
-                ${tool.href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}
-            >
-                <span class="text-sm">${tool.icon}</span>
-            </a>
-        `).join('');
-    }
-
-    getDevMobileMenu() {
-        return `
-            <!-- Dev Mobile Menu -->
-            <div 
-                id="mobile-menu" 
-                class="md:hidden fixed inset-y-0 right-0 w-80 bg-gray-900/95 backdrop-blur-sm border-l border-blue-500/20 transform translate-x-full transition-transform duration-300 ease-in-out"
-                role="dialog"
-                aria-labelledby="mobile-menu-toggle"
-            >
-                <div class="flex flex-col h-full">
-                    <!-- Mobile Header -->
-                    <div class="flex items-center justify-between p-6 border-b border-blue-500/20">
-                        <div class="flex flex-col">
-                            <span class="text-blue-400 font-bold text-xl font-mono">${this.config.logoText}</span>
-                            <span class="text-green-400 text-sm">${this.config.logoSubtitle}</span>
-                        </div>
-                        <button 
-                            id="mobile-menu-close" 
-                            class="p-2 hover:bg-blue-500/20 rounded transition-colors"
-                            aria-label="Close mobile menu"
-                        >
-                            ${this.getCloseIcon()}
-                        </button>
-                    </div>
-                    
-                    <!-- Mobile Navigation -->
-                    <div class="flex-1 px-6 py-4 space-y-1">
-                        ${this.renderMobileDevItems()}
-                    </div>
-                    
-                    <!-- Mobile Dev Tools -->
-                    <div class="p-6 border-t border-blue-500/20">
-                        <div class="mb-4">
-                            <h4 class="text-blue-400 font-medium text-sm mb-3 font-mono">Dev Tools</h4>
-                            <div class="grid grid-cols-3 gap-3">
-                                ${this.renderMobileDevTools()}
-                            </div>
-                        </div>
-                        
-                        <!-- System Status -->
-                        <div class="text-center pt-4 border-t border-white/10">
-                            <div class="flex items-center justify-center space-x-2 mb-2">
-                                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                                <span class="text-green-400 text-sm font-mono">ALL SYSTEMS OPERATIONAL</span>
-                            </div>
-                            <p class="text-gray-400 text-xs font-mono">PWA Development Environment</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="hidden lg:flex items-center space-x-4 pl-4 border-l border-white/10">
+              <div class="flex items-center space-x-1">
+                <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                <span class="text-green-400 text-[10px] font-mono">DEV</span>
+              </div>
+              <div class="flex items-center space-x-1">
+                <span class="text-blue-400 text-[10px] font-mono" id="build-status">BUILD: OK</span>
+              </div>
             </div>
-        `;
-    }
+          </div>
 
-    renderMobileDevItems() {
-        return this.config.items.map(item => `
-            <a 
-                href="${item.href}" 
-                class="flex items-center justify-between p-3 text-white hover:text-green-400 hover:bg-blue-500/10 transition-all duration-200 rounded-lg ${this.isActiveLink(item.href) ? 'text-green-400 bg-blue-500/10' : ''}"
-                ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
-            >
-                <div>
-                    <div class="font-medium font-mono">${item.title}</div>
-                    <div class="text-sm text-gray-400">${item.description || ''}</div>
-                </div>
-                ${item.external ? '<span class="text-gray-400">↗</span>' : '<span class="text-gray-400">→</span>'}
-            </a>
-        `).join('');
-    }
+          <!-- Desktop Nav -->
+          <div class="hidden md:flex items-center space-x-6 h-full">
+            ${this.config.items.map(item => `
+              <a href="${item.href}" ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
+                 class="relative text-sm font-mono transition-colors duration-200 ${this.isActive(item.href) ? 'text-green-400' : 'text-white hover:text-green-400'}">
+                 ${item.title}${item.external ? '<span class=\'ml-1 text-xs text-gray-400\'>↗</span>' : ''}
+                 <span class="${this.isActive(item.href) ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} absolute -bottom-2 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-green-400 transition-opacity"></span>
+              </a>
+            `).join('')}
+          </div>
 
-    renderMobileDevTools() {
-        if (!this.config.tools) return '';
-        
-        return Object.entries(this.config.tools).map(([key, tool]) => `
-            <a 
-                href="${tool.href}" 
-                class="flex flex-col items-center p-3 bg-blue-500/10 hover:bg-blue-500/20 rounded-lg transition-colors text-center"
-                ${tool.href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}
-            >
-                <span class="text-lg mb-1">${tool.icon}</span>
-                <span class="text-xs text-blue-400 font-mono">${key.toUpperCase()}</span>
-            </a>
-        `).join('');
-    }
+          <!-- Mobile Toggle -->
+          <button id="mobile-menu-toggle" aria-label="Open menu" aria-expanded="false" class="md:hidden p-2 rounded hover:bg-blue-500/20 transition-colors">
+            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
 
-    setupStatusMonitoring() {
-        // Simulate real-time status monitoring
-        this.updateBuildStatus = () => {
-            const statusEl = document.getElementById('build-status');
-            if (statusEl) {
-                const statuses = ['BUILD: OK', 'BUILD: RUNNING', 'BUILD: TESTING'];
-                const randomStatus = statuses[Math.floor(Math.random() * statuses.length)];
-                statusEl.textContent = randomStatus;
-            }
-        };
+        <!-- Slide-over Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden fixed inset-y-0 right-0 w-80 max-w-[80%] bg-black/95 backdrop-blur-sm border-l border-blue-500/30 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+          <div class="flex items-center justify-between p-5 border-b border-blue-500/30">
+            <div class="flex flex-col leading-none">
+              <span class="text-blue-400 font-bold text-lg">${this.config.logoText}</span>
+              <span class="text-green-400 text-xs">${this.config.logoSubtitle}</span>
+            </div>
+            <button id="mobile-menu-close" aria-label="Close menu" class="p-2 rounded hover:bg-blue-500/20 transition-colors">
+              <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+          </div>
+          <div class="flex-1 overflow-y-auto px-5 py-4 space-y-1">
+            ${this.config.items.map(item => `
+              <a href="${item.href}" ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}
+                 class="flex items-center justify-between px-3 py-2 rounded-lg transition-colors font-mono text-sm ${this.isActive(item.href) ? 'bg-blue-500/15 text-green-400' : 'text-white hover:text-green-400 hover:bg-blue-500/10'}">
+                 <span>${item.title}</span>
+                 <span class="text-gray-400 text-xs">${item.external ? '↗' : '→'}</span>
+              </a>
+            `).join('')}
+          </div>
+          <div class="p-5 border-t border-blue-500/30 space-y-3">
+            <div class="grid grid-cols-3 gap-2 text-center">
+              <div class="p-2 rounded bg-blue-500/10">
+                <span class="block text-[10px] text-gray-400">Stars</span>
+                <span class="text-green-400 text-xs font-mono" id="repo-stars">4</span>
+              </div>
+              <div class="p-2 rounded bg-blue-500/10">
+                <span class="block text-[10px] text-gray-400">Issues</span>
+                <span class="text-green-400 text-xs font-mono" id="repo-issues">0</span>
+              </div>
+              <div class="p-2 rounded bg-blue-500/10">
+                <span class="block text-[10px] text-gray-400">PRs</span>
+                <span class="text-green-400 text-xs font-mono" id="repo-prs">0</span>
+              </div>
+            </div>
+            <div class="text-center pt-2 border-t border-white/10">
+              <div class="flex items-center justify-center space-x-2 mb-1">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span class="text-green-400 text-[10px] font-mono">ALL SYSTEMS OPERATIONAL</span>
+              </div>
+              <p class="text-gray-500 text-[10px] font-mono">PWA Development Environment</p>
+            </div>
+          </div>
+        </div>
+      </nav>
+    `;
+  }
 
-        // Update status every 30 seconds
-        setInterval(this.updateBuildStatus, 30000);
+  // Override parent attachEventListeners to add our logic while using base when possible
+  attachEventListeners() {
+    const toggle = document.getElementById('mobile-menu-toggle');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        menu?.classList.remove('translate-x-full');
+        this.mobileMenuOpen = true;
+      });
     }
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => this.closeMobile());
+    }
+    document.addEventListener('click', (e) => {
+      if (this.mobileMenuOpen && menu && !menu.contains(e.target) && !toggle?.contains(e.target)) {
+        this.closeMobile();
+      }
+    });
+    window.addEventListener('hashchange', () => this.highlightActive());
+    this.highlightActive();
+  }
 
-    setupDevTools() {
-        // Add developer-specific tools and shortcuts
-        this.setupKeyboardShortcuts();
-    }
+  closeMobile() {
+    const menu = document.getElementById('mobile-menu');
+    menu?.classList.add('translate-x-full');
+    this.mobileMenuOpen = false;
+  }
 
-    setupKeyboardShortcuts() {
-        document.addEventListener('keydown', (e) => {
-            // Ctrl/Cmd + K for quick navigation
-            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-                e.preventDefault();
-                this.openQuickNav();
-            }
-        });
-    }
-
-    openQuickNav() {
-        // Future: Implement quick navigation modal
-        console.log('Quick navigation - Future implementation');
-    }
+  highlightActive() {
+    const links = document.querySelectorAll('#navbar-container a[href]');
+    links.forEach(l => {
+      const el = l; // HTMLElement
+      const href = el.getAttribute('href');
+      if (href && !href.startsWith('http')) {
+        if (this.isActive(href)) {
+          el.classList.add('text-green-400');
+        } else {
+          el.classList.remove('text-green-400');
+        }
+      }
+    });
+  }
 }
 
-// Dev Domain specific configurations
-const DevNavbarConfig = {
-    domain: 'dev',
-    developerMode: true,
-    showStatus: true
-};
-
-// Factory function for Dev navbar
+// Factory (for consistency with template naming)
 function createDevNavbar(config = {}) {
-    return new DevNavbar({ ...DevNavbarConfig, ...config });
+  return new DevNavbar(config);
 }
 
-// Export for module systems
 if (typeof window !== 'undefined') {
-    window.DevNavbar = DevNavbar;
-    window.createDevNavbar = createDevNavbar;
-    window.DevNavbarConfig = DevNavbarConfig;
+  window.DevNavbar = DevNavbar;
+  window.createDevNavbar = createDevNavbar;
 }
 
+// CommonJS support (not required but keeps parity with existing template pattern)
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { DevNavbar, createDevNavbar, DevNavbarConfig };
+  module.exports = { DevNavbar, createDevNavbar };
 }
