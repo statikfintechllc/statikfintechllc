@@ -104,7 +104,7 @@
   <rect x="252" y="0" width="19" height="8" fill="#00ADD8"/>
   <!-- CSS 1.24% -->
   <rect x="271" y="0" width="4" height="8" fill="#563d7c"/>
-  <!-- JavaScript 1.17% -->
+  <!-- JavaScript 1.18% -->
   <rect x="275" y="0" width="3" height="8" fill="#f1e05a"/>
   <!-- HTML 1.11% -->
   <rect x="278" y="0" width="3" height="8" fill="#e34c26"/>
@@ -142,7 +142,7 @@
     
     <g transform="translate(0, 80)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 1.17%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 1.18%</text>
     </g>
     
     <g transform="translate(144, 0)">
