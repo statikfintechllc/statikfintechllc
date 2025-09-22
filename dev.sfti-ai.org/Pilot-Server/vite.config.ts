@@ -5,6 +5,21 @@ import { resolve } from "path";
 
 const projectRoot = process.env.PROJECT_ROOT || import.meta.dirname
 
+// Placeholder functions to prevent build errors
+function createIconImportProxy() {
+  return {
+    name: 'icon-import-proxy',
+    // Empty plugin implementation
+  };
+}
+
+function sparkPlugin() {
+  return {
+    name: 'spark-plugin',
+    // Empty plugin implementation
+  };
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
