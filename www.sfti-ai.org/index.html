@@ -67,6 +67,36 @@
             width: 0 !important;
             height: 0 !important;
         }
+        /* Responsive sizing for mobile - FORCE SMALLER */
+        @media (max-width: 768px) {
+            .technical-skills-container {
+                padding: 0.5rem 0 !important;
+            }
+            .technical-skills-container img {
+                width: 300px !important;
+                max-width: 90vw !important;
+            }
+            .institute-header-wide {
+                width: 400px !important;
+                max-width: 95vw !important;
+            }
+            .institute-section {
+                margin-top: -3rem !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .technical-skills-container img {
+                width: 250px !important;
+                max-width: 85vw !important;
+            }
+            .institute-header-wide {
+                width: 300px !important;
+                max-width: 90vw !important;
+            }
+            .institute-section {
+                margin-top: -2rem !important;
+            }
+        }
     </style>
     
     <!-- PWA Icons -->
@@ -78,7 +108,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.sfti-ai.org">
 </head>
-<body class="pt-12">
+<body class="-mt-10">
     <!-- Navbar Container -->
     <div id="navbar-container"></div>
 
@@ -107,12 +137,12 @@
     <section id="institute" class="institute-section">
         <!-- Centered Technical Skills Section -->
         <center>
-            <img src="https://skillicons.dev/icons?i=python,bash,linux,css,tailwind,react,anaconda,nodejs,electron,go,typescript,javascript,html,astro,nix&theme=dark" alt="Technical Skills" style="max-width: 600px; padding: 2rem 0 1rem 0;">
+            <img src="https://skillicons.dev/icons?i=python,bash,linux,css,tailwind,react,anaconda,nodejs,electron,go,typescript,javascript,html,astro,nix&theme=dark" alt="Technical Skills" style="max-width: 600px; width: 50vw; min-width: 250px;">
         </center>
         
         <!-- Centered Institute Header SVG -->
         <center>
-            <img src="docs/i.svg/assets/institute-header.svg" alt="The Ascend Institute Header" style="max-width: 800px; padding: 1rem 0 2rem 0;">
+            <img src="docs/i.svg/assets/institute-header.svg" alt="The Ascend Institute Header" style="max-width: 800px; width: 60vw; min-width: 300px;" class="institute-header-wide" onclick="toggleRotation(this)">
         </center>
 
         <!-- Full-width Institute Carousel Section -->
@@ -575,7 +605,30 @@
     </div>
 
     <!-- Scripts -->
-    <script src="dist/mobile-navigation.js?v=202509171630"></script>
+    <script>
+        function toggleRotation(img) {
+            console.log('SVG clicked! Screen width:', window.innerWidth);
+            if (window.innerWidth <= 768) {
+                console.log('Mobile detected, toggling rotation');
+                img.classList.toggle('institute-header-rotated');
+                if (img.classList.contains('institute-header-rotated')) {
+                    console.log('Rotating to landscape');
+                    document.body.style.overflow = 'hidden';
+                    img.onclick = function() { 
+                        console.log('Rotating back to normal');
+                        img.classList.remove('institute-header-rotated');
+                        document.body.style.overflow = 'auto';
+                        img.onclick = function() { toggleRotation(img); };
+                    };
+                } else {
+                    document.body.style.overflow = 'auto';
+                }
+            } else {
+                console.log('Desktop detected, no rotation');
+            }
+        }
+    </script>
+        <script>\n        function toggleRotation(img) {\n            if (window.innerWidth <= 768) {\n                img.classList.toggle('institute-header-rotated');\n                if (img.classList.contains('institute-header-rotated')) {\n                    document.body.style.overflow = 'hidden';\n                    img.onclick = function() { \n                        img.classList.remove('institute-header-rotated');\n                        document.body.style.overflow = 'auto';\n                        img.onclick = function() { toggleRotation(img); };\n                    };\n                } else {\n                    document.body.style.overflow = 'auto';\n                }\n            }\n        }\n    </script>\n\n    <!-- Scripts -->\n    <script src=\"dist/mobile-navigation.js?v=202509171630\"></script>
     <script src="script.js?v=202509171630"></script>
     
     <!-- PWA Service Worker Registration -->

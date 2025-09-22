@@ -70,13 +70,13 @@ html {
     
     .hero {
         min-height: calc(100vh - 60px);
-        padding: 6rem 0 2rem 0; /* More top padding for mobile to clear navbar */
+        padding: 3rem 0 2rem 0; /* Reduced top padding from 6rem */
     }
     
     /* Chrome iOS specific hero padding adjustment */
     @supports (-webkit-touch-callout: none) {
         .hero {
-            padding: 10rem 0 2rem 0; /* Extra padding for Chrome iOS with safe area */
+            padding: 5rem 0 2rem 0; /* Reduced from 10rem */
         }
     }
     
@@ -150,7 +150,7 @@ html {
     }
     
     .hero {
-        padding: 8rem 0 2rem 0; /* Even more top padding for small screens */
+        padding: 4rem 0 2rem 0; /* Reduced from 8rem */
     }
     
     .contact-grid {
@@ -348,7 +348,7 @@ nav.navbar {
         radial-gradient(circle at 20% 50%, var(--primary-color)20 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, var(--secondary-color)20 0%, transparent 50%),
         linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
-    padding-top: 80px; /* Account for fixed navbar */
+    padding-top: 60px; /* Reduced from 80px */
     transition: opacity 0.3s ease-out, filter 0.3s ease-out;
 }
 
@@ -548,12 +548,12 @@ section {
 /* First section after hero needs special handling */
 .institute-section {
     background: 
-        radial-gradient(circle at 50% 50%, var(--secondary-color)20 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, var(--secondary-color)20 0%, transparent 50%),
         linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
     position: relative;
     z-index: 10;
-    margin-top: 0;
-    padding: 3rem 0;
+    margin-top: -30rem; /* Eliminate gap completely */
+    padding: 10rem 0 0 0; /* Add top padding to compensate */
     width: 100%;
     overflow: hidden;
 }
