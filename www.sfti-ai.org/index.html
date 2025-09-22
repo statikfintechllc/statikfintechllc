@@ -30,6 +30,45 @@
     <link rel="stylesheet" href="styles/main.tailwind.css?v=202509171630">
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <style>
+        /* FORCE HIDE ALL SCROLLBARS AND MAKE FULL WIDTH */
+        * {
+            scrollbar-width: none !important;
+            -ms-overflow-style: none !important;
+        }
+        *::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+        .projects-carousel-container,
+        .papers-carousel-container,
+        .institute-carousel-full-width {
+            width: 100vw !important;
+            margin-left: calc(-50vw + 50%) !important;
+        }
+        .institute-carousel,
+        .projects-carousel,
+        .papers-carousel,
+        .zenodo-carousel,
+        .medium-carousel {
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
+            scrollbar-width: none !important;
+            -ms-overflow-style: none !important;
+            justify-content: center !important;
+        }
+        .institute-carousel::-webkit-scrollbar,
+        .projects-carousel::-webkit-scrollbar,
+        .papers-carousel::-webkit-scrollbar,
+        .zenodo-carousel::-webkit-scrollbar,
+        .medium-carousel::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+    </style>
+    
     <!-- PWA Icons -->
     <link rel="icon" type="image/svg+xml" href="/badges/statik.title.svg">
     <link rel="apple-touch-icon" href="/badges/ai_architect.svg">
@@ -66,20 +105,20 @@
 
     <!-- The Institute Section -->
     <section id="institute" class="institute-section">
-        <div class="container">
-            <div align="center">
-            <img src="https://skillicons.dev/icons?i=python,bash,linux,css,tailwind,react,anaconda,nodejs,electron,go,typescript,javascript,html,astro,nix&theme=dark" alt="Technical Skills">
-            </div>
-            <img src="docs/i.svg/assets/institute-header.svg" alt="The Ascend Institute Header" class="institute-header-wide">
+        <!-- Centered Technical Skills Section -->
+        <center>
+            <img src="https://skillicons.dev/icons?i=python,bash,linux,css,tailwind,react,anaconda,nodejs,electron,go,typescript,javascript,html,astro,nix&theme=dark" alt="Technical Skills" style="max-width: 600px; padding: 2rem 0 1rem 0;">
+        </center>
+        
+        <!-- Centered Institute Header SVG -->
+        <center>
+            <img src="docs/i.svg/assets/institute-header.svg" alt="The Ascend Institute Header" style="max-width: 800px; padding: 1rem 0 2rem 0;">
+        </center>
 
-    <section id="institute" class="hero-section">
-        <div class="hero-content">
-        <!-- Technical Stack Section -->
-          <div class="hero-animation">
-          <!-- Full-width Horizontal Scrollable Cards Container -->
-            <div class="institute-carousel-container w-full overflow-hidden">
-              <div class="institute-carousel flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth" style="width: max-content; scroll-snap-type: x mandatory;">
-                    
+        <!-- Full-width Institute Carousel Section -->
+        <div class="institute-carousel-full-width">
+            <div class="institute-carousel-container">
+                <div class="institute-carousel flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth" style="scroll-snap-type: x mandatory;">
                     <div class="institute-card flex-shrink-0 w-80" style="scroll-snap-align: start;" data-popup="profile">
                         <div class="svg-placeholder">
                             <img src="docs/g.svg/assets/github-profile.svg" alt="GitHub Profile">
@@ -137,10 +176,9 @@
                 <h2 class="section-title text-center mb-12">Featured Projects</h2>
                 
                 <!-- Full-width Horizontal Scrollable Projects Container -->
-                <div class="projects-carousel-container w-full overflow-hidden">
-                    <button class="carousel-btn carousel-btn-left absolute left-4 top-1/2 transform -translate-y-1/2 z-10" id="projectsScrollLeft"></button>
-                    <div class="projects-carousel flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-16" style="scroll-snap-type: x mandatory;">
-                    <div class="project-card flex-shrink-0 w-80" style="scroll-snap-align: start;" data-project="ib-g-scanner">
+                <div class="projects-carousel-container">
+                    <div class="projects-carousel flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-16">
+                    <div class="project-card flex-shrink-0 w-80">
                         <div class="project-image">
                             <img src="docs/IB.G.svg/assets/ib-g-scanner-card.svg" alt="IB-G.Scanner">
                         </div>
@@ -149,7 +187,7 @@
                         <a href="https://dev.sfti-ai.org/ib-g-scanner" class="project-link">Launch PWA →</a>
                     </div>
                     
-                    <div class="project-card flex-shrink-0 w-80" style="scroll-snap-align: start;" data-project="pilot-server">
+                    <div class="project-card flex-shrink-0 w-80">
                         <div class="project-image">
                             <img src="docs/P.S.svg/assets/pilot-server-card.svg" alt="Pilot-Server">
                         </div>
@@ -158,7 +196,7 @@
                         <a href="https://dev.sfti-ai.org/pilot-server" class="project-link">Launch PWA →</a>
                     </div>
                     
-                    <div class="project-card flex-shrink-0 w-80" style="scroll-snap-align: start;" data-project="gremlingpt">
+                    <div class="project-card flex-shrink-0 w-80">
                         <div class="project-image">
                             <img src="docs/G.G.svg/assets/gremlingpt-card.svg" alt="GremlinGPT">
                         </div>
@@ -167,7 +205,7 @@
                         <a href="https://github.com/statikfintechllc/GremlinGPT" class="project-link">View Source →</a>
                     </div>
                     
-                    <div class="project-card flex-shrink-0 w-80" style="scroll-snap-align: start;" data-project="gremlin-shadtail">
+                    <div class="project-card flex-shrink-0 w-80">
                         <div class="project-image">
                             <img src="docs/G.S.svg/assets/gremlin-shadtail-trader-card.svg" alt="Gremlin-ShadTail-Trader">
                         </div>
@@ -248,25 +286,6 @@
                         <a href="https://github.com/statikfintechllc/Mobile-Mirror" class="project-link">View Source →</a>
                     </div>
                 </div>
-                <button class="carousel-btn carousel-btn-right" id="projectsScrollRight"></button>
-            </div>
-            
-            <!-- Projects Scroll Indicators -->
-            <div class="carousel-indicators projects-indicators">
-                <div class="carousel-indicator active" data-slide="0"></div>
-                <div class="carousel-indicator" data-slide="1"></div>
-                <div class="carousel-indicator" data-slide="2"></div>
-                <div class="carousel-indicator" data-slide="3"></div>
-                <div class="carousel-indicator" data-slide="4"></div>
-                <div class="carousel-indicator" data-slide="5"></div>
-                <div class="carousel-indicator" data-slide="6"></div>
-                <div class="carousel-indicator" data-slide="7"></div>
-                <div class="carousel-indicator" data-slide="8"></div>
-                <div class="carousel-indicator" data-slide="9"></div>
-                <div class="carousel-indicator" data-slide="10"></div>
-                <div class="carousel-indicator" data-slide="11"></div>
-            </div>
-                </div>
             </div>
         </div>
     </section>
@@ -282,10 +301,9 @@
             <div class="research-content">
                 <!-- Zenodo Papers Carousel -->
                 <div id="zenodo" class="tab-content active">
-                    <div class="papers-carousel-container w-full overflow-hidden">
-                        <button class="carousel-btn carousel-btn-left absolute left-4 top-1/2 transform -translate-y-1/2 z-10" id="zenodoScrollLeft"></button>
-                        <div class="papers-carousel zenodo-carousel flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-16" style="scroll-snap-type: x mandatory;">
-                            <div class="paper-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                    <div class="papers-carousel-container">
+                        <div class="papers-carousel zenodo-carousel flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-16">
+                            <div class="paper-card flex-shrink-0 w-80">
                                 <div class="paper-image">
                                     <img src="docs/Zenodo.papers.svg/rise-of-recursive-autonomous-cognitive-ai-systems.svg" alt="Recursive Autonomous Cognitive Systems">
                                 </div>
@@ -293,7 +311,7 @@
                                 <p>Exploring the foundations of self-evolving AI architectures</p>
                                 <a href="https://doi.org/10.5281/zenodo.15717788" class="paper-link">Read Paper →</a>
                             </div>
-                            <div class="paper-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                            <div class="paper-card flex-shrink-0 w-80">
                                 <div class="paper-image">
                                     <img src="docs/Zenodo.papers.svg/economic-sovereignty-through-decentralized-ai.svg" alt="Economic Sovereignty Through Decentralized AI">
                                 </div>
@@ -301,7 +319,7 @@
                                 <p>Financial independence through autonomous systems</p>
                                 <a href="https://doi.org/10.5281/zenodo.15725639" class="paper-link">Read Paper →</a>
                             </div>
-                            <div class="paper-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                            <div class="paper-card flex-shrink-0 w-80">
                                 <div class="paper-image">
                                     <img src="docs/Zenodo.papers.svg/the-gremlingpt-architecture-localized-recursive-ai.svg" alt="GremlinGPT Architecture">
                                 </div>
@@ -310,21 +328,14 @@
                                 <a href="https://doi.org/10.5281/zenodo.15825120" class="paper-link">Read Paper →</a>
                             </div>
                         </div>
-                        <button class="carousel-btn carousel-btn-right" id="zenodoScrollRight"></button>
-                    </div>
-                    <div class="carousel-indicators zenodo-indicators">
-                        <div class="carousel-indicator active" data-slide="0"></div>
-                        <div class="carousel-indicator" data-slide="1"></div>
-                        <div class="carousel-indicator" data-slide="2"></div>
                     </div>
                 </div>
                 
                 <!-- Medium Articles Carousel -->
                 <div id="medium" class="tab-content">
-                    <div class="papers-carousel-container w-full overflow-hidden">
-                        <button class="carousel-btn carousel-btn-left absolute left-4 top-1/2 transform -translate-y-1/2 z-10" id="mediumScrollLeft"></button>
-                        <div class="papers-carousel medium-carousel flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-16" style="scroll-snap-type: x mandatory;">
-                            <div class="paper-card flex-shrink-0 w-80" style="scroll-snap-align: start;">
+                    <div class="papers-carousel-container">
+                        <div class="papers-carousel medium-carousel flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-16">
+                            <div class="paper-card flex-shrink-0 w-80">
                                 <div class="paper-image">
                                     <img src="docs/Medium.papers.svg/the-govseverance-doctrine.svg" alt="The GovSeverance Doctrine">
                                 </div>
@@ -485,29 +496,6 @@
                                 <a href="https://medium.com/@ascend.gremlin/while-dubai-built-control-i-built-an-autonomous-mind" class="paper-link">Read Article →</a>
                             </div>
                         </div>
-                        <button class="carousel-btn carousel-btn-right" id="mediumScrollRight"></button>
-                    </div>
-                    <div class="carousel-indicators medium-indicators">
-                        <div class="carousel-indicator active" data-slide="0"></div>
-                        <div class="carousel-indicator" data-slide="1"></div>
-                        <div class="carousel-indicator" data-slide="2"></div>
-                        <div class="carousel-indicator" data-slide="3"></div>
-                        <div class="carousel-indicator" data-slide="4"></div>
-                        <div class="carousel-indicator" data-slide="5"></div>
-                        <div class="carousel-indicator" data-slide="6"></div>
-                        <div class="carousel-indicator" data-slide="7"></div>
-                        <div class="carousel-indicator" data-slide="8"></div>
-                        <div class="carousel-indicator" data-slide="9"></div>
-                        <div class="carousel-indicator" data-slide="10"></div>
-                        <div class="carousel-indicator" data-slide="11"></div>
-                        <div class="carousel-indicator" data-slide="12"></div>
-                        <div class="carousel-indicator" data-slide="13"></div>
-                        <div class="carousel-indicator" data-slide="14"></div>
-                        <div class="carousel-indicator" data-slide="15"></div>
-                        <div class="carousel-indicator" data-slide="16"></div>
-                        <div class="carousel-indicator" data-slide="17"></div>
-                        <div class="carousel-indicator" data-slide="18"></div>
-                        <div class="carousel-indicator" data-slide="19"></div>
                     </div>
                 </div>
             </div>

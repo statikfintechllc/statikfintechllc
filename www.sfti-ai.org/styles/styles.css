@@ -545,32 +545,17 @@ section {
     background: var(--bg-dark);
 }
 
-section#institute {
-    background: transparent !important;
-    padding: 0 !important; /* Add top padding for proper spacing */
-    width: 100vw !important;
-    margin-left: 50% !important;
-    transform: translateX(-50%) !important;
-    overflow: visible !important;
-}
-
-#institute .hero-content {
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100vw !important;
-    display: block !important;
-}
-
 /* First section after hero needs special handling */
 .institute-section {
     background: 
-        radial-gradient(circle at 80% 50%, var(--secondary-color)20 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, var(--secondary-color)20 0%, transparent 50%),
         linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
     position: relative;
     z-index: 10;
-    margin-top: 0; /* Remove negative margin for proper spacing */
-    padding-top: 5rem; /* Reduce padding */
+    margin-top: 0;
+    padding: 3rem 0;
+    width: 100%;
+    overflow: hidden;
 }
 
 .section-title {
@@ -683,32 +668,55 @@ section#institute {
 }
 
 /* Institute Header */
-/* Institute Header Styling */
-.institute-header-wide {
+/* Institute Center Wrapper - FORCE CENTER */
+.institute-center-wrapper {
     width: 100%;
-    max-width: 800px;
-    height: auto;
-    margin: 2rem auto;
     display: block;
-}
-
-/* Technical Stack Section Styling */
-.technical-stack-section {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.technical-stack-card {
-    max-width: 600px;
-    width: 100%;
     text-align: center;
+    margin: 0;
+    padding: 1rem 0;
 }
 
-.technical-stack-card img {
+.institute-center-wrapper img {
+    display: inline-block !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+.technical-skills-img {
+    max-width: 600px !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+.institute-header-img {
+    max-width: 800px !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+/* Force the institute section to center everything */
+.institute-section {
+    background: 
+        radial-gradient(circle at 80% 50%, var(--secondary-color)20 0%, transparent 50%),
+        linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+    position: relative;
+    z-index: 10;
+    margin-top: 0;
+    padding: 3rem 0;
     width: 100%;
-    max-width: 500px;
-    height: auto;
+    overflow: hidden;
+    text-align: center !important;
+}
+
+/* Institute Carousel Full Width Container */
+.institute-carousel-full-width {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 2rem 0;
+    background: rgba(0, 0, 0, 0.05);
+    overflow: hidden;
 }
 
 .institute-header {
@@ -725,11 +733,8 @@ section#institute {
 /* Horizontal Carousel Container */
 .institute-carousel-container {
     position: relative;
-    margin: 2rem 0;
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    padding: 2rem 0;
+    width: 100%;
+    padding: 0 2rem;
 }
 
 .institute-carousel {
@@ -737,12 +742,10 @@ section#institute {
     gap: 2rem;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 1rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 1rem 0;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
-    scroll-snap-type: x proximity;
+    scroll-snap-type: x mandatory;
     width: 100%;
 }
 
@@ -750,56 +753,93 @@ section#institute {
     display: none; /* Chrome, Safari, Opera */
 }
 
-/* Carousel styles for Projects and Papers */
+/* NUCLEAR OPTION - HIDE ALL FUCKING SCROLLBARS */
+* {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* FORCE ALL CAROUSELS FULL WIDTH AND NO VERTICAL SCROLL */
+.institute-carousel-full-width,
 .projects-carousel-container,
 .papers-carousel-container {
-    position: relative;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    padding: 0;
-    overflow: hidden;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    overflow: hidden !important;
 }
 
+.institute-carousel,
 .projects-carousel,
-.papers-carousel {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding: 1rem 2rem;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-    cursor: grab;
-    width: 100%;
+.papers-carousel,
+.zenodo-carousel,
+.medium-carousel {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
 }
 
-.projects-carousel:active,
-.papers-carousel:active {
-    cursor: grabbing;
-}
-
+.institute-carousel::-webkit-scrollbar,
 .projects-carousel::-webkit-scrollbar,
-.papers-carousel::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+.papers-carousel::-webkit-scrollbar,
+.zenodo-carousel::-webkit-scrollbar,
+.medium-carousel::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
 }
-
 /* Project and Paper card consistency */
 .project-card,
 .paper-card {
     min-width: 300px; /* Consistent width across all carousels */
     flex-shrink: 0;
-}
-/* Hide carousel navigation buttons */
-.carousel-btn {
-    display: none;
+    height: auto;
 }
 
-/* Hide carousel indicators */
+/* Center Zenodo carousel content (only 3 items) */
+.zenodo-carousel {
+    justify-content: center;
+    gap: 2rem;
+}
+
+/* Center institute carousel on ultrawide when no scroll needed */
+.institute-carousel {
+    justify-content: center;
+}
+
+/* Ensure all carousel cards have consistent height */
+.institute-card,
+.project-card,
+.paper-card {
+    overflow: hidden;
+}
+
+/* Hide carousel navigation buttons and indicators */
+.carousel-btn {
+    display: none !important;
+}
+
 .carousel-indicators {
-    display: none;
+    display: none !important;
+}
+
+/* Additional scrollbar hiding for all carousels */
+.zenodo-carousel,
+.medium-carousel {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    overflow-y: hidden !important;
+}
+
+.zenodo-carousel::-webkit-scrollbar,
+.medium-carousel::-webkit-scrollbar {
+    display: none !important;
 }
 
 .institute-card {
