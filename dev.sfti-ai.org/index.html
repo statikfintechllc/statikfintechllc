@@ -1,5 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<htm      <!-- Navbar Container -->
+    <div id="navbar-container"></div>
+
+    <!-- Ticker Container - Component Driven -->
+    <div id="ticker-container"></div>cker Container - WORKING VERSION -->
+    <div style="position: fixed; top: 48px; left: 0; width: 100%; z-index: 60; background: transparent; overflow: visible; margin: 0; padding: 0;">
+        <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" 
+             alt="Repo Ticker Stats" 
+             style="width: 100%; object-fit: none; display: block; margin: 0; padding: 0;">
+    </div>="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +22,17 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dev.sfti-ai.org">
 </head>
-<body class="pt-12">
+
+<body class="pt-12" style="padding-top: 48px !important;">
     <!-- Navbar Container -->
     <div id="navbar-container"></div>
+
+    <!-- Ticker Container - WORKING VERSION -->
+    <div style="position: fixed; top: 48px; left: 0; width: 100%; height: 36px; z-index: 45; background: transparent; overflow: hidden; margin: 0; padding: 0;">
+        <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" 
+             alt="Repo Ticker Stats" 
+             style="width: 100%; height: 36px; object-fit: cover; display: block; margin: 0; padding: 0;">
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -290,5 +307,8 @@
             }
         });
     </script>
+    <!-- SFTi Component System -->
+    <script src="../src/components/sfti-component-system.js"></script>
+    <script src="../src/components/global.c/ticker.js"></script>
 </body>
 </html>

@@ -4,7 +4,8 @@
 /styles
 /script.js
 .well-known/
-.bash_history 
+.bash_history
+.playwright-mcp/ 
 .bash_logout
 .bash_profile 
 .bashrc 

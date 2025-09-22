@@ -108,9 +108,12 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.sfti-ai.org">
 </head>
-<body class="-mt-10">
+<body class="pt-16" style="padding-top: 48px !important;">
     <!-- Navbar Container -->
     <div id="navbar-container"></div>
+
+    <!-- Ticker Container - Component Driven -->
+    <div id="ticker-container"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -630,6 +633,10 @@
     </script>
         <script>\n        function toggleRotation(img) {\n            if (window.innerWidth <= 768) {\n                img.classList.toggle('institute-header-rotated');\n                if (img.classList.contains('institute-header-rotated')) {\n                    document.body.style.overflow = 'hidden';\n                    img.onclick = function() { \n                        img.classList.remove('institute-header-rotated');\n                        document.body.style.overflow = 'auto';\n                        img.onclick = function() { toggleRotation(img); };\n                    };\n                } else {\n                    document.body.style.overflow = 'auto';\n                }\n            }\n        }\n    </script><script src=\"dist/mobile-navigation.js?v=202509171630\"></script>
     <script src="script.js?v=202509171630"></script>
+    
+    <!-- SFTi Component System -->
+    <script src="../src/components/sfti-component-system.js"></script>
+    <script src="../src/components/global.c/ticker.js"></script>
     
     <!-- PWA Service Worker Registration -->
     <script>
