@@ -1,14 +1,5 @@
 <!DOCTYPE html>
-<html l      <!-- Navbar Container -->
-    <div id="navbar-container"></div>
-
-    <!-- Ticker Container - Component Driven -->
-    <div id="ticker-container"></div>cker Container - WORKING VERSION -->
-    <div style="position: fixed; top: 48px; left: 0; width: 100%; z-index: 60; background: transparent; overflow: visible; margin: 0; padding: 0;">
-        <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" 
-             alt="Repo Ticker Stats" 
-             style="width: 100%; object-fit: none; display: block; margin: 0; padding: 0;">
-    </div>n">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,12 +21,8 @@
     <!-- Navbar Container -->
     <div id="navbar-container"></div>
 
-    <!-- Ticker Container - WORKING VERSION -->
-    <div style="position: fixed; top: 48px; left: 0; width: 100%; height: 36px; z-index: 45; background: transparent; overflow: hidden; margin: 0; padding: 0;">
-        <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" 
-             alt="Repo Ticker Stats" 
-             style="width: 100%; height: 36px; object-fit: cover; display: block; margin: 0; padding: 0;">
-    </div>
+    <!-- Ticker Container - Component Driven -->
+    <div id="ticker-container"></div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -372,7 +359,30 @@
         });
     </script>
     <!-- SFTi Component System -->
-    <script src="../src/components/sfti-component-system.js"></script>
-    <script src="../src/components/global.c/ticker.js"></script>
+    <script>
+        // Simplified ticker implementation for immediate functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('ticker-container');
+            if (container) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'sfti-ticker-wrapper';
+                
+                const image = document.createElement('img');
+                image.src = 'https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif';
+                image.alt = 'Repo Ticker Stats';
+                image.className = 'sfti-ticker-image';
+                
+                image.onerror = function() {
+                    console.warn('Ticker: Failed to load ticker image');
+                    // Show a fallback message instead of hiding the wrapper
+                    wrapper.innerHTML = '<div class="text-sm text-gray-500 italic p-2">Ticker unavailable</div>';
+                };
+                
+                wrapper.appendChild(image);
+                container.appendChild(wrapper);
+                console.log('Ticker initialized successfully');
+            }
+        });
+    </script>
 </body>
 </html>

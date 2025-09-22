@@ -37,22 +37,45 @@ body .sfti-ticker-wrapper {
 /* Responsive ticker adjustments */
 @media (max-width: 768px) {
     body .sfti-ticker-wrapper {
-        height: 25px !important; /* Smaller on mobile to reduce visual weight */
+        height: 35px !important; /* Increased from 25px for better visibility */
     }
     
     .sfti-ticker-image {
-        max-height: 25px !important;
+        max-height: 35px !important;
+        object-fit: cover; /* Use cover instead of contain for better mobile visibility */
+    }
+}
+
+/* Tablet and medium screen adjustments */
+@media (min-width: 769px) and (max-width: 1199px) {
+    body .sfti-ticker-wrapper {
+        height: 38px !important; /* Intermediate size for tablets */
+    }
+    
+    .sfti-ticker-image {
+        max-height: 38px !important;
+    }
+}
+
+/* Large screen adjustments */
+@media (min-width: 1200px) and (max-width: 1919px) {
+    body .sfti-ticker-wrapper {
+        height: 40px !important; /* Standard size for large screens */
+    }
+    
+    .sfti-ticker-image {
+        max-height: 40px !important;
     }
 }
 
 /* Ultra-wide screen adjustments */
 @media (min-width: 1920px) {
     body .sfti-ticker-wrapper {
-        height: 50px !important; /* Larger on ultra-wide for better visibility */
+        height: 45px !important; /* Reduced from 50px for better proportion */
     }
     
     .sfti-ticker-image {
-        max-height: 50px !important;
+        max-height: 45px !important;
     }
 }
 
