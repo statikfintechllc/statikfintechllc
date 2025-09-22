@@ -19,6 +19,7 @@ if (typeof window !== 'undefined' && !window.SFTiNavbar) {
 
 class DevNavbar extends SFTiNavbar {
   constructor(config = {}) {
+    console.log('[DevNavbar] constructor start');
     super({
       containerId: 'navbar-container',
       logoText: 'SFTi Dev',
@@ -34,6 +35,26 @@ class DevNavbar extends SFTiNavbar {
       ],
       ...config
     });
+    console.log('[DevNavbar] super initialized');
+    // Fallback: if initial render failed to populate container, retry shortly
+    queueMicrotask(() => {
+      const container = document.getElementById(this.config.containerId);
+      if (container && container.children.length === 0) {
+        console.warn('[DevNavbar] Empty container after initial render, retrying...');
+        this.forceRender();
+      }
+    });
+
+    // Final safety: re-run after DOM is fully loaded (in case script executed in <head>)
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById(this.config.containerId);
+        if (container && container.children.length === 0) {
+          console.warn('[DevNavbar] DOMContentLoaded fallback render');
+          this.forceRender();
+        }
+      });
+    }
   }
 
   // Active link detection (hash + pathname support)
@@ -45,7 +66,7 @@ class DevNavbar extends SFTiNavbar {
 
   getTemplate() {
     return `
-      <nav class="sfti-dev-navbar fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur supports-[backdrop-filter]:backdrop-blur border-b border-blue-500/20 h-12 font-sans">
+      <nav class="navbar sfti-dev-navbar fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur supports-[backdrop-filter]:backdrop-blur border-b border-blue-500/20 h-12 font-sans">
         <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
           <!-- Logo + Status (desktop) -->
           <div class="flex items-center space-x-6 h-full">
@@ -131,6 +152,7 @@ class DevNavbar extends SFTiNavbar {
 
   // Override parent attachEventListeners to add our logic while using base when possible
   attachEventListeners() {
+    console.log('[DevNavbar] attachEventListeners');
     const toggle = document.getElementById('mobile-menu-toggle');
     const closeBtn = document.getElementById('mobile-menu-close');
     const menu = document.getElementById('mobile-menu');
@@ -171,6 +193,23 @@ class DevNavbar extends SFTiNavbar {
         }
       }
     });
+    const container = document.getElementById(this.config.containerId);
+    if (container && container.children.length === 0) {
+      console.warn('[DevNavbar] highlightActive detected empty container, forcing re-render');
+      this.forceRender();
+    }
+  }
+
+  forceRender() {
+    try {
+      const container = document.getElementById(this.config.containerId);
+      if (!container) return;
+      container.innerHTML = this.getTemplate();
+      this.attachEventListeners();
+      console.log('[DevNavbar] forceRender complete');
+    } catch (e) {
+      console.error('[DevNavbar] forceRender error', e);
+    }
   }
 }
 
