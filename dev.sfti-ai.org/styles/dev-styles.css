@@ -5,77 +5,45 @@
     box-sizing: border-box;
 }
 
-/* Ticker Styles - Responsive full width positioning */
+/* Ticker Styles - MOBILE ONLY: Hidden on desktop, integrated with navbar on mobile */
 body .sfti-ticker-wrapper {
     position: fixed !important;
-    top: 45px !important; /* Match navbar height */
+    top: 48px !important; /* Match navbar height (h-12 = 48px) */
     left: 0 !important;
     width: 100vw !important;
-    height: 40px !important; /* Increased base height for better visibility */
+    height: 35px !important;
     z-index: 60 !important;
     background: transparent !important;
     overflow: hidden !important;
-    display: flex !important;
+    display: none !important; /* Hidden by default */
     align-items: flex-start !important;
     justify-content: center !important;
     margin: 0 !important;
     padding: 0 !important;
-    transform: translateY(-1px) !important;
 }
 
 .sfti-ticker-image {
     width: 100% !important;
     height: auto !important;
-    max-height: 40px !important; /* Constrain max height */
-    object-fit: contain !important; /* Changed from none to contain for better scaling */
+    max-height: 35px !important;
+    object-fit: cover !important;
     object-position: center top !important;
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
 }
 
-/* Responsive ticker adjustments */
-@media (max-width: 768px) {
+/* Show ticker ONLY on mobile screens (iPhone size and smaller) */
+@media (max-width: 500px), (max-height: 900px) {
     body .sfti-ticker-wrapper {
-        height: 35px !important; /* Increased from 25px for better visibility */
-    }
-    
-    .sfti-ticker-image {
-        max-height: 35px !important;
-        object-fit: cover !important; /* Use cover instead of contain for better mobile visibility */
+        display: flex !important;
     }
 }
 
-/* Tablet and medium screen adjustments */
-@media (min-width: 769px) and (max-width: 1199px) {
+/* Ensure ticker is hidden on larger screens */
+@media (min-width: 501px) and (min-height: 901px) {
     body .sfti-ticker-wrapper {
-        height: 38px !important; /* Intermediate size for tablets */
-    }
-    
-    .sfti-ticker-image {
-        max-height: 38px !important;
-    }
-}
-
-/* Large screen adjustments */
-@media (min-width: 1200px) and (max-width: 1919px) {
-    body .sfti-ticker-wrapper {
-        height: 40px !important; /* Standard size for large screens */
-    }
-    
-    .sfti-ticker-image {
-        max-height: 40px !important;
-    }
-}
-
-/* Ultra-wide screen adjustments */
-@media (min-width: 1920px) {
-    body .sfti-ticker-wrapper {
-        height: 45px !important; /* Reduced from 50px for better proportion */
-    }
-    
-    .sfti-ticker-image {
-        max-height: 45px !important;
+        display: none !important;
     }
 }
 

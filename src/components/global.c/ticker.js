@@ -1,13 +1,13 @@
 /**
- * SFTi Global Ticker Component
- * ============================
+ * SFTi Global Ticker Component - MOBILE ONLY
+ * ==========================================
  * 
  * Universal ticker component that displays repository statistics.
- * Used across all domains with full-width positioning - NO HEIGHT LIMITS.
+ * Used across all domains with mobile-only display.
  * 
  * FEATURES:
- * - Full viewport width display
- * - NO height constraints - displays at natural size
+ * - Mobile-only display (hidden on desktop)
+ * - Full viewport width display on mobile
  * - Proper positioning under navbar
  * - Cross-domain compatibility
  * 

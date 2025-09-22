@@ -13,17 +13,13 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://server.sfti-ai.org">
 </head>
-
 <body class="pt-12" style="padding-top: 48px !important;">
     <!-- Background Animation -->
     <div class="matrix-bg" id="matrix"></div>
-    
     <!-- Navbar Container -->
     <div id="navbar-container"></div>
-
     <!-- Ticker Container - Component Driven -->
     <div id="ticker-container"></div>
-
     <!-- Main Content -->
     <main class="main-content">
         <!-- Login Section -->
@@ -34,7 +30,6 @@
                     <h1>Secure Access Required</h1>
                     <p>This server contains restricted resources and requires authentication</p>
                 </div>
-                
                 <div class="login-form-container">
                     <form id="login-form" class="login-form">
                         <div class="form-group">
@@ -42,20 +37,17 @@
                             <input type="text" id="username" name="username" required autocomplete="username">
                             <span class="input-border"></span>
                         </div>
-                        
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" id="password" name="password" required autocomplete="current-password">
                             <span class="input-border"></span>
                             <button type="button" class="password-toggle" onclick="togglePassword()">👁️</button>
                         </div>
-                        
                         <div class="form-group">
                             <label for="mfa-code">2FA Code (Optional)</label>
                             <input type="text" id="mfa-code" name="mfa-code" placeholder="000000" maxlength="6" pattern="[0-9]{6}">
                             <span class="input-border"></span>
                         </div>
-                        
                         <div class="form-options">
                             <label class="checkbox-container">
                                 <input type="checkbox" id="remember-me">
@@ -63,7 +55,6 @@
                                 Remember me for 30 days
                             </label>
                         </div>
-                        
                         <button type="submit" class="login-btn">
                             <span class="btn-text">Access Server</span>
                             <span class="btn-loader" style="display: none;">
@@ -71,14 +62,12 @@
                             </span>
                         </button>
                     </form>
-                    
                     <div class="login-footer">
                         <a href="#forgot-password" class="forgot-link">Forgot password?</a>
                         <span class="separator">|</span>
                         <a href="#request-access" class="request-link">Request access</a>
                     </div>
                 </div>
-                
                 <div class="security-notice">
                     <div class="notice-icon">⚠️</div>
                     <div class="notice-content">
@@ -88,7 +77,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Dashboard Section (Hidden by default) -->
         <section id="dashboard-section" class="dashboard-section" style="display: none;">
             <div class="dashboard-container">
@@ -99,7 +87,6 @@
                         <button class="logout-btn" onclick="logout()">Logout</button>
                     </div>
                 </div>
-                
                 <div class="dashboard-grid">
                     <!-- System Status -->
                     <div class="dashboard-card">
@@ -126,7 +113,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <!-- Active Services -->
                     <div class="dashboard-card">
                         <div class="card-header">
@@ -157,8 +143,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div>    
                     <!-- Security Logs -->
                     <div class="dashboard-card">
                         <div class="card-header">
@@ -189,8 +174,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div>                 
                     <!-- Quick Actions -->
                     <div class="dashboard-card">
                         <div class="card-header">
@@ -217,7 +201,6 @@
             </div>
         </section>
     </main>
-
     <!-- Access Request Modal -->
     <div id="access-modal" class="modal">
         <div class="modal-content">
@@ -257,7 +240,6 @@
             </form>
         </div>
     </div>
-
     <!-- Footer Container -->
     <footer class="bg-black border-t border-red-500/30 mt-auto py-6">
         <div class="max-w-7xl mx-auto px-4 text-center">
@@ -268,11 +250,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="dist/mobile-navigation.js"></script>
-    <script src="dist/mobile-navigation.js"></script>
-    <script src="server-script.js">    </script>
-
     <!-- SFTi Component System - Simplified -->
     <script>
         // Simple navbar implementation until components are fixed

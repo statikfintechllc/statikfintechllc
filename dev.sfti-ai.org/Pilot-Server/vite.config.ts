@@ -25,9 +25,9 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    // DO NOT REMOVE - Spark plugins disabled for Pilot-Server
-    // createIconImportProxy() as PluginOption,
-    // sparkPlugin() as PluginOption,
+    // DO NOT REMOVE
+    createIconImportProxy() as PluginOption,
+    sparkPlugin() as PluginOption,
   ],
   resolve: {
     alias: {

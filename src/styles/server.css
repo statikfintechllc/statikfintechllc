@@ -46,6 +46,6 @@
 }
 
 .mobile-nav-link:hover {
-  color: var(--primary-color);
+  color: var(--secondary-color);
   background: rgba(255, 0, 128, 0.05);
 }
