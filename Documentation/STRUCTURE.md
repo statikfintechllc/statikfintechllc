@@ -553,3 +553,66 @@ SFTi-Website/
 
 110 directories, 426 files
 ```
+
+---
+
+**SFTi *Website & PWA* System – Architecture Overview**
+
+This diagram illustrates the main architecture for the [StatikFinTech, LLC Website](https://sfti-ai.org), its built in PWA hub, secure portal, and PostgreSQL integration on our server.
+
+```mermaid
+graph TD
+  %% User Domains
+  A1([User Browser @ www.sfti-ai.org]):::domain -->|HTTPS: Web/App| B1[Web Server]
+  A2([User Browser @ dev.sfti-ai.org - PWA Hub]):::domain -->|HTTPS: Web/App| B1
+  A3([User Browser @ server.sfti-ai.org - Portal]):::domain -->|HTTPS: Web/App| B1
+
+  %% Web Server and Routing
+  B1 -->|Static Content + API Proxy| C1[Frontend Build - React + Vite + Tailwind]
+  C1 -->|API Calls - REST/WebSocket| D1[Backend Service - Node/Express]
+  D1 -->|ORM/SQL| E1[(PostgreSQL/Database on Server)]
+
+  %% PWAs
+  C1 -->|PWA Manifest + Service Worker| F1[PWA Runtime]
+  F1 -->|Push Notifications<br/>Offline Cache| A2
+
+  %% PWA Apps (Examples from repo)
+  subgraph Dev Hub PWAs
+    G1[IB-G.Scanner - Trading Scanner]
+    G2[Pilot-Server - AI Server Management]
+  end
+  F1 --> G1
+  F1 --> G2
+
+  %% Authentication & Secure Portal
+  A3 -->|Login/Auth| H1[Auth Logic - server.sfti-ai.org]
+  H1 --> D1
+
+  %% Data Flow
+  G1 -->|API / WS| D1
+  G2 -->|API / WS| D1
+
+  %% Legend
+  classDef domain fill:#d1e9ff,stroke:#333,stroke-width:2px,color:#111;
+```
+
+## Key Components
+
+- **[www.sfti-ai.org](https://www.sfti-ai.org)**: Corporate/marketing website, React-based, static and dynamic content.
+- **[dev.sfti-ai.org](https://dev.sfti-ai.org)**: PWA hub for launching/managing apps like IB-G.Scanner & Pilot-Server.
+- **[server.sfti-ai.org](https://server.sfti-ai.org)**: Secure portal for authentication and account management.
+- **PWAs**: Independent React/TypeScript apps built with Vite, using shadcn/ui & Tailwind, deployed under the dev or server domains.
+- **Backend Service**: (Node/Express) Handles API, WebSockets, authentication, and business logic.
+- **PostgreSQL Database**: Central data store, hosted on your server.
+
+## Tech Stack Overview
+
+- **Frontend**: React 19, shadcn/ui, Tailwind CSS, Service Workers for PWA features.
+- **Backend**: Node.js, Express, WebSocket, ORM (e.g., Prisma or Sequelize), API endpoints.
+- **Database**: PostgreSQL (on server).
+- **Build Tool**: Vite 6+.
+- **Deployment**: Static files to subdomains, API/backend and DB reside on the server.
+
+> [!IMPORTANT]
+>
+> Updates will be made to this architecture diagram as the system evolves and/or when domains/PWAs/services are added or changed.
