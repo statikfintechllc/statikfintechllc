@@ -5,13 +5,13 @@
     box-sizing: border-box;
 }
 
-/* Ticker Styles - Full width positioning */
+/* Ticker Styles - Responsive full width positioning */
 body .sfti-ticker-wrapper {
     position: fixed !important;
-    top: 48px !important;
+    top: 45px !important; /* Match navbar height */
     left: 0 !important;
     width: 100vw !important;
-    height: 31px !important;
+    height: 40px !important; /* Increased base height for better visibility */
     z-index: 60 !important;
     background: transparent !important;
     overflow: hidden !important;
@@ -26,11 +26,34 @@ body .sfti-ticker-wrapper {
 .sfti-ticker-image {
     width: 100% !important;
     height: auto !important;
-    object-fit: none !important;
+    max-height: 40px !important; /* Constrain max height */
+    object-fit: contain !important; /* Changed from none to contain for better scaling */
     object-position: center top !important;
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* Responsive ticker adjustments */
+@media (max-width: 768px) {
+    body .sfti-ticker-wrapper {
+        height: 25px !important; /* Smaller on mobile to reduce visual weight */
+    }
+    
+    .sfti-ticker-image {
+        max-height: 25px !important;
+    }
+}
+
+/* Ultra-wide screen adjustments */
+@media (min-width: 1920px) {
+    body .sfti-ticker-wrapper {
+        height: 50px !important; /* Larger on ultra-wide for better visibility */
+    }
+    
+    .sfti-ticker-image {
+        max-height: 50px !important;
+    }
 }
 
 :root {
