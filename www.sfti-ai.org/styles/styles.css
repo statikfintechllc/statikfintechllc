@@ -5,13 +5,13 @@
     box-sizing: border-box;
 }
 
-/* Ticker Styles - Full width positioning */
+/* Ticker Styles - Responsive full width positioning */
 body .sfti-ticker-wrapper {
     position: fixed !important;
-    top: 48px !important;
+    top: 45px !important; /* Match navbar height */
     left: 0 !important;
     width: 100vw !important;
-    height: 31px !important;
+    height: 40px !important; /* Increased base height for better visibility */
     z-index: 60 !important;
     background: transparent !important;
     overflow: hidden !important;
@@ -26,11 +26,34 @@ body .sfti-ticker-wrapper {
 .sfti-ticker-image {
     width: 100% !important;
     height: auto !important;
-    object-fit: none !important;
+    max-height: 40px !important; /* Constrain max height */
+    object-fit: contain !important; /* Changed from none to contain for better scaling */
     object-position: center top !important;
     display: block !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/* Responsive ticker adjustments */
+@media (max-width: 768px) {
+    body .sfti-ticker-wrapper {
+        height: 25px !important; /* Smaller on mobile to reduce visual weight */
+    }
+    
+    .sfti-ticker-image {
+        max-height: 25px !important;
+    }
+}
+
+/* Ultra-wide screen adjustments */
+@media (min-width: 1920px) {
+    body .sfti-ticker-wrapper {
+        height: 50px !important; /* Larger on ultra-wide for better visibility */
+    }
+    
+    .sfti-ticker-image {
+        max-height: 50px !important;
+    }
 }
 
 /* Override browser link defaults globally */
@@ -98,13 +121,13 @@ html {
     
     .hero {
         min-height: calc(100vh - 60px);
-        padding: 3rem 0 2rem 0; /* Reduced top padding from 6rem */
+        padding: 2rem 0 2rem 0; /* Reduced top padding to account for smaller mobile ticker */
     }
     
     /* Chrome iOS specific hero padding adjustment */
     @supports (-webkit-touch-callout: none) {
         .hero {
-            padding: 5rem 0 2rem 0; /* Reduced from 10rem */
+            padding: 3rem 0 2rem 0; /* Reduced from 5rem to minimize gap */
         }
     }
     
@@ -376,7 +399,7 @@ nav.navbar {
         radial-gradient(circle at 20% 50%, var(--primary-color)20 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, var(--secondary-color)20 0%, transparent 50%),
         linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
-    padding-top: 60px; /* Reduced from 80px */
+    padding-top: 85px; /* Adjusted for ticker height: 45px navbar + 40px ticker */
     transition: opacity 0.3s ease-out, filter 0.3s ease-out;
 }
 
