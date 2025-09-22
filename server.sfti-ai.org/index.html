@@ -374,7 +374,8 @@
                 
                 image.onerror = function() {
                     console.warn('Ticker: Failed to load ticker image');
-                    wrapper.style.display = 'none';
+                    // Show a fallback message instead of hiding the wrapper
+                    wrapper.innerHTML = '<div class="text-sm text-gray-500 italic p-2">Ticker unavailable</div>';
                 };
                 
                 wrapper.appendChild(image);
