@@ -312,8 +312,102 @@ graph TD
   G1 -->|API / WS| D1
   G2 -->|API / WS| D1
 
-  %% Legend
+  %% GitHub Actions Automation Layer
+  subgraph "🔄 GitHub Actions Automation"
+    WF1[update-profile-streak.yml<br/>⏰ */23 hours]
+    WF2[update-crimson-flow.yml<br/>⏰ */12 hours]
+    WF3[update-profile-trophies.yml<br/>⏰ */12 hours]
+    WF4[update-profile-views.yml<br/>⏰ */6 hours]
+    WF5[update-repo-slide.yml<br/>⏰ */12 hours]
+    WF6[update-github-profile.yml<br/>⏰ */8 hours]
+    WF7[update-gremlingpt-card.yml<br/>Project Cards]
+    WF8[update-build-dates.yml<br/>⏰ */24 hours]
+  end
+
+  %% GitHub API Data Source
+  GHAPI[GitHub GraphQL API<br/>🔑 PAT_GITHUB]:::api
+  GHAPI --> WF1
+  GHAPI --> WF2
+  GHAPI --> WF3
+  GHAPI --> WF4
+  GHAPI --> WF5
+  GHAPI --> WF6
+  GHAPI --> WF7
+
+  %% SVG Generation & Assets
+  subgraph "🎨 Generated Assets"
+    SVG1[docs/s.svg/streak.svg<br/>🔥 Contribution Streak]
+    SVG2[docs/c.svg/crimson-flow.svg<br/>📈 Activity Graph]
+    SVG3[docs/t.svg/trophies.svg<br/>🏆 Achievements]
+    SVG4[docs/v.svg/pv-traffic.svg<br/>👁️ Profile Views]
+    SVG5[docs/r.svg/repo-slide.svg<br/>🎠 Repository Carousel]
+    SVG6[docs/g.svg/github-profile.svg<br/>👤 Complete Profile]
+    SVG7[docs/G.G.svg/gremlingpt-card.svg<br/>🤖 Project Cards]
+    SVG8[docs/Medium.papers.svg/<br/>📝 Publication Cards]
+    BADGES[badges/*.svg<br/>🎯 Static Badges]
+  end
+
+  %% Workflow to SVG Generation
+  WF1 --> SVG1
+  WF2 --> SVG2
+  WF3 --> SVG3
+  WF4 --> SVG4
+  WF5 --> SVG5
+  WF6 --> SVG6
+  WF7 --> SVG7
+  WF8 --> SVG8
+
+  %% Content Management & Integration
+  subgraph "📋 Content Integration"
+    README[README.md<br/>🌟 Main Profile Display]
+    PORTFOLIO[Portfolio Pages<br/>🎨 Project Showcases]
+    METRICS[Live Metrics Dashboard<br/>📊 Real-time Stats]
+  end
+
+  %% SVG Assets Feed Into Website Content
+  SVG1 --> README
+  SVG2 --> README
+  SVG3 --> README
+  SVG4 --> README
+  SVG5 --> README
+  SVG6 --> README
+  SVG7 --> PORTFOLIO
+  SVG8 --> PORTFOLIO
+  BADGES --> README
+
+  %% Content Integration with Website Architecture
+  README -->|Git Repository Content| C1
+  PORTFOLIO -->|Dynamic Card Display| C1
+  METRICS -->|Real-time Updates| D1
+
+  %% Website Display Integration
+  C1 -->|Embedded SVGs & Cards| A1
+  C1 -->|Portfolio Showcase| A2
+  D1 -->|Live Statistics| A3
+
+  %% Real-time Data Flow for Live Metrics
+  GHAPI -->|Live API Calls| D1
+  D1 -->|WebSocket Updates| METRICS
+
+  %% Automated Update Cycle
+  SVG1 -.->|Auto-Update Every 23h| C1
+  SVG2 -.->|Auto-Update Every 12h| C1
+  SVG3 -.->|Auto-Update Every 12h| C1
+  SVG4 -.->|Auto-Update Every 6h| C1
+  SVG5 -.->|Auto-Update Every 12h| C1
+  SVG6 -.->|Auto-Update Every 8h| C1
+
+  %% Legend & Styling
   classDef domain fill:#d1e9ff,stroke:#333,stroke-width:2px,color:#111;
+  classDef automation fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+  classDef assets fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px;
+  classDef api fill:#fff3e0,stroke:#e65100,stroke-width:2px;
+  classDef content fill:#f3e5f5,stroke:#4a148c,stroke-width:2px;
+
+  class WF1,WF2,WF3,WF4,WF5,WF6,WF7,WF8 automation
+  class SVG1,SVG2,SVG3,SVG4,SVG5,SVG6,SVG7,SVG8,BADGES assets
+  class GHAPI api
+  class README,PORTFOLIO,METRICS content
 ```
 
 ## 🔧 Key Technical Components
