@@ -1,341 +1,264 @@
 # Copilot Instructions for statikfintechllc Repository
 
+**ALWAYS follow these instructions first. Only fallback to additional search and context gathering if the information here is incomplete or found to be in error.**
+
 ## Repository Overview
 
-This is the main GitHub profile repository for **statikfintechllc** (Statik DK Smoke | SFTi | Sovereign Systems). It serves as a dynamic, automated profile page with custom badges, animated SVG statistics, and featured work showcases.
+This is the main GitHub profile repository for **statikfintechllc** (Statik DK Smoke | SFTi | Sovereign Systems). It serves as a dynamic, automated profile page with custom badges, animated SVG statistics, featured work showcases, and hosts two PWA applications for development and server management.
 
-## Repository Structure
+## Working Effectively
 
-```txt
-.
-├── README.md
-├── badges
-│   ├── G.H.badge.svg
-│   ├── G.I.badge.svg
-│   ├── L.W.badge.svg
-│   ├── M.P.badge.svg
-│   ├── R.S.badge.svg
-│   ├── README.md
-│   ├── Z.P.badge.svg
-│   ├── ai_architect.svg
-│   ├── full_stack_dev.svg
-│   ├── g.h.svg
-│   ├── prompt_blacksmith.svg
-│   └── statik.title.svg
-├── builder.script
-│   ├── README.md
-│   └── builder.script.mjs
-└── docs
-    ├── A.D.svg
-    │   ├── README.md
-    │   ├── assets
-    │   │   └── ascenddocs-of-govseverance-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-ascenddocs-of-govseverance.mjs
-    ├── A.I.svg
-    │   ├── README.md
-    │   ├── assets
-    │   │   └── ascend-institute-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-ascend-institute.mjs
-    ├── A.N.svg
-    │   ├── README.md
-    │   ├── assets
-    │   │   └── ascendnet-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-ascendnet.mjs
-    ├── D.B.svg
-    │   ├── README.md
-    │   ├── assets
-    │   │   └── dragon-boot-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-dragon-boot.mjs
-    ├── G.C.svg
-    │   ├── README.md
-    │   ├── assets
-    │   │   └── godcore-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-godcore.mjs
-    ├── G.G.svg
-    │   ├── README.md
-    │   ├── assets
-    │   │   └── gremlingpt-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-gremlingpt.mjs
-    ├── G.M.svg
-    │   ├── README.md
-    │   ├── assets
-    │   │   └── gremlin-mcp-scrap-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-gremlin-mcp-scrap.mjs
-    ├── G.S.svg
-    │   ├── assets
-    │   │   └── gremlin-shadtail-trader-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-gremlin-shadtail-trader.mjs
-    ├── M.M.svg
-    │   ├── assets
-    │   │   └── mobile-mirror-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-mobile-mirror.mjs
-    ├── Medium.papers.svg
-    │   ├── README.md
-    │   ├── breaking-the-loop.svg
-    │   ├── building-an-autonomous-aidriven-ide-pipeline.svg
-    │   ├── burj-khalifa-and-the-resonant-lie.svg
-    │   ├── capital-capture.svg
-    │   ├── designing-gremlingpt.svg
-    │   ├── gremlingpts-structural-extraction.svg
-    │   ├── its-not-the-ai-but-the-system.svg
-    │   ├── open-isnt-open.svg
-    │   ├── selfforking-ai-and-the-mechanic-from-kansas.svg
-    │   ├── the-disappearance-of-the-openai-mcp-repo.svg
-    │   ├── the-govseverance-doctrine.svg
-    │   ├── the-lessons-i-am-learning.svg
-    │   ├── the-pivot-that-broke-productmarket-fit.svg
-    │   ├── the-wealth-power-imbalance-and-economic-servitude.svg
-    │   └── while-dubai-built-control-i-built-an-autonomous-mind.svg
-    ├── README.md
-    ├── S.S.svg
-    │   ├── assets
-    │   │   └── statik-server-card.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-statik-server.mjs
-    ├── Zenodo.papers.svg
-    │   ├── README.md
-    │   ├── economic-sovereignty-through-decentralized-ai.svg
-    │   ├── rise-of-recursive-autonomous-cognitive-ai-systems.svg
-    │   └── the-gremlingpt-architecture-localized-recursive-ai.svg
-    ├── c.svg
-    │   ├── assets
-    │   │   └── crimson-flow.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-crimson-flow.mjs
-    ├── g.svg
-    │   ├── assets
-    │   │   └── github-profile.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-github-profile.mjs
-    ├── i.svg
-    │   ├── README.md
-    │   └── assets
-    │       └── institute-header.svg
-    ├── r.svg
-    │   ├── assets
-    │   │   └── repo-slide.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── generate-repo-slide.mjs
-    ├── s.svg
-    │   ├── assets
-    │   │   └── streak.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── build-streak.mjs
-    ├── sdks.svg
-    │   ├── README.md
-    │   ├── assets
-    │   │   └── statik.title.svg
-    │   └── scripts
-    │       └── generate-sdks-card.mjs
-    ├── t.svg
-    │   ├── assets
-    │   │   └── trophies.svg
-    │   ├── package-lock.json
-    │   ├── package.json
-    │   └── scripts
-    │       └── build-trophies.mjs
-    └── v.svg
-        ├── assets
-        │   └── pv-traffic.svg
-        ├── package-lock.json
-        ├── package.json
-        └── scripts
-            └── build-pv.mjs
+### Bootstrap the Repository
+Run these commands in this exact order to set up the complete development environment:
 
-58 directories, 112 files
-.github
-├── FUNDING.yml
-├── copilot-instructions.md
-└── workflows
-    ├── update-ascend-institute-card.yml
-    ├── update-ascenddocs-of-govseverance-card.yml
-    ├── update-ascendnet-card.yml
-    ├── update-crimson-flow.yml
-    ├── update-dragon-boot-card.yml
-    ├── update-github-profile.yml
-    ├── update-godcore-card.yml
-    ├── update-gremlin-mcp-scrap-card.yml
-    ├── update-gremlin-shadtail-trader-card.yml
-    ├── update-gremlingpt-card.yml
-    ├── update-mobile-mirror-card.yml
-    ├── update-profile-streak.yml
-    ├── update-profile-trophies.yml
-    ├── update-profile-views.yml
-    ├── update-repo-slide.yml
-    └── update-statik-server-card.yml
+```bash
+# Install main repository dependencies (~4 seconds - NEVER CANCEL)
+npm install
 
-1 directory, 18 files
+# Install IB-G.Scanner PWA dependencies (~20 seconds - NEVER CANCEL)
+cd dev.sfti-ai.org/IB-G.Scanner && npm install && cd ../..
+
+# Install Pilot-Server PWA dependencies (~13 seconds - NEVER CANCEL)
+cd dev.sfti-ai.org/Pilot-Server && npm install && cd ../..
 ```
 
-## Core Components
+### Build and Test the Repository
 
-### 1. Dynamic SVG Generation System
+#### Main Repository Commands
+```bash
+# Lint all projects (~3 seconds)
+npm run lint
 
-The repository features an automated SVG generation system with four main components:
+# Individual project linting
+npm run lint:dev-scanner      # IB-G.Scanner: 89 warnings expected, 0 errors required
+npm run lint:server-scanner   # Pilot-Server: 30 errors, 11 warnings (builds anyway with --noCheck)
 
-- **Crimson Flow (`c.svg/`)**: Animated GitHub activity charts using GraphQL API
-- **Streak (`s.svg/`)**: Contribution streak visualization with flame animations
-- **Trophies (`t.svg/`)**: Achievement and trophy displays
-- **Profile Views (`v.svg/`)**: Traffic and visitor statistics
+# Build fails - no index.html in root (expected)
+npm run build                 # Will fail - use individual project builds instead
 
-Each component:
-- Has its own Node.js package with `package.json`
-- Contains a `scripts/` directory with generation logic
-- Outputs to `assets/` directory
-- Is automated via GitHub Actions
+# Master build script (~4 seconds - has known issues but continues)
+./build/build-all.sh
+```
 
-### 2. GitHub Actions Workflows
+#### IB-G.Scanner PWA (React + TypeScript + Vite)
+```bash
+cd dev.sfti-ai.org/IB-G.Scanner
 
-All SVG components are automatically updated via scheduled workflows:
-- Run on cron schedules (typically every 5-6 hours)
-- Use `PULL_STATIK_PAT` token for API access
-- Automatically commit and push updates
-- Handle dependencies and Node.js setup
+# Development server (~6 seconds to start - NEVER CANCEL)
+npm run dev                   # Runs on http://localhost:5000 (NOT 4174 despite config)
 
-### 3. Custom Badge System
+# Build for production (~6 seconds - NEVER CANCEL)
+npm run build                 # Must succeed - TypeScript compiled with --noCheck
 
-Static SVG badges in `/badges/` for professional branding:
-- `ai_architect.svg`
-- `full_stack_dev.svg` 
-- `prompt_blacksmith.svg`
+# Lint code (~3 seconds)
+npm run lint                  # 89 warnings expected, 0 errors required
 
-## Technical Guidelines
+# Kill development server
+npm run kill                  # Kills port 4174 process
+```
 
-### Working with SVG Generators
+#### Pilot-Server PWA (React + TypeScript + Vite)
+```bash
+cd dev.sfti-ai.org/Pilot-Server
 
-When modifying or debugging SVG generation:
+# Development server (~3 seconds to start - NEVER CANCEL)
+npm run dev                   # Runs on default Vite port (usually 5173)
 
-1. **Environment Variables Required**:
-   - `GH_TOKEN` or `GITHUB_TOKEN`: GitHub API access
-   - `USER_LOGIN`: GitHub username (defaults to "statikfintechllc")
-   - `PAT_GITHUB`: Personal access token for some components
+# Build for production (~14 seconds - NEVER CANCEL)
+npm run build                 # Succeeds with --noCheck flag despite lint errors
 
-2. **Local Development**:
-   ```bash
-   cd docs/{component}.svg/
-   npm install
-   npm run build:{component}
-   ```
+# Lint code (~3 seconds)
+npm run lint                  # 30 errors, 11 warnings expected (fails but builds work)
 
-3. **GraphQL Integration**:
-   - All components use GitHub GraphQL API
-   - Implement proper error handling and retry logic
-   - Use appropriate User-Agent headers
+# Validation scripts
+npm run validate:all          # Full validation suite
+npm run test:quality          # Quality gates testing
+```
 
-### Code Standards
+## Validation
 
-- **JavaScript/Node.js**: Use ES modules (`.mjs` files)
-- **Node Version**: Require Node.js >= 20
-- **Error Handling**: Implement robust error handling for API calls
-- **Environment**: All scripts should handle missing tokens gracefully
+### Manual Testing Requirements
+ALWAYS perform these validation steps after making any changes:
 
-### GitHub Actions Maintenance
+#### IB-G.Scanner Validation
+1. Run `npm run build` - must complete successfully
+2. Run `npm run dev` - should start on http://localhost:5000
+3. Open browser to http://localhost:5000
+4. Verify page shows "SFTi Stock Scanner" with market status
+5. Check console for "IBKR connection failed, running in demo mode" (expected)
+6. Verify all UI components render without errors
+7. Test basic interactions (scanner table, filters, charts)
 
-When updating workflows:
-- Maintain Node.js version consistency (v20)
-- Preserve secret token usage patterns
-- Keep automated git configuration intact
-- Test schedule changes carefully to avoid rate limits
+#### Pilot-Server Validation
+1. Run `npm run build` - must complete successfully despite lint errors
+2. Run `npm run dev` - should start on default Vite port
+3. Open browser to the dev server URL
+4. Verify AI chat interface loads with model selection
+5. Test basic chat functionality (should work in demo mode)
+6. Verify glassmorphic UI design renders correctly
+7. Check responsive design on mobile viewport
 
-## Contributing Guidelines
+#### SVG Generation System Validation
+```bash
+# Test SVG generation (requires GitHub token)
+cd docs/c.svg
+npm install && npm run build:flow
 
-### For Issues and PRs
+# Expected: "Missing GH_TOKEN/GITHUB_TOKEN" (normal without token)
+# With token: Should generate crimson-flow.svg in assets/
+```
 
-When working on this repository:
+### Build Time Expectations
+Set these timeout values for long-running commands:
 
-1. **Preserve Automation**: Never break the automated SVG generation system
-2. **Minimal Changes**: Make surgical modifications to maintain stability
-3. **Test Locally**: Test SVG generation scripts before pushing
-4. **Respect Rate Limits**: Be mindful of GitHub API rate limiting
-5. **Maintain Structure**: Follow the established directory structure
+- **npm install (main)**: 4 seconds - timeout: 60 seconds
+- **npm install (IB-G.Scanner)**: 20 seconds - timeout: 120 seconds  
+- **npm install (Pilot-Server)**: 13 seconds - timeout: 120 seconds
+- **npm run build (IB-G.Scanner)**: 6 seconds - timeout: 180 seconds
+- **npm run build (Pilot-Server)**: 14 seconds - timeout: 300 seconds
+- **npm run lint**: 2-3 seconds - timeout: 60 seconds
+- **Master build script**: 4 seconds - timeout: 300 seconds
 
-### Common Tasks
+**CRITICAL**: NEVER CANCEL these operations even if they appear to hang. Build processes may take longer on slower systems.
 
-**Adding New SVG Component**:
-1. Create new directory in `docs/`
-2. Add `package.json` with appropriate scripts
-3. Create generation script in `scripts/`
-4. Add corresponding GitHub Action workflow
-5. Update main README.md to reference new component
+## Validation Scenarios
 
-**Updating Existing Components**:
-1. Test changes locally first
-2. Verify API token requirements
-3. Check that automated workflows still function
-4. Ensure output SVG maintains expected format
+After making changes, ALWAYS run through these complete user scenarios:
 
-**Modifying README.md**:
-1. Preserve all external image references
-2. Maintain the structured badge layout
-3. Keep sponsorship links intact
-4. Test that all links remain functional
+### Scenario 1: IB-G.Scanner Stock Analysis Workflow
+1. Start development server: `npm run dev`
+2. Navigate to http://localhost:5000
+3. Verify scanner shows market data table (demo mode)
+4. Test filter controls (price range, volume, etc.)
+5. Click on a stock symbol to view details
+6. Verify chart component loads and displays data
+7. Test alert system configuration
+8. Verify settings panel functionality
 
-## Key Features to Preserve
+### Scenario 2: Pilot-Server AI Chat Workflow  
+1. Start development server: `npm run dev`
+2. Navigate to development URL
+3. Verify model selection dropdown works
+4. Test sending a message to the AI chat
+5. Verify conversation history persists
+6. Test image upload functionality
+7. Verify code syntax highlighting works
+8. Test responsive mobile design
 
-- **Dynamic Statistics**: All GitHub stats should remain live and updating
-- **Professional Branding**: Consistent color scheme (`#e11d48` red, gold accents)
-- **Sponsorship Integration**: Multiple funding platforms properly linked
-- **Social Media Links**: Complete contact information preserved
-- **Featured Projects**: Project showcases with live stats
+### Scenario 3: Profile Repository GitHub Integration
+1. Verify README.md displays all SVG badges correctly
+2. Check that dynamic stats (streak, trophies, traffic) load
+3. Confirm all project links work and point to correct repositories
+4. Test that GitHub Actions workflows are functioning
+5. Verify sponsorship links are working
 
-## Security Considerations
+## Common Issues and Solutions
 
-- All API tokens are stored as GitHub secrets
-- No sensitive data should be committed to the repository
-- SVG generation scripts should handle authentication securely
-- Rate limiting and error handling must be maintained
+### Build Failures
+- **IB-G.Scanner vite config error**: Import issues with @github/spark package
+  - **Solution**: Use corrected imports in vite.config.ts (already fixed)
+- **Pilot-Server missing @github/spark**: Package not installed
+  - **Solution**: Spark plugins disabled in vite.config.ts (already fixed)
+- **Main build fails**: No index.html in root
+  - **Solution**: Expected behavior - use individual project builds
+
+### Development Server Issues
+- **IB-G.Scanner wrong port**: Config says 4174 but runs on 5000
+  - **Solution**: Expected behavior - always use http://localhost:5000
+- **IBKR connection failed**: Normal without gateway
+  - **Solution**: Expected behavior - app runs in demo mode
+
+### Linting Issues
+- **IB-G.Scanner**: 89 warnings expected, 0 errors required
+- **Pilot-Server**: 30 errors, 11 warnings expected (builds with --noCheck)
+- **Solution**: These are known issues - builds work correctly
+
+## Environment Requirements
+
+### Required Dependencies
+- **Node.js**: Version 20 or higher (specified in docs/package.json engines)
+- **npm**: Latest version recommended
+- **GitHub Token**: Required for SVG generation (GH_TOKEN or GITHUB_TOKEN)
+
+### Optional for Full Functionality
+- **IBKR Gateway**: For live market data (IB-G.Scanner)
+- **AI API Keys**: For chat functionality (Pilot-Server)
+
+## File Structure Navigation
+
+### Key Project Areas
+```
+statikfintechllc/
+├── .github/                     # Workflows, funding, copilot instructions
+├── dev.sfti-ai.org/            
+│   ├── IB-G.Scanner/           # Stock scanner PWA (React + TypeScript)
+│   └── Pilot-Server/           # AI chat PWA (React + TypeScript)
+├── docs/                       # SVG generation system
+│   ├── c.svg/                  # Crimson flow (activity charts)
+│   ├── s.svg/                  # Streak visualization
+│   ├── t.svg/                  # Trophies display
+│   └── v.svg/                  # Profile views
+├── badges/                     # Static SVG badges
+├── build/                      # Build scripts and utilities
+└── package.json               # Main project configuration
+```
+
+### Frequently Modified Files
+- **IB-G.Scanner**: `src/App.tsx`, `src/components/`, `src/lib/`
+- **Pilot-Server**: `src/App.tsx`, `src/components/`, `src/hooks/`
+- **Profile**: `README.md`, `.github/workflows/`
+- **Build**: `build/build-all.sh`, individual `package.json` files
+
+## Git Workflow
+
+### Before Committing
+ALWAYS run these commands and ensure they pass:
+
+```bash
+# Build all projects successfully
+cd dev.sfti-ai.org/IB-G.Scanner && npm run build && cd ../..
+cd dev.sfti-ai.org/Pilot-Server && npm run build && cd ../..
+
+# Run linting with expected results
+npm run lint  # Should show expected warnings/errors as documented above
+
+# Manual browser testing completed
+# No regressions introduced
+```
+
+### Commit Message Format
+Use clear, descriptive commit messages:
+```bash
+feat: add new stock scanner filter options
+fix: resolve vite config import issues for spark plugins  
+docs: update copilot instructions with build timings
+style: improve responsive design for mobile chat interface
+```
 
 ## Troubleshooting
 
-**Common Issues**:
-- **API Rate Limits**: Implement exponential backoff in scripts
-- **Token Expiration**: Check `PULL_STATIK_PAT` secret validity
-- **SVG Not Updating**: Verify workflow permissions and token scopes
-- **Node Dependencies**: Ensure `package-lock.json` files are maintained
+### Debug Steps for Common Issues
+1. **Clear build artifacts**: Remove `dist/`, `node_modules/`, `package-lock.json`
+2. **Reinstall dependencies**: `npm install` in affected directories
+3. **Check Node.js version**: Ensure Node 20+ is installed
+4. **Verify environment variables**: GitHub tokens for SVG generation
+5. **Check console errors**: Browser DevTools for runtime issues
+6. **Review GitHub Actions**: Check workflow logs for CI/CD issues
 
-**Debug Steps**:
-1. Check GitHub Actions logs for errors
-2. Verify API token permissions
-3. Test scripts locally with proper environment variables
-4. Validate SVG output syntax
+### Performance Optimization
+- **Bundle size warnings**: Expected for PWA applications (~600KB+ JS bundles)
+- **Large chunk warnings**: Consider code splitting for production optimization
+- **Build time optimization**: Use `--noCheck` flag for TypeScript (already configured)
+
+## Security Considerations
+
+- **API tokens**: Stored as GitHub secrets, never commit tokens to repository
+- **Rate limiting**: GitHub API calls in SVG generation respect rate limits
+- **CORS configuration**: Properly configured for local development
+- **Authentication**: Handled securely in PWA applications
 
 ---
 
-*This repository represents the professional profile and technical capabilities of statikfintechllc. Maintain the high standard of automation, visual appeal, and technical excellence when contributing.*
+**Remember**: This repository represents StatikFinTech LLC's complete professional presence. Every change should be tested thoroughly and maintain the high standard of automation, visual appeal, and technical excellence established in the codebase.
+
+**Success Criteria**: All builds pass, manual browser testing completed, no regressions introduced, expected lint results achieved, and complete user scenarios validated.
