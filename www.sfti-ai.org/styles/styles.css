@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* Ticker Styles - Responsive full width positioning */
+/* Ticker Styles - Responsive full width positioning - MOBILE ONLY */
 body .sfti-ticker-wrapper {
     position: fixed !important;
     top: 48px !important; /* Match navbar height (h-12 = 48px) */
@@ -33,50 +33,27 @@ body .sfti-ticker-wrapper {
     padding: 0 !important;
 }
 
-/* Responsive ticker adjustments */
-@media (max-width: 768px) {
+/* Hide ticker on screens larger than 500x900 */
+@media (min-width: 501px) and (min-height: 901px), (min-width: 901px) {
     body .sfti-ticker-wrapper {
-        height: 35px !important; /* Increased from 25px for better visibility */
+        display: none !important;
+    }
+}
+
+/* Show ticker only on small screens (mobile) */
+@media (max-width: 500px), (max-height: 900px) {
+    body .sfti-ticker-wrapper {
+        display: flex !important;
+        height: 35px !important; /* Smaller height for mobile */
     }
     
     .sfti-ticker-image {
         max-height: 35px !important;
-        object-fit: cover; /* Use cover instead of contain for better mobile visibility */
+        object-fit: cover !important; /* Use cover instead of contain for better mobile visibility */
     }
 }
 
-/* Tablet and medium screen adjustments */
-@media (min-width: 769px) and (max-width: 1199px) {
-    body .sfti-ticker-wrapper {
-        height: 38px !important; /* Intermediate size for tablets */
-    }
-    
-    .sfti-ticker-image {
-        max-height: 38px !important;
-    }
-}
 
-/* Large screen adjustments */
-@media (min-width: 1200px) and (max-width: 1919px) {
-    body .sfti-ticker-wrapper {
-        height: 40px !important; /* Standard size for large screens */
-    }
-    
-    .sfti-ticker-image {
-        max-height: 40px !important;
-    }
-}
-
-/* Ultra-wide screen adjustments */
-@media (min-width: 1920px) {
-    body .sfti-ticker-wrapper {
-        height: 45px !important; /* Reduced from 50px for better proportion */
-    }
-    
-    .sfti-ticker-image {
-        max-height: 45px !important;
-    }
-}
 
 /* Override browser link defaults globally */
 a {
@@ -421,8 +398,16 @@ nav.navbar {
         radial-gradient(circle at 20% 50%, var(--primary-color)20 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, var(--secondary-color)20 0%, transparent 50%),
         linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
-    padding-top: 88px; /* Adjusted for ticker height: 48px navbar + 40px ticker */
+    padding-top: 48px; /* Default padding for large screens (navbar only, no ticker) */
     transition: opacity 0.3s ease-out, filter 0.3s ease-out;
+}
+
+/* Add ticker padding only on mobile screens */
+@media (max-width: 500px), (max-height: 900px) {
+    .hero {
+        padding-top: 83px; /* Mobile: 48px navbar + 35px ticker */
+    }
+}
 }
 
 .hero.fade-out {
