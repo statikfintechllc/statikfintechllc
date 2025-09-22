@@ -635,8 +635,30 @@
     <script src="script.js?v=202509171630"></script>
     
     <!-- SFTi Component System -->
-    <script src="../src/components/sfti-component-system.js"></script>
-    <script src="../src/components/global.c/ticker.js"></script>
+    <script>
+        // Simplified ticker implementation for immediate functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('ticker-container');
+            if (container) {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'sfti-ticker-wrapper';
+                
+                const image = document.createElement('img');
+                image.src = 'https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif';
+                image.alt = 'Repo Ticker Stats';
+                image.className = 'sfti-ticker-image';
+                
+                image.onerror = function() {
+                    console.warn('Ticker: Failed to load ticker image');
+                    wrapper.style.display = 'none';
+                };
+                
+                wrapper.appendChild(image);
+                container.appendChild(wrapper);
+                console.log('Ticker initialized successfully');
+            }
+        });
+    </script>
     
     <!-- PWA Service Worker Registration -->
     <script>
