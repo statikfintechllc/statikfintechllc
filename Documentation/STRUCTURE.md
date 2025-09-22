@@ -1,6 +1,8 @@
 **StatikFinTech LLC - GitHub Profile Repository Structure**
 
-> **Note**: This is the official GitHub profile repository for `statikfintechllc` featuring automated SVG generation, dynamic badges, GitHub Actions workflows, and comprehensive project showcases.
+> [!NOTE]
+>
+> This is the official GitHub profile repository for `statikfintechllc` featuring automated SVG generation, dynamic badges, GitHub Actions workflows, and comprehensive project showcases.
 
 ```txt
 statikfintechllc/
