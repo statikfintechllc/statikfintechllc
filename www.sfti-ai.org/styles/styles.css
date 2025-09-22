@@ -42,7 +42,7 @@ body .sfti-ticker-wrapper {
     
     .sfti-ticker-image {
         max-height: 35px !important;
-        object-fit: cover !important; /* Use cover instead of contain for better mobile visibility */
+        object-fit: cover; /* Use cover instead of contain for better mobile visibility */
     }
 }
 
