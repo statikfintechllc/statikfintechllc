@@ -1,17 +1,64 @@
-# 📂 Source Components & Libraries
+# 📂 Source Components & Libraries - Reusable Component Ecosystem
 
 This directory contains the shared component library, utility functions, and reusable assets used across the StatikFinTech LLC ecosystem.
 
-## 🎯 Directory Overview
+## 📂 Overview
 
-This is the central hub for:
-- **Reusable UI components** for consistent design systems
-- **Utility libraries** for common functionality
-- **Static assets** for branding and media
-- **Global stylesheets** for consistent theming
-- **Service workers** and PWA functionality
+The Source Components & Libraries directory serves as the central hub for all reusable UI components, utility functions, styling systems, and static assets that power the entire StatikFinTech LLC multi-domain infrastructure.
 
 ## 📁 Directory Structure
+
+```
+src/
+├── README.md                      # This source overview (this file)
+├── components/                    # Organized component library
+│   ├── dev.c/                    # Development environment components
+│   ├── global.c/                 # Cross-platform shared components  
+│   ├── server.c/                 # Server portal specific components
+│   ├── ui/                       # Core UI component library (shadcn/ui based)
+│   ├── www.c/                    # Website-specific components
+│   └── sfti-component-system.js  # Component system core
+├── lib/                          # Utility libraries and helper functions
+│   └── utils.ts                  # TypeScript utility functions
+├── public/                       # Static assets and media files
+│   ├── dragon.png                # Brand mascot and logo
+│   ├── web.contact.bkg.png       # Contact section background
+│   ├── web.projects.bkg.png      # Projects showcase background  
+│   └── web.pwa.icon.png          # PWA icon for mobile apps
+├── styles/                       # Global stylesheets and design system
+│   ├── components/               # Component-specific styling
+│   ├── globals.css               # Global CSS variables and base styles
+│   └── themes/                   # Domain-specific theme configurations
+├── manifest.json                 # PWA manifest configuration
+└── sw.js                        # Service worker for PWA functionality
+```
+
+## 🚀 Component System Architecture
+
+### Design Philosophy
+- **Environment-specific** components for targeted functionality
+- **Consistent branding** across all applications
+- **Reusable patterns** to reduce development overhead
+- **TypeScript support** for type safety and developer experience
+
+### Integration Pattern
+```javascript
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { utils } from '@/lib/utils';
+
+// Environment-specific components
+import { NavBar } from '@/components/dev.c/navbar';
+import { Footer } from '@/components/global.c/footer';
+```
+
+### Styling System
+- **Tailwind CSS** for utility-first styling
+- **CSS variables** for consistent theming
+- **Component variants** for different contexts
+- **Responsive design** principles throughout
+
+## 🔧 Component Categories
 
 ### **🔧 [components/](./components/)**
 Organized component library with environment-specific implementations:
@@ -38,6 +85,36 @@ Static assets and media files:
 ### **💎 [styles/](./styles/)**
 Global stylesheet system:
 - **`components/`**: Component-specific styling
+- **`globals.css`**: Global CSS variables and base styles
+- **`themes/`**: Domain-specific theme configurations
+
+## 🔗 Navigation
+
+- 🏠 [Main Repository](../README.md)
+- 📁 [Documentation Hub](../Documentation/README.md)
+- 🎯 [Badges Collection](../badges/README.md)
+- 🛠️ [Build System](../build/README.md)
+- 📊 [SVG Assets](../docs/README.md)
+
+## 🔗 Usage Across Applications
+
+The component library is utilized across all StatikFinTech applications:
+
+### Web Domain Integration
+- **Main Website** (`www.sfti-ai.org`) - Marketing and business components
+- **Development Hub** (`dev.sfti-ai.org`) - PWA hosting and development tools
+- **Server Portal** (`server.sfti-ai.org`) - Authentication and account management
+
+### PWA Applications
+- **IB-G.Scanner** - Advanced market scanning components
+- **Pilot-Server** - Autonomous server management interface
+
+### Shared Resources
+All applications share common utilities, styling systems, and global components while maintaining domain-specific customizations.
+
+---
+
+*Part of the StatikFinTech LLC ecosystem - powering consistent, scalable component architecture* ✨
 - **`dev.css`**: Development environment styles
 - **`globals.css`**: Global CSS variables and resets
 - **`main.css`**: Primary stylesheet for main applications
