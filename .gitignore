@@ -1,8 +1,4 @@
-# System and server files
-/dom.sym.link.gen
-/index.html
-/styles
-/script.js
+# System and server file
 .well-known/
 .bash_history
 .playwright-mcp/ 
