@@ -38,28 +38,30 @@ statikfintechllc/
 │   ├── copilot-instructions.md
 │   └── validate-instructions.md
 │
-├── About Us/                          # Company documentation and legal
-│   ├── CODE_OF_CONDUCT.md
-│   ├── CONTRIBUTING.md
-│   ├── Cover_Letter.docx
-│   ├── FOUNDER_LOG.md
-│   ├── FOUNDER_STATEMENT.md
-│   ├── Final_Leg_v1.0.3.md
-│   ├── GREMLINGPT-v1.0.3_PATCH_PLAN.md
-│   ├── GREMLINGPT_AUTONOMY_REPORT.md
-│   ├── LICENSE.md
-│   ├── OPEN_FUNDING_PROPOSAL.md
-│   ├── OpenAI.md
-│   ├── Resume.pdf
-│   ├── SECURITY.md
-│   └── WHY_GREMLINGPT.md
-│
-├── Documentation/                      # Technical documentation
-│   ├── COMPONENT_SYSTEM.md
-│   ├── HIDDEN_CONFIGURATIONS.md
-│   ├── QUICK_REFERENCE.md
-│   ├── SFTi.Web.README.md
-│   └── STRUCTURE.md                    # This file
+├── Documentation
+│   ├── About Us
+│   │   ├── CODE_OF_CONDUCT.md
+│   │   ├── CONTRIBUTING.md
+│   │   ├── Cover_Letter.docx
+│   │   ├── FOUNDER_LOG.md
+│   │   ├── FOUNDER_STATEMENT.md
+│   │   ├── LICENSE.md
+│   │   ├── OPEN_FUNDING_PROPOSAL.md
+│   │   ├── OpenAI.md
+│   │   ├── README.md
+│   │   └── SECURITY.md
+│   ├── COMPONENT_SYSTEM.md
+│   ├── HIDDEN_CONFIGURATIONS.md
+│   ├── QUICK_REFERENCE.md
+│   ├── README.md
+│   ├── SFTi.Web.README.md
+│   ├── STRUCTURE.md
+│   ├── TEMPLATES
+│   │   ├── COMPONENT.template.md
+│   │   ├── DIRECTORY_README.template.md
+│   │   ├── README.md
+│   │   └── SVG_PROJECT.template.md
+│   └── TEMPLATE_IMPLEMENTATION.md
 │
 ├── badges/                            # Custom SVG badges and sponsors
 │   ├── G.H.badge.svg                  # GitHub badge
