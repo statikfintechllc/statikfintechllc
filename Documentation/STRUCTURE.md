@@ -7,6 +7,11 @@
 ```txt
 statikfintechllc/
 │
+├── LICENSE.md
+├── README.md
+├── index.html
+├── script.js
+│
 ├── .github/
 │   ├── workflows/                      # GitHub Actions for automated SVG generation
 │   │   ├── update-profile-streak.yml   # Git stats: Contribution streak automation
@@ -210,13 +215,12 @@ statikfintechllc/
 │   ├── README.md                      # Documentation hub overview
 │   └── SVG.README.md                  # SVG system documentation
 │
-statikfintechllc/
-│
-├── Documentation/
-├── LICENSE.md
-├── README.md
-├── index.html
 └── src
+   │
+   ├── manifest.json
+   ├── sw.js
+   ├── vite.config.ts
+   ├── README.md
    │
    ├── build
    │   ├── DEVELOPMENT.md
@@ -333,13 +337,11 @@ statikfintechllc/
    │       ├── server-styles.css
    │       └── server.tailwind.css
    │
-   ├── manifest.json
-   ├── sw.js
-   ├── vite.config.ts
-   ├── README.md
-   │
    └── www
-       ├── badges
+       │
+       ├── badges/
+       ├── docs/
+       │
        ├── components
        │   ├── global.c
        │   │   ├── README.md
@@ -367,8 +369,10 @@ statikfintechllc/
        │       │   └── navbar.js
        │       ├── mobile.c
        │       └── navbar.js
+       │
        ├── lib
        │   └── utils.ts
+       │
        ├── public
        │   ├── web.contact.bkg.png
        │   ├── web.hero.bkg.png
