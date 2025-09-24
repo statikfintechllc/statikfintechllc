@@ -216,12 +216,8 @@ statikfintechllc/
 ├── LICENSE.md
 ├── README.md
 ├── index.html
-├── package-lock.json
-├── package.json
-├── script.js
-├── src/
 └── src
-   ├── README.md
+   │
    ├── build
    │   ├── DEVELOPMENT.md
    │   ├── README.md
@@ -251,6 +247,7 @@ statikfintechllc/
    │       ├── mobile-navigation.tsx
    │       ├── navbar.tsx
    │       └── sheet.tsx
+   │
    ├── dev
    │   ├── badges
    │   ├── components 
@@ -291,7 +288,7 @@ statikfintechllc/
    │   └── public
    │       ├── ib.card.png
    │       └── pilot.card.png
-   ├── manifest.json
+   │
    ├── public
    │   ├── web.contact.bkg.png
    │   ├── web.hero.bkg.png
@@ -335,7 +332,12 @@ statikfintechllc/
    │   └── server.styles
    │       ├── server-styles.css
    │       └── server.tailwind.css
+   │
+   ├── manifest.json
    ├── sw.js
+   ├── vite.config.ts
+   ├── README.md
+   │
    └── www
        ├── badges
        ├── components
@@ -365,8 +367,6 @@ statikfintechllc/
        │       │   └── navbar.js
        │       ├── mobile.c
        │       └── navbar.js
-       ├── docs
-       ├── index.html
        ├── lib
        │   └── utils.ts
        ├── public
@@ -374,13 +374,14 @@ statikfintechllc/
        │   ├── web.hero.bkg.png
        │   └── web.projects.bkg.png
        │
-       ├── script.js
        ├── www.styles
        │   ├── www.scrollFX.js
        │   ├── www.styles.css
        │   └── www.tailwind.css
        │
-       └── vite.config.ts
+       ├── script.js
+       └── index.html
+
 
 ```
 
