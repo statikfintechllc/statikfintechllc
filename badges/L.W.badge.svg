@@ -1,0 +1,82 @@
+<svg width="800" height="120" viewBox="0 0 800 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient matching statik.title.svg -->
+    <linearGradient id="gPanel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#06080c"/>
+      <stop offset="100%" stop-color="#0a0f18"/>
+    </linearGradient>
+    
+    <!-- Gold/Crimson accent matching statik.title.svg -->
+    <linearGradient id="gNeon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffd15a"/>
+      <stop offset="45%" stop-color="#ff3168"/>
+      <stop offset="100%" stop-color="#ffd15a"/>
+    </linearGradient>
+
+    <!-- Glows matching statik.title.svg -->
+    <filter id="fGlowSoft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="b1"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="fFireGlow" x="-120%" y="-180%" width="340%" height="400%">
+      <feGaussianBlur stdDeviation="6" result="b1"/>
+      <feGaussianBlur stdDeviation="14" in="SourceGraphic" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="120" rx="12" fill="url(#gPanel)"/>
+  
+  <!-- Border -->
+  <rect x="2" y="2" width="796" height="116" rx="10" fill="none" stroke="#232939" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- Title Section (CRISP: no filters on text) -->
+  <g transform="translate(400,45)" text-anchor="middle">
+    <text x="0" y="0" font-family="system-ui, -apple-system, Segoe UI, Roboto" font-weight="900" font-size="28" fill="#ffd15a">
+      Like my Work?
+    </text>
+    <text x="0" y="22" font-family="system-ui" font-size="11" fill="#8abecf" opacity="0.95">
+      Support these projects if you find them valueable and want to support their continued development,
+    </text>
+    <text x="0" y="36" font-family="system-ui" font-size="11" fill="#8abecf" opacity="0.95">
+      consider sponsoring or contributing.
+    </text>
+    <line x1="-350" x2="350" y1="50" y2="50" stroke="url(#gNeon)" stroke-width="2" opacity="0.9" filter="url(#fGlowSoft)"/>
+  </g>
+
+  <!-- Floating sparks/embers (matching statik.title.svg exactly) -->
+  <g>
+    <circle cx="120" cy="25" r="1.8" fill="#ff7a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;-15;-55" dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="120;116;124;120" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="25" r="1.6" fill="#ff9a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.6s" begin=".2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;-13;-51" dur="1.6s" begin=".2s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="280;276;284;280" dur="1.6s" begin=".2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="25" r="1.9" fill="#ff7a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.65s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;-17;-57" dur="1.65s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="520;516;524;520" dur="1.65s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="680" cy="25" r="1.7" fill="#ff8a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.4s" begin=".8s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="25;-12;-48" dur="1.4s" begin=".8s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="680;677;683;680" dur="1.4s" begin=".8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="80" r="1.5" fill="#ff6a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.8s" begin=".5s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="80;40;0" dur="1.8s" begin=".5s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="60;57;63;60" dur="1.8s" begin=".5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="740" cy="80" r="1.4" fill="#ff5a00" opacity="0" filter="url(#fFireGlow)">
+      <animate attributeName="opacity" values="0;1;0" dur="1.7s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="80;42;4" dur="1.7s" begin="1.2s" repeatCount="indefinite"/>
+      <animate attributeName="cx" values="740;737;743;740" dur="1.7s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+<svg width="600" height="80" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sponsor SFTi on CashApp</title>
+  <desc id="desc">Animated dark themed badge with floating sparks inviting users to sponsor SFTi on CashApp</desc>
+  <defs>
+    <!-- Core theme gradients -->
+    <linearGradient id="bgGradCashApp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <!-- Animated border cycling brand + accent -->
+    <linearGradient id="borderGradCashApp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#30363d">
+        <animate attributeName="stop-color" values="#30363d;#00d632;#ff0000;#30363d" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#00d632">
+        <animate attributeName="stop-color" values="#00d632;#ff0000;#30363d;#00d632" dur="7s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Text gradient -->
+    <linearGradient id="textGradCashApp" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d632"/>
+      <stop offset="100%" stop-color="#ff0000"/>
+    </linearGradient>
+
+    <!-- CashApp logo pattern -->
+    <pattern id="cashappPattern" width="44" height="44" patternUnits="userSpaceOnUse">
+      <g transform="translate(12 8)">
+        <!-- CashApp $ symbol -->
+        <rect x="2" y="2" width="16" height="20" rx="4" fill="#00d632" opacity=".25"/>
+        <text x="10" y="16" font-family="Arial Black, sans-serif" font-size="14" font-weight="900" text-anchor="middle" fill="#00d632" opacity=".8">$</text>
+      </g>
+    </pattern>
+
+    <!-- Floating sparks animation -->
+    <g id="sparksCashApp">
+      <circle r="1" fill="#00d632" opacity="0.8">
+        <animate attributeName="cy" values="80;-10" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="50;80" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="1.5" fill="#ff0000" opacity="0.6">
+        <animate attributeName="cy" values="80;-10" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="cx" values="100;150" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+      <circle r="1" fill="#00d632" opacity="0.7">
+        <animate attributeName="cy" values="80;-10" dur="7s" repeatCount="indefinite" begin="4s"/>
+        <animate attributeName="cx" values="200;250" dur="7s" repeatCount="indefinite" begin="4s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite" begin="4s"/>
+      </circle>
+    </g>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="600" height="80" rx="10" fill="url(#bgGradCashApp)" stroke="url(#borderGradCashApp)" stroke-width="2"/>
+
+  <!-- Pattern overlay -->
+  <rect width="600" height="80" rx="10" fill="url(#cashappPattern)" opacity="0.4"/>
+
+  <!-- Floating sparks background effect -->
+  <use href="#sparksCashApp" x="50" y="0"/>
+  <use href="#sparksCashApp" x="150" y="0"/>
+  <use href="#sparksCashApp" x="250" y="0"/>
+  <use href="#sparksCashApp" x="350" y="0"/>
+  <use href="#sparksCashApp" x="450" y="0"/>
+
+  <!-- Text content with proper styling -->
+  <g style="font-family:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="2.5">
+    <text x="300" y="46" fill="#f0f6fc">Sponsor SFTi on CashApp</text>
+    <text x="300" y="46" fill="url(#textGradCashApp)" opacity="0.35">Sponsor SFTi on CashApp</text>
+  </g>
+
+  <!-- Hover effect -->
+  <rect width="600" height="80" rx="10" fill="transparent" stroke="transparent" stroke-width="2">
+    <animate attributeName="stroke" values="transparent;#00d632;transparent" dur="3s" repeatCount="indefinite"/>
+  </rect>
+</svg>

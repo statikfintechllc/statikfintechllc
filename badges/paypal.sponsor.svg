@@ -1,0 +1,78 @@
+<svg width="600" height="80" viewBox="0 0 600 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sponsor SFTi on PayPal</title>
+  <desc id="desc">Animated dark themed badge with floating sparks inviting users to sponsor SFTi on PayPal</desc>
+  <defs>
+    <!-- Core theme gradients -->
+    <linearGradient id="bgGradPayPal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <!-- Animated border cycling brand + accent -->
+    <linearGradient id="borderGradPayPal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#30363d">
+        <animate attributeName="stop-color" values="#30363d;#0070ba;#ff0000;#30363d" dur="7s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#0070ba">
+        <animate attributeName="stop-color" values="#0070ba;#ff0000;#30363d;#0070ba" dur="7s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Text gradient -->
+    <linearGradient id="textGradPayPal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0070ba"/>
+      <stop offset="100%" stop-color="#ff0000"/>
+    </linearGradient>
+
+    <!-- PayPal logo pattern -->
+    <pattern id="paypalPattern" width="44" height="44" patternUnits="userSpaceOnUse">
+      <g transform="translate(8 6)">
+        <!-- PayPal P logo -->
+        <path d="M6 4h8c3 0 5 2 5 5s-2 5-5 5h-3l-1 4h-2l2-8h-2L6 4z M9 8h3c1 0 2-1 2-2s-1-2-2-2h-3L9 8z" fill="#0070ba" opacity=".35"/>
+        <path d="M2 16h8c3 0 5-2 5-5l-1 4h-3c-3 0-5 2-5 5l-1 4h-2L2 16z" fill="#003087" opacity=".25"/>
+      </g>
+    </pattern>
+
+    <!-- Floating sparks animation -->
+    <g id="sparksPayPal">
+      <circle r="1" fill="#0070ba" opacity="0.8">
+        <animate attributeName="cy" values="80;-10" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="cx" values="50;80" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="1.5" fill="#ff0000" opacity="0.6">
+        <animate attributeName="cy" values="80;-10" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="cx" values="100;150" dur="8s" repeatCount="indefinite" begin="2s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="8s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+      <circle r="1" fill="#0070ba" opacity="0.7">
+        <animate attributeName="cy" values="80;-10" dur="7s" repeatCount="indefinite" begin="4s"/>
+        <animate attributeName="cx" values="200;250" dur="7s" repeatCount="indefinite" begin="4s"/>
+        <animate attributeName="opacity" values="0;1;0" dur="7s" repeatCount="indefinite" begin="4s"/>
+      </circle>
+    </g>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="600" height="80" rx="10" fill="url(#bgGradPayPal)" stroke="url(#borderGradPayPal)" stroke-width="2"/>
+
+  <!-- Pattern overlay -->
+  <rect width="600" height="80" rx="10" fill="url(#paypalPattern)" opacity="0.4"/>
+
+  <!-- Floating sparks background effect -->
+  <use href="#sparksPayPal" x="50" y="0"/>
+  <use href="#sparksPayPal" x="150" y="0"/>
+  <use href="#sparksPayPal" x="250" y="0"/>
+  <use href="#sparksPayPal" x="350" y="0"/>
+  <use href="#sparksPayPal" x="450" y="0"/>
+
+  <!-- Text content with proper styling -->
+  <g style="font-family:'Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,sans-serif" font-size="26" font-weight="600" text-anchor="middle" letter-spacing="2.5">
+    <text x="300" y="46" fill="#f0f6fc">Sponsor SFTi on PayPal</text>
+    <text x="300" y="46" fill="url(#textGradPayPal)" opacity="0.35">Sponsor SFTi on PayPal</text>
+  </g>
+
+  <!-- Hover effect -->
+  <rect width="600" height="80" rx="10" fill="transparent" stroke="transparent" stroke-width="2">
+    <animate attributeName="stroke" values="transparent;#0070ba;transparent" dur="3s" repeatCount="indefinite"/>
+  </rect>
+</svg>

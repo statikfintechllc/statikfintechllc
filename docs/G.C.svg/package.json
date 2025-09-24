@@ -1,0 +1,9 @@
+{
+  "name": "godcore-card",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build:card": "node scripts/generate-godcore.mjs"
+  }
+}
