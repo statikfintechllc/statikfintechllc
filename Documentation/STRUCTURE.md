@@ -83,37 +83,6 @@ statikfintechllc/
 │   ├── paypal.sponsor.svg             # PayPal sponsor badge
 │   └── README.md
 │
-├── build/                             # Build automation and configuration
-│   ├── .env.development               # Development environment variables
-│   ├── DEVELOPMENT.md                 # Development guidelines
-│   ├── README.md                      # Build system documentation
-│   ├── build-all.sh                   # Master build script
-│   ├── build.sh                       # Individual build script
-│   ├── build_dashboard_html.py        # Dashboard generation
-│   ├── force-refresh.js               # Cache busting utility
-│   ├── script.js                      # Build helper scripts
-│   ├── setup.cfg                      # Python setup configuration
-│   └── tailwind.config.js             # Tailwind CSS configuration
-│
-├── dev.sfti-ai.org/                   # Development environment applications
-│   ├── IB-G.Scanner/                  # Interactive Brokers scanner PWA
-│   │   ├── .github/                   # GitHub configuration
-│   │   ├── .playwright-mcp/           # MCP testing artifacts
-│   │   ├── Documentation/             # Project documentation
-│   │   ├── ibkr-gateway/              # IBKR gateway files
-│   │   ├── public/                    # Static assets
-│   │   ├── scripts/                   # Deployment scripts
-│   │   ├── src/                       # React/TypeScript source
-│   │   └── [config files]             # Build and configuration files
-│   ├── Pilot-Server/                  # AI server management interface
-│   │   ├── .github/                   # GitHub configuration
-│   │   ├── scripts/                   # Validation and build scripts
-│   │   ├── src/                       # React/TypeScript source
-│   │   └── [config files]             # Build and configuration files
-│   ├── styles/                        # Shared stylesheets
-│   ├── dev-script.js                  # Development utilities
-│   └── index.html                     # Development hub entry point
-│
 ├── docs/                              # Automated SVG generation system
 │   ├── builder.script/                # Publication card automation
 │   │   ├── README.md                  # Builder documentation
@@ -239,39 +208,178 @@ statikfintechllc/
 │   ├── README.md                      # Documentation hub overview
 │   └── SVG.README.md                  # SVG system documentation
 │
-├── server.sfti-ai.org/                # Server portal application
-│   ├── styles/                        # Portal stylesheets
-│   ├── index.html                     # Portal entry point
-│   └── server-script.js               # Portal functionality
+statikfintechllc/
 │
-├── src/                               # Shared component library
-│   ├── components/                    # Reusable components
-│   │   ├── dev.c/                     # Development environment components
-│   │   ├── global.c/                  # Global shared components
-│   │   ├── server.c/                  # Server portal components
-│   │   ├── ui/                        # UI component library
-│   │   ├── www.c/                     # Website components
-│   │   └── sfti-component-system.js   # Component system core
-│   ├── lib/                           # Utility libraries
-│   ├── public/                        # Static assets
-│   ├── styles/                        # Global stylesheets
-│   ├── manifest.json                  # PWA manifest
-│   └── sw.js                          # Service worker
-│
-├── www.sfti-ai.org/                   # Corporate website
-│   ├── styles/                        # Website stylesheets
-│   ├── index.html                     # Website entry point
-│   └── script.js                      # Website functionality
-│
-├── .gitignore                         # Git ignore rules
-├── .htaccess                          # Apache configuration
-├── LICENSE.md                         # Repository license
-├── README.md                          # Main profile README
-├── components.json                    # Component configuration
-├── package-lock.json                 # NPM lock file
-├── package.json                      # NPM configuration
-├── script copy.js                     # Legacy script backup
-└── vite.config.ts                     # Vite build configuration
+├── Documentation/
+├── LICENSE.md
+├── README.md
+├── index.html
+├── package-lock.json
+├── package.json
+├── script.js
+├── src/
+├── src
+   ├── README.md
+   ├── build
+   │   ├── DEVELOPMENT.md
+   │   ├── README.md
+   │   ├── build-all.sh
+   │   ├── build.sh
+   │   ├── build_dashboard_html.py
+   │   ├── components.json
+   │   ├── force-refresh.js
+   │   ├── setup.cfg
+   │   └── tailwind.config.js
+   ├── components
+   │   ├── global.c
+   │   │   ├── README.md
+   │   │   ├── card.js
+   │   │   ├── desktop.c
+   │   │   ├── footer.js
+   │   │   ├── mobile.c
+   │   │   ├── navbar-example.html
+   │   │   ├── navbar.js
+   │   │   ├── svg-card.js
+   │   │   └── ticker.js
+   │   ├── sfti-component-system.js
+   │   └── ui
+   │       ├── README.md
+   │       ├── button.tsx
+   │       ├── card.tsx
+   │       ├── mobile-navigation.tsx
+   │       ├── navbar.tsx
+   │       └── sheet.tsx
+   ├── dev
+   │   ├── badges
+   │   ├── components 
+   │   │   ├── dev.c
+   │   │   │   ├── README.md
+   │   │   │   ├── desktop.c
+   │   │   │   ├── global.templates
+   │   │   │   │   ├── footer.js
+   │   │   │   │   └── navbar.js
+   │   │   │   ├── mobile.c
+   │   │   │   └── navbar.js
+   │   │   ├── global.c
+   │   │   │   ├── README.md
+   │   │   │   ├── card.js
+   │   │   │   ├── desktop.c
+   │   │   │   ├── footer.js
+   │   │   │   ├── mobile.c
+   │   │   │   ├── navbar-example.html
+   │   │   │   ├── navbar.js
+   │   │   │   ├── svg-card.js
+   │   │   │   └── ticker.js
+   │   │   ├── sfti-component-system.js
+   │   │   └── ui
+   │   │       ├── README.md
+   │   │       ├── button.tsx
+   │   │       ├── card.tsx
+   │   │       ├── mobile-navigation.tsx
+   │   │       ├── navbar.tsx
+   │   │       └── sheet.tsx
+   │   ├── dev-script.js
+   │   ├── dev.styles
+   │   │   ├── dev-styles.css
+   │   │   └── dev.tailwind.css
+   │   ├── docs
+   │   ├── index.html
+   │   ├── lib
+   │   │   └── utils.ts
+   │   └── public
+   │       ├── ib.card.png
+   │       └── pilot.card.png
+   ├── manifest.json
+   ├── public
+   │   ├── web.contact.bkg.png
+   │   ├── web.hero.bkg.png
+   │   ├── web.projects.bkg.png
+   │   └── web.pwa.icon.png
+   ├── server
+   │   ├── badges
+   │   ├── components
+   │   │   ├── global.c
+   │   │   │   ├── README.md
+   │   │   │   ├── card.js
+   │   │   │   ├── desktop.c
+   │   │   │   ├── footer.js
+   │   │   │   ├── mobile.c
+   │   │   │   ├── navbar-example.html
+   │   │   │   ├── navbar.js
+   │   │   │   ├── svg-card.js
+   │   │   │   └── ticker.js
+   │   │   ├── server.c
+   │   │   │   ├── README.md
+   │   │   │   ├── desktop.c
+   │   │   │   ├── global.templates
+   │   │   │   │   ├── footer.js
+   │   │   │   │   └── navbar.js
+   │   │   │   ├── mobile.c
+   │   │   │   └── navbar.js
+   │   │   ├── sfti-component-system.js
+   │   │   └── ui
+   │   │       ├── README.md
+   │   │       ├── button.tsx
+   │   │       ├── card.tsx
+   │   │       ├── mobile-navigation.tsx
+   │   │       ├── navbar.tsx
+   │   │       └── sheet.tsx
+   │   ├── docs
+   │   ├── index.html
+   │   ├── lib
+   │   │   └── utils.ts
+   │   ├── public
+   │   ├── server-script.js
+   │   └── server.styles
+   │       ├── server-styles.css
+   │       └── server.tailwind.css
+   ├── sw.js
+   └── www
+       ├── badges
+       ├── components
+       │   ├── global.c
+       │   │   ├── README.md
+       │   │   ├── card.js
+       │   │   ├── desktop.c
+       │   │   ├── footer.js
+       │   │   ├── mobile.c
+       │   │   ├── navbar-example.html
+       │   │   ├── navbar.js
+       │   │   ├── svg-card.js
+       │   │   └── ticker.js
+       │   ├── sfti-component-system.js
+       │   ├── ui
+       │   │   ├── README.md
+       │   │   ├── button.tsx
+       │   │   ├── card.tsx
+       │   │   ├── mobile-navigation.tsx
+       │   │   ├── navbar.tsx
+       │   │   └── sheet.tsx
+       │   └── www.c
+       │       ├── README.md
+       │       ├── desktop.c
+       │       ├── global.templates
+       │       │   ├── footer.js
+       │       │   └── navbar.js
+       │       ├── mobile.c
+       │       └── navbar.js
+       ├── docs
+       ├── index.html
+       ├── lib
+       │   └── utils.ts
+       ├── public
+       │   ├── web.contact.bkg.png
+       │   ├── web.hero.bkg.png
+       │   └── web.projects.bkg.png
+       │
+       ├── script.js
+       ├── www.styles
+       │   ├── www.scrollFX.js
+       │   ├── www.styles.css
+       │   └── www.tailwind.css
+       │
+       └── vite.config.ts
+
 ```
 
 ---
