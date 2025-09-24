@@ -220,7 +220,7 @@ statikfintechllc/
 ├── package.json
 ├── script.js
 ├── src/
-├── src
+└── src
    ├── README.md
    ├── build
    │   ├── DEVELOPMENT.md
