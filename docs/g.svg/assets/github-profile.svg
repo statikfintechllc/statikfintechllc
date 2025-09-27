@@ -98,7 +98,7 @@
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
   <!-- TypeScript 74.77% -->
   <rect x="0" y="0" width="217" height="8" fill="#3178c6" rx="4"/>
-  <!-- Python 11.98% -->
+  <!-- Python 11.99% -->
   <rect x="217" y="0" width="35" height="8" fill="#3572A5"/>
   <!-- Go 6.49% -->
   <rect x="252" y="0" width="19" height="8" fill="#00ADD8"/>
@@ -127,7 +127,7 @@
     
     <g transform="translate(0, 20)">
       <circle cx="5" cy="5" r="4" fill="#3572A5"/>
-      <text x="15" y="9" class="lang-name">Python 11.98%</text>
+      <text x="15" y="9" class="lang-name">Python 11.99%</text>
     </g>
     
     <g transform="translate(0, 40)">
