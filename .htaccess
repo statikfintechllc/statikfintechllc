@@ -1,5 +1,0 @@
-
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^sfti\-ai\.org$
-RewriteRule ^www\.sfti\-ai\.org$ "https\:\/\/www\.sfti\-ai\.org\/" [R=301,L]
-
