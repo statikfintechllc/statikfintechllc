@@ -38,7 +38,7 @@
   <g transform="translate(400,10)">
     <rect x="0" y="0" rx="14" ry="14" width="300" height="120" fill="#0b1220" stroke="#1f2937"/>
     <text x="20" y="34" class="cardTitle">Followers</text>
-    <text x="20" y="70" class="cardValue">81 <tspan class="grade">[B]</tspan></text>
+    <text x="20" y="70" class="cardValue">80 <tspan class="grade">[B]</tspan></text>
     <text x="20" y="96" class="cardDesc">People following this account.</text>
   </g>
     <animateTransform attributeName="transform" type="translate"
