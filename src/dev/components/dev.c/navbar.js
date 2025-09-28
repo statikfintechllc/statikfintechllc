@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * DevNavbar (Domain: dev.sfti-ai.org)
  * ----------------------------------
@@ -14,7 +15,7 @@
 
 // Ensure base class exists
 if (typeof window !== 'undefined' && !window.SFTiNavbar) {
-  console.warn('[DevNavbar] Base SFTiNavbar missing – ensure global.c/navbar.js is loaded first.');
+  console.warn('[DevNavbar] Base SFTiNavbar missing – ensure global.c/desktop/navbar.js is loaded before the mobile extension.');
 }
 
 class DevNavbar extends SFTiNavbar {

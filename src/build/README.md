@@ -37,6 +37,33 @@ The primary build orchestrator that handles the entire build process across all 
 - ✅ Comprehensive error handling
 - ✅ Cleanup and temporary file management
 
+### `build.sh` - Component Builder & Router
+
+Generates domain-aware component bundles and proxies through to `build-all.sh` when full builds are required.
+
+**Component usage:**
+```bash
+# Build navbar for dev domain (desktop only)
+./build/build.sh component navbar desktop dev
+
+# Build card for www domain (both variants, clean generated files first)
+./build/build.sh component card --variant both --domain www --clean
+
+# Validate manifest entries without writing files
+./build/build.sh component-manifest --dry-run
+```
+
+Key behaviours:
+- Automatically pulls CSS custom properties from `src/<domain>/<domain>.styles/` and registers them with the component registry.
+- Outputs generated assets to both `src/<domain>/components/<domain>.c/<variant>.c/` and `src/components/<domain>/<variant>/` for shared management.
+- Accepts positional or flag-based arguments and supports targeted cleanup (`--clean`) and validation-only runs (`--dry-run`).
+- `component-manifest` clears existing domain outputs before regenerating the full matrix defined in `components.manifest.json`.
+
+```bash
+# Regenerate everything defined in the manifest with cleanup
+./build/build.sh component-manifest --clean
+```
+
 ### Environment Variables
 
 Control build behavior with environment variables:

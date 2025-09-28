@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFTi Navbar Component (Mobile Variant)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="pt-14 bg-gray-950 text-white">
+    <div id="navbar-container"></div>
+
+    <main class="px-4 py-8 space-y-6">
+        <h1 class="text-3xl font-bold">Mobile Navbar Demo</h1>
+        <p class="text-gray-300">This example demonstrates the mobile-first navbar variant. Load the desktop script before this file to ensure the base class is available.</p>
+    </main>
+
+    <script src="../desktop/navbar.js"></script>
+    <script src="./navbar.js"></script>
+    <script>
+        createMobileSFTiNavbar(SFTiNavbarConfigs.dev);
+    </script>
+</body>
+</html>

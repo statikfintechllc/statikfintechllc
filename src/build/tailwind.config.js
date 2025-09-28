@@ -1,11 +1,17 @@
+// @ts-nocheck
+const path = require('path');
+
+const contentRoots = [
+  path.join(__dirname, '../**/*.{html,js,ts,tsx}'),
+  path.join(__dirname, '../../www/**/*.{html,js}'),
+  path.join(__dirname, '../../dev/**/*.{html,js}'),
+  path.join(__dirname, '../../server/**/*.{html,js}')
+];
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    './src/**/*.{ts,tsx}',
-    './public_html/**/*.{html,js}',
-    './components/**/*.{ts,tsx}',
-  ],
+  content: contentRoots,
   prefix: "",
   theme: {
     extend: {

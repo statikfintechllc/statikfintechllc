@@ -165,7 +165,8 @@ const SFTiThemes = {
 ```javascript
 // Load component system
 <script src="src/components/sfti-component-system.js"></script>
-<script src="src/components/global.c/navbar.js"></script>
+<script src="src/components/global.c/desktop/navbar.js"></script>
+<script src="src/components/global.c/mobile/navbar.js"></script>
 
 // Initialize for specific domain
 createSFTiNavbar(SFTiNavbarConfigs.www);  // Main domain
@@ -219,3 +220,5 @@ Each component accepts a configuration object that can override defaults:
 7. **✅ Link Management** - Proper internal/external link handling
 
 This new system provides a solid foundation for building and maintaining the SFTi web presence across all domains with consistency, scalability, and maintainability.
+
+<!-- markdownlint-disable -->

@@ -30,9 +30,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Component System -->
     <script src="components/sfti-component-system.js"></script>
-    <script src="components/www.c/navbar.js"></script>
-    <script src="components/www.c/footer.js"></script>
-    
+    <script src="components/www.c/desktop.c/navbar.js"></script>
+    <script src="components/www.c/desktop.c/footer.js"></script>
+    <script src="components/www.c/mobile.c/navbar.js"></script>
+    <script src="components/www.c/mobile.c/footer.js"></script>
+    <script src="components/www.c/mobile.c/ticker.js"></script>
     <style>
         /* FORCE HIDE ALL SCROLLBARS AND MAKE FULL WIDTH */
         * {
@@ -103,147 +105,14 @@
     </style>
     
     <!-- PWA Icons -->
-    <link rel="icon" type="image/svg+xml" href="../badges/statik.title.svg">
-    <link rel="apple-touch-icon" href="../badges/ai_architect.svg">
-    <link rel="shortcut icon" href="../badges/statik.title.svg">
+    <link rel="icon" type="image/svg+xml" href="badges/statik.title.svg">
+    <link rel="apple-touch-icon" href="badges/ai_architect.svg">
+    <link rel="shortcut icon" href="badges/statik.title.svg">
     <meta property="og:title" content="SFTi - StatikFinTech LLC">
     <meta property="og:description" content="The Ascend Institute - Building Systems and Documentation that scares the orgs/govs behind paywalls and control systems.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.sfti-ai.org">
-    <!-- Scripts -->
-    <script>
-        function toggleRotation(img) {
-            console.log('SVG clicked! Screen width:', window.innerWidth);
-            if (window.innerWidth <= 768) {
-                console.log('Mobile detected, toggling rotation');
-                img.classList.toggle('institute-header-rotated');
-                if (img.classList.contains('institute-header-rotated')) {
-                    console.log('Rotating to landscape');
-                    document.body.style.overflow = 'hidden';
-                    img.onclick = function() { 
-                        console.log('Rotating back to normal');
-                        img.classList.remove('institute-header-rotated');
-                        document.body.style.overflow = 'auto';
-                        img.onclick = function() { toggleRotation(img); };
-                    };
-                } else {
-                    document.body.style.overflow = 'auto';
-                }
-            } else {
-                console.log('Desktop detected, no rotation');
-            }
-        }
-    </script>    
-    <!-- SFTi Component System -->
-    <script>
-        // Simplified ticker implementation for immediate functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const container = document.getElementById('ticker-container');
-            if (container) {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'sfti-ticker-wrapper';
-                
-                const image = document.createElement('img');
-                image.src = 'https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif';
-                image.alt = 'Repo Ticker Stats';
-                image.className = 'sfti-ticker-image';
-                
-                image.onerror = function() {
-                    console.warn('Ticker: Failed to load ticker image');
-                    wrapper.style.display = 'none';
-                };
-                
-                wrapper.appendChild(image);
-                container.appendChild(wrapper);
-                console.log('Ticker initialized successfully');
-            }
-        });
-    </script>
-    <!-- SFTi Component System - Simplified -->
-    <script>
-        // Simple navbar implementation with mobile hamburger menu
-        document.addEventListener('DOMContentLoaded', function() {
-            const navContainer = document.getElementById('navbar-container');
-            if (navContainer) {
-                navContainer.innerHTML = `
-                     <style>
-                        /* Custom mobile navigation styles */
-                        .mobile-menu-hidden { display: none; }
-                        .desktop-nav { display: none !important; }
-                        .mobile-menu-btn { display: block !important; }
-                        
-                        @media (min-width: 768px) {
-                            .desktop-nav { display: flex !important; }
-                            .mobile-menu-btn { display: none !important; }
-                            .mobile-menu-hidden { display: none !important; }
-                        }
-                    </style>
-                    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10 h-12">
-                        <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
-                            <div class="flex flex-col leading-none">
-                                <span class="text-red-500 font-bold text-lg leading-tight">SFTi</span>
-                                <span class="text-gray-400 text-xs leading-tight">StatikFinTech, LLC</span>
-                            </div>
-                            
-                            <!-- Desktop Navigation -->
-                            <div class="desktop-nav items-center space-x-6">
-                                <a href="#home" class="text-white hover:text-red-400 transition-colors text-sm">Home</a>
-                                <a href="#institute" class="text-white hover:text-red-400 transition-colors text-sm">Institute</a>
-                                <a href="#projects" class="text-white hover:text-red-400 transition-colors text-sm">Projects</a>
-                                <a href="#research" class="text-white hover:text-red-400 transition-colors text-sm">Research</a>
-                            </div>
-                            
-                            <!-- Mobile Menu Button -->
-                            <button id="mobile-menu-button" class="mobile-menu-btn text-white hover:text-red-400 focus:outline-none">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        
-                        <!-- Mobile Navigation Menu -->
-                        <div id="mobile-menu" class="mobile-menu-hidden bg-black/95 backdrop-blur-sm border-b border-white/10">
-                            <div class="px-4 py-3 space-y-2">
-                                <a href="#home" class="block text-white hover:text-red-400 transition-colors text-sm py-2">Home</a>
-                                <a href="#institute" class="block text-white hover:text-red-400 transition-colors text-sm py-2">Institute</a>
-                                <a href="#projects" class="block text-white hover:text-red-400 transition-colors text-sm py-2">Projects</a>
-                                <a href="#research" class="block text-white hover:text-red-400 transition-colors text-sm py-2">Research</a>
-                            </div>
-                        </div>
-                    </nav>
-                `;
-                
-                // Mobile menu toggle functionality
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                const mobileMenu = document.getElementById('mobile-menu');
-                
-                if (mobileMenuButton && mobileMenu) {
-                    mobileMenuButton.addEventListener('click', function() {
-                        if (mobileMenu.classList.contains('mobile-menu-hidden')) {
-                            mobileMenu.classList.remove('mobile-menu-hidden');
-                        } else {
-                            mobileMenu.classList.add('mobile-menu-hidden');
-                        }
-                    });
-                    
-                    // Close mobile menu when clicking on links
-                    const mobileLinks = mobileMenu.querySelectorAll('a');
-                    mobileLinks.forEach(link => {
-                        link.addEventListener('click', function() {
-                            mobileMenu.classList.add('mobile-menu-hidden');
-                        });
-                    });
-                    
-                    // Close mobile menu when clicking outside
-                    document.addEventListener('click', function(event) {
-                        if (!navContainer.contains(event.target)) {
-                            mobileMenu.classList.add('mobile-menu-hidden');
-                        }
-                    });
-                }
-            }
-        });
-    </script>
+
 </head>
 <body class="pt-16" style="padding-top: 48px !important;">
     <!-- Navbar Container -->

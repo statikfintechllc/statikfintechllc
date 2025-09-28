@@ -49,7 +49,7 @@ import { utils } from '@/lib/utils';
 
 // Environment-specific components
 import { NavBar } from '@/components/dev.c/navbar';
-import { Footer } from '@/components/global.c/footer';
+import { Footer } from '@/components/global.c/desktop/footer';
 ```
 
 ### Styling System
@@ -72,8 +72,8 @@ Organized component library with environment-specific implementations:
 ### **📚 [lib/](./lib/)**
 Utility libraries and helper functions:
 - **`utils.ts`**: TypeScript utility functions
-- **Shared logic** across applications
-- **API helpers** and common integrations
+- **`Shared logic`** across applications
+- **`API helpers`** and common integrations
 
 ### **🎨 [public/](./public/)**
 Static assets and media files:
@@ -140,7 +140,7 @@ import { utils } from '@/lib/utils';
 
 // Environment-specific components
 import { NavBar } from '@/components/dev.c/navbar';
-import { Footer } from '@/components/global.c/footer';
+import { Footer } from '@/components/global.c/desktop/footer';
 ```
 
 ### **Styling System**

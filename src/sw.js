@@ -1,3 +1,4 @@
+// @ts-nocheck
 // SFTi Web Templates Service Worker - Comprehensive Multi-Domain Support
 const CACHE_NAME = 'sfti-templates-v2.0.0';
 const STATIC_CACHE = 'sfti-static-v2.0.0';
@@ -49,8 +50,10 @@ const STATIC_ASSETS = [
   
   // Component system
   '/src/components/sfti-component-system.js',
-  '/src/components/global.c/card.js',
-  '/src/components/global.c/svg-card.js',
+  '/src/components/global.c/desktop/card.js',
+  '/src/components/global.c/desktop/svg-card.js',
+  '/src/components/global.c/mobile/card.js',
+  '/src/components/global.c/mobile/svg-card.js',
   
   // Dynamic SVG content from docs/
   '/docs/i.svg/assets/institute-header.svg',

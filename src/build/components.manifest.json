@@ -1,0 +1,13 @@
+[
+  { "component": "navbar", "variant": "both", "domain": "www" },
+  { "component": "footer", "variant": "both", "domain": "www" },
+  { "component": "card", "variant": "both", "domain": "www" },
+  { "component": "svg-card", "variant": "desktop", "domain": "www" },
+  { "component": "navbar", "variant": "both", "domain": "dev" },
+  { "component": "footer", "variant": "both", "domain": "dev" },
+  { "component": "card", "variant": "both", "domain": "dev" },
+  { "component": "ticker", "variant": "mobile", "domain": "dev" },
+  { "component": "navbar", "variant": "both", "domain": "server" },
+  { "component": "footer", "variant": "both", "domain": "server" },
+  { "component": "card", "variant": "both", "domain": "server" }
+]

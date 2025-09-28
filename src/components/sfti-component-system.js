@@ -1,86 +1,115 @@
+// @ts-nocheck
 /**
  * SFTi Component System Architecture
- * ================================
- * 
- * This is the master component system for all SFTi domains.
- * Each domain inherits from global.c and extends with domain-specific styling.
- * 
- * STRUCTURE:
- * - src/components/global.c/   - Universal components used across all domains
- * - src/components/www.c/      - Main website (www.sfti-ai.org) specific components  
- * - src/components/dev.c/      - Development domain (dev.sfti-ai.org) specific components
- * - src/components/server.c/   - Server domain (server.sfti-ai.org) specific components
- * 
- * DOMAINS:
- * - www.sfti-ai.org    - Main marketing/business website
- * - dev.sfti-ai.org    - PWA hub and development tools
- * - server.sfti-ai.org - Secure access portal and documentation
- * 
- * COMPONENT TYPES:
- * - Navigation (navbar, menus, breadcrumbs)
- * - Cards (project cards, repo cards, feature cards)
- * - Forms (login, signup, contact)
- * - Layout (headers, footers, containers)
- * - Interactive (modals, dropdowns, carousels)
- * 
- * STYLING APPROACH:
- * - Tailwind CSS for utility-first styling
- * - ShadCN/UI for component primitives
- * - Domain-specific color themes preserved
- * - Mobile-first responsive design
- * 
- * LINKING SYSTEM:
- * - Internal: /sign-up, /dashboard, #section
- * - Cross-domain: https://dev.sfti-ai.org/app
- * - External: https://github.com/statikfintechllc
- * 
- * USAGE:
- * 1. Import base component from global.c
- * 2. Extend or override in domain-specific folder
- * 3. Apply domain theme through CSS variables
- * 4. Register component in domain manifest
+ * ==================================
+ *
+ * Central registry for component implementations and domain theming. The
+ * registry understands desktop/mobile variants so the build pipeline can
+ * project the correct assets into each target domain.
  */
 
-// Global Component Registry
-const SFTiComponents = {
-    global: {},
-    www: {},
-    dev: {},
-    server: {}
+const DEFAULT_DOMAINS = ['global', 'www', 'dev', 'server'];
+const DEFAULT_VARIANTS = ['desktop', 'mobile'];
+
+const SFTiComponents = DEFAULT_DOMAINS.reduce((acc, domain) => {
+    acc[domain] = DEFAULT_VARIANTS.reduce((variantMap, variant) => {
+        variantMap[variant] = {};
+        return variantMap;
+    }, {});
+    return acc;
+}, {});
+
+const BaseTheme = {
+    primary: '#FF0000',
+    secondary: '#FFD700',
+    dark: '#000000',
+    darker: '#111111',
+    light: '#FFFFFF',
+    gray: '#CCCCCC'
 };
 
-// Theme Configuration
-const SFTiThemes = {
-    global: {
-        primary: '#FF0000',
-        secondary: '#FFD700', 
-        dark: '#000000',
-        darker: '#111111',
-        light: '#FFFFFF',
-        gray: '#CCCCCC'
-    },
+const InitialThemes = {
+    global: BaseTheme,
     www: {
-        // Main website theme (extends global)
         accent: '#E11D48',
         highlight: '#FCD34D'
     },
     dev: {
-        // Development portal theme
         accent: '#3B82F6',
         highlight: '#10B981'
     },
     server: {
-        // Server portal theme  
         accent: '#8B5CF6',
         highlight: '#F59E0B'
     }
 };
 
-// Component Base Class
+const SFTiThemes = DEFAULT_DOMAINS.reduce((acc, domain) => {
+    acc[domain] = {
+        ...BaseTheme,
+        ...(InitialThemes[domain] || {})
+    };
+    return acc;
+}, {});
+
+function registerComponent({ domain = 'global', variant = 'desktop', name, implementation }) {
+    if (!name || !implementation) {
+        console.warn('[SFTi] registerComponent requires a name and implementation');
+        return;
+    }
+
+    if (!SFTiComponents[domain]) {
+        SFTiComponents[domain] = {};
+    }
+
+    if (!SFTiComponents[domain][variant]) {
+        SFTiComponents[domain][variant] = {};
+    }
+
+    SFTiComponents[domain][variant][name] = implementation;
+}
+
+function getComponent(domain, variant, name) {
+    return SFTiComponents?.[domain]?.[variant]?.[name] ?? null;
+}
+
+function registerDomainTheme(domain, tokens = {}) {
+    if (!domain) {
+        console.warn('[SFTi] registerDomainTheme requires a domain');
+        return;
+    }
+
+    SFTiThemes[domain] = {
+        ...(domain === 'global' ? BaseTheme : { ...BaseTheme, ...(SFTiThemes[domain] || {}) }),
+        ...tokens
+    };
+}
+
+function applyThemeToDocument(domain = 'global') {
+    const theme = SFTiThemes[domain] || BaseTheme;
+    const root = typeof document !== 'undefined' ? document.documentElement : null;
+
+    if (!root) return theme;
+
+    Object.entries(theme).forEach(([key, value]) => {
+        root.style.setProperty(`--sfti-${key}`, value);
+    });
+
+    return theme;
+}
+
+function getDomainTheme(domain = 'global') {
+    if (!domain || !SFTiThemes[domain]) {
+        return { ...BaseTheme };
+    }
+    return { ...SFTiThemes[domain] };
+}
+
 class SFTiComponent {
-    constructor(type, domain = 'global') {
+    constructor(type, domain = 'global', variant = 'desktop') {
         this.type = type;
         this.domain = domain;
+        this.variant = variant;
         this.theme = SFTiThemes[domain] || SFTiThemes.global;
         this.initialized = false;
     }
@@ -92,29 +121,58 @@ class SFTiComponent {
     }
 
     applyTheme() {
-        const root = document.documentElement;
-        Object.entries(this.theme).forEach(([key, value]) => {
-            root.style.setProperty(`--sfti-${key}`, value);
-        });
+        applyThemeToDocument(this.domain);
     }
 
-    attachEventListeners() {
-        // Override in child components
-    }
+    attachEventListeners() {}
 
-    render(container) {
-        // Override in child components
+    render() {
         throw new Error('render() method must be implemented');
+    }
+
+    resolveContainer(target) {
+        if (typeof target === 'string') {
+            return typeof document !== 'undefined' ? document.querySelector(target) : null;
+        }
+
+        if (target && typeof target.querySelector === 'function') {
+            return target;
+        }
+
+        return null;
+    }
+
+    mount(selector) {
+        const target = this.resolveContainer(selector);
+        if (!target) {
+            console.error(`[SFTi] mount target not found for ${this.type}`);
+            return null;
+        }
+        target.innerHTML = '';
+        return this.render(target);
     }
 }
 
-// Export for use in component files
 if (typeof window !== 'undefined') {
     window.SFTiComponent = SFTiComponent;
     window.SFTiComponents = SFTiComponents;
     window.SFTiThemes = SFTiThemes;
+    window.registerSFTiComponent = registerComponent;
+    window.getSFTiComponent = getComponent;
+    window.registerDomainTheme = registerDomainTheme;
+    window.applyThemeToDocument = applyThemeToDocument;
+    window.getSFTiTheme = getDomainTheme;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { SFTiComponent, SFTiComponents, SFTiThemes };
+    module.exports = {
+        SFTiComponent,
+        SFTiComponents,
+        SFTiThemes,
+        registerComponent,
+        getComponent,
+        registerDomainTheme,
+        applyThemeToDocument,
+        getDomainTheme
+    };
 }

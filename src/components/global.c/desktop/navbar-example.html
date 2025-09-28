@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SFTi Navbar Component Usage</title>
+    <title>SFTi Navbar Component (Desktop Variant)</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="pt-12 bg-gray-900 text-white">
-    <!-- Navbar Container -->
     <div id="navbar-container"></div>
-    
-    <!-- Main Content -->
+
     <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold mb-6">SFTi Navbar Component</h1>
-        
+        <h1 class="text-3xl font-bold mb-6">SFTi Navbar Component – Desktop Variant</h1>
+
         <section class="mb-8">
             <h2 class="text-2xl font-semibold mb-4">Usage Instructions</h2>
-            
+
             <h3 class="text-xl font-medium mb-3">1. Include the Component</h3>
-            <pre class="bg-gray-800 p-4 rounded-lg mb-4"><code>&lt;script src="components/navbar.js"&gt;&lt;/script&gt;</code></pre>
-            
+            <pre class="bg-gray-800 p-4 rounded-lg mb-4"><code>&lt;script src="components/global.c/desktop/navbar.js"&gt;&lt;/script&gt;</code></pre>
+
             <h3 class="text-xl font-medium mb-3">2. Add Container</h3>
             <pre class="bg-gray-800 p-4 rounded-lg mb-4"><code>&lt;div id="navbar-container"&gt;&lt;/div&gt;</code></pre>
-            
+
             <h3 class="text-xl font-medium mb-3">3. Initialize</h3>
             <pre class="bg-gray-800 p-4 rounded-lg mb-4"><code>// For main domain
 createSFTiNavbar(SFTiNavbarConfigs.main);
 
-// For dev domain  
+// For dev domain
 createSFTiNavbar(SFTiNavbarConfigs.dev);
 
 // For server domain
@@ -43,31 +41,27 @@ createSFTiNavbar({
     ]
 });</code></pre>
         </section>
-        
+
         <section class="mb-8">
             <h2 class="text-2xl font-semibold mb-4">Features</h2>
             <ul class="list-disc list-inside space-y-2">
-                <li>Fixed 48px height (h-12) - consistent across all browsers</li>
-                <li>Responsive design - desktop nav + mobile hamburger menu</li>
-                <li>Tailwind CSS classes for styling</li>
-                <li>Brand colors: Red for logo, yellow for subtitle</li>
-                <li>Mobile-first approach with slide-out menu</li>
-                <li>Configurable for different domains</li>
-                <li>External link support with proper attributes</li>
+                <li>Fixed 48px height (h-12) for consistent desktop layout</li>
+                <li>Responsive behaviour with slide-out mobile menu fallback</li>
+                <li>Tailwind CSS utility classes for rapid customization</li>
+                <li>Brand colour accent hooks for each domain</li>
+                <li>Configurable link set with external link handling</li>
             </ul>
         </section>
-        
+
         <section>
             <h2 class="text-2xl font-semibold mb-4">CSS Requirements</h2>
-            <p class="mb-4">Add this to your body tag to account for the fixed navbar:</p>
+            <p class="mb-4">Ensure the body accounts for the fixed navbar height:</p>
             <pre class="bg-gray-800 p-4 rounded-lg"><code>&lt;body class="pt-12"&gt;</code></pre>
         </section>
     </div>
 
-    <!-- Initialize the navbar -->
-    <script src="components/navbar.js"></script>
+    <script src="./navbar.js"></script>
     <script>
-        // Initialize with main domain configuration
         createSFTiNavbar(SFTiNavbarConfigs.main);
     </script>
 </body>

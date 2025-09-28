@@ -33,9 +33,15 @@ log_error() {
 }
 
 # Configuration
-PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 BUILD_DIR="$PROJECT_ROOT/dist"
 TEMP_DIR="$PROJECT_ROOT/.build-tmp"
+BUILD_SCRIPT="$PROJECT_ROOT/src/build/build.sh"
+COMPONENT_BUILDER="$PROJECT_ROOT/src/build/component-builder.mjs"
+
+export PROJECT_ROOT
+export COMPONENT_BUILDER
 
 # Build modes
 CLEAN_BUILD=${CLEAN_BUILD:-false}
@@ -102,21 +108,15 @@ install_dependencies() {
 
 # Function to build component system
 build_components() {
-    log_info "Building component system..."
-    
-    # Create temporary directory for component builds
-    mkdir -p "$TEMP_DIR/components"
-    
-    # Copy component files
-    cp -r "$PROJECT_ROOT/src/components/"* "$TEMP_DIR/components/"
-    
-    # Process component files (could add minification, etc.)
-    if [ "$OPTIMIZE" = true ]; then
-        log_info "Optimizing component files..."
-        # Add optimization logic here if needed
+    log_info "Building component system via manifest..."
+
+    local manifest_path="${SCRIPT_DIR}/components.manifest.json"
+    if [ -f "$manifest_path" ]; then
+        "$BUILD_SCRIPT" component-manifest --manifest "$manifest_path" --clean
+        log_success "Domain components generated"
+    else
+        log_warning "Component manifest not found (${manifest_path}); skipping domain component generation"
     fi
-    
-    log_success "Component system built"
 }
 
 # Function to build static sites

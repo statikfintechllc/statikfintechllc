@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="dev.styles/dev-styles.css">
     <link rel="stylesheet" href="dev.styles/dev.tailwind.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- SFTi Component System -->
     <script src="components/sfti-component-system.js"></script>
-    <script src="components/dev.c/navbar.js"></script>
-    <script src="components/dev.c/footer.js"></script>
-    
+    <script src="components/dev.c/desktop.c/navbar.js"></script>
+    <script src="components/dev.c/desktop.c/footer.js"></script>
+    <script src="components/dev.c/mobile.c/navbar.js"></script>
+    <script src="components/dev.c/mobile.c/footer.js"></script>
+    <script src="components/dev.c/mobile.c/ticker.js"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <meta property="og:title" content="SFTi Dev - PWA Hub">
     <meta property="og:description" content="Progressive Web Applications by StatikFinTech LLC">
@@ -117,76 +118,6 @@
                     <div class="pwa-actions">
                         <button class="btn btn-primary" onclick="launchPWA('pilot-server')">Launch</button>
                         <button class="btn btn-secondary" onclick="showAppDetails('pilot-server')">Details</button>
-                    </div>
-                </div>
-
-                <!-- GremlinGPT -->
-                <div class="pwa-card" data-app="gremlingpt">
-                    <div class="pwa-header">
-                        <div class="pwa-icon">
-                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/GremlinGPT.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" loading="lazy">
-                        </div>
-                        <div class="pwa-info">
-                            <h3 class="pwa-title">GremlinGPT</h3>
-                            <p class="pwa-description">Recursive autonomous AI system</p>
-                            <div class="pwa-status">
-                                <span class="status-dot developing"></span>
-                                <span class="status-text">In Development</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pwa-metrics">
-                        <div class="metric">
-                            <span class="metric-label">Training Progress</span>
-                            <span class="metric-value">87%</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Model Size</span>
-                            <span class="metric-value">2.3GB</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Last Update</span>
-                            <span class="metric-value">1d ago</span>
-                        </div>
-                    </div>
-                    <div class="pwa-actions">
-                        <button class="btn btn-disabled" disabled>Coming Soon</button>
-                        <button class="btn btn-secondary" onclick="showAppDetails('gremlingpt')">Details</button>
-                    </div>
-                </div>
-
-                <!-- Gremlin-ShadTail-Trader -->
-                <div class="pwa-card" data-app="gremlin-shadtail">
-                    <div class="pwa-header">
-                        <div class="pwa-icon">
-                            <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Gremlin-ShadTail-Trader.svg/assets/gremlin-shadtail-trader-card.svg" alt="Gremlin-ShadTail-Trader" loading="lazy">
-                        </div>
-                        <div class="pwa-info">
-                            <h3 class="pwa-title">ShadTail-Trader</h3>
-                            <p class="pwa-description">AI-driven autonomous trading system</p>
-                            <div class="pwa-status">
-                                <span class="status-dot active"></span>
-                                <span class="status-text">Trading</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pwa-metrics">
-                        <div class="metric">
-                            <span class="metric-label">P&L Today</span>
-                            <span class="metric-value">+$2,847</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Win Rate</span>
-                            <span class="metric-value">74%</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-label">Active Positions</span>
-                            <span class="metric-value">8</span>
-                        </div>
-                    </div>
-                    <div class="pwa-actions">
-                        <button class="btn btn-primary" onclick="launchPWA('gremlin-shadtail')">Launch</button>
-                        <button class="btn btn-secondary" onclick="showAppDetails('gremlin-shadtail')">Details</button>
                     </div>
                 </div>
             </div>
@@ -306,27 +237,5 @@
             </div>
         </div>
     </div>
-
-    <!-- Scripts -->
-    <script src="dist/mobile-navigation.js"></script>
-    <script src="dev-script.js">    </script>
-
-    <!-- SFTi Component System Initialization -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('SFTi Dev Component System: Initializing...');
-            
-            // Initialize Dev Navbar
-            const devNavbar = new DevNavbar({
-                containerId: 'navbar-container'
-            });
-            
-            // Initialize Global Ticker for Dev Domain
-            const devTicker = new SFTiTicker('dev');
-            devTicker.render('#ticker-container');
-            
-            console.log('SFTi Dev Component System: Initialized successfully');
-        });
-    </script>
 </body>
 </html>

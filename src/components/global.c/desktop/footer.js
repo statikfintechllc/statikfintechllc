@@ -1,16 +1,10 @@
+// @ts-nocheck
 /**
- * Global Footer Component
- * =======================
- * 
- * Universal footer component with social links, copyright, and domain adaptations.
- * Provides base structure for domain-specific footer extensions.
- * 
- * Features:
- * - Responsive footer layout
- * - Social media links
- * - Copyright and legal
- * - Domain-specific adaptations
- * - Dark theme optimized
+ * Global Footer Component (Desktop Variant)
+ * ========================================
+ *
+ * Mirrors the legacy footer implementation for desktop resolutions.
+ * Mobile adaptations live in ../mobile/footer.js.
  */
 
 class SFTiFooter extends SFTiComponent {
@@ -55,7 +49,7 @@ class SFTiFooter extends SFTiComponent {
             },
             ...config
         };
-        
+
         super(defaultConfig);
         this.initFooter();
     }
@@ -69,22 +63,17 @@ class SFTiFooter extends SFTiComponent {
         return `
             <footer class="sfti-footer bg-black border-t border-white/10 mt-auto">
                 <div class="max-w-7xl mx-auto px-4 py-12">
-                    <!-- Main Footer Content -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                        <!-- Brand Section -->
                         <div class="lg:col-span-1">
                             <div class="mb-6">
                                 <h3 class="text-white font-bold text-xl mb-2 ${this.getDomainAccent()}">${this.config.logoText}</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed">${this.config.tagline}</p>
                             </div>
-                            
-                            <!-- Social Links -->
                             <div class="flex space-x-4">
                                 ${this.renderSocialLinks()}
                             </div>
                         </div>
 
-                        <!-- Quick Links -->
                         <div class="lg:col-span-1">
                             <h4 class="text-white font-semibold mb-4">Quick Links</h4>
                             <ul class="space-y-2">
@@ -92,7 +81,6 @@ class SFTiFooter extends SFTiComponent {
                             </ul>
                         </div>
 
-                        <!-- Domains -->
                         <div class="lg:col-span-1">
                             <h4 class="text-white font-semibold mb-4">Our Domains</h4>
                             <ul class="space-y-2">
@@ -100,14 +88,11 @@ class SFTiFooter extends SFTiComponent {
                             </ul>
                         </div>
 
-                        <!-- Legal & Contact -->
                         <div class="lg:col-span-1">
                             <h4 class="text-white font-semibold mb-4">Legal & Contact</h4>
                             <ul class="space-y-2 mb-4">
                                 ${this.renderLegalLinks()}
                             </ul>
-                            
-                            <!-- Contact Info -->
                             <div class="text-sm text-gray-400">
                                 <p class="mb-1">${this.config.contact.email}</p>
                                 <p>${this.config.contact.location}</p>
@@ -115,16 +100,13 @@ class SFTiFooter extends SFTiComponent {
                         </div>
                     </div>
 
-                    <!-- Bottom Section -->
                     <div class="pt-8 border-t border-white/10">
                         <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                            <!-- Copyright -->
                             <div class="text-gray-400 text-sm">
                                 <span>&copy; ${this.config.copyright.year} ${this.config.copyright.entity}</span>
                                 ${this.config.copyright.allRights ? '<span class="ml-2">All rights reserved.</span>' : ''}
                             </div>
 
-                            <!-- Additional Info -->
                             <div class="text-gray-400 text-sm flex items-center space-x-4">
                                 <span class="flex items-center">
                                     <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
@@ -142,10 +124,10 @@ class SFTiFooter extends SFTiComponent {
 
     renderSocialLinks() {
         if (!this.config.social) return '';
-        
+
         return Object.entries(this.config.social).map(([key, social]) => `
-            <a 
-                href="${social.href}" 
+            <a
+                href="${social.href}"
                 class="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded transition-all duration-200"
                 title="${social.label}"
                 target="_blank"
@@ -159,11 +141,11 @@ class SFTiFooter extends SFTiComponent {
 
     renderQuickLinks() {
         if (!this.config.links?.main) return '';
-        
+
         return this.config.links.main.map(link => `
             <li>
-                <a 
-                    href="${link.href}" 
+                <a
+                    href="${link.href}"
                     class="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                     ${link.href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}
                 >
@@ -175,11 +157,11 @@ class SFTiFooter extends SFTiComponent {
 
     renderDomainLinks() {
         if (!this.config.links?.domains) return '';
-        
+
         return this.config.links.domains.map(domain => `
             <li>
-                <a 
-                    href="${domain.href}" 
+                <a
+                    href="${domain.href}"
                     class="text-gray-400 hover:text-white transition-colors duration-200 text-sm block"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -193,11 +175,11 @@ class SFTiFooter extends SFTiComponent {
 
     renderLegalLinks() {
         if (!this.config.links?.legal) return '';
-        
+
         return this.config.links.legal.map(link => `
             <li>
-                <a 
-                    href="${link.href}" 
+                <a
+                    href="${link.href}"
                     class="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                 >
                     ${link.title}
@@ -227,9 +209,8 @@ class SFTiFooter extends SFTiComponent {
     }
 
     setupResponsive() {
-        // Add responsive behavior if needed
         this.handleResize = () => {
-            // Future: Add responsive adjustments
+            // Reserved for desktop-specific responsive hooks.
         };
 
         if (typeof window !== 'undefined') {
@@ -238,17 +219,14 @@ class SFTiFooter extends SFTiComponent {
     }
 
     setupSocialTracking() {
-        // Add click tracking for social links
         this.trackSocialClick = (platform) => {
             console.log(`Social click tracked: ${platform}`);
-            // Future: Implement analytics tracking
         };
 
-        // Add event listeners after component mounts
         this.addSocialTracking = () => {
             const socialLinks = document.querySelectorAll('[data-social]');
             socialLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
+                link.addEventListener('click', () => {
                     const platform = link.getAttribute('data-social');
                     this.trackSocialClick(platform);
                 });
@@ -258,11 +236,9 @@ class SFTiFooter extends SFTiComponent {
 
     mount(selector) {
         super.mount(selector);
-        // Add social tracking after mount
         setTimeout(() => this.addSocialTracking(), 100);
     }
 
-    // Static method to create and mount footer
     static create(selector, config = {}) {
         const footer = new SFTiFooter(config);
         footer.mount(selector);
@@ -270,19 +246,16 @@ class SFTiFooter extends SFTiComponent {
     }
 }
 
-// Global Footer configurations
 const GlobalFooterConfig = {
     domain: 'global',
     responsive: true,
     socialTracking: true
 };
 
-// Factory function for global footer
 function createSFTiFooter(config = {}) {
     return new SFTiFooter({ ...GlobalFooterConfig, ...config });
 }
 
-// Export for module systems
 if (typeof window !== 'undefined') {
     window.SFTiFooter = SFTiFooter;
     window.createSFTiFooter = createSFTiFooter;

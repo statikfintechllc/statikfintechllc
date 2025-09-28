@@ -1,6 +1,10 @@
+// @ts-nocheck
 /**
- * SFTi Navbar Component - Vanilla JavaScript with Tailwind
- * Usage: Include this script and call createNavbar() with configuration
+ * SFTi Navbar Component (Desktop Variant)
+ * ======================================
+ *
+ * Provides the desktop-first navigation experience. Mobile specific
+ * behaviour lives in ../mobile/navbar.js which wraps this implementation.
  */
 
 class SFTiNavbar {
@@ -23,26 +27,21 @@ class SFTiNavbar {
     }
 
     disableOldNavbar() {
-        // Hide any existing navbar elements
         const oldNavbars = document.querySelectorAll('.navbar, nav.navbar');
         oldNavbars.forEach(nav => {
             nav.style.display = 'none';
         });
 
-        // Add CSS to override old navbar styles
         const style = document.createElement('style');
         style.innerHTML = `
-            /* Override old navbar styles */
             .navbar, nav.navbar {
                 display: none !important;
             }
-            
-            /* Ensure our navbar is visible */
+
             #navbar-container .navbar {
                 display: block !important;
             }
-            
-            /* Reset any conflicting body styles */
+
             body {
                 margin-top: 0 !important;
                 padding-top: 48px !important;
@@ -57,8 +56,7 @@ class SFTiNavbar {
             console.error(`Container with id "${this.config.containerId}" not found`);
             return;
         }
-        // Allow domain-specific subclasses to provide their own template.
-        // If a subclass implements getTemplate(), use it. Otherwise fall back to base layout.
+
         if (typeof this.getTemplate === 'function' && this.getTemplate !== SFTiNavbar.prototype.getTemplate) {
             container.innerHTML = this.getTemplate();
             return;
@@ -67,13 +65,10 @@ class SFTiNavbar {
         container.innerHTML = this.getTemplate();
     }
 
-    // Base template method – can be overridden by subclasses to supply
-    // fully custom markup without modifying the parent render() logic.
     getTemplate() {
         return `
             <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10 h-12 min-h-12 max-h-12">
                 <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
-                    <!-- Logo -->
                     <div class="flex flex-col leading-none">
                         <span class="text-red-500 font-bold text-lg leading-tight">
                             ${this.config.logoText}
@@ -83,10 +78,9 @@ class SFTiNavbar {
                         </span>
                     </div>
 
-                    <!-- Desktop Navigation -->
                     <div class="hidden md:flex items-center space-x-6">
                         ${this.config.items.map(item => `
-                            <a href="${item.href}" 
+                            <a href="${item.href}"
                                class="text-white hover:text-yellow-400 transition-colors text-sm"
                                ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
                                 ${item.title}
@@ -94,7 +88,6 @@ class SFTiNavbar {
                         `).join('')}
                     </div>
 
-                    <!-- Mobile Menu Button -->
                     <button id="mobile-menu-toggle" class="md:hidden p-2 h-8 w-8 flex items-center justify-center">
                         <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -102,7 +95,6 @@ class SFTiNavbar {
                     </button>
                 </div>
 
-                <!-- Mobile Menu -->
                 <div id="mobile-menu" class="md:hidden fixed inset-y-0 right-0 w-64 bg-black/95 backdrop-blur-sm border-l border-white/10 transform translate-x-full transition-transform duration-300 ease-in-out">
                     <div class="flex flex-col p-6 space-y-4 mt-6">
                         <button id="mobile-menu-close" class="self-end p-2 mb-4">
@@ -111,7 +103,7 @@ class SFTiNavbar {
                             </svg>
                         </button>
                         ${this.config.items.map(item => `
-                            <a href="${item.href}" 
+                            <a href="${item.href}"
                                class="text-white hover:text-yellow-400 transition-colors text-base py-2"
                                ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
                                 ${item.title}
@@ -131,13 +123,11 @@ class SFTiNavbar {
 
         toggleButton?.addEventListener('click', () => this.toggleMobileMenu());
         closeButton?.addEventListener('click', () => this.closeMobileMenu());
-        
-        // Close menu when clicking on links
+
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => this.closeMobileMenu());
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (this.mobileMenuOpen && !mobileMenu.contains(e.target) && !toggleButton.contains(e.target)) {
                 this.closeMobileMenu();
@@ -148,7 +138,7 @@ class SFTiNavbar {
     toggleMobileMenu() {
         const mobileMenu = document.getElementById('mobile-menu');
         this.mobileMenuOpen = !this.mobileMenuOpen;
-        
+
         if (this.mobileMenuOpen) {
             mobileMenu.classList.remove('translate-x-full');
         } else {
@@ -163,12 +153,10 @@ class SFTiNavbar {
     }
 }
 
-// Factory function to create navbar instances
 function createSFTiNavbar(config) {
     return new SFTiNavbar(config);
 }
 
-// Configuration presets for different domains
 const SFTiNavbarConfigs = {
     main: {
         logoText: 'SFTi',
@@ -178,6 +166,7 @@ const SFTiNavbarConfigs = {
             { title: 'Institute', href: '#institute' },
             { title: 'Projects', href: '#projects' },
             { title: 'Research', href: '#research' },
+            { title: 'Contact Us', href: '#contact-us' },
             { title: 'PWAs', href: 'https://dev.sfti-ai.org', external: true },
             { title: 'Server', href: 'https://server.sfti-ai.org', external: true }
         ]
@@ -209,7 +198,6 @@ const SFTiNavbarConfigs = {
     }
 };
 
-// Auto-initialize based on domain or manual initialization
 if (typeof window !== 'undefined') {
     window.SFTiNavbar = SFTiNavbar;
     window.createSFTiNavbar = createSFTiNavbar;

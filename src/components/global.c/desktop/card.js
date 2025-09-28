@@ -1,25 +1,19 @@
+// @ts-nocheck
 /**
- * SFTi Global Card Component
- * =========================
- * 
- * Universal card component with multiple variants for different use cases.
- * Supports project cards, feature cards, repo cards, and more.
- * 
- * Features:
- * - Multiple card types (project, feature, repo, contact)
- * - Responsive design (mobile/desktop)
- * - Interactive states (hover, active, loading)
- * - Link handling (internal/external)
- * - Image/icon support
- * - Theme adaptation per domain
+ * SFTi Global Card Component (Desktop Variant)
+ * ===========================================
+ *
+ * Mirrors the legacy implementation and represents the authoritative
+ * desktop experience. Mobile specific behaviour now lives in
+ * ../mobile/card.js which extends this base class.
  */
 
 class SFTiCard extends SFTiComponent {
     constructor(config = {}) {
         super('card', config.domain || 'global');
-        
+
         this.config = {
-            type: 'default', // default, project, feature, repo, contact
+            type: 'default',
             title: '',
             subtitle: '',
             description: '',
@@ -28,8 +22,8 @@ class SFTiCard extends SFTiComponent {
             link: null,
             external: false,
             interactive: true,
-            size: 'medium', // small, medium, large
-            variant: 'glass', // glass, solid, outline, gradient
+            size: 'medium',
+            variant: 'glass',
             ...config
         };
     }
@@ -38,7 +32,7 @@ class SFTiCard extends SFTiComponent {
         if (typeof container === 'string') {
             container = document.getElementById(container);
         }
-        
+
         if (!container) {
             console.error('Card container not found');
             return;
@@ -47,14 +41,14 @@ class SFTiCard extends SFTiComponent {
         const cardElement = document.createElement('div');
         cardElement.className = this.getCardClasses();
         cardElement.innerHTML = this.getTemplate();
-        
+
         if (this.config.link) {
             this.makeClickable(cardElement);
         }
-        
+
         container.appendChild(cardElement);
         this.attachEventListeners(cardElement);
-        
+
         return cardElement;
     }
 
@@ -68,14 +62,12 @@ class SFTiCard extends SFTiComponent {
             'ease-in-out'
         ];
 
-        // Size classes
         const sizeClasses = {
             small: ['w-64', 'h-48', 'p-4'],
             medium: ['w-80', 'h-64', 'p-6'],
             large: ['w-96', 'h-80', 'p-8']
         };
 
-        // Variant classes
         const variantClasses = {
             glass: [
                 'bg-black/10',
@@ -105,7 +97,6 @@ class SFTiCard extends SFTiComponent {
             ]
         };
 
-        // Interactive classes
         const interactiveClasses = this.config.interactive ? [
             'cursor-pointer',
             'hover:scale-105',
@@ -113,10 +104,7 @@ class SFTiCard extends SFTiComponent {
             'hover:border-yellow-400/50'
         ] : [];
 
-        // Link classes
-        const linkClasses = this.config.link ? [
-            'group'
-        ] : [];
+        const linkClasses = this.config.link ? ['group'] : [];
 
         return [
             ...baseClasses,
@@ -142,8 +130,8 @@ class SFTiCard extends SFTiComponent {
         if (this.config.image) {
             return `
                 <div class="relative w-full h-32 mb-4 overflow-hidden rounded-lg">
-                    <img 
-                        src="${this.config.image}" 
+                    <img
+                        src="${this.config.image}"
                         alt="${this.config.title}"
                         class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                         loading="lazy"
@@ -156,7 +144,7 @@ class SFTiCard extends SFTiComponent {
         if (this.config.icon) {
             return `
                 <div class="flex items-center justify-center w-16 h-16 mb-4 mx-auto rounded-full bg-red-500/20 border border-red-500/30">
-                    ${typeof this.config.icon === 'string' ? 
+                    ${typeof this.config.icon === 'string' ?
                         `<img src="${this.config.icon}" alt="Icon" class="w-8 h-8" />` :
                         this.config.icon
                     }
@@ -175,19 +163,19 @@ class SFTiCard extends SFTiComponent {
                         ${this.config.title}
                     </h3>
                 ` : ''}
-                
+
                 ${this.config.subtitle ? `
                     <p class="text-sm text-yellow-400 font-medium mb-2">
                         ${this.config.subtitle}
                     </p>
                 ` : ''}
-                
+
                 ${this.config.description ? `
                     <p class="text-gray-300 text-sm leading-relaxed">
                         ${this.config.description}
                     </p>
                 ` : ''}
-                
+
                 ${this.getActionSection()}
             </div>
         `;
@@ -197,7 +185,7 @@ class SFTiCard extends SFTiComponent {
         if (!this.config.link) return '';
 
         const linkText = this.config.external ? 'Visit External →' : 'Learn More →';
-        
+
         return `
             <div class="mt-4 pt-4 border-t border-white/10">
                 <span class="text-xs text-gray-400 group-hover:text-yellow-400 transition-colors">
@@ -209,12 +197,10 @@ class SFTiCard extends SFTiComponent {
 
     getOverlayEffects() {
         return `
-            <!-- Hover glow effect -->
             <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                 <div class="absolute inset-0 bg-gradient-to-r from-red-500/10 via-yellow-400/10 to-red-500/10 rounded-xl"></div>
             </div>
-            
-            <!-- Corner accent -->
+
             <div class="absolute top-0 right-0 w-16 h-16 opacity-20">
                 <div class="absolute top-2 right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-red-500 rounded-full blur-sm"></div>
             </div>
@@ -234,7 +220,6 @@ class SFTiCard extends SFTiComponent {
             }
         });
 
-        // Make focusable
         element.setAttribute('tabindex', '0');
         element.setAttribute('role', 'button');
         element.setAttribute('aria-label', `Navigate to ${this.config.title || 'link'}`);
@@ -245,25 +230,21 @@ class SFTiCard extends SFTiComponent {
 
         if (this.config.external) {
             window.open(this.config.link, '_blank', 'noopener,noreferrer');
-        } else {
-            if (this.config.link.startsWith('#')) {
-                // Smooth scroll to anchor
-                const target = document.querySelector(this.config.link);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            } else {
-                window.location.href = this.config.link;
+        } else if (this.config.link.startsWith('#')) {
+            const target = document.querySelector(this.config.link);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
             }
+        } else {
+            window.location.href = this.config.link;
         }
     }
 
     attachEventListeners(element) {
-        // Add any additional event listeners here
+        // Reserved for future desktop specific interactions.
     }
 }
 
-// Card type templates
 const SFTiCardTemplates = {
     project: {
         variant: 'glass',
@@ -287,7 +268,6 @@ const SFTiCardTemplates = {
     }
 };
 
-// Factory functions
 function createSFTiCard(config) {
     return new SFTiCard(config);
 }
@@ -324,7 +304,6 @@ function createContactCard(config) {
     });
 }
 
-// Export for module systems
 if (typeof window !== 'undefined') {
     window.SFTiCard = SFTiCard;
     window.createSFTiCard = createSFTiCard;
@@ -336,13 +315,17 @@ if (typeof window !== 'undefined') {
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { 
-        SFTiCard, 
-        createSFTiCard, 
-        createProjectCard, 
-        createFeatureCard, 
-        createRepoCard, 
-        createContactCard, 
-        SFTiCardTemplates 
+    module.exports = {
+        SFTiCard,
+        createSFTiCard,
+        createProjectCard,
+        createFeatureCard,
+        createRepoCard,
+        createContactCard,
+        SFTiCardTemplates
     };
+}
+
+if (typeof registerSFTiComponent === 'function') {
+    registerSFTiComponent({ domain: 'global', variant: 'desktop', name: 'card', implementation: SFTiCard });
 }
