@@ -1,0 +1,74 @@
+{
+  "buildSystem": {
+    "version": "1.0.0",
+    "lastUpdated": "2025-09-29T03:09:44.904Z"
+  },
+  "components": {
+    "navbar": {
+      "platforms": ["mobile", "desktop"],
+      "dependencies": {
+        "mobile": ["ticker.js"],
+        "desktop": []
+      },
+      "builds": {
+        "www": {
+          "desktop": {
+            "timestamp": "2025-09-29T03:09:44.904Z",
+            "status": "success",
+            "version": "1.0.0"
+          },
+          "mobile": {
+            "timestamp": "2025-09-29T03:09:44.904Z", 
+            "status": "success",
+            "version": "1.0.0"
+          }
+        },
+        "dev": {
+          "desktop": {
+            "timestamp": "2025-09-29T03:09:44.904Z",
+            "status": "success", 
+            "version": "1.0.0"
+          },
+          "mobile": {
+            "timestamp": "2025-09-29T03:09:44.904Z",
+            "status": "success",
+            "version": "1.0.0"
+          }
+        }
+      }
+    },
+    "footer": {
+      "platforms": ["mobile", "desktop"],
+      "dependencies": {
+        "mobile": [],
+        "desktop": []
+      },
+      "builds": {}
+    },
+    "card": {
+      "platforms": ["mobile", "desktop"],
+      "dependencies": {
+        "mobile": [],
+        "desktop": []
+      },
+      "builds": {}
+    },
+    "svg-card": {
+      "platforms": ["mobile", "desktop"],
+      "dependencies": {
+        "mobile": [],
+        "desktop": []
+      },
+      "builds": {}
+    },
+    "ticker": {
+      "platforms": ["mobile"],
+      "dependencies": {
+        "mobile": []
+      },
+      "builds": {}
+    }
+  },
+  "domains": ["www", "dev", "server"],
+  "platforms": ["desktop", "mobile"]
+}

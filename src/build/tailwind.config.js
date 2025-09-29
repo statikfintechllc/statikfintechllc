@@ -14,6 +14,19 @@ module.exports = {
   content: contentRoots,
   prefix: "",
   theme: {
+    screens: {
+      // Custom breakpoints: 'mobile' and 'desktop' are intentionally non-overlapping.
+      // 'mobile' applies up to 768px (inclusive), 'desktop' starts at 769px.
+      // This creates a 1px gap at exactly 768px where neither applies.
+      'mobile': {'max': '768px'},
+      'desktop': {'min': '769px'},
+      // Keep standard breakpoints for backwards compatibility
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       colors: {
         // Import from your existing CSS variables
@@ -38,6 +51,19 @@ module.exports = {
           DEFAULT: "var(--glass-bg)",
           foreground: "var(--text-light)",
         },
+        // Domain-specific colors
+        'www': { 
+          accent: '#E11D48',
+          highlight: '#FCD34D'
+        },
+        'dev': { 
+          accent: '#3B82F6',
+          highlight: '#10B981'
+        },
+        'server': { 
+          accent: '#8B5CF6',
+          highlight: '#F59E0B'
+        }
       },
       borderRadius: {
         lg: "var(--radius)",

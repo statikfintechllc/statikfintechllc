@@ -17,45 +17,61 @@ if (!BaseNavbar) {
 class SFTiMobileNavbar extends BaseNavbar {
     getTemplate() {
         return `
-            <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-xl border-b border-white/10">
-                <div class="px-4 h-14 flex items-center justify-between">
-                    <div class="flex flex-col leading-tight">
-                        <span class="text-red-500 font-bold text-base">${this.config.logoText}</span>
-                        <span class="text-yellow-400 text-[10px] uppercase tracking-wide">
-                            ${this.config.logoSubtitle}
+            <div class="fixed top-0 left-0 right-0 z-50">
+                <!-- Main navbar -->
+                <nav class="bg-black/95 backdrop-blur-xl border-b border-white/10">
+                    <div class="px-4 h-14 flex items-center justify-between">
+                        <div class="flex flex-col leading-tight">
+                            <span class="text-red-500 font-bold text-base">${this.config.logoText}</span>
+                            <span class="text-yellow-400 text-[10px] uppercase tracking-wide">
+                                ${this.config.logoSubtitle}
+                            </span>
+                        </div>
+
+                        <button id="mobile-menu-toggle" class="p-2 rounded-md border border-white/10">
+                            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out">
+                        <div class="h-full flex flex-col">
+                            <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
+                                <div class="text-sm text-gray-300">Navigation</div>
+                                <button id="mobile-menu-close" class="p-2 rounded-md border border-white/10">
+                                    <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="flex-1 overflow-y-auto px-6 py-8 space-y-4">
+                                ${this.config.items.map(item => `
+                                    <a href="${item.href}"
+                                       class="block text-lg font-medium text-white/90 bg-white/5 border border-white/10 rounded-xl px-4 py-3 active:bg-white/10 touch-manipulation"
+                                       ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
+                                        ${item.title}
+                                    </a>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                
+                <!-- Integrated ticker at bottom of navbar stack -->
+                <div id="navbar-ticker" class="bg-black/95 backdrop-blur-xl border-b border-white/10">
+                    <div class="max-w-lg mx-auto px-4 py-3 flex items-center space-x-3">
+                        <span class="text-xs font-semibold tracking-wide uppercase text-yellow-400/90">
+                            Live Repo Feed
                         </span>
-                    </div>
-
-                    <button id="mobile-menu-toggle" class="p-2 rounded-md border border-white/10">
-                        <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                        </svg>
-                    </button>
-                </div>
-
-                <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out">
-                    <div class="h-full flex flex-col">
-                        <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
-                            <div class="text-sm text-gray-300">Navigation</div>
-                            <button id="mobile-menu-close" class="p-2 rounded-md border border-white/10">
-                                <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                                </svg>
-                            </button>
-                        </div>
-
-                        <div class="flex-1 overflow-y-auto px-6 py-8 space-y-4">
-                            ${this.config.items.map(item => `
-                                <a href="${item.href}"
-                                   class="block text-lg font-medium text-white/90 bg-white/5 border border-white/10 rounded-xl px-4 py-3 active:bg-white/10"
-                                   ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
-                                    ${item.title}
-                                </a>
-                            `).join('')}
-                        </div>
+                        <img src="${this.config.tickerGifUrl || 'https://github.com/statikfintechllc/statikfintechllc/blob/master/docs/c.svg/assets/crimson-flow.svg?raw=true'}" 
+                             alt="Repo Ticker Stats"
+                             class="h-10 w-auto flex-1 object-contain mix-blend-screen"
+                             onerror="this.style.display='none'; this.parentElement.querySelector('span').textContent='Repo Feed Offline';" />
                     </div>
                 </div>
-            </nav>
+            </div>
         `;
     }
 
