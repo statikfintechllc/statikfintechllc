@@ -74,17 +74,17 @@ normalize_variant() {
 
 ensure_domain_exists() {
     local domain="$1"
-    local domain_dir="${PROJECT_ROOT}/src/${domain}"
+    local domain_dir="${PROJECT_ROOT}/${domain}"
     if [[ ! -d "$domain_dir" ]]; then
-        log_error "Domain directory not found: src/${domain}"
+        log_error "Domain directory not found: ${domain}"
         exit 1
     fi
 }
 
 ensure_domain_structure() {
     local domain="$1"
-    local domain_components_root="${PROJECT_ROOT}/src/${domain}/components/${domain}.c"
-    local management_root="${PROJECT_ROOT}/src/components/${domain}"
+    local domain_components_root="${PROJECT_ROOT}/${domain}/components/${domain}.c"
+    local management_root="${PROJECT_ROOT}/components/${domain}"
 
     mkdir -p "${domain_components_root}/desktop.c" "${domain_components_root}/mobile.c"
     mkdir -p "${management_root}/desktop" "${management_root}/mobile"
@@ -94,8 +94,8 @@ reset_component_directories() {
     local domain="$1"
     ensure_domain_structure "$domain"
 
-    local domain_root="${PROJECT_ROOT}/src/${domain}/components/${domain}.c"
-    local management_root="${PROJECT_ROOT}/src/components/${domain}"
+    local domain_root="${PROJECT_ROOT}/${domain}/components/${domain}.c"
+    local management_root="${PROJECT_ROOT}/components/${domain}"
 
     find "${domain_root}/desktop.c" -maxdepth 1 -type f -name '*.js' -delete 2>/dev/null || true
     find "${domain_root}/mobile.c" -maxdepth 1 -type f -name '*.js' -delete 2>/dev/null || true
@@ -111,14 +111,14 @@ component_exists() {
 
     case "$variant" in
         desktop)
-            if [[ ! -f "${PROJECT_ROOT}/src/components/global.c/desktop/${filename}" ]]; then
-                log_error "Missing desktop component: src/components/global.c/desktop/${filename}"
+            if [[ ! -f "${PROJECT_ROOT}/components/global.c/desktop/${filename}" ]]; then
+                log_error "Missing desktop component: components/global.c/desktop/${filename}"
                 exit 1
             fi
             ;;
         mobile)
-            if [[ ! -f "${PROJECT_ROOT}/src/components/global.c/mobile/${filename}" ]]; then
-                log_error "Missing mobile component: src/components/global.c/mobile/${filename}"
+            if [[ ! -f "${PROJECT_ROOT}/components/global.c/mobile/${filename}" ]]; then
+                log_error "Missing mobile component: components/global.c/mobile/${filename}"
                 exit 1
             fi
             ;;
@@ -134,8 +134,8 @@ clean_component_outputs() {
     local variant="$2"
     local domain="$3"
     local filename="$(component_filename "$component")"
-    local domain_root="${PROJECT_ROOT}/src/${domain}/components/${domain}.c"
-    local management_root="${PROJECT_ROOT}/src/components/${domain}"
+    local domain_root="${PROJECT_ROOT}/${domain}/components/${domain}.c"
+    local management_root="${PROJECT_ROOT}/components/${domain}"
 
     if [[ "$variant" == "desktop" || "$variant" == "both" ]]; then
         rm -f "${domain_root}/desktop.c/${filename}" 2>/dev/null || true
@@ -150,9 +150,9 @@ clean_component_outputs() {
 
 detect_domain_styles() {
     local domain="$1"
-    local styles_dir="${PROJECT_ROOT}/src/${domain}/${domain}.styles"
+    local styles_dir="${PROJECT_ROOT}/${domain}/${domain}.styles"
     if [[ -d "$styles_dir" ]]; then
-        log_info "Using theme tokens from src/${domain}/${domain}.styles/"
+        log_info "Using theme tokens from ${domain}/${domain}.styles/"
         printf '%s' "$styles_dir"
     else
         log_warn "No theme styles directory found for domain '${domain}'"

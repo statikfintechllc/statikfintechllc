@@ -45,10 +45,10 @@ switch (variantInput) {
         process.exit(1);
 }
 
-const globalComponentsDir = path.join(projectRoot, 'src', 'components', 'global.c');
-const domainDir = path.join(projectRoot, 'src', domain);
+const globalComponentsDir = path.join(projectRoot, 'components', 'global.c');
+const domainDir = path.join(projectRoot, domain);
 const domainComponentRoot = path.join(domainDir, 'components');
-const managementRoot = path.join(projectRoot, 'src', 'components', domain);
+const managementRoot = path.join(projectRoot, 'components', domain);
 
 async function pathExists(targetPath) {
     try {
