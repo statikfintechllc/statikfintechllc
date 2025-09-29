@@ -15,6 +15,9 @@ module.exports = {
   prefix: "",
   theme: {
     screens: {
+      // Custom breakpoints: 'mobile' and 'desktop' are intentionally non-overlapping.
+      // 'mobile' applies up to 768px (inclusive), 'desktop' starts at 769px.
+      // This creates a 1px gap at exactly 768px where neither applies.
       'mobile': {'max': '768px'},
       'desktop': {'min': '769px'},
       // Keep standard breakpoints for backwards compatibility
