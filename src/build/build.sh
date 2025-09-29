@@ -18,21 +18,31 @@ SFTi Build Toolkit
 ==================
 
 Usage:
-  ./build.sh component [options] <component> [desktop|mobile|both] <domain>
+  ./build.sh component [options] <component> [desktop|mobile|both] <domain|all>
   ./build.sh component-manifest [--manifest path] [--clean] [--dry-run]
   ./build.sh all [args]
   ./build.sh help
 
 Component Options:
-  -c, --component    Component id (e.g. navbar, svg-card)
+  -c, --component    Component id (e.g. navbar, svg-card, ticker)
   -v, --variant      Variant to build: desktop, mobile, both (default: both)
-  -d, --domain       Target domain slug (www, dev, server, ...)
+  -d, --domain       Target domain slug (www, dev, server) or 'all' for all domains
   --clean            Remove previously generated files before building
   --dry-run          Validate inputs without invoking the builder
 
+Platform Definitions:
+  desktop            Screen width > 768px (includes tablets in landscape)
+  mobile             Screen width <= 768px (includes phones and small tablets)
+
+Component Dependencies:
+  mobile navbar      Includes integrated ticker functionality
+  desktop navbar     Excludes ticker (never displays correctly on desktop)
+
 Examples:
   ./build.sh component navbar desktop dev
+  ./build.sh component navbar both all --clean
   ./build.sh component -c card -v both -d www --clean
+  ./build.sh component ticker mobile dev
   ./build.sh component-manifest --manifest ./src/build/components.manifest.json
   ./build.sh all clean
 EOF
@@ -160,6 +170,43 @@ detect_domain_styles() {
     fi
 }
 
+build_single_domain() {
+    local component="$1"
+    local variant="$2"
+    local domain="$3"
+    local clean_outputs="${4:-false}"
+    local dry_run="${5:-false}"
+    
+    variant="$(normalize_variant "$variant")"
+    ensure_domain_exists "$domain"
+    component_exists "$component" "$variant"
+    ensure_domain_structure "$domain"
+
+    if [[ "$clean_outputs" == true ]]; then
+        clean_component_outputs "$component" "$variant" "$domain"
+    fi
+
+    local styles_dir
+    styles_dir="$(detect_domain_styles "$domain")"
+
+    log_info "Building '${component}' (${variant}) for domain '${domain}'"
+
+    if [[ "$dry_run" == true ]]; then
+        log_done "Dry run complete. No files were generated."
+        return
+    fi
+
+    local node_cmd=(node "$COMPONENT_BUILDER" --root "$PROJECT_ROOT" --component "$component" --variant "$variant" --domain "$domain")
+
+    if [[ -n "$styles_dir" ]]; then
+        SFTI_THEME_DIRECTORY="$styles_dir" "${node_cmd[@]}"
+    else
+        "${node_cmd[@]}"
+    fi
+
+    log_done "Finished '${component}' (${variant}) for '${domain}'"
+}
+
 run_component_build() {
     ensure_node
 
@@ -225,34 +272,23 @@ run_component_build() {
     domain="${domain#/}"
     domain="${domain%/}"
 
-    variant="$(normalize_variant "$variant")"
-    ensure_domain_exists "$domain"
-    component_exists "$component" "$variant"
-    ensure_domain_structure "$domain"
-
-    if [[ "$clean_outputs" == true ]]; then
-        clean_component_outputs "$component" "$variant" "$domain"
-    fi
-
-    local styles_dir
-    styles_dir="$(detect_domain_styles "$domain")"
-
-    log_info "Building '${component}' (${variant}) for domain '${domain}'"
-
-    if [[ "$dry_run" == true ]]; then
-        log_done "Dry run complete. No files were generated."
+    # Handle "all" domain by building for all available domains
+    if [[ "$domain" == "all" ]]; then
+        local available_domains=("www" "dev" "server")
+        log_info "Building '${component}' (${variant}) for all domains"
+        
+        for target_domain in "${available_domains[@]}"; do
+            if [[ -d "${PROJECT_ROOT}/${target_domain}" ]]; then
+                log_info "Building for domain: ${target_domain}"
+                build_single_domain "$component" "$variant" "$target_domain" "$clean_outputs" "$dry_run"
+            else
+                log_warn "Skipping domain '${target_domain}' - directory not found"
+            fi
+        done
         return
     fi
 
-    local node_cmd=(node "$COMPONENT_BUILDER" --root "$PROJECT_ROOT" --component "$component" --variant "$variant" --domain "$domain")
-
-    if [[ -n "$styles_dir" ]]; then
-        SFTI_THEME_DIRECTORY="$styles_dir" "${node_cmd[@]}"
-    else
-        "${node_cmd[@]}"
-    fi
-
-    log_done "Finished '${component}' (${variant}) for '${domain}'"
+    build_single_domain "$component" "$variant" "$domain" "$clean_outputs" "$dry_run"
 }
 
 run_manifest_build() {

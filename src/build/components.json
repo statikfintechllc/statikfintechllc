@@ -1,17 +1,52 @@
 {
-  "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "default",
-  "rsc": false,
-  "tsx": true,
-  "tailwind": {
-    "config": "tailwind.config.js",
-    "css": "src/styles/globals.css",
-    "baseColor": "slate",
-    "cssVariables": true,
-    "prefix": ""
-  },
-  "aliases": {
-    "components": "./components",
-    "utils": "./lib/utils"
+  "components": {
+    "navbar": {
+      "version": "1.0.0",
+      "platforms": ["mobile", "desktop"],
+      "dependencies": {
+        "mobile": ["ticker.js"],
+        "desktop": []
+      },
+      "shadcn": {
+        "variant": "default",
+        "size": "default"
+      }
+    },
+    "footer": {
+      "version": "1.0.0",
+      "platforms": ["mobile", "desktop"],
+      "dependencies": {
+        "mobile": [],
+        "desktop": []
+      },
+      "gridColumns": {
+        "mobile": 1,
+        "desktop": 4
+      }
+    },
+    "card": {
+      "version": "1.0.0",
+      "platforms": ["mobile", "desktop"],
+      "dependencies": {
+        "mobile": [],
+        "desktop": []
+      }
+    },
+    "svg-card": {
+      "version": "1.0.0",
+      "platforms": ["mobile", "desktop"],
+      "dependencies": {
+        "mobile": [],
+        "desktop": []
+      }
+    },
+    "ticker": {
+      "version": "1.0.0",
+      "platforms": ["mobile"],
+      "dependencies": {
+        "mobile": []
+      },
+      "description": "Mobile-only ticker component"
+    }
   }
 }
