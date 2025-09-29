@@ -72,14 +72,17 @@ do {
 } while (cursor);
 
 // Lifetime contribution & follower stats
+// Note: For issues and PRs, we use direct user.issues/pullRequests fields instead of
+// contributionsCollection because the latter has limitations with large date ranges
+// and may not accurately count all historical contributions
 const qStats = `
   query($login:String!, $from:DateTime!, $to:DateTime!){
     user(login:$login){
       followers{ totalCount }
+      issues(first: 1) { totalCount }
+      pullRequests(first: 1) { totalCount }
       contributionsCollection(from:$from, to:$to){
         totalCommitContributions
-        totalIssueContributions
-        totalPullRequestContributions
         totalPullRequestReviewContributions
         totalRepositoryContributions
         contributionCalendar{ totalContributions }
@@ -99,9 +102,9 @@ const trophies = [
   { title:"Followers",      value: stats.user.followers.totalCount,        desc:"People following this account." },
   { title:"Stars Earned",   value: starSum,                                 desc:"Stargazers on owned repositories." },
   { title:"Reviews",        value: c.totalPullRequestReviewContributions,  desc:"Pull request reviews submitted." },
-  { title:"Issues",         value: c.totalIssueContributions,              desc:"Issues created." },
+  { title:"Issues",         value: stats.user.issues.totalCount,           desc:"Issues created." },
   { title:"Repositories",   value: repoCount,                               desc:"Owned non-fork repositories." },
-  { title:"Pull Requests",  value: c.totalPullRequestContributions,        desc:"Pull requests opened." },
+  { title:"Pull Requests",  value: stats.user.pullRequests.totalCount,     desc:"Pull requests opened." },
   { title:"Total Activity", value: c.contributionCalendar.totalContributions, desc:"All recorded contributions." }
 ];
 
