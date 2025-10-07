@@ -35,7 +35,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Public Repositories:</text>
-      <text x="200" y="5" class="stat-value">15</text>
+      <text x="200" y="5" class="stat-value">16</text>
     </g>
     
     <g transform="translate(0, 60)">
@@ -73,7 +73,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">PR's:</text>
-      <text x="200" y="5" class="stat-value">108</text>
+      <text x="200" y="5" class="stat-value">109</text>
     </g>
   </g>
 
