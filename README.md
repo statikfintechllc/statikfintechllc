@@ -1,11 +1,4 @@
 <div align="center">
-  <a href="https://sfti-ai.org/">
-    <img src="https://img.shields.io/badge/SFTi's-darkred?style=for-the-badge&logo=dragon&logoColor=gold"/>
-  <a href="https://sfti-ai.org">
-    <img src="https://img.shields.io/badge/Home%20Page-black?style=for-the-badge&logo=ghost&logoColor=gold"/>
-  </a><br>
-</div> 
-<div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://skillicons.dev/icons?i=python,bash,linux,anaconda,tailwind,css,react,nodejs,electron,go,typescript,javascript,html,astro,nix&theme=dark" alt="Skill icons">
   </a><br>
@@ -41,6 +34,18 @@
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/r.svg/assets/repo-slide.svg" alt="Featured repositories carousel" /><br>
   </a>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+<div align="center">
+<!-- SFTi Home-Page Card -->
+<a href="https://sfti-ai.org">
+  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/H.P.svg/assets/sfti-homepage-card.svg" alt="Visit SFTi Home-Page" width="400"/>
+</a>
+<!-- My Trades Card -->
+<a href="https://statikfintechllc.github.io/SFTi-Pennies/">
+  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/M.T.svg/assets/my-trades-card.svg" alt="Check out my Trades" width="400"/>
+</a>
+</div>
 </div>
 <div align="center">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/G.H.badge.svg" alt="GitHub Repositories" />
