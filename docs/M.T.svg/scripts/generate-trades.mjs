@@ -54,7 +54,7 @@ async function main() {
          preserveAspectRatio="xMidYMid slice"/>
 
   <!-- Title -->
-  <text x="48" y="31" class="title">My Trades</text>
+  <text x="48" y="31" class="title">SFTi Trades</text>
 
   <!-- Main Call-to-Action -->
   <text x="240" y="100" class="cta" text-anchor="middle">Check out my Trades</text>
