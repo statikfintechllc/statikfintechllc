@@ -254,8 +254,28 @@
     </div>
         <script>
             document.addEventListener('DOMContentLoaded',()=>{
-                if (window.ServerNavbar) { try { new ServerNavbar({containerId:'navbar-container'});} catch(e){console.error(e);} }
-                if (window.SFTiTicker) { const t=new SFTiTicker('server'); t.render('#ticker-container'); }
+                // Initialize navbar with responsive detection
+                const isMobile = window.innerWidth < 768;
+                const NavbarClass = isMobile && window.ServerNavbarMobile ? window.ServerNavbarMobile : window.SFTiNavbar;
+                
+                if (NavbarClass) {
+                    try {
+                        const navbarConfig = window.SFTiNavbarConfigs?.server || {};
+                        new NavbarClass({ ...navbarConfig, containerId: 'navbar-container' });
+                    } catch(e) {
+                        console.error('Navbar initialization error:', e);
+                    }
+                }
+                
+                // Initialize ticker if available
+                if (window.SFTiTicker) {
+                    try {
+                        const ticker = new SFTiTicker('server');
+                        ticker.render('#ticker-container');
+                    } catch(e) {
+                        console.error('Ticker initialization error:', e);
+                    }
+                }
             });
         </script>
 </body>

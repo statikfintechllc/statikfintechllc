@@ -237,5 +237,33 @@
             </div>
         </div>
     </div>
+    
+    <!-- Component Init -->
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            // Initialize navbar with responsive detection
+            const isMobile = window.innerWidth < 768;
+            const NavbarClass = isMobile && window.DevNavbarMobile ? window.DevNavbarMobile : window.SFTiNavbar;
+            
+            if (NavbarClass) {
+                try {
+                    const navbarConfig = window.SFTiNavbarConfigs?.dev || {};
+                    new NavbarClass({ ...navbarConfig, containerId: 'navbar-container' });
+                } catch(e) {
+                    console.error('Navbar initialization error:', e);
+                }
+            }
+            
+            // Initialize ticker if available
+            if (window.SFTiTicker) {
+                try {
+                    const ticker = new SFTiTicker('dev');
+                    ticker.render('#ticker-container');
+                } catch(e) {
+                    console.error('Ticker initialization error:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
