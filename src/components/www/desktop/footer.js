@@ -70,12 +70,12 @@ class SFTiFooter extends SFTiComponent {
 
     getTemplate() {
         return `
-            <footer class="sfti-footer mt-auto" style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-top: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);">
+            <footer class="sfti-footer mt-auto" style="background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid rgba(255, 255, 255, 0.1);">
                 <div class="max-w-7xl mx-auto px-4 py-12">
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                         <div class="lg:col-span-1">
                             <div class="mb-6">
-                                <h3 class="text-white font-bold text-xl mb-2 ${this.getDomainAccent()}" style="text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);">${this.config.logoText}</h3>
+                                <h3 class="text-white font-bold text-xl mb-2 ${this.getDomainAccent()}">${this.config.logoText}</h3>
                                 <p class="text-gray-400 text-sm leading-relaxed">${this.config.tagline}</p>
                             </div>
                             <div class="flex space-x-4">
@@ -84,21 +84,21 @@ class SFTiFooter extends SFTiComponent {
                         </div>
 
                         <div class="lg:col-span-1">
-                            <h4 class="text-white font-semibold mb-4" style="text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);">Quick Links</h4>
+                            <h4 class="text-white font-semibold mb-4">Quick Links</h4>
                             <ul class="space-y-2">
                                 ${this.renderQuickLinks()}
                             </ul>
                         </div>
 
                         <div class="lg:col-span-1">
-                            <h4 class="text-white font-semibold mb-4" style="text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);">Our Domains</h4>
+                            <h4 class="text-white font-semibold mb-4">Our Domains</h4>
                             <ul class="space-y-2">
                                 ${this.renderDomainLinks()}
                             </ul>
                         </div>
 
                         <div class="lg:col-span-1">
-                            <h4 class="text-white font-semibold mb-4" style="text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);">Legal & Contact</h4>
+                            <h4 class="text-white font-semibold mb-4">Legal & Contact</h4>
                             <ul class="space-y-2 mb-4">
                                 ${this.renderLegalLinks()}
                             </ul>
@@ -109,7 +109,7 @@ class SFTiFooter extends SFTiComponent {
                         </div>
                     </div>
 
-                    <div class="pt-8" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+                    <div class="pt-8" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
                         <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                             <div class="text-gray-400 text-sm">
                                 <span>&copy; ${this.config.copyright.year} ${this.config.copyright.entity}</span>
@@ -118,11 +118,11 @@ class SFTiFooter extends SFTiComponent {
 
                             <div class="text-gray-400 text-sm flex items-center space-x-4">
                                 <span class="flex items-center">
-                                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" style="box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);"></span>
+                                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
                                     System Status: Operational
                                 </span>
                                 <span class="hidden md:inline">|</span>
-                                <span class="${this.getDomainAccent()}" style="text-shadow: 0 0 8px rgba(255, 0, 0, 0.2);">${this.getDomainLabel()}</span>
+                                <span class="${this.getDomainAccent()}">${this.getDomainLabel()}</span>
                             </div>
                         </div>
                     </div>
@@ -137,10 +137,8 @@ class SFTiFooter extends SFTiComponent {
         return Object.entries(this.config.social).map(([key, social]) => `
             <a
                 href="${social.href}"
-                class="p-2 text-gray-400 hover:text-white transition-all duration-300"
-                style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s ease;"
-                onmouseover="this.style.background='rgba(255, 255, 255, 0.1)'; this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(255, 255, 255, 0.1)';"
-                onmouseout="this.style.background='rgba(255, 255, 255, 0.05)'; this.style.transform='translateY(0)'; this.style.boxShadow='none';"
+                class="p-2 text-gray-400 hover:text-white transition-colors duration-200 rounded"
+                style="background: rgba(255, 255, 255, 0.05);"
                 title="${social.label}"
                 target="_blank"
                 rel="noopener noreferrer"
