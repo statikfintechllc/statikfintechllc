@@ -76,13 +76,13 @@ class SFTiNavbar {
 
     getTemplate() {
         return `
-            <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10 h-12 min-h-12 max-h-12">
+            <nav class="fixed top-0 left-0 right-0 z-50 h-12 min-h-12 max-h-12" style="background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);">
                 <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
                     <div class="flex flex-col leading-none">
-                        <span class="text-red-500 font-bold text-lg leading-tight">
+                        <span class="text-red-500 font-bold text-lg leading-tight" style="text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);">
                             ${this.config.logoText}
                         </span>
-                        <span class="text-yellow-400 text-xs leading-tight">
+                        <span class="text-yellow-400 text-xs leading-tight" style="text-shadow: 0 0 8px rgba(255, 215, 0, 0.2);">
                             ${this.config.logoSubtitle}
                         </span>
                     </div>
@@ -90,30 +90,32 @@ class SFTiNavbar {
                     <div class="hidden md:flex items-center space-x-6">
                         ${this.config.items.map(item => `
                             <a href="${item.href}"
-                               class="text-white hover:text-yellow-400 transition-colors text-sm"
+                               class="text-white hover:text-yellow-400 transition-all duration-300 text-sm"
+                               style="text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);"
                                ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
                                 ${item.title}
                             </a>
                         `).join('')}
                     </div>
 
-                    <button id="mobile-menu-toggle" class="md:hidden p-2 h-8 w-8 flex items-center justify-center">
+                    <button id="mobile-menu-toggle" class="md:hidden p-2 h-8 w-8 flex items-center justify-center" style="background: rgba(255, 255, 255, 0.05); border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1);">
                         <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
                     </button>
                 </div>
 
-                <div id="mobile-menu" class="md:hidden fixed inset-y-0 right-0 w-64 bg-black/95 backdrop-blur-sm border-l border-white/10 transform translate-x-full transition-transform duration-300 ease-in-out">
+                <div id="mobile-menu" class="md:hidden fixed inset-y-0 right-0 w-64 transform translate-x-full transition-transform duration-300 ease-in-out" style="background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(40px) saturate(180%); -webkit-backdrop-filter: blur(40px) saturate(180%); border-left: 1px solid rgba(255, 255, 255, 0.1); box-shadow: -4px 0 30px rgba(0, 0, 0, 0.5);">
                     <div class="flex flex-col p-6 space-y-4 mt-6">
-                        <button id="mobile-menu-close" class="self-end p-2 mb-4">
+                        <button id="mobile-menu-close" class="self-end p-2 mb-4" style="background: rgba(255, 255, 255, 0.05); border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1);">
                             <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                         </button>
                         ${this.config.items.map(item => `
                             <a href="${item.href}"
-                               class="text-white hover:text-yellow-400 transition-colors text-base py-2"
+                               class="text-white hover:text-yellow-400 transition-all duration-300 text-base py-2"
+                               style="text-shadow: 0 0 10px rgba(255, 255, 255, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.05);"
                                ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
                                 ${item.title}
                             </a>
