@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-17T21:24:37.212Z
+ * Generated: 2025-10-17T21:30:14.070Z
  */
 
 // @ts-nocheck
@@ -44,7 +44,7 @@ class SFTiMobileNavbar extends BaseNavbar {
                         </button>
                     </div>
 
-                    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out" style="top: 14rem; z-index: 40;">
+                    <div id="mobile-menu" class="fixed left-0 right-0 bottom-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out" style="top: 14rem; z-index: 40;">
                         <div class="h-full flex flex-col">
                             <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
                                 <div class="text-sm text-gray-300">Navigation</div>
