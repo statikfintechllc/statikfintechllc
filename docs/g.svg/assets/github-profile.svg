@@ -73,7 +73,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">PR's:</text>
-      <text x="200" y="5" class="stat-value">113</text>
+      <text x="200" y="5" class="stat-value">114</text>
     </g>
   </g>
 
@@ -96,13 +96,13 @@
   <!-- Language progress bar -->
   <g transform="translate(505, 45)">
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
-  <!-- TypeScript 74.72% -->
+  <!-- TypeScript 74.71% -->
   <rect x="0" y="0" width="217" height="8" fill="#3178c6" rx="4"/>
   <!-- Python 11.98% -->
   <rect x="217" y="0" width="35" height="8" fill="#3572A5"/>
   <!-- Go 6.48% -->
   <rect x="252" y="0" width="19" height="8" fill="#00ADD8"/>
-  <!-- JavaScript 1.32% -->
+  <!-- JavaScript 1.33% -->
   <rect x="271" y="0" width="4" height="8" fill="#f1e05a"/>
   <!-- CSS 1.23% -->
   <rect x="275" y="0" width="4" height="8" fill="#563d7c"/>
@@ -122,7 +122,7 @@
   <g transform="translate(505, 70)">
     <g transform="translate(0, 0)">
       <circle cx="5" cy="5" r="4" fill="#3178c6"/>
-      <text x="15" y="9" class="lang-name">TypeScript 74.72%</text>
+      <text x="15" y="9" class="lang-name">TypeScript 74.71%</text>
     </g>
     
     <g transform="translate(0, 20)">
@@ -137,7 +137,7 @@
     
     <g transform="translate(0, 60)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 1.32%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 1.33%</text>
     </g>
     
     <g transform="translate(0, 80)">
