@@ -6,12 +6,11 @@
     <link rel="stylesheet" href="server.styles/server-styles.css">
     <link rel="stylesheet" href="server.styles/server.tailwind.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="components/sfti-component-system.js"></script>
-    <script src="components/server.c/desktop.c/navbar.js"></script>
-    <script src="components/server.c/desktop.c/footer.js"></script>
-    <script src="components/server.c/mobile.c/navbar.js"></script>
-    <script src="components/server.c/mobile.c/footer.js"></script>
-    <script src="components/server.c/mobile.c/ticker.js"></script>
+    <script src="../components/sfti-component-system.js"></script>
+    <script src="../components/server/desktop/navbar.js"></script>
+    <script src="../components/global.c/desktop/footer.js"></script>
+    <script src="../components/global.c/mobile/navbar.js"></script>
+    <script src="../components/global.c/mobile/footer.js"></script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -255,8 +254,28 @@
     </div>
         <script>
             document.addEventListener('DOMContentLoaded',()=>{
-                if (window.ServerNavbar) { try { new ServerNavbar({containerId:'navbar-container'});} catch(e){console.error(e);} }
-                if (window.SFTiTicker) { const t=new SFTiTicker('server'); t.render('#ticker-container'); }
+                // Initialize navbar with responsive detection
+                const isMobile = window.innerWidth < 768;
+                const NavbarClass = isMobile && window.ServerNavbarMobile ? window.ServerNavbarMobile : window.SFTiNavbar;
+                
+                if (NavbarClass) {
+                    try {
+                        const navbarConfig = window.SFTiNavbarConfigs?.server || {};
+                        new NavbarClass({ ...navbarConfig, containerId: 'navbar-container' });
+                    } catch(e) {
+                        console.error('Navbar initialization error:', e);
+                    }
+                }
+                
+                // Initialize ticker if available
+                if (window.SFTiTicker) {
+                    try {
+                        const ticker = new SFTiTicker('server');
+                        ticker.render('#ticker-container');
+                    } catch(e) {
+                        console.error('Ticker initialization error:', e);
+                    }
+                }
             });
         </script>
 </body>

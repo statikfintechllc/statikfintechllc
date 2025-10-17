@@ -29,14 +29,14 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Component System -->
-    <script src="components/sfti-component-system.js"></script>
-    <script src="components/www.c/desktop.c/navbar.js"></script>
-    <script src="components/www.c/desktop.c/footer.js"></script>
-    <script src="components/www.c/mobile.c/navbar.js"></script>
-    <script src="components/www.c/mobile.c/footer.js"></script>
-    <script src="components/www.c/mobile.c/ticker.js"></script>
+    <script src="../components/sfti-component-system.js"></script>
+    <script src="../components/www/desktop/navbar.js"></script>
+    <script src="../components/www/desktop/footer.js"></script>
+    <script src="../components/www/mobile/navbar.js"></script>
+    <script src="../components/www/mobile/footer.js"></script>
+    <script src="../components/global.c/mobile/ticker.js"></script>
     <style>
-        /* FORCE HIDE ALL SCROLLBARS AND MAKE FULL WIDTH */
+        /* FORCE HIDE ALL SCROLLBARS */
         * {
             scrollbar-width: none !important;
             -ms-overflow-style: none !important;
@@ -46,23 +46,34 @@
             width: 0 !important;
             height: 0 !important;
         }
+        
+        /* CAROUSEL CONTAINERS - FULL WIDTH */
         .projects-carousel-container,
         .papers-carousel-container,
         .institute-carousel-full-width {
             width: 100vw !important;
+            max-width: 100vw !important;
             margin-left: calc(-50vw + 50%) !important;
+            overflow: hidden !important;
         }
+        
+        /* CAROUSELS - HORIZONTAL SCROLL ONLY */
         .institute-carousel,
         .projects-carousel,
         .papers-carousel,
         .zenodo-carousel,
         .medium-carousel {
+            display: flex !important;
             overflow-x: auto !important;
             overflow-y: hidden !important;
             scrollbar-width: none !important;
             -ms-overflow-style: none !important;
-            justify-content: center !important;
+            justify-content: flex-start !important;
+            scroll-behavior: smooth !important;
+            scroll-snap-type: x mandatory !important;
+            -webkit-overflow-scrolling: touch !important;
         }
+        
         .institute-carousel::-webkit-scrollbar,
         .projects-carousel::-webkit-scrollbar,
         .papers-carousel::-webkit-scrollbar,
@@ -72,6 +83,15 @@
             width: 0 !important;
             height: 0 !important;
         }
+        
+        /* Carousel Cards */
+        .institute-card,
+        .project-card,
+        .paper-card {
+            flex-shrink: 0 !important;
+            scroll-snap-align: start !important;
+        }
+        
         /* Responsive sizing for mobile - FORCE SMALLER */
         @media (max-width: 768px) {
             .technical-skills-container {
@@ -644,26 +664,8 @@
             e.preventDefault();
             deferredPrompt = e;
             
-            // Show install button or banner
-            console.log('SFTi PWA: Install prompt available');
-            
-            // You can add UI here to show install button
-            setTimeout(() => {
-                if (deferredPrompt && !window.matchMedia('(display-mode: standalone)').matches) {
-                    const installPrompt = confirm('Install SFTi Templates as an app?');
-                    if (installPrompt) {
-                        deferredPrompt.prompt();
-                        deferredPrompt.userChoice.then((choiceResult) => {
-                            if (choiceResult.outcome === 'accepted') {
-                                console.log('SFTi PWA: User accepted the install prompt');
-                            } else {
-                                console.log('SFTi PWA: User dismissed the install prompt');
-                            }
-                            deferredPrompt = null;
-                        });
-                    }
-                }
-            }, 3000);
+            // Don't show install prompt automatically
+            console.log('SFTi PWA: Install prompt available (suppressed)');
         });
 
         // Track app installation
@@ -675,8 +677,28 @@
         <!-- Component Init -->
         <script>
             document.addEventListener('DOMContentLoaded', ()=>{
-                if (window.WwwNavbar) { try { new WwwNavbar({ containerId:'navbar-container'});} catch(e){console.error(e);} }
-                if (window.SFTiTicker) { const t = new SFTiTicker('www'); t.render('#ticker-container'); }
+                // Initialize navbar with responsive detection
+                const isMobile = window.innerWidth < 768;
+                const NavbarClass = isMobile && window.WwwNavbarMobile ? window.WwwNavbarMobile : window.SFTiNavbar;
+                
+                if (NavbarClass) {
+                    try {
+                        const navbarConfig = window.SFTiNavbarConfigs?.main || {};
+                        new NavbarClass({ ...navbarConfig, containerId: 'navbar-container' });
+                    } catch(e) {
+                        console.error('Navbar initialization error:', e);
+                    }
+                }
+                
+                // Initialize ticker if available
+                if (window.SFTiTicker) {
+                    try {
+                        const ticker = new SFTiTicker('www');
+                        ticker.render('#ticker-container');
+                    } catch(e) {
+                        console.error('Ticker initialization error:', e);
+                    }
+                }
             });
         </script>
 </body>
