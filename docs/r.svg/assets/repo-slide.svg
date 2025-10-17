@@ -73,7 +73,7 @@
           <text x="26" y="2" class="pill">1</text>
         </g>
       </g>
-      <rect x="20" y="165" width="248" height="12" fill="#3572A5" /><rect x="268" y="165" width="77" height="12" fill="#3178c6" /><rect x="345" y="165" width="14" height="12" fill="#f1e05a" /><rect x="359" y="165" width="14" height="12" fill="#89e051" /><rect x="373" y="165" width="14" height="12" fill="#663399" /><rect x="387" y="165" width="13" height="12" fill="#ff5a03" />
+      <rect x="20" y="165" width="242" height="12" fill="#3572A5" /><rect x="262" y="165" width="75" height="12" fill="#3178c6" /><rect x="337" y="165" width="21" height="12" fill="#f1e05a" /><rect x="358" y="165" width="14" height="12" fill="#89e051" /><rect x="372" y="165" width="14" height="12" fill="#663399" /><rect x="386" y="165" width="14" height="12" fill="#ff5a03" />
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="195" class="legend">TypeScript</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="207" class="legend">JavaScript</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="222" y="207" class="legend">Shell</text>
     </g>
   </a>
