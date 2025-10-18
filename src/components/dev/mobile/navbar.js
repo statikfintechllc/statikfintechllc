@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-18T16:39:58.653Z
+ * Generated: 2025-10-18T16:45:38.282Z
  */
 
 // @ts-nocheck
@@ -26,6 +26,15 @@ if (!BaseNavbar) {
 class SFTiMobileNavbar extends BaseNavbar {
     getTemplate() {
         return `
+            <style>
+                /* Ensure translate-y-full works even without Tailwind CDN processing */
+                #mobile-menu.translate-y-full {
+                    transform: translateY(100%) !important;
+                }
+                #mobile-menu.translate-y-0 {
+                    transform: translateY(0) !important;
+                }
+            </style>
             <div class="fixed top-0 left-0 right-0 z-50">
                 <!-- Main navbar -->
                 <nav class="bg-black/95 backdrop-blur-xl border-b border-white/10">
@@ -44,7 +53,7 @@ class SFTiMobileNavbar extends BaseNavbar {
                         </button>
                     </div>
 
-                    <div id="mobile-menu" class="fixed left-0 right-0 bottom-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out" style="top: 14rem; z-index: 40;">
+                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out" style="top: 14rem; bottom: 0; z-index: 40;">
                         <div class="h-full flex flex-col">
                             <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
                                 <div class="text-sm text-gray-300">Navigation</div>
@@ -82,9 +91,15 @@ class SFTiMobileNavbar extends BaseNavbar {
     }
 
     attachEventListeners() {
+        // Ensure menu is hidden on init (force it!)
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu) {
+            // Force hide the menu by setting inline style
+            mobileMenu.style.transform = 'translateY(100%)';
+        }
+
         const toggleButton = document.getElementById('mobile-menu-toggle');
         const closeButton = document.getElementById('mobile-menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
 
         if (toggleButton) {
             toggleButton.addEventListener('click', (e) => {
@@ -130,8 +145,10 @@ class SFTiMobileNavbar extends BaseNavbar {
         
         if (this.mobileMenuOpen) {
             mobileMenu.classList.remove('translate-y-full');
+            mobileMenu.style.transform = 'translateY(0)';
         } else {
             mobileMenu.classList.add('translate-y-full');
+            mobileMenu.style.transform = 'translateY(100%)';
         }
     }
 
@@ -141,6 +158,7 @@ class SFTiMobileNavbar extends BaseNavbar {
         
         this.mobileMenuOpen = false;
         mobileMenu.classList.add('translate-y-full');
+        mobileMenu.style.transform = 'translateY(100%)';
     }
 }
 
