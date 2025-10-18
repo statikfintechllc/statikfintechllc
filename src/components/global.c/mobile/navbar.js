@@ -61,28 +61,75 @@ class SFTiMobileNavbar extends BaseNavbar {
                 
                 <!-- Integrated ticker at bottom of navbar stack -->
                 <div id="navbar-ticker" class="bg-black/95 backdrop-blur-xl border-b border-white/10" style="position: relative; z-index: 50;">
-                    <div class="max-w-lg mx-auto px-4 py-3 flex items-center space-x-3">
-                        <span class="text-xs font-semibold tracking-wide uppercase text-yellow-400/90">
-                            Live Repo Feed
-                        </span>
+                    <div class="max-w-lg mx-auto px-4 py-3 flex items-center justify-center">
                         <img src="${this.config.tickerGifUrl || 'https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif'}" 
                              alt="Repo Ticker Stats"
-                             class="h-10 w-auto flex-1 object-contain mix-blend-screen"
-                             onerror="this.style.display='none'; this.parentElement.querySelector('span').textContent='Repo Feed Offline';" />
+                             class="h-10 w-auto object-contain mix-blend-screen"
+                             onerror="this.style.display='none';" />
                     </div>
                 </div>
             </div>
         `;
     }
 
+    attachEventListeners() {
+        const toggleButton = document.getElementById('mobile-menu-toggle');
+        const closeButton = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (toggleButton) {
+            toggleButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMobileMenu();
+            });
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.closeMobileMenu();
+            });
+        }
+
+        // Close menu when clicking a link
+        if (mobileMenu) {
+            const links = mobileMenu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    this.closeMobileMenu();
+                });
+            });
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.mobileMenuOpen && mobileMenu && toggleButton) {
+                if (!mobileMenu.contains(e.target) && !toggleButton.contains(e.target)) {
+                    this.closeMobileMenu();
+                }
+            }
+        });
+    }
+
     toggleMobileMenu() {
         const mobileMenu = document.getElementById('mobile-menu');
+        if (!mobileMenu) return;
+        
         this.mobileMenuOpen = !this.mobileMenuOpen;
-        mobileMenu.classList.toggle('translate-y-full', !this.mobileMenuOpen);
+        
+        if (this.mobileMenuOpen) {
+            mobileMenu.classList.remove('translate-y-full');
+        } else {
+            mobileMenu.classList.add('translate-y-full');
+        }
     }
 
     closeMobileMenu() {
         const mobileMenu = document.getElementById('mobile-menu');
+        if (!mobileMenu) return;
+        
         this.mobileMenuOpen = false;
         mobileMenu.classList.add('translate-y-full');
     }
