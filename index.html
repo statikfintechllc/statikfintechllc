@@ -37,7 +37,6 @@
     <script src="src/components/www/desktop/footer.js"></script>
     <script src="src/components/www/mobile/navbar.js"></script>
     <script src="src/components/www/mobile/footer.js"></script>
-    <script src="src/components/global.c/mobile/ticker.js"></script>
     <style>
         /* FORCE HIDE ALL SCROLLBARS */
         * {
@@ -137,11 +136,8 @@
     <meta property="og:url" content="https://www.sfti-ai.org">
 </head>
 <body class="pt-16" style="padding-top: 48px !important;">
-    <!-- Navbar Container -->
+    <!-- Navbar Container (includes integrated ticker on mobile) -->
     <div id="navbar-container"></div>
-
-    <!-- Ticker Container - Component Driven -->
-    <div id="ticker-container"></div>
     <main class="main-content"></main>
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -679,7 +675,7 @@
         <!-- Component Init -->
         <script>
             document.addEventListener('DOMContentLoaded', ()=>{
-                // Initialize navbar with responsive detection
+                // Initialize navbar with responsive detection (ticker integrated in mobile navbar)
                 const isMobile = window.innerWidth < 768;
                 const NavbarClass = isMobile && window.WwwNavbarMobile ? window.WwwNavbarMobile : window.SFTiNavbar;
                 
@@ -689,16 +685,6 @@
                         new NavbarClass({ ...navbarConfig, containerId: 'navbar-container' });
                     } catch(e) {
                         console.error('Navbar initialization error:', e);
-                    }
-                }
-                
-                // Initialize ticker if available
-                if (window.SFTiTicker) {
-                    try {
-                        const ticker = new SFTiTicker('www');
-                        ticker.render('#ticker-container');
-                    } catch(e) {
-                        console.error('Ticker initialization error:', e);
                     }
                 }
             });

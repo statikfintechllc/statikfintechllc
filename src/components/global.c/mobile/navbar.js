@@ -35,7 +35,7 @@ class SFTiMobileNavbar extends BaseNavbar {
                         </button>
                     </div>
 
-                    <div id="mobile-menu" class="fixed inset-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out">
+                    <div id="mobile-menu" class="fixed left-0 right-0 bottom-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out" style="top: 14rem; z-index: 40;">
                         <div class="h-full flex flex-col">
                             <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
                                 <div class="text-sm text-gray-300">Navigation</div>
@@ -60,12 +60,12 @@ class SFTiMobileNavbar extends BaseNavbar {
                 </nav>
                 
                 <!-- Integrated ticker at bottom of navbar stack -->
-                <div id="navbar-ticker" class="bg-black/95 backdrop-blur-xl border-b border-white/10">
+                <div id="navbar-ticker" class="bg-black/95 backdrop-blur-xl border-b border-white/10" style="position: relative; z-index: 50;">
                     <div class="max-w-lg mx-auto px-4 py-3 flex items-center space-x-3">
                         <span class="text-xs font-semibold tracking-wide uppercase text-yellow-400/90">
                             Live Repo Feed
                         </span>
-                        <img src="${this.config.tickerGifUrl || 'https://github.com/statikfintechllc/statikfintechllc/blob/master/docs/c.svg/assets/crimson-flow.svg?raw=true'}" 
+                        <img src="${this.config.tickerGifUrl || 'https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif'}" 
                              alt="Repo Ticker Stats"
                              class="h-10 w-auto flex-1 object-contain mix-blend-screen"
                              onerror="this.style.display='none'; this.parentElement.querySelector('span').textContent='Repo Feed Offline';" />

@@ -9,7 +9,7 @@
     <script src="../components/sfti-component-system.js"></script>
     <script src="../components/server/desktop/navbar.js"></script>
     <script src="../components/global.c/desktop/footer.js"></script>
-    <script src="../components/global.c/mobile/navbar.js"></script>
+    <script src="../components/server/mobile/navbar.js"></script>
     <script src="../components/global.c/mobile/footer.js"></script>
 <html lang="en">
 <head>
@@ -28,10 +28,8 @@
 <body class="pt-12" style="padding-top: 48px !important;">
     <!-- Background Animation -->
     <div class="matrix-bg" id="matrix"></div>
-    <!-- Navbar Container -->
+    <!-- Navbar Container (includes integrated ticker on mobile) -->
     <div id="navbar-container"></div>
-    <!-- Ticker Container - Component Driven -->
-    <div id="ticker-container"></div>
     <!-- Main Content -->
     <main class="main-content">
         <!-- Login Section -->
@@ -254,7 +252,7 @@
     </div>
         <script>
             document.addEventListener('DOMContentLoaded',()=>{
-                // Initialize navbar with responsive detection
+                // Initialize navbar with responsive detection (ticker integrated in mobile navbar)
                 const isMobile = window.innerWidth < 768;
                 const NavbarClass = isMobile && window.ServerNavbarMobile ? window.ServerNavbarMobile : window.SFTiNavbar;
                 
@@ -264,16 +262,6 @@
                         new NavbarClass({ ...navbarConfig, containerId: 'navbar-container' });
                     } catch(e) {
                         console.error('Navbar initialization error:', e);
-                    }
-                }
-                
-                // Initialize ticker if available
-                if (window.SFTiTicker) {
-                    try {
-                        const ticker = new SFTiTicker('server');
-                        ticker.render('#ticker-container');
-                    } catch(e) {
-                        console.error('Ticker initialization error:', e);
                     }
                 }
             });
