@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-17T21:30:14.070Z
+ * Generated: 2025-10-18T16:47:53.343Z
  */
 
 // @ts-nocheck
@@ -44,7 +44,7 @@ class SFTiMobileNavbar extends BaseNavbar {
                         </button>
                     </div>
 
-                    <div id="mobile-menu" class="fixed left-0 right-0 bottom-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out" style="top: 14rem; z-index: 40;">
+                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out" style="top: 14rem; bottom: 0; z-index: 40;">
                         <div class="h-full flex flex-col">
                             <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
                                 <div class="text-sm text-gray-300">Navigation</div>
@@ -70,30 +70,81 @@ class SFTiMobileNavbar extends BaseNavbar {
                 
                 <!-- Integrated ticker at bottom of navbar stack -->
                 <div id="navbar-ticker" class="bg-black/95 backdrop-blur-xl border-b border-white/10" style="position: relative; z-index: 50;">
-                    <div class="max-w-lg mx-auto px-4 py-3 flex items-center space-x-3">
-                        <span class="text-xs font-semibold tracking-wide uppercase text-yellow-400/90">
-                            Live Repo Feed
-                        </span>
+                    <div class="max-w-lg mx-auto px-4 py-3 flex items-center justify-center">
                         <img src="${this.config.tickerGifUrl || 'https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif'}" 
                              alt="Repo Ticker Stats"
-                             class="h-10 w-auto flex-1 object-contain mix-blend-screen"
-                             onerror="this.style.display='none'; this.parentElement.querySelector('span').textContent='Repo Feed Offline';" />
+                             class="h-10 w-auto object-contain mix-blend-screen"
+                             onerror="this.style.display='none';" />
                     </div>
                 </div>
             </div>
         `;
     }
 
+    attachEventListeners() {
+        // Ensure menu is hidden on init (force it!)
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu) {
+            // Force hide the menu by setting inline style
+            mobileMenu.style.transform = 'translateY(100%)';
+        }
+
+        const toggleButton = document.getElementById('mobile-menu-toggle');
+        const closeButton = document.getElementById('mobile-menu-close');
+
+        if (toggleButton) {
+            toggleButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMobileMenu();
+            });
+        }
+
+        if (closeButton) {
+            closeButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.closeMobileMenu();
+            });
+        }
+
+        // Close menu when clicking a link
+        if (mobileMenu) {
+            const links = mobileMenu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    this.closeMobileMenu();
+                });
+            });
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (this.mobileMenuOpen && mobileMenu && toggleButton) {
+                if (!mobileMenu.contains(e.target) && !toggleButton.contains(e.target)) {
+                    this.closeMobileMenu();
+                }
+            }
+        });
+    }
+
     toggleMobileMenu() {
         const mobileMenu = document.getElementById('mobile-menu');
+        if (!mobileMenu) return;
+        
         this.mobileMenuOpen = !this.mobileMenuOpen;
-        mobileMenu.classList.toggle('translate-y-full', !this.mobileMenuOpen);
+        
+        // Use inline style only for consistent behavior across all browsers
+        mobileMenu.style.transform = this.mobileMenuOpen ? 'translateY(0)' : 'translateY(100%)';
     }
 
     closeMobileMenu() {
         const mobileMenu = document.getElementById('mobile-menu');
+        if (!mobileMenu) return;
+        
         this.mobileMenuOpen = false;
-        mobileMenu.classList.add('translate-y-full');
+        // Use inline style only for consistent behavior across all browsers
+        mobileMenu.style.transform = 'translateY(100%)';
     }
 }
 
