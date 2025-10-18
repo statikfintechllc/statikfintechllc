@@ -35,7 +35,7 @@ class SFTiMobileNavbar extends BaseNavbar {
                         </button>
                     </div>
 
-                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform transition-transform duration-300 ease-in-out" style="top: 14rem; bottom: 0; z-index: 40;">
+                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform transition-transform duration-300 ease-in-out" style="top: 0; bottom: 0; z-index: 40;">
                         <div class="h-full flex flex-col">
                             <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
                                 <div class="text-sm text-gray-300">Navigation</div>
@@ -73,9 +73,15 @@ class SFTiMobileNavbar extends BaseNavbar {
     }
 
     attachEventListeners() {
-        // Ensure menu is hidden on init (force it!)
+        // Ensure menu is hidden on init and positioned correctly
         const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu) {
+        const navbarContainer = mobileMenu?.closest('.fixed');
+        
+        if (mobileMenu && navbarContainer) {
+            // Calculate the correct top position (navbar + ticker height)
+            const navbarHeight = navbarContainer.offsetHeight;
+            mobileMenu.style.top = `${navbarHeight}px`;
+            
             // Force hide the menu by setting inline style
             mobileMenu.style.transform = 'translateY(100%)';
         }
