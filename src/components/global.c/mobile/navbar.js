@@ -17,15 +17,6 @@ if (!BaseNavbar) {
 class SFTiMobileNavbar extends BaseNavbar {
     getTemplate() {
         return `
-            <style>
-                /* Ensure translate-y-full works even without Tailwind CDN processing */
-                #mobile-menu.translate-y-full {
-                    transform: translateY(100%) !important;
-                }
-                #mobile-menu.translate-y-0 {
-                    transform: translateY(0) !important;
-                }
-            </style>
             <div class="fixed top-0 left-0 right-0 z-50">
                 <!-- Main navbar -->
                 <nav class="bg-black/95 backdrop-blur-xl border-b border-white/10">
@@ -134,13 +125,8 @@ class SFTiMobileNavbar extends BaseNavbar {
         
         this.mobileMenuOpen = !this.mobileMenuOpen;
         
-        if (this.mobileMenuOpen) {
-            mobileMenu.classList.remove('translate-y-full');
-            mobileMenu.style.transform = 'translateY(0)';
-        } else {
-            mobileMenu.classList.add('translate-y-full');
-            mobileMenu.style.transform = 'translateY(100%)';
-        }
+        // Use inline style only for consistent behavior across all browsers
+        mobileMenu.style.transform = this.mobileMenuOpen ? 'translateY(0)' : 'translateY(100%)';
     }
 
     closeMobileMenu() {
@@ -148,7 +134,7 @@ class SFTiMobileNavbar extends BaseNavbar {
         if (!mobileMenu) return;
         
         this.mobileMenuOpen = false;
-        mobileMenu.classList.add('translate-y-full');
+        // Use inline style only for consistent behavior across all browsers
         mobileMenu.style.transform = 'translateY(100%)';
     }
 }
