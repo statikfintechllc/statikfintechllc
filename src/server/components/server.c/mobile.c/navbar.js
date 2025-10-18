@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-18T16:47:53.448Z
+ * Generated: 2025-10-18T20:30:25.872Z
  */
 
 // @ts-nocheck
@@ -44,7 +44,7 @@ class SFTiMobileNavbar extends BaseNavbar {
                         </button>
                     </div>
 
-                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform translate-y-full transition-transform duration-300 ease-in-out" style="top: 14rem; bottom: 0; z-index: 40;">
+                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform transition-transform duration-300 ease-in-out" style="z-index: 40;">
                         <div class="h-full flex flex-col">
                             <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
                                 <div class="text-sm text-gray-300">Navigation</div>
@@ -82,10 +82,19 @@ class SFTiMobileNavbar extends BaseNavbar {
     }
 
     attachEventListeners() {
-        // Ensure menu is hidden on init (force it!)
+        // Position and hide menu on init
         const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu) {
-            // Force hide the menu by setting inline style
+        const navbarContainer = mobileMenu?.closest('.fixed');
+        
+        if (mobileMenu && navbarContainer) {
+            // Calculate navbar + ticker height
+            const navbarHeight = navbarContainer.offsetHeight;
+            
+            // Position menu below navbar with calculated height
+            mobileMenu.style.top = `${navbarHeight}px`;
+            mobileMenu.style.height = `calc(100vh - ${navbarHeight}px)`;
+            
+            // Hide menu by translating it down offscreen
             mobileMenu.style.transform = 'translateY(100%)';
         }
 
