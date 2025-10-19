@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="dev.styles/dev.tailwind.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- SFTi Component System -->
-    <script src="components/sfti-component-receiver.js"></script>
+    <script src="components/sfti-component-system.js"></script>
     <script src="components/dev.c/desktop.c/navbar.js"></script>
     <script src="components/dev.c/desktop.c/footer.js"></script>
     <script src="components/dev.c/mobile.c/navbar.js"></script>
@@ -242,24 +242,8 @@
                 }
             }
 
-            // Initialize footer with responsive detection
-            const FooterClass = isMobile && window.DevFooterMobile ? window.DevFooterMobile : window.DevFooterDesktop || window.SFTiFooter;
-            
-            if (FooterClass) {
-                try {
-                    // Use static create method if available, otherwise instantiate and mount
-                    if (typeof FooterClass.create === 'function') {
-                        FooterClass.create('#footer-container', { domain: 'dev' });
-                    } else {
-                        const footer = new FooterClass({ domain: 'dev' });
-                        if (typeof footer.mount === 'function') {
-                            footer.mount('#footer-container');
-                        }
-                    }
-                } catch(e) {
-                    console.error('Footer initialization error:', e);
-                }
-            }
+            // Initialize footer
+            new SFTiFooter({ containerId: 'footer-container', domain: 'dev' });
         });
     </script>
 </body>

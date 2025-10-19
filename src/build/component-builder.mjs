@@ -183,8 +183,8 @@ function buildRegistrationSnippet(domainName, variantName, componentId, themeTok
                 if (!nextConfig.domain) {
                     nextConfig.domain = domain;
                 }
-                // Inject theme colors into config for navbar components
-                if (component === 'navbar' && themeTokens) {
+                // Inject theme colors into config for components
+                if (themeTokens) {
                     nextConfig.themeColors = {
                         primary: themeTokens.primary || '#ef4444',
                         secondary: themeTokens.secondary || '#eab308'
