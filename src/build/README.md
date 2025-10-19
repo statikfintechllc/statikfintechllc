@@ -3,6 +3,26 @@
 
 This directory contains the centralized build system for the SFTi Web Templates project, designed to handle all domains, PWAs, and deployment scenarios efficiently.
 
+## Quick Start
+
+### Most Common Commands
+
+```bash
+# Build all components with proper theming for all domains
+./build/build.sh component navbar --variant both --domain all --clean
+
+# Build all components from manifest (recommended for complete rebuild)
+./build/build.sh component-manifest --clean
+
+# Full production build of entire project
+./build/build-all.sh
+
+# Development build (faster, no optimization)
+./build/build-all.sh dev
+```
+
+**💡 Pro Tip:** Always use `--domain all` flag when building components to ensure consistent theming across `www`, `dev`, and `server` domains.
+
 ## Build Scripts
 
 ### `build-all.sh` - Master Build Script
@@ -43,15 +63,23 @@ Generates domain-aware component bundles and proxies through to `build-all.sh` w
 
 **Component usage:**
 ```bash
-# Build navbar for dev domain (desktop only)
+# Build navbar for all domains (RECOMMENDED - ensures consistent theming across all domains)
+./build/build.sh component navbar --variant both --domain all --clean
+
+# Build navbar for specific domain only (for testing/development)
 ./build/build.sh component navbar desktop dev
 
 # Build card for www domain (both variants, clean generated files first)
 ./build/build.sh component card --variant both --domain www --clean
 
+# Build all components from manifest for all domains (RECOMMENDED)
+./build/build.sh component-manifest --clean
+
 # Validate manifest entries without writing files
 ./build/build.sh component-manifest --dry-run
 ```
+
+**⚠️ Important:** Always use `--domain all` when building components to ensure all domains (`www`, `dev`, `server`) receive properly themed components with their domain-specific CSS custom properties. Building for individual domains should only be used during development/testing.
 
 Key behaviours:
 - Automatically pulls CSS custom properties from `src/<domain>/<domain>.styles/` and registers them with the component registry.

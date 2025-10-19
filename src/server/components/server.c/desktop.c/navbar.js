@@ -4,7 +4,7 @@
  * Variant  : desktop
  * Component: navbar
  * Source   : components/global.c/desktop/navbar.js
- * Generated: 2025-10-19T00:07:55.006Z
+ * Generated: 2025-10-19T00:29:42.900Z
  */
 
 // @ts-nocheck
