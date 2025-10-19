@@ -12,13 +12,6 @@
   "categories": ["business", "finance", "technology", "productivity", "education"],
   "screenshots": [
     {
-      "src": "/docs/i.svg/assets/institute-header.svg",
-      "sizes": "1280x720",
-      "type": "image/svg+xml",
-      "form_factor": "wide",
-      "label": "The Ascend Institute - Research and Documentation Hub"
-    },
-    {
       "src": "/src/public/web.pwa.icon.png",
       "sizes": "540x720",
       "type": "image/png",
@@ -74,12 +67,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/badges/statik.title.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any"
     }
   ],
   "shortcuts": [
@@ -90,9 +77,9 @@
       "url": "/www.sfti-ai.org/",
       "icons": [
         {
-          "src": "/badges/statik.title.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "/src/public/web.pwa.icon.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
@@ -103,9 +90,9 @@
       "url": "/dev.sfti-ai.org/",
       "icons": [
         {
-          "src": "/badges/full_stack_dev.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "/src/public/web.pwa.icon.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
@@ -116,9 +103,9 @@
       "url": "/dev.sfti-ai.org/IB-G.Scanner/",
       "icons": [
         {
-          "src": "/docs/IB.G.svg/assets/ib-g-scanner-card.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "/src/public/web.pwa.icon.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
@@ -129,9 +116,9 @@
       "url": "/dev.sfti-ai.org/Pilot-Server/",
       "icons": [
         {
-          "src": "/docs/P.S.svg/assets/pilot-server-card.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "/src/public/web.pwa.icon.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
@@ -142,9 +129,9 @@
       "url": "/server.sfti-ai.org/",
       "icons": [
         {
-          "src": "/badges/ai_architect.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "/src/public/web.pwa.icon.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
@@ -155,9 +142,9 @@
       "url": "/www.sfti-ai.org/#research",
       "icons": [
         {
-          "src": "/badges/prompt_blacksmith.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "/src/public/web.pwa.icon.png",
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     }
