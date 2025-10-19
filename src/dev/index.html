@@ -6,9 +6,9 @@
     <title>SFTi Dev - PWA Hub</title>
     
     <!-- Favicons - Essential links only, rest handled by manifest -->
-    <link rel="shortcut icon" type="image/x-icon" href="/src/public/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/src/public/favicon.ico">
-    <link rel="apple-touch-icon" href="/src/public/icon-180x180.png">
+    <link rel="shortcut icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="apple-touch-icon" href="public/icon-180x180.png">
     
     <link rel="stylesheet" href="dev.styles/dev-styles.css">
     <link rel="stylesheet" href="dev.styles/dev.tailwind.css">
@@ -21,7 +21,7 @@
     <script src="components/dev.c/mobile.c/footer.js"></script>
     
     <!-- PWA Manifest - handles all icon definitions -->
-    <link rel="manifest" href="/src/manifest.json">
+    <link rel="manifest" href="manifest.json">
     
     <meta property="og:title" content="SFTi Dev - PWA Hub">
     <meta property="og:description" content="Progressive Web Applications by StatikFinTech LLC">
@@ -253,6 +253,50 @@
 
             // Initialize footer
             new SFTiFooter({ containerId: 'footer-container', domain: 'dev' });
+        });
+    </script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function(registration) {
+                        console.log('SFTi Dev SW: Service Worker registered successfully:', registration.scope);
+                        
+                        // Check for updates
+                        registration.addEventListener('updatefound', function() {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', function() {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // New content available, prompt user to refresh
+                                    if (confirm('New version available! Click OK to update.')) {
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        });
+                    })
+                    .catch(function(error) {
+                        console.log('SFTi Dev SW: Service Worker registration failed:', error);
+                    });
+            });
+        }
+
+        // PWA Install prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', function(e) {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Don't show install prompt automatically
+            console.log('SFTi Dev PWA: Install prompt available (suppressed)');
+        });
+
+        // Track app installation
+        window.addEventListener('appinstalled', function(e) {
+            console.log('SFTi Dev PWA: App installed successfully');
+            deferredPrompt = null;
         });
     </script>
 </body>
