@@ -82,6 +82,9 @@ class SFTiMobileNavbar extends BaseNavbar {
     }
 
     attachEventListeners() {
+        // Clean up existing listeners if being called multiple times
+        this.cleanup();
+        
         // Store references to avoid redundant DOM queries
         const mobileMenu = document.getElementById('mobile-menu');
         const navbarWrapper = document.getElementById('navbar-wrapper');

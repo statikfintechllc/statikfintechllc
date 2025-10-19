@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-19T01:26:28.364Z
+ * Generated: 2025-10-19T01:28:31.160Z
  */
 
 // @ts-nocheck
@@ -91,6 +91,9 @@ class SFTiMobileNavbar extends BaseNavbar {
     }
 
     attachEventListeners() {
+        // Clean up existing listeners if being called multiple times
+        this.cleanup();
+        
         // Store references to avoid redundant DOM queries
         const mobileMenu = document.getElementById('mobile-menu');
         const navbarWrapper = document.getElementById('navbar-wrapper');
