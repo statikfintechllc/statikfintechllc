@@ -4,7 +4,7 @@
  * Variant  : desktop
  * Component: footer
  * Source   : components/global.c/desktop/footer.js
- * Generated: 2025-10-19T10:13:03.153Z
+ * Generated: 2025-10-19T11:08:35.445Z
  */
 
 // @ts-nocheck
@@ -43,7 +43,8 @@ class SFTiFooter {
     }
 
     getTemplate() {
-        const accentColor = this.getDomainAccent();
+        const primaryColor = this.getPrimaryColor();
+        const secondaryColor = this.getSecondaryColor();
         const year = new Date().getFullYear();
         
         return `
@@ -58,12 +59,14 @@ class SFTiFooter {
                         <!-- Links -->
                         <div class="flex items-center space-x-6">
                             <a href="https://github.com/statikfintechllc" 
-                               class="${accentColor} hover:opacity-80 transition-opacity text-sm font-medium"
+                               style="color: ${primaryColor};"
+                               class="hover:opacity-80 transition-opacity text-sm font-medium"
                                target="_blank" rel="noopener noreferrer">
                                 GitHub
                             </a>
                             <button id="connect-modal-trigger"
-                                    class="${accentColor} hover:opacity-80 transition-opacity text-sm font-medium cursor-pointer bg-transparent border-none">
+                                    style="color: ${secondaryColor};"
+                                    class="hover:opacity-80 transition-opacity text-sm font-medium cursor-pointer bg-transparent border-none">
                                 Connect
                             </button>
                         </div>
@@ -105,6 +108,38 @@ class SFTiFooter {
                 </div>
             </div>
         `;
+    }
+
+    getPrimaryColor() {
+        // Use theme colors from config if available
+        if (this.config.themeColors?.primary) {
+            return this.config.themeColors.primary;
+        }
+        
+        // Fallback to domain-specific defaults
+        const defaults = {
+            'www': 'red',
+            'dev': '#0f8',
+            'server': '#ff0080',
+            'global': 'red'
+        };
+        return defaults[this.config.domain] || defaults.global;
+    }
+
+    getSecondaryColor() {
+        // Use theme colors from config if available
+        if (this.config.themeColors?.secondary) {
+            return this.config.themeColors.secondary;
+        }
+        
+        // Fallback to domain-specific defaults
+        const defaults = {
+            'www': 'gold',
+            'dev': '#0af',
+            'server': '#8000ff',
+            'global': 'gold'
+        };
+        return defaults[this.config.domain] || defaults.global;
     }
 
     getDomainAccent() {
