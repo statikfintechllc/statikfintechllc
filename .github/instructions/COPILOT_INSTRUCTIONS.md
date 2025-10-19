@@ -4,29 +4,117 @@
 
 ## 🏗️ Repository Overview
 
-This repository hosts **StatikFinTech LLC's complete web infrastructure** - a professional multi-domain system built with modern web technologies. The repository serves as both a development environment and production deployment source for three primary domains.
+This repository hosts **StatikFinTech LLC's complete web infrastructure** - a professional multi-domain system built with modern web technologies. The repository serves as both a development environment and production deployment source for all domains.
 
 ### 🌐 Domain Architecture
 
 ```
-SFTi-Web.Templates/
-├── 📂 public_html/              → www.sfti-ai.org (Main Corporate Site)
-|  ├── 📂 dev.sfti-ai.org/       → dev.sfti-ai.org (Development Hub)
-|  └── 📂 server.sfti-ai.org/    → server.sfti-ai.org (Secure Server Access)
-└── 📂 .github/                  → Repository configuration and CI/CD
+statikfintechllc/
+├── 📂 index.html              → www.sfti-ai.org (Main Corporate Site - Root)
+├── 📂 src/
+│   ├── 📂 www/                → www.sfti-ai.org (Main site source)
+│   ├── 📂 dev/                → dev.sfti-ai.org (Development Hub)
+│   │   ├── 📂 IB-G.Scanner/   → PWA: Stock market scanner
+│   │   └── 📂 Pilot-Server/   → PWA: AI chat interface
+│   ├── 📂 server/             → server.sfti-ai.org (Secure Server Access)
+│   ├── 📂 public/             → Shared assets (icons, images)
+│   ├── 📂 components/         → Shared UI components
+│   └── 📄 manifest.json       → PWA manifest for all domains
+├── 📂 docs/                   → SVG generation system
+├── 📂 badges/                 → Badge SVG assets
+└── 📂 .github/
+    ├── 📂 instructions/       → AI assistant instructions (YOU ARE HERE)
+    ├── 📂 docs/               → Repository documentation
+    └── 📂 workflows/          → GitHub Actions CI/CD
 ```
 
-**File Structure Mapping (Repository → Server):**
+**PWA Structure:**
+- All domains reference `/src/manifest.json` for icons and PWA configuration
+- Icons stored in `/src/public/` (16x16 to 512x512 PNG + favicon.ico)
+- No hardcoded icon links in HTML - manifest handles all icons
+
+**File Structure Mapping (Repository → Deployment):**
 ```bash
-# Direct deployment mapping for NameCheap cPanel hosting
-public_html/              → /public_html/           (Main domain)
-dev.sfti-ai.org/         → /dev.sfti-ai.org/       (Dev subdomain)  
-server.sfti-ai.org/      → /server.sfti-ai.org/    (Server subdomain)
+# Main domain
+index.html                → Root site entry
+src/www/index.html        → WWW site entry
 
-# PWA builds (after npm run build)
-IB-G.Scanner/dist/       → /server.sfti-ai.org/ib-g-scanner/
-Pilot-Server/dist/       → /server.sfti-ai.org/pilot-server/
+# Subdomains  
+src/dev/index.html        → dev.sfti-ai.org
+src/server/index.html     → server.sfti-ai.org
+
+# PWA Applications (after npm run build)
+src/dev/IB-G.Scanner/dist/   → Deployed as PWA
+src/dev/Pilot-Server/dist/   → Deployed as PWA
 ```
+
+## 📱 PWA Manifest & Icon System
+
+**CRITICAL: All icon configuration is centralized in `/src/manifest.json`**
+
+### Icon Management Rules
+
+1. **✅ DO:**
+   - Add ALL icons to `/src/manifest.json` in the `icons` array
+   - Store icon files in `/src/public/`
+   - Use absolute paths: `/src/public/icon-{size}.png`
+   - Include all standard sizes: 16, 32, 72, 96, 128, 144, 152, 180, 192, 384, 512
+   - Add favicon.ico for legacy browser support
+
+2. **❌ DON'T:**
+   - Hardcode icon links in HTML files (`<link rel="icon">`)
+   - Add apple-touch-icon tags to HTML
+   - Create separate icon configurations per domain
+   - Use relative paths for icons in manifest
+
+### HTML Configuration
+
+All 4 HTML files MUST have:
+```html
+<!-- PWA Manifest -->
+<link rel="manifest" href="../manifest.json">  <!-- or "src/manifest.json" for root -->
+```
+
+**NO icon links** - the manifest handles everything.
+
+### Manifest Structure
+
+```json
+{
+  "icons": [
+    {
+      "src": "/src/public/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/icon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    // ... all other sizes
+  ]
+}
+```
+
+### Browser Compatibility
+
+- ✅ Chrome: Uses manifest icons
+- ✅ Safari: Uses manifest icons + favicon.ico fallback
+- ✅ Firefox: Uses manifest icons
+- ✅ Edge: Uses manifest icons
+- ✅ iOS Safari: Uses manifest apple-touch-icon entries
+- ✅ Android: Uses manifest maskable icons
+
+### Adding New Icons/Assets
+
+When adding new images to `src/public/`:
+1. Add entry to manifest.json if it's an icon
+2. Specify correct size, type, and purpose
+3. Test in all browsers (especially Safari)
+4. Update this documentation if new patterns emerge
 
 ## 🎯 CRITICAL FIRST STEPS - Task Queue Protocol
 

@@ -21,6 +21,24 @@
   ],
   "icons": [
     {
+      "src": "/src/public/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/icon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/src/public/icon-72x72.png",
       "sizes": "72x72",
       "type": "image/png",
@@ -47,6 +65,12 @@
     {
       "src": "/src/public/icon-152x152.png",
       "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/src/public/icon-180x180.png",
+      "sizes": "180x180",
       "type": "image/png",
       "purpose": "any"
     },
