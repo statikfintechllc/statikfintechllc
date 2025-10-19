@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-19T00:29:42.902Z
+ * Generated: 2025-10-19T01:35:31.000Z
  */
 
 // @ts-nocheck
@@ -24,15 +24,28 @@ if (!BaseNavbar) {
 }
 
 class SFTiMobileNavbar extends BaseNavbar {
+    constructor(config) {
+        super(config);
+        this.resizeHandler = null;
+        this.toggleHandler = null;
+        this.closeHandler = null;
+        this.documentClickHandler = null;
+        this.linkHandlers = [];
+    }
+
     getTemplate() {
+        // Get theme colors from config or use defaults
+        const primaryColor = this.config.themeColors?.primary || '#ef4444';
+        const secondaryColor = this.config.themeColors?.secondary || '#eab308';
+        
         return `
-            <div class="fixed top-0 left-0 right-0 z-50">
+            <div class="fixed top-0 left-0 right-0 z-50" id="navbar-wrapper">
                 <!-- Main navbar -->
                 <nav class="bg-black/95 backdrop-blur-xl border-b border-white/10">
                     <div class="px-4 h-14 flex items-center justify-between">
                         <div class="flex flex-col leading-tight">
-                            <span class="text-red-500 font-bold text-base">${this.config.logoText}</span>
-                            <span class="text-yellow-400 text-[10px] uppercase tracking-wide">
+                            <span class="font-bold text-base" style="color: ${primaryColor};">${this.config.logoText}</span>
+                            <span class="text-[10px] uppercase tracking-wide" style="color: ${secondaryColor};">
                                 ${this.config.logoSubtitle}
                             </span>
                         </div>
@@ -82,59 +95,122 @@ class SFTiMobileNavbar extends BaseNavbar {
     }
 
     attachEventListeners() {
-        // Position and hide menu on init
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navbarContainer = mobileMenu?.closest('.fixed');
+        // Clean up existing listeners if being called multiple times
+        this.cleanup();
         
-        if (mobileMenu && navbarContainer) {
-            // Calculate navbar + ticker height
-            const navbarHeight = navbarContainer.offsetHeight;
-            
-            // Position menu below navbar with calculated height
-            mobileMenu.style.top = `${navbarHeight}px`;
-            mobileMenu.style.height = `calc(100vh - ${navbarHeight}px)`;
-            
-            // Hide menu by translating it down offscreen
-            mobileMenu.style.transform = 'translateY(100%)';
-        }
-
+        // Store references to avoid redundant DOM queries
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbarWrapper = document.getElementById('navbar-wrapper');
         const toggleButton = document.getElementById('mobile-menu-toggle');
         const closeButton = document.getElementById('mobile-menu-close');
+        
+        // Position and hide menu on init - use requestAnimationFrame to ensure DOM is ready
+        const initializeMenu = () => {
+            if (mobileMenu && navbarWrapper) {
+                // Use requestAnimationFrame to ensure layout is complete
+                requestAnimationFrame(() => {
+                    // Calculate navbar + ticker height from the wrapper
+                    const navbarHeight = navbarWrapper.offsetHeight;
+                    
+                    // Position menu below navbar with calculated height
+                    mobileMenu.style.top = `${navbarHeight}px`;
+                    mobileMenu.style.height = `calc(100vh - ${navbarHeight}px)`;
+                    
+                    // Hide menu by translating it down offscreen
+                    mobileMenu.style.transform = 'translateY(100%)';
+                });
+            }
+        };
 
+        // Initialize immediately
+        initializeMenu();
+        
+        // Add resize listener with cleanup support
+        this.resizeHandler = initializeMenu;
+        window.addEventListener('resize', this.resizeHandler);
+
+        // Store toggle button handler
         if (toggleButton) {
-            toggleButton.addEventListener('click', (e) => {
+            this.toggleHandler = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 this.toggleMobileMenu();
-            });
+            };
+            toggleButton.addEventListener('click', this.toggleHandler);
         }
 
+        // Store close button handler
         if (closeButton) {
-            closeButton.addEventListener('click', (e) => {
+            this.closeHandler = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 this.closeMobileMenu();
-            });
+            };
+            closeButton.addEventListener('click', this.closeHandler);
         }
 
-        // Close menu when clicking a link
+        // Store link handlers
         if (mobileMenu) {
             const links = mobileMenu.querySelectorAll('a');
+            this.linkHandlers = [];
             links.forEach(link => {
-                link.addEventListener('click', () => {
+                const handler = () => {
                     this.closeMobileMenu();
-                });
+                };
+                this.linkHandlers.push({ element: link, handler });
+                link.addEventListener('click', handler);
             });
         }
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
+        // Store document click handler
+        this.documentClickHandler = (e) => {
             if (this.mobileMenuOpen && mobileMenu && toggleButton) {
                 if (!mobileMenu.contains(e.target) && !toggleButton.contains(e.target)) {
                     this.closeMobileMenu();
                 }
             }
-        });
+        };
+        document.addEventListener('click', this.documentClickHandler);
+    }
+
+    cleanup() {
+        // Remove window resize listener
+        if (this.resizeHandler) {
+            window.removeEventListener('resize', this.resizeHandler);
+            this.resizeHandler = null;
+        }
+        
+        // Remove toggle button listener
+        if (this.toggleHandler) {
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+            if (toggleButton) {
+                toggleButton.removeEventListener('click', this.toggleHandler);
+            }
+            this.toggleHandler = null;
+        }
+        
+        // Remove close button listener
+        if (this.closeHandler) {
+            const closeButton = document.getElementById('mobile-menu-close');
+            if (closeButton) {
+                closeButton.removeEventListener('click', this.closeHandler);
+            }
+            this.closeHandler = null;
+        }
+        
+        // Remove link listeners
+        if (this.linkHandlers && this.linkHandlers.length > 0) {
+            this.linkHandlers.forEach(({ element, handler }) => {
+                element.removeEventListener('click', handler);
+            });
+            this.linkHandlers = [];
+        }
+        
+        // Remove document click listener
+        if (this.documentClickHandler) {
+            document.removeEventListener('click', this.documentClickHandler);
+            this.documentClickHandler = null;
+        }
     }
 
     toggleMobileMenu() {
@@ -230,6 +306,13 @@ if (typeof module !== 'undefined' && module.exports) {
                 const nextConfig = (config && typeof config === 'object') ? { ...config } : {};
                 if (!nextConfig.domain) {
                     nextConfig.domain = domain;
+                }
+                // Inject theme colors into config for navbar components
+                if (component === 'navbar' && themeTokens) {
+                    nextConfig.themeColors = {
+                        primary: themeTokens.primary || '#ef4444',
+                        secondary: themeTokens.secondary || '#eab308'
+                    };
                 }
                 super(nextConfig);
             }
