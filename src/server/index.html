@@ -266,9 +266,15 @@
                 
                 if (FooterClass) {
                     try {
-                        const footerConfig = { domain: 'server' };
-                        const footer = new FooterClass(footerConfig);
-                        footer.mount('#footer-container');
+                        // Use static create method if available, otherwise instantiate and mount
+                        if (typeof FooterClass.create === 'function') {
+                            FooterClass.create('#footer-container', { domain: 'server' });
+                        } else {
+                            const footer = new FooterClass({ domain: 'server' });
+                            if (typeof footer.mount === 'function') {
+                                footer.mount('#footer-container');
+                            }
+                        }
                     } catch(e) {
                         console.error('Footer initialization error:', e);
                     }
