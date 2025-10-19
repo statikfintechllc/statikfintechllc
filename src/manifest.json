@@ -21,6 +21,12 @@
   ],
   "icons": [
     {
+      "src": "/src/public/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
       "src": "/src/public/icon-16x16.png",
       "sizes": "16x16",
       "type": "image/png",
