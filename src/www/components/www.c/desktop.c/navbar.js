@@ -4,7 +4,7 @@
  * Variant  : desktop
  * Component: navbar
  * Source   : components/global.c/desktop/navbar.js
- * Generated: 2025-09-29T03:16:27.838Z
+ * Generated: 2025-10-19T00:04:59.516Z
  */
 
 // @ts-nocheck
@@ -218,7 +218,17 @@ if (typeof window !== 'undefined') {
     const domain = 'www';
     const variant = 'desktop';
     const component = 'navbar';
-    const themeTokens = {};
+    const themeTokens = {
+    "primary": "red",
+    "secondary": "gold",
+    "bgDark": "#000",
+    "bgDarker": "#111",
+    "textLight": "#fff",
+    "textGray": "#ccc",
+    "glassBg": "rgba(0,0,0,.1)",
+    "glassBorder": "hsla(0,0%,100%,.1)",
+    "transition": "all 0.3s ease"
+};
     const globalObj = typeof window !== 'undefined' ? window : globalThis;
 
     const registrar = (typeof registerDomainTheme === 'function' && registerDomainTheme)
