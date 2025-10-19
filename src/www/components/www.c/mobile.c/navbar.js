@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-19T01:20:51.717Z
+ * Generated: 2025-10-19T01:26:28.266Z
  */
 
 // @ts-nocheck
@@ -24,6 +24,11 @@ if (!BaseNavbar) {
 }
 
 class SFTiMobileNavbar extends BaseNavbar {
+    constructor(config) {
+        super(config);
+        this.resizeHandler = null;
+    }
+
     getTemplate() {
         // Get theme colors from config or use defaults
         const primaryColor = this.config.themeColors?.primary || '#ef4444';
@@ -86,11 +91,14 @@ class SFTiMobileNavbar extends BaseNavbar {
     }
 
     attachEventListeners() {
+        // Store references to avoid redundant DOM queries
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbarWrapper = document.getElementById('navbar-wrapper');
+        const toggleButton = document.getElementById('mobile-menu-toggle');
+        const closeButton = document.getElementById('mobile-menu-close');
+        
         // Position and hide menu on init - use requestAnimationFrame to ensure DOM is ready
         const initializeMenu = () => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navbarWrapper = document.getElementById('navbar-wrapper');
-            
             if (mobileMenu && navbarWrapper) {
                 // Use requestAnimationFrame to ensure layout is complete
                 requestAnimationFrame(() => {
@@ -107,13 +115,12 @@ class SFTiMobileNavbar extends BaseNavbar {
             }
         };
 
-        // Initialize immediately and on resize
+        // Initialize immediately
         initializeMenu();
-        window.addEventListener('resize', initializeMenu);
-
-        const mobileMenu = document.getElementById('mobile-menu');
-        const toggleButton = document.getElementById('mobile-menu-toggle');
-        const closeButton = document.getElementById('mobile-menu-close');
+        
+        // Add resize listener with cleanup support
+        this.resizeHandler = initializeMenu;
+        window.addEventListener('resize', this.resizeHandler);
 
         if (toggleButton) {
             toggleButton.addEventListener('click', (e) => {
@@ -149,6 +156,14 @@ class SFTiMobileNavbar extends BaseNavbar {
                 }
             }
         });
+    }
+
+    cleanup() {
+        // Remove resize listener to prevent memory leaks
+        if (this.resizeHandler) {
+            window.removeEventListener('resize', this.resizeHandler);
+            this.resizeHandler = null;
+        }
     }
 
     toggleMobileMenu() {
