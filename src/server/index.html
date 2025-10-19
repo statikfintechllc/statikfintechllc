@@ -261,24 +261,8 @@
                     }
                 }
 
-                // Initialize footer with responsive detection
-                const FooterClass = isMobile && window.ServerFooterMobile ? window.ServerFooterMobile : window.ServerFooterDesktop || window.SFTiFooter;
-                
-                if (FooterClass) {
-                    try {
-                        // Use static create method if available, otherwise instantiate and mount
-                        if (typeof FooterClass.create === 'function') {
-                            FooterClass.create('#footer-container', { domain: 'server' });
-                        } else {
-                            const footer = new FooterClass({ domain: 'server' });
-                            if (typeof footer.mount === 'function') {
-                                footer.mount('#footer-container');
-                            }
-                        }
-                    } catch(e) {
-                        console.error('Footer initialization error:', e);
-                    }
-                }
+                // Initialize footer
+                new SFTiFooter({ containerId: 'footer-container', domain: 'server' });
             });
         </script>
 </body>

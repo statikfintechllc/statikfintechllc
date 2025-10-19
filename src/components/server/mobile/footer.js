@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: footer
  * Source   : components/global.c/mobile/footer.js
- * Generated: 2025-10-19T02:37:13.042Z
+ * Generated: 2025-10-19T02:54:38.730Z
  */
 
 // @ts-nocheck

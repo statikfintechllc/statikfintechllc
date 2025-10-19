@@ -1,278 +1,157 @@
 // @ts-nocheck
 /**
- * Global Footer Component (Desktop Variant)
- * ========================================
+ * SFTi Footer Component (Desktop Variant)
+ * ======================================
  *
- * Mirrors the legacy footer implementation for desktop resolutions.
- * Mobile adaptations live in ../mobile/footer.js.
+ * Provides a simple, clean footer for all domains.
+ * Mobile specific behaviour lives in ../mobile/footer.js.
  */
 
-class SFTiFooter extends SFTiComponent {
-    constructor(config = {}) {
-        const defaultConfig = {
+class SFTiFooter {
+    constructor(config) {
+        this.config = {
             domain: 'global',
-            logoText: 'SFTi',
-            tagline: 'Sovereign Financial Technology Institute',
-            copyright: {
-                year: new Date().getFullYear(),
-                entity: 'Statik FinTech LLC',
-                allRights: true
-            },
-            social: {
-                github: { href: 'https://github.com/statikfintechllc', icon: '🐙', label: 'GitHub' },
-                linkedin: { href: '#', icon: '💼', label: 'LinkedIn' },
-                twitter: { href: '#', icon: '🐦', label: 'Twitter' },
-                medium: { href: '#', icon: '📝', label: 'Medium' }
-            },
-            links: {
-                main: [
-                    { title: 'Home', href: 'https://www.sfti-ai.org' },
-                    { title: 'Institute', href: 'https://www.sfti-ai.org#institute' },
-                    { title: 'Projects', href: 'https://www.sfti-ai.org#projects' },
-                    { title: 'Research', href: 'https://www.sfti-ai.org#research' }
-                ],
-                domains: [
-                    { title: 'Main Site', href: 'https://www.sfti-ai.org', description: 'Corporate website' },
-                    { title: 'Dev Hub', href: 'https://dev.sfti-ai.org', description: 'PWA development' },
-                    { title: 'Server Portal', href: 'https://server.sfti-ai.org', description: 'Secure access' }
-                ],
-                legal: [
-                    { title: 'Privacy Policy', href: '#privacy' },
-                    { title: 'Terms of Service', href: '#terms' },
-                    { title: 'Security', href: '#security' },
-                    { title: 'Contact', href: '#contact' }
-                ]
-            },
-            contact: {
-                email: 'info@sfti-ai.org',
-                location: 'Global Operations'
-            },
+            containerId: 'footer-container',
             ...config
         };
-
-        // Call parent constructor with proper signature (type, domain, variant)
-        super('footer', defaultConfig.domain, 'desktop');
-        
-        // Store config on instance
-        this.config = defaultConfig;
-        this.initFooter();
+        this.modalOpen = false;
+        this.init();
     }
 
-    initFooter() {
-        this.setupResponsive();
-        this.setupSocialTracking();
+    init() {
+        this.render();
+        this.attachEventListeners();
     }
 
-    render(target) {
-        if (target) {
-            target.innerHTML = this.getTemplate();
-            setTimeout(() => this.addSocialTracking(), 100);
+    render() {
+        const container = document.getElementById(this.config.containerId);
+        if (!container) {
+            console.error(`Container with id "${this.config.containerId}" not found`);
+            return;
         }
-        return target;
+
+        container.innerHTML = this.getTemplate();
     }
 
     getTemplate() {
+        const accentColor = this.getDomainAccent();
+        const year = new Date().getFullYear();
+        
         return `
-            <footer class="sfti-footer bg-black border-t border-white/10 mt-auto">
-                <div class="max-w-7xl mx-auto px-4 py-12">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                        <div class="lg:col-span-1">
-                            <div class="mb-6">
-                                <h3 class="text-white font-bold text-xl mb-2 ${this.getDomainAccent()}">${this.config.logoText}</h3>
-                                <p class="text-gray-400 text-sm leading-relaxed">${this.config.tagline}</p>
-                            </div>
-                            <div class="flex space-x-4">
-                                ${this.renderSocialLinks()}
-                            </div>
+            <footer class="bg-black border-t border-white/10 mt-auto py-8">
+                <div class="max-w-7xl mx-auto px-4">
+                    <div class="flex flex-col items-center space-y-4">
+                        <!-- Copyright -->
+                        <div class="text-gray-400 text-sm">
+                            © ${year} StatikFinTech, LLC
                         </div>
-
-                        <div class="lg:col-span-1">
-                            <h4 class="text-white font-semibold mb-4">Quick Links</h4>
-                            <ul class="space-y-2">
-                                ${this.renderQuickLinks()}
-                            </ul>
-                        </div>
-
-                        <div class="lg:col-span-1">
-                            <h4 class="text-white font-semibold mb-4">Our Domains</h4>
-                            <ul class="space-y-2">
-                                ${this.renderDomainLinks()}
-                            </ul>
-                        </div>
-
-                        <div class="lg:col-span-1">
-                            <h4 class="text-white font-semibold mb-4">Legal & Contact</h4>
-                            <ul class="space-y-2 mb-4">
-                                ${this.renderLegalLinks()}
-                            </ul>
-                            <div class="text-sm text-gray-400">
-                                <p class="mb-1">${this.config.contact.email}</p>
-                                <p>${this.config.contact.location}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pt-8 border-t border-white/10">
-                        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                            <div class="text-gray-400 text-sm">
-                                <span>&copy; ${this.config.copyright.year} ${this.config.copyright.entity}</span>
-                                ${this.config.copyright.allRights ? '<span class="ml-2">All rights reserved.</span>' : ''}
-                            </div>
-
-                            <div class="text-gray-400 text-sm flex items-center space-x-4">
-                                <span class="flex items-center">
-                                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                                    System Status: Operational
-                                </span>
-                                <span class="hidden md:inline">|</span>
-                                <span class="${this.getDomainAccent()}">${this.getDomainLabel()}</span>
-                            </div>
+                        
+                        <!-- Links -->
+                        <div class="flex items-center space-x-6">
+                            <a href="https://github.com/statikfintechllc" 
+                               class="${accentColor} hover:opacity-80 transition-opacity text-sm font-medium"
+                               target="_blank" rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                            <button id="connect-modal-trigger"
+                                    class="${accentColor} hover:opacity-80 transition-opacity text-sm font-medium cursor-pointer bg-transparent border-none">
+                                Connect
+                            </button>
                         </div>
                     </div>
                 </div>
             </footer>
+
+            <!-- Connect Modal -->
+            <div id="connect-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center">
+                <div class="bg-gray-900 border border-white/10 rounded-lg p-8 max-w-md w-full mx-4 relative">
+                    <button id="connect-modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-white">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                    
+                    <h3 class="text-white text-xl font-bold mb-6">Connect with Us</h3>
+                    
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <a href="https://github.com/statikfintechllc" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
+                        </a>
+                        <a href="https://www.linkedin.com/in/daniel-morris-780804368" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/In-e11d48?logo=linkedin&logoColor=white&style=flat-square" alt="LinkedIn">
+                        </a>
+                        <a href="mailto:daniel@sfti-ai.org">
+                            <img src="https://img.shields.io/badge/-D14836?logo=gmail&logoColor=white&style=flat-square" alt="Email">
+                        </a>
+                        <a href="https://www.youtube.com/@Gremlins_Forge" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/-FF0000?logo=youtube&logoColor=white&style=flat-square" alt="YouTube">
+                        </a>
+                        <a href="https://x.com/GremlinsForge" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/-000000?logo=x&logoColor=white&style=flat-square" alt="X/Twitter">
+                        </a>
+                        <a href="https://medium.com/@ascend.gremlin" target="_blank" rel="noopener noreferrer">
+                            <img src="https://img.shields.io/badge/-000000?logo=medium&logoColor=white&style=flat-square" alt="Medium">
+                        </a>
+                    </div>
+                </div>
+            </div>
         `;
-    }
-
-    renderSocialLinks() {
-        if (!this.config.social) return '';
-
-        return Object.entries(this.config.social).map(([key, social]) => `
-            <a
-                href="${social.href}"
-                class="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded transition-all duration-200"
-                title="${social.label}"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-social="${key}"
-            >
-                <span class="text-lg">${social.icon}</span>
-            </a>
-        `).join('');
-    }
-
-    renderQuickLinks() {
-        if (!this.config.links?.main) return '';
-
-        return this.config.links.main.map(link => `
-            <li>
-                <a
-                    href="${link.href}"
-                    class="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                    ${link.href.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}
-                >
-                    ${link.title}
-                </a>
-            </li>
-        `).join('');
-    }
-
-    renderDomainLinks() {
-        if (!this.config.links?.domains) return '';
-
-        return this.config.links.domains.map(domain => `
-            <li>
-                <a
-                    href="${domain.href}"
-                    class="text-gray-400 hover:text-white transition-colors duration-200 text-sm block"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <div class="font-medium">${domain.title}</div>
-                    <div class="text-xs text-gray-500">${domain.description}</div>
-                </a>
-            </li>
-        `).join('');
-    }
-
-    renderLegalLinks() {
-        if (!this.config.links?.legal) return '';
-
-        return this.config.links.legal.map(link => `
-            <li>
-                <a
-                    href="${link.href}"
-                    class="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
-                >
-                    ${link.title}
-                </a>
-            </li>
-        `).join('');
     }
 
     getDomainAccent() {
         const accents = {
-            'www': 'text-red-400',
-            'dev': 'text-blue-400',
-            'server': 'text-amber-400',
-            'global': 'text-white'
+            'www': 'text-red-500',
+            'dev': 'text-blue-500',
+            'server': 'text-purple-500',
+            'global': 'text-red-500'
         };
         return accents[this.config.domain] || accents.global;
     }
 
-    getDomainLabel() {
-        const labels = {
-            'www': 'Main Website',
-            'dev': 'Development Hub',
-            'server': 'Secure Portal',
-            'global': 'SFTi Network'
-        };
-        return labels[this.config.domain] || labels.global;
+    attachEventListeners() {
+        const modalTrigger = document.getElementById('connect-modal-trigger');
+        const modal = document.getElementById('connect-modal');
+        const closeButton = document.getElementById('connect-modal-close');
+
+        modalTrigger?.addEventListener('click', () => this.openModal());
+        closeButton?.addEventListener('click', () => this.closeModal());
+        
+        modal?.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                this.closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.modalOpen) {
+                this.closeModal();
+            }
+        });
     }
 
-    setupResponsive() {
-        this.handleResize = () => {
-            // Reserved for desktop-specific responsive hooks.
-        };
-
-        if (typeof window !== 'undefined') {
-            window.addEventListener('resize', this.handleResize);
+    openModal() {
+        const modal = document.getElementById('connect-modal');
+        if (modal) {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            this.modalOpen = true;
         }
     }
 
-    setupSocialTracking() {
-        this.trackSocialClick = (platform) => {
-            console.log(`Social click tracked: ${platform}`);
-        };
-
-        this.addSocialTracking = () => {
-            const socialLinks = document.querySelectorAll('[data-social]');
-            socialLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    const platform = link.getAttribute('data-social');
-                    this.trackSocialClick(platform);
-                });
-            });
-        };
+    closeModal() {
+        const modal = document.getElementById('connect-modal');
+        if (modal) {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            this.modalOpen = false;
+        }
     }
-
-    mount(selector) {
-        return super.mount(selector);
-    }
-
-    static create(selector, config = {}) {
-        const footer = new SFTiFooter(config);
-        footer.mount(selector);
-        return footer;
-    }
-}
-
-const GlobalFooterConfig = {
-    domain: 'global',
-    responsive: true,
-    socialTracking: true
-};
-
-function createSFTiFooter(config = {}) {
-    return new SFTiFooter({ ...GlobalFooterConfig, ...config });
 }
 
 if (typeof window !== 'undefined') {
     window.SFTiFooter = SFTiFooter;
-    window.createSFTiFooter = createSFTiFooter;
-    window.GlobalFooterConfig = GlobalFooterConfig;
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { SFTiFooter, createSFTiFooter, GlobalFooterConfig };
+    module.exports = { SFTiFooter };
 }
