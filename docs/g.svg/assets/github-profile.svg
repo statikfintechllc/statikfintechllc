@@ -96,48 +96,48 @@
   <!-- Language progress bar -->
   <g transform="translate(505, 45)">
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
-  <!-- TypeScript 74.70% -->
-  <rect x="0" y="0" width="217" height="8" fill="#3178c6" rx="4"/>
-  <!-- Python 11.98% -->
-  <rect x="217" y="0" width="35" height="8" fill="#3572A5"/>
-  <!-- Go 6.48% -->
-  <rect x="252" y="0" width="19" height="8" fill="#00ADD8"/>
-  <!-- JavaScript 1.35% -->
-  <rect x="271" y="0" width="4" height="8" fill="#f1e05a"/>
+  <!-- TypeScript 74.64% -->
+  <rect x="0" y="0" width="216" height="8" fill="#3178c6" rx="4"/>
+  <!-- Python 11.97% -->
+  <rect x="216" y="0" width="35" height="8" fill="#3572A5"/>
+  <!-- Go 6.47% -->
+  <rect x="251" y="0" width="19" height="8" fill="#00ADD8"/>
+  <!-- JavaScript 1.43% -->
+  <rect x="270" y="0" width="4" height="8" fill="#f1e05a"/>
   <!-- CSS 1.23% -->
-  <rect x="275" y="0" width="4" height="8" fill="#563d7c"/>
+  <rect x="274" y="0" width="4" height="8" fill="#563d7c"/>
   <!-- HTML 1.12% -->
-  <rect x="279" y="0" width="3" height="8" fill="#e34c26"/>
+  <rect x="278" y="0" width="3" height="8" fill="#e34c26"/>
   <!-- Rust 0.52% -->
-  <rect x="282" y="0" width="2" height="8" fill="#dea584"/>
+  <rect x="281" y="0" width="2" height="8" fill="#dea584"/>
   <!-- Jupyter Notebook 0.51% -->
-  <rect x="284" y="0" width="1" height="8" fill="#DA5B0B"/>
+  <rect x="283" y="0" width="1" height="8" fill="#DA5B0B"/>
   <!-- Shell 0.50% -->
-  <rect x="285" y="0" width="1" height="8" fill="#89e051"/>
+  <rect x="284" y="0" width="1" height="8" fill="#89e051"/>
   <!-- Smarty 0.23% -->
-  <rect x="286" y="0" width="1" height="8" fill="#858585"/>
+  <rect x="285" y="0" width="1" height="8" fill="#858585"/>
   </g>
 
   <!-- Language dots and labels -->
   <g transform="translate(505, 70)">
     <g transform="translate(0, 0)">
       <circle cx="5" cy="5" r="4" fill="#3178c6"/>
-      <text x="15" y="9" class="lang-name">TypeScript 74.70%</text>
+      <text x="15" y="9" class="lang-name">TypeScript 74.64%</text>
     </g>
     
     <g transform="translate(0, 20)">
       <circle cx="5" cy="5" r="4" fill="#3572A5"/>
-      <text x="15" y="9" class="lang-name">Python 11.98%</text>
+      <text x="15" y="9" class="lang-name">Python 11.97%</text>
     </g>
     
     <g transform="translate(0, 40)">
       <circle cx="5" cy="5" r="4" fill="#00ADD8"/>
-      <text x="15" y="9" class="lang-name">Go 6.48%</text>
+      <text x="15" y="9" class="lang-name">Go 6.47%</text>
     </g>
     
     <g transform="translate(0, 60)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 1.35%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 1.43%</text>
     </g>
     
     <g transform="translate(0, 80)">
