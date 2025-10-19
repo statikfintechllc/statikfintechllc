@@ -10,9 +10,9 @@
     <!-- SFTi Component System -->
     <script src="components/sfti-component-receiver.js"></script>
     <script src="components/server.c/desktop.c/navbar.js"></script>
-    <script src="components/server.c/global.templates/footer.js"></script>
+    <script src="components/server.c/desktop.c/footer.js"></script>
     <script src="components/server.c/mobile.c/navbar.js"></script>
-    <script src="components/server.c/global.templates/footer.js"></script>
+    <script src="components/server.c/mobile.c/footer.js"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔒</text></svg>">
     <meta property="og:title" content="SFTi Server - Secure Access">
     <meta property="og:description" content="Secure server access for StatikFinTech LLC infrastructure">
@@ -205,6 +205,8 @@
             </div>
         </section>
     </main>
+    <!-- Footer Container -->
+    <div id="footer-container"></div>
     <!-- Access Request Modal -->
     <div id="access-modal" class="modal">
         <div class="modal-content">
@@ -256,6 +258,19 @@
                         new NavbarClass({ ...navbarConfig, containerId: 'navbar-container' });
                     } catch(e) {
                         console.error('Navbar initialization error:', e);
+                    }
+                }
+
+                // Initialize footer with responsive detection
+                const FooterClass = isMobile && window.ServerFooterMobile ? window.ServerFooterMobile : window.ServerFooterDesktop || window.SFTiFooter;
+                
+                if (FooterClass) {
+                    try {
+                        const footerConfig = { domain: 'server' };
+                        const footer = new FooterClass(footerConfig);
+                        footer.mount('#footer-container');
+                    } catch(e) {
+                        console.error('Footer initialization error:', e);
                     }
                 }
             });

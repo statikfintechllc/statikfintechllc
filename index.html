@@ -613,15 +613,7 @@
     </section>
 </main>
     <!-- Footer Container -->
-    <footer class="bg-black border-t border-white/10 mt-auto py-8">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-400 text-sm mb-4">© 2025 StatikFinTech, LLC - All rights reserved</p>
-            <div class="flex justify-center space-x-4">
-                <a href="https://github.com/statikfintechllc" target="_blank" class="text-gray-400 hover:text-white transition-colors">GitHub</a>
-                <a href="mailto:info@sfti-ai.org" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-container"></div>
     <!-- Popup Modal -->
     <div id="popup-modal" class="modal">
         <div class="modal-content">
@@ -685,6 +677,19 @@
                         new NavbarClass({ ...navbarConfig, containerId: 'navbar-container' });
                     } catch(e) {
                         console.error('Navbar initialization error:', e);
+                    }
+                }
+
+                // Initialize footer with responsive detection
+                const FooterClass = isMobile && window.WwwFooterMobile ? window.WwwFooterMobile : window.WwwFooterDesktop || window.SFTiFooter;
+                
+                if (FooterClass) {
+                    try {
+                        const footerConfig = { domain: 'www' };
+                        const footer = new FooterClass(footerConfig);
+                        footer.mount('#footer-container');
+                    } catch(e) {
+                        console.error('Footer initialization error:', e);
                     }
                 }
             });
