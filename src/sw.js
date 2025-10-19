@@ -47,6 +47,18 @@ const STATIC_ASSETS = [
   '/badges/Z.P.badge.svg',
   
   // Public assets
+  '/src/public/favicon.png',
+  '/src/public/icon-16x16.png',
+  '/src/public/icon-32x32.png',
+  '/src/public/icon-72x72.png',
+  '/src/public/icon-96x96.png',
+  '/src/public/icon-128x128.png',
+  '/src/public/icon-144x144.png',
+  '/src/public/icon-152x152.png',
+  '/src/public/icon-180x180.png',
+  '/src/public/icon-192x192.png',
+  '/src/public/icon-384x384.png',
+  '/src/public/icon-512x512.png',
   '/src/public/web.pwa.icon.png',
   '/src/public/dragon.png',
   '/src/public/web.contact.bkg.png',
