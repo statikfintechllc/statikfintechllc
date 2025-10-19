@@ -35,7 +35,7 @@ class SFTiMobileNavbar extends BaseNavbar {
                         </button>
                     </div>
 
-                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform transition-transform duration-300 ease-in-out" style="z-index: 40;">
+                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform transition-transform duration-300 ease-in-out" style="z-index: 60;">
                         <div class="h-full flex flex-col">
                             <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
                                 <div class="text-sm text-gray-300">Navigation</div>

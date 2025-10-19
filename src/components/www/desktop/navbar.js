@@ -4,7 +4,7 @@
  * Variant  : desktop
  * Component: navbar
  * Source   : components/global.c/desktop/navbar.js
- * Generated: 2025-09-29T03:16:27.838Z
+ * Generated: 2025-10-19T00:29:42.806Z
  */
 
 // @ts-nocheck
@@ -76,48 +76,44 @@ class SFTiNavbar {
 
     getTemplate() {
         return `
-            <nav class="fixed top-0 left-0 right-0 z-50" style="height: 48px; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-                <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between" style="max-width: 80rem; margin: 0 auto; padding: 0 1rem; height: 100%; display: flex; align-items: center; justify-content: space-between;">
-                    <div class="flex flex-col justify-center leading-none py-1" style="display: flex; flex-direction: column; justify-content: center; line-height: 1; padding: 0.25rem 0;">
-                        <span class="text-red-500 font-bold leading-tight" style="color: #FF0000; font-weight: bold; line-height: 1.2; font-size: 1.1rem;">
+            <nav class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-white/10 h-12 min-h-12 max-h-12">
+                <div class="max-w-7xl mx-auto px-4 h-full flex items-center justify-between">
+                    <div class="flex flex-col leading-none">
+                        <span class="text-red-500 font-bold text-lg leading-tight">
                             ${this.config.logoText}
                         </span>
-                        <span class="text-yellow-400 leading-tight" style="color: #FFD700; line-height: 1.2; font-size: 0.7rem;">
+                        <span class="text-yellow-400 text-xs leading-tight">
                             ${this.config.logoSubtitle}
                         </span>
                     </div>
 
-                    <div id="desktop-nav-links" style="display: flex; align-items: center; gap: 1.5rem;">
+                    <div class="hidden md:flex items-center space-x-6">
                         ${this.config.items.map(item => `
                             <a href="${item.href}"
-                               style="color: white; text-decoration: none; font-size: 0.875rem; transition: color 0.2s;"
-                               onmouseover="this.style.color='#FFD700'"
-                               onmouseout="this.style.color='white'"
+                               class="text-white hover:text-yellow-400 transition-colors text-sm"
                                ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
                                 ${item.title}
                             </a>
                         `).join('')}
                     </div>
 
-                    <button id="mobile-menu-toggle" style="display: none; padding: 0.5rem; color: white; background: transparent; border: none; cursor: pointer;">
-                        <svg style="height: 1.25rem; width: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <button id="mobile-menu-toggle" class="md:hidden p-2 h-8 w-8 flex items-center justify-center">
+                        <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
                     </button>
                 </div>
 
-                <div id="mobile-menu" style="display: none; position: fixed; top: 0; bottom: 0; right: 0; width: 16rem; background: rgba(0, 0, 0, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-left: 1px solid rgba(255, 255, 255, 0.1); transform: translateX(100%); transition: transform 0.3s ease-in-out; z-index: 60;">
-                    <div style="display: flex; flex-direction: column; padding: 1.5rem; gap: 1rem; margin-top: 4rem;">
-                        <button id="mobile-menu-close" style="align-self: flex-end; padding: 0.5rem; margin-bottom: 1rem; color: white; background: transparent; border: none; cursor: pointer;">
-                            <svg style="height: 1.25rem; width: 1.25rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div id="mobile-menu" class="md:hidden fixed inset-y-0 right-0 w-64 bg-black/95 backdrop-blur-sm border-l border-white/10 transform translate-x-full transition-transform duration-300 ease-in-out">
+                    <div class="flex flex-col p-6 space-y-4 mt-6">
+                        <button id="mobile-menu-close" class="self-end p-2 mb-4">
+                            <svg class="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                             </svg>
                         </button>
                         ${this.config.items.map(item => `
                             <a href="${item.href}"
-                               style="color: white; text-decoration: none; font-size: 1rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: color 0.2s;"
-                               onmouseover="this.style.color='#FFD700'"
-                               onmouseout="this.style.color='white'"
+                               class="text-white hover:text-yellow-400 transition-colors text-base py-2"
                                ${item.external ? 'target="_blank" rel="noopener noreferrer"' : ''}>
                                 ${item.title}
                             </a>
@@ -125,26 +121,6 @@ class SFTiNavbar {
                     </div>
                 </div>
             </nav>
-            <script>
-                (function() {
-                    const mobileToggle = document.getElementById('mobile-menu-toggle');
-                    const desktopLinks = document.getElementById('desktop-nav-links');
-                    
-                    // Show/hide based on screen width
-                    function updateNav() {
-                        if (window.innerWidth < 768) {
-                            mobileToggle.style.display = 'block';
-                            desktopLinks.style.display = 'none';
-                        } else {
-                            mobileToggle.style.display = 'none';
-                            desktopLinks.style.display = 'flex';
-                        }
-                    }
-                    
-                    updateNav();
-                    window.addEventListener('resize', updateNav);
-                })();
-            </script>
         `;
     }
 
@@ -242,7 +218,17 @@ if (typeof window !== 'undefined') {
     const domain = 'www';
     const variant = 'desktop';
     const component = 'navbar';
-    const themeTokens = {};
+    const themeTokens = {
+    "primary": "red",
+    "secondary": "gold",
+    "bgDark": "#000",
+    "bgDarker": "#111",
+    "textLight": "#fff",
+    "textGray": "#ccc",
+    "glassBg": "rgba(0,0,0,.1)",
+    "glassBorder": "hsla(0,0%,100%,.1)",
+    "transition": "all 0.3s ease"
+};
     const globalObj = typeof window !== 'undefined' ? window : globalThis;
 
     const registrar = (typeof registerDomainTheme === 'function' && registerDomainTheme)

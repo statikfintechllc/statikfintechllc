@@ -162,10 +162,10 @@ detect_domain_styles() {
     local domain="$1"
     local styles_dir="${PROJECT_ROOT}/${domain}/${domain}.styles"
     if [[ -d "$styles_dir" ]]; then
-        log_info "Using theme tokens from ${domain}/${domain}.styles/"
+        log_info "Using theme tokens from ${domain}/${domain}.styles/" >&2
         printf '%s' "$styles_dir"
     else
-        log_warn "No theme styles directory found for domain '${domain}'"
+        log_warn "No theme styles directory found for domain '${domain}'" >&2
         printf ''
     fi
 }

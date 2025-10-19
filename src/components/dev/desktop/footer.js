@@ -1,10 +1,10 @@
 /**
  * Auto-generated domain component
- * Domain   : www
+ * Domain   : dev
  * Variant  : desktop
  * Component: footer
  * Source   : components/global.c/desktop/footer.js
- * Generated: 2025-10-19T00:07:54.688Z
+ * Generated: 2025-10-19T00:07:54.870Z
  */
 
 // @ts-nocheck
@@ -277,19 +277,24 @@ if (typeof module !== 'undefined' && module.exports) {
 
 
 (function registerSFTiDomainBindings() {
-    const domain = 'www';
+    const domain = 'dev';
     const variant = 'desktop';
     const component = 'footer';
     const themeTokens = {
-    "primary": "red",
-    "secondary": "gold",
-    "bgDark": "#000",
-    "bgDarker": "#111",
+    "primary": "#0f8",
+    "secondary": "#0af",
+    "accent": "#ff6b00",
+    "bgDark": "#0a0a0a",
+    "bgDarker": "#050505",
+    "bgCard": "#1a1a1a",
     "textLight": "#fff",
-    "textGray": "#ccc",
-    "glassBg": "rgba(0,0,0,.1)",
-    "glassBorder": "hsla(0,0%,100%,.1)",
-    "transition": "all 0.3s ease"
+    "textGray": "#aaa",
+    "textGreen": "#0f8",
+    "border": "#333",
+    "glassBg": "rgba(26,26,26,.8)",
+    "glassBorder": "rgba(0,255,136,.2)",
+    "transition": "all 0.3s ease",
+    "shadowGlow": "0 0 20px rgba(0,255,136,.3)"
 };
     const globalObj = typeof window !== 'undefined' ? window : globalThis;
 
@@ -346,11 +351,11 @@ if (typeof module !== 'undefined' && module.exports) {
     }
 
     if (globalObj) {
-        if (!globalObj['WwwFooterDesktop']) {
-            globalObj['WwwFooterDesktop'] = DomainImplementation;
+        if (!globalObj['DevFooterDesktop']) {
+            globalObj['DevFooterDesktop'] = DomainImplementation;
         }
-        if (!globalObj['createWwwFooterDesktop']) {
-            globalObj['createWwwFooterDesktop'] = (config = {}) => new DomainImplementation(config);
+        if (!globalObj['createDevFooterDesktop']) {
+            globalObj['createDevFooterDesktop'] = (config = {}) => new DomainImplementation(config);
         }
         globalObj.SFTiComponents = globalObj.SFTiComponents || {};
         globalObj.SFTiComponents[domain] = globalObj.SFTiComponents[domain] || {};

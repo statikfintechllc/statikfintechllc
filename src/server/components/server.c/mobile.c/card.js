@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: card
  * Source   : components/global.c/mobile/card.js
- * Generated: 2025-09-29T03:18:19.054Z
+ * Generated: 2025-10-19T00:07:55.101Z
  */
 
 // @ts-nocheck
@@ -74,7 +74,25 @@ if (typeof module !== 'undefined' && module.exports) {
     const domain = 'server';
     const variant = 'mobile';
     const component = 'card';
-    const themeTokens = {};
+    const themeTokens = {
+    "primary": "#ff0080",
+    "secondary": "#8000ff",
+    "accent": "#00ff80",
+    "danger": "#ff4040",
+    "warning": "#ffb000",
+    "success": "#00ff80",
+    "bgDark": "#000",
+    "bgDarker": "#0d0d0d",
+    "bgCard": "#1a1a1a",
+    "textLight": "#fff",
+    "textGray": "#aaa",
+    "textDim": "#666",
+    "border": "#333",
+    "glassBg": "rgba(26,26,26,.9)",
+    "glassBorder": "rgba(255,0,128,.3)",
+    "transition": "all 0.3s ease",
+    "shadowGlow": "0 0 20px rgba(255,0,128,.4)"
+};
     const globalObj = typeof window !== 'undefined' ? window : globalThis;
 
     const registrar = (typeof registerDomainTheme === 'function' && registerDomainTheme)
