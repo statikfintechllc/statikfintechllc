@@ -10,25 +10,29 @@ const STATIC_ASSETS = [
   '/',
   '/index.html',
   '/src/manifest.json',
+  '/script.js',
   
-  // Main website (www.sfti-ai.org)
-  '/www.sfti-ai.org/',
-  '/www.sfti-ai.org/index.html',
-  '/www.sfti-ai.org/script.js',
-  '/www.sfti-ai.org/styles/styles.css',
-  '/www.sfti-ai.org/styles/main.tailwind.css',
-  '/www.sfti-ai.org/styles/custom.css',
+  // Main website domain (src/www/)
+  '/src/www/',
+  '/src/www/index.html',
+  '/src/www/script.js',
   
-  // Development hub (dev.sfti-ai.org)
-  '/dev.sfti-ai.org/',
-  '/dev.sfti-ai.org/index.html',
-  '/dev.sfti-ai.org/dev-script.js',
-  '/dev.sfti-ai.org/styles/dev-styles.css',
+  // Development hub (src/dev/)
+  '/src/dev/',
+  '/src/dev/index.html',
+  '/src/dev/dev-script.js',
   
-  // Server portal (server.sfti-ai.org)
-  '/server.sfti-ai.org/',
-  '/server.sfti-ai.org/index.html',
-  '/server.sfti-ai.org/server-script.js',
+  // IB-G.Scanner PWA
+  '/src/dev/IB-G.Scanner/',
+  '/src/dev/IB-G.Scanner/index.html',
+  
+  // Pilot-Server PWA
+  '/src/dev/Pilot-Server/',
+  '/src/dev/Pilot-Server/index.html',
+  
+  // Server portal (src/server/)
+  '/src/server/',
+  '/src/server/index.html',
   
   // Static badges and assets
   '/badges/statik.title.svg',
