@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: footer
  * Source   : components/global.c/mobile/footer.js
- * Generated: 2025-10-19T00:07:54.691Z
+ * Generated: 2025-10-19T02:37:12.942Z
  */
 
 // @ts-nocheck
@@ -142,6 +142,13 @@ if (typeof module !== 'undefined' && module.exports) {
                 const nextConfig = (config && typeof config === 'object') ? { ...config } : {};
                 if (!nextConfig.domain) {
                     nextConfig.domain = domain;
+                }
+                // Inject theme colors into config for navbar components
+                if (component === 'navbar' && themeTokens) {
+                    nextConfig.themeColors = {
+                        primary: themeTokens.primary || '#ef4444',
+                        secondary: themeTokens.secondary || '#eab308'
+                    };
                 }
                 super(nextConfig);
             }

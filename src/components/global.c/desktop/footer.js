@@ -50,13 +50,25 @@ class SFTiFooter extends SFTiComponent {
             ...config
         };
 
-        super(defaultConfig);
+        // Call parent constructor with proper signature (type, domain, variant)
+        super('footer', defaultConfig.domain, 'desktop');
+        
+        // Store config on instance
+        this.config = defaultConfig;
         this.initFooter();
     }
 
     initFooter() {
         this.setupResponsive();
         this.setupSocialTracking();
+    }
+
+    render(target) {
+        if (target) {
+            target.innerHTML = this.getTemplate();
+            setTimeout(() => this.addSocialTracking(), 100);
+        }
+        return target;
     }
 
     getTemplate() {
@@ -235,8 +247,7 @@ class SFTiFooter extends SFTiComponent {
     }
 
     mount(selector) {
-        super.mount(selector);
-        setTimeout(() => this.addSocialTracking(), 100);
+        return super.mount(selector);
     }
 
     static create(selector, config = {}) {
