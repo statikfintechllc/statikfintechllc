@@ -154,6 +154,9 @@ class SFTiMobileNavbar extends BaseNavbar {
 
     cleanup() {
         // Remove resize listener to prevent memory leaks
+        // Note: Other event listeners are attached to DOM elements that are part of the navbar
+        // and will be garbage collected when those elements are removed from the DOM.
+        // The resize listener is on the window object which persists, so it must be explicitly removed.
         if (this.resizeHandler) {
             window.removeEventListener('resize', this.resizeHandler);
             this.resizeHandler = null;
