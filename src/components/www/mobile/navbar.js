@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-19T01:30:36.397Z
+ * Generated: 2025-10-19T01:35:30.915Z
  */
 
 // @ts-nocheck
@@ -27,6 +27,10 @@ class SFTiMobileNavbar extends BaseNavbar {
     constructor(config) {
         super(config);
         this.resizeHandler = null;
+        this.toggleHandler = null;
+        this.closeHandler = null;
+        this.documentClickHandler = null;
+        this.linkHandlers = [];
     }
 
     getTemplate() {
@@ -125,50 +129,87 @@ class SFTiMobileNavbar extends BaseNavbar {
         this.resizeHandler = initializeMenu;
         window.addEventListener('resize', this.resizeHandler);
 
+        // Store toggle button handler
         if (toggleButton) {
-            toggleButton.addEventListener('click', (e) => {
+            this.toggleHandler = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 this.toggleMobileMenu();
-            });
+            };
+            toggleButton.addEventListener('click', this.toggleHandler);
         }
 
+        // Store close button handler
         if (closeButton) {
-            closeButton.addEventListener('click', (e) => {
+            this.closeHandler = (e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 this.closeMobileMenu();
-            });
+            };
+            closeButton.addEventListener('click', this.closeHandler);
         }
 
-        // Close menu when clicking a link
+        // Store link handlers
         if (mobileMenu) {
             const links = mobileMenu.querySelectorAll('a');
+            this.linkHandlers = [];
             links.forEach(link => {
-                link.addEventListener('click', () => {
+                const handler = () => {
                     this.closeMobileMenu();
-                });
+                };
+                this.linkHandlers.push({ element: link, handler });
+                link.addEventListener('click', handler);
             });
         }
 
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
+        // Store document click handler
+        this.documentClickHandler = (e) => {
             if (this.mobileMenuOpen && mobileMenu && toggleButton) {
                 if (!mobileMenu.contains(e.target) && !toggleButton.contains(e.target)) {
                     this.closeMobileMenu();
                 }
             }
-        });
+        };
+        document.addEventListener('click', this.documentClickHandler);
     }
 
     cleanup() {
-        // Remove resize listener to prevent memory leaks
-        // Note: Other event listeners are attached to DOM elements that are part of the navbar
-        // and will be garbage collected when those elements are removed from the DOM.
-        // The resize listener is on the window object which persists, so it must be explicitly removed.
+        // Remove window resize listener
         if (this.resizeHandler) {
             window.removeEventListener('resize', this.resizeHandler);
             this.resizeHandler = null;
+        }
+        
+        // Remove toggle button listener
+        if (this.toggleHandler) {
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+            if (toggleButton) {
+                toggleButton.removeEventListener('click', this.toggleHandler);
+            }
+            this.toggleHandler = null;
+        }
+        
+        // Remove close button listener
+        if (this.closeHandler) {
+            const closeButton = document.getElementById('mobile-menu-close');
+            if (closeButton) {
+                closeButton.removeEventListener('click', this.closeHandler);
+            }
+            this.closeHandler = null;
+        }
+        
+        // Remove link listeners
+        if (this.linkHandlers && this.linkHandlers.length > 0) {
+            this.linkHandlers.forEach(({ element, handler }) => {
+                element.removeEventListener('click', handler);
+            });
+            this.linkHandlers = [];
+        }
+        
+        // Remove document click listener
+        if (this.documentClickHandler) {
+            document.removeEventListener('click', this.documentClickHandler);
+            this.documentClickHandler = null;
         }
     }
 
