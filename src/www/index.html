@@ -24,9 +24,9 @@
     <title>SFTi - StatikFinTech LLC</title>
     
     <!-- Favicons - Essential links only, rest handled by manifest -->
-    <link rel="shortcut icon" type="image/x-icon" href="/src/public/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/src/public/favicon.ico">
-    <link rel="apple-touch-icon" href="/src/public/icon-180x180.png">
+    <link rel="shortcut icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="public/favicon.ico">
+    <link rel="apple-touch-icon" href="public/icon-180x180.png">
 
     <link rel="stylesheet" href="www.styles/www.styles.css">
     <link rel="stylesheet" href="www.styles/www.tailwind.css">
@@ -129,7 +129,7 @@
     </style>
     
     <!-- PWA Manifest - handles all icon definitions -->
-    <link rel="manifest" href="/src/manifest.json">
+    <link rel="manifest" href="manifest.json">
     
     <meta property="og:title" content="SFTi - StatikFinTech LLC">
     <meta property="og:description" content="The Ascend Institute - Building Systems and Documentation that scares the orgs/govs behind paywalls and control systems.">
@@ -627,9 +627,9 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/src/sw.js')
+                navigator.serviceWorker.register('sw.js')
                     .then(function(registration) {
-                        console.log('SFTi SW: Service Worker registered successfully:', registration.scope);
+                        console.log('SFTi WWW SW: Service Worker registered successfully:', registration.scope);
                         
                         // Check for updates
                         registration.addEventListener('updatefound', function() {
@@ -645,7 +645,7 @@
                         });
                     })
                     .catch(function(error) {
-                        console.log('SFTi SW: Service Worker registration failed:', error);
+                        console.log('SFTi WWW SW: Service Worker registration failed:', error);
                     });
             });
         }
@@ -657,12 +657,12 @@
             deferredPrompt = e;
             
             // Don't show install prompt automatically
-            console.log('SFTi PWA: Install prompt available (suppressed)');
+            console.log('SFTi WWW PWA: Install prompt available (suppressed)');
         });
 
         // Track app installation
         window.addEventListener('appinstalled', function(e) {
-            console.log('SFTi PWA: App installed successfully');
+            console.log('SFTi WWW PWA: App installed successfully');
             deferredPrompt = null;
         });
     </script>

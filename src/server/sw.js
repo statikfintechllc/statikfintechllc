@@ -1,181 +1,81 @@
 // @ts-nocheck
-// SFTi Web Templates Service Worker - Comprehensive Multi-Domain Support
-const CACHE_NAME = 'sfti-templates-v2.0.0';
-const STATIC_CACHE = 'sfti-static-v2.0.0';
-const DYNAMIC_CACHE = 'sfti-dynamic-v2.0.0';
+// SFTi Server Service Worker - Server Portal Domain
+const CACHE_NAME = 'sfti-server-v2.0.0';
+const STATIC_CACHE = 'sfti-server-static-v2.0.0';
+const DYNAMIC_CACHE = 'sfti-server-dynamic-v2.0.0';
 
-// Comprehensive assets to cache on install - all domains and assets
+// Assets to cache on install - server domain specific
 const STATIC_ASSETS = [
-  // Root domain assets
-  '/',
-  '/index.html',
-  '/src/manifest.json',
-  '/script.js',
+  './',
+  './index.html',
+  './manifest.json',
+  './server-script.js',
   
-  // Main website domain (src/www/)
-  '/src/www/',
-  '/src/www/index.html',
-  '/src/www/script.js',
-  
-  // Development hub (src/dev/)
-  '/src/dev/',
-  '/src/dev/index.html',
-  '/src/dev/dev-script.js',
-  
-  // IB-G.Scanner PWA
-  '/src/dev/IB-G.Scanner/',
-  '/src/dev/IB-G.Scanner/index.html',
-  
-  // Pilot-Server PWA
-  '/src/dev/Pilot-Server/',
-  '/src/dev/Pilot-Server/index.html',
-  
-  // Server portal (src/server/)
-  '/src/server/',
-  '/src/server/index.html',
-  
-  // Static badges and assets
-  '/badges/statik.title.svg',
-  '/badges/ai_architect.svg',
-  '/badges/full_stack_dev.svg',
-  '/badges/prompt_blacksmith.svg',
-  '/badges/G.H.badge.svg',
-  '/badges/G.I.badge.svg',
-  '/badges/L.W.badge.svg',
-  '/badges/M.P.badge.svg',
-  '/badges/R.S.badge.svg',
-  '/badges/Z.P.badge.svg',
-  
-  // Public assets
-  '/src/public/favicon.png',
-  '/src/public/icon-16x16.png',
-  '/src/public/icon-32x32.png',
-  '/src/public/icon-72x72.png',
-  '/src/public/icon-96x96.png',
-  '/src/public/icon-128x128.png',
-  '/src/public/icon-144x144.png',
-  '/src/public/icon-152x152.png',
-  '/src/public/icon-180x180.png',
-  '/src/public/icon-192x192.png',
-  '/src/public/icon-384x384.png',
-  '/src/public/icon-512x512.png',
-  '/src/public/web.pwa.icon.png',
-  '/src/public/dragon.png',
-  '/src/public/web.contact.bkg.png',
-  '/src/public/web.projects.bkg.png',
-  
-  // Component system
-  '/src/components/sfti-component-system.js',
-  '/src/components/global.c/desktop/card.js',
-  '/src/components/global.c/desktop/svg-card.js',
-  '/src/components/global.c/mobile/card.js',
-  '/src/components/global.c/mobile/svg-card.js',
-  
-  // Dynamic SVG content from docs/
-  '/docs/i.svg/assets/institute-header.svg',
-  '/docs/g.svg/assets/github-profile.svg',
-  '/docs/s.svg/assets/streak.svg',
-  '/docs/t.svg/assets/trophies.svg',
-  '/docs/r.svg/assets/repo-slide.svg',
-  '/docs/c.svg/assets/crimson-flow.svg',
-  
-  // Project SVGs
-  '/docs/IB.G.svg/assets/ib-g-scanner-card.svg',
-  '/docs/P.S.svg/assets/pilot-server-card.svg',
-  '/docs/G.G.svg/assets/gremlingpt-card.svg',
-  '/docs/G.S.svg/assets/gremlin-shadtail-trader-card.svg',
-  '/docs/A.N.svg/assets/ascendnet-card.svg',
-  '/docs/S.S.svg/assets/statik-server-card.svg',
-  '/docs/A.I.svg/assets/ascend-institute-card.svg',
-  '/docs/A.D.svg/assets/ascenddocs-of-govseverance-card.svg',
-  '/docs/D.B.svg/assets/dragon-boot-card.svg',
-  '/docs/G.C.svg/assets/godcore-card.svg',
-  '/docs/G.M.svg/assets/gremlin-mcp-scrap-card.svg',
-  '/docs/M.M.svg/assets/mobile-mirror-card.svg'
+  // Public assets for server domain
+  './public/favicon.png',
+  './public/icon-16x16.png',
+  './public/icon-32x32.png',
+  './public/icon-72x72.png',
+  './public/icon-96x96.png',
+  './public/icon-128x128.png',
+  './public/icon-144x144.png',
+  './public/icon-152x152.png',
+  './public/icon-180x180.png',
+  './public/icon-192x192.png',
+  './public/icon-384x384.png',
+  './public/icon-512x512.png',
+  './public/web.pwa.icon.png'
 ];
 
-// Network-first resources (always try network first) - Live SVGs and dynamic content
+// Network-first resources (always try network first) - for server
 const NETWORK_FIRST = [
-  // Live GitHub stats
-  '/docs/g.svg/assets/github-profile.svg',
-  '/docs/s.svg/assets/streak.svg', 
-  '/docs/t.svg/assets/trophies.svg',
-  '/docs/r.svg/assets/repo-slide.svg',
-  '/docs/c.svg/assets/crimson-flow.svg',
-  
-  // Research papers (may get updated)
-  '/docs/Zenodo.papers.svg/',
-  '/docs/Medium.papers.svg/',
-  
-  // API endpoints
-  '/api/',
-  
   // External dependencies (CDN)
-  'https://cdn.tailwindcss.com',
-  'https://skillicons.dev/'
+  'https://cdn.tailwindcss.com'
 ];
 
-// Cache-first resources - Static content that rarely changes
+// Cache-first resources - Static content for server
 const CACHE_FIRST = [
-  // Static badges and icons
-  '/badges/',
-  '/src/public/',
-  
-  // Project assets
-  '/docs/A.I.svg/assets/',
-  '/docs/A.D.svg/assets/',
-  '/docs/A.N.svg/assets/',
-  '/docs/D.B.svg/assets/',
-  '/docs/G.C.svg/assets/',
-  '/docs/G.G.svg/assets/',
-  '/docs/G.M.svg/assets/',
-  '/docs/G.S.svg/assets/',
-  '/docs/IB.G.svg/assets/',
-  '/docs/M.M.svg/assets/',
-  '/docs/P.S.svg/assets/',
-  '/docs/S.S.svg/assets/',
-  
-  // Component files
-  '/src/components/',
-  '/src/styles/'
+  // Static assets
+  './public/',
+  './server.styles/'
 ];
 
 // Install event - cache static assets
 self.addEventListener('install', event => {
-  console.log('SFTi SW: Installing...');
+  console.log('SFTi Server SW: Installing...');
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then(cache => {
-        console.log('SFTi SW: Caching static assets');
+        console.log('SFTi Server SW: Caching static assets');
         return cache.addAll(STATIC_ASSETS);
       })
       .then(() => {
-        console.log('SFTi SW: Static assets cached');
+        console.log('SFTi Server SW: Static assets cached');
         return self.skipWaiting();
       })
       .catch(err => {
-        console.error('SFTi SW: Failed to cache static assets', err);
+        console.error('SFTi Server SW: Failed to cache static assets', err);
       })
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', event => {
-  console.log('SFTi SW: Activating...');
+  console.log('SFTi Server SW: Activating...');
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
         return Promise.all(
           cacheNames.map(cacheName => {
             if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-              console.log('SFTi SW: Deleting old cache', cacheName);
+              console.log('SFTi Server SW: Deleting old cache', cacheName);
               return caches.delete(cacheName);
             }
           })
         );
       })
       .then(() => {
-        console.log('SFTi SW: Activated');
+        console.log('SFTi Server SW: Activated');
         return self.clients.claim();
       })
   );
@@ -206,7 +106,7 @@ async function cacheFirst(request) {
   try {
     const cachedResponse = await caches.match(request);
     if (cachedResponse) {
-      console.log('SFTi SW: Serving from cache', request.url);
+      console.log('SFTi Server SW: Serving from cache', request.url);
       return cachedResponse;
     }
 
@@ -216,17 +116,17 @@ async function cacheFirst(request) {
     if (networkResponse.status === 200) {
       const cache = await caches.open(DYNAMIC_CACHE);
       cache.put(request, networkResponse.clone());
-      console.log('SFTi SW: Cached new resource', request.url);
+      console.log('SFTi Server SW: Cached new resource', request.url);
     }
     
     return networkResponse;
   } catch (error) {
-    console.error('SFTi SW: Fetch failed', error);
+    console.error('SFTi Server SW: Fetch failed', error);
     
     // Return offline page for navigation requests
     if (request.mode === 'navigate') {
       const cache = await caches.open(STATIC_CACHE);
-      return cache.match('/index.html');
+      return cache.match('./index.html');
     }
     
     throw error;
@@ -242,12 +142,12 @@ async function networkFirst(request) {
     if (networkResponse.status === 200) {
       const cache = await caches.open(DYNAMIC_CACHE);
       cache.put(request, networkResponse.clone());
-      console.log('SFTi SW: Updated cache from network', request.url);
+      console.log('SFTi Server SW: Updated cache from network', request.url);
     }
     
     return networkResponse;
   } catch (error) {
-    console.log('SFTi SW: Network failed, serving from cache', request.url);
+    console.log('SFTi Server SW: Network failed, serving from cache', request.url);
     const cachedResponse = await caches.match(request);
     if (cachedResponse) {
       return cachedResponse;
@@ -259,56 +159,54 @@ async function networkFirst(request) {
 // Background sync for offline actions
 self.addEventListener('sync', event => {
   if (event.tag === 'background-sync') {
-    console.log('SFTi SW: Background sync triggered');
+    console.log('SFTi Server SW: Background sync triggered');
     event.waitUntil(doBackgroundSync());
   }
 });
 
 async function doBackgroundSync() {
   // Handle offline actions when back online
-  console.log('SFTi SW: Performing background sync');
+  console.log('SFTi Server SW: Performing background sync');
 }
 
 // Push notifications
 self.addEventListener('push', event => {
   if (event.data) {
     const data = event.data.json();
-    console.log('SFTi SW: Push notification received', data);
+    console.log('SFTi Server SW: Push notification received', data);
     
     const options = {
-      body: data.body || 'New update from SFTi',
-      icon: '/badges/statik.title.svg',
-      badge: '/badges/ai_architect.svg',
+      body: data.body || 'New update from SFTi Server',
+      icon: './public/icon-192x192.png',
+      badge: './public/icon-96x96.png',
       vibrate: [200, 100, 200],
-      data: data.url || '/',
+      data: data.url || './',
       actions: [
         {
           action: 'open',
-          title: 'Open App',
-          icon: '/badges/full_stack_dev.svg'
+          title: 'Open App'
         },
         {
           action: 'close',
-          title: 'Close',
-          icon: '/badges/prompt_blacksmith.svg'
+          title: 'Close'
         }
       ]
     };
     
     event.waitUntil(
-      self.registration.showNotification(data.title || 'SFTi Update', options)
+      self.registration.showNotification(data.title || 'SFTi Server Update', options)
     );
   }
 });
 
 // Notification click handler
 self.addEventListener('notificationclick', event => {
-  console.log('SFTi SW: Notification clicked', event);
+  console.log('SFTi Server SW: Notification clicked', event);
   event.notification.close();
   
   if (event.action === 'open') {
     event.waitUntil(
-      clients.openWindow(event.notification.data || '/')
+      clients.openWindow(event.notification.data || './')
     );
   }
 });
@@ -320,7 +218,7 @@ self.addEventListener('message', event => {
   }
   
   if (event.data && event.data.type === 'UPDATE_CACHE') {
-    console.log('SFTi SW: Manual cache update requested');
+    console.log('SFTi Server SW: Manual cache update requested');
     event.waitUntil(updateCache());
   }
 });
@@ -336,7 +234,7 @@ async function updateCache() {
         await cache.put(request, response);
       }
     } catch (error) {
-      console.log('SFTi SW: Failed to update', request.url);
+      console.log('SFTi Server SW: Failed to update', request.url);
     }
   }
 }
