@@ -4,7 +4,7 @@
  * Variant  : desktop
  * Component: card
  * Source   : components/global.c/desktop/card.js
- * Generated: 2025-09-29T03:18:18.973Z
+ * Generated: 2025-10-19T00:07:54.736Z
  */
 
 // @ts-nocheck
@@ -344,7 +344,17 @@ if (typeof registerSFTiComponent === 'function') {
     const domain = 'www';
     const variant = 'desktop';
     const component = 'card';
-    const themeTokens = {};
+    const themeTokens = {
+    "primary": "red",
+    "secondary": "gold",
+    "bgDark": "#000",
+    "bgDarker": "#111",
+    "textLight": "#fff",
+    "textGray": "#ccc",
+    "glassBg": "rgba(0,0,0,.1)",
+    "glassBorder": "hsla(0,0%,100%,.1)",
+    "transition": "all 0.3s ease"
+};
     const globalObj = typeof window !== 'undefined' ? window : globalThis;
 
     const registrar = (typeof registerDomainTheme === 'function' && registerDomainTheme)

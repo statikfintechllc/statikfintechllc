@@ -4,7 +4,7 @@
  * Variant  : desktop
  * Component: footer
  * Source   : components/global.c/desktop/footer.js
- * Generated: 2025-09-29T03:16:54.766Z
+ * Generated: 2025-10-19T00:07:54.688Z
  */
 
 // @ts-nocheck
@@ -280,7 +280,17 @@ if (typeof module !== 'undefined' && module.exports) {
     const domain = 'www';
     const variant = 'desktop';
     const component = 'footer';
-    const themeTokens = {};
+    const themeTokens = {
+    "primary": "red",
+    "secondary": "gold",
+    "bgDark": "#000",
+    "bgDarker": "#111",
+    "textLight": "#fff",
+    "textGray": "#ccc",
+    "glassBg": "rgba(0,0,0,.1)",
+    "glassBorder": "hsla(0,0%,100%,.1)",
+    "transition": "all 0.3s ease"
+};
     const globalObj = typeof window !== 'undefined' ? window : globalThis;
 
     const registrar = (typeof registerDomainTheme === 'function' && registerDomainTheme)

@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-18T20:30:25.786Z
+ * Generated: 2025-10-19T00:09:29.469Z
  */
 
 // @ts-nocheck
@@ -44,7 +44,7 @@ class SFTiMobileNavbar extends BaseNavbar {
                         </button>
                     </div>
 
-                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform transition-transform duration-300 ease-in-out" style="z-index: 40;">
+                    <div id="mobile-menu" class="fixed left-0 right-0 bg-black/95 backdrop-blur-xl transform transition-transform duration-300 ease-in-out" style="z-index: 60;">
                         <div class="h-full flex flex-col">
                             <div class="flex items-center justify-between px-4 h-14 border-b border-white/10">
                                 <div class="text-sm text-gray-300">Navigation</div>
@@ -175,7 +175,17 @@ if (typeof module !== 'undefined' && module.exports) {
     const domain = 'www';
     const variant = 'mobile';
     const component = 'navbar';
-    const themeTokens = {};
+    const themeTokens = {
+    "primary": "red",
+    "secondary": "gold",
+    "bgDark": "#000",
+    "bgDarker": "#111",
+    "textLight": "#fff",
+    "textGray": "#ccc",
+    "glassBg": "rgba(0,0,0,.1)",
+    "glassBorder": "hsla(0,0%,100%,.1)",
+    "transition": "all 0.3s ease"
+};
     const globalObj = typeof window !== 'undefined' ? window : globalThis;
 
     const registrar = (typeof registerDomainTheme === 'function' && registerDomainTheme)

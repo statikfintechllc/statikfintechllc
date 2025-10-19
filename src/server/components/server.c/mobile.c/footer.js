@@ -1,10 +1,10 @@
 /**
  * Auto-generated domain component
- * Domain   : www
+ * Domain   : server
  * Variant  : mobile
  * Component: footer
  * Source   : components/global.c/mobile/footer.js
- * Generated: 2025-10-19T00:07:54.691Z
+ * Generated: 2025-10-19T00:07:55.054Z
  */
 
 // @ts-nocheck
@@ -92,19 +92,27 @@ if (typeof module !== 'undefined' && module.exports) {
 
 
 (function registerSFTiDomainBindings() {
-    const domain = 'www';
+    const domain = 'server';
     const variant = 'mobile';
     const component = 'footer';
     const themeTokens = {
-    "primary": "red",
-    "secondary": "gold",
+    "primary": "#ff0080",
+    "secondary": "#8000ff",
+    "accent": "#00ff80",
+    "danger": "#ff4040",
+    "warning": "#ffb000",
+    "success": "#00ff80",
     "bgDark": "#000",
-    "bgDarker": "#111",
+    "bgDarker": "#0d0d0d",
+    "bgCard": "#1a1a1a",
     "textLight": "#fff",
-    "textGray": "#ccc",
-    "glassBg": "rgba(0,0,0,.1)",
-    "glassBorder": "hsla(0,0%,100%,.1)",
-    "transition": "all 0.3s ease"
+    "textGray": "#aaa",
+    "textDim": "#666",
+    "border": "#333",
+    "glassBg": "rgba(26,26,26,.9)",
+    "glassBorder": "rgba(255,0,128,.3)",
+    "transition": "all 0.3s ease",
+    "shadowGlow": "0 0 20px rgba(255,0,128,.4)"
 };
     const globalObj = typeof window !== 'undefined' ? window : globalThis;
 
@@ -161,11 +169,11 @@ if (typeof module !== 'undefined' && module.exports) {
     }
 
     if (globalObj) {
-        if (!globalObj['WwwFooterMobile']) {
-            globalObj['WwwFooterMobile'] = DomainImplementation;
+        if (!globalObj['ServerFooterMobile']) {
+            globalObj['ServerFooterMobile'] = DomainImplementation;
         }
-        if (!globalObj['createWwwFooterMobile']) {
-            globalObj['createWwwFooterMobile'] = (config = {}) => new DomainImplementation(config);
+        if (!globalObj['createServerFooterMobile']) {
+            globalObj['createServerFooterMobile'] = (config = {}) => new DomainImplementation(config);
         }
         globalObj.SFTiComponents = globalObj.SFTiComponents || {};
         globalObj.SFTiComponents[domain] = globalObj.SFTiComponents[domain] || {};
