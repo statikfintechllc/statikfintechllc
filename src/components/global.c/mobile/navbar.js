@@ -16,14 +16,18 @@ if (!BaseNavbar) {
 
 class SFTiMobileNavbar extends BaseNavbar {
     getTemplate() {
+        // Get theme colors from config or use defaults
+        const primaryColor = this.config.themeColors?.primary || '#ef4444';
+        const secondaryColor = this.config.themeColors?.secondary || '#eab308';
+        
         return `
-            <div class="fixed top-0 left-0 right-0 z-50">
+            <div class="fixed top-0 left-0 right-0 z-50" id="navbar-wrapper">
                 <!-- Main navbar -->
                 <nav class="bg-black/95 backdrop-blur-xl border-b border-white/10">
                     <div class="px-4 h-14 flex items-center justify-between">
                         <div class="flex flex-col leading-tight">
-                            <span class="text-red-500 font-bold text-base">${this.config.logoText}</span>
-                            <span class="text-yellow-400 text-[10px] uppercase tracking-wide">
+                            <span class="font-bold text-base" style="color: ${primaryColor};">${this.config.logoText}</span>
+                            <span class="text-[10px] uppercase tracking-wide" style="color: ${secondaryColor};">
                                 ${this.config.logoSubtitle}
                             </span>
                         </div>
@@ -73,22 +77,32 @@ class SFTiMobileNavbar extends BaseNavbar {
     }
 
     attachEventListeners() {
-        // Position and hide menu on init
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navbarContainer = mobileMenu?.closest('.fixed');
-        
-        if (mobileMenu && navbarContainer) {
-            // Calculate navbar + ticker height
-            const navbarHeight = navbarContainer.offsetHeight;
+        // Position and hide menu on init - use requestAnimationFrame to ensure DOM is ready
+        const initializeMenu = () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navbarWrapper = document.getElementById('navbar-wrapper');
             
-            // Position menu below navbar with calculated height
-            mobileMenu.style.top = `${navbarHeight}px`;
-            mobileMenu.style.height = `calc(100vh - ${navbarHeight}px)`;
-            
-            // Hide menu by translating it down offscreen
-            mobileMenu.style.transform = 'translateY(100%)';
-        }
+            if (mobileMenu && navbarWrapper) {
+                // Use requestAnimationFrame to ensure layout is complete
+                requestAnimationFrame(() => {
+                    // Calculate navbar + ticker height from the wrapper
+                    const navbarHeight = navbarWrapper.offsetHeight;
+                    
+                    // Position menu below navbar with calculated height
+                    mobileMenu.style.top = `${navbarHeight}px`;
+                    mobileMenu.style.height = `calc(100vh - ${navbarHeight}px)`;
+                    
+                    // Hide menu by translating it down offscreen
+                    mobileMenu.style.transform = 'translateY(100%)';
+                });
+            }
+        };
 
+        // Initialize immediately and on resize
+        initializeMenu();
+        window.addEventListener('resize', initializeMenu);
+
+        const mobileMenu = document.getElementById('mobile-menu');
         const toggleButton = document.getElementById('mobile-menu-toggle');
         const closeButton = document.getElementById('mobile-menu-close');
 
