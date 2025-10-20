@@ -2,8 +2,6 @@
 RewriteEngine On
 
 # dev.sfti-ai.org b
-RewriteCond %{HTTP_HOST} ^dev\.sfti-ai\.org$ [NC]
-RewriteRule ^$ dev.sfti-ai.org.html [L]
 
 # server.sfti-ai.org b
 RewriteCond %{HTTP_HOST} ^server\.sfti-ai\.org$ [NC]
@@ -12,3 +10,5 @@ RewriteRule ^$ server.sfti-ai.org.html [L]
 # www.sfti-ai.org or bare domain b
 RewriteCond %{HTTP_HOST} ^(www\.)?sfti-ai\.org$ [NC]
 RewriteRule ^$ index.html [L]
+RewriteCond %{HTTP_HOST} ^server\.sfti\-ai\.org$
+RewriteRule ^server\.sfti\-ai\.org\/$ "https\:\/\/server\.sfti\-ai\.org\/" [R=301,L]
