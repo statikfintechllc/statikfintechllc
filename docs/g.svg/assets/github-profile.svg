@@ -102,7 +102,7 @@
   <rect x="215" y="0" width="35" height="8" fill="#3572A5"/>
   <!-- Go 6.44% -->
   <rect x="250" y="0" width="19" height="8" fill="#00ADD8"/>
-  <!-- JavaScript 2.01% -->
+  <!-- JavaScript 2.02% -->
   <rect x="269" y="0" width="6" height="8" fill="#f1e05a"/>
   <!-- CSS 1.25% -->
   <rect x="275" y="0" width="4" height="8" fill="#563d7c"/>
@@ -137,7 +137,7 @@
     
     <g transform="translate(0, 60)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 2.01%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 2.02%</text>
     </g>
     
     <g transform="translate(0, 80)">
