@@ -36,6 +36,12 @@
   </a>
 </div>
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+</div>
+
+> [!NOTE]
+>
+> SFTi Main Site down currently
+ 
 <div align="center">
 <!-- SFTi Home-Page Card -->
 <a href="https://sfti-ai.org">
