@@ -23,7 +23,7 @@
          clip-path="url(#avatar-clip-sfti-timeline)"
          preserveAspectRatio="xMidYMid slice"/>
 
-  <text x="48" y="31" class="title">undefined</text>
+  <text x="48" y="31" class="title">SFTi-TimeLine</text>
 
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
@@ -32,8 +32,8 @@
     </div>
   </foreignObject>
 
-  <circle cx="48" cy="180" r="6" fill="#ccc"/>
-  <text x="64" y="180" class="meta">N/A</text>
+  <circle cx="48" cy="180" r="6" fill="#3572A5"/>
+  <text x="64" y="180" class="meta">Python</text>
 
   <g transform="translate(140, 172)">
     <svg viewBox="0 0 24 24" width="16" height="16">
@@ -51,8 +51,7 @@
   <text x="222" y="180" class="meta">0</text>
 
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+    <rect x="0" y="195" width="262.228813559322" height="6" fill="#3572A5" />
+<rect x="262.228813559322" y="195" width="177.77118644067798" height="6" fill="#89e051" />
   </g>
 </svg>
