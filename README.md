@@ -63,7 +63,7 @@
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.G.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" width="400"/>
   </a>
 
-  <a href="https://github.com/statikfintechllc/SFTi-Pennies">
+  <a href="https://github.com/StatikFinTech-LLC/SFTi-Pennies">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.P.svg/assets/sfti-pennies-card.svg" alt="SFTi-Pennies" width="400"/>
   </a>
   
