@@ -63,12 +63,20 @@
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.G.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" width="400"/>
   </a>
 
+  <a href="https://github.com/statikfintechllc/SFTi-Pennies">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.P.svg/assets/sfti-pennies-card.svg" alt="SFTi-Pennies" width="400"/>
+  </a>
+  
   <a href="https://github.com/statikfintechllc/IB-G.Scanner">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/IB.G.svg/assets/ib-g-scanner-card.svg" alt="IB-G.Scanner" width="400"/>
   </a>
 
   <a href="https://github.com/statikfintechllc/Pilot-Server">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/P.S.svg/assets/pilot-server-card.svg" alt="Pilot-Server" width="400"/>
+  </a>
+
+  <a href="https://github.com/statikfintechllc/SFTi-TimeLine">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.T.svg/assets/sfti-timeline-card.svg" alt="SFTi-TimeLine" width="400"/>
   </a>
   
   <a href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader">
@@ -109,14 +117,6 @@
 
   <a href="https://github.com/statikfintechllc/WorkFlowRepo">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/W.R.svg/assets/workflowrepo-card.svg" alt="WorkFlowRepo" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/SFTi-Pennies">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.P.svg/assets/sfti-pennies-card.svg" alt="SFTi-Pennies" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/SFTi-TimeLine">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.T.svg/assets/sfti-timeline-card.svg" alt="SFTi-TimeLine" width="400"/>
   </a>
 </div>
 
