@@ -40,7 +40,7 @@
 
 > [!NOTE]
 >
-> SFTi Main Site down currently
+> SFTi Home-Page Site down currently
  
 <div align="center">
 <!-- SFTi Home-Page Card -->
