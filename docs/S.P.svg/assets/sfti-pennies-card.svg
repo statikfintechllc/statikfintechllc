@@ -23,17 +23,17 @@
          clip-path="url(#avatar-clip-sfti-pennies)"
          preserveAspectRatio="xMidYMid slice"/>
 
-  <text x="48" y="31" class="title">SFTi-Pennies</text>
+  <text x="48" y="31" class="title">undefined</text>
 
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      Trading Strategies from Timothy Sykes and Tim Bohen, my trades, and notes for a fully transparent trading account 
+      No description available
     </div>
   </foreignObject>
 
-  <circle cx="48" cy="180" r="6" fill="#f1e05a"/>
-  <text x="64" y="180" class="meta">JavaScript</text>
+  <circle cx="48" cy="180" r="6" fill="#ccc"/>
+  <text x="64" y="180" class="meta">N/A</text>
 
   <g transform="translate(140, 172)">
     <svg viewBox="0 0 24 24" width="16" height="16">
@@ -51,10 +51,8 @@
   <text x="222" y="180" class="meta">0</text>
 
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="391.7334433420415" height="6" fill="#f1e05a" />
-<rect x="391.7334433420415" y="195" width="36.52470535769413" height="6" fill="#ccc" />
-<rect x="428.2581486997356" y="195" width="11.421735397858056" height="6" fill="#563d7c" />
-<rect x="439.6798840975937" y="195" width="0.16299955679284767" height="6" fill="#ccc" />
-<rect x="439.8428836543865" y="195" width="0.15711634561348797" height="6" fill="#89e051" />
+    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
+<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
   </g>
 </svg>
