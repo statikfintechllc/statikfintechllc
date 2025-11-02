@@ -48,7 +48,7 @@
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/H.P.svg/assets/sfti-homepage-card.svg" alt="Visit SFTi Home-Page" width="400"/>
 </a>
 <!-- My Trades Card -->
-<a href="https://statikfintechllc.github.io/SFTi-Pennies/">
+<a href="https://statikfintechllc.github.io/Personal-Pennies/">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/M.T.svg/assets/my-trades-card.svg" alt="Check out my Trades" width="400"/>
 </a>
 </div>
