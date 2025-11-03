@@ -3,7 +3,7 @@ import https from "https";
 import path from "path";
 
 const OUTPUT = path.resolve("assets/sfti-pennies-card.svg");
-const USER = "statikfintechllc";
+const USER = "StatikFinTech-LLC";
 const REPO = "SFTi-Pennies";
 const TOKEN = process.env.PAT_GITHUB;
 
