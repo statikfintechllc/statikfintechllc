@@ -23,17 +23,17 @@
          clip-path="url(#avatar-clip-sfti-pennies)"
          preserveAspectRatio="xMidYMid slice"/>
 
-  <text x="48" y="31" class="title">undefined</text>
+  <text x="48" y="31" class="title">SFTi-Pennies</text>
 
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      No description available
+      Trading Strategies from Timothy Sykes and Tim Bohen, my trades, and notes for a fully transparent trading account 
     </div>
   </foreignObject>
 
-  <circle cx="48" cy="180" r="6" fill="#ccc"/>
-  <text x="64" y="180" class="meta">N/A</text>
+  <circle cx="48" cy="180" r="6" fill="#f1e05a"/>
+  <text x="64" y="180" class="meta">JavaScript</text>
 
   <g transform="translate(140, 172)">
     <svg viewBox="0 0 24 24" width="16" height="16">
@@ -48,11 +48,13 @@
 <path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
 </svg>
   </g>
-  <text x="222" y="180" class="meta">0</text>
+  <text x="222" y="180" class="meta">1</text>
 
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+    <rect x="0" y="195" width="391.6241233039619" height="6" fill="#f1e05a" />
+<rect x="391.6241233039619" y="195" width="34.92986431694961" height="6" fill="#ccc" />
+<rect x="426.55398762091147" y="195" width="13.128419777825638" height="6" fill="#563d7c" />
+<rect x="439.6824073987371" y="195" width="0.16171471912953095" height="6" fill="#ccc" />
+<rect x="439.8441221178666" y="195" width="0.15587788213334833" height="6" fill="#89e051" />
   </g>
 </svg>
