@@ -20,8 +20,8 @@
     </div>
   </foreignObject>
 
-  <circle cx="48" cy="180" r="6" fill="#3178c6"/>
-  <text x="64" y="180" class="meta">TypeScript</text>
+  <circle cx="48" cy="180" r="6" fill="#ccc"/>
+  <text x="64" y="180" class="meta">null</text>
 
   <g transform="translate(140, 172)">
     <svg viewBox="0 0 24 24" width="16" height="16">
@@ -39,10 +39,6 @@
   <text x="222" y="180" class="meta">0</text>
 
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="374.536607380967" height="6" fill="#3178c6" />
-<rect x="374.536607380967" y="195" width="37.059757523539915" height="6" fill="#f1e05a" />
-<rect x="411.5963649045069" y="195" width="25.42860073440417" height="6" fill="#563d7c" />
-<rect x="437.0249656389111" y="195" width="1.6689437298705563" height="6" fill="#89e051" />
-<rect x="438.69390936878165" y="195" width="1.3060906312183314" height="6" fill="#ccc" />
+    
   </g>
 </svg>
