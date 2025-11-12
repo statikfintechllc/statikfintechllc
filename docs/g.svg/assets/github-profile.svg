@@ -96,15 +96,15 @@
   <!-- Language progress bar -->
   <g transform="translate(505, 45)">
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
-  <!-- TypeScript 74.65% -->
+  <!-- TypeScript 74.63% -->
   <rect x="0" y="0" width="216" height="8" fill="#3178c6" rx="4"/>
-  <!-- Python 11.97% -->
+  <!-- Python 12.00% -->
   <rect x="216" y="0" width="35" height="8" fill="#3572A5"/>
-  <!-- Go 6.47% -->
+  <!-- Go 6.49% -->
   <rect x="251" y="0" width="19" height="8" fill="#00ADD8"/>
-  <!-- JavaScript 1.42% -->
+  <!-- JavaScript 1.41% -->
   <rect x="270" y="0" width="4" height="8" fill="#f1e05a"/>
-  <!-- CSS 1.23% -->
+  <!-- CSS 1.22% -->
   <rect x="274" y="0" width="4" height="8" fill="#563d7c"/>
   <!-- HTML 1.12% -->
   <rect x="278" y="0" width="3" height="8" fill="#e34c26"/>
@@ -122,27 +122,27 @@
   <g transform="translate(505, 70)">
     <g transform="translate(0, 0)">
       <circle cx="5" cy="5" r="4" fill="#3178c6"/>
-      <text x="15" y="9" class="lang-name">TypeScript 74.65%</text>
+      <text x="15" y="9" class="lang-name">TypeScript 74.63%</text>
     </g>
     
     <g transform="translate(0, 20)">
       <circle cx="5" cy="5" r="4" fill="#3572A5"/>
-      <text x="15" y="9" class="lang-name">Python 11.97%</text>
+      <text x="15" y="9" class="lang-name">Python 12.00%</text>
     </g>
     
     <g transform="translate(0, 40)">
       <circle cx="5" cy="5" r="4" fill="#00ADD8"/>
-      <text x="15" y="9" class="lang-name">Go 6.47%</text>
+      <text x="15" y="9" class="lang-name">Go 6.49%</text>
     </g>
     
     <g transform="translate(0, 60)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 1.42%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 1.41%</text>
     </g>
     
     <g transform="translate(0, 80)">
       <circle cx="5" cy="5" r="4" fill="#563d7c"/>
-      <text x="15" y="9" class="lang-name">CSS 1.23%</text>
+      <text x="15" y="9" class="lang-name">CSS 1.22%</text>
     </g>
     
     <g transform="translate(144, 0)">
