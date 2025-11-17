@@ -28,7 +28,7 @@
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      Trading Strategies from Timothy Sykes and Tim Bohen, my trades, and notes for a fully transparent trading account 
+      Comprehensive trading journal and performance analytics platform, and Trading Strategies from Timothy Sykes and Tim Bohen.
     </div>
   </foreignObject>
 
@@ -51,10 +51,10 @@
   <text x="222" y="180" class="meta">1</text>
 
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="388.44059742492436" height="6" fill="#f1e05a" />
-<rect x="388.44059742492436" y="195" width="36.77372719192925" height="6" fill="#ccc" />
-<rect x="425.2143246168536" y="195" width="14.473028229656617" height="6" fill="#563d7c" />
-<rect x="439.68735284651024" y="195" width="0.15919655058776896" height="6" fill="#ccc" />
-<rect x="439.846549397098" y="195" width="0.15345060290201085" height="6" fill="#89e051" />
+    <rect x="0" y="195" width="404.4301289388737" height="6" fill="#f1e05a" />
+<rect x="404.4301289388737" y="195" width="26.002894916937688" height="6" fill="#ccc" />
+<rect x="430.43302385581137" y="195" width="9.172589133765754" height="6" fill="#563d7c" />
+<rect x="439.60561298957714" y="195" width="0.200817602063991" height="6" fill="#ccc" />
+<rect x="439.8064305916411" y="195" width="0.19356940835892125" height="6" fill="#89e051" />
   </g>
 </svg>
