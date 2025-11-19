@@ -48,7 +48,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
   </g>
-  <text x="162" y="180" class="meta">5</text>
+  <text x="162" y="180" class="meta">6</text>
 
   <!-- Fork Icon + Count (ALIGNED) -->
   <g transform="translate(200, 173)">
@@ -60,11 +60,11 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="347.24478725107156" height="6" fill="#3572A5" />
-<rect x="347.24478725107156" y="195" width="46.545643543029016" height="6" fill="#ccc" />
-<rect x="393.7904307941006" y="195" width="23.992577353814777" height="6" fill="#89e051" />
-<rect x="417.7830081479154" y="195" width="11.414788772753592" height="6" fill="#3178c6" />
-<rect x="429.19779692066896" y="195" width="7.927093646681252" height="6" fill="#f1e05a" />
-<rect x="437.12489056735023" y="195" width="2.875109432649762" height="6" fill="#563d7c" />
+    <rect x="0" y="195" width="347.359850783829" height="6" fill="#3572A5" />
+<rect x="347.359850783829" y="195" width="46.48790332529027" height="6" fill="#ccc" />
+<rect x="393.8477541091193" y="195" width="23.962814382780927" height="6" fill="#89e051" />
+<rect x="417.81056849190026" y="195" width="11.400628642201925" height="6" fill="#3178c6" />
+<rect x="429.2111971341022" y="195" width="7.9172600279286875" height="6" fill="#f1e05a" />
+<rect x="437.1284571620309" y="195" width="2.8715428379691996" height="6" fill="#563d7c" />
   </g>
 </svg>
