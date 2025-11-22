@@ -96,17 +96,17 @@
   <!-- Language progress bar -->
   <g transform="translate(505, 45)">
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
-  <!-- TypeScript 74.59% -->
+  <!-- TypeScript 74.58% -->
   <rect x="0" y="0" width="216" height="8" fill="#3178c6" rx="4"/>
-  <!-- Python 12.00% -->
+  <!-- Python 11.99% -->
   <rect x="216" y="0" width="35" height="8" fill="#3572A5"/>
   <!-- Go 6.48% -->
   <rect x="251" y="0" width="19" height="8" fill="#00ADD8"/>
-  <!-- JavaScript 1.43% -->
+  <!-- JavaScript 1.44% -->
   <rect x="270" y="0" width="4" height="8" fill="#f1e05a"/>
   <!-- CSS 1.24% -->
   <rect x="274" y="0" width="4" height="8" fill="#563d7c"/>
-  <!-- HTML 1.13% -->
+  <!-- HTML 1.12% -->
   <rect x="278" y="0" width="3" height="8" fill="#e34c26"/>
   <!-- Rust 0.52% -->
   <rect x="281" y="0" width="2" height="8" fill="#dea584"/>
@@ -122,12 +122,12 @@
   <g transform="translate(505, 70)">
     <g transform="translate(0, 0)">
       <circle cx="5" cy="5" r="4" fill="#3178c6"/>
-      <text x="15" y="9" class="lang-name">TypeScript 74.59%</text>
+      <text x="15" y="9" class="lang-name">TypeScript 74.58%</text>
     </g>
     
     <g transform="translate(0, 20)">
       <circle cx="5" cy="5" r="4" fill="#3572A5"/>
-      <text x="15" y="9" class="lang-name">Python 12.00%</text>
+      <text x="15" y="9" class="lang-name">Python 11.99%</text>
     </g>
     
     <g transform="translate(0, 40)">
@@ -137,7 +137,7 @@
     
     <g transform="translate(0, 60)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 1.43%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 1.44%</text>
     </g>
     
     <g transform="translate(0, 80)">
@@ -147,7 +147,7 @@
     
     <g transform="translate(144, 0)">
       <circle cx="5" cy="5" r="4" fill="#e34c26"/>
-      <text x="15" y="9" class="lang-name">HTML 1.13%</text>
+      <text x="15" y="9" class="lang-name">HTML 1.12%</text>
     </g>
     
     <g transform="translate(144, 20)">
