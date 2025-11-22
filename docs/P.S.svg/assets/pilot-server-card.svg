@@ -39,8 +39,8 @@
   <text x="222" y="180" class="meta">0</text>
 
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="277.32616555171023" height="6" fill="#f1e05a" />
-<rect x="277.32616555171023" y="195" width="152.06368562522005" height="6" fill="#563d7c" />
-<rect x="429.3898511769303" y="195" width="10.610148823069723" height="6" fill="#ccc" />
+    <rect x="0" y="195" width="275.9955938348382" height="6" fill="#f1e05a" />
+<rect x="275.9955938348382" y="195" width="153.58573373925563" height="6" fill="#563d7c" />
+<rect x="429.58132757409385" y="195" width="10.41867242590617" height="6" fill="#ccc" />
   </g>
 </svg>
