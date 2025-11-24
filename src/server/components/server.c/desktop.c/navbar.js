@@ -4,7 +4,7 @@
  * Variant  : desktop
  * Component: navbar
  * Source   : components/global.c/desktop/navbar.js
- * Generated: 2025-10-19T01:26:28.362Z
+ * Generated: 2025-11-24T02:36:05.770Z
  */
 
 // @ts-nocheck
@@ -274,8 +274,8 @@ if (typeof window !== 'undefined') {
                 if (!nextConfig.domain) {
                     nextConfig.domain = domain;
                 }
-                // Inject theme colors into config for navbar components
-                if (component === 'navbar' && themeTokens) {
+                // Inject theme colors into config for components
+                if (themeTokens) {
                     nextConfig.themeColors = {
                         primary: themeTokens.primary || '#ef4444',
                         secondary: themeTokens.secondary || '#eab308'
