@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-11-24T02:36:05.680Z
+ * Generated: 2025-11-24T02:39:42.819Z
  */
 
 // @ts-nocheck

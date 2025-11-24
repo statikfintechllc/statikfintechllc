@@ -36,7 +36,7 @@ class ServerFooter extends SFTiFooter {
             },
             links: {
                 main: [
-                    { title: 'Home', href: 'https://statikfintechllc.github.io/statikfintechllc/', external: true },
+                    { title: 'Home', href: 'index.html', external: true },
                     { title: 'Dashboard', href: '#dashboard' },
                     { title: 'Analytics', href: '#analytics' },
                     { title: 'Admin Panel', href: '#admin' }

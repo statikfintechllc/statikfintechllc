@@ -167,32 +167,32 @@ const SFTiNavbarConfigs = {
             { title: 'Projects', href: '#projects' },
             { title: 'Research', href: '#research' },
             { title: 'Contact Us', href: '#contact-us' },
-            { title: 'PWAs', href: 'https://statikfintechllc.github.io/statikfintechllc/dev.sfti-ai.org.html', external: true },
-            { title: 'Server', href: 'https://statikfintechllc.github.io/statikfintechllc/server.sfti-ai.org.html', external: true }
+            { title: 'PWAs', href: 'dev.sfti-ai.org.html', external: true },
+            { title: 'Server', href: 'server.sfti-ai.org.html', external: true }
         ]
     },
     dev: {
         logoText: 'SFTi Dev',
         logoSubtitle: 'PWA Hub',
         items: [
-            { title: 'Home', href: 'https://statikfintechllc.github.io/statikfintechllc/', external: true },
-            { title: 'Institute', href: 'https://statikfintechllc.github.io/statikfintechllc/#institute', external: true },
-            { title: 'Projects', href: 'https://statikfintechllc.github.io/statikfintechllc/#projects', external: true },
-            { title: 'Research', href: 'https://statikfintechllc.github.io/statikfintechllc/#research', external: true },
+            { title: 'Home', href: 'index.html', external: true },
+            { title: 'Institute', href: 'index.html#institute', external: true },
+            { title: 'Projects', href: 'index.html#projects', external: true },
+            { title: 'Research', href: 'index.html#research', external: true },
             { title: 'PWAs', href: '#pwas' },
             { title: 'Status', href: '#status' },
-            { title: 'Server', href: 'https://statikfintechllc.github.io/statikfintechllc/server.sfti-ai.org.html', external: true }
+            { title: 'Server', href: 'server.sfti-ai.org.html', external: true }
         ]
     },
     server: {
         logoText: 'SFTi Server',
         logoSubtitle: 'Secure Access Portal',
         items: [
-            { title: 'Home', href: 'https://statikfintechllc.github.io/statikfintechllc/', external: true },
-            { title: 'Institute', href: 'https://statikfintechllc.github.io/statikfintechllc/#institute', external: true },
-            { title: 'Projects', href: 'https://statikfintechllc.github.io/statikfintechllc/#projects', external: true },
-            { title: 'Research', href: 'https://statikfintechllc.github.io/statikfintechllc/#research', external: true },
-            { title: 'PWAs', href: 'https://statikfintechllc.github.io/statikfintechllc/dev.sfti-ai.org.html', external: true },
+            { title: 'Home', href: 'index.html', external: true },
+            { title: 'Institute', href: 'index.html#institute', external: true },
+            { title: 'Projects', href: 'index.html#projects', external: true },
+            { title: 'Research', href: 'index.html#research', external: true },
+            { title: 'PWAs', href: 'dev.sfti-ai.org.html', external: true },
             { title: 'Docs', href: '#documentation' }
         ]
     }
