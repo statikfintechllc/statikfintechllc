@@ -291,7 +291,7 @@
 </div>
 <div align="center">
 
-  <br/> [© 2025 StatikFinTech, LLC](https://www.github.com/statikfintechllc/The_GateKeepers_Riddle.Interactive/blob/master/LICENSE.md)
+  <br/> [© 2025 StatikFinTech, LLC](https://www.github.com/statikfintechllc/GremlinGPT/blob/master/LICENSE.md)
 
   <a href="https://github.com/statikfintechllc">
     <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
