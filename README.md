@@ -285,13 +285,13 @@
 <a href="https://etherscan.io/address/0xC2db50A0fc6c95f36Af7171D8C41F6998184103F">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/ethereum.sponsor.svg">
 </a><br>
-<a href="https://www.chime.com">
+<a href="https://app.chime.com/link/qr?u=StatikSmokTM">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/chime.sponsor.svg">
 </a>
 </div>
 <div align="center">
 
-  <br/> [© 2025 StatikFinTech, LLC](https://www.github.com/statikfintechllc/GremlinGPT/blob/master/LICENSE.md)
+  <br/> [© 2025 StatikFinTech, LLC](https://www.github.com/statikfintechllc/The_GateKeepers_Riddle.Interactive/blob/master/LICENSE.md)
 
   <a href="https://github.com/statikfintechllc">
     <img src="https://img.shields.io/badge/-000000?logo=github&logoColor=white&style=flat-square" alt="GitHub">
@@ -310,7 +310,7 @@
   </a>
   <a href="https://medium.com/@ascend.gremlin">
     <img src="https://img.shields.io/badge/-000000?logo=medium&logoColor=white&style=flat-square" alt="Medium">
-  </a>  
+  </a>
 </div>
 
 <!--
