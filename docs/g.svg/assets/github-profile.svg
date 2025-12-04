@@ -60,7 +60,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Issues:</text>
-      <text x="200" y="5" class="stat-value">153</text>
+      <text x="200" y="5" class="stat-value">160</text>
     </g>
     
     <g transform="translate(0, 110)">
@@ -73,7 +73,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">PR's:</text>
-      <text x="200" y="5" class="stat-value">135</text>
+      <text x="200" y="5" class="stat-value">140</text>
     </g>
   </g>
 
@@ -102,7 +102,7 @@
   <rect x="216" y="0" width="35" height="8" fill="#3572A5"/>
   <!-- Go 6.48% -->
   <rect x="251" y="0" width="19" height="8" fill="#00ADD8"/>
-  <!-- JavaScript 1.45% -->
+  <!-- JavaScript 1.46% -->
   <rect x="270" y="0" width="4" height="8" fill="#f1e05a"/>
   <!-- CSS 1.25% -->
   <rect x="274" y="0" width="4" height="8" fill="#563d7c"/>
@@ -137,7 +137,7 @@
     
     <g transform="translate(0, 60)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 1.45%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 1.46%</text>
     </g>
     
     <g transform="translate(0, 80)">
