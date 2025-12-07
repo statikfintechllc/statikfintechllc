@@ -27,19 +27,19 @@
          preserveAspectRatio="xMidYMid slice"/>
 
   <!-- Title -->
-  <text x="48" y="31" class="title">The_GateKeepers_Riddle.Interactive</text>
+  <text x="48" y="31" class="title">undefined</text>
 
   <!-- Description -->
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      A riddle, a theme, interactive, solved only by the keen. Try your wit: https://statikfintechllc.github.io/The_GateKeepers_Riddle.Interactive/
+      No description available
     </div>
   </foreignObject>
 
   <!-- Language Dot + Label -->
-  <circle cx="48" cy="180" r="6" fill="#f1e05a"/>
-  <text x="64" y="180" class="meta">JavaScript</text>
+  <circle cx="48" cy="180" r="6" fill="#ccc"/>
+  <text x="64" y="180" class="meta">N/A</text>
 
   <!-- Star Icon + Count (ALIGNED) -->
   <g transform="translate(140, 172)">
@@ -60,9 +60,8 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="290.3206240522753" height="6" fill="#f1e05a" />
-<rect x="290.3206240522753" y="195" width="91.70879644827964" height="6" fill="#ccc" />
-<rect x="382.029420500555" y="195" width="44.664446841438824" height="6" fill="#563d7c" />
-<rect x="426.6938673419938" y="195" width="13.306132658006222" height="6" fill="#89e051" />
+    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
+<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
   </g>
 </svg>
