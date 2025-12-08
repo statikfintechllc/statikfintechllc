@@ -27,19 +27,19 @@
          preserveAspectRatio="xMidYMid slice"/>
 
   <!-- Title -->
-  <text x="48" y="31" class="title">undefined</text>
+  <text x="48" y="31" class="title">The-GateKeepers-Riddles.i</text>
 
   <!-- Description -->
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      No description available
+      The Game of Riddles, solved only by the keen. Try your wit: https://statikfintechllc.github.io/The-GateKeepers-Riddles.i/
     </div>
   </foreignObject>
 
   <!-- Language Dot + Label -->
-  <circle cx="48" cy="180" r="6" fill="#ccc"/>
-  <text x="64" y="180" class="meta">N/A</text>
+  <circle cx="48" cy="180" r="6" fill="#f1e05a"/>
+  <text x="64" y="180" class="meta">JavaScript</text>
 
   <!-- Star Icon + Count (ALIGNED) -->
   <g transform="translate(140, 172)">
@@ -60,8 +60,9 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
-<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+    <rect x="0" y="195" width="342.94091388685985" height="6" fill="#f1e05a" />
+<rect x="342.94091388685985" y="195" width="59.43713984254525" height="6" fill="#ccc" />
+<rect x="402.3780537294051" y="195" width="28.986486486486484" height="6" fill="#563d7c" />
+<rect x="431.36454021589157" y="195" width="8.635459784108432" height="6" fill="#89e051" />
   </g>
 </svg>
