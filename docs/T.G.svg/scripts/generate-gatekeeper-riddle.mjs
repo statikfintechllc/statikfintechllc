@@ -4,7 +4,7 @@ import path from "path";
 
 const OUTPUT = path.resolve("assets/gatekeeper-riddle-card.svg");
 const USER = "statikfintechllc";
-const REPO = "The_GateKeepers_Riddles.i";
+const REPO = "The-GateKeepers-Riddles.i";
 const TOKEN = process.env.PAT_GITHUB;
 
 async function fetchAvatarAsBase64() {
