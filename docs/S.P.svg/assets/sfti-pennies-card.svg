@@ -51,10 +51,10 @@
   <text x="222" y="180" class="meta">1</text>
 
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="404.20929064985796" height="6" fill="#f1e05a" />
-<rect x="404.20929064985796" y="195" width="26.240093098034436" height="6" fill="#ccc" />
-<rect x="430.4493837478924" y="195" width="9.156903658431593" height="6" fill="#563d7c" />
-<rect x="439.606287406324" y="195" width="0.20047419634746927" height="6" fill="#ccc" />
-<rect x="439.80676160267143" y="195" width="0.1932383973285585" height="6" fill="#89e051" />
+    <rect x="0" y="195" width="388.97683383952256" height="6" fill="#f1e05a" />
+<rect x="388.97683383952256" y="195" width="38.45909824813469" height="6" fill="#ccc" />
+<rect x="427.43593208765725" y="195" width="12.30089691520915" height="6" fill="#563d7c" />
+<rect x="439.7368290028664" y="195" width="0.13400382664855293" height="6" fill="#ccc" />
+<rect x="439.87083282951494" y="195" width="0.12916717048501702" height="6" fill="#89e051" />
   </g>
 </svg>
