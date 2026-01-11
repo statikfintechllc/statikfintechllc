@@ -186,18 +186,6 @@
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/prompt_blacksmith.svg" alt="Prompt Blacksmith" height="24">
   </a>
 </div>
-<div align="center">
-<img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/G.I.badge.svg" alt="The Institute's GremlinGPT" />
-  <a href="https://www.github.com/statikfintechllc/GremlinGPT">
-  <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/graph/traffic_graph.png" alt="Traffic Graph" />
-  </a>
-   <a href="https://github.com/statikfintechllc/WorkFlowRepo.git">
-  <img src="https://img.shields.io/badge/Click%20to%20Install-Graph%20Workflow-darkred?labelColor=black" alt="GremlinGPT Alpha"/>
-  </a>
-</div>
-<div align="center">
-<img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/R.S.badge.svg" alt="Reset Schedule" />
-</div>
 
 ---
 
