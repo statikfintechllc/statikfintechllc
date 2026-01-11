@@ -38,21 +38,6 @@
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
 </div>
 
-> [!NOTE]
->
-> SFTi Home-Page Site down currently
- 
-<div align="center">
-<!-- SFTi Home-Page Card -->
-<a href="https://sfti-ai.org">
-  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/H.P.svg/assets/sfti-homepage-card.svg" alt="Visit SFTi Home-Page" width="400"/>
-</a>
-<!-- My Trades Card -->
-<a href="https://statikfintechllc.github.io/Personal-Pennies/">
-  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/M.T.svg/assets/my-trades-card.svg" alt="Check out my Trades" width="400"/>
-</a>
-</div>
-</div>
 <div align="center">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/G.H.badge.svg" alt="GitHub Repositories" />
 </div>
