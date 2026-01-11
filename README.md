@@ -38,21 +38,6 @@
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
 </div>
 
-> [!NOTE]
->
-> SFTi Home-Page Site down currently
- 
-<div align="center">
-<!-- SFTi Home-Page Card -->
-<a href="https://sfti-ai.org">
-  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/H.P.svg/assets/sfti-homepage-card.svg" alt="Visit SFTi Home-Page" width="400"/>
-</a>
-<!-- My Trades Card -->
-<a href="https://statikfintechllc.github.io/Personal-Pennies/">
-  <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/M.T.svg/assets/my-trades-card.svg" alt="Check out my Trades" width="400"/>
-</a>
-</div>
-</div>
 <div align="center">
   <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/badges/G.H.badge.svg" alt="GitHub Repositories" />
 </div>
@@ -63,68 +48,40 @@
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.G.svg/assets/gremlingpt-card.svg" alt="GremlinGPT" width="400"/>
   </a>
 
-  <a href="https://github.com/StatikFinTech-LLC/SFTi-Pennies">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.P.svg/assets/sfti-pennies-card.svg" alt="SFTi-Pennies" width="400"/>
-  </a>
-  
-  <a href="https://github.com/statikfintechllc/IB-G.Scanner">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/IB.G.svg/assets/ib-g-scanner-card.svg" alt="IB-G.Scanner" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/Pilot-Server">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/P.S.svg/assets/pilot-server-card.svg" alt="Pilot-Server" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/SFTi-TimeLine">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.T.svg/assets/sfti-timeline-card.svg" alt="SFTi-TimeLine" width="400"/>
-  </a>
-  
-  <a href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.S.svg/assets/gremlin-shadtail-trader-card.svg" alt="Gremlin-ShadTail-Trader" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.M.svg/assets/gremlin-mcp-scrap-card.svg" alt="Gremlin-MCP-Scrap" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/statik-server">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.S.svg/assets/statik-server-card.svg" alt="statik-server" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/AscendNet">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/A.N.svg/assets/ascendnet-card.svg" alt="AscendNet" width="400"/>
-  </a>
-
   <a href="https://github.com/statikfintechllc/Ascend-Institute">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/A.I.svg/assets/ascend-institute-card.svg" alt="Ascend-Institute" width="400">
-  </a>
-
-  <a href="https://github.com/statikfintechllc/GodCore">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.C.svg/assets/godcore-card.svg" alt="GodCore" width="400"/>
-  </a>
-
-  <a href="https://github.com/statikfintechllc/Mobile-Mirror">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/M.M.svg/assets/mobile-mirror-card.svg" alt="Mobile-Mirror" width="400"/>
   </a>
 
   <a href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/A.D.svg/assets/ascenddocs-of-govseverance-card.svg" alt="AscendDocs-of-GovSeverance" width="400"/>
   </a>
 
-  <a href="https://github.com/statikfintechllc/dragon-boot">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/D.B.svg/assets/dragon-boot-card.svg" alt="dragon-boot" width="400"/>
+  <a href="https://github.com/statikfintechllc/GodCore">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/G.C.svg/assets/godcore-card.svg" alt="GodCore" width="400"/>
   </a>
 
-  <a href="https://github.com/statikfintechllc/WorkFlowRepo">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/W.R.svg/assets/workflowrepo-card.svg" alt="WorkFlowRepo" width="400"/>
+  <a href="https://github.com/StatikFinTech-LLC/SFTi-Pennies">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.P.svg/assets/sfti-pennies-card.svg" alt="SFTi-Pennies" width="400"/>
   </a>
 
-  <a href="https://github.com/statikfintechllc/OSX-KVM">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/O.K.svg/assets/osx-kvm-card.svg" alt="OSX-KVM" width="400"/>
+  <a href="https://github.com/statikfintechllc/SFTi-TimeLine">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.T.svg/assets/sfti-timeline-card.svg" alt="SFTi-TimeLine" width="400"/>
+  </a>
+
+  <a href="https://github.com/statikfintechllc/SFTi.Trade_Grade">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.TG.svg/assets/sfti-trade-grade-card.svg" alt="SFTi.Trade_Grade" width="400"/>
   </a>
 
   <a href="https://github.com/statikfintechllc/The-GateKeepers-Riddles.i">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/T.G.svg/assets/gatekeeper-riddle-card.svg" alt="The GateKeeper's Riddle" width="400"/>
+  </a>
+
+  <a href="https://github.com/statikfintechllc/dragon-boot">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/D.B.svg/assets/dragon-boot-card.svg" alt="dragon-boot" width="400"/>
+  </a>
+
+  <a href="https://github.com/statikfintechllc/zsh.installer">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Z.I.svg/assets/zsh-installer-card.svg" alt="zsh.installer" width="400"/>
   </a>
 </div>
 
