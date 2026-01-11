@@ -1021,7 +1021,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">2,515</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">2,514</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-06-15</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1030,7 +1030,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">2,612</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">2,608</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-06-19</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1039,7 +1039,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">2,769</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">2,765</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-06-23</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1048,7 +1048,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">2,914</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">2,910</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-06-27</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1057,7 +1057,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,132</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,127</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-07-01</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1066,7 +1066,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,206</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,199</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-07-05</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1075,7 +1075,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,243</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,236</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-07-09</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1084,7 +1084,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,278</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,269</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-07-13</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1093,7 +1093,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,296</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,284</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-07-17</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1102,7 +1102,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,343</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,331</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-07-21</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1111,7 +1111,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,389</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,377</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-07-25</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1120,7 +1120,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,456</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,439</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-07-29</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1129,7 +1129,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,476</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,457</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-08-02</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1138,7 +1138,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,547</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,522</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-08-07</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1147,7 +1147,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,607</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,565</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-08-11</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1156,7 +1156,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,809</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,767</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-08-15</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1165,7 +1165,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,936</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,893</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-08-19</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1174,7 +1174,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,949</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,905</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-08-23</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1183,7 +1183,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,975</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">3,931</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-08-27</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1192,7 +1192,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,114</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,069</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-08-31</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1201,7 +1201,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,128</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,079</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-09-04</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1210,7 +1210,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,358</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,198</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-09-08</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1219,7 +1219,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,401</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,226</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-09-12</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1228,7 +1228,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,405</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,230</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-09-16</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1237,7 +1237,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,421</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,244</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-09-20</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1246,7 +1246,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,503</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,325</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-09-24</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1255,7 +1255,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,517</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,339</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-09-28</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1264,7 +1264,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,528</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,350</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-10-02</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1273,7 +1273,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,533</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,355</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-10-06</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1282,7 +1282,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,536</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,358</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-10-10</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1291,7 +1291,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,617</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,439</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-10-14</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1300,7 +1300,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,741</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,561</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-10-18</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1309,7 +1309,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,905</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,673</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-10-22</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1318,7 +1318,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,973</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,741</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-10-26</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1327,7 +1327,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,017</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,779</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-10-30</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1336,7 +1336,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,126</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,870</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-11-03</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1345,7 +1345,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,139</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,875</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-11-07</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1354,7 +1354,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,152</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,879</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-11-11</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1363,7 +1363,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,160</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,879</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-11-15</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1372,7 +1372,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,185</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,900</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-11-20</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1381,7 +1381,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,211</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,902</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-11-24</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1390,7 +1390,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,268</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,915</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-11-28</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0;0"
@@ -1399,7 +1399,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,271</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,917</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-12-02</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0;0"
@@ -1408,7 +1408,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,275</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,921</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-12-06</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0;0"
@@ -1417,7 +1417,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,323</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,969</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-12-10</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0;0"
@@ -1426,7 +1426,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,346</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,973</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-12-14</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0;0"
@@ -1435,7 +1435,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,354</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,976</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-12-18</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0;0"
@@ -1444,7 +1444,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,364</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,976</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-12-22</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0;0"
@@ -1453,7 +1453,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,364</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,976</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-12-26</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0;0"
@@ -1462,7 +1462,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,364</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">4,976</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2025-12-30</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;0"
@@ -1471,7 +1471,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,430</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,028</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2026-01-03</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0"
@@ -1480,7 +1480,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,449</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,047</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2026-01-07</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0"
@@ -1489,7 +1489,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,455</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,106</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2026-01-11</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1"
@@ -2377,7 +2377,7 @@
 
   <!-- Center number with heavy glow -->
   <g transform="translate(380,110)">
-    <text class="centerNum" text-anchor="middle" dy="10" filter="url(#fGlow)">2</text>
+    <text class="centerNum" text-anchor="middle" dy="10" filter="url(#fGlow)">3</text>
   </g>
 
   <text x="610" y="34" class="title" text-anchor="middle">Longest Streaks</text>
