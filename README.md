@@ -2,9 +2,6 @@
   <a href="https://github.com/sponsors/statikfintechllc">
     <img src="https://skillicons.dev/icons?i=python,bash,linux,anaconda,tailwind,css,react,nodejs,electron,go,typescript,javascript,html,astro,nix&theme=dark" alt="Skill icons">
   </a><br>
-  <a href="https://github.com/sponsors/statikfintechllc">
-    <img src="https://raw.githubusercontent.com/KDK-Grim/WorkFlowRepo-Mirror/master/docs/ticker-bot/ticker.gif" alt="Repo Ticker Stats" height="36">
-  </a>
 </div>
 <div align="center">
   <a href="https://github.com/sponsors/statikfintechllc">
