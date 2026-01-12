@@ -96,21 +96,21 @@
   <!-- Language progress bar -->
   <g transform="translate(505, 45)">
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
-  <!-- Python 31.70% -->
-  <rect x="0" y="0" width="92" height="8" fill="#3572A5" rx="4"/>
-  <!-- JavaScript 19.68% -->
-  <rect x="92" y="0" width="57" height="8" fill="#f1e05a"/>
-  <!-- TypeScript 17.23% -->
+  <!-- Python 31.48% -->
+  <rect x="0" y="0" width="91" height="8" fill="#3572A5" rx="4"/>
+  <!-- JavaScript 19.89% -->
+  <rect x="91" y="0" width="58" height="8" fill="#f1e05a"/>
+  <!-- TypeScript 17.11% -->
   <rect x="149" y="0" width="50" height="8" fill="#3178c6"/>
-  <!-- HTML 11.13% -->
-  <rect x="199" y="0" width="32" height="8" fill="#e34c26"/>
-  <!-- Jupyter Notebook 10.27% -->
-  <rect x="231" y="0" width="30" height="8" fill="#DA5B0B"/>
-  <!-- Shell 3.54% -->
-  <rect x="261" y="0" width="10" height="8" fill="#89e051"/>
-  <!-- CSS 3.28% -->
-  <rect x="271" y="0" width="10" height="8" fill="#563d7c"/>
-  <!-- Astro 2.32% -->
+  <!-- HTML 11.40% -->
+  <rect x="199" y="0" width="33" height="8" fill="#e34c26"/>
+  <!-- Jupyter Notebook 10.20% -->
+  <rect x="232" y="0" width="30" height="8" fill="#DA5B0B"/>
+  <!-- Shell 3.52% -->
+  <rect x="262" y="0" width="10" height="8" fill="#89e051"/>
+  <!-- CSS 3.26% -->
+  <rect x="272" y="0" width="9" height="8" fill="#563d7c"/>
+  <!-- Astro 2.30% -->
   <rect x="281" y="0" width="7" height="8" fill="#ff5d01"/>
   <!-- PowerShell 0.36% -->
   <rect x="288" y="0" width="1" height="8" fill="#858585"/>
@@ -122,42 +122,42 @@
   <g transform="translate(505, 70)">
     <g transform="translate(0, 0)">
       <circle cx="5" cy="5" r="4" fill="#3572A5"/>
-      <text x="15" y="9" class="lang-name">Python 31.70%</text>
+      <text x="15" y="9" class="lang-name">Python 31.48%</text>
     </g>
     
     <g transform="translate(0, 20)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 19.68%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 19.89%</text>
     </g>
     
     <g transform="translate(0, 40)">
       <circle cx="5" cy="5" r="4" fill="#3178c6"/>
-      <text x="15" y="9" class="lang-name">TypeScript 17.23%</text>
+      <text x="15" y="9" class="lang-name">TypeScript 17.11%</text>
     </g>
     
     <g transform="translate(0, 60)">
       <circle cx="5" cy="5" r="4" fill="#e34c26"/>
-      <text x="15" y="9" class="lang-name">HTML 11.13%</text>
+      <text x="15" y="9" class="lang-name">HTML 11.40%</text>
     </g>
     
     <g transform="translate(0, 80)">
       <circle cx="5" cy="5" r="4" fill="#DA5B0B"/>
-      <text x="15" y="9" class="lang-name">Jupyter Notebook 10.27%</text>
+      <text x="15" y="9" class="lang-name">Jupyter Notebook 10.20%</text>
     </g>
     
     <g transform="translate(144, 0)">
       <circle cx="5" cy="5" r="4" fill="#89e051"/>
-      <text x="15" y="9" class="lang-name">Shell 3.54%</text>
+      <text x="15" y="9" class="lang-name">Shell 3.52%</text>
     </g>
     
     <g transform="translate(144, 20)">
       <circle cx="5" cy="5" r="4" fill="#563d7c"/>
-      <text x="15" y="9" class="lang-name">CSS 3.28%</text>
+      <text x="15" y="9" class="lang-name">CSS 3.26%</text>
     </g>
     
     <g transform="translate(144, 40)">
       <circle cx="5" cy="5" r="4" fill="#ff5d01"/>
-      <text x="15" y="9" class="lang-name">Astro 2.32%</text>
+      <text x="15" y="9" class="lang-name">Astro 2.30%</text>
     </g>
     
     <g transform="translate(144, 60)">
