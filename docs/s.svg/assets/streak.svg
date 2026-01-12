@@ -1489,7 +1489,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,106</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">5,111</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2026-01-12</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1"
