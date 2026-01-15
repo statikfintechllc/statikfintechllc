@@ -30,7 +30,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">5</text>
+          <text x="26" y="2" class="pill">4</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -61,7 +61,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">7</text>
+          <text x="26" y="2" class="pill">6</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -103,7 +103,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">4</text>
+          <text x="26" y="2" class="pill">3</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -134,7 +134,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">3</text>
+          <text x="26" y="2" class="pill">2</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -207,7 +207,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">1</text>
+          <text x="26" y="2" class="pill">0</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -249,7 +249,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">1</text>
+          <text x="26" y="2" class="pill">0</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -280,7 +280,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">1</text>
+          <text x="26" y="2" class="pill">0</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -322,7 +322,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">2</text>
+          <text x="26" y="2" class="pill">1</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -353,7 +353,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">1</text>
+          <text x="26" y="2" class="pill">0</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
