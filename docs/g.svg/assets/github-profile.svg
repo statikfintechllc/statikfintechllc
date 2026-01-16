@@ -60,7 +60,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Issues:</text>
-      <text x="200" y="5" class="stat-value">107</text>
+      <text x="200" y="5" class="stat-value">108</text>
     </g>
     
     <g transform="translate(0, 110)">
@@ -73,7 +73,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">PR's:</text>
-      <text x="200" y="5" class="stat-value">88</text>
+      <text x="200" y="5" class="stat-value">89</text>
     </g>
   </g>
 
@@ -98,18 +98,18 @@
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
   <!-- Python 31.48% -->
   <rect x="0" y="0" width="91" height="8" fill="#3572A5" rx="4"/>
-  <!-- JavaScript 19.89% -->
-  <rect x="91" y="0" width="58" height="8" fill="#f1e05a"/>
+  <!-- JavaScript 24.75% -->
+  <rect x="91" y="0" width="72" height="8" fill="#f1e05a"/>
   <!-- TypeScript 17.11% -->
-  <rect x="149" y="0" width="50" height="8" fill="#3178c6"/>
-  <!-- HTML 11.40% -->
-  <rect x="199" y="0" width="33" height="8" fill="#e34c26"/>
+  <rect x="163" y="0" width="50" height="8" fill="#3178c6"/>
   <!-- Jupyter Notebook 10.20% -->
-  <rect x="232" y="0" width="30" height="8" fill="#DA5B0B"/>
+  <rect x="213" y="0" width="30" height="8" fill="#DA5B0B"/>
+  <!-- HTML 5.26% -->
+  <rect x="243" y="0" width="15" height="8" fill="#e34c26"/>
+  <!-- CSS 4.54% -->
+  <rect x="258" y="0" width="13" height="8" fill="#563d7c"/>
   <!-- Shell 3.52% -->
-  <rect x="262" y="0" width="10" height="8" fill="#89e051"/>
-  <!-- CSS 3.26% -->
-  <rect x="272" y="0" width="9" height="8" fill="#563d7c"/>
+  <rect x="271" y="0" width="10" height="8" fill="#89e051"/>
   <!-- Astro 2.30% -->
   <rect x="281" y="0" width="7" height="8" fill="#ff5d01"/>
   <!-- PowerShell 0.36% -->
@@ -127,7 +127,7 @@
     
     <g transform="translate(0, 20)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 19.89%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 24.75%</text>
     </g>
     
     <g transform="translate(0, 40)">
@@ -136,23 +136,23 @@
     </g>
     
     <g transform="translate(0, 60)">
-      <circle cx="5" cy="5" r="4" fill="#e34c26"/>
-      <text x="15" y="9" class="lang-name">HTML 11.40%</text>
-    </g>
-    
-    <g transform="translate(0, 80)">
       <circle cx="5" cy="5" r="4" fill="#DA5B0B"/>
       <text x="15" y="9" class="lang-name">Jupyter Notebook 10.20%</text>
     </g>
     
+    <g transform="translate(0, 80)">
+      <circle cx="5" cy="5" r="4" fill="#e34c26"/>
+      <text x="15" y="9" class="lang-name">HTML 5.26%</text>
+    </g>
+    
     <g transform="translate(144, 0)">
-      <circle cx="5" cy="5" r="4" fill="#89e051"/>
-      <text x="15" y="9" class="lang-name">Shell 3.52%</text>
+      <circle cx="5" cy="5" r="4" fill="#563d7c"/>
+      <text x="15" y="9" class="lang-name">CSS 4.54%</text>
     </g>
     
     <g transform="translate(144, 20)">
-      <circle cx="5" cy="5" r="4" fill="#563d7c"/>
-      <text x="15" y="9" class="lang-name">CSS 3.26%</text>
+      <circle cx="5" cy="5" r="4" fill="#89e051"/>
+      <text x="15" y="9" class="lang-name">Shell 3.52%</text>
     </g>
     
     <g transform="translate(144, 40)">
