@@ -261,7 +261,7 @@
           <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
-      <rect x="20" y="165" width="237" height="12" fill="#f1e05a" /><rect x="257" y="165" width="86" height="12" fill="#e34c26" /><rect x="343" y="165" width="57" height="12" fill="#663399" />
+      <rect x="20" y="165" width="231" height="12" fill="#f1e05a" /><rect x="251" y="165" width="85" height="12" fill="#e34c26" /><rect x="336" y="165" width="64" height="12" fill="#663399" />
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="195" class="legend">JavaScript</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#e34c26"/><text x="222" y="195" class="legend">HTML</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="207" class="legend">CSS</text>
     </g>
   </a>
