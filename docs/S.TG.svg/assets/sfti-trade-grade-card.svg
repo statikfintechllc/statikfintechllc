@@ -60,8 +60,8 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="267.833636276667" height="6" fill="#f1e05a" />
-<rect x="267.833636276667" y="195" width="99.52406007844638" height="6" fill="#ccc" />
-<rect x="367.3576963551134" y="195" width="72.64230364488664" height="6" fill="#563d7c" />
+    <rect x="0" y="195" width="271.1575724121638" height="6" fill="#f1e05a" />
+<rect x="271.1575724121638" y="195" width="95.61853878602435" height="6" fill="#ccc" />
+<rect x="366.7761111981881" y="195" width="73.22388880181181" height="6" fill="#563d7c" />
   </g>
 </svg>
