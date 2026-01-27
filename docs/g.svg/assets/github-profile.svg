@@ -60,7 +60,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Issues:</text>
-      <text x="200" y="5" class="stat-value">108</text>
+      <text x="200" y="5" class="stat-value">109</text>
     </g>
     
     <g transform="translate(0, 110)">
@@ -73,7 +73,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">PR's:</text>
-      <text x="200" y="5" class="stat-value">101</text>
+      <text x="200" y="5" class="stat-value">102</text>
     </g>
   </g>
 
