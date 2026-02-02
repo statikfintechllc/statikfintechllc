@@ -96,19 +96,19 @@
   <!-- Language progress bar -->
   <g transform="translate(505, 45)">
     <rect x="0" y="0" width="290" height="8" fill="#21262d" rx="4"/>
-  <!-- Python 40.46% -->
+  <!-- Python 40.45% -->
   <rect x="0" y="0" width="117" height="8" fill="#3572A5" rx="4"/>
-  <!-- JavaScript 21.88% -->
+  <!-- JavaScript 21.87% -->
   <rect x="117" y="0" width="63" height="8" fill="#f1e05a"/>
   <!-- TypeScript 14.24% -->
   <rect x="180" y="0" width="41" height="8" fill="#3178c6"/>
-  <!-- Jupyter Notebook 8.49% -->
+  <!-- Jupyter Notebook 8.48% -->
   <rect x="221" y="0" width="25" height="8" fill="#DA5B0B"/>
   <!-- HTML 4.50% -->
   <rect x="246" y="0" width="13" height="8" fill="#e34c26"/>
   <!-- CSS 4.09% -->
   <rect x="259" y="0" width="12" height="8" fill="#563d7c"/>
-  <!-- Shell 3.74% -->
+  <!-- Shell 3.76% -->
   <rect x="271" y="0" width="11" height="8" fill="#89e051"/>
   <!-- Astro 1.92% -->
   <rect x="282" y="0" width="6" height="8" fill="#ff5d01"/>
@@ -122,12 +122,12 @@
   <g transform="translate(505, 70)">
     <g transform="translate(0, 0)">
       <circle cx="5" cy="5" r="4" fill="#3572A5"/>
-      <text x="15" y="9" class="lang-name">Python 40.46%</text>
+      <text x="15" y="9" class="lang-name">Python 40.45%</text>
     </g>
     
     <g transform="translate(0, 20)">
       <circle cx="5" cy="5" r="4" fill="#f1e05a"/>
-      <text x="15" y="9" class="lang-name">JavaScript 21.88%</text>
+      <text x="15" y="9" class="lang-name">JavaScript 21.87%</text>
     </g>
     
     <g transform="translate(0, 40)">
@@ -137,7 +137,7 @@
     
     <g transform="translate(0, 60)">
       <circle cx="5" cy="5" r="4" fill="#DA5B0B"/>
-      <text x="15" y="9" class="lang-name">Jupyter Notebook 8.49%</text>
+      <text x="15" y="9" class="lang-name">Jupyter Notebook 8.48%</text>
     </g>
     
     <g transform="translate(0, 80)">
@@ -152,7 +152,7 @@
     
     <g transform="translate(144, 20)">
       <circle cx="5" cy="5" r="4" fill="#89e051"/>
-      <text x="15" y="9" class="lang-name">Shell 3.74%</text>
+      <text x="15" y="9" class="lang-name">Shell 3.76%</text>
     </g>
     
     <g transform="translate(144, 40)">
