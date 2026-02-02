@@ -365,7 +365,7 @@
           <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
-      <rect x="20" y="165" width="331" height="12" fill="#89e051" /><rect x="351" y="165" width="49" height="12" fill="#e34c26" />
+      <rect x="20" y="165" width="332" height="12" fill="#89e051" /><rect x="352" y="165" width="48" height="12" fill="#e34c26" />
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="195" class="legend">Shell</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#e34c26"/><text x="222" y="195" class="legend">HTML</text>
     </g>
   </a>
