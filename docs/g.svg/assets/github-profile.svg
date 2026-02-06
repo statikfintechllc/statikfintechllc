@@ -35,7 +35,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Public Repositories:</text>
-      <text x="200" y="5" class="stat-value">10</text>
+      <text x="200" y="5" class="stat-value">11</text>
     </g>
     
     <g transform="translate(0, 60)">
@@ -60,7 +60,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Issues:</text>
-      <text x="200" y="5" class="stat-value">109</text>
+      <text x="200" y="5" class="stat-value">114</text>
     </g>
     
     <g transform="translate(0, 110)">
@@ -73,7 +73,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">PR's:</text>
-      <text x="200" y="5" class="stat-value">102</text>
+      <text x="200" y="5" class="stat-value">105</text>
     </g>
   </g>
 
