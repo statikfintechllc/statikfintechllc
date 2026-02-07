@@ -144,6 +144,27 @@
   <a href="https://medium.com/@ascend.gremlin/the-contribution-revolution-4542ca5665aa">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/contribution-revolution.svg" alt="Capital Capture" width="400"/>
   </a>
+  <a href="https://medium.com/@ascend.gremlin/the-gatekeepers-riddle-8a63ac3637b6">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/the-gatekeepers-riddle.svg" alt="The Gatekeeper's Riddle" width="400"/>
+  </a>
+  <a href="https://medium.com/@ascend.gremlin/the-autonomous-intelligence-paradox-12d38dbd5b00">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/the-autonomous-intelligence-paradox.svg" alt="The Autonomous Intelligence Paradox" width="400"/>
+  </a>
+  <a href="https://medium.com/@ascend.gremlin/the-verification-double-standard-757f9284265b">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/the-verification-double-standard.svg" alt="The Verification Double Standard" width="400"/>
+  </a>
+  <a href="https://medium.com/@ascend.gremlin/from-extraction-to-infrastructure-685e58e9810b">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/from-extraction-to-infrastructure.svg" alt="From Extraction to Infrastructure" width="400"/>
+  </a>
+  <a href="https://medium.com/@ascend.gremlin/breaking-the-mirror-704f2473e8af">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/breaking-the-mirror.svg" alt="Breaking the Mirror" width="400"/>
+  </a>
+  <a href="https://medium.com/@ascend.gremlin/when-perfect-code-fails-b978f5086025">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/when-perfect-code-fails.svg" alt="When Perfect Code Fails" width="400"/>
+  </a>
+  <a href="https://medium.com/@ascend.gremlin/how-to-build-a-triple-domain-web-setup-with-tailwind-shadcn-java-92ccb45c6267">
+    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Medium.papers.svg/how-to-build-a-triple-domain-web-setup.svg" alt="How to Build a Triple-Domain Web Setup" width="400"/>
+  </a>
 </div>
 
 ---
