@@ -28,7 +28,7 @@ class DevFooter extends SFTiFooter {
             },
             links: {
                 main: [
-                    { title: 'Home', href: 'https://www.sfti-ai.org', external: true },
+                    { title: 'Home', href: 'index.html', external: true },
                     { title: 'PWA Gallery', href: '#pwas' },
                     { title: 'Documentation', href: '#docs' },
                     { title: 'Status Monitor', href: '#status' }

@@ -4,7 +4,7 @@
  * Variant  : mobile
  * Component: navbar
  * Source   : components/global.c/mobile/navbar.js
- * Generated: 2025-10-19T01:35:30.915Z
+ * Generated: 2025-11-24T02:39:42.819Z
  */
 
 // @ts-nocheck
@@ -299,8 +299,8 @@ if (typeof module !== 'undefined' && module.exports) {
                 if (!nextConfig.domain) {
                     nextConfig.domain = domain;
                 }
-                // Inject theme colors into config for navbar components
-                if (component === 'navbar' && themeTokens) {
+                // Inject theme colors into config for components
+                if (themeTokens) {
                     nextConfig.themeColors = {
                         primary: themeTokens.primary || '#ef4444',
                         secondary: themeTokens.secondary || '#eab308'

@@ -19,13 +19,13 @@ class DevNavbar extends SFTiNavbar {
             logoText: 'SFTi Dev',
             logoSubtitle: 'PWA Hub',
             items: [
-                { title: 'Home', href: 'https://www.sfti-ai.org', external: true, description: 'Main website' },
-                { title: 'Institute', href: 'https://www.sfti-ai.org#institute', external: true, description: 'Research division' },
-                { title: 'Projects', href: 'https://www.sfti-ai.org#projects', external: true, description: 'Featured projects' },
-                { title: 'Research', href: 'https://www.sfti-ai.org#research', external: true, description: 'Publications' },
+                { title: 'Home', href: 'index.html', external: true, description: 'Main website' },
+                { title: 'Institute', href: 'index.html#institute', external: true, description: 'Research division' },
+                { title: 'Projects', href: 'index.html#projects', external: true, description: 'Featured projects' },
+                { title: 'Research', href: 'index.html#research', external: true, description: 'Publications' },
                 { title: 'PWAs', href: '#pwas', description: 'Progressive Web Applications' },
                 { title: 'Status', href: '#status', description: 'System status and monitoring' },
-                { title: 'Server', href: 'https://server.sfti-ai.org', external: true, description: 'Secure access portal' }
+                { title: 'Server', href: 'server.sfti-ai.org.html', external: true, description: 'Secure access portal' }
             ],
             tools: {
                 github: { href: 'https://github.com/statikfintechllc', icon: '🐙' },

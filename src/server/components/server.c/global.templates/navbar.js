@@ -19,13 +19,13 @@ class ServerNavbar extends SFTiNavbar {
             logoText: 'SFTi Server',
             logoSubtitle: 'Secure Portal',
             items: [
-                { title: 'Home', href: 'https://www.sfti-ai.org', external: true, description: 'Main website' },
-                { title: 'Institute', href: 'https://www.sfti-ai.org#institute', external: true, description: 'Research division' },
-                { title: 'Projects', href: 'https://www.sfti-ai.org#projects', external: true, description: 'Featured projects' },
-                { title: 'Research', href: 'https://www.sfti-ai.org#research', external: true, description: 'Publications' },
+                { title: 'Home', href: 'index.html', external: true, description: 'Main website' },
+                { title: 'Institute', href: 'index.html#institute', external: true, description: 'Research division' },
+                { title: 'Projects', href: 'index.html#projects', external: true, description: 'Featured projects' },
+                { title: 'Research', href: 'index.html#research', external: true, description: 'Publications' },
                 { title: 'Dashboard', href: '#dashboard', description: 'Server management dashboard' },
                 { title: 'Analytics', href: '#analytics', description: 'Performance analytics' },
-                { title: 'Dev Hub', href: 'https://dev.sfti-ai.org', external: true, description: 'Development environment' }
+                { title: 'Dev Hub', href: 'dev.sfti-ai.org.html', external: true, description: 'Development environment' }
             ],
             security: {
                 enabled: true,

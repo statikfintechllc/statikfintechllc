@@ -4,7 +4,7 @@
  * Variant  : desktop
  * Component: navbar
  * Source   : components/global.c/desktop/navbar.js
- * Generated: 2025-10-19T01:26:28.264Z
+ * Generated: 2025-11-24T02:39:42.816Z
  */
 
 // @ts-nocheck
@@ -176,32 +176,32 @@ const SFTiNavbarConfigs = {
             { title: 'Projects', href: '#projects' },
             { title: 'Research', href: '#research' },
             { title: 'Contact Us', href: '#contact-us' },
-            { title: 'PWAs', href: 'https://dev.sfti-ai.org', external: true },
-            { title: 'Server', href: 'https://server.sfti-ai.org', external: true }
+            { title: 'PWAs', href: 'dev.sfti-ai.org.html', external: true },
+            { title: 'Server', href: 'server.sfti-ai.org.html', external: true }
         ]
     },
     dev: {
         logoText: 'SFTi Dev',
         logoSubtitle: 'PWA Hub',
         items: [
-            { title: 'Home', href: 'https://www.sfti-ai.org', external: true },
-            { title: 'Institute', href: 'https://www.sfti-ai.org#institute', external: true },
-            { title: 'Projects', href: 'https://www.sfti-ai.org#projects', external: true },
-            { title: 'Research', href: 'https://www.sfti-ai.org#research', external: true },
+            { title: 'Home', href: 'index.html', external: true },
+            { title: 'Institute', href: 'index.html#institute', external: true },
+            { title: 'Projects', href: 'index.html#projects', external: true },
+            { title: 'Research', href: 'index.html#research', external: true },
             { title: 'PWAs', href: '#pwas' },
             { title: 'Status', href: '#status' },
-            { title: 'Server', href: 'https://server.sfti-ai.org', external: true }
+            { title: 'Server', href: 'server.sfti-ai.org.html', external: true }
         ]
     },
     server: {
         logoText: 'SFTi Server',
         logoSubtitle: 'Secure Access Portal',
         items: [
-            { title: 'Home', href: 'https://www.sfti-ai.org', external: true },
-            { title: 'Institute', href: 'https://www.sfti-ai.org#institute', external: true },
-            { title: 'Projects', href: 'https://www.sfti-ai.org#projects', external: true },
-            { title: 'Research', href: 'https://www.sfti-ai.org#research', external: true },
-            { title: 'PWAs', href: 'https://dev.sfti-ai.org', external: true },
+            { title: 'Home', href: 'index.html', external: true },
+            { title: 'Institute', href: 'index.html#institute', external: true },
+            { title: 'Projects', href: 'index.html#projects', external: true },
+            { title: 'Research', href: 'index.html#research', external: true },
+            { title: 'PWAs', href: 'dev.sfti-ai.org.html', external: true },
             { title: 'Docs', href: '#documentation' }
         ]
     }
@@ -266,8 +266,8 @@ if (typeof window !== 'undefined') {
                 if (!nextConfig.domain) {
                     nextConfig.domain = domain;
                 }
-                // Inject theme colors into config for navbar components
-                if (component === 'navbar' && themeTokens) {
+                // Inject theme colors into config for components
+                if (themeTokens) {
                     nextConfig.themeColors = {
                         primary: themeTokens.primary || '#ef4444',
                         secondary: themeTokens.secondary || '#eab308'

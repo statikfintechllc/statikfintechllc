@@ -23,8 +23,8 @@ class WWWNavbar extends SFTiNavbar {
                 { title: 'Institute', href: '#institute', description: 'The Ascend Institute - Our research division' },
                 { title: 'Projects', href: '#projects', description: 'Featured projects and solutions' },
                 { title: 'Research', href: '#research', description: 'Publications and research papers' },
-                { title: 'PWAs', href: 'https://dev.sfti-ai.org', external: true, description: 'Progressive Web Applications hub' },
-                { title: 'Server', href: 'https://server.sfti-ai.org', external: true, description: 'Secure access portal' }
+                { title: 'PWAs', href: 'dev.sfti-ai.org.html', external: true, description: 'Progressive Web Applications hub' },
+                { title: 'Server', href: 'server.sfti-ai.org.html', external: true, description: 'Secure access portal' }
             ],
             cta: {
                 primary: { text: 'Get Started', href: '/sign-up', style: 'primary' },
