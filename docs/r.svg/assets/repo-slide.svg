@@ -30,6 +30,37 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
+          <text x="26" y="2" class="pill">4</text>
+        </g>
+        <g transform="translate(330,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(4, -9)">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">1</text>
+        </g>
+      </g>
+      <rect x="20" y="165" width="280" height="12" fill="#3572A5" /><rect x="300" y="165" width="38" height="12" fill="#ff5a03" /><rect x="338" y="165" width="19" height="12" fill="#89e051" /><rect x="357" y="165" width="14" height="12" fill="#3178c6" /><rect x="371" y="165" width="14" height="12" fill="#f1e05a" /><rect x="385" y="165" width="15" height="12" fill="#663399" />
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#ff5a03"/><text x="222" y="195" class="legend">Astro</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="207" class="legend">Shell</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="207" class="legend">TypeScript</text>
+    </g>
+  </a>
+  <a xlink:href="https://github.com/statikfintechllc/Ascend-Institute" target="_blank">
+    <g transform="translate(460,20)">
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
+      <text x="20" y="30" class="name">Ascend-Institute</text>
+      <text x="20" y="54" style="font:400 10px system-ui" class="desc">The Ascend Institute, by StatikFinTech, LLC, ticker: SFTi(soon).</text><text x="20" y="66" style="font:400 10px system-ui" class="desc">Building Systems and Documentation that scares the orgs/govs</text><text x="20" y="78" style="font:400 10px system-ui" class="desc">behind paywalls and control systems. GremlinGPT is our chaotic</text><text x="20" y="90" style="font:400 10px system-ui" class="desc">first Creation: learning, building, and evolving as it survives</text><text x="20" y="102" style="font:400 10px system-ui" class="desc">testing and bonds with its user. Not just a wrapper—a battle map</text><text x="20" y="114" style="font:400 10px system-ui" class="desc">with agency. For the People.</text>
+      <!-- Stars and forks -->
+      <g class="badges" transform="translate(0,135)">
+        <g transform="translate(240,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(8, -9)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
           <text x="26" y="2" class="pill">6</text>
         </g>
         <g transform="translate(330,0)">
@@ -42,85 +73,23 @@
           <text x="26" y="2" class="pill">2</text>
         </g>
       </g>
-      <rect x="20" y="165" width="280" height="12" fill="#3572A5" /><rect x="300" y="165" width="38" height="12" fill="#ff5a03" /><rect x="338" y="165" width="19" height="12" fill="#89e051" /><rect x="357" y="165" width="14" height="12" fill="#3178c6" /><rect x="371" y="165" width="14" height="12" fill="#f1e05a" /><rect x="385" y="165" width="15" height="12" fill="#663399" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#ff5a03"/><text x="222" y="195" class="legend">Astro</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="207" class="legend">Shell</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="207" class="legend">TypeScript</text>
-    </g>
-  </a>
-  <a xlink:href="https://github.com/statikfintechllc/Gremlin-ShadTail-Trader" target="_blank">
-    <g transform="translate(460,20)">
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
-      <text x="20" y="30" class="name">Gremlin-ShadTail-Trader</text>
-      <text x="20" y="54" style="font:400 13px system-ui" class="desc">GremlinGPT&apos;s standalone trading core, will be</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">wrapped as a vscode plugin, using electron app for</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">the application, astro, tailwond, and shadcn for</text><text x="20" y="99" style="font:400 13px system-ui" class="desc">the user interface, and Gremlins Trade Logic.</text>
-      <!-- Stars and forks -->
-      <g class="badges" transform="translate(0,135)">
-        <g transform="translate(240,0)">
-          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <g transform="translate(8, -9)">
-            <svg viewBox="0 0 24 24" width="16" height="16">
-<path fill="none" stroke="#8abecf" stroke-width="2"
-  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
-</svg>
-          </g>
-          <text x="26" y="2" class="pill">1</text>
-        </g>
-        <g transform="translate(330,0)">
-          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <g transform="translate(4, -9)">
-            <svg viewBox="0 0 24 24" width="18" height="18">
-<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
-</svg>
-          </g>
-          <text x="26" y="2" class="pill">1</text>
-        </g>
-      </g>
-      <rect x="20" y="165" width="242" height="12" fill="#3572A5" /><rect x="262" y="165" width="75" height="12" fill="#3178c6" /><rect x="337" y="165" width="21" height="12" fill="#f1e05a" /><rect x="358" y="165" width="14" height="12" fill="#89e051" /><rect x="372" y="165" width="14" height="12" fill="#663399" /><rect x="386" y="165" width="14" height="12" fill="#ff5a03" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#3178c6"/><text x="222" y="195" class="legend">TypeScript</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="207" class="legend">JavaScript</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="222" y="207" class="legend">Shell</text>
+      <rect x="20" y="165" width="316" height="12" fill="#3572A5" /><rect x="336" y="165" width="18" height="12" fill="#f1e05a" /><rect x="354" y="165" width="18" height="12" fill="#89e051" /><rect x="372" y="165" width="14" height="12" fill="#663399" /><rect x="386" y="165" width="14" height="12" fill="#e34c26" />
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="195" class="legend">JavaScript</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="207" class="legend">Shell</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="222" y="207" class="legend">CSS</text>
     </g>
   </a>
       <animateTransform attributeName="transform" type="translate"
         values="880;880;0;0;-880;-880"
-        keyTimes="0;0.0000;0.0750;0.2583;0.3333;1"
+        keyTimes="0;0.0000;0.0450;0.1550;0.2000;1"
         keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
         calcMode="spline"
-        dur="18s"
+        dur="30s"
         begin="0s"
         repeatCount="indefinite"/>
     </g>
     <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
       
-  <a xlink:href="https://github.com/statikfintechllc/statik-server" target="_blank">
-    <g transform="translate(0,20)">
-      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
-      <text x="20" y="30" class="name">statik-server</text>
-      <text x="20" y="54" style="font:400 13px system-ui" class="desc">Forked from code-server — now a sovereign,</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">mesh-routed VS Code deployment with Copilot Chat,</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">persistent VPN, keyless signing, and custom domain</text><text x="20" y="99" style="font:400 13px system-ui" class="desc">rendering via statik-server.</text>
-      <!-- Stars and forks -->
-      <g class="badges" transform="translate(0,135)">
-        <g transform="translate(240,0)">
-          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <g transform="translate(8, -9)">
-            <svg viewBox="0 0 24 24" width="16" height="16">
-<path fill="none" stroke="#8abecf" stroke-width="2"
-  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
-</svg>
-          </g>
-          <text x="26" y="2" class="pill">1</text>
-        </g>
-        <g transform="translate(330,0)">
-          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
-          <g transform="translate(4, -9)">
-            <svg viewBox="0 0 24 24" width="18" height="18">
-<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
-</svg>
-          </g>
-          <text x="26" y="2" class="pill">1</text>
-        </g>
-      </g>
-      <rect x="20" y="165" width="261" height="12" fill="#3178c6" /><rect x="281" y="165" width="42" height="12" fill="#3572A5" /><rect x="323" y="165" width="13" height="12" fill="#663399" /><rect x="336" y="165" width="13" height="12" fill="#f1e05a" /><rect x="349" y="165" width="13" height="12" fill="#e34c26" /><rect x="362" y="165" width="13" height="12" fill="#dea584" /><rect x="375" y="165" width="13" height="12" fill="#89e051" /><rect x="388" y="165" width="12" height="12" fill="#264b99" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3178c6"/><text x="32" y="195" class="legend">TypeScript</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="222" y="195" class="legend">Python</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="207" class="legend">CSS</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="207" class="legend">JavaScript</text>
-    </g>
-  </a>
   <a xlink:href="https://github.com/statikfintechllc/AscendDocs-of-GovSeverance" target="_blank">
-    <g transform="translate(460,20)">
+    <g transform="translate(0,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
       <text x="20" y="30" class="name">AscendDocs-of-GovSeverance</text>
       <text x="20" y="54" style="font:400 13px system-ui" class="desc">This is not a coded system, it is not a manifesto.</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">This is memetic weapon, not a call to chaos. This</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">is the call to Recursion. Alignment. Freedom. For</text><text x="20" y="99" style="font:400 13px system-ui" class="desc">The People.</text>
@@ -134,7 +103,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">4</text>
+          <text x="26" y="2" class="pill">3</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -150,12 +119,189 @@
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="195" class="legend">JavaScript</text>
     </g>
   </a>
+  <a xlink:href="https://github.com/statikfintechllc/GodCore" target="_blank">
+    <g transform="translate(460,20)">
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
+      <text x="20" y="30" class="name">GodCore</text>
+      <text x="20" y="54" style="font:400 10px system-ui" class="desc">All-in-one local AI stack for Mistral-13B and Llama.cpp, with</text><text x="20" y="66" style="font:400 10px system-ui" class="desc">one-step CUDA wheel install, OpenAI-compatible API, and modern</text><text x="20" y="78" style="font:400 10px system-ui" class="desc">web dashboard. Switch between local and cloud chat, run on your</text><text x="20" y="90" style="font:400 10px system-ui" class="desc">own GPU, and deploy instantly—no API keys or paywalls. Designed</text><text x="20" y="102" style="font:400 10px system-ui" class="desc">for easy install, custom builds, and fast remote access. Enjoy!</text>
+      <!-- Stars and forks -->
+      <g class="badges" transform="translate(0,135)">
+        <g transform="translate(240,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(8, -9)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">2</text>
+        </g>
+        <g transform="translate(330,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(4, -9)">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">1</text>
+        </g>
+      </g>
+      <rect x="20" y="165" width="177" height="12" fill="#3572A5" /><rect x="197" y="165" width="127" height="12" fill="#DA5B0B" /><rect x="324" y="165" width="13" height="12" fill="#f1e05a" /><rect x="337" y="165" width="13" height="12" fill="#89e051" /><rect x="350" y="165" width="13" height="12" fill="#663399" /><rect x="363" y="165" width="13" height="12" fill="#DA3434" /><rect x="376" y="165" width="13" height="12" fill="#384d54" /><rect x="389" y="165" width="11" height="12" fill="#e34c26" />
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#DA5B0B"/><text x="222" y="195" class="legend">Jupyter Notebook</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="207" class="legend">JavaScript</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="222" y="207" class="legend">Shell</text>
+    </g>
+  </a>
       <animateTransform attributeName="transform" type="translate"
         values="880;880;0;0;-880;-880"
-        keyTimes="0;0.3333;0.4083;0.5917;0.6667;1"
+        keyTimes="0;0.2000;0.2450;0.3550;0.4000;1"
         keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
         calcMode="spline"
-        dur="18s"
+        dur="30s"
+        begin="0s"
+        repeatCount="indefinite"/>
+    </g>
+    <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
+      
+  <a xlink:href="https://github.com/StatikFinTech-LLC/SFTi-Pennies" target="_blank">
+    <g transform="translate(0,20)">
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
+      <text x="20" y="30" class="name">SFTi-Pennies</text>
+      <text x="20" y="54" style="font:400 13px system-ui" class="desc">Advanced trading journal with 21+ analytics,</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">automated weekly/monthly/yearly reviews, portfolio</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">tracking, and customizable glassmorphism UI. Built</text><text x="20" y="99" style="font:400 13px system-ui" class="desc">for traders who want complete control over their</text><text x="20" y="114" style="font:400 13px system-ui" class="desc">data and insights.</text>
+      <!-- Stars and forks -->
+      <g class="badges" transform="translate(0,135)">
+        <g transform="translate(240,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(8, -9)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">1</text>
+        </g>
+        <g transform="translate(330,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(4, -9)">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
+        </g>
+      </g>
+      <rect x="20" y="165" width="306" height="12" fill="#f1e05a" /><rect x="326" y="165" width="31" height="12" fill="#e34c26" /><rect x="357" y="165" width="14" height="12" fill="#663399" /><rect x="371" y="165" width="14" height="12" fill="#C1F12E" /><rect x="385" y="165" width="15" height="12" fill="#89e051" />
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="195" class="legend">JavaScript</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#e34c26"/><text x="222" y="195" class="legend">HTML</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="207" class="legend">CSS</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#C1F12E"/><text x="222" y="207" class="legend">Batchfile</text>
+    </g>
+  </a>
+  <a xlink:href="https://github.com/statikfintechllc/SFTi-TimeLine" target="_blank">
+    <g transform="translate(460,20)">
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
+      <text x="20" y="30" class="name">SFTi-TimeLine</text>
+      <text x="20" y="54" style="font:400 13px system-ui" class="desc">Reproducible, timestamp-verified chronology for</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">StatikFinTech outputs — Medium, Zenodo, and GitHub</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">— combined into one auditable dataset.</text>
+      <!-- Stars and forks -->
+      <g class="badges" transform="translate(0,135)">
+        <g transform="translate(240,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(8, -9)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
+        </g>
+        <g transform="translate(330,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(4, -9)">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
+        </g>
+      </g>
+      <rect x="20" y="165" width="234" height="12" fill="#3572A5" /><rect x="254" y="165" width="146" height="12" fill="#89e051" />
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#89e051"/><text x="222" y="195" class="legend">Shell</text>
+    </g>
+  </a>
+      <animateTransform attributeName="transform" type="translate"
+        values="880;880;0;0;-880;-880"
+        keyTimes="0;0.4000;0.4450;0.5550;0.6000;1"
+        keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
+        calcMode="spline"
+        dur="30s"
+        begin="0s"
+        repeatCount="indefinite"/>
+    </g>
+    <g class="slide" transform="translate(880,0)" clip-path="url(#frame)">
+      
+  <a xlink:href="https://github.com/statikfintechllc/SFTi.Trade_Grade" target="_blank">
+    <g transform="translate(0,20)">
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
+      <text x="20" y="30" class="name">SFTi.Trade_Grade</text>
+      <text x="20" y="54" style="font:400 13px system-ui" class="desc">For Grading Trades. Live pages:</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">https://statikfintechllc.github.io/SFTi.Trade_Grade/</text>
+      <!-- Stars and forks -->
+      <g class="badges" transform="translate(0,135)">
+        <g transform="translate(240,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(8, -9)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
+        </g>
+        <g transform="translate(330,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(4, -9)">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
+        </g>
+      </g>
+      <rect x="20" y="165" width="234" height="12" fill="#f1e05a" /><rect x="254" y="165" width="83" height="12" fill="#e34c26" /><rect x="337" y="165" width="63" height="12" fill="#663399" />
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="195" class="legend">JavaScript</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#e34c26"/><text x="222" y="195" class="legend">HTML</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="207" class="legend">CSS</text>
+    </g>
+  </a>
+  <a xlink:href="https://github.com/statikfintechllc/The-GateKeepers-Riddles.i" target="_blank">
+    <g transform="translate(460,20)">
+      <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
+      <text x="20" y="30" class="name">The-GateKeepers-Riddles.i</text>
+      <text x="20" y="54" style="font:400 13px system-ui" class="desc">The Game of Riddles, solved only by the keen. Try</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">your wit:</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">https://statikfintechllc.github.io/The-GateKeepers-Riddles.i/</text>
+      <!-- Stars and forks -->
+      <g class="badges" transform="translate(0,135)">
+        <g transform="translate(240,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(8, -9)">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+<path fill="none" stroke="#8abecf" stroke-width="2"
+  d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
+        </g>
+        <g transform="translate(330,0)">
+          <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
+          <g transform="translate(4, -9)">
+            <svg viewBox="0 0 24 24" width="18" height="18">
+<path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
+</svg>
+          </g>
+          <text x="26" y="2" class="pill">0</text>
+        </g>
+      </g>
+      <rect x="20" y="165" width="292" height="12" fill="#f1e05a" /><rect x="312" y="165" width="49" height="12" fill="#e34c26" /><rect x="361" y="165" width="24" height="12" fill="#663399" /><rect x="385" y="165" width="15" height="12" fill="#89e051" />
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#f1e05a"/><text x="32" y="195" class="legend">JavaScript</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#e34c26"/><text x="222" y="195" class="legend">HTML</text><rect x="20" y="199" width="8" height="8" rx="2" fill="#663399"/><text x="32" y="207" class="legend">CSS</text><rect x="210" y="199" width="8" height="8" rx="2" fill="#89e051"/><text x="222" y="207" class="legend">Shell</text>
+    </g>
+  </a>
+      <animateTransform attributeName="transform" type="translate"
+        values="880;880;0;0;-880;-880"
+        keyTimes="0;0.6000;0.6450;0.7550;0.8000;1"
+        keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
+        calcMode="spline"
+        dur="30s"
         begin="0s"
         repeatCount="indefinite"/>
     </g>
@@ -176,7 +322,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">2</text>
+          <text x="26" y="2" class="pill">1</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -192,11 +338,11 @@
       <rect x="20" y="187" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="195" class="legend">Shell</text>
     </g>
   </a>
-  <a xlink:href="https://github.com/statikfintechllc/Gremlin-MCP-Scrap" target="_blank">
+  <a xlink:href="https://github.com/statikfintechllc/zsh.installer" target="_blank">
     <g transform="translate(460,20)">
       <rect x="0" y="0" rx="14" ry="14" width="420" height="230" fill="#0b1220" stroke="#1f2937"/>
-      <text x="20" y="30" class="name">Gremlin-MCP-Scrap</text>
-      <text x="20" y="54" style="font:400 13px system-ui" class="desc">A hybrid Python + JavaScript MCP runtime for</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">scraping readable content from the web. Powered by</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">Flask, BeautifulSoup, and the unshakable belief</text><text x="20" y="99" style="font:400 13px system-ui" class="desc">that you can automate everything. Built for VS</text><text x="20" y="114" style="font:400 13px system-ui" class="desc">Code’s Model Context Protocol. Gremlin-approved.</text>
+      <text x="20" y="30" class="name">zsh.installer</text>
+      <text x="20" y="54" style="font:400 13px system-ui" class="desc">For ISH on mobile, to automate the Install of ZSH</text><text x="20" y="69" style="font:400 13px system-ui" class="desc">theme, and Set Up Github Credentials for seem-less</text><text x="20" y="84" style="font:400 13px system-ui" class="desc">development.</text>
       <!-- Stars and forks -->
       <g class="badges" transform="translate(0,135)">
         <g transform="translate(240,0)">
@@ -207,7 +353,7 @@
   d="M12 2.5l2.68 5.43 5.82.85-4.2 4.09.99 5.8L12 16.6 6.71 18.67l.99-5.8-4.2-4.09 5.82-.85L12 2.5z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">1</text>
+          <text x="26" y="2" class="pill">0</text>
         </g>
         <g transform="translate(330,0)">
           <rect x="0" y="-12" rx="10" ry="10" width="78" height="20" fill="#111827" stroke="#1f2937"/>
@@ -216,19 +362,19 @@
 <path fill="#8abecf" d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.25 2.25 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z"/>
 </svg>
           </g>
-          <text x="26" y="2" class="pill">1</text>
+          <text x="26" y="2" class="pill">0</text>
         </g>
       </g>
-      <rect x="20" y="165" width="292" height="12" fill="#3572A5" /><rect x="312" y="165" width="88" height="12" fill="#f1e05a" />
-      <rect x="20" y="187" width="8" height="8" rx="2" fill="#3572A5"/><text x="32" y="195" class="legend">Python</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#f1e05a"/><text x="222" y="195" class="legend">JavaScript</text>
+      <rect x="20" y="165" width="332" height="12" fill="#89e051" /><rect x="352" y="165" width="48" height="12" fill="#e34c26" />
+      <rect x="20" y="187" width="8" height="8" rx="2" fill="#89e051"/><text x="32" y="195" class="legend">Shell</text><rect x="210" y="187" width="8" height="8" rx="2" fill="#e34c26"/><text x="222" y="195" class="legend">HTML</text>
     </g>
   </a>
       <animateTransform attributeName="transform" type="translate"
         values="880;880;0;0;-880;-880"
-        keyTimes="0;0.6667;0.7417;0.9250;1.0000;1"
+        keyTimes="0;0.8000;0.8450;0.9550;1.0000;1"
         keySplines="0 0 1 1; 0.25 0.1 0.25 1; 0.25 0.1 0.25 1; 0.42 0 0.58 1; 0 0 1 1"
         calcMode="spline"
-        dur="18s"
+        dur="30s"
         begin="0s"
         repeatCount="indefinite"/>
     </g>
