@@ -85,17 +85,10 @@
     </circle>
   </g>
   
-  <!-- Medium Logo (modern M icon with publishing styling) -->
+  <!-- Medium Logo (just the circle + M, no box) -->
   <g transform="translate(5,5)">
-    <!-- Background circle with Medium green -->
-    <circle cx="65" cy="65" r="35" fill="#00ab6c"/>
-    <!-- Medium M letter -->
-    <text x="65" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="700" fill="#ffffff">M</text>
-    <!-- Small publishing dots for editorial appearance -->
-    <circle cx="50" cy="45" r="2" fill="#ffffff" opacity="0.6"/>
-    <circle cx="80" cy="45" r="2" fill="#ffffff" opacity="0.6"/>
-    <circle cx="50" cy="85" r="2" fill="#ffffff" opacity="0.6"/>
-    <circle cx="80" cy="85" r="2" fill="#ffffff" opacity="0.6"/>
+    <circle cx="65" cy="65" r="35" fill="#ffffff"/>
+    <text x="65" y="78" text-anchor="middle" font-family="Georgia, serif" font-size="32" font-weight="700" fill="#000000">M</text>
   </g>
   
   <!-- Text Content (no glow filter applied to text) -->
@@ -109,7 +102,7 @@
     
     <text x="277.5" y="56" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="12" font-weight="500"
-          fill="#00ab6c">📝 Medium Article Publication 📝</text>
+          fill="#ffffff">📝 Medium Article Publication 📝</text>
     
     <text x="277.5" y="81" text-anchor="middle" 
           font-family="Inter, Arial, sans-serif" font-size="12" 
