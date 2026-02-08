@@ -1,0 +1,8 @@
+{
+  "name": "statik-ai-card",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-statik-ai.mjs"
+  }
+}
