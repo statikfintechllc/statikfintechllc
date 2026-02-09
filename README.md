@@ -73,9 +73,6 @@
   <a href="https://github.com/statikfintechllc/statik.ai">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.A.svg/assets/statik-ai-card.svg" alt="statik.ai" width="400"/>
   </a>
-  <a href="https://github.com/statikfintechllc/statikfintechllc">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.F.svg/assets/statikfintechllc-card.svg" alt="statikfintechllc" width="400"/>
-  </a>
 </div>
 <!-- Zenodo Research Papers Flexbox Grid -->
 <div align="center">
