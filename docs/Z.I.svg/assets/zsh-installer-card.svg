@@ -60,7 +60,7 @@
 
   <!-- Language Usage Bar -->
   <g transform="translate(20, 0)">
-    <rect x="0" y="195" width="384.3459960012628" height="6" fill="#89e051" />
-<rect x="384.3459960012628" y="195" width="55.654003998737245" height="6" fill="#ccc" />
+    <rect x="0" y="195" width="379.59798994974875" height="6" fill="#89e051" />
+<rect x="379.59798994974875" y="195" width="60.40201005025125" height="6" fill="#ccc" />
   </g>
 </svg>
