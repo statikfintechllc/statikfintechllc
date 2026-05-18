@@ -23,12 +23,12 @@
          clip-path="url(#avatar-clip-statik-ai)"
          preserveAspectRatio="xMidYMid slice"/>
 
-  <text x="48" y="31" class="title">statik.ai</text>
+  <text x="48" y="31" class="title">undefined</text>
 
   <foreignObject x="48" y="40" width="400" height="120">
     <div xmlns="http://www.w3.org/1999/xhtml"
          style="color:#8abecf;font:13px sans-serif;line-height:1.4;white-space:normal;overflow:hidden;">
-      Statik.ai - A browser-native cognitive runtime with autonomous goal generation, delta-based learning, and zero API costs. Built entirely client-side using vanilla JavaScript, runs on iPhone as PWA, syncs across devices via P2P mesh networking. Self-modifying system with complete source access in Monaco editor.
+      No description available
     </div>
   </foreignObject>
 
@@ -51,6 +51,8 @@
   <text x="222" y="180" class="meta">0</text>
 
   <g transform="translate(20, 0)">
-    
+    <rect x="0" y="195" width="NaN" height="6" fill="#ccc" />
+<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
+<rect x="NaN" y="195" width="NaN" height="6" fill="#ccc" />
   </g>
 </svg>
