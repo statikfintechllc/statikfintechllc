@@ -70,9 +70,6 @@
   <a href="https://github.com/statikfintechllc/zsh.installer">
     <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/Z.I.svg/assets/zsh-installer-card.svg" alt="zsh.installer" width="400"/>
   </a>
-  <a href="https://github.com/statikfintechllc/statik.ai">
-    <img src="https://raw.githubusercontent.com/statikfintechllc/statikfintechllc/master/docs/S.A.svg/assets/statik-ai-card.svg" alt="statik.ai" width="400"/>
-  </a>
 </div>
 <!-- Zenodo Research Papers Flexbox Grid -->
 <div align="center">
@@ -235,7 +232,7 @@
   <a href="https://www.youtube.com/@Gremlins_Forge">
     <img src="https://img.shields.io/badge/-FF0000?logo=youtube&logoColor=white&style=flat-square" alt="YouTube">
   </a>
-  <a href="https://x.com/GremlinsForge">
+  <a href="https://x.com/StatikFinTech">
     <img src="https://img.shields.io/badge/-000000?logo=x&logoColor=white&style=flat-square" alt="X">
   </a>
   <a href="https://medium.com/@ascend.gremlin">
