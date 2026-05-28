@@ -24,7 +24,7 @@
         </g>
       </svg>
       <text x="30" y="5" class="stat-label">Total Stars Earned:</text>
-      <text x="200" y="5" class="stat-value">15</text>
+      <text x="200" y="5" class="stat-value">13</text>
     </g>
     
     <g transform="translate(0, 35)">
