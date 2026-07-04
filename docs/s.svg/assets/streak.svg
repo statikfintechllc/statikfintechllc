@@ -1489,7 +1489,7 @@
              repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="150" y="102" class="leftLabel" text-anchor="middle">8,920</text>
+    <text x="150" y="102" class="leftLabel" text-anchor="middle">8,999</text>
     <text x="150" y="126" class="leftSub"   text-anchor="middle">2026-07-04</text>
     <animate attributeName="opacity"
              values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1"
@@ -2377,7 +2377,7 @@
 
   <!-- Center number with heavy glow -->
   <g transform="translate(380,110)">
-    <text class="centerNum" text-anchor="middle" dy="10" filter="url(#fGlow)">18</text>
+    <text class="centerNum" text-anchor="middle" dy="10" filter="url(#fGlow)">19</text>
   </g>
 
   <text x="610" y="34" class="title" text-anchor="middle">Longest Streaks</text>
@@ -2388,13 +2388,13 @@
     <animate attributeName="opacity" values="1;1;0;0" keyTimes="0.000000;0.333333;0.666667;1.000000" dur="7.2s" repeatCount="indefinite"/>
   </g>
   <g>
-    <text x="610" y="102" class="rightLabel" text-anchor="middle">18 days</text>
-    <text x="610" y="126" class="rightSub"   text-anchor="middle">2025-06-20 → 2025-07-07</text>
+    <text x="610" y="102" class="rightLabel" text-anchor="middle">19 days</text>
+    <text x="610" y="126" class="rightSub"   text-anchor="middle">2026-06-16 → 2026-07-04</text>
     <animate attributeName="opacity" values="0;1;1;0" keyTimes="0.000000;0.333333;0.666667;1.000000" dur="7.2s" repeatCount="indefinite"/>
   </g>
   <g>
     <text x="610" y="102" class="rightLabel" text-anchor="middle">18 days</text>
-    <text x="610" y="126" class="rightSub"   text-anchor="middle">2025-10-11 → 2025-10-28</text>
+    <text x="610" y="126" class="rightSub"   text-anchor="middle">2025-06-20 → 2025-07-07</text>
     <animate attributeName="opacity" values="0;0;1;1" keyTimes="0.000000;0.333333;0.666667;1.000000" dur="7.2s" repeatCount="indefinite"/>
   </g>
 </svg>
