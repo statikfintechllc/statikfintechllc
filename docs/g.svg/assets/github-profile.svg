@@ -104,7 +104,7 @@
   <rect x="180" y="0" width="41" height="8" fill="#3178c6"/>
   <!-- Jupyter Notebook 8.46% -->
   <rect x="221" y="0" width="25" height="8" fill="#DA5B0B"/>
-  <!-- HTML 4.80% -->
+  <!-- HTML 4.81% -->
   <rect x="246" y="0" width="14" height="8" fill="#e34c26"/>
   <!-- CSS 4.08% -->
   <rect x="260" y="0" width="12" height="8" fill="#563d7c"/>
@@ -140,7 +140,7 @@
     
     <g transform="translate(0, 80)">
       <circle cx="5" cy="5" r="4" fill="#e34c26"/>
-      <text x="15" y="9" class="lang-name">HTML 4.80%</text>
+      <text x="15" y="9" class="lang-name">HTML 4.81%</text>
     </g>
     
     <g transform="translate(144, 0)">
